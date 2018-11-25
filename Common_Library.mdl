@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"505"
+	LoadSaveID		"558"
 	Extents			[1823.0, 930.0]
 	ZoomFactor		[1.25]
-	Offset			[183.11224610748627, 334.69689634046324]
+	Offset			[-183.1327546670355, 356.12671794033213]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 25 06:18:19 2018"
-  RTWModifiedTimeStamp	  465027495
-  ModelVersionFormat	  "1.%<AutoIncrement:19>"
+  LastModifiedDate	  "Sun Nov 25 14:05:05 2018"
+  RTWModifiedTimeStamp	  465055429
+  ModelVersionFormat	  "1.%<AutoIncrement:26>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -824,7 +824,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2423"
+    SIDHighWatermark	    "2576"
     Block {
       BlockType		      SubSystem
       Name		      "Adders"
@@ -16616,7 +16616,7 @@ Library {
       System {
 	Name			"Memory_Blocks"
 	Location		[55, -8, 1928, 1088]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -17628,7 +17628,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [1745, 245, 1915, 645]
 	      ZOrder		      474
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Multiplexers/16_to_1_Byte_Multiplexer"
 	      SourceType	      "SubSystem"
 	    }
@@ -17639,7 +17639,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1606, 1195, 1669]
 	      ZOrder		      454
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17650,7 +17650,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1521, 1195, 1584]
 	      ZOrder		      455
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17661,7 +17661,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 756, 1195, 819]
 	      ZOrder		      464
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17672,7 +17672,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 671, 1195, 734]
 	      ZOrder		      465
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17683,7 +17683,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 586, 1195, 649]
 	      ZOrder		      466
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17694,7 +17694,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 501, 1195, 564]
 	      ZOrder		      467
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17705,7 +17705,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 416, 1195, 479]
 	      ZOrder		      468
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17716,7 +17716,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 331, 1195, 394]
 	      ZOrder		      469
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17727,7 +17727,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1436, 1195, 1499]
 	      ZOrder		      456
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17738,7 +17738,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1351, 1195, 1414]
 	      ZOrder		      457
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17749,7 +17749,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1266, 1195, 1329]
 	      ZOrder		      458
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17760,7 +17760,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1181, 1195, 1244]
 	      ZOrder		      459
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17771,7 +17771,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1096, 1195, 1159]
 	      ZOrder		      460
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17782,7 +17782,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1011, 1195, 1074]
 	      ZOrder		      461
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17793,7 +17793,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 926, 1195, 989]
 	      ZOrder		      462
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17804,7 +17804,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 841, 1195, 904]
 	      ZOrder		      463
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.19"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -19128,7 +19128,7 @@ Library {
       System {
 	Name			"Multiplexers"
 	Location		[55, -8, 1928, 1088]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -19139,13 +19139,13 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"150"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "16_to_1_Bit_Multiplexer"
 	  SID			  "559"
 	  Ports			  [5, 1]
-	  Position		  [85, 1019, 235, 1121]
+	  Position		  [695, 525, 860, 605]
 	  ZOrder		  360
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -20232,7 +20232,7 @@ Library {
 	  Name			  "16_to_1_Byte_Multiplexer"
 	  SID			  "588"
 	  Ports			  [20, 1]
-	  Position		  [335, 809, 500, 1116]
+	  Position		  [695, 664, 860, 971]
 	  ZOrder		  361
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -22505,7 +22505,7 @@ Library {
 	  Name			  "256_to_1_Bit_Multiplexer"
 	  SID			  "629"
 	  Ports			  [2, 1]
-	  Position		  [85, 1181, 235, 1219]
+	  Position		  [940, 565, 1090, 605]
 	  ZOrder		  362
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -23487,7 +23487,7 @@ Library {
 	  Name			  "256_to_1_Byte_Multiplexer"
 	  SID			  "653"
 	  Ports			  [2, 1]
-	  Position		  [335, 1181, 500, 1219]
+	  Position		  [940, 666, 1090, 704]
 	  ZOrder		  366
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -24200,10 +24200,1000 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
+	  Name			  "2_to_1_Bit_Multiplexer"
+	  SID			  "2512"
+	  Ports			  [3, 1]
+	  Position		  [20, 560, 160, 610]
+	  ZOrder		  368
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "2_to_1_Bit_Multiplexer"
+	    Location		    [55, -8, 1928, 1088]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "150"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr"
+	      SID		      "2514"
+	      Position		      [60, 438, 90, 452]
+	      ZOrder		      23
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In_1"
+	      SID		      "2517"
+	      Position		      [60, 523, 90, 537]
+	      ZOrder		      11
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "In_0"
+	      SID		      "2518"
+	      Position		      [60, 593, 90, 607]
+	      ZOrder		      12
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator12"
+	      SID		      "2522"
+	      Ports		      [1, 1]
+	      Position		      [208, 461, 233, 489]
+	      ZOrder		      24
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator2"
+	      SID		      "2523"
+	      Ports		      [2, 1]
+	      Position		      [420, 518, 460, 562]
+	      ZOrder		      3
+	      ShowName		      off
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator3"
+	      SID		      "2524"
+	      Ports		      [2, 1]
+	      Position		      [420, 588, 460, 632]
+	      ZOrder		      4
+	      ShowName		      off
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator8"
+	      SID		      "2525"
+	      Ports		      [2, 1]
+	      Position		      [570, 557, 610, 593]
+	      ZOrder		      9
+	      ShowName		      off
+	      Operator		      "OR"
+	      IconShape		      "distinctive"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out"
+	      SID		      "2526"
+	      Position		      [675, 568, 705, 582]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator12"
+	      SrcPort		      1
+	      Points		      [74, 0; 0, 145]
+	      DstBlock		      "Logical\nOperator3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Addr"
+	      SrcPort		      1
+	      Points		      [64, 0]
+	      Branch {
+		Points			[180, 0; 0, 105]
+		DstBlock		"Logical\nOperator2"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 30]
+		DstBlock		"Logical\nOperator12"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator8"
+	      SrcPort		      1
+	      Points		      [45, 0]
+	      DstBlock		      "Out"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In_1"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "In_0"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator3"
+	      SrcPort		      1
+	      Points		      [50, 0; 0, -25]
+	      DstBlock		      "Logical\nOperator8"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator2"
+	      SrcPort		      1
+	      Points		      [51, 0; 0, 25]
+	      DstBlock		      "Logical\nOperator8"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "2_to_1_Byte_Multiplexer"
+	  SID			  "2527"
+	  Ports			  [3, 1]
+	  Position		  [20, 672, 160, 718]
+	  ZOrder		  369
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "2_to_1_Byte_Multiplexer"
+	    Location		    [55, -8, 1928, 1088]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "80"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr(1b)"
+	      SID		      "2529"
+	      Position		      [3055, 3798, 3085, 3812]
+	      ZOrder		      597
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_In_1(1B)"
+	      SID		      "2532"
+	      Position		      [3015, 5218, 3045, 5232]
+	      ZOrder		      591
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_In_0(1B)"
+	      SID		      "2533"
+	      Position		      [3015, 5423, 3045, 5437]
+	      ZOrder		      593
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit0)"
+	      SID		      "2569"
+	      Ports		      [3, 1]
+	      Position		      [4555, 4898, 4645, 4942]
+	      ZOrder		      614
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit1)"
+	      SID		      "2570"
+	      Ports		      [3, 1]
+	      Position		      [4555, 4753, 4645, 4797]
+	      ZOrder		      615
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit2)"
+	      SID		      "2571"
+	      Ports		      [3, 1]
+	      Position		      [4555, 4593, 4645, 4637]
+	      ZOrder		      616
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit3)"
+	      SID		      "2572"
+	      Ports		      [3, 1]
+	      Position		      [4555, 4433, 4645, 4477]
+	      ZOrder		      617
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit4)"
+	      SID		      "2573"
+	      Ports		      [3, 1]
+	      Position		      [4555, 4273, 4645, 4317]
+	      ZOrder		      618
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit5)"
+	      SID		      "2574"
+	      Ports		      [3, 1]
+	      Position		      [4555, 4113, 4645, 4157]
+	      ZOrder		      619
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit6)"
+	      SID		      "2575"
+	      Ports		      [3, 1]
+	      Position		      [4555, 3953, 4645, 3997]
+	      ZOrder		      620
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer(Bit7)"
+	      SID		      "2576"
+	      Ports		      [3, 1]
+	      Position		      [4555, 3798, 4645, 3842]
+	      ZOrder		      621
+	      LibraryVersion	      "1.23"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit to Integer\nConverter1"
+	      SID		      "2542"
+	      Ports		      [1, 1]
+	      Position		      [5190, 3868, 5270, 3912]
+	      ZOrder		      561
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
+	      SourceType	      "Bit to Integer Converter"
+	      nbits		      "8"
+	      bitOrder		      "MSB first"
+	      signedOutputValues      "Unsigned"
+	      outDtype		      "uint8"
+	      outDtypeSigned	      "Inherit via internal rule"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_0"
+	      SID		      "2543"
+	      Ports		      [2, 1]
+	      Position		      [4348, 5045, 4392, 5065]
+	      ZOrder		      359
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_1"
+	      SID		      "2544"
+	      Ports		      [2, 1]
+	      Position		      [4223, 5045, 4267, 5065]
+	      ZOrder		      360
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_2"
+	      SID		      "2545"
+	      Ports		      [2, 1]
+	      Position		      [4093, 5045, 4137, 5065]
+	      ZOrder		      361
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_3"
+	      SID		      "2546"
+	      Ports		      [2, 1]
+	      Position		      [3963, 5045, 4007, 5065]
+	      ZOrder		      362
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_4"
+	      SID		      "2547"
+	      Ports		      [2, 1]
+	      Position		      [3833, 5045, 3877, 5065]
+	      ZOrder		      363
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_5"
+	      SID		      "2548"
+	      Ports		      [2, 1]
+	      Position		      [3703, 5045, 3747, 5065]
+	      ZOrder		      364
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_6"
+	      SID		      "2549"
+	      Ports		      [2, 1]
+	      Position		      [3573, 5045, 3617, 5065]
+	      ZOrder		      365
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_7"
+	      SID		      "2550"
+	      Ports		      [2, 1]
+	      Position		      [3443, 5045, 3487, 5065]
+	      ZOrder		      366
+	      BlockRotation	      270
+	      Inputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Byte_0"
+	      SID		      "2551"
+	      Ports		      [1, 8]
+	      Position		      [3300, 5353, 3325, 5507]
+	      ZOrder		      357
+	      Outputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Byte_1"
+	      SID		      "2552"
+	      Ports		      [1, 8]
+	      Position		      [3300, 5148, 3325, 5302]
+	      ZOrder		      356
+	      Outputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      SID		      "2555"
+	      Ports		      [1, 2]
+	      Position		      [4480, 4913, 4495, 4942]
+	      ZOrder		      599
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      SID		      "2556"
+	      Ports		      [1, 2]
+	      Position		      [4480, 4768, 4495, 4797]
+	      ZOrder		      601
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux2"
+	      SID		      "2557"
+	      Ports		      [1, 2]
+	      Position		      [4480, 4608, 4495, 4637]
+	      ZOrder		      603
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux3"
+	      SID		      "2558"
+	      Ports		      [1, 2]
+	      Position		      [4480, 4448, 4495, 4477]
+	      ZOrder		      605
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux4"
+	      SID		      "2559"
+	      Ports		      [1, 2]
+	      Position		      [4480, 4288, 4495, 4317]
+	      ZOrder		      607
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux5"
+	      SID		      "2560"
+	      Ports		      [1, 2]
+	      Position		      [4480, 4128, 4495, 4157]
+	      ZOrder		      609
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux6"
+	      SID		      "2561"
+	      Ports		      [1, 2]
+	      Position		      [4480, 3968, 4495, 3997]
+	      ZOrder		      611
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux7"
+	      SID		      "2562"
+	      Ports		      [1, 2]
+	      Position		      [4480, 3813, 4495, 3842]
+	      ZOrder		      613
+	      ShowName		      off
+	      Outputs		      "2"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Integer to Bit\nConverter15"
+	      SID		      "2565"
+	      Ports		      [1, 1]
+	      Position		      [3125, 5203, 3205, 5247]
+	      ZOrder		      592
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+	      SourceType	      "Integer to Bit Converter"
+	      nbits		      "8"
+	      signedInputValues	      "Unsigned"
+	      bitOrder		      "MSB first"
+	      outDtype		      "boolean"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Integer to Bit\nConverter16"
+	      SID		      "2566"
+	      Ports		      [1, 1]
+	      Position		      [3125, 5408, 3205, 5452]
+	      ZOrder		      594
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+	      SourceType	      "Integer to Bit Converter"
+	      nbits		      "8"
+	      signedInputValues	      "Unsigned"
+	      bitOrder		      "MSB first"
+	      outDtype		      "boolean"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "2567"
+	      Ports		      [8, 1]
+	      Position		      [5080, 3815, 5085, 3965]
+	      ZOrder		      358
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_Out(1B)"
+	      SID		      "2568"
+	      Position		      [5370, 3883, 5400, 3897]
+	      ZOrder		      342
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Bit to Integer\nConverter1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit to Integer\nConverter1"
+	      SrcPort		      1
+	      DstBlock		      "Data_Out(1B)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_0"
+	      SrcPort		      1
+	      Points		      [0, -110]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_1"
+	      SrcPort		      1
+	      Points		      [0, -255]
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_2"
+	      SrcPort		      1
+	      Points		      [0, -415]
+	      DstBlock		      "Demux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_3"
+	      SrcPort		      1
+	      Points		      [0, -575]
+	      DstBlock		      "Demux3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_4"
+	      SrcPort		      1
+	      Points		      [0, -735]
+	      DstBlock		      "Demux4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_5"
+	      SrcPort		      1
+	      Points		      [0, -895]
+	      DstBlock		      "Demux5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_6"
+	      SrcPort		      1
+	      Points		      [0, -1055]
+	      DstBlock		      "Demux6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_7"
+	      SrcPort		      1
+	      Points		      [0, -1210]
+	      DstBlock		      "Demux7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Addr(1b)"
+	      SrcPort		      1
+	      Points		      [1279, 0]
+	      Branch {
+		DstBlock		"2_to_1_Bit_Multiplexer(Bit7)"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 155]
+		Branch {
+		  DstBlock		  "2_to_1_Bit_Multiplexer(Bit6)"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 160]
+		  Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer(Bit5)"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer(Bit4)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer(Bit3)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer(Bit2)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer(Bit1)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 145]
+		    DstBlock		    "2_to_1_Bit_Multiplexer(Bit0)"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit4)"
+	      SrcPort		      1
+	      Points		      [312, 0; 0, -415]
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit5)"
+	      SrcPort		      1
+	      Points		      [291, 0; 0, -275]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit6)"
+	      SrcPort		      1
+	      Points		      [270, 0; 0, -135]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit7)"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit3)"
+	      SrcPort		      1
+	      Points		      [333, 0; 0, -555]
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit2)"
+	      SrcPort		      1
+	      Points		      [353, 0; 0, -695]
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit1)"
+	      SrcPort		      1
+	      Points		      [373, 0; 0, -835]
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer(Bit0)"
+	      SrcPort		      1
+	      Points		      [393, 0; 0, -960]
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      8
+	      Points		      [1050, 0]
+	      DstBlock		      "Bit_0"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      8
+	      Points		      [1030, 0]
+	      DstBlock		      "Bit_0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      7
+	      Points		      [925, 0]
+	      DstBlock		      "Bit_1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      7
+	      Points		      [905, 0]
+	      DstBlock		      "Bit_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      6
+	      Points		      [795, 0]
+	      DstBlock		      "Bit_2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      6
+	      Points		      [775, 0]
+	      DstBlock		      "Bit_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      5
+	      Points		      [665, 0]
+	      DstBlock		      "Bit_3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      5
+	      Points		      [645, 0]
+	      DstBlock		      "Bit_3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      4
+	      Points		      [535, 0]
+	      DstBlock		      "Bit_4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      4
+	      Points		      [515, 0]
+	      DstBlock		      "Bit_4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      3
+	      Points		      [405, 0]
+	      DstBlock		      "Bit_5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      3
+	      Points		      [385, 0]
+	      DstBlock		      "Bit_5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      2
+	      Points		      [275, 0]
+	      DstBlock		      "Bit_6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      2
+	      Points		      [255, 0]
+	      DstBlock		      "Bit_6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      1
+	      Points		      [145, 0]
+	      DstBlock		      "Bit_7"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      1
+	      Points		      [125, 0]
+	      DstBlock		      "Bit_7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integer to Bit\nConverter15"
+	      SrcPort		      1
+	      DstBlock		      "Byte_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data_In_1(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Integer to Bit\nConverter15"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integer to Bit\nConverter16"
+	      SrcPort		      1
+	      DstBlock		      "Byte_0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data_In_0(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Integer to Bit\nConverter16"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit0)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit0)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit1)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit1)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit2)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit2)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit3)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit3)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux4"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit4)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux4"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit4)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux5"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit5)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux5"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit5)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux6"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit6)"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Demux6"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit6)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux7"
+	      SrcPort		      2
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit7)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux7"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer(Bit7)"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
 	  Name			  "4_to_1_Bit_Multiplexer"
 	  SID			  "680"
 	  Ports			  [6, 1]
-	  Position		  [85, 462, 180, 603]
+	  Position		  [245, 510, 400, 605]
 	  ZOrder		  364
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -24214,7 +25204,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "4_to_1_Bit_Multiplexer"
-	    Location		    [63, 0, 1326, 1080]
+	    Location		    [55, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -24514,10 +25504,1181 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
+	  Name			  "4_to_1_Byte_Multiplexer"
+	  SID			  "2424"
+	  Ports			  [6, 1]
+	  Position		  [245, 668, 400, 767]
+	  ZOrder		  367
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "4_to_1_Byte_Multiplexer"
+	    Location		    [55, -8, 1928, 1088]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "40"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_1(1b)"
+	      SID		      "2427"
+	      Position		      [3055, 3673, 3085, 3687]
+	      ZOrder		      596
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_0(1b)"
+	      SID		      "2428"
+	      Position		      [3055, 3723, 3085, 3737]
+	      ZOrder		      597
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_In_03(1B)"
+	      SID		      "2441"
+	      Position		      [3055, 5183, 3085, 5197]
+	      ZOrder		      587
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_In_02(1B)"
+	      SID		      "2442"
+	      Position		      [3050, 5388, 3080, 5402]
+	      ZOrder		      589
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_In_01(1B)"
+	      SID		      "2443"
+	      Position		      [3050, 5593, 3080, 5607]
+	      ZOrder		      591
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_In_00(1B)"
+	      SID		      "2444"
+	      Position		      [3050, 5798, 3080, 5812]
+	      ZOrder		      593
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_0)"
+	      SID		      "2496"
+	      Ports		      [6, 1]
+	      Position		      [4540, 4882, 4635, 4973]
+	      ZOrder		      598
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_1)"
+	      SID		      "2498"
+	      Ports		      [6, 1]
+	      Position		      [4540, 4722, 4635, 4813]
+	      ZOrder		      600
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_2)"
+	      SID		      "2500"
+	      Ports		      [6, 1]
+	      Position		      [4540, 4562, 4635, 4653]
+	      ZOrder		      602
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_3)"
+	      SID		      "2502"
+	      Ports		      [6, 1]
+	      Position		      [4540, 4402, 4635, 4493]
+	      ZOrder		      604
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_4)"
+	      SID		      "2504"
+	      Ports		      [6, 1]
+	      Position		      [4540, 4242, 4635, 4333]
+	      ZOrder		      606
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_5)"
+	      SID		      "2506"
+	      Ports		      [6, 1]
+	      Position		      [4540, 4082, 4635, 4173]
+	      ZOrder		      608
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_6)"
+	      SID		      "2508"
+	      Ports		      [6, 1]
+	      Position		      [4540, 3922, 4635, 4013]
+	      ZOrder		      610
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Bit_Multiplexer(Bit_7)"
+	      SID		      "2510"
+	      Ports		      [6, 1]
+	      Position		      [4540, 3767, 4635, 3858]
+	      ZOrder		      612
+	      LibraryVersion	      "1.21"
+	      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit to Integer\nConverter1"
+	      SID		      "2453"
+	      Ports		      [1, 1]
+	      Position		      [5180, 3863, 5260, 3907]
+	      ZOrder		      561
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
+	      SourceType	      "Bit to Integer Converter"
+	      nbits		      "8"
+	      bitOrder		      "MSB first"
+	      signedOutputValues      "Unsigned"
+	      outDtype		      "uint8"
+	      outDtypeSigned	      "Inherit via internal rule"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_0"
+	      SID		      "2454"
+	      Ports		      [4, 1]
+	      Position		      [4328, 5040, 4412, 5065]
+	      ZOrder		      359
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_1"
+	      SID		      "2455"
+	      Ports		      [4, 1]
+	      Position		      [4203, 5040, 4287, 5065]
+	      ZOrder		      360
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_2"
+	      SID		      "2456"
+	      Ports		      [4, 1]
+	      Position		      [4073, 5040, 4157, 5065]
+	      ZOrder		      361
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_3"
+	      SID		      "2457"
+	      Ports		      [4, 1]
+	      Position		      [3943, 5040, 4027, 5065]
+	      ZOrder		      362
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_4"
+	      SID		      "2458"
+	      Ports		      [4, 1]
+	      Position		      [3813, 5040, 3897, 5065]
+	      ZOrder		      363
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_5"
+	      SID		      "2459"
+	      Ports		      [4, 1]
+	      Position		      [3683, 5040, 3767, 5065]
+	      ZOrder		      364
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_6"
+	      SID		      "2460"
+	      Ports		      [4, 1]
+	      Position		      [3553, 5040, 3637, 5065]
+	      ZOrder		      365
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Bit_7"
+	      SID		      "2461"
+	      Ports		      [4, 1]
+	      Position		      [3423, 5040, 3507, 5065]
+	      ZOrder		      366
+	      BlockRotation	      270
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Byte_0"
+	      SID		      "2462"
+	      Ports		      [1, 8]
+	      Position		      [3335, 5728, 3360, 5882]
+	      ZOrder		      357
+	      Outputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Byte_1"
+	      SID		      "2463"
+	      Ports		      [1, 8]
+	      Position		      [3335, 5523, 3360, 5677]
+	      ZOrder		      356
+	      Outputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Byte_2"
+	      SID		      "2470"
+	      Ports		      [1, 8]
+	      Position		      [3335, 5318, 3360, 5472]
+	      ZOrder		      355
+	      Outputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Byte_3"
+	      SID		      "2471"
+	      Ports		      [1, 8]
+	      Position		      [3335, 5113, 3360, 5267]
+	      ZOrder		      354
+	      Outputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      SID		      "2497"
+	      Ports		      [1, 4]
+	      Position		      [4480, 4916, 4495, 4969]
+	      ZOrder		      599
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux1"
+	      SID		      "2499"
+	      Ports		      [1, 4]
+	      Position		      [4480, 4756, 4495, 4809]
+	      ZOrder		      601
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux2"
+	      SID		      "2501"
+	      Ports		      [1, 4]
+	      Position		      [4480, 4596, 4495, 4649]
+	      ZOrder		      603
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux3"
+	      SID		      "2503"
+	      Ports		      [1, 4]
+	      Position		      [4480, 4436, 4495, 4489]
+	      ZOrder		      605
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux4"
+	      SID		      "2505"
+	      Ports		      [1, 4]
+	      Position		      [4480, 4276, 4495, 4329]
+	      ZOrder		      607
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux5"
+	      SID		      "2507"
+	      Ports		      [1, 4]
+	      Position		      [4480, 4116, 4495, 4169]
+	      ZOrder		      609
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux6"
+	      SID		      "2509"
+	      Ports		      [1, 4]
+	      Position		      [4480, 3956, 4495, 4009]
+	      ZOrder		      611
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux7"
+	      SID		      "2511"
+	      Ports		      [1, 4]
+	      Position		      [4480, 3801, 4495, 3854]
+	      ZOrder		      613
+	      ShowName		      off
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Integer to Bit\nConverter13"
+	      SID		      "2482"
+	      Ports		      [1, 1]
+	      Position		      [3165, 5168, 3245, 5212]
+	      ZOrder		      588
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+	      SourceType	      "Integer to Bit Converter"
+	      nbits		      "8"
+	      signedInputValues	      "Unsigned"
+	      bitOrder		      "MSB first"
+	      outDtype		      "boolean"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Integer to Bit\nConverter14"
+	      SID		      "2483"
+	      Ports		      [1, 1]
+	      Position		      [3160, 5373, 3240, 5417]
+	      ZOrder		      590
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+	      SourceType	      "Integer to Bit Converter"
+	      nbits		      "8"
+	      signedInputValues	      "Unsigned"
+	      bitOrder		      "MSB first"
+	      outDtype		      "boolean"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Integer to Bit\nConverter15"
+	      SID		      "2484"
+	      Ports		      [1, 1]
+	      Position		      [3160, 5578, 3240, 5622]
+	      ZOrder		      592
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+	      SourceType	      "Integer to Bit Converter"
+	      nbits		      "8"
+	      signedInputValues	      "Unsigned"
+	      bitOrder		      "MSB first"
+	      outDtype		      "boolean"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Integer to Bit\nConverter16"
+	      SID		      "2485"
+	      Ports		      [1, 1]
+	      Position		      [3160, 5783, 3240, 5827]
+	      ZOrder		      594
+	      ShowName		      off
+	      LibraryVersion	      "1.271"
+	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+	      SourceType	      "Integer to Bit Converter"
+	      nbits		      "8"
+	      signedInputValues	      "Unsigned"
+	      bitOrder		      "MSB first"
+	      outDtype		      "boolean"
+	    }
+	    Block {
+	      BlockType		      Mux
+	      Name		      "Mux"
+	      SID		      "2494"
+	      Ports		      [8, 1]
+	      Position		      [5070, 3810, 5075, 3960]
+	      ZOrder		      358
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_Out(1B)"
+	      SID		      "2495"
+	      Position		      [5360, 3878, 5390, 3892]
+	      ZOrder		      342
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Mux"
+	      SrcPort		      1
+	      DstBlock		      "Bit to Integer\nConverter1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit to Integer\nConverter1"
+	      SrcPort		      1
+	      DstBlock		      "Data_Out(1B)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_0"
+	      SrcPort		      1
+	      Points		      [0, -90]
+	      DstBlock		      "Demux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_1"
+	      SrcPort		      1
+	      Points		      [0, -250]
+	      DstBlock		      "Demux1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_2"
+	      SrcPort		      1
+	      Points		      [0, -410]
+	      DstBlock		      "Demux2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_3"
+	      SrcPort		      1
+	      Points		      [0, -570]
+	      DstBlock		      "Demux3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_4"
+	      SrcPort		      1
+	      Points		      [0, -730]
+	      DstBlock		      "Demux4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_5"
+	      SrcPort		      1
+	      Points		      [0, -890]
+	      DstBlock		      "Demux5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_6"
+	      SrcPort		      1
+	      Points		      [0, -1050]
+	      DstBlock		      "Demux6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Bit_7"
+	      SrcPort		      1
+	      Points		      [0, -1205]
+	      DstBlock		      "Demux7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Addr_0(1b)"
+	      SrcPort		      1
+	      Points		      [1279, 0; 0, 60]
+	      Branch {
+		DstBlock		"4_to_1_Bit_Multiplexer(Bit_7)"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 155]
+		Branch {
+		  DstBlock		  "4_to_1_Bit_Multiplexer(Bit_6)"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 160]
+		  Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_5)"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_4)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_3)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_2)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_1)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_0)"
+		    DstPort		    2
+		    }
+		    }
+		    }
+		    }
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Addr_1(1b)"
+	      SrcPort		      1
+	      Points		      [1303, 0; 0, 95]
+	      Branch {
+		DstBlock		"4_to_1_Bit_Multiplexer(Bit_7)"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 155]
+		Branch {
+		  DstBlock		  "4_to_1_Bit_Multiplexer(Bit_6)"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 160]
+		  Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_5)"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_4)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_3)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_2)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    Branch {
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_1)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 160]
+		    DstBlock		    "4_to_1_Bit_Multiplexer(Bit_0)"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    }
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_4)"
+	      SrcPort		      1
+	      Points		      [312, 0; 0, -415]
+	      DstBlock		      "Mux"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_5)"
+	      SrcPort		      1
+	      Points		      [292, 0; 0, -275]
+	      DstBlock		      "Mux"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_6)"
+	      SrcPort		      1
+	      Points		      [270, 0; 0, -135]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_7)"
+	      SrcPort		      1
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_3)"
+	      SrcPort		      1
+	      Points		      [332, 0; 0, -555]
+	      DstBlock		      "Mux"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_2)"
+	      SrcPort		      1
+	      Points		      [352, 0; 0, -695]
+	      DstBlock		      "Mux"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_1)"
+	      SrcPort		      1
+	      Points		      [373, 0; 0, -835]
+	      DstBlock		      "Mux"
+	      DstPort		      7
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Bit_Multiplexer(Bit_0)"
+	      SrcPort		      1
+	      Points		      [394, 0; 0, -975]
+	      DstBlock		      "Mux"
+	      DstPort		      8
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      8
+	      Points		      [1035, 0]
+	      DstBlock		      "Bit_0"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      8
+	      Points		      [1015, 0]
+	      DstBlock		      "Bit_0"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      8
+	      Points		      [995, 0]
+	      DstBlock		      "Bit_0"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      8
+	      Points		      [975, 0]
+	      DstBlock		      "Bit_0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      7
+	      Points		      [910, 0]
+	      DstBlock		      "Bit_1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      7
+	      Points		      [890, 0]
+	      DstBlock		      "Bit_1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      7
+	      Points		      [870, 0]
+	      DstBlock		      "Bit_1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      7
+	      Points		      [850, 0]
+	      DstBlock		      "Bit_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      6
+	      Points		      [780, 0]
+	      DstBlock		      "Bit_2"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      6
+	      Points		      [760, 0]
+	      DstBlock		      "Bit_2"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      6
+	      Points		      [740, 0]
+	      DstBlock		      "Bit_2"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      6
+	      Points		      [720, 0]
+	      DstBlock		      "Bit_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      5
+	      Points		      [650, 0]
+	      DstBlock		      "Bit_3"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      5
+	      Points		      [630, 0]
+	      DstBlock		      "Bit_3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      5
+	      Points		      [610, 0]
+	      DstBlock		      "Bit_3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      5
+	      Points		      [590, 0]
+	      DstBlock		      "Bit_3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      4
+	      Points		      [520, 0]
+	      DstBlock		      "Bit_4"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      4
+	      Points		      [500, 0]
+	      DstBlock		      "Bit_4"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      4
+	      Points		      [480, 0]
+	      DstBlock		      "Bit_4"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      4
+	      Points		      [460, 0]
+	      DstBlock		      "Bit_4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      3
+	      Points		      [390, 0]
+	      DstBlock		      "Bit_5"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      3
+	      Points		      [370, 0]
+	      DstBlock		      "Bit_5"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      3
+	      Points		      [350, 0]
+	      DstBlock		      "Bit_5"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      3
+	      Points		      [330, 0]
+	      DstBlock		      "Bit_5"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      2
+	      Points		      [260, 0]
+	      DstBlock		      "Bit_6"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      2
+	      Points		      [240, 0]
+	      DstBlock		      "Bit_6"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      2
+	      Points		      [220, 0]
+	      DstBlock		      "Bit_6"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      2
+	      Points		      [200, 0]
+	      DstBlock		      "Bit_6"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Byte_0"
+	      SrcPort		      1
+	      Points		      [130, 0]
+	      DstBlock		      "Bit_7"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_1"
+	      SrcPort		      1
+	      Points		      [110, 0]
+	      DstBlock		      "Bit_7"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Byte_2"
+	      SrcPort		      1
+	      Points		      [90, 0]
+	      DstBlock		      "Bit_7"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Byte_3"
+	      SrcPort		      1
+	      Points		      [70, 0]
+	      DstBlock		      "Bit_7"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integer to Bit\nConverter13"
+	      SrcPort		      1
+	      DstBlock		      "Byte_3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data_In_03(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Integer to Bit\nConverter13"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integer to Bit\nConverter14"
+	      SrcPort		      1
+	      DstBlock		      "Byte_2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data_In_02(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Integer to Bit\nConverter14"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integer to Bit\nConverter15"
+	      SrcPort		      1
+	      DstBlock		      "Byte_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data_In_01(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Integer to Bit\nConverter15"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Integer to Bit\nConverter16"
+	      SrcPort		      1
+	      DstBlock		      "Byte_0"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Data_In_00(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Integer to Bit\nConverter16"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_0)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_0)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_0)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_0)"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_1)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_1)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_1)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux1"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_1)"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_2)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_2)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_2)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux2"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_2)"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_3)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_3)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_3)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux3"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_3)"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux4"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_4)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux4"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_4)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux4"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_4)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux4"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_4)"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux5"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_5)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux5"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_5)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux5"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_5)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux5"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_5)"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux6"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_6)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux6"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_6)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux6"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_6)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux6"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_6)"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Demux7"
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_7)"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Demux7"
+	      SrcPort		      2
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_7)"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Demux7"
+	      SrcPort		      3
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_7)"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Demux7"
+	      SrcPort		      4
+	      DstBlock		      "4_to_1_Bit_Multiplexer(Bit_7)"
+	      DstPort		      6
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
 	  Name			  "8_to_1_Bit_Multiplexer"
 	  SID			  "695"
 	  Ports			  [11, 1]
-	  Position		  [85, 675, 180, 945]
+	  Position		  [470, 435, 570, 605]
 	  ZOrder		  363
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off

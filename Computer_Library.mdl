@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [992.0, 0.0, 928.0, 1080.0]
+      Location		      [343.0, 0.0, 1577.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[878.0, 914.0]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"1448"
+	Extents			[1527.0, 914.0]
 	ZoomFactor		[1.25]
-	Offset			[921.65278676325693, -14.355222004526299]
+	Offset			[-45.396158081688519, -121.53962691492455]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Nov 24 21:18:29 2018"
-  RTWModifiedTimeStamp	  464995000
-  ModelVersionFormat	  "1.%<AutoIncrement:281>"
+  LastModifiedDate	  "Sun Nov 25 15:05:02 2018"
+  RTWModifiedTimeStamp	  465058436
+  ModelVersionFormat	  "1.%<AutoIncrement:291>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -807,8 +807,8 @@ Library {
   }
   System {
     Name		    "Computer_Library"
-    Location		    [992, 0, 1920, 1080]
-    Open		    on
+    Location		    [343, 0, 1920, 1080]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -821,7 +821,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1678"
+    SIDHighWatermark	    "1680"
     Block {
       BlockType		      SubSystem
       Name		      "ALU"
@@ -4742,8 +4742,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Instruction_Pointer"
-	Location		[992, 0, 1920, 1080]
-	Open			off
+	Location		[343, 0, 1920, 1080]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4754,12 +4754,12 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Address_In(1B)"
 	  SID			  "1449"
-	  Position		  [20, 103, 50, 117]
+	  Position		  [20, 238, 50, 252]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -4767,7 +4767,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Set_Direct(1b)"
 	  SID			  "1450"
-	  Position		  [20, 173, 50, 187]
+	  Position		  [20, 168, 50, 182]
 	  ZOrder		  457
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -4776,7 +4776,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Increment(1b)"
 	  SID			  "1451"
-	  Position		  [20, 33, 50, 47]
+	  Position		  [20, 73, 50, 87]
 	  ZOrder		  456
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -4785,7 +4785,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Clock"
 	  SID			  "1452"
-	  Position		  [20, 243, 50, 257]
+	  Position		  [20, 308, 50, 322]
 	  ZOrder		  458
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -4795,10 +4795,10 @@ Library {
 	  Name			  "1_Byte_Adder"
 	  SID			  "1453"
 	  Ports			  [2, 2]
-	  Position		  [580, 63, 735, 107]
+	  Position		  [580, 103, 735, 147]
 	  ZOrder		  459
-	  LibraryVersion	  "1.275"
-	  SourceBlock		  "Computer_Library/Adders/1_Byte_Adder"
+	  LibraryVersion	  "1.26"
+	  SourceBlock		  "Common_Library/Adders/1_Byte_Adder"
 	  SourceType		  "SubSystem"
 	}
 	Block {
@@ -4806,27 +4806,39 @@ Library {
 	  Name			  "2_to_1_Byte_Multiplexer"
 	  SID			  "1454"
 	  Ports			  [3, 1]
-	  Position		  [890, 85, 1050, 145]
+	  Position		  [890, 125, 1050, 185]
 	  ZOrder		  475
-	  SourceBlock		  "Computer_Library/Multiplexers/2_to_1_Byte_Multiplexer"
+	  LibraryVersion	  "1.26"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Byte_Multiplexer1"
+	  SID			  "1680"
+	  Ports			  [3, 1]
+	  Position		  [130, 195, 290, 255]
+	  ZOrder		  479
+	  LibraryVersion	  "1.26"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
 	Block {
 	  BlockType		  Reference
 	  Name			  "Byte"
 	  SID			  "1455"
-	  Ports			  [3, 1]
-	  Position		  [350, 105, 520, 165]
+	  Ports			  [4, 1]
+	  Position		  [350, 142, 520, 203]
 	  ZOrder		  455
-	  LibraryVersion	  "1.275"
-	  SourceBlock		  "Computer_Library/Memory_Blocks/Byte"
+	  LibraryVersion	  "1.26"
+	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
 	  SourceType		  "SubSystem"
 	}
 	Block {
 	  BlockType		  Constant
 	  Name			  "Constant5"
 	  SID			  "1456"
-	  Position		  [480, 67, 500, 83]
+	  Position		  [520, 107, 540, 123]
 	  ZOrder		  473
 	  ShowName		  off
 	  OutDataTypeStr	  "uint8"
@@ -4836,7 +4848,7 @@ Library {
 	  Name			  "Logical\nOperator"
 	  SID			  "1457"
 	  Ports			  [2, 1]
-	  Position		  [140, 271, 170, 309]
+	  Position		  [130, 106, 160, 144]
 	  ZOrder		  476
 	  ShowName		  off
 	  Operator		  "NAND"
@@ -4849,7 +4861,7 @@ Library {
 	  Name			  "Logical\nOperator1"
 	  SID			  "1458"
 	  Ports			  [2, 1]
-	  Position		  [215, 171, 245, 209]
+	  Position		  [215, 146, 245, 184]
 	  ZOrder		  477
 	  ShowName		  off
 	  IconShape		  "distinctive"
@@ -4861,7 +4873,7 @@ Library {
 	  Name			  "Logical\nOperator2"
 	  SID			  "1459"
 	  Ports			  [2, 1]
-	  Position		  [215, 31, 245, 69]
+	  Position		  [215, 71, 245, 109]
 	  ZOrder		  478
 	  ShowName		  off
 	  IconShape		  "distinctive"
@@ -4872,7 +4884,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator"
 	  SID			  "1460"
-	  Position		  [780, 85, 800, 105]
+	  Position		  [780, 125, 800, 145]
 	  ZOrder		  474
 	  ShowName		  off
 	}
@@ -4880,14 +4892,14 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Address_Out(1B)"
 	  SID			  "1461"
-	  Position		  [1090, 108, 1120, 122]
+	  Position		  [1090, 148, 1120, 162]
 	  ZOrder		  -2
 	  IconDisplay		  "Port number"
 	}
 	Line {
 	  SrcBlock		  "Byte"
 	  SrcPort		  1
-	  Points		  [23, 0]
+	  Points		  [0, 0; 23, 0]
 	  Branch {
 	    DstBlock		    "2_to_1_Byte_Multiplexer"
 	    DstPort		    3
@@ -4901,13 +4913,16 @@ Library {
 	Line {
 	  SrcBlock		  "Address_In(1B)"
 	  SrcPort		  1
-	  DstBlock		  "Byte"
-	  DstPort		  1
+	  Points		  [24, 0; 0, -20]
+	  DstBlock		  "2_to_1_Byte_Multiplexer1"
+	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Clock"
 	  SrcPort		  1
-	  Points		  [242, 0; 0, -95; 48, 0]
+	  Points		  [259, 0; 0, -120]
+	  DstBlock		  "Byte"
+	  DstPort		  4
 	}
 	Line {
 	  SrcBlock		  "Constant5"
@@ -4924,8 +4939,16 @@ Library {
 	Line {
 	  SrcBlock		  "2_to_1_Byte_Multiplexer"
 	  SrcPort		  1
-	  DstBlock		  "Address_Out(1B)"
-	  DstPort		  1
+	  Points		  [7, 0]
+	  Branch {
+	    Points		    [0, 172; -955, 0; 0, -82]
+	    DstBlock		    "2_to_1_Byte_Multiplexer1"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Address_Out(1B)"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "1_Byte_Adder"
@@ -4937,13 +4960,13 @@ Library {
 	Line {
 	  SrcBlock		  "Increment(1b)"
 	  SrcPort		  1
-	  Points		  [57, 0]
+	  Points		  [35, 0]
 	  Branch {
 	    DstBlock		    "Logical\nOperator2"
 	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 240]
+	    Points		    [0, 35]
 	    DstBlock		    "Logical\nOperator"
 	    DstPort		    1
 	  }
@@ -4951,43 +4974,49 @@ Library {
 	Line {
 	  SrcBlock		  "Logical\nOperator"
 	  SrcPort		  1
-	  Points		  [19, 0; 0, -90]
+	  Points		  [29, 0]
 	  Branch {
-	    Points		    [0, -140]
+	    Points		    [0, -25]
 	    DstBlock		    "Logical\nOperator2"
 	    DstPort		    2
 	  }
 	  Branch {
+	    Points		    [0, 30]
 	    DstBlock		    "Logical\nOperator1"
-	    DstPort		    2
+	    DstPort		    1
 	  }
 	}
 	Line {
 	  SrcBlock		  "Set_Direct(1b)"
 	  SrcPort		  1
-	  Points		  [39, 0]
+	  Points		  [36, 0]
 	  Branch {
-	    DstBlock		    "Logical\nOperator1"
-	    DstPort		    1
+	    Points		    [0, -40]
+	    DstBlock		    "Logical\nOperator"
+	    DstPort		    2
 	  }
 	  Branch {
-	    Points		    [0, 120]
-	    DstBlock		    "Logical\nOperator"
+	    DstBlock		    "Logical\nOperator1"
 	    DstPort		    2
 	  }
 	}
 	Line {
 	  SrcBlock		  "Logical\nOperator1"
 	  SrcPort		  1
-	  Points		  [29, 0; 0, -50]
+	  Points		  [29, 0]
+	  Branch {
+	    Points		    [0, 25; -172, 0; 0, 15]
+	    DstBlock		    "2_to_1_Byte_Multiplexer1"
+	    DstPort		    1
+	  }
 	  Branch {
 	    DstBlock		    "Byte"
-	    DstPort		    3
+	    DstPort		    2
 	  }
 	  Branch {
 	    Points		    [0, -15]
 	    DstBlock		    "Byte"
-	    DstPort		    2
+	    DstPort		    1
 	  }
 	}
 	Line {
@@ -4997,10 +5026,24 @@ Library {
 	  DstBlock		  "2_to_1_Byte_Multiplexer"
 	  DstPort		  1
 	}
+	Line {
+	  SrcBlock		  "2_to_1_Byte_Multiplexer1"
+	  SrcPort		  1
+	  Points		  [7, 0; 0, -45]
+	  DstBlock		  "Byte"
+	  DstPort		  3
+	}
+	Annotation {
+	  SID			  "1679"
+	  Name			  "\nTreba dorobit: ked incrementujem adresu pomocou signalu \"Increment\", \ntak v registru zostane povodna"
+	  " neincrementovana hodnota. Treba \nvymysliet nejaky mechanizmus na automaticku incrementaciu.\n"
+	  Position		  [629, 18]
+	  DropShadow		  on
+	}
 	Annotation {
 	  SID			  "1462"
 	  Name			  "\n\"Set_Direct\" a \"Increment\"\nnesmu byt sucasne nastavene na 1\n"
-	  Position		  [156, 350]
+	  Position		  [161, 25]
 	  DropShadow		  on
 	  ZOrder		  -1
 	}
