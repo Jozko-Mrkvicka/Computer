@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.211"
+    ComputedModelVersion    "1.225"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 0.0, 1873.0, 1096.0]
+      Location		      [61.0, 0.0, 1542.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1823.0, 922.0]
+	Extents			[1492.0, 906.0]
 	ZoomFactor		[1.25]
-	Offset			[58.652532175315969, 823.73023069976284]
+	Offset			[336.42156886390916, 786.87072754158862]
       }
     }
   }
@@ -77,13 +77,13 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Nov 25 13:34:51 2018"
-  RTWModifiedTimeStamp	  465053686
-  ModelVersionFormat	  "1.%<AutoIncrement:211>"
+  LastModifiedDate	  "Sun Dec 02 13:56:50 2018"
+  RTWModifiedTimeStamp	  465659807
+  ModelVersionFormat	  "1.%<AutoIncrement:225>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
-  LibraryLinkDisplay	  "all"
+  LibraryLinkDisplay	  "user"
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
@@ -800,7 +800,7 @@ Model {
   }
   System {
     Name		    "Computer"
-    Location		    [55, 0, 1928, 1096]
+    Location		    [61, 0, 1603, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -814,7 +814,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4434"
+    SIDHighWatermark	    "4444"
     Block {
       BlockType		      Reference
       Name		      "16B_RAM_Memory"
@@ -822,7 +822,7 @@ Model {
       Ports		      [7, 1]
       Position		      [745, 1172, 915, 1278]
       ZOrder		      457
-      LibraryVersion	      "1.22"
+      LibraryVersion	      "1.32"
       SourceBlock	      "Common_Library/Memory_Blocks/16B_RAM_Memory"
       SourceType	      "SubSystem"
     }
@@ -830,10 +830,10 @@ Model {
       BlockType		      Reference
       Name		      "16B_ROM_Memory"
       SID		      "4419"
-      Ports		      [5, 1]
-      Position		      [745, 1318, 915, 1392]
+      Ports		      [4, 1]
+      Position		      [745, 1318, 915, 1377]
       ZOrder		      458
-      LibraryVersion	      "1.22"
+      LibraryVersion	      "1.32"
       SourceBlock	      "Common_Library/Memory_Blocks/16B_ROM_Memory"
       SourceType	      "SubSystem"
     }
@@ -844,19 +844,84 @@ Model {
       Ports		      [6, 1]
       Position		      [1055, 1133, 1215, 1257]
       ZOrder		      459
-      LibraryVersion	      "1.22"
+      LibraryVersion	      "1.32"
       SourceBlock	      "Common_Library/Multiplexers/4_to_1_Byte_Multiplexer"
       SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "ALU"
+      SID		      "4439"
+      Ports		      [3, 1]
+      Position		      [1155, 886, 1310, 934]
+      ZOrder		      478
+      LibraryVersion	      "1.298"
+      SourceBlock	      "Computer_Library/ALU"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Address"
+      SID		      "4438"
+      Position		      [370, 865, 400, 895]
+      ZOrder		      477
+      Value		      "0"
+      OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
       Name		      "Address_Bus"
       SID		      "980"
-      Position		      [190, 925, 220, 955]
+      Position		      [875, 805, 905, 835]
       ZOrder		      98
       Commented		      on
       Value		      "255"
       OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Byte"
+      SID		      "4440"
+      Ports		      [4, 1]
+      Position		      [930, 921, 1090, 984]
+      ZOrder		      479
+      LibraryVersion	      "1.32"
+      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Byte1"
+      SID		      "4443"
+      Ports		      [4, 1]
+      Position		      [930, 1006, 1090, 1069]
+      ZOrder		      482
+      LibraryVersion	      "1.32"
+      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Byte2"
+      SID		      "4444"
+      Ports		      [4, 1]
+      Position		      [1360, 871, 1520, 934]
+      ZOrder		      483
+      LibraryVersion	      "1.32"
+      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Clock"
+      SID		      "4436"
+      Ports		      [0, 1]
+      Position		      [365, 1031, 405, 1059]
+      ZOrder		      475
+      LibraryVersion	      "1.44"
+      SourceBlock	      "simulink_extras/Flip Flops/Clock"
+      SourceType	      "Digital clock"
+      period		      "2"
     }
     Block {
       BlockType		      Constant
@@ -866,6 +931,7 @@ Model {
       ZOrder		      465
       ShowName		      off
       Value		      "0"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Constant
@@ -875,6 +941,7 @@ Model {
       ZOrder		      466
       ShowName		      off
       Value		      "0"
+      OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
@@ -884,6 +951,7 @@ Model {
       ZOrder		      467
       ShowName		      off
       Value		      "0"
+      OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
@@ -893,6 +961,7 @@ Model {
       ZOrder		      468
       ShowName		      off
       Value		      "0"
+      OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
@@ -902,6 +971,7 @@ Model {
       ZOrder		      469
       ShowName		      off
       Value		      "0"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Constant
@@ -911,16 +981,18 @@ Model {
       ZOrder		      472
       ShowName		      off
       Value		      "0"
+      OutDataTypeStr	      "boolean"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Control_Bus"
-      SID		      "3679"
-      Position		      [190, 990, 220, 1020]
-      ZOrder		      141
-      Commented		      on
-      Value		      "0"
-      OutDataTypeStr	      "boolean"
+      BlockType		      Reference
+      Name		      "Control_Unit"
+      SID		      "4441"
+      Ports		      [1, 1]
+      Position		      [1205, 814, 1305, 856]
+      ZOrder		      480
+      LibraryVersion	      "1.298"
+      SourceBlock	      "Computer_Library/Control_Unit"
+      SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Demux
@@ -944,14 +1016,23 @@ Model {
       Lockdown		      off
     }
     Block {
+      BlockType		      Constant
+      Name		      "Increment"
+      SID		      "3679"
+      Position		      [370, 975, 400, 1005]
+      ZOrder		      141
+      Value		      "0"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
       BlockType		      Reference
-      Name		      "Instruction_Pointer"
-      SID		      "4434"
-      Ports		      [4, 1]
-      Position		      [190, 1110, 345, 1175]
-      ZOrder		      473
-      LibraryVersion	      "1.281"
-      SourceBlock	      "Computer_Library/Instruction_Pointer"
+      Name		      "Instruction_Decoder"
+      SID		      "4442"
+      Ports		      [1, 1]
+      Position		      [770, 924, 870, 966]
+      ZOrder		      481
+      LibraryVersion	      "1.298"
+      SourceBlock	      "Computer_Library/Instruction_Decoder"
       SourceType	      "SubSystem"
     }
     Block {
@@ -959,7 +1040,7 @@ Model {
       Name		      "Integer to Bit\nConverter"
       SID		      "4431"
       Ports		      [1, 1]
-      Position		      [390, 1298, 470, 1342]
+      Position		      [400, 1298, 480, 1342]
       ZOrder		      470
       ShowName		      off
       LibraryVersion	      "1.271"
@@ -969,6 +1050,26 @@ Model {
       signedInputValues	      "Unsigned"
       bitOrder		      "MSB first"
       outDtype		      "boolean"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Program_Counter"
+      SID		      "4435"
+      Ports		      [4, 1]
+      Position		      [530, 911, 690, 974]
+      ZOrder		      474
+      LibraryVersion	      "1.298"
+      SourceBlock	      "Computer_Library/Program_Counter"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Set_Direct"
+      SID		      "4437"
+      Position		      [370, 920, 400, 950]
+      ZOrder		      476
+      Value		      "0"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Terminator
@@ -995,14 +1096,16 @@ Model {
       ShowName		      off
     }
     Line {
-      SrcBlock		      "Control_Bus"
+      SrcBlock		      "Increment"
       SrcPort		      1
-      Points		      [-5, 0; 104, 0]
+      Points		      [29, 0; 0, -40]
+      DstBlock		      "Program_Counter"
+      DstPort		      3
     }
     Line {
       SrcBlock		      "16B_ROM_Memory"
       SrcPort		      1
-      Points		      [67, 0; 0, -110]
+      Points		      [67, 0; 0, -105]
       DstBlock		      "4_to_1_Byte_Multiplexer"
       DstPort		      6
     }
@@ -1069,9 +1172,9 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Instruction_Pointer"
+      SrcBlock		      "Program_Counter"
       SrcPort		      1
-      Points		      [14, 0; 0, 175]
+      Points		      [27, 0; 0, 171; -371, 0; 0, 204]
       DstBlock		      "Integer to Bit\nConverter"
       DstPort		      1
     }
@@ -1142,22 +1245,69 @@ Model {
     Line {
       SrcBlock		      "4_to_1_Byte_Multiplexer"
       SrcPort		      1
-      DstBlock		      "Display"
-      DstPort		      1
+      Points		      [18, 0]
+      Branch {
+	DstBlock		"Display"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -80; -505, 0; 0, -170]
+	DstBlock		"Instruction_Decoder"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Constant5"
       SrcPort		      1
-      Points		      [9, 0]
-      Branch {
-	Points			[0, 115]
-	DstBlock		"16B_ROM_Memory"
-	DstPort			5
-      }
-      Branch {
-	DstBlock		"16B_RAM_Memory"
-	DstPort			7
-      }
+      DstBlock		      "16B_RAM_Memory"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      Points		      [57, 0; 0, -80]
+      DstBlock		      "Program_Counter"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Set_Direct"
+      SrcPort		      1
+      DstBlock		      "Program_Counter"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Address"
+      SrcPort		      1
+      Points		      [68, 0; 0, 40]
+      DstBlock		      "Program_Counter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      1
+      Points		      [25, 0; 0, -50]
+      DstBlock		      "ALU"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Byte"
+      SrcPort		      1
+      Points		      [27, 0; 0, -45]
+      DstBlock		      "ALU"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Byte1"
+      SrcPort		      1
+      Points		      [43, 0; 0, -115]
+      DstBlock		      "ALU"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "ALU"
+      SrcPort		      1
+      DstBlock		      "Byte2"
+      DstPort		      3
     }
   }
 }
