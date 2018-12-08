@@ -1,3 +1,4 @@
+*.autosave
+*.mat
+Pokus/
 poznamky.txt
-Pokus/Pokus01_JK_Latch.mdl
-Pokus/Pokus02_3bit_Counter.mdl

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.81"
+    ComputedModelVersion    "1.87"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [294.0, 0.0, 1448.0, 1080.0]
+      Location		      [55.0, -8.0, 1873.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1398.0, 906.0]
-	ZoomFactor		[1.0]
-	Offset			[-116.06801158717612, 828.84145188653008]
+	Extents			[1823.0, 922.0]
+	ZoomFactor		[1.25]
+	Offset			[297.08587083856025, -16.882823835619249]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jun 03 18:43:19 2018"
-  RTWModifiedTimeStamp	  449952189
-  ModelVersionFormat	  "1.%<AutoIncrement:81>"
+  LastModifiedDate	  "Fri Dec 07 22:31:42 2018"
+  RTWModifiedTimeStamp	  466122693
+  ModelVersionFormat	  "1.%<AutoIncrement:87>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -820,7 +820,7 @@ Model {
   }
   System {
     Name		    "Test_Multiplexer"
-    Location		    [294, 0, 1742, 1080]
+    Location		    [55, -8, 1928, 1088]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -832,29 +832,29 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "350"
+    SIDHighWatermark	    "382"
     Block {
       BlockType		      Reference
       Name		      "16_to_1_Bit_Multiplexer"
       SID		      "98"
-      Ports		      [5, 1]
-      Position		      [765, 582, 885, 688]
+      Ports		      [20, 1]
+      Position		      [705, 463, 845, 762]
       ZOrder		      194
-      LibraryVersion	      "1.224"
-      SourceBlock	      "Computer_Library/Multiplexers/16_to_1_Bit_Multiplexer"
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/16_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Reference
       Name		      "16_to_1_Byte_Multiplexer"
       SID		      "302"
-      Ports		      [2, 1]
-      Position		      [745, 1631, 910, 1669]
+      Ports		      [20, 1]
+      Position		      [1455, 465, 1595, 770]
       ZOrder		      583
-      LibraryVersion	      "1.224"
-      SourceBlock	      "Computer_Library/Multiplexers/16_to_1_Byte_Multiplexer"
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/16_to_1_Byte_Multiplexer"
       SourceType	      "SubSystem"
     }
     Block {
@@ -862,8 +862,9 @@ Model {
       Name		      "256_to_1_Bit_Multiplexer"
       SID		      "102"
       Ports		      [2, 1]
-      Position		      [745, 841, 895, 879]
+      Position		      [700, 861, 850, 899]
       ZOrder		      394
+      Commented		      on
       LibraryVersion	      "1.224"
       SourceBlock	      "Computer_Library/Multiplexers/256_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
@@ -873,10 +874,33 @@ Model {
       Name		      "256_to_1_Byte_Multiplexer"
       SID		      "293"
       Ports		      [2, 1]
-      Position		      [760, 2461, 925, 2499]
+      Position		      [1840, 891, 2005, 929]
       ZOrder		      581
+      Commented		      on
       LibraryVersion	      "1.224"
       SourceBlock	      "Computer_Library/Multiplexers/256_to_1_Byte_Multiplexer"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "2_to_1_Bit_Multiplexer"
+      SID		      "354"
+      Ports		      [3, 1]
+      Position		      [705, 27, 845, 73]
+      ZOrder		      635
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "2_to_1_Byte_Multiplexer"
+      SID		      "355"
+      Ports		      [3, 1]
+      Position		      [1455, 27, 1595, 73]
+      ZOrder		      637
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
       SourceType	      "SubSystem"
     }
     Block {
@@ -884,10 +908,21 @@ Model {
       Name		      "4_to_1_Bit_Multiplexer"
       SID		      "301"
       Ports		      [6, 1]
-      Position		      [765, 22, 860, 163]
+      Position		      [705, 116, 845, 209]
       ZOrder		      582
-      LibraryVersion	      "1.224"
-      SourceBlock	      "Computer_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "4_to_1_Byte_Multiplexer"
+      SID		      "356"
+      Ports		      [6, 1]
+      Position		      [1455, 122, 1595, 213]
+      ZOrder		      636
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Byte_Multiplexer"
       SourceType	      "SubSystem"
     }
     Block {
@@ -895,37 +930,50 @@ Model {
       Name		      "8_to_1_Bit_Multiplexer"
       SID		      "105"
       Ports		      [11, 1]
-      Position		      [765, 240, 860, 510]
+      Position		      [705, 251, 845, 419]
       ZOrder		      395
-      LibraryVersion	      "1.224"
-      SourceBlock	      "Computer_Library/Multiplexers/8_to_1_Bit_Multiplexer"
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/8_to_1_Bit_Multiplexer"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "8_to_1_Byte_Multiplexer"
+      SID		      "357"
+      Ports		      [11, 1]
+      Position		      [1455, 256, 1595, 424]
+      ZOrder		      638
+      LibraryVersion	      "1.66"
+      SourceBlock	      "Common_Library/Multiplexers/8_to_1_Byte_Multiplexer"
       SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "46"
-      Position		      [360, 694, 505, 716]
+      Position		      [365, 636, 575, 654]
       ZOrder		      184
       ShowName		      off
       Value		      "[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "91"
-      Position		      [360, 612, 385, 638]
+      Position		      [360, 482, 385, 508]
       ZOrder		      187
       ShowName		      off
-      Value		      "15"
+      Value		      "14"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant10"
       SID		      "232"
-      Position		      [65, 999, 210, 1021]
+      Position		      [20, 1019, 165, 1041]
       ZOrder		      521
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -933,9 +981,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant11"
       SID		      "233"
-      Position		      [65, 1039, 210, 1061]
+      Position		      [20, 1059, 165, 1081]
       ZOrder		      522
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -943,9 +992,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant12"
       SID		      "234"
-      Position		      [65, 1079, 210, 1101]
+      Position		      [20, 1099, 165, 1121]
       ZOrder		      523
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -953,9 +1003,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant13"
       SID		      "235"
-      Position		      [65, 1119, 210, 1141]
+      Position		      [20, 1139, 165, 1161]
       ZOrder		      524
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -963,9 +1014,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant14"
       SID		      "236"
-      Position		      [65, 1159, 210, 1181]
+      Position		      [20, 1179, 165, 1201]
       ZOrder		      525
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -973,9 +1025,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant15"
       SID		      "237"
-      Position		      [65, 1199, 210, 1221]
+      Position		      [20, 1219, 165, 1241]
       ZOrder		      526
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -983,9 +1036,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant16"
       SID		      "238"
-      Position		      [65, 1279, 210, 1301]
+      Position		      [20, 1299, 165, 1321]
       ZOrder		      527
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -993,9 +1047,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant17"
       SID		      "239"
-      Position		      [65, 1239, 210, 1261]
+      Position		      [20, 1259, 165, 1281]
       ZOrder		      528
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1003,9 +1058,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant18"
       SID		      "240"
-      Position		      [65, 1359, 210, 1381]
+      Position		      [20, 1379, 165, 1401]
       ZOrder		      529
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1013,9 +1069,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant19"
       SID		      "241"
-      Position		      [65, 1319, 210, 1341]
+      Position		      [20, 1339, 165, 1361]
       ZOrder		      530
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1023,18 +1080,20 @@ Model {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "107"
-      Position		      [360, 404, 435, 426]
+      Position		      [360, 349, 445, 371]
       ZOrder		      399
       ShowName		      off
       Value		      "[1 1 0 0 1 0 0 0]"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant20"
       SID		      "242"
-      Position		      [65, 1399, 210, 1421]
+      Position		      [20, 1419, 165, 1441]
       ZOrder		      531
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1042,9 +1101,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant21"
       SID		      "243"
-      Position		      [65, 1439, 210, 1461]
+      Position		      [20, 1459, 165, 1481]
       ZOrder		      532
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1052,9 +1112,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant22"
       SID		      "244"
-      Position		      [65, 1479, 210, 1501]
+      Position		      [20, 1499, 165, 1521]
       ZOrder		      533
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1062,9 +1123,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant23"
       SID		      "245"
-      Position		      [65, 1519, 210, 1541]
+      Position		      [20, 1539, 165, 1561]
       ZOrder		      534
       ShowName		      off
+      Commented		      on
       Value		      "[1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1072,11 +1134,57 @@ Model {
       BlockType		      Constant
       Name		      "Constant24"
       SID		      "248"
-      Position		      [185, 1627, 210, 1653]
+      Position		      [1050, 487, 1075, 513]
       ZOrder		      537
       ShowName		      off
       Value		      "15"
       OutDataTypeStr	      "uint8"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant25"
+      SID		      "364"
+      Position		      [1050, 175, 1145, 195]
+      ZOrder		      649
+      ShowName		      off
+      Value		      "[117 111 109 255]"
+      OutDataTypeStr	      "uint8"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant26"
+      SID		      "365"
+      Position		      [1050, 127, 1075, 153]
+      ZOrder		      650
+      ShowName		      off
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant27"
+      SID		      "376"
+      Position		      [360, 27, 380, 43]
+      ZOrder		      657
+      ShowName		      off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant28"
+      SID		      "378"
+      Position		      [1050, 27, 1065, 43]
+      ZOrder		      659
+      ShowName		      off
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant29"
+      SID		      "380"
+      Position		      [360, 50, 395, 70]
+      ZOrder		      661
+      ShowName		      off
+      Value		      "[1 0]"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Constant
@@ -1085,203 +1193,65 @@ Model {
       Position		      [360, 262, 385, 288]
       ZOrder		      400
       ShowName		      off
-      Value		      "4"
+      Value		      "3"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant30"
+      SID		      "381"
+      Position		      [1050, 50, 1100, 70]
+      ZOrder		      662
+      ShowName		      off
+      Value		      "[255 12]"
+      OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant4"
       SID		      "114"
-      Position		      [360, 111, 400, 129]
+      Position		      [360, 170, 410, 190]
       ZOrder		      406
       ShowName		      off
       Value		      "[1 1 0 1]"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant41"
       SID		      "214"
-      Position		      [65, 919, 210, 941]
+      Position		      [20, 939, 165, 961]
       ZOrder		      503
       ShowName		      off
+      Commented		      on
       Value		      "[0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant42"
-      SID		      "252"
-      Position		      [185, 1687, 210, 1713]
-      ZOrder		      541
-      ShowName		      off
-      Value		      "66"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant43"
-      SID		      "253"
-      Position		      [185, 1727, 210, 1753]
-      ZOrder		      542
-      ShowName		      off
-      Value		      "151"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant44"
-      SID		      "254"
-      Position		      [185, 1767, 210, 1793]
-      ZOrder		      543
-      ShowName		      off
-      Value		      "17"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant45"
-      SID		      "255"
-      Position		      [185, 1807, 210, 1833]
-      ZOrder		      544
-      ShowName		      off
-      Value		      "19"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant46"
-      SID		      "256"
-      Position		      [185, 1847, 210, 1873]
-      ZOrder		      545
-      ShowName		      off
-      Value		      "105"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant47"
-      SID		      "257"
-      Position		      [185, 1887, 210, 1913]
-      ZOrder		      546
-      ShowName		      off
-      Value		      "104"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant48"
-      SID		      "258"
-      Position		      [185, 1927, 210, 1953]
-      ZOrder		      547
-      ShowName		      off
-      Value		      "22"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant49"
-      SID		      "259"
-      Position		      [185, 1967, 210, 1993]
-      ZOrder		      548
-      ShowName		      off
-      Value		      "205"
       OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant5"
       SID		      "115"
-      Position		      [360, 32, 385, 58]
+      Position		      [360, 122, 385, 148]
       ZOrder		      407
       ShowName		      off
-      Value		      "0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant50"
-      SID		      "260"
-      Position		      [185, 2007, 210, 2033]
-      ZOrder		      549
-      ShowName		      off
-      Value		      "202"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant51"
-      SID		      "261"
-      Position		      [185, 2087, 210, 2113]
-      ZOrder		      550
-      ShowName		      off
-      Value		      "198"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant52"
-      SID		      "262"
-      Position		      [185, 2127, 210, 2153]
-      ZOrder		      551
-      ShowName		      off
-      Value		      "12"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant53"
-      SID		      "263"
-      Position		      [185, 2167, 210, 2193]
-      ZOrder		      552
-      ShowName		      off
-      Value		      "200"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant54"
-      SID		      "264"
-      Position		      [185, 2207, 210, 2233]
-      ZOrder		      553
-      ShowName		      off
-      Value		      "100"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant55"
-      SID		      "265"
-      Position		      [185, 2247, 210, 2273]
-      ZOrder		      554
-      ShowName		      off
-      Value		      "255"
-      OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant56"
       SID		      "266"
-      Position		      [185, 2287, 210, 2313]
+      Position		      [1050, 638, 1360, 662]
       ZOrder		      555
       ShowName		      off
-      Value		      "0"
-      OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant57"
-      SID		      "267"
-      Position		      [185, 2047, 210, 2073]
-      ZOrder		      556
-      ShowName		      off
-      Value		      "171"
+      Value		      "[66 151 17 19 105 104 22 205 202 171 198 12 200 100 255 0]"
       OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant58"
       SID		      "272"
-      Position		      [20, 2542, 240, 2558]
+      Position		      [1130, 972, 1350, 988]
       ZOrder		      561
       ShowName		      off
+      Commented		      on
       Value		      "[  207   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1289,19 +1259,31 @@ Model {
       BlockType		      Constant
       Name		      "Constant59"
       SID		      "273"
-      Position		      [20, 2457, 45, 2483]
+      Position		      [1125, 887, 1150, 913]
       ZOrder		      562
       ShowName		      off
+      Commented		      on
       Value		      "15"
+      OutDataTypeStr	      "uint8"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant6"
+      SID		      "362"
+      Position		      [1050, 356, 1170, 374]
+      ZOrder		      643
+      ShowName		      off
+      Value		      "[3 7 9 11 15 17 19 21]"
       OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant60"
       SID		      "277"
-      Position		      [20, 2581, 230, 2599]
+      Position		      [1130, 1011, 1340, 1029]
       ZOrder		      566
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1309,9 +1291,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant61"
       SID		      "278"
-      Position		      [20, 2621, 230, 2639]
+      Position		      [1130, 1051, 1340, 1069]
       ZOrder		      567
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1319,9 +1302,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant62"
       SID		      "279"
-      Position		      [20, 2661, 230, 2679]
+      Position		      [1130, 1091, 1340, 1109]
       ZOrder		      568
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1329,9 +1313,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant63"
       SID		      "280"
-      Position		      [20, 2701, 230, 2719]
+      Position		      [1130, 1131, 1340, 1149]
       ZOrder		      569
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1339,9 +1324,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant64"
       SID		      "281"
-      Position		      [20, 2741, 230, 2759]
+      Position		      [1130, 1171, 1340, 1189]
       ZOrder		      570
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1349,9 +1335,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant65"
       SID		      "282"
-      Position		      [20, 2781, 230, 2799]
+      Position		      [1130, 1211, 1340, 1229]
       ZOrder		      571
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1359,9 +1346,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant66"
       SID		      "283"
-      Position		      [20, 2821, 230, 2839]
+      Position		      [1130, 1251, 1340, 1269]
       ZOrder		      572
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1369,9 +1357,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant67"
       SID		      "284"
-      Position		      [20, 2861, 230, 2879]
+      Position		      [1130, 1291, 1340, 1309]
       ZOrder		      573
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1379,9 +1368,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant68"
       SID		      "285"
-      Position		      [20, 2901, 230, 2919]
+      Position		      [1130, 1331, 1340, 1349]
       ZOrder		      574
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1389,19 +1379,30 @@ Model {
       BlockType		      Constant
       Name		      "Constant69"
       SID		      "286"
-      Position		      [20, 2941, 230, 2959]
+      Position		      [1130, 1371, 1340, 1389]
       ZOrder		      575
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
     Block {
       BlockType		      Constant
+      Name		      "Constant7"
+      SID		      "363"
+      Position		      [1050, 267, 1075, 293]
+      ZOrder		      644
+      ShowName		      off
+      Value		      "4"
+    }
+    Block {
+      BlockType		      Constant
       Name		      "Constant70"
       SID		      "287"
-      Position		      [20, 2981, 230, 2999]
+      Position		      [1130, 1411, 1340, 1429]
       ZOrder		      576
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1409,9 +1410,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant71"
       SID		      "288"
-      Position		      [20, 3021, 230, 3039]
+      Position		      [1130, 1451, 1340, 1469]
       ZOrder		      577
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1419,9 +1421,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant72"
       SID		      "289"
-      Position		      [20, 3061, 230, 3079]
+      Position		      [1130, 1491, 1340, 1509]
       ZOrder		      578
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1429,9 +1432,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant73"
       SID		      "290"
-      Position		      [20, 3101, 230, 3119]
+      Position		      [1130, 1531, 1340, 1549]
       ZOrder		      579
       ShowName		      off
+      Commented		      on
       Value		      "[  0   0   0   0   0   0   0   0   0   0   0   0   0   0   0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1439,9 +1443,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant74"
       SID		      "291"
-      Position		      [20, 3142, 280, 3158]
+      Position		      [1130, 1572, 1390, 1588]
       ZOrder		      580
       ShowName		      off
+      Commented		      on
       Value		      "[113   0   0   0   0   0   0   0   0   0   0   0   0   0   0 255]"
       OutDataTypeStr	      "uint8"
     }
@@ -1449,9 +1454,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant8"
       SID		      "131"
-      Position		      [65, 837, 90, 863]
+      Position		      [20, 857, 45, 883]
       ZOrder		      420
       ShowName		      off
+      Commented		      on
       Value		      "254"
       OutDataTypeStr	      "uint8"
     }
@@ -1459,9 +1465,10 @@ Model {
       BlockType		      Constant
       Name		      "Constant9"
       SID		      "231"
-      Position		      [65, 959, 210, 981]
+      Position		      [20, 979, 165, 1001]
       ZOrder		      520
       ShowName		      off
+      Commented		      on
       Value		      "[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]"
       OutDataTypeStr	      "uint8"
     }
@@ -1470,9 +1477,63 @@ Model {
       Name		      "Demux1"
       SID		      "96"
       Ports		      [1, 4]
-      Position		      [655, 586, 670, 664]
+      Position		      [655, 465, 670, 520]
       ZOrder		      192
       ShowName		      off
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux10"
+      SID		      "367"
+      Ports		      [1, 8]
+      Position		      [1410, 307, 1425, 418]
+      ZOrder		      648
+      ShowName		      off
+      Outputs		      "8"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux11"
+      SID		      "368"
+      Ports		      [1, 2]
+      Position		      [1410, 123, 1425, 152]
+      ZOrder		      651
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux12"
+      SID		      "369"
+      Ports		      [1, 4]
+      Position		      [1410, 155, 1425, 210]
+      ZOrder		      654
+      ShowName		      off
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux13"
+      SID		      "374"
+      Ports		      [1, 2]
+      Position		      [655, 43, 670, 72]
+      ZOrder		      655
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux14"
+      SID		      "375"
+      Ports		      [1, 2]
+      Position		      [1410, 43, 1425, 72]
+      ZOrder		      656
+      ShowName		      off
+      Outputs		      "2"
       DisplayOption	      "bar"
     }
     Block {
@@ -1480,7 +1541,7 @@ Model {
       Name		      "Demux2"
       SID		      "109"
       Ports		      [1, 3]
-      Position		      [655, 238, 670, 312]
+      Position		      [655, 254, 670, 296]
       ZOrder		      401
       ShowName		      off
       Outputs		      "3"
@@ -1491,7 +1552,7 @@ Model {
       Name		      "Demux3"
       SID		      "112"
       Ports		      [1, 8]
-      Position		      [655, 320, 670, 505]
+      Position		      [655, 302, 670, 413]
       ZOrder		      404
       ShowName		      off
       Outputs		      "8"
@@ -1502,7 +1563,7 @@ Model {
       Name		      "Demux4"
       SID		      "116"
       Ports		      [1, 2]
-      Position		      [655, 19, 670, 66]
+      Position		      [655, 118, 670, 147]
       ZOrder		      408
       ShowName		      off
       Outputs		      "2"
@@ -1513,9 +1574,52 @@ Model {
       Name		      "Demux5"
       SID		      "117"
       Ports		      [1, 4]
-      Position		      [655, 71, 670, 164]
+      Position		      [655, 150, 670, 205]
       ZOrder		      411
       ShowName		      off
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux6"
+      SID		      "351"
+      Ports		      [1, 16]
+      Position		      [655, 526, 670, 759]
+      ZOrder		      632
+      ShowName		      off
+      Outputs		      "16"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux7"
+      SID		      "352"
+      Ports		      [1, 16]
+      Position		      [1410, 531, 1425, 764]
+      ZOrder		      633
+      ShowName		      off
+      Outputs		      "16"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux8"
+      SID		      "353"
+      Ports		      [1, 4]
+      Position		      [1410, 470, 1425, 525]
+      ZOrder		      634
+      ShowName		      off
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux9"
+      SID		      "366"
+      Ports		      [1, 3]
+      Position		      [1410, 259, 1425, 301]
+      ZOrder		      645
+      ShowName		      off
+      Outputs		      "3"
       DisplayOption	      "bar"
     }
     Block {
@@ -1523,7 +1627,7 @@ Model {
       Name		      "Display"
       SID		      "92"
       Ports		      [1]
-      Position		      [975, 625, 1035, 645]
+      Position		      [905, 602, 965, 628]
       ZOrder		      188
       ShowName		      off
       Decimation	      "1"
@@ -1534,7 +1638,7 @@ Model {
       Name		      "Display1"
       SID		      "113"
       Ports		      [1]
-      Position		      [975, 365, 1035, 385]
+      Position		      [905, 322, 965, 348]
       ZOrder		      405
       ShowName		      off
       Decimation	      "1"
@@ -1545,8 +1649,19 @@ Model {
       Name		      "Display2"
       SID		      "350"
       Ports		      [1]
-      Position		      [975, 85, 1035, 105]
+      Position		      [905, 152, 965, 178]
       ZOrder		      631
+      ShowName		      off
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display3"
+      SID		      "358"
+      Ports		      [1]
+      Position		      [905, 37, 965, 63]
+      ZOrder		      639
       ShowName		      off
       Decimation	      "1"
       Lockdown		      off
@@ -1556,9 +1671,10 @@ Model {
       Name		      "Display4"
       SID		      "132"
       Ports		      [1]
-      Position		      [960, 847, 1010, 873]
+      Position		      [915, 867, 965, 893]
       ZOrder		      421
       ShowName		      off
+      Commented		      on
       Decimation	      "1"
       Lockdown		      off
     }
@@ -1567,7 +1683,7 @@ Model {
       Name		      "Display5"
       SID		      "246"
       Ports		      [1]
-      Position		      [960, 1638, 1035, 1662]
+      Position		      [1650, 608, 1710, 632]
       ZOrder		      535
       ShowName		      off
       Decimation	      "1"
@@ -1578,8 +1694,42 @@ Model {
       Name		      "Display6"
       SID		      "271"
       Ports		      [1]
-      Position		      [985, 2468, 1050, 2492]
+      Position		      [2095, 898, 2160, 922]
       ZOrder		      559
+      ShowName		      off
+      Commented		      on
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display7"
+      SID		      "359"
+      Ports		      [1]
+      Position		      [1650, 37, 1710, 63]
+      ZOrder		      640
+      ShowName		      off
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display8"
+      SID		      "360"
+      Ports		      [1]
+      Position		      [1650, 157, 1710, 183]
+      ZOrder		      641
+      ShowName		      off
+      Decimation	      "1"
+      Lockdown		      off
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display9"
+      SID		      "361"
+      Ports		      [1]
+      Position		      [1650, 327, 1710, 353]
+      ZOrder		      642
       ShowName		      off
       Decimation	      "1"
       Lockdown		      off
@@ -1598,14 +1748,14 @@ Model {
       nbits		      "3"
       signedInputValues	      "Unsigned"
       bitOrder		      "MSB first"
-      outDtype		      "uint8"
+      outDtype		      "boolean"
     }
     Block {
       BlockType		      Reference
       Name		      "Integer to Bit\nConverter2"
       SID		      "99"
       Ports		      [1, 1]
-      Position		      [530, 603, 610, 647]
+      Position		      [530, 473, 610, 517]
       ZOrder		      388
       ShowName		      off
       LibraryVersion	      "1.271"
@@ -1614,14 +1764,14 @@ Model {
       nbits		      "4"
       signedInputValues	      "Unsigned"
       bitOrder		      "MSB first"
-      outDtype		      "int8"
+      outDtype		      "boolean"
     }
     Block {
       BlockType		      Reference
       Name		      "Integer to Bit\nConverter3"
       SID		      "118"
       Ports		      [1, 1]
-      Position		      [530, 23, 610, 67]
+      Position		      [530, 113, 610, 157]
       ZOrder		      409
       ShowName		      off
       LibraryVersion	      "1.271"
@@ -1637,9 +1787,10 @@ Model {
       Name		      "Integer to Bit\nConverter4"
       SID		      "134"
       Ports		      [1, 1]
-      Position		      [375, 828, 455, 872]
+      Position		      [330, 848, 410, 892]
       ZOrder		      423
       ShowName		      off
+      Commented		      on
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
@@ -1653,7 +1804,7 @@ Model {
       Name		      "Integer to Bit\nConverter5"
       SID		      "249"
       Ports		      [1, 1]
-      Position		      [465, 1618, 545, 1662]
+      Position		      [1265, 478, 1345, 522]
       ZOrder		      538
       ShowName		      off
       LibraryVersion	      "1.271"
@@ -1665,24 +1816,46 @@ Model {
       outDtype		      "boolean"
     }
     Block {
+      BlockType		      Reference
+      Name		      "Integer to Bit\nConverter6"
+      SID		      "370"
+      Ports		      [1, 1]
+      Position		      [1265, 258, 1345, 302]
+      ZOrder		      646
+      ShowName		      off
+      LibraryVersion	      "1.271"
+      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+      SourceType	      "Integer to Bit Converter"
+      nbits		      "3"
+      signedInputValues	      "Unsigned"
+      bitOrder		      "MSB first"
+      outDtype		      "boolean"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Integer to Bit\nConverter7"
+      SID		      "371"
+      Ports		      [1, 1]
+      Position		      [1265, 118, 1345, 162]
+      ZOrder		      652
+      ShowName		      off
+      LibraryVersion	      "1.271"
+      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+      SourceType	      "Integer to Bit Converter"
+      nbits		      "2"
+      signedInputValues	      "Unsigned"
+      bitOrder		      "MSB first"
+      outDtype		      "boolean"
+    }
+    Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "138"
       Ports		      [16, 1]
-      Position		      [615, 919, 630, 1241]
+      Position		      [570, 939, 585, 1261]
       ZOrder		      427
       ShowName		      off
-      Inputs		      "16"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux2"
-      SID		      "251"
-      Ports		      [16, 1]
-      Position		      [615, 1689, 630, 2011]
-      ZOrder		      540
-      ShowName		      off
+      Commented		      on
       Inputs		      "16"
       DisplayOption	      "bar"
     }
@@ -1691,9 +1864,10 @@ Model {
       Name		      "Mux3"
       SID		      "276"
       Ports		      [16, 1]
-      Position		      [635, 2539, 650, 2861]
+      Position		      [1745, 969, 1760, 1291]
       ZOrder		      565
       ShowName		      off
+      Commented		      on
       Inputs		      "16"
       DisplayOption	      "bar"
     }
@@ -1711,10 +1885,22 @@ Model {
     }
     Block {
       BlockType		      Saturate
+      Name		      "Saturation10"
+      SID		      "379"
+      Ports		      [1, 1]
+      Position		      [1165, 20, 1195, 50]
+      ZOrder		      660
+      ShowName		      off
+      InputPortMap	      "u0"
+      UpperLimit	      "1"
+      LowerLimit	      "0"
+    }
+    Block {
+      BlockType		      Saturate
       Name		      "Saturation2"
       SID		      "119"
       Ports		      [1, 1]
-      Position		      [440, 30, 470, 60]
+      Position		      [440, 120, 470, 150]
       ZOrder		      410
       ShowName		      off
       InputPortMap	      "u0"
@@ -1726,7 +1912,7 @@ Model {
       Name		      "Saturation3"
       SID		      "100"
       Ports		      [1, 1]
-      Position		      [440, 610, 470, 640]
+      Position		      [440, 480, 470, 510]
       ZOrder		      392
       ShowName		      off
       InputPortMap	      "u0"
@@ -1735,12 +1921,25 @@ Model {
     }
     Block {
       BlockType		      Saturate
+      Name		      "Saturation4"
+      SID		      "372"
+      Ports		      [1, 1]
+      Position		      [1165, 265, 1195, 295]
+      ZOrder		      647
+      ShowName		      off
+      InputPortMap	      "u0"
+      UpperLimit	      "7"
+      LowerLimit	      "0"
+    }
+    Block {
+      BlockType		      Saturate
       Name		      "Saturation5"
       SID		      "247"
       Ports		      [1, 1]
-      Position		      [215, 835, 245, 865]
+      Position		      [170, 855, 200, 885]
       ZOrder		      536
       ShowName		      off
+      Commented		      on
       InputPortMap	      "u0"
       UpperLimit	      "255"
       LowerLimit	      "0"
@@ -1750,7 +1949,7 @@ Model {
       Name		      "Saturation6"
       SID		      "250"
       Ports		      [1, 1]
-      Position		      [335, 1625, 365, 1655]
+      Position		      [1165, 485, 1195, 515]
       ZOrder		      539
       ShowName		      off
       InputPortMap	      "u0"
@@ -1762,19 +1961,43 @@ Model {
       Name		      "Saturation7"
       SID		      "275"
       Ports		      [1, 1]
-      Position		      [180, 2455, 210, 2485]
+      Position		      [1260, 885, 1290, 915]
       ZOrder		      564
       ShowName		      off
+      Commented		      on
       InputPortMap	      "u0"
       UpperLimit	      "255"
+      LowerLimit	      "0"
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Saturation8"
+      SID		      "373"
+      Ports		      [1, 1]
+      Position		      [1165, 125, 1195, 155]
+      ZOrder		      653
+      ShowName		      off
+      InputPortMap	      "u0"
+      UpperLimit	      "3"
+      LowerLimit	      "0"
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Saturation9"
+      SID		      "377"
+      Ports		      [1, 1]
+      Position		      [440, 20, 470, 50]
+      ZOrder		      658
+      ShowName		      off
+      InputPortMap	      "u0"
+      UpperLimit	      "1"
       LowerLimit	      "0"
     }
     Line {
       SrcBlock		      "Constant"
       SrcPort		      1
-      Points		      [228, 0; 0, -30]
-      DstBlock		      "16_to_1_Bit_Multiplexer"
-      DstPort		      5
+      DstBlock		      "Demux6"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Demux1"
@@ -2131,126 +2354,20 @@ Model {
     Line {
       SrcBlock		      "Integer to Bit\nConverter5"
       SrcPort		      1
-      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstBlock		      "Demux8"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant42"
-      SrcPort		      1
-      DstBlock		      "Mux2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant43"
-      SrcPort		      1
-      Points		      [33, 0; 0, -20]
-      DstBlock		      "Mux2"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Constant44"
-      SrcPort		      1
-      Points		      [54, 0; 0, -40]
-      DstBlock		      "Mux2"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Constant45"
-      SrcPort		      1
-      Points		      [75, 0; 0, -60]
-      DstBlock		      "Mux2"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Constant46"
-      SrcPort		      1
-      Points		      [98, 0; 0, -80]
-      DstBlock		      "Mux2"
-      DstPort		      5
     }
     Line {
       SrcBlock		      "Constant56"
       SrcPort		      1
-      Points		      [338, 0; 0, -300]
-      DstBlock		      "Mux2"
-      DstPort		      16
+      DstBlock		      "Demux7"
+      DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant55"
+      SrcBlock		      "Demux7"
       SrcPort		      1
-      Points		      [317, 0; 0, -280]
-      DstBlock		      "Mux2"
-      DstPort		      15
-    }
-    Line {
-      SrcBlock		      "Constant54"
-      SrcPort		      1
-      Points		      [296, 0; 0, -260]
-      DstBlock		      "Mux2"
-      DstPort		      14
-    }
-    Line {
-      SrcBlock		      "Constant53"
-      SrcPort		      1
-      Points		      [275, 0; 0, -240]
-      DstBlock		      "Mux2"
-      DstPort		      13
-    }
-    Line {
-      SrcBlock		      "Constant52"
-      SrcPort		      1
-      Points		      [253, 0; 0, -220]
-      DstBlock		      "Mux2"
-      DstPort		      12
-    }
-    Line {
-      SrcBlock		      "Constant51"
-      SrcPort		      1
-      Points		      [231, 0; 0, -200]
-      DstBlock		      "Mux2"
-      DstPort		      11
-    }
-    Line {
-      SrcBlock		      "Constant57"
-      SrcPort		      1
-      Points		      [210, 0; 0, -180]
-      DstBlock		      "Mux2"
-      DstPort		      10
-    }
-    Line {
-      SrcBlock		      "Constant50"
-      SrcPort		      1
-      Points		      [188, 0; 0, -160]
-      DstBlock		      "Mux2"
-      DstPort		      9
-    }
-    Line {
-      SrcBlock		      "Constant49"
-      SrcPort		      1
-      Points		      [165, 0; 0, -140]
-      DstBlock		      "Mux2"
-      DstPort		      8
-    }
-    Line {
-      SrcBlock		      "Constant48"
-      SrcPort		      1
-      Points		      [142, 0; 0, -120]
-      DstBlock		      "Mux2"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Constant47"
-      SrcPort		      1
-      Points		      [120, 0; 0, -100]
-      DstBlock		      "Mux2"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Mux2"
-      SrcPort		      1
-      Points		      [46, 0; 0, -190]
       DstBlock		      "16_to_1_Byte_Multiplexer"
-      DstPort		      2
+      DstPort		      5
     }
     Line {
       SrcBlock		      "16_to_1_Byte_Multiplexer"
@@ -2404,6 +2521,450 @@ Model {
       SrcBlock		      "4_to_1_Bit_Multiplexer"
       SrcPort		      1
       DstBlock		      "Display2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      1
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      2
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      3
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      4
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      5
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      6
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      10
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      7
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      8
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      12
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      9
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      13
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      10
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      14
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      11
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      15
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      12
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      16
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      13
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      17
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      14
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      18
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      15
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      19
+    }
+    Line {
+      SrcBlock		      "Demux6"
+      SrcPort		      16
+      DstBlock		      "16_to_1_Bit_Multiplexer"
+      DstPort		      20
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      2
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      3
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      4
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      5
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      6
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      10
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      7
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      8
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      12
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      9
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      13
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      10
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      14
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      11
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      15
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      12
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      16
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      13
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      17
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      14
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      18
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      15
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      19
+    }
+    Line {
+      SrcBlock		      "Demux7"
+      SrcPort		      16
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      20
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      1
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      3
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      2
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux8"
+      SrcPort		      4
+      DstBlock		      "16_to_1_Byte_Multiplexer"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "2_to_1_Bit_Multiplexer"
+      SrcPort		      1
+      DstBlock		      "Display3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "2_to_1_Byte_Multiplexer"
+      SrcPort		      1
+      DstBlock		      "Display7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "4_to_1_Byte_Multiplexer"
+      SrcPort		      1
+      DstBlock		      "Display8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "8_to_1_Byte_Multiplexer"
+      SrcPort		      1
+      DstBlock		      "Display9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "Demux10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux9"
+      SrcPort		      1
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux9"
+      SrcPort		      2
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux9"
+      SrcPort		      3
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Integer to Bit\nConverter6"
+      SrcPort		      1
+      DstBlock		      "Demux9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant7"
+      SrcPort		      1
+      DstBlock		      "Saturation4"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Saturation4"
+      SrcPort		      1
+      DstBlock		      "Integer to Bit\nConverter6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      1
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      2
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      3
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      4
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      7
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      5
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      8
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      6
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      9
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      7
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      10
+    }
+    Line {
+      SrcBlock		      "Demux10"
+      SrcPort		      8
+      DstBlock		      "8_to_1_Byte_Multiplexer"
+      DstPort		      11
+    }
+    Line {
+      SrcBlock		      "Constant25"
+      SrcPort		      1
+      DstBlock		      "Demux12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux11"
+      SrcPort		      2
+      DstBlock		      "4_to_1_Byte_Multiplexer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Integer to Bit\nConverter7"
+      SrcPort		      1
+      DstBlock		      "Demux11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant26"
+      SrcPort		      1
+      DstBlock		      "Saturation8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Saturation8"
+      SrcPort		      1
+      DstBlock		      "Integer to Bit\nConverter7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux12"
+      SrcPort		      1
+      DstBlock		      "4_to_1_Byte_Multiplexer"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux12"
+      SrcPort		      2
+      DstBlock		      "4_to_1_Byte_Multiplexer"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Demux12"
+      SrcPort		      3
+      DstBlock		      "4_to_1_Byte_Multiplexer"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "Demux12"
+      SrcPort		      4
+      DstBlock		      "4_to_1_Byte_Multiplexer"
+      DstPort		      6
+    }
+    Line {
+      SrcBlock		      "Demux11"
+      SrcPort		      1
+      DstBlock		      "4_to_1_Byte_Multiplexer"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant27"
+      SrcPort		      1
+      DstBlock		      "Saturation9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Saturation9"
+      SrcPort		      1
+      DstBlock		      "2_to_1_Bit_Multiplexer"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Constant28"
+      SrcPort		      1
+      DstBlock		      "Saturation10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Saturation10"
+      SrcPort		      1
+      DstBlock		      "2_to_1_Byte_Multiplexer"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux13"
+      SrcPort		      2
+      DstBlock		      "2_to_1_Bit_Multiplexer"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux13"
+      SrcPort		      1
+      DstBlock		      "2_to_1_Bit_Multiplexer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant29"
+      SrcPort		      1
+      DstBlock		      "Demux13"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux14"
+      SrcPort		      1
+      DstBlock		      "2_to_1_Byte_Multiplexer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux14"
+      SrcPort		      2
+      DstBlock		      "2_to_1_Byte_Multiplexer"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant30"
+      SrcPort		      1
+      DstBlock		      "Demux14"
       DstPort		      1
     }
   }

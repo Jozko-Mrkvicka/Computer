@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, -8.0, 1873.0, 1096.0]
+      Location		      [55.0, 0.0, 1873.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"558"
+	LoadSaveID		"2395"
 	Extents			[1823.0, 930.0]
 	ZoomFactor		[1.25]
-	Offset			[-46.6258941407537, 327.29970108988493]
+	Offset			[556.21200257401472, 759.5771429722198]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Dec 03 22:06:59 2018"
-  RTWModifiedTimeStamp	  465775614
-  ModelVersionFormat	  "1.%<AutoIncrement:61>"
+  LastModifiedDate	  "Sat Dec 08 17:15:43 2018"
+  RTWModifiedTimeStamp	  466190140
+  ModelVersionFormat	  "1.%<AutoIncrement:69>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -810,7 +810,7 @@ Library {
   }
   System {
     Name		    "Common_Library"
-    Location		    [55, -8, 1928, 1088]
+    Location		    [55, 0, 1928, 1096]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -824,7 +824,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2881"
+    SIDHighWatermark	    "2882"
     Block {
       BlockType		      SubSystem
       Name		      "Adders"
@@ -841,7 +841,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Adders"
-	Location		[63, 0, 991, 1080]
+	Location		[55, 0, 1928, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -870,7 +870,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "1_Bit_Adder"
-	    Location		    [648, 0, 1911, 1080]
+	    Location		    [55, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1309,7 +1309,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "1_Byte_Adder"
-	    Location		    [271, 0, 1920, 1080]
+	    Location		    [55, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1346,7 +1346,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 1011, 995, 1059]
 	      ZOrder		      371
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1356,7 +1357,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 901, 995, 949]
 	      ZOrder		      370
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1366,7 +1368,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 791, 995, 839]
 	      ZOrder		      369
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1376,7 +1379,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 681, 995, 729]
 	      ZOrder		      368
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1386,7 +1390,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 571, 995, 619]
 	      ZOrder		      366
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1396,7 +1401,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 461, 995, 509]
 	      ZOrder		      365
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1406,7 +1412,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 351, 995, 399]
 	      ZOrder		      364
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1416,7 +1423,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [860, 241, 995, 289]
 	      ZOrder		      363
-	      SourceBlock	      "Computer_Library/Adders/1_Bit_Adder"
+	      LibraryVersion	      "1.67"
+	      SourceBlock	      "Common_Library/Adders/1_Bit_Adder"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -1813,7 +1821,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Comparators"
-	Location		[63, 0, 991, 1080]
+	Location		[55, 0, 1928, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3362,7 +3370,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Decoders"
-	Location		[296, 90, 1332, 1099]
+	Location		[55, 0, 1928, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3380,7 +3388,7 @@ Library {
 	  Name			  "2_to_4_Decoder"
 	  SID			  "94"
 	  Ports			  [2, 4]
-	  Position		  [95, 322, 190, 398]
+	  Position		  [45, 337, 190, 398]
 	  ZOrder		  359
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -3392,7 +3400,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "2_to_4_Decoder"
-	    Location		    [62, 0, 1477, 1080]
+	    Location		    [55, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3404,21 +3412,21 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_0"
-	      SID		      "95"
-	      Position		      [255, 1103, 285, 1117]
-	      ZOrder		      28
+	      Name		      "Address_1(1b)"
+	      SID		      "96"
+	      Position		      [255, 1053, 285, 1067]
+	      ZOrder		      27
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_1"
-	      SID		      "96"
-	      Position		      [255, 1053, 285, 1067]
-	      ZOrder		      27
+	      Name		      "Address_0(1b)"
+	      SID		      "95"
+	      Position		      [255, 1103, 285, 1117]
+	      ZOrder		      28
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -3498,41 +3506,41 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_0"
-	      SID		      "103"
-	      Position		      [775, 1268, 805, 1282]
-	      ZOrder		      42
+	      Name		      "Select_3(1b)"
+	      SID		      "106"
+	      Position		      [775, 1108, 805, 1122]
+	      ZOrder		      39
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_1"
-	      SID		      "104"
-	      Position		      [775, 1218, 805, 1232]
-	      ZOrder		      41
+	      Name		      "Select_2(1b)"
+	      SID		      "105"
+	      Position		      [775, 1163, 805, 1177]
+	      ZOrder		      40
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_2"
-	      SID		      "105"
-	      Position		      [775, 1163, 805, 1177]
-	      ZOrder		      40
+	      Name		      "Select_1(1b)"
+	      SID		      "104"
+	      Position		      [775, 1218, 805, 1232]
+	      ZOrder		      41
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_3"
-	      SID		      "106"
-	      Position		      [775, 1108, 805, 1122]
-	      ZOrder		      39
+	      Name		      "Select_0(1b)"
+	      SID		      "103"
+	      Position		      [775, 1268, 805, 1282]
+	      ZOrder		      42
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "In_0"
+	      SrcBlock		      "Address_0(1b)"
 	      SrcPort		      1
 	      Points		      [41, 0]
 	      Branch {
@@ -3582,7 +3590,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_1"
+	      SrcBlock		      "Address_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0]
 	      Branch {
@@ -3606,25 +3614,25 @@ Library {
 	    Line {
 	      SrcBlock		      "Logical\nOperator17"
 	      SrcPort		      1
-	      DstBlock		      "Out_0"
+	      DstBlock		      "Select_0(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator16"
 	      SrcPort		      1
-	      DstBlock		      "Out_1"
+	      DstBlock		      "Select_1(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator15"
 	      SrcPort		      1
-	      DstBlock		      "Out_2"
+	      DstBlock		      "Select_2(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator14"
 	      SrcPort		      1
-	      DstBlock		      "Out_3"
+	      DstBlock		      "Select_3(1b)"
 	      DstPort		      1
 	    }
 	  }
@@ -17453,7 +17461,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Memory_Blocks"
-	Location		[55, -8, 1928, 1088]
+	Location		[55, 0, 1928, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -17482,7 +17490,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "16B_RAM_Memory"
-	    Location		    [55, -8, 1928, 1088]
+	    Location		    [55, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -17556,6 +17564,7 @@ Library {
 	      ZOrder		      470
 	      Port		      "7"
 	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "double"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -17564,7 +17573,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [1745, 20, 1915, 420]
 	      ZOrder		      474
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Multiplexers/16_to_1_Byte_Multiplexer"
 	      SourceType	      "SubSystem"
 	    }
@@ -17575,7 +17584,7 @@ Library {
 	      Ports		      [4, 16]
 	      Position		      [335, 107, 430, 423]
 	      ZOrder		      358
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Decoders/4_to_16_Decoder"
 	      SourceType	      "SubSystem"
 	    }
@@ -17586,7 +17595,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1381, 1195, 1444]
 	      ZOrder		      454
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17597,7 +17606,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1296, 1195, 1359]
 	      ZOrder		      455
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17608,7 +17617,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 531, 1195, 594]
 	      ZOrder		      464
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17619,7 +17628,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 446, 1195, 509]
 	      ZOrder		      465
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17630,7 +17639,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 361, 1195, 424]
 	      ZOrder		      466
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17641,7 +17650,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 276, 1195, 339]
 	      ZOrder		      467
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17652,7 +17661,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 191, 1195, 254]
 	      ZOrder		      468
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17663,7 +17672,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 106, 1195, 169]
 	      ZOrder		      469
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17674,7 +17683,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1211, 1195, 1274]
 	      ZOrder		      456
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17685,7 +17694,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1126, 1195, 1189]
 	      ZOrder		      457
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17696,7 +17705,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 1041, 1195, 1104]
 	      ZOrder		      458
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17707,7 +17716,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 956, 1195, 1019]
 	      ZOrder		      459
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17718,7 +17727,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 871, 1195, 934]
 	      ZOrder		      460
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17729,7 +17738,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 786, 1195, 849]
 	      ZOrder		      461
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17740,7 +17749,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 701, 1195, 764]
 	      ZOrder		      462
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -17751,7 +17760,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1035, 616, 1195, 679]
 	      ZOrder		      463
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Byte"
 	      SourceType	      "SubSystem"
 	    }
@@ -18402,8 +18411,8 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "16B_ROM_Memory"
-	    Location		    [315, 0, 1791, 1080]
-	    Open		    off
+	    Location		    [55, 0, 1928, 1096]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -18414,7 +18423,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr_3(1b)"
@@ -18457,7 +18466,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [1745, 245, 1915, 645]
 	      ZOrder		      474
-	      LibraryVersion	      "1.32"
+	      LibraryVersion	      "1.68"
 	      SourceBlock	      "Common_Library/Multiplexers/16_to_1_Byte_Multiplexer"
 	      SourceType	      "SubSystem"
 	    }
@@ -18467,6 +18476,7 @@ Library {
 	      SID		      "2601"
 	      Position		      [1165, 1285, 1195, 1315]
 	      ZOrder		      492
+	      Value		      "ADD"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
@@ -18475,7 +18485,7 @@ Library {
 	      SID		      "2600"
 	      Position		      [1165, 1220, 1195, 1250]
 	      ZOrder		      491
-	      Value		      "5"
+	      Value		      "15"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
@@ -18484,7 +18494,7 @@ Library {
 	      SID		      "2599"
 	      Position		      [1165, 1155, 1195, 1185]
 	      ZOrder		      490
-	      Value		      "4"
+	      Value		      "17"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
@@ -18775,7 +18785,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Bit"
-	    Location		    [315, 0, 1791, 1080]
+	    Location		    [55, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -18815,7 +18825,7 @@ Library {
 	      ZOrder		      473
 	      Port		      "3"
 	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "boolean"
+	      OutDataTypeStr	      "double"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -18964,7 +18974,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Byte"
-	    Location		    [315, 0, 1791, 1080]
+	    Location		    [55, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -19011,6 +19021,7 @@ Library {
 	      ZOrder		      455
 	      Port		      "4"
 	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "double"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -19036,7 +19047,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 761, 765, 809]
 	      ZOrder		      456
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19047,7 +19058,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 696, 765, 744]
 	      ZOrder		      457
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19058,7 +19069,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 631, 765, 679]
 	      ZOrder		      458
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19069,7 +19080,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 566, 765, 614]
 	      ZOrder		      459
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19080,7 +19091,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 501, 765, 549]
 	      ZOrder		      460
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19091,7 +19102,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 436, 765, 484]
 	      ZOrder		      461
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19102,7 +19113,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 371, 765, 419]
 	      ZOrder		      462
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19113,7 +19124,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [605, 306, 765, 354]
 	      ZOrder		      463
-	      LibraryVersion	      "1.27"
+	      LibraryVersion	      "1.65"
 	      SourceBlock	      "Common_Library/Memory_Blocks/Bit"
 	      SourceType	      "SubSystem"
 	    }
@@ -19454,8 +19465,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Multiplexers"
-	Location		[55, -8, 1928, 1088]
-	Open			on
+	Location		[55, 0, 1928, 1096]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
