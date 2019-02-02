@@ -1,4 +1,4 @@
-% include instruction definitions
+% include  instruction definitions
 Instructions
 
 Time =            [  0,   1,   2,   3,   4];

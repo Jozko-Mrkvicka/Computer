@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 0.0, 1873.0, 1096.0]
+      Location		      [57.0, -8.0, 1871.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"2395"
-	Extents			[1823.0, 930.0]
+	LoadSaveID		"375"
+	Extents			[1821.0, 930.0]
 	ZoomFactor		[1.25]
-	Offset			[556.21200257401472, 759.5771429722198]
+	Offset			[244.40191215964944, 325.95342676937662]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Dec 08 17:15:43 2018"
-  RTWModifiedTimeStamp	  466190140
-  ModelVersionFormat	  "1.%<AutoIncrement:69>"
+  LastModifiedDate	  "Sat Feb 02 19:03:58 2019"
+  RTWModifiedTimeStamp	  471035036
+  ModelVersionFormat	  "1.%<AutoIncrement:88>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -810,7 +810,7 @@ Library {
   }
   System {
     Name		    "Common_Library"
-    Location		    [55, 0, 1928, 1096]
+    Location		    [57, -8, 1928, 1088]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1821,7 +1821,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Comparators"
-	Location		[55, 0, 1928, 1096]
+	Location		[57, 0, 1137, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2762,7 +2762,7 @@ Library {
 	  Name			  "1_Byte_Comparator"
 	  SID			  "70"
 	  Ports			  [2, 3]
-	  Position		  [70, 144, 220, 186]
+	  Position		  [70, 141, 220, 189]
 	  ZOrder		  430
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -2773,7 +2773,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "1_Byte_Comparator"
-	    Location		    [63, 0, 1326, 1080]
+	    Location		    [57, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2810,7 +2810,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [685, 453, 835, 527]
 	      ZOrder		      428
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -2820,7 +2821,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [905, 413, 1055, 487]
 	      ZOrder		      429
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -2830,7 +2832,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1125, 373, 1275, 447]
 	      ZOrder		      430
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -2840,7 +2843,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1350, 333, 1500, 407]
 	      ZOrder		      431
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -2850,7 +2854,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1580, 293, 1730, 367]
 	      ZOrder		      432
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -2860,7 +2865,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1805, 253, 1955, 327]
 	      ZOrder		      433
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -2870,7 +2876,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2040, 213, 2190, 287]
 	      ZOrder		      434
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -2880,7 +2887,8 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2270, 173, 2420, 247]
 	      ZOrder		      435
-	      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+	      LibraryVersion	      "1.75"
+	      SourceBlock	      "Common_Library/Comparators/1_Bit_Comparator"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -3370,7 +3378,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Decoders"
-	Location		[55, 0, 1928, 1096]
+	Location		[57, -8, 1928, 1088]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3642,7 +3650,7 @@ Library {
 	  Name			  "3_to_8_Decoder"
 	  SID			  "107"
 	  Ports			  [3, 8]
-	  Position		  [95, 440, 190, 590]
+	  Position		  [45, 427, 190, 548]
 	  ZOrder		  358
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -3654,7 +3662,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "3_to_8_Decoder"
-	    Location		    [62, 0, 1477, 1080]
+	    Location		    [57, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3669,15 +3677,15 @@ Library {
 	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_0"
-	      SID		      "108"
-	      Position		      [50, 893, 80, 907]
-	      ZOrder		      28
+	      Name		      "Address_2(1b)\n"
+	      SID		      "110"
+	      Position		      [50, 773, 80, 787]
+	      ZOrder		      1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_1"
+	      Name		      "Address_1(1b)"
 	      SID		      "109"
 	      Position		      [50, 833, 80, 847]
 	      ZOrder		      27
@@ -3686,10 +3694,10 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_2\n"
-	      SID		      "110"
-	      Position		      [50, 773, 80, 787]
-	      ZOrder		      1
+	      Name		      "Address_0(1b)"
+	      SID		      "108"
+	      Position		      [50, 893, 80, 907]
+	      ZOrder		      28
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
@@ -3838,77 +3846,77 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_0"
-	      SID		      "122"
-	      Position		      [775, 1268, 805, 1282]
-	      ZOrder		      42
+	      Name		      "Select_7(1b)"
+	      SID		      "129"
+	      Position		      [775, 883, 805, 897]
+	      ZOrder		      35
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_1"
-	      SID		      "123"
-	      Position		      [775, 1213, 805, 1227]
-	      ZOrder		      41
+	      Name		      "Select_6(1b)"
+	      SID		      "128"
+	      Position		      [775, 938, 805, 952]
+	      ZOrder		      36
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_2"
-	      SID		      "124"
-	      Position		      [775, 1158, 805, 1172]
-	      ZOrder		      40
+	      Name		      "Select_5(1b)"
+	      SID		      "127"
+	      Position		      [775, 993, 805, 1007]
+	      ZOrder		      37
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_3"
-	      SID		      "125"
-	      Position		      [775, 1103, 805, 1117]
-	      ZOrder		      39
+	      Name		      "Select_4(1b)"
+	      SID		      "126"
+	      Position		      [775, 1048, 805, 1062]
+	      ZOrder		      38
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_4"
-	      SID		      "126"
-	      Position		      [775, 1048, 805, 1062]
-	      ZOrder		      38
+	      Name		      "Select_3(1b)"
+	      SID		      "125"
+	      Position		      [775, 1103, 805, 1117]
+	      ZOrder		      39
 	      Port		      "5"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_5"
-	      SID		      "127"
-	      Position		      [775, 993, 805, 1007]
-	      ZOrder		      37
+	      Name		      "Select_2(1b)"
+	      SID		      "124"
+	      Position		      [775, 1158, 805, 1172]
+	      ZOrder		      40
 	      Port		      "6"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_6"
-	      SID		      "128"
-	      Position		      [775, 938, 805, 952]
-	      ZOrder		      36
+	      Name		      "Select_1(1b)"
+	      SID		      "123"
+	      Position		      [775, 1213, 805, 1227]
+	      ZOrder		      41
 	      Port		      "7"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_7"
-	      SID		      "129"
-	      Position		      [775, 883, 805, 897]
-	      ZOrder		      35
+	      Name		      "Select_0(1b)"
+	      SID		      "122"
+	      Position		      [775, 1268, 805, 1282]
+	      ZOrder		      42
 	      Port		      "8"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "In_0"
+	      SrcBlock		      "Address_0(1b)"
 	      SrcPort		      1
 	      Points		      [35, 0]
 	      Branch {
@@ -4028,7 +4036,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_1"
+	      SrcBlock		      "Address_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0; 0, 1]
 	      Branch {
@@ -4064,7 +4072,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_2\n"
+	      SrcBlock		      "Address_2(1b)\n"
 	      SrcPort		      1
 	      Points		      [36, 0; 0, 1]
 	      Branch {
@@ -4102,49 +4110,49 @@ Library {
 	    Line {
 	      SrcBlock		      "Logical\nOperator17"
 	      SrcPort		      1
-	      DstBlock		      "Out_0"
+	      DstBlock		      "Select_0(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator16"
 	      SrcPort		      1
-	      DstBlock		      "Out_1"
+	      DstBlock		      "Select_1(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator15"
 	      SrcPort		      1
-	      DstBlock		      "Out_2"
+	      DstBlock		      "Select_2(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator14"
 	      SrcPort		      1
-	      DstBlock		      "Out_3"
+	      DstBlock		      "Select_3(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator13"
 	      SrcPort		      1
-	      DstBlock		      "Out_4"
+	      DstBlock		      "Select_4(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator12"
 	      SrcPort		      1
-	      DstBlock		      "Out_5"
+	      DstBlock		      "Select_5(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator11"
 	      SrcPort		      1
-	      DstBlock		      "Out_6"
+	      DstBlock		      "Select_6(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator10"
 	      SrcPort		      1
-	      DstBlock		      "Out_7"
+	      DstBlock		      "Select_7(1b)"
 	      DstPort		      1
 	    }
 	  }
@@ -4155,7 +4163,7 @@ Library {
 	  SID			  "130"
 	  RequirementInfo	  "{} %GIDa_0eac4206_ee83_4851_a053_5bf277ce373a"
 	  Ports			  [4, 16]
-	  Position		  [95, 627, 190, 943]
+	  Position		  [45, 577, 185, 818]
 	  ZOrder		  357
 	  TreatAsAtomicUnit	  on
 	  MinAlgLoopOccurrences	  off
@@ -4167,7 +4175,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "4_to_16_Decoder"
-	    Location		    [448, 0, 1920, 1080]
+	    Location		    [57, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4179,10 +4187,10 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_3"
+	      Name		      "Address_3(1b)"
 	      SID		      "131"
 	      Position		      [20, 258, 50, 272]
 	      ZOrder		      -1
@@ -4190,7 +4198,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_2\n"
+	      Name		      "Address_2(1b)\n"
 	      SID		      "132"
 	      Position		      [20, 323, 50, 337]
 	      ZOrder		      1
@@ -4199,7 +4207,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_1"
+	      Name		      "Address_1(1b)"
 	      SID		      "133"
 	      Position		      [20, 393, 50, 407]
 	      ZOrder		      27
@@ -4208,7 +4216,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_0"
+	      Name		      "Address_0(1b)"
 	      SID		      "134"
 	      Position		      [20, 458, 50, 472]
 	      ZOrder		      28
@@ -4477,7 +4485,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_15"
+	      Name		      "Select_15(1b)"
 	      SID		      "155"
 	      Position		      [845, 443, 875, 457]
 	      ZOrder		      -2
@@ -4485,7 +4493,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_14"
+	      Name		      "Select_14(1b)"
 	      SID		      "156"
 	      Position		      [845, 498, 875, 512]
 	      ZOrder		      3
@@ -4494,7 +4502,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_13"
+	      Name		      "Select_13(1b)"
 	      SID		      "157"
 	      Position		      [845, 553, 875, 567]
 	      ZOrder		      4
@@ -4503,7 +4511,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_12"
+	      Name		      "Select_12(1b)"
 	      SID		      "158"
 	      Position		      [845, 608, 875, 622]
 	      ZOrder		      5
@@ -4512,7 +4520,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_11"
+	      Name		      "Select_11(1b)"
 	      SID		      "159"
 	      Position		      [845, 663, 875, 677]
 	      ZOrder		      31
@@ -4521,7 +4529,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_10"
+	      Name		      "Select_10(1b)"
 	      SID		      "160"
 	      Position		      [845, 718, 875, 732]
 	      ZOrder		      32
@@ -4530,7 +4538,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_09"
+	      Name		      "Select_09(1b)"
 	      SID		      "161"
 	      Position		      [845, 773, 875, 787]
 	      ZOrder		      33
@@ -4539,7 +4547,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_08"
+	      Name		      "Select_08(1b)"
 	      SID		      "162"
 	      Position		      [845, 828, 875, 842]
 	      ZOrder		      34
@@ -4548,7 +4556,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_07"
+	      Name		      "Select_07(1b)"
 	      SID		      "163"
 	      Position		      [845, 883, 875, 897]
 	      ZOrder		      35
@@ -4557,7 +4565,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_06"
+	      Name		      "Select_06(1b)"
 	      SID		      "164"
 	      Position		      [845, 938, 875, 952]
 	      ZOrder		      36
@@ -4566,7 +4574,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_05"
+	      Name		      "Select_05(1b)"
 	      SID		      "165"
 	      Position		      [845, 993, 875, 1007]
 	      ZOrder		      37
@@ -4575,7 +4583,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_04"
+	      Name		      "Select_04(1b)"
 	      SID		      "166"
 	      Position		      [845, 1048, 875, 1062]
 	      ZOrder		      38
@@ -4584,7 +4592,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_03"
+	      Name		      "Select_03(1b)"
 	      SID		      "167"
 	      Position		      [845, 1103, 875, 1117]
 	      ZOrder		      39
@@ -4593,7 +4601,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_02"
+	      Name		      "Select_02(1b)"
 	      SID		      "168"
 	      Position		      [845, 1158, 875, 1172]
 	      ZOrder		      40
@@ -4602,7 +4610,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_01"
+	      Name		      "Select_01(1b)"
 	      SID		      "169"
 	      Position		      [845, 1213, 875, 1227]
 	      ZOrder		      41
@@ -4611,7 +4619,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_00"
+	      Name		      "Select_00(1b)"
 	      SID		      "170"
 	      Position		      [845, 1268, 875, 1282]
 	      ZOrder		      42
@@ -4675,7 +4683,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_0"
+	      SrcBlock		      "Address_0(1b)"
 	      SrcPort		      1
 	      Points		      [35, 0]
 	      Branch {
@@ -4851,7 +4859,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_3"
+	      SrcBlock		      "Address_3(1b)"
 	      SrcPort		      1
 	      Points		      [36, 0]
 	      Branch {
@@ -4915,7 +4923,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_1"
+	      SrcBlock		      "Address_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0]
 	      Branch {
@@ -4979,7 +4987,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_2\n"
+	      SrcBlock		      "Address_2(1b)\n"
 	      SrcPort		      1
 	      Points		      [36, 0]
 	      Branch {
@@ -5101,97 +5109,97 @@ Library {
 	    Line {
 	      SrcBlock		      "Logical\nOperator17"
 	      SrcPort		      1
-	      DstBlock		      "Out_00"
+	      DstBlock		      "Select_00(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator16"
 	      SrcPort		      1
-	      DstBlock		      "Out_01"
+	      DstBlock		      "Select_01(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator15"
 	      SrcPort		      1
-	      DstBlock		      "Out_02"
+	      DstBlock		      "Select_02(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator14"
 	      SrcPort		      1
-	      DstBlock		      "Out_03"
+	      DstBlock		      "Select_03(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator13"
 	      SrcPort		      1
-	      DstBlock		      "Out_04"
+	      DstBlock		      "Select_04(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator12"
 	      SrcPort		      1
-	      DstBlock		      "Out_05"
+	      DstBlock		      "Select_05(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator11"
 	      SrcPort		      1
-	      DstBlock		      "Out_06"
+	      DstBlock		      "Select_06(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator10"
 	      SrcPort		      1
-	      DstBlock		      "Out_07"
+	      DstBlock		      "Select_07(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator9"
 	      SrcPort		      1
-	      DstBlock		      "Out_08"
+	      DstBlock		      "Select_08(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator8"
 	      SrcPort		      1
-	      DstBlock		      "Out_09"
+	      DstBlock		      "Select_09(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator7"
 	      SrcPort		      1
-	      DstBlock		      "Out_10"
+	      DstBlock		      "Select_10(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator6"
 	      SrcPort		      1
-	      DstBlock		      "Out_11"
+	      DstBlock		      "Select_11(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator1"
 	      SrcPort		      1
-	      DstBlock		      "Out_14"
+	      DstBlock		      "Select_14(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator2"
 	      SrcPort		      1
-	      DstBlock		      "Out_13"
+	      DstBlock		      "Select_13(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator3"
 	      SrcPort		      1
-	      DstBlock		      "Out_12"
+	      DstBlock		      "Select_12(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
-	      DstBlock		      "Out_15"
+	      DstBlock		      "Select_15(1b)"
 	      DstPort		      1
 	    }
 	  }
@@ -5201,8 +5209,9 @@ Library {
 	  Name			  "__8_to_256_Decoder__"
 	  SID			  "171"
 	  Ports			  [1, 1]
-	  Position		  [95, 1019, 245, 1061]
+	  Position		  [45, 849, 185, 891]
 	  ZOrder		  361
+	  Commented		  on
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
 	  RTWSystemCode		  "Auto"
@@ -7906,7 +7915,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Demultiplexers"
-	Location		[55, -8, 1928, 1088]
+	Location		[57, -8, 1928, 1088]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -16455,8 +16464,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Encoders"
-	Location		[55, -8, 1928, 1088]
-	Open			off
+	Location		[57, -8, 1928, 1088]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -16999,7 +17008,7 @@ Library {
 	  Name			  "4_to_2_Encoder"
 	  SID			  "402"
 	  Ports			  [4, 2]
-	  Position		  [610, 412, 705, 488]
+	  Position		  [610, 427, 770, 488]
 	  ZOrder		  359
 	  MinAlgLoopOccurrences	  off
 	  PropExecContextOutsideSubsystem off
@@ -17010,7 +17019,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "4_to_2_Encoder"
-	    Location		    [55, -8, 1928, 1088]
+	    Location		    [57, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -17025,7 +17034,7 @@ Library {
 	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_0"
+	      Name		      "Select_3(1b)"
 	      SID		      "403"
 	      Position		      [20, 23, 50, 37]
 	      ZOrder		      -1
@@ -17033,7 +17042,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_1\n"
+	      Name		      "Select_2(1b)\n"
 	      SID		      "404"
 	      Position		      [20, 63, 50, 77]
 	      ZOrder		      4
@@ -17042,7 +17051,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_2"
+	      Name		      "Select_1(1b)"
 	      SID		      "405"
 	      Position		      [20, 103, 50, 117]
 	      ZOrder		      5
@@ -17051,7 +17060,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "In_3"
+	      Name		      "Select_0(1b)"
 	      SID		      "406"
 	      Position		      [20, 143, 50, 157]
 	      ZOrder		      6
@@ -17094,7 +17103,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_0"
+	      Name		      "Address_Out_1(1b)"
 	      SID		      "410"
 	      Position		      [360, 138, 390, 152]
 	      ZOrder		      -2
@@ -17102,7 +17111,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Out_1"
+	      Name		      "Address_Out_0(1b)"
 	      SID		      "411"
 	      Position		      [360, 173, 390, 187]
 	      ZOrder		      1
@@ -17110,13 +17119,13 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      SrcBlock		      "In_0"
+	      SrcBlock		      "Select_3(1b)"
 	      SrcPort		      1
 	      DstBlock		      "Terminator"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "In_3"
+	      SrcBlock		      "Select_0(1b)"
 	      SrcPort		      1
 	      Points		      [137, 0]
 	      Branch {
@@ -17130,14 +17139,14 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "In_2"
+	      SrcBlock		      "Select_1(1b)"
 	      SrcPort		      1
 	      Points		      [155, 0; 0, 65]
 	      DstBlock		      "Logical\nOperator1"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "In_1\n"
+	      SrcBlock		      "Select_2(1b)\n"
 	      SrcPort		      1
 	      Points		      [172, 0; 0, 70]
 	      DstBlock		      "Logical\nOperator"
@@ -17146,20 +17155,20 @@ Library {
 	    Line {
 	      SrcBlock		      "Logical\nOperator1"
 	      SrcPort		      1
-	      DstBlock		      "Out_1"
+	      DstBlock		      "Address_Out_0(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
-	      DstBlock		      "Out_0"
+	      DstBlock		      "Address_Out_1(1b)"
 	      DstPort		      1
 	    }
 	  }
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "8_to_3_Encoder1"
+	  Name			  "8_to_3_Encoder"
 	  SID			  "412"
 	  Ports			  [8, 3]
 	  Position		  [610, 530, 705, 680]
@@ -17172,7 +17181,7 @@ Library {
 	  RequestExecContextInheritance	off
 	  MaskHideContents	  off
 	  System {
-	    Name		    "8_to_3_Encoder1"
+	    Name		    "8_to_3_Encoder"
 	    Location		    [372, 0, 1611, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -17461,7 +17470,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Memory_Blocks"
-	Location		[55, 0, 1928, 1096]
+	Location		[57, 0, 1137, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -18411,8 +18420,8 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "16B_ROM_Memory"
-	    Location		    [55, 0, 1928, 1096]
-	    Open		    on
+	    Location		    [57, 0, 1137, 1080]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -18423,12 +18432,12 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr_3(1b)"
 	      SID		      "2396"
-	      Position		      [1165, 93, 1195, 107]
+	      Position		      [1165, 133, 1195, 147]
 	      ZOrder		      202
 	      IconDisplay	      "Port number"
 	    }
@@ -18436,7 +18445,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Addr_2(1b)"
 	      SID		      "2397"
-	      Position		      [1165, 138, 1195, 152]
+	      Position		      [1165, 178, 1195, 192]
 	      ZOrder		      471
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -18445,7 +18454,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Addr_1(1b)"
 	      SID		      "2398"
-	      Position		      [1165, 183, 1195, 197]
+	      Position		      [1165, 223, 1195, 237]
 	      ZOrder		      472
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -18454,7 +18463,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Addr_0(1b)"
 	      SID		      "2399"
-	      Position		      [1165, 228, 1195, 242]
+	      Position		      [1165, 268, 1195, 282]
 	      ZOrder		      473
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -18466,7 +18475,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [1745, 245, 1915, 645]
 	      ZOrder		      474
-	      LibraryVersion	      "1.68"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Common_Library/Multiplexers/16_to_1_Byte_Multiplexer"
 	      SourceType	      "SubSystem"
 	    }
@@ -18474,144 +18483,160 @@ Library {
 	      BlockType		      Constant
 	      Name		      "Byte_00"
 	      SID		      "2601"
-	      Position		      [1165, 1285, 1195, 1315]
+	      Position		      [1140, 770, 1220, 800]
 	      ZOrder		      492
-	      Value		      "ADD"
+	      ShowName		      off
+	      Value		      "address_0x00"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_01"
 	      SID		      "2600"
-	      Position		      [1165, 1220, 1195, 1250]
+	      Position		      [1140, 740, 1220, 770]
 	      ZOrder		      491
-	      Value		      "15"
+	      ShowName		      off
+	      Value		      "address_0x01"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_02"
 	      SID		      "2599"
-	      Position		      [1165, 1155, 1195, 1185]
+	      Position		      [1140, 710, 1220, 740]
 	      ZOrder		      490
-	      Value		      "17"
+	      ShowName		      off
+	      Value		      "address_0x02"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_03"
 	      SID		      "2598"
-	      Position		      [1165, 1090, 1195, 1120]
+	      Position		      [1140, 680, 1220, 710]
 	      ZOrder		      489
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x03"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_04"
 	      SID		      "2597"
-	      Position		      [1165, 1025, 1195, 1055]
+	      Position		      [1140, 650, 1220, 680]
 	      ZOrder		      488
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x04"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_05"
 	      SID		      "2596"
-	      Position		      [1165, 960, 1195, 990]
+	      Position		      [1140, 620, 1220, 650]
 	      ZOrder		      487
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x05"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_06"
 	      SID		      "2595"
-	      Position		      [1165, 895, 1195, 925]
+	      Position		      [1140, 590, 1220, 620]
 	      ZOrder		      486
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x06"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_07"
 	      SID		      "2594"
-	      Position		      [1165, 830, 1195, 860]
+	      Position		      [1140, 560, 1220, 590]
 	      ZOrder		      485
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x07"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_08"
 	      SID		      "2593"
-	      Position		      [1165, 765, 1195, 795]
+	      Position		      [1140, 530, 1220, 560]
 	      ZOrder		      484
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x08"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_09"
 	      SID		      "2592"
-	      Position		      [1165, 700, 1195, 730]
+	      Position		      [1140, 500, 1220, 530]
 	      ZOrder		      483
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x09"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_10"
 	      SID		      "2591"
-	      Position		      [1165, 635, 1195, 665]
+	      Position		      [1140, 470, 1220, 500]
 	      ZOrder		      482
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x0A"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_11"
 	      SID		      "2590"
-	      Position		      [1165, 570, 1195, 600]
+	      Position		      [1140, 440, 1220, 470]
 	      ZOrder		      481
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x0B"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_12"
 	      SID		      "2589"
-	      Position		      [1165, 505, 1195, 535]
+	      Position		      [1140, 410, 1220, 440]
 	      ZOrder		      480
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x0C"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_13"
 	      SID		      "2588"
-	      Position		      [1165, 440, 1195, 470]
+	      Position		      [1140, 380, 1220, 410]
 	      ZOrder		      479
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x0D"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_14"
 	      SID		      "2587"
-	      Position		      [1165, 380, 1195, 410]
+	      Position		      [1140, 350, 1220, 380]
 	      ZOrder		      478
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x0E"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
 	      BlockType		      Constant
 	      Name		      "Byte_15"
 	      SID		      "2586"
-	      Position		      [1165, 320, 1195, 350]
+	      Position		      [1140, 320, 1220, 350]
 	      ZOrder		      477
-	      Value		      "0"
+	      ShowName		      off
+	      Value		      "address_0x0F"
 	      OutDataTypeStr	      "uint8"
 	    }
 	    Block {
@@ -18631,105 +18656,105 @@ Library {
 	    Line {
 	      SrcBlock		      "Byte_00"
 	      SrcPort		      1
-	      Points		      [497, 0; 0, -665]
+	      Points		      [472, 0; 0, -150]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      20
 	    }
 	    Line {
 	      SrcBlock		      "Byte_01"
 	      SrcPort		      1
-	      Points		      [461, 0; 0, -620]
+	      Points		      [436, 0; 0, -140]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      19
 	    }
 	    Line {
 	      SrcBlock		      "Byte_02"
 	      SrcPort		      1
-	      Points		      [431, 0; 0, -575]
+	      Points		      [406, 0; 0, -130]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      18
 	    }
 	    Line {
 	      SrcBlock		      "Byte_03"
 	      SrcPort		      1
-	      Points		      [403, 0; 0, -530]
+	      Points		      [378, 0; 0, -120]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      17
 	    }
 	    Line {
 	      SrcBlock		      "Byte_04"
 	      SrcPort		      1
-	      Points		      [377, 0; 0, -485]
+	      Points		      [352, 0; 0, -110]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      16
 	    }
 	    Line {
 	      SrcBlock		      "Byte_05"
 	      SrcPort		      1
-	      Points		      [351, 0; 0, -440]
+	      Points		      [326, 0; 0, -100]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      15
 	    }
 	    Line {
 	      SrcBlock		      "Byte_06"
 	      SrcPort		      1
-	      Points		      [326, 0; 0, -395]
+	      Points		      [301, 0; 0, -90]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      14
 	    }
 	    Line {
 	      SrcBlock		      "Byte_07"
 	      SrcPort		      1
-	      Points		      [301, 0; 0, -350]
+	      Points		      [276, 0; 0, -80]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      13
 	    }
 	    Line {
 	      SrcBlock		      "Byte_08"
 	      SrcPort		      1
-	      Points		      [276, 0; 0, -305]
+	      Points		      [251, 0; 0, -70]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      12
 	    }
 	    Line {
 	      SrcBlock		      "Byte_09"
 	      SrcPort		      1
-	      Points		      [251, 0; 0, -260]
+	      Points		      [226, 0; 0, -60]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      11
 	    }
 	    Line {
 	      SrcBlock		      "Byte_10"
 	      SrcPort		      1
-	      Points		      [224, 0; 0, -215]
+	      Points		      [199, 0; 0, -50]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      10
 	    }
 	    Line {
 	      SrcBlock		      "Byte_11"
 	      SrcPort		      1
-	      Points		      [195, 0; 0, -170]
+	      Points		      [170, 0; 0, -40]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      9
 	    }
 	    Line {
 	      SrcBlock		      "Byte_12"
 	      SrcPort		      1
-	      Points		      [167, 0; 0, -125]
+	      Points		      [142, 0; 0, -30]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      8
 	    }
 	    Line {
 	      SrcBlock		      "Byte_13"
 	      SrcPort		      1
-	      Points		      [140, 0; 0, -80]
+	      Points		      [115, 0; 0, -20]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      7
 	    }
 	    Line {
 	      SrcBlock		      "Byte_14"
 	      SrcPort		      1
-	      Points		      [115, 0; 0, -40]
+	      Points		      [90, 0; 0, -10]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      6
 	    }
@@ -18742,28 +18767,28 @@ Library {
 	    Line {
 	      SrcBlock		      "Addr_3(1b)"
 	      SrcPort		      1
-	      Points		      [162, 0; 0, 155]
+	      Points		      [162, 0; 0, 115]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Addr_2(1b)"
 	      SrcPort		      1
-	      Points		      [137, 0; 0, 130]
+	      Points		      [137, 0; 0, 90]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      2
 	    }
 	    Line {
 	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
-	      Points		      [111, 0; 0, 105]
+	      Points		      [111, 0; 0, 65]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      3
 	    }
 	    Line {
 	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
-	      Points		      [88, 0; 0, 80]
+	      Points		      [88, 0; 0, 40]
 	      DstBlock		      "16_to_1_Byte_Multiplexer"
 	      DstPort		      4
 	    }
@@ -19465,7 +19490,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Multiplexers"
-	Location		[55, 0, 1928, 1096]
+	Location		[57, -8, 1928, 1088]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -30456,7 +30481,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Subtractors"
-	Location		[63, 0, 991, 1080]
+	Location		[57, -8, 1928, 1088]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -30924,7 +30949,7 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "1_Byte_Subtractor"
-	    Location		    [271, 0, 1920, 1080]
+	    Location		    [57, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -30961,7 +30986,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 1008, 1005, 1062]
 	      ZOrder		      380
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -30971,7 +30997,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 901, 1005, 949]
 	      ZOrder		      381
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -30981,7 +31008,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 791, 1005, 839]
 	      ZOrder		      382
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -30991,7 +31019,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 681, 1005, 729]
 	      ZOrder		      383
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -31001,7 +31030,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 571, 1005, 619]
 	      ZOrder		      384
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -31011,7 +31041,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 461, 1005, 509]
 	      ZOrder		      385
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -31021,7 +31052,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 351, 1005, 399]
 	      ZOrder		      386
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {
@@ -31031,7 +31063,8 @@ Library {
 	      Ports		      [3, 2]
 	      Position		      [850, 241, 1005, 289]
 	      ZOrder		      387
-	      SourceBlock	      "Computer_Library/Subtractors/1_Bit_Subtractor"
+	      LibraryVersion	      "1.71"
+	      SourceBlock	      "Common_Library/Subtractors/1_Bit_Subtractor"
 	      SourceType	      "SubSystem"
 	    }
 	    Block {

@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, -8.0, 1873.0, 1096.0]
+      Location		      [57.0, -8.0, 1871.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"1505"
-	Extents			[1823.0, 930.0]
-	ZoomFactor		[1.25]
-	Offset			[481.19073161366384, 663.90934052618388]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1821.0, 930.0]
+	ZoomFactor		[1.5]
+	Offset			[983.15041994705291, -104.52056157556147]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Dec 08 16:32:57 2018"
-  RTWModifiedTimeStamp	  466187561
-  ModelVersionFormat	  "1.%<AutoIncrement:338>"
+  LastModifiedDate	  "Fri Feb 01 23:33:17 2019"
+  RTWModifiedTimeStamp	  470964795
+  ModelVersionFormat	  "1.%<AutoIncrement:389>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -778,6 +778,14 @@ Library {
       InitialOutput	      "[]"
     }
     Block {
+      BlockType		      RelationalOperator
+      Operator		      ">="
+      InputSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      SubSystem
       ShowPortLabels	      "FromPortIcon"
       Permissions	      "ReadWrite"
@@ -807,8 +815,8 @@ Library {
   }
   System {
     Name		    "Computer_Library"
-    Location		    [55, -8, 1928, 1088]
-    Open		    off
+    Location		    [57, -8, 1928, 1088]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -819,14 +827,14 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "1969"
+    SIDHighWatermark	    "2097"
     Block {
       BlockType		      SubSystem
       Name		      "ALU"
       SID		      "1505"
-      Ports		      [4, 1]
+      Ports		      [5, 1]
       Position		      [1155, 137, 1340, 213]
       ZOrder		      446
       MinAlgLoopOccurrences   off
@@ -838,8 +846,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"ALU"
-	Location		[55, -8, 1928, 1088]
-	Open			on
+	Location		[57, 0, 1928, 1096]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -850,40 +858,49 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
-	  Name			  "Data_In(1B)"
-	  SID			  "1506"
-	  Position		  [20, 1068, 50, 1082]
-	  ZOrder		  -1
+	  Name			  "Instruction_Register(1B)"
+	  SID			  "2069"
+	  Position		  [935, 788, 965, 802]
+	  ZOrder		  619
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Data_Register_1(1B)"
+	  SID			  "2070"
+	  Position		  [935, 853, 965, 867]
+	  ZOrder		  620
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Data_Register_2(1B)"
+	  SID			  "2071"
+	  Position		  [935, 928, 965, 942]
+	  ZOrder		  621
+	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "Process(1b)"
 	  SID			  "1947"
-	  Position		  [20, 493, 50, 507]
+	  Position		  [935, 673, 965, 687]
 	  ZOrder		  502
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Register_Select(1B)"
-	  SID			  "1952"
-	  Position		  [20, 668, 50, 682]
-	  ZOrder		  507
-	  Port			  "3"
+	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Inport
 	  Name			  "Clock"
 	  SID			  "1942"
-	  Position		  [20, 533, 50, 547]
+	  Position		  [935, 728, 965, 742]
 	  ZOrder		  497
-	  Port			  "4"
+	  Port			  "5"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -893,30 +910,8 @@ Library {
 	  Ports			  [20, 1]
 	  Position		  [1710, 1080, 1880, 1585]
 	  ZOrder		  491
-	  LibraryVersion	  "1.66"
+	  LibraryVersion	  "1.77"
 	  SourceBlock		  "Common_Library/Multiplexers/16_to_1_Byte_Multiplexer"
-	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "1_to_4_Byte_Demultiplexer"
-	  SID			  "1951"
-	  Ports			  [3, 4]
-	  Position		  [345, 1022, 490, 1083]
-	  ZOrder		  506
-	  LibraryVersion	  "1.66"
-	  SourceBlock		  "Common_Library/Demultiplexers/1_to_4_Byte_Demultiplexer"
-	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "2_to_4_Decoder"
-	  SID			  "1958"
-	  Ports			  [2, 4]
-	  Position		  [340, 721, 480, 769]
-	  ZOrder		  607
-	  LibraryVersion	  "1.66"
-	  SourceBlock		  "Common_Library/Decoders/2_to_4_Decoder"
 	  SourceType		  "SubSystem"
 	}
 	Block {
@@ -926,7 +921,7 @@ Library {
 	  Ports			  [4, 1]
 	  Position		  [1980, 1296, 2140, 1359]
 	  ZOrder		  485
-	  LibraryVersion	  "1.66"
+	  LibraryVersion	  "1.77"
 	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
 	  SourceType		  "SubSystem"
 	}
@@ -934,35 +929,13 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Constant"
 	  SID			  "1946"
-	  Position		  [745, 590, 765, 610]
+	  Position		  [1930, 1270, 1950, 1290]
 	  ZOrder		  501
 	  BlockRotation		  270
 	  BlockMirror		  on
 	  NamePlacement		  "alternate"
 	  ShowName		  off
 	  OutDataTypeStr	  "boolean"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Data_Register_0"
-	  SID			  "1743"
-	  Ports			  [4, 1]
-	  Position		  [895, 961, 1055, 1024]
-	  ZOrder		  484
-	  LibraryVersion	  "1.66"
-	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
-	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Data_Register_1"
-	  SID			  "1742"
-	  Ports			  [4, 1]
-	  Position		  [895, 826, 1055, 889]
-	  ZOrder		  483
-	  LibraryVersion	  "1.66"
-	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
-	  SourceType		  "SubSystem"
 	}
 	Block {
 	  BlockType		  Demux
@@ -974,26 +947,6 @@ Library {
 	  ShowName		  off
 	  Outputs		  "8"
 	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux1"
-	  SID			  "1960"
-	  Ports			  [1, 8]
-	  Position		  [220, 570, 235, 775]
-	  ZOrder		  609
-	  ShowName		  off
-	  Outputs		  "8"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Instruction_0"
-	  SID			  "1510"
-	  Position		  [1190, 1180, 1315, 1210]
-	  ZOrder		  346
-	  Value			  "0"
-	  OutDataTypeStr	  "uint8"
 	}
 	Block {
 	  BlockType		  Constant
@@ -1092,7 +1045,7 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [1190, 1098, 1345, 1142]
 	  ZOrder		  617
-	  LibraryVersion	  "1.66"
+	  LibraryVersion	  "1.77"
 	  SourceBlock		  "Common_Library/Adders/1_Byte_Adder"
 	  SourceType		  "SubSystem"
 	}
@@ -1103,7 +1056,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [1190, 851, 1330, 884]
 	  ZOrder		  486
-	  LibraryVersion	  "1.337"
+	  LibraryVersion	  "1.381"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_AND"
 	  SourceType		  "SubSystem"
 	}
@@ -1114,7 +1067,7 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [1190, 1029, 1330, 1061]
 	  ZOrder		  489
-	  LibraryVersion	  "1.337"
+	  LibraryVersion	  "1.381"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_NOT"
 	  SourceType		  "SubSystem"
 	}
@@ -1125,19 +1078,19 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [1190, 910, 1330, 945]
 	  ZOrder		  487
-	  LibraryVersion	  "1.337"
+	  LibraryVersion	  "1.381"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_OR"
 	  SourceType		  "SubSystem"
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Instruction_Register"
-	  SID			  "1948"
-	  Ports			  [4, 1]
-	  Position		  [895, 731, 1055, 794]
-	  ZOrder		  503
-	  LibraryVersion	  "1.66"
-	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
+	  Name			  "Instruction_SUB(1_Byte_Subtractor)"
+	  SID			  "2072"
+	  Ports			  [2, 2]
+	  Position		  [1190, 1178, 1345, 1222]
+	  ZOrder		  622
+	  LibraryVersion	  "1.77"
+	  SourceBlock		  "Common_Library/Subtractors/1_Byte_Subtractor"
 	  SourceType		  "SubSystem"
 	}
 	Block {
@@ -1147,7 +1100,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [1190, 970, 1330, 1005]
 	  ZOrder		  488
-	  LibraryVersion	  "1.337"
+	  LibraryVersion	  "1.381"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_XOR"
 	  SourceType		  "SubSystem"
 	}
@@ -1156,24 +1109,8 @@ Library {
 	  Name			  "Integer to Bit\nConverter"
 	  SID			  "1959"
 	  Ports			  [1, 1]
-	  Position		  [1475, 743, 1555, 787]
+	  Position		  [1480, 773, 1560, 817]
 	  ZOrder		  608
-	  ShowName		  off
-	  LibraryVersion	  "1.271"
-	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
-	  SourceType		  "Integer to Bit Converter"
-	  nbits			  "8"
-	  signedInputValues	  "Unsigned"
-	  bitOrder		  "MSB first"
-	  outDtype		  "boolean"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Integer to Bit\nConverter1"
-	  SID			  "1967"
-	  Ports			  [1, 1]
-	  Position		  [95, 653, 175, 697]
-	  ZOrder		  616
 	  ShowName		  off
 	  LibraryVersion	  "1.271"
 	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
@@ -1197,22 +1134,6 @@ Library {
 	  SID			  "1939"
 	  Position		  [1740, 990, 1760, 1010]
 	  ZOrder		  494
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator10"
-	  SID			  "1965"
-	  Position		  [270, 675, 290, 695]
-	  ZOrder		  614
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator11"
-	  SID			  "1966"
-	  Position		  [270, 700, 290, 720]
-	  ZOrder		  615
 	  ShowName		  off
 	}
 	Block {
@@ -1242,49 +1163,9 @@ Library {
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator4"
-	  SID			  "1954"
-	  Position		  [525, 1020, 545, 1040]
-	  ZOrder		  509
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator5"
-	  SID			  "1957"
-	  Position		  [530, 700, 550, 720]
-	  ZOrder		  606
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator6"
-	  SID			  "1961"
-	  Position		  [270, 575, 290, 595]
-	  ZOrder		  610
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator7"
-	  SID			  "1962"
-	  Position		  [270, 600, 290, 620]
-	  ZOrder		  611
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator8"
-	  SID			  "1963"
-	  Position		  [270, 625, 290, 645]
-	  ZOrder		  612
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator9"
-	  SID			  "1964"
-	  Position		  [270, 650, 290, 670]
-	  ZOrder		  613
+	  SID			  "2073"
+	  Position		  [1385, 1200, 1405, 1220]
+	  ZOrder		  623
 	  ShowName		  off
 	}
 	Block {
@@ -1296,9 +1177,13 @@ Library {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "Data_Register_1"
+	  SrcBlock		  "Data_Register_1(1B)"
 	  SrcPort		  1
-	  Points		  [45, 0]
+	  Points		  [135, 0]
+	  Branch {
+	    DstBlock		    "Instruction_AND"
+	    DstPort		    1
+	  }
 	  Branch {
 	    Points		    [0, 60]
 	    Branch {
@@ -1315,8 +1200,15 @@ Library {
 		Points			[0, 65]
 		Branch {
 		  Points		  [0, 65]
-		  DstBlock		  "Instruction_ADD(1_Byte_Adder)"
-		  DstPort		  1
+		  Branch {
+		    Points		    [0, 80]
+		    DstBlock		    "Instruction_SUB(1_Byte_Subtractor)"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "Instruction_ADD(1_Byte_Adder)"
+		    DstPort		    1
+		  }
 		}
 		Branch {
 		  DstBlock		  "Instruction_NOT"
@@ -1325,34 +1217,37 @@ Library {
 	      }
 	    }
 	  }
-	  Branch {
-	    DstBlock		    "Instruction_AND"
-	    DstPort		    1
-	  }
 	}
 	Line {
-	  SrcBlock		  "Data_Register_0"
+	  SrcBlock		  "Data_Register_2(1B)"
 	  SrcPort		  1
-	  Points		  [29, 0]
+	  Points		  [119, 0]
 	  Branch {
-	    Points		    [0, 135]
-	    DstBlock		    "Instruction_ADD(1_Byte_Adder)"
-	    DstPort		    2
+	    Points		    [0, 60]
+	    Branch {
+	      Points		      [0, 135]
+	      Branch {
+		Points			[0, 80]
+		DstBlock		"Instruction_SUB(1_Byte_Subtractor)"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Instruction_ADD(1_Byte_Adder)"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Instruction_XOR"
+	      DstPort		      2
+	    }
 	  }
 	  Branch {
 	    Points		    [0, -60]
-	    Branch {
-	      Points		      [0, -60]
-	      DstBlock		      "Instruction_AND"
-	      DstPort		      2
-	    }
-	    Branch {
-	      DstBlock		      "Instruction_OR"
-	      DstPort		      2
-	    }
+	    DstBlock		    "Instruction_AND"
+	    DstPort		    2
 	  }
 	  Branch {
-	    DstBlock		    "Instruction_XOR"
+	    DstBlock		    "Instruction_OR"
 	    DstPort		    2
 	  }
 	}
@@ -1392,9 +1287,9 @@ Library {
 	  DstPort		  9
 	}
 	Line {
-	  SrcBlock		  "Instruction_0"
+	  SrcBlock		  "Instruction_SUB(1_Byte_Subtractor)"
 	  SrcPort		  1
-	  Points		  [98, 0; 0, 125]
+	  Points		  [67, 0; 0, 130]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  10
 	}
@@ -1475,53 +1370,17 @@ Library {
 	  DstPort		  3
 	}
 	Line {
-	  SrcBlock		  "Instruction_Register"
+	  SrcBlock		  "Instruction_Register(1B)"
 	  SrcPort		  1
 	  DstBlock		  "Integer to Bit\nConverter"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  4
-	  Points		  [196, 0; 0, -75]
-	  DstBlock		  "Data_Register_0"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  3
-	  Points		  [179, 0; 0, -195]
-	  DstBlock		  "Data_Register_1"
-	  DstPort		  3
-	}
-	Line {
 	  SrcBlock		  "Clock"
 	  SrcPort		  1
-	  Points		  [671, 0; 0, 135]
-	  Branch {
-	    Points		    [0, 110]
-	    Branch {
-	      DstBlock		      "Instruction_Register"
-	      DstPort		      4
-	    }
-	    Branch {
-	      Points		      [0, 95]
-	      Branch {
-		DstBlock		"Data_Register_1"
-		DstPort			4
-	      }
-	      Branch {
-		Points			[0, 135]
-		DstBlock		"Data_Register_0"
-		DstPort			4
-	      }
-	    }
-	  }
-	  Branch {
-	    Points		    [1191, 0; 0, 675]
-	    DstBlock		    "Byte3"
-	    DstPort		    4
-	  }
+	  Points		  [947, 0; 0, 615]
+	  DstBlock		  "Byte3"
+	  DstPort		  4
 	}
 	Line {
 	  SrcBlock		  "Byte3"
@@ -1530,168 +1389,24 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  2
-	  Points		  [163, 0; 0, -275]
-	  DstBlock		  "Instruction_Register"
-	  DstPort		  3
-	}
-	Line {
 	  SrcBlock		  "Constant"
 	  SrcPort		  1
-	  Points		  [0, 20]
-	  Branch {
-	    Points		    [1183, 0; 0, 685]
-	    DstBlock		    "Byte3"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, 120]
-	    Branch {
-	      DstBlock		      "Instruction_Register"
-	      DstPort		      2
-	    }
-	    Branch {
-	      Points		      [0, 95]
-	      Branch {
-		DstBlock		"Data_Register_1"
-		DstPort			2
-	      }
-	      Branch {
-		Points			[0, 135]
-		DstBlock		"Data_Register_0"
-		DstPort			2
-	      }
-	    }
-	  }
+	  Points		  [0, 25]
+	  DstBlock		  "Byte3"
+	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Process(1b)"
 	  SrcPort		  1
-	  Points		  [1904, 0; 0, 805]
+	  Points		  [989, 0; 0, 625]
 	  DstBlock		  "Byte3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Data_In(1B)"
-	  SrcPort		  1
-	  DstBlock		  "1_to_4_Byte_Demultiplexer"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  8
-	  Points		  [32, 0]
-	  Branch {
-	    Points		    [0, 295]
-	    DstBlock		    "1_to_4_Byte_Demultiplexer"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "2_to_4_Decoder"
-	    DstPort		    2
-	  }
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  7
-	  Points		  [50, 0]
-	  Branch {
-	    Points		    [0, 300]
-	    DstBlock		    "1_to_4_Byte_Demultiplexer"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "2_to_4_Decoder"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  1
-	  DstBlock		  "Terminator4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "2_to_4_Decoder"
-	  SrcPort		  1
-	  Points		  [17, 0; 0, -20]
-	  DstBlock		  "Terminator5"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "2_to_4_Decoder"
-	  SrcPort		  4
-	  Points		  [45, 0; 0, 210]
-	  DstBlock		  "Data_Register_0"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "2_to_4_Decoder"
-	  SrcPort		  3
-	  Points		  [109, 0; 0, 85]
-	  DstBlock		  "Data_Register_1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "2_to_4_Decoder"
-	  SrcPort		  2
-	  DstBlock		  "Instruction_Register"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Integer to Bit\nConverter"
 	  SrcPort		  1
-	  Points		  [29, 0; 0, 200]
+	  Points		  [24, 0; 0, 170]
 	  DstBlock		  "Demux"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  4
-	  DstBlock		  "Terminator9"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  3
-	  DstBlock		  "Terminator8"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  2
-	  DstBlock		  "Terminator7"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  1
-	  DstBlock		  "Terminator6"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Register_Select(1B)"
-	  SrcPort		  1
-	  DstBlock		  "Integer to Bit\nConverter1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  6
-	  DstBlock		  "Terminator11"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux1"
-	  SrcPort		  5
-	  DstBlock		  "Terminator10"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Integer to Bit\nConverter1"
-	  SrcPort		  1
-	  DstBlock		  "Demux1"
 	  DstPort		  1
 	}
 	Line {
@@ -1752,6 +1467,12 @@ Library {
 	  DstBlock		  "Terminator12"
 	  DstPort		  1
 	}
+	Line {
+	  SrcBlock		  "Instruction_SUB(1_Byte_Subtractor)"
+	  SrcPort		  2
+	  DstBlock		  "Terminator4"
+	  DstPort		  1
+	}
       }
     }
     Block {
@@ -1809,59 +1530,6 @@ Library {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Instruction_Decoder"
-      SID		      "1739"
-      Ports		      [1, 1]
-      Position		      [1495, 19, 1595, 61]
-      ZOrder		      448
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Instruction_Decoder"
-	Location		[992, 0, 1920, 1080]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "In1"
-	  SID			  "1740"
-	  Position		  [110, 103, 140, 117]
-	  ZOrder		  -1
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Out1"
-	  SID			  "1741"
-	  Position		  [360, 103, 390, 117]
-	  ZOrder		  -2
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "In1"
-	  SrcPort		  1
-	  DstBlock		  "Out1"
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
-      BlockType		      SubSystem
       Name		      "Instructions"
       SID		      "1745"
       Ports		      []
@@ -1876,7 +1544,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Instructions"
-	Location		[992, 0, 1920, 1080]
+	Location		[55, 0, 1928, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5737,7 +5405,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Program_Counter"
-	Location		[343, 0, 1920, 1080]
+	Location		[57, -8, 1928, 1088]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -5749,12 +5417,12 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"40"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Address_In(1B)"
 	  SID			  "1682"
-	  Position		  [960, 843, 990, 857]
+	  Position		  [960, 813, 990, 827]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -5780,7 +5448,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Clock"
 	  SID			  "1738"
-	  Position		  [960, 1183, 990, 1197]
+	  Position		  [960, 1188, 990, 1202]
 	  ZOrder		  582
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -5790,9 +5458,9 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer"
 	  SID			  "1687"
 	  Ports			  [3, 1]
-	  Position		  [1330, 950, 1435, 1000]
+	  Position		  [1315, 950, 1450, 1000]
 	  ZOrder		  549
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5801,9 +5469,75 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer1"
 	  SID			  "1688"
 	  Ports			  [3, 1]
-	  Position		  [1330, 1030, 1435, 1080]
+	  Position		  [1315, 1030, 1450, 1080]
 	  ZOrder		  550
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer10"
+	  SID			  "2076"
+	  Ports			  [3, 1]
+	  Position		  [3395, 1000, 3530, 1050]
+	  ZOrder		  595
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer11"
+	  SID			  "2077"
+	  Ports			  [3, 1]
+	  Position		  [3395, 1075, 3530, 1125]
+	  ZOrder		  596
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer12"
+	  SID			  "2078"
+	  Ports			  [3, 1]
+	  Position		  [3805, 1010, 3940, 1060]
+	  ZOrder		  598
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer13"
+	  SID			  "2079"
+	  Ports			  [3, 1]
+	  Position		  [3805, 1085, 3940, 1135]
+	  ZOrder		  599
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer14"
+	  SID			  "2080"
+	  Ports			  [3, 1]
+	  Position		  [4210, 1025, 4345, 1075]
+	  ZOrder		  601
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer15"
+	  SID			  "2081"
+	  Ports			  [3, 1]
+	  Position		  [4210, 1105, 4345, 1155]
+	  ZOrder		  602
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5812,9 +5546,9 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer2"
 	  SID			  "1689"
 	  Ports			  [3, 1]
-	  Position		  [1760, 970, 1865, 1020]
+	  Position		  [1725, 960, 1860, 1010]
 	  ZOrder		  551
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5823,9 +5557,9 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer3"
 	  SID			  "1690"
 	  Ports			  [3, 1]
-	  Position		  [1760, 1050, 1865, 1100]
+	  Position		  [1725, 1035, 1860, 1085]
 	  ZOrder		  552
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5834,9 +5568,9 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer4"
 	  SID			  "1691"
 	  Ports			  [3, 1]
-	  Position		  [2200, 990, 2305, 1040]
+	  Position		  [2135, 970, 2270, 1020]
 	  ZOrder		  554
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5845,9 +5579,9 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer5"
 	  SID			  "1692"
 	  Ports			  [3, 1]
-	  Position		  [2200, 1070, 2305, 1120]
+	  Position		  [2135, 1045, 2270, 1095]
 	  ZOrder		  555
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5856,9 +5590,9 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer6"
 	  SID			  "1693"
 	  Ports			  [3, 1]
-	  Position		  [2640, 1025, 2745, 1075]
+	  Position		  [2550, 985, 2685, 1035]
 	  ZOrder		  557
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5867,9 +5601,31 @@ Library {
 	  Name			  "2_to_1_Bit_Multiplexer7"
 	  SID			  "1694"
 	  Ports			  [3, 1]
-	  Position		  [2640, 1105, 2745, 1155]
+	  Position		  [2550, 1060, 2685, 1110]
 	  ZOrder		  558
-	  LibraryVersion	  "1.32"
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer8"
+	  SID			  "2074"
+	  Ports			  [3, 1]
+	  Position		  [2970, 995, 3105, 1045]
+	  ZOrder		  593
+	  LibraryVersion	  "1.78"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer9"
+	  SID			  "2075"
+	  Ports			  [3, 1]
+	  Position		  [2970, 1070, 3105, 1120]
+	  ZOrder		  594
+	  LibraryVersion	  "1.78"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5878,7 +5634,7 @@ Library {
 	  Name			  "Bit to Integer\nConverter1"
 	  SID			  "1697"
 	  Ports			  [1, 1]
-	  Position		  [2970, 673, 3050, 717]
+	  Position		  [4590, 628, 4670, 672]
 	  ZOrder		  542
 	  ShowName		  off
 	  LibraryVersion	  "1.271"
@@ -5892,7 +5648,7 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Bit_0000"
+	  Name			  "Bit_0"
 	  SID			  "1698"
 	  Ports			  [3, 2]
 	  Position		  [1495, 992, 1540, 1068]
@@ -5904,10 +5660,10 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Bit_0001"
+	  Name			  "Bit_1"
 	  SID			  "1699"
 	  Ports			  [3, 2]
-	  Position		  [1940, 1012, 1985, 1088]
+	  Position		  [1900, 997, 1945, 1073]
 	  ZOrder		  531
 	  LibraryVersion	  "1.44"
 	  SourceBlock		  "simulink_extras/Flip Flops/J-K\nFlip-Flop"
@@ -5916,10 +5672,10 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Bit_0002"
+	  Name			  "Bit_2"
 	  SID			  "1700"
 	  Ports			  [3, 2]
-	  Position		  [2360, 1032, 2405, 1108]
+	  Position		  [2310, 1007, 2355, 1083]
 	  ZOrder		  534
 	  LibraryVersion	  "1.44"
 	  SourceBlock		  "simulink_extras/Flip Flops/J-K\nFlip-Flop"
@@ -5928,10 +5684,10 @@ Library {
 	}
 	Block {
 	  BlockType		  Reference
-	  Name			  "Bit_0003"
+	  Name			  "Bit_3"
 	  SID			  "1701"
 	  Ports			  [3, 2]
-	  Position		  [2785, 1067, 2830, 1143]
+	  Position		  [2725, 1022, 2770, 1098]
 	  ZOrder		  537
 	  LibraryVersion	  "1.44"
 	  SourceBlock		  "simulink_extras/Flip Flops/J-K\nFlip-Flop"
@@ -5939,53 +5695,62 @@ Library {
 	  initial_condition	  "0"
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "1733"
-	  Position		  [2715, 530, 2745, 560]
-	  ZOrder		  577
-	  ShowName		  off
-	  Value			  "0"
-	  OutDataTypeStr	  "boolean"
+	  BlockType		  Reference
+	  Name			  "Bit_4"
+	  SID			  "2082"
+	  Ports			  [3, 2]
+	  Position		  [3145, 1032, 3190, 1108]
+	  ZOrder		  583
+	  LibraryVersion	  "1.44"
+	  SourceBlock		  "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	  SourceType		  "JKFlipFlop"
+	  initial_condition	  "0"
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "Constant1"
-	  SID			  "1734"
-	  Position		  [2715, 670, 2745, 700]
-	  ZOrder		  578
-	  ShowName		  off
-	  Value			  "0"
-	  OutDataTypeStr	  "boolean"
+	  BlockType		  Reference
+	  Name			  "Bit_5"
+	  SID			  "2083"
+	  Ports			  [3, 2]
+	  Position		  [3570, 1037, 3615, 1113]
+	  ZOrder		  584
+	  LibraryVersion	  "1.44"
+	  SourceBlock		  "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	  SourceType		  "JKFlipFlop"
+	  initial_condition	  "0"
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "Constant2"
-	  SID			  "1735"
-	  Position		  [2715, 625, 2745, 655]
-	  ZOrder		  579
-	  ShowName		  off
-	  Value			  "0"
-	  OutDataTypeStr	  "boolean"
+	  BlockType		  Reference
+	  Name			  "Bit_6"
+	  SID			  "2084"
+	  Ports			  [3, 2]
+	  Position		  [3980, 1047, 4025, 1123]
+	  ZOrder		  587
+	  LibraryVersion	  "1.44"
+	  SourceBlock		  "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	  SourceType		  "JKFlipFlop"
+	  initial_condition	  "0"
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "Constant3"
-	  SID			  "1736"
-	  Position		  [2715, 580, 2745, 610]
-	  ZOrder		  580
-	  ShowName		  off
-	  Value			  "0"
-	  OutDataTypeStr	  "boolean"
+	  BlockType		  Reference
+	  Name			  "Bit_7"
+	  SID			  "2085"
+	  Ports			  [3, 2]
+	  Position		  [4380, 1067, 4425, 1143]
+	  ZOrder		  590
+	  LibraryVersion	  "1.44"
+	  SourceBlock		  "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	  SourceType		  "JKFlipFlop"
+	  initial_condition	  "0"
 	}
 	Block {
 	  BlockType		  Demux
 	  Name			  "Demux"
 	  SID			  "1703"
-	  Ports			  [1, 4]
-	  Position		  [1195, 816, 1205, 879]
+	  Ports			  [1, 8]
+	  Position		  [1195, 756, 1205, 879]
 	  ZOrder		  547
 	  ShowName		  off
+	  Outputs		  "8"
 	  DisplayOption		  "bar"
 	}
 	Block {
@@ -6000,27 +5765,113 @@ Library {
 	  OutDataTypeStr	  "boolean"
 	}
 	Block {
+	  BlockType		  Logic
+	  Name			  "Increment\nEnabled1"
+	  SID			  "2086"
+	  Ports			  [2, 1]
+	  Position		  [3240, 966, 3270, 1004]
+	  ZOrder		  604
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
 	  BlockType		  Reference
 	  Name			  "Integer to Bit\nConverter"
 	  SID			  "1710"
 	  Ports			  [1, 1]
-	  Position		  [1050, 828, 1130, 872]
+	  Position		  [1050, 798, 1130, 842]
 	  ZOrder		  560
 	  ShowName		  off
 	  LibraryVersion	  "1.271"
 	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
 	  SourceType		  "Integer to Bit Converter"
-	  nbits			  "4"
+	  nbits			  "8"
 	  signedInputValues	  "Unsigned"
 	  bitOrder		  "MSB first"
 	  outDtype		  "boolean"
 	}
 	Block {
 	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  SID			  "2087"
+	  Ports			  [2, 1]
+	  Position		  [3660, 976, 3690, 1014]
+	  ZOrder		  589
+	  ShowName		  off
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator10"
+	  SID			  "2090"
+	  Ports			  [1, 1]
+	  Position		  [3333, 1091, 3348, 1109]
+	  ZOrder		  597
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator11"
+	  SID			  "2091"
+	  Ports			  [1, 1]
+	  Position		  [3748, 1101, 3763, 1119]
+	  ZOrder		  600
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator12"
+	  SID			  "2096"
+	  Ports			  [1, 1]
+	  Position		  [2908, 1086, 2923, 1104]
+	  ZOrder		  605
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator13"
+	  SID			  "2097"
+	  Ports			  [2, 1]
+	  Position		  [2815, 956, 2845, 994]
+	  ZOrder		  606
+	  ShowName		  off
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  "2088"
+	  Ports			  [2, 1]
+	  Position		  [4070, 986, 4100, 1024]
+	  ZOrder		  592
+	  ShowName		  off
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
 	  Name			  "Logical\nOperator3"
 	  SID			  "1714"
 	  Ports			  [2, 1]
-	  Position		  [2035, 936, 2065, 974]
+	  Position		  [1985, 936, 2015, 974]
 	  ZOrder		  536
 	  ShowName		  off
 	  IconShape		  "distinctive"
@@ -6032,7 +5883,7 @@ Library {
 	  Name			  "Logical\nOperator4"
 	  SID			  "1715"
 	  Ports			  [2, 1]
-	  Position		  [2460, 946, 2490, 984]
+	  Position		  [2395, 946, 2425, 984]
 	  ZOrder		  539
 	  ShowName		  off
 	  IconShape		  "distinctive"
@@ -6044,7 +5895,7 @@ Library {
 	  Name			  "Logical\nOperator5"
 	  SID			  "1716"
 	  Ports			  [1, 1]
-	  Position		  [2583, 1121, 2598, 1139]
+	  Position		  [2488, 1076, 2503, 1094]
 	  ZOrder		  559
 	  ShowName		  off
 	  Operator		  "NOT"
@@ -6057,8 +5908,21 @@ Library {
 	  Name			  "Logical\nOperator6"
 	  SID			  "1717"
 	  Ports			  [1, 1]
-	  Position		  [1273, 1046, 1288, 1064]
+	  Position		  [1258, 1046, 1273, 1064]
 	  ZOrder		  548
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator7"
+	  SID			  "2089"
+	  Ports			  [1, 1]
+	  Position		  [4153, 1121, 4168, 1139]
+	  ZOrder		  603
 	  ShowName		  off
 	  Operator		  "NOT"
 	  IconShape		  "distinctive"
@@ -6070,7 +5934,7 @@ Library {
 	  Name			  "Logical\nOperator8"
 	  SID			  "1719"
 	  Ports			  [1, 1]
-	  Position		  [1713, 1066, 1728, 1084]
+	  Position		  [1678, 1051, 1693, 1069]
 	  ZOrder		  553
 	  ShowName		  off
 	  Operator		  "NOT"
@@ -6083,7 +5947,7 @@ Library {
 	  Name			  "Logical\nOperator9"
 	  SID			  "1720"
 	  Ports			  [1, 1]
-	  Position		  [2153, 1086, 2168, 1104]
+	  Position		  [2083, 1061, 2098, 1079]
 	  ZOrder		  556
 	  ShowName		  off
 	  Operator		  "NOT"
@@ -6096,7 +5960,7 @@ Library {
 	  Name			  "Mux1"
 	  SID			  "1721"
 	  Ports			  [8, 1]
-	  Position		  [2900, 618, 2915, 772]
+	  Position		  [4515, 573, 4530, 727]
 	  ZOrder		  541
 	  ShowName		  off
 	  Inputs		  "8"
@@ -6104,9 +5968,17 @@ Library {
 	}
 	Block {
 	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  SID			  "2092"
+	  Position		  [3645, 1085, 3665, 1105]
+	  ZOrder		  586
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
 	  Name			  "Terminator10"
 	  SID			  "1729"
-	  Position		  [2015, 1060, 2035, 1080]
+	  Position		  [1975, 1045, 1995, 1065]
 	  ZOrder		  533
 	  ShowName		  off
 	}
@@ -6114,7 +5986,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator11"
 	  SID			  "1730"
-	  Position		  [2445, 1080, 2465, 1100]
+	  Position		  [2385, 1055, 2405, 1075]
 	  ZOrder		  535
 	  ShowName		  off
 	}
@@ -6122,8 +5994,32 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator12"
 	  SID			  "1731"
-	  Position		  [2870, 1115, 2890, 1135]
+	  Position		  [2800, 1070, 2820, 1090]
 	  ZOrder		  538
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  SID			  "2093"
+	  Position		  [4055, 1095, 4075, 1115]
+	  ZOrder		  588
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator3"
+	  SID			  "2094"
+	  Position		  [4455, 1115, 4475, 1135]
+	  ZOrder		  591
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator4"
+	  SID			  "2095"
+	  Position		  [3220, 1080, 3240, 1100]
+	  ZOrder		  585
 	  ShowName		  off
 	}
 	Block {
@@ -6138,7 +6034,7 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Address_Out(1B)"
 	  SID			  "1683"
-	  Position		  [3105, 688, 3135, 702]
+	  Position		  [4725, 643, 4755, 657]
 	  ZOrder		  -2
 	  IconDisplay		  "Port number"
 	}
@@ -6162,62 +6058,36 @@ Library {
 	  }
 	}
 	Line {
-	  SrcBlock		  "Bit_0000"
+	  SrcBlock		  "Bit_0"
 	  SrcPort		  2
 	  DstBlock		  "Terminator9"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Bit_0001"
+	  SrcBlock		  "Bit_1"
 	  SrcPort		  2
 	  DstBlock		  "Terminator10"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Clock"
-	  SrcPort		  1
-	  Points		  [478, 0]
-	  Branch {
-	    Points		    [0, -160]
-	    DstBlock		    "Bit_0000"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [429, 0]
-	    Branch {
-	      Points		      [432, 0]
-	      Branch {
-		Points			[0, -120]
-		DstBlock		"Bit_0002"
-		DstPort			2
-	      }
-	      Branch {
-		Points			[431, 0; 0, -85]
-		DstBlock		"Bit_0003"
-		DstPort			2
-	      }
-	    }
-	    Branch {
-	      Points		      [0, -140]
-	      DstBlock		      "Bit_0001"
-	      DstPort		      2
-	    }
-	  }
-	}
-	Line {
-	  SrcBlock		  "Bit_0002"
+	  SrcBlock		  "Bit_2"
 	  SrcPort		  2
+	  Points		  [10, 0]
 	  DstBlock		  "Terminator11"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Increment\nEnabled"
 	  SrcPort		  1
-	  Points		  [50, 0]
+	  Points		  [24, 0]
 	  Branch {
-	    Points		    [0, 65]
+	    DstBlock		    "Logical\nOperator3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 55]
 	    Branch {
-	      Points		      [0, 80]
+	      Points		      [0, 75]
 	      DstBlock		      "2_to_1_Bit_Multiplexer3"
 	      DstPort		      3
 	    }
@@ -6226,17 +6096,13 @@ Library {
 	      DstPort		      3
 	    }
 	  }
-	  Branch {
-	    DstBlock		    "Logical\nOperator3"
-	    DstPort		    1
-	  }
 	}
 	Line {
-	  SrcBlock		  "Bit_0001"
+	  SrcBlock		  "Bit_1"
 	  SrcPort		  1
-	  Points		  [24, 0; 0, -65]
+	  Points		  [16, 0; 0, -50]
 	  Branch {
-	    Points		    [0, -220]
+	    Points		    [0, -265]
 	    DstBlock		    "Mux1"
 	    DstPort		    7
 	  }
@@ -6248,11 +6114,11 @@ Library {
 	Line {
 	  SrcBlock		  "Logical\nOperator3"
 	  SrcPort		  1
-	  Points		  [42, 0]
+	  Points		  [22, 0]
 	  Branch {
-	    Points		    [0, 75]
+	    Points		    [0, 55]
 	    Branch {
-	      Points		      [0, 80]
+	      Points		      [0, 75]
 	      DstBlock		      "2_to_1_Bit_Multiplexer5"
 	      DstPort		      3
 	    }
@@ -6267,31 +6133,17 @@ Library {
 	  }
 	}
 	Line {
-	  SrcBlock		  "Bit_0003"
+	  SrcBlock		  "Bit_3"
 	  SrcPort		  2
 	  DstBlock		  "Terminator12"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Logical\nOperator4"
+	  SrcBlock		  "Bit_2"
 	  SrcPort		  1
-	  Points		  [45, 0; 0, 100]
+	  Points		  [16, 0; 0, -50]
 	  Branch {
-	    Points		    [0, 80]
-	    DstBlock		    "2_to_1_Bit_Multiplexer7"
-	    DstPort		    3
-	  }
-	  Branch {
-	    DstBlock		    "2_to_1_Bit_Multiplexer6"
-	    DstPort		    3
-	  }
-	}
-	Line {
-	  SrcBlock		  "Bit_0002"
-	  SrcPort		  1
-	  Points		  [26, 0; 0, -75]
-	  Branch {
-	    Points		    [0, -250]
+	    Points		    [0, -295]
 	    DstBlock		    "Mux1"
 	    DstPort		    6
 	  }
@@ -6301,11 +6153,18 @@ Library {
 	  }
 	}
 	Line {
-	  SrcBlock		  "Bit_0003"
+	  SrcBlock		  "Bit_3"
 	  SrcPort		  1
-	  Points		  [30, 0; 0, -380]
-	  DstBlock		  "Mux1"
-	  DstPort		  5
+	  Points		  [16, 0; 0, -55]
+	  Branch {
+	    DstBlock		    "Logical\nOperator13"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -325]
+	    DstBlock		    "Mux1"
+	    DstPort		    5
+	  }
 	}
 	Line {
 	  SrcBlock		  "Bit to Integer\nConverter1"
@@ -6327,7 +6186,7 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Demux"
-	  SrcPort		  4
+	  SrcPort		  8
 	  Points		  [29, 0; 0, 105]
 	  Branch {
 	    Points		    [0, 80]
@@ -6342,14 +6201,14 @@ Library {
 	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer1"
 	  SrcPort		  1
-	  DstBlock		  "Bit_0000"
+	  DstBlock		  "Bit_0"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer"
 	  SrcPort		  1
-	  Points		  [19, 0; 0, 30]
-	  DstBlock		  "Bit_0000"
+	  Points		  [16, 0; 0, 30]
+	  DstBlock		  "Bit_0"
 	  DstPort		  1
 	}
 	Line {
@@ -6359,89 +6218,31 @@ Library {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "Set_Direct(1b)"
-	  SrcPort		  1
-	  Points		  [309, 0]
-	  Branch {
-	    Points		    [0, -75]
-	    Branch {
-	      Points		      [0, -80]
-	      DstBlock		      "2_to_1_Bit_Multiplexer"
-	      DstPort		      1
-	    }
-	    Branch {
-	      DstBlock		      "2_to_1_Bit_Multiplexer1"
-	      DstPort		      1
-	    }
-	  }
-	  Branch {
-	    Points		    [0, 96; 435, 0]
-	    Branch {
-	      Points		      [0, -151]
-	      Branch {
-		Points			[0, -80]
-		DstBlock		"2_to_1_Bit_Multiplexer2"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"2_to_1_Bit_Multiplexer3"
-		DstPort			1
-	      }
-	    }
-	    Branch {
-	      Points		      [441, 0]
-	      Branch {
-		Points			[0, -131]
-		Branch {
-		  Points		  [0, -80]
-		  DstBlock		  "2_to_1_Bit_Multiplexer4"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "2_to_1_Bit_Multiplexer5"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		Points			[436, 0; 0, -96]
-		Branch {
-		  Points		  [0, -80]
-		  DstBlock		  "2_to_1_Bit_Multiplexer6"
-		  DstPort		  1
-		}
-		Branch {
-		  DstBlock		  "2_to_1_Bit_Multiplexer7"
-		  DstPort		  1
-		}
-	      }
-	    }
-	  }
-	}
-	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer2"
 	  SrcPort		  1
-	  Points		  [32, 0; 0, 30]
-	  DstBlock		  "Bit_0001"
+	  Points		  [12, 0; 0, 25]
+	  DstBlock		  "Bit_1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer3"
 	  SrcPort		  1
-	  DstBlock		  "Bit_0001"
+	  DstBlock		  "Bit_1"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "Logical\nOperator8"
 	  SrcPort		  1
+	  Points		  [0, 0]
 	  DstBlock		  "2_to_1_Bit_Multiplexer3"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Demux"
-	  SrcPort		  3
-	  Points		  [472, 0; 0, 140]
+	  SrcPort		  7
+	  Points		  [445, 0; 0, 130]
 	  Branch {
-	    Points		    [0, 80]
+	    Points		    [0, 75]
 	    DstBlock		    "Logical\nOperator8"
 	    DstPort		    1
 	  }
@@ -6453,22 +6254,22 @@ Library {
 	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer4"
 	  SrcPort		  1
-	  Points		  [22, 0; 0, 30]
-	  DstBlock		  "Bit_0002"
+	  Points		  [13, 0; 0, 25]
+	  DstBlock		  "Bit_2"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer5"
 	  SrcPort		  1
-	  DstBlock		  "Bit_0002"
+	  DstBlock		  "Bit_2"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "Demux"
-	  SrcPort		  2
-	  Points		  [918, 0; 0, 175]
+	  SrcPort		  6
+	  Points		  [847, 0; 0, 155]
 	  Branch {
-	    Points		    [0, 80]
+	    Points		    [0, 75]
 	    DstBlock		    "Logical\nOperator9"
 	    DstPort		    1
 	  }
@@ -6486,14 +6287,14 @@ Library {
 	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer7"
 	  SrcPort		  1
-	  DstBlock		  "Bit_0003"
+	  DstBlock		  "Bit_3"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "2_to_1_Bit_Multiplexer6"
 	  SrcPort		  1
-	  Points		  [15, 0; 0, 30]
-	  DstBlock		  "Bit_0003"
+	  Points		  [13, 0; 0, 25]
+	  DstBlock		  "Bit_3"
 	  DstPort		  1
 	}
 	Line {
@@ -6504,10 +6305,10 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Demux"
-	  SrcPort		  1
-	  Points		  [1348, 0; 0, 225]
+	  SrcPort		  5
+	  Points		  [1254, 0; 0, 185]
 	  Branch {
-	    Points		    [0, 80]
+	    Points		    [0, 75]
 	    DstBlock		    "Logical\nOperator5"
 	    DstPort		    1
 	  }
@@ -6523,11 +6324,11 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Bit_0000"
+	  SrcBlock		  "Bit_0"
 	  SrcPort		  1
 	  Points		  [14, 0; 0, -55]
 	  Branch {
-	    Points		    [0, -190]
+	    Points		    [0, -235]
 	    DstBlock		    "Mux1"
 	    DstPort		    8
 	  }
@@ -6537,31 +6338,2105 @@ Library {
 	  }
 	}
 	Line {
-	  SrcBlock		  "Constant"
+	  SrcBlock		  "Logical\nOperator4"
 	  SrcPort		  1
-	  Points		  [99, 0; 0, 80]
+	  Points		  [19, 0]
+	  Branch {
+	    DstBlock		    "Logical\nOperator13"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 60]
+	    Branch {
+	      Points		      [0, 75]
+	      DstBlock		      "2_to_1_Bit_Multiplexer7"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "2_to_1_Bit_Multiplexer6"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Bit_4"
+	  SrcPort		  2
+	  DstBlock		  "Terminator4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bit_5"
+	  SrcPort		  2
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Clock"
+	  SrcPort		  1
+	  Points		  [478, 0]
+	  Branch {
+	    Points		    [0, -165]
+	    DstBlock		    "Bit_0"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [405, 0]
+	    Branch {
+	      Points		      [0, -160]
+	      DstBlock		      "Bit_1"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [409, 0]
+	      Branch {
+		Points			[0, -150]
+		DstBlock		"Bit_2"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[415, 0]
+		Branch {
+		  Points		  [0, -135]
+		  DstBlock		  "Bit_3"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [421, 0]
+		  Branch {
+		    Points		    [0, -125]
+		    DstBlock		    "Bit_4"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [426, 0]
+		    Branch {
+		    Points		    [0, -120]
+		    DstBlock		    "Bit_5"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [409, 0]
+		    Branch {
+		    Points		    [0, -110]
+		    DstBlock		    "Bit_6"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [401, 0; 0, -90]
+		    DstBlock		    "Bit_7"
+		    DstPort		    2
+		    }
+		    }
+		  }
+		}
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Bit_6"
+	  SrcPort		  2
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Increment\nEnabled1"
+	  SrcPort		  1
+	  Points		  [18, 0]
+	  Branch {
+	    Points		    [0, 55]
+	    Branch {
+	      Points		      [0, 75]
+	      DstBlock		      "2_to_1_Bit_Multiplexer11"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "2_to_1_Bit_Multiplexer10"
+	      DstPort		      3
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Bit_5"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -50]
+	  Branch {
+	    Points		    [0, -385]
+	    DstBlock		    "Mux1"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [16, 0]
+	  Branch {
+	    Points		    [0, 55]
+	    Branch {
+	      Points		      [0, 75]
+	      DstBlock		      "2_to_1_Bit_Multiplexer13"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "2_to_1_Bit_Multiplexer12"
+	      DstPort		      3
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Bit_7"
+	  SrcPort		  2
+	  DstBlock		  "Terminator3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  Points		  [16, 0; 0, 60]
+	  Branch {
+	    Points		    [0, 80]
+	    DstBlock		    "2_to_1_Bit_Multiplexer15"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "2_to_1_Bit_Multiplexer14"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Bit_6"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, -50]
+	  Branch {
+	    Points		    [0, -415]
+	    DstBlock		    "Mux1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Bit_7"
+	  SrcPort		  1
+	  Points		  [17, 0; 0, -505]
 	  DstBlock		  "Mux1"
 	  DstPort		  1
 	}
 	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer9"
+	  SrcPort		  1
+	  DstBlock		  "Bit_4"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer8"
+	  SrcPort		  1
+	  Points		  [14, 0; 0, 25]
+	  DstBlock		  "Bit_4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Set_Direct(1b)"
+	  SrcPort		  1
+	  Points		  [292, 0]
+	  Branch {
+	    Points		    [0, 96; 416, 0]
+	    Branch {
+	      Points		      [409, 0]
+	      Branch {
+		Points			[411, 0]
+		Branch {
+		  Points		  [419, 0]
+		  Branch {
+		    Points		    [424, 0]
+		    Branch {
+		    Points		    [410, 0]
+		    Branch {
+		    Points		    [0, -116]
+		    Branch {
+		    Points		    [0, -75]
+		    DstBlock		    "2_to_1_Bit_Multiplexer12"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer13"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    Points		    [407, 0; 0, -96]
+		    Branch {
+		    Points		    [0, -80]
+		    DstBlock		    "2_to_1_Bit_Multiplexer14"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer15"
+		    DstPort		    1
+		    }
+		    }
+		    }
+		    Branch {
+		    Points		    [0, -126]
+		    Branch {
+		    Points		    [0, -75]
+		    DstBlock		    "2_to_1_Bit_Multiplexer10"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer11"
+		    DstPort		    1
+		    }
+		    }
+		  }
+		  Branch {
+		    Points		    [0, -131]
+		    Branch {
+		    Points		    [0, -75]
+		    DstBlock		    "2_to_1_Bit_Multiplexer8"
+		    DstPort		    1
+		    }
+		    Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer9"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Branch {
+		  Points		  [0, -141]
+		  Branch {
+		    Points		    [0, -75]
+		    DstBlock		    "2_to_1_Bit_Multiplexer6"
+		    DstPort		    1
+		  }
+		  Branch {
+		    DstBlock		    "2_to_1_Bit_Multiplexer7"
+		    DstPort		    1
+		  }
+		}
+	      }
+	      Branch {
+		Points			[0, -156]
+		Branch {
+		  Points		  [0, -75]
+		  DstBlock		  "2_to_1_Bit_Multiplexer4"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "2_to_1_Bit_Multiplexer5"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Branch {
+	      Points		      [0, -166]
+	      Branch {
+		DstBlock		"2_to_1_Bit_Multiplexer3"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, -75]
+		DstBlock		"2_to_1_Bit_Multiplexer2"
+		DstPort			1
+	      }
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -75]
+	    Branch {
+	      Points		      [0, -80]
+	      DstBlock		      "2_to_1_Bit_Multiplexer"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "2_to_1_Bit_Multiplexer1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer10"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 25]
+	  DstBlock		  "Bit_5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer11"
+	  SrcPort		  1
+	  DstBlock		  "Bit_5"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator10"
+	  SrcPort		  1
+	  DstBlock		  "2_to_1_Bit_Multiplexer11"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [2099, 0; 0, 230]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Logical\nOperator10"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "2_to_1_Bit_Multiplexer10"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer12"
+	  SrcPort		  1
+	  Points		  [14, 0; 0, 25]
+	  DstBlock		  "Bit_6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer13"
+	  SrcPort		  1
+	  DstBlock		  "Bit_6"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [2516, 0; 0, 255]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Logical\nOperator11"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "2_to_1_Bit_Multiplexer12"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator11"
+	  SrcPort		  1
+	  DstBlock		  "2_to_1_Bit_Multiplexer13"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer15"
+	  SrcPort		  1
+	  DstBlock		  "Bit_7"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer14"
+	  SrcPort		  1
+	  Points		  [7, 0; 0, 30]
+	  DstBlock		  "Bit_7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator7"
+	  SrcPort		  1
+	  DstBlock		  "2_to_1_Bit_Multiplexer15"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [2925, 0; 0, 285]
+	  Branch {
+	    Points		    [0, 80]
+	    DstBlock		    "Logical\nOperator7"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "2_to_1_Bit_Multiplexer14"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Bit_4"
+	  SrcPort		  1
+	  Points		  [17, 0; 0, -55]
+	  Branch {
+	    Points		    [0, -355]
+	    DstBlock		    "Mux1"
+	    DstPort		    4
+	  }
+	  Branch {
+	    DstBlock		    "Increment\nEnabled1"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator12"
+	  SrcPort		  1
+	  DstBlock		  "2_to_1_Bit_Multiplexer9"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  Points		  [1675, 0; 0, 210]
+	  Branch {
+	    Points		    [0, 75]
+	    DstBlock		    "Logical\nOperator12"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "2_to_1_Bit_Multiplexer8"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator13"
+	  SrcPort		  1
+	  Points		  [19, 0]
+	  Branch {
+	    Points		    [0, 60]
+	    Branch {
+	      Points		      [0, 75]
+	      DstBlock		      "2_to_1_Bit_Multiplexer9"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "2_to_1_Bit_Multiplexer8"
+	      DstPort		      3
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Increment\nEnabled1"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "__Instruction_Decoder__"
+      SID		      "1739"
+      Ports		      [2, 5]
+      Position		      [1495, 3, 1670, 67]
+      ZOrder		      448
+      Commented		      on
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"__Instruction_Decoder__"
+	Location		[57, 0, 1928, 1096]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Data_Bus_In(1B)"
+	  SID			  "1996"
+	  Position		  [20, 1208, 50, 1222]
+	  ZOrder		  617
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Clock"
+	  SID			  "1998"
+	  Position		  [20, 1248, 50, 1262]
+	  ZOrder		  620
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "1_to_4_Byte_Demultiplexer"
+	  SID			  "1999"
+	  Ports			  [3, 4]
+	  Position		  [1475, 1162, 1620, 1223]
+	  ZOrder		  623
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Demultiplexers/1_to_4_Byte_Demultiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer"
+	  SID			  "2043"
+	  Ports			  [3, 1]
+	  Position		  [1755, 817, 1895, 863]
+	  ZOrder		  664
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Bit_Multiplexer1"
+	  SID			  "2045"
+	  Ports			  [3, 1]
+	  Position		  [1755, 887, 1895, 933]
+	  ZOrder		  666
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Byte_Multiplexer"
+	  SID			  "2019"
+	  Ports			  [3, 1]
+	  Position		  [420, 1002, 560, 1048]
+	  ZOrder		  640
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Byte_Multiplexer1"
+	  SID			  "2044"
+	  Ports			  [3, 1]
+	  Position		  [1755, 1047, 1895, 1093]
+	  ZOrder		  665
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_1_Byte_Multiplexer2"
+	  SID			  "2047"
+	  Ports			  [3, 1]
+	  Position		  [1755, 1117, 1895, 1163]
+	  ZOrder		  668
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "2_to_4_Decoder"
+	  SID			  "2000"
+	  Ports			  [2, 4]
+	  Position		  [1465, 950, 1615, 1015]
+	  ZOrder		  627
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Decoders/2_to_4_Decoder"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit to Integer\nConverter"
+	  SID			  "2055"
+	  Ports			  [1, 1]
+	  Position		  [1495, 1328, 1575, 1372]
+	  ZOrder		  676
+	  LibraryVersion	  "1.271"
+	  SourceBlock		  "commutil2/Bit to Integer\nConverter"
+	  SourceType		  "Bit to Integer Converter"
+	  nbits			  "2"
+	  bitOrder		  "MSB first"
+	  signedOutputValues	  "Unsigned"
+	  outDtype		  "uint8"
+	  outDtypeSigned	  "Inherit via internal rule"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit to Integer\nConverter1"
+	  SID			  "2067"
+	  Ports			  [1, 1]
+	  Position		  [1145, 1363, 1225, 1407]
+	  ZOrder		  689
+	  LibraryVersion	  "1.271"
+	  SourceBlock		  "commutil2/Bit to Integer\nConverter"
+	  SourceType		  "Bit to Integer Converter"
+	  nbits			  "2"
+	  bitOrder		  "MSB first"
+	  signedOutputValues	  "Unsigned"
+	  outDtype		  "uint8"
+	  outDtypeSigned	  "Inherit via internal rule"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit00"
+	  SID			  "2051"
+	  Ports			  [3, 1]
+	  Position		  [795, 951, 955, 999]
+	  ZOrder		  672
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Memory_Blocks/Bit"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit01"
+	  SID			  "2066"
+	  Ports			  [3, 1]
+	  Position		  [795, 871, 955, 919]
+	  ZOrder		  687
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Memory_Blocks/Bit"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  SID			  "2001"
+	  Position		  [1995, 875, 2015, 895]
+	  ZOrder		  621
+	  BlockRotation		  270
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  ShowName		  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  SID			  "2056"
+	  Position		  [1690, 1415, 1710, 1435]
+	  ZOrder		  677
+	  ShowName		  off
+	  Value			  "2"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant2"
+	  SID			  "2059"
+	  Position		  [1690, 1500, 1710, 1520]
+	  ZOrder		  680
+	  ShowName		  off
+	  Value			  "3"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  SID			  "2061"
+	  Position		  [1700, 1610, 1720, 1630]
+	  ZOrder		  683
+	  ShowName		  off
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant4"
+	  SID			  "2062"
+	  Position		  [1700, 1695, 1720, 1715]
+	  ZOrder		  686
+	  ShowName		  off
+	  Value			  "2"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Counter_3_to_0"
+	  SID			  "1972"
+	  Ports			  [4, 2]
+	  Position		  [1210, 951, 1365, 1014]
+	  ZOrder		  608
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Counter_3_to_0"
+	    Location		    [57, -8, 1928, 1088]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "125"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Set_Direct(1b)"
+	      SID		      "1973"
+	      Position		      [65, 118, 95, 132]
+	      ZOrder		      600
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_1_In(1b)"
+	      SID		      "1974"
+	      Position		      [65, 238, 95, 252]
+	      ZOrder		      603
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_0_In(1b)"
+	      SID		      "1975"
+	      Position		      [65, 168, 95, 182]
+	      ZOrder		      602
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CLK"
+	      SID		      "1976"
+	      Position		      [65, 348, 95, 362]
+	      ZOrder		      604
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer"
+	      SID		      "1977"
+	      Ports		      [3, 1]
+	      Position		      [210, 220, 350, 270]
+	      ZOrder		      587
+	      ShowName		      off
+	      LibraryVersion	      "1.69"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer1"
+	      SID		      "1978"
+	      Ports		      [3, 1]
+	      Position		      [210, 270, 350, 320]
+	      ZOrder		      588
+	      ShowName		      off
+	      LibraryVersion	      "1.69"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer2"
+	      SID		      "1979"
+	      Ports		      [3, 1]
+	      Position		      [595, 210, 735, 260]
+	      ZOrder		      595
+	      ShowName		      off
+	      LibraryVersion	      "1.69"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "2_to_1_Bit_Multiplexer3"
+	      SID		      "1980"
+	      Ports		      [3, 1]
+	      Position		      [595, 260, 735, 310]
+	      ZOrder		      596
+	      ShowName		      off
+	      LibraryVersion	      "1.69"
+	      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "J-K\nFlip-Flop3"
+	      SID		      "1981"
+	      Ports		      [3, 2]
+	      Position		      [415, 232, 460, 308]
+	      ZOrder		      563
+	      ShowName		      off
+	      LibraryVersion	      "1.44"
+	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	      SourceType	      "JKFlipFlop"
+	      initial_condition	      "0"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "J-K\nFlip-Flop4"
+	      SID		      "1982"
+	      Ports		      [3, 2]
+	      Position		      [805, 222, 850, 298]
+	      ZOrder		      564
+	      ShowName		      off
+	      LibraryVersion	      "1.44"
+	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	      SourceType	      "JKFlipFlop"
+	      initial_condition	      "0"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator4"
+	      SID		      "1983"
+	      Ports		      [1, 1]
+	      Position		      [178, 301, 193, 319]
+	      ZOrder		      565
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator5"
+	      SID		      "1984"
+	      Ports		      [1, 1]
+	      Position		      [563, 276, 578, 294]
+	      ZOrder		      598
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator6"
+	      SID		      "1985"
+	      Ports		      [1, 1]
+	      Position		      [148, 286, 163, 304]
+	      ZOrder		      586
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator3"
+	      SID		      "1986"
+	      Position		      [480, 280, 500, 300]
+	      ZOrder		      572
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator4"
+	      SID		      "1987"
+	      Position		      [870, 270, 890, 290]
+	      ZOrder		      568
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_1_Out(1b)"
+	      SID		      "1988"
+	      Position		      [955, 188, 985, 202]
+	      ZOrder		      601
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_0_Out(1b)"
+	      SID		      "1989"
+	      Position		      [955, 233, 985, 247]
+	      ZOrder		      605
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "J-K\nFlip-Flop4"
+	      SrcPort		      2
+	      DstBlock		      "Terminator4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "J-K\nFlip-Flop3"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, -55]
+		Branch {
+		  DstBlock		  "Data_1_Out(1b)"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [-290, 0; 0, 65]
+		  DstBlock		  "2_to_1_Bit_Multiplexer"
+		  DstPort		  3
+		}
+	      }
+	      Branch {
+		DstBlock		"2_to_1_Bit_Multiplexer2"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator4"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "J-K\nFlip-Flop4"
+	      SrcPort		      1
+	      Points		      [50, 0]
+	      Branch {
+		DstBlock		"Data_0_Out(1b)"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 95; -371, 0]
+		Branch {
+		  Points		  [0, -35]
+		  DstBlock		  "2_to_1_Bit_Multiplexer3"
+		  DstPort		  3
+		}
+		Branch {
+		  Points		  [-412, 0; 0, -25]
+		  DstBlock		  "Logical\nOperator4"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "CLK"
+	      SrcPort		      1
+	      Points		      [279, 0]
+	      Branch {
+		Points			[389, 0; 0, -95]
+		DstBlock		"J-K\nFlip-Flop4"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, -85]
+		DstBlock		"J-K\nFlip-Flop3"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "J-K\nFlip-Flop3"
+	      SrcPort		      2
+	      DstBlock		      "Terminator3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator6"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer1"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop3"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Data_1_In(1b)"
+	      SrcPort		      1
+	      Points		      [23, 0]
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator6"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"2_to_1_Bit_Multiplexer"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Set_Direct(1b)"
+	      SrcPort		      1
+	      Points		      [65, 0]
+	      Branch {
+		Points			[0, 105]
+		Branch {
+		  Points		  [0, 50]
+		  DstBlock		  "2_to_1_Bit_Multiplexer1"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "2_to_1_Bit_Multiplexer"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, -1; 384, 0; 0, 96]
+		Branch {
+		  Points		  [0, 50]
+		  DstBlock		  "2_to_1_Bit_Multiplexer3"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "2_to_1_Bit_Multiplexer2"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Data_0_In(1b)"
+	      SrcPort		      1
+	      Points		      [433, 0; 0, 60]
+	      Branch {
+		DstBlock		"2_to_1_Bit_Multiplexer2"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator5"
+	      SrcPort		      1
+	      DstBlock		      "2_to_1_Bit_Multiplexer3"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer2"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop4"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "2_to_1_Bit_Multiplexer3"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop4"
+	      DstPort		      3
+	    }
+	    Annotation {
+	      SID		      "1990"
+	      Name		      "\nCounter sa nastavi pomocou signalu Set_Direct na hodnotu 1 az 3.\nPotom odpocitava do nuly. V nu"
+	      "le zostane.\n"
+	      Position		      [539, 59]
+	      DropShadow	      on
+	      ZOrder		      -1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Data_Register_0"
+	  SID			  "2002"
+	  Ports			  [4, 1]
+	  Position		  [2045, 1161, 2205, 1224]
+	  ZOrder		  619
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Data_Register_1"
+	  SID			  "2003"
+	  Ports			  [4, 1]
+	  Position		  [2045, 1046, 2205, 1109]
+	  ZOrder		  618
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux2"
+	  SID			  "2018"
+	  Ports			  [1, 8]
+	  Position		  [250, 926, 260, 1074]
+	  ZOrder		  639
+	  ShowName		  off
+	  Outputs		  "8"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux3"
+	  SID			  "2022"
+	  Ports			  [1, 8]
+	  Position		  [685, 948, 695, 1102]
+	  ZOrder		  644
+	  ShowName		  off
+	  Outputs		  "8"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Instruction_Register"
+	  SID			  "2005"
+	  Ports			  [4, 1]
+	  Position		  [2045, 951, 2205, 1014]
+	  ZOrder		  622
+	  LibraryVersion	  "1.69"
+	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Integer to Bit\nConverter2"
+	  SID			  "2017"
+	  Ports			  [1, 1]
+	  Position		  [140, 978, 220, 1022]
+	  ZOrder		  638
+	  ShowName		  off
+	  LibraryVersion	  "1.271"
+	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
+	  SourceType		  "Integer to Bit Converter"
+	  nbits			  "8"
+	  signedInputValues	  "Unsigned"
+	  bitOrder		  "MSB first"
+	  outDtype		  "boolean"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Integer to Bit\nConverter3"
+	  SID			  "2023"
+	  Ports			  [1, 1]
+	  Position		  [585, 1003, 665, 1047]
+	  ZOrder		  643
+	  ShowName		  off
+	  LibraryVersion	  "1.271"
+	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
+	  SourceType		  "Integer to Bit Converter"
+	  nbits			  "8"
+	  signedInputValues	  "Unsigned"
+	  bitOrder		  "MSB first"
+	  outDtype		  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  SID			  "2025"
+	  Ports			  [2, 1]
+	  Position		  [1110, 1030, 1140, 1070]
+	  ZOrder		  646
+	  ShowName		  off
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  "2024"
+	  Ports			  [2, 1]
+	  Position		  [1110, 985, 1140, 1025]
+	  ZOrder		  645
+	  ShowName		  off
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator3"
+	  SID			  "2052"
+	  Ports			  [2, 1]
+	  Position		  [2005, 1515, 2035, 1555]
+	  ZOrder		  673
+	  ShowName		  off
+	  Operator		  "OR"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator4"
+	  SID			  "2057"
+	  Ports			  [2, 1]
+	  Position		  [1865, 1430, 1895, 1470]
+	  ZOrder		  678
+	  ShowName		  off
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator5"
+	  SID			  "2063"
+	  Ports			  [2, 1]
+	  Position		  [1875, 1625, 1905, 1665]
+	  ZOrder		  684
+	  ShowName		  off
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "2054"
+	  Ports			  [2, 1]
+	  Position		  [1455, 1331, 1460, 1369]
+	  ZOrder		  675
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "2068"
+	  Ports			  [2, 1]
+	  Position		  [1105, 1366, 1110, 1404]
+	  ZOrder		  688
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Num_Of_Operands(Long)"
+	  SID			  "2020"
+	  Position		  [295, 1105, 325, 1135]
+	  ZOrder		  641
+	  Value			  "3"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Num_Of_Operands(Short)"
+	  SID			  "2021"
+	  Position		  [295, 1155, 325, 1185]
+	  ZOrder		  642
+	  Value			  "2"
+	  OutDataTypeStr	  "uint8"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator"
+	  SID			  "2053"
+	  Ports			  [2, 1]
+	  Position		  [1755, 1377, 1785, 1408]
+	  ZOrder		  674
+	  Operator		  "=="
+	  InputSameDT		  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator1"
+	  SID			  "2058"
+	  Ports			  [2, 1]
+	  Position		  [1755, 1467, 1785, 1498]
+	  ZOrder		  679
+	  Operator		  "=="
+	  InputSameDT		  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator2"
+	  SID			  "2064"
+	  Ports			  [2, 1]
+	  Position		  [1765, 1572, 1795, 1603]
+	  ZOrder		  682
+	  Operator		  "=="
+	  InputSameDT		  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  RelationalOperator
+	  Name			  "Relational\nOperator3"
+	  SID			  "2065"
+	  Ports			  [2, 1]
+	  Position		  [1765, 1662, 1795, 1693]
+	  ZOrder		  685
+	  Operator		  "=="
+	  InputSameDT		  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  SID			  "2028"
+	  Position		  [280, 1060, 300, 1080]
+	  ZOrder		  649
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator10"
+	  SID			  "2035"
+	  Position		  [715, 1045, 735, 1065]
+	  ZOrder		  656
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator11"
+	  SID			  "2036"
+	  Position		  [715, 1025, 735, 1045]
+	  ZOrder		  657
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator12"
+	  SID			  "2037"
+	  Position		  [715, 1005, 735, 1025]
+	  ZOrder		  658
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator13"
+	  SID			  "2038"
+	  Position		  [715, 985, 735, 1005]
+	  ZOrder		  659
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator14"
+	  SID			  "2039"
+	  Position		  [715, 965, 735, 985]
+	  ZOrder		  660
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator15"
+	  SID			  "2040"
+	  Position		  [715, 945, 735, 965]
+	  ZOrder		  661
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  SID			  "2029"
+	  Position		  [280, 1040, 300, 1060]
+	  ZOrder		  650
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator3"
+	  SID			  "2030"
+	  Position		  [280, 1020, 300, 1040]
+	  ZOrder		  651
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator4"
+	  SID			  "2009"
+	  Position		  [1675, 1225, 1695, 1245]
+	  ZOrder		  625
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator6"
+	  SID			  "2031"
+	  Position		  [280, 980, 300, 1000]
+	  ZOrder		  652
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator7"
+	  SID			  "2032"
+	  Position		  [280, 960, 300, 980]
+	  ZOrder		  653
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator8"
+	  SID			  "2033"
+	  Position		  [280, 940, 300, 960]
+	  ZOrder		  654
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator9"
+	  SID			  "2034"
+	  Position		  [280, 920, 300, 940]
+	  ZOrder		  655
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Instruction_Out(1B)"
+	  SID			  "1741"
+	  Position		  [2250, 978, 2280, 992]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Data_1_Out(1B)"
+	  SID			  "2015"
+	  Position		  [2250, 1073, 2280, 1087]
+	  ZOrder		  636
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Data_0_Out(1B)"
+	  SID			  "2016"
+	  Position		  [2250, 1188, 2280, 1202]
+	  ZOrder		  637
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Process(1b)"
+	  SID			  "2048"
+	  Position		  [2250, 1273, 2280, 1287]
+	  ZOrder		  669
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Increase_Address(1b)"
+	  SID			  "2060"
+	  Position		  [2250, 1528, 2280, 1542]
+	  ZOrder		  681
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  8
+	  Points		  [52, 0]
+	  Branch {
+	    Points		    [0, -120]
+	    DstBlock		    "Bit00"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [323, 0; 0, -55]
+	    DstBlock		    "Logical\nOperator1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  7
+	  Points		  [63, 0]
+	  Branch {
+	    Points		    [0, -180]
+	    DstBlock		    "Bit01"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [298, 0; 0, -80]
+	    DstBlock		    "Logical\nOperator2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Clock"
+	  SrcPort		  1
+	  Points		  [719, 0]
+	  Branch {
+	    Points		    [0, -265; 1, 0]
+	    Branch {
+	      Points		      [0, -80]
+	      DstBlock		      "Bit01"
+	      DstPort		      3
+	    }
+	    Branch {
+	      DstBlock		      "Bit00"
+	      DstPort		      3
+	    }
+	  }
+	  Branch {
+	    Points		    [414, 0]
+	    Branch {
+	      Points		      [0, -250]
+	      DstBlock		      "Counter_3_to_0"
+	      DstPort		      4
+	    }
+	    Branch {
+	      Points		      [797, 0; 0, -40]
+	      Branch {
+		Points			[0, -115]
+		Branch {
+		  Points		  [0, -95]
+		  DstBlock		  "Instruction_Register"
+		  DstPort		  4
+		}
+		Branch {
+		  DstBlock		  "Data_Register_1"
+		  DstPort		  4
+		}
+	      }
+	      Branch {
+		DstBlock		"Data_Register_0"
+		DstPort			4
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
+	  SrcPort		  3
+	  Points		  [47, 0]
+	  Branch {
+	    Points		    [0, -45]
+	    DstBlock		    "2_to_1_Byte_Multiplexer2"
+	    DstPort		    3
+	  }
+	  Branch {
+	    DstBlock		    "Data_Register_0"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
+	  SrcPort		  2
+	  Points		  [31, 0; 0, -45]
+	  Branch {
+	    DstBlock		    "2_to_1_Byte_Multiplexer2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -55]
+	    DstBlock		    "2_to_1_Byte_Multiplexer1"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Byte_Multiplexer1"
+	  SrcPort		  1
+	  Points		  [65, 0; 0, -80]
+	  DstBlock		  "Instruction_Register"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [0, 75]
+	  Branch {
+	    Points		    [0, 95]
+	    Branch {
+	      DstBlock		      "Data_Register_1"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 115]
+	      DstBlock		      "Data_Register_0"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Instruction_Register"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Data_Bus_In(1B)"
+	  SrcPort		  1
+	  Points		  [58, 0]
+	  Branch {
+	    Points		    [0, -215]
+	    DstBlock		    "Integer to Bit\nConverter2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "1_to_4_Byte_Demultiplexer"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "Counter_3_to_0"
+	  SrcPort		  2
+	  Points		  [34, 0]
+	  Branch {
+	    Points		    [0, 195]
+	    Branch {
+	      Points		      [0, 165]
+	      DstBlock		      "Mux"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "1_to_4_Byte_Demultiplexer"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "2_to_4_Decoder"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  SrcBlock		  "Counter_3_to_0"
+	  SrcPort		  1
+	  Points		  [51, 0]
+	  Branch {
+	    Points		    [0, 205]
+	    Branch {
+	      Points		      [0, 165]
+	      DstBlock		      "Mux"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "1_to_4_Byte_Demultiplexer"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "2_to_4_Decoder"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
+	  SrcPort		  4
+	  Points		  [30, 0; 0, 20]
+	  DstBlock		  "Terminator4"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "2_to_4_Decoder"
+	  SrcPort		  2
+	  Points		  [33, 0; 0, -65]
+	  Branch {
+	    DstBlock		    "2_to_1_Bit_Multiplexer1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -55]
+	    DstBlock		    "2_to_1_Bit_Multiplexer"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer"
+	  SrcPort		  1
+	  Points		  [64, 0; 0, 120]
+	  DstBlock		  "Instruction_Register"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Instruction_Register"
+	  SrcPort		  1
+	  DstBlock		  "Instruction_Out(1B)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data_Register_1"
+	  SrcPort		  1
+	  DstBlock		  "Data_1_Out(1B)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Data_Register_0"
+	  SrcPort		  1
+	  DstBlock		  "Data_0_Out(1B)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integer to Bit\nConverter2"
+	  SrcPort		  1
+	  DstBlock		  "Demux2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bit00"
+	  SrcPort		  1
+	  Points		  [31, 0; 0, 2]
+	  Branch {
+	    Points		    [0, 418]
+	    DstBlock		    "Mux1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [66, 0; 0, -152; 669, 0]
+	    Branch {
+	      Points		      [0, 70]
+	      Branch {
+		Points			[0, 160]
+		Branch {
+		  Points		  [0, 70]
+		  DstBlock		  "2_to_1_Byte_Multiplexer2"
+		  DstPort		  1
+		}
+		Branch {
+		  DstBlock		  "2_to_1_Byte_Multiplexer1"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"2_to_1_Bit_Multiplexer1"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "2_to_1_Bit_Multiplexer"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Num_Of_Operands(Long)"
+	  SrcPort		  1
+	  Points		  [43, 0; 0, -95]
+	  DstBlock		  "2_to_1_Byte_Multiplexer"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Num_Of_Operands(Short)"
+	  SrcPort		  1
+	  Points		  [61, 0; 0, -130]
+	  DstBlock		  "2_to_1_Byte_Multiplexer"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Integer to Bit\nConverter3"
+	  SrcPort		  1
+	  DstBlock		  "Demux3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bit to Integer\nConverter1"
+	  SrcPort		  1
+	  Points		  [9, 0; 0, 90]
+	  Branch {
+	    Points		    [0, 195]
+	    DstBlock		    "Relational\nOperator3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Relational\nOperator1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "2_to_4_Decoder"
+	  SrcPort		  4
+	  Points		  [6, 0]
+	  Branch {
+	    Points		    [0, 80; -537, 0; 0, -25]
+	    Branch {
+	      Points		      [0, -45]
+	      Branch {
+		Points			[0, -55]
+		Branch {
+		  Points		  [0, -180; -336, 0; 0, 100]
+		  Branch {
+		    DstBlock		    "Bit01"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 80]
+		    DstBlock		    "Bit00"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  DstBlock		  "Counter_3_to_0"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		DstBlock		"Logical\nOperator2"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    Points		    [85, 0; 0, 275]
+	    DstBlock		    "Process(1b)"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  Points		  [13, 0; 0, -30]
+	  DstBlock		  "Counter_3_to_0"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  Points		  [28, 0; 0, -60]
+	  DstBlock		  "Counter_3_to_0"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  8
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  7
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  6
+	  DstBlock		  "Terminator3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  4
+	  DstBlock		  "Terminator6"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  3
+	  DstBlock		  "Terminator7"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  2
+	  DstBlock		  "Terminator8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  1
+	  DstBlock		  "Terminator9"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  6
+	  DstBlock		  "Terminator10"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  5
+	  DstBlock		  "Terminator11"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  4
+	  DstBlock		  "Terminator12"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  3
+	  DstBlock		  "Terminator13"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  2
+	  DstBlock		  "Terminator14"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux3"
+	  SrcPort		  1
+	  DstBlock		  "Terminator15"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "2_to_4_Decoder"
+	  SrcPort		  1
+	  Points		  [18, 0; 0, -120]
+	  DstBlock		  "2_to_1_Bit_Multiplexer"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Bit_Multiplexer1"
+	  SrcPort		  1
+	  Points		  [46, 0; 0, 145]
+	  DstBlock		  "Data_Register_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "2_to_4_Decoder"
+	  SrcPort		  3
+	  Points		  [49, 0]
+	  Branch {
+	    Points		    [0, -65]
+	    DstBlock		    "2_to_1_Bit_Multiplexer1"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [259, 0; 0, 180]
+	    DstBlock		    "Data_Register_0"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
+	  SrcPort		  1
+	  Points		  [17, 0; 0, -100]
+	  DstBlock		  "2_to_1_Byte_Multiplexer1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Byte_Multiplexer2"
+	  SrcPort		  1
+	  Points		  [66, 0; 0, -55]
+	  DstBlock		  "Data_Register_1"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Demux2"
+	  SrcPort		  5
+	  DstBlock		  "2_to_1_Byte_Multiplexer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Bit to Integer\nConverter"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bit to Integer\nConverter"
+	  SrcPort		  1
+	  Points		  [14, 0]
+	  Branch {
+	    Points		    [0, 230]
+	    DstBlock		    "Relational\nOperator2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [134, 0; 0, 35]
+	    DstBlock		    "Relational\nOperator"
+	    DstPort		    1
+	  }
+	}
+	Line {
 	  SrcBlock		  "Constant1"
 	  SrcPort		  1
-	  DstBlock		  "Mux1"
-	  DstPort		  4
+	  Points		  [12, 0; 0, -25]
+	  DstBlock		  "Relational\nOperator"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 45]
+	  DstBlock		  "Logical\nOperator4"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Constant2"
 	  SrcPort		  1
-	  Points		  [55, 0; 0, 25]
-	  DstBlock		  "Mux1"
-	  DstPort		  3
+	  Points		  [9, 0; 0, -20]
+	  DstBlock		  "Relational\nOperator1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator1"
+	  SrcPort		  1
+	  Points		  [36, 0; 0, -25]
+	  DstBlock		  "Logical\nOperator4"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator4"
+	  SrcPort		  1
+	  Points		  [47, 0; 0, 75]
+	  DstBlock		  "Logical\nOperator3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator3"
+	  SrcPort		  1
+	  DstBlock		  "Increase_Address(1b)"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Constant3"
 	  SrcPort		  1
-	  Points		  [77, 0; 0, 50]
-	  DstBlock		  "Mux1"
+	  Points		  [12, 0; 0, -25]
+	  DstBlock		  "Relational\nOperator2"
 	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator2"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, 45]
+	  DstBlock		  "Logical\nOperator5"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant4"
+	  SrcPort		  1
+	  Points		  [9, 0; 0, -20]
+	  DstBlock		  "Relational\nOperator3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Relational\nOperator3"
+	  SrcPort		  1
+	  Points		  [36, 0; 0, -25]
+	  DstBlock		  "Logical\nOperator5"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator5"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, -100]
+	  DstBlock		  "Logical\nOperator3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "Bit to Integer\nConverter1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Bit01"
+	  SrcPort		  1
+	  Points		  [46, 0; 0, 480]
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "2_to_1_Byte_Multiplexer"
+	  SrcPort		  1
+	  DstBlock		  "Integer to Bit\nConverter3"
+	  DstPort		  1
 	}
       }
     }
