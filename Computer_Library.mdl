@@ -45,7 +45,7 @@ Library {
 	LoadSaveID		"0"
 	Extents			[1821.0, 930.0]
 	ZoomFactor		[1.5]
-	Offset			[983.15041994705291, -104.52056157556147]
+	Offset			[983.15041994705291, -104.52056157556149]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Feb 01 23:33:17 2019"
-  RTWModifiedTimeStamp	  470964795
-  ModelVersionFormat	  "1.%<AutoIncrement:389>"
+  LastModifiedDate	  "Sun Feb 03 19:50:23 2019"
+  RTWModifiedTimeStamp	  471124220
+  ModelVersionFormat	  "1.%<AutoIncrement:392>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -834,8 +834,8 @@ Library {
       BlockType		      SubSystem
       Name		      "ALU"
       SID		      "1505"
-      Ports		      [5, 1]
-      Position		      [1155, 137, 1340, 213]
+      Ports		      [3, 1]
+      Position		      [1155, 167, 1340, 213]
       ZOrder		      446
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -846,7 +846,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"ALU"
-	Location		[57, 0, 1928, 1096]
+	Location		[57, -8, 1928, 1088]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -858,10 +858,10 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
-	  Name			  "Instruction_Register(1B)"
+	  Name			  "Instruction(1B)"
 	  SID			  "2069"
 	  Position		  [935, 788, 965, 802]
 	  ZOrder		  619
@@ -869,7 +869,7 @@ Library {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "Data_Register_1(1B)"
+	  Name			  "Operand_1(1B)"
 	  SID			  "2070"
 	  Position		  [935, 853, 965, 867]
 	  ZOrder		  620
@@ -878,29 +878,11 @@ Library {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "Data_Register_2(1B)"
+	  Name			  "Operand_2(1B)"
 	  SID			  "2071"
 	  Position		  [935, 928, 965, 942]
 	  ZOrder		  621
 	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Process(1b)"
-	  SID			  "1947"
-	  Position		  [935, 673, 965, 687]
-	  ZOrder		  502
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Clock"
-	  SID			  "1942"
-	  Position		  [935, 728, 965, 742]
-	  ZOrder		  497
-	  Port			  "5"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -910,32 +892,9 @@ Library {
 	  Ports			  [20, 1]
 	  Position		  [1710, 1080, 1880, 1585]
 	  ZOrder		  491
-	  LibraryVersion	  "1.77"
+	  LibraryVersion	  "1.94"
 	  SourceBlock		  "Common_Library/Multiplexers/16_to_1_Byte_Multiplexer"
 	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Byte3"
-	  SID			  "1744"
-	  Ports			  [4, 1]
-	  Position		  [1980, 1296, 2140, 1359]
-	  ZOrder		  485
-	  LibraryVersion	  "1.77"
-	  SourceBlock		  "Common_Library/Memory_Blocks/Byte"
-	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "Constant"
-	  SID			  "1946"
-	  Position		  [1930, 1270, 1950, 1290]
-	  ZOrder		  501
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  ShowName		  off
-	  OutDataTypeStr	  "boolean"
 	}
 	Block {
 	  BlockType		  Demux
@@ -1045,7 +1004,7 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [1190, 1098, 1345, 1142]
 	  ZOrder		  617
-	  LibraryVersion	  "1.77"
+	  LibraryVersion	  "1.94"
 	  SourceBlock		  "Common_Library/Adders/1_Byte_Adder"
 	  SourceType		  "SubSystem"
 	}
@@ -1056,7 +1015,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [1190, 851, 1330, 884]
 	  ZOrder		  486
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.390"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_AND"
 	  SourceType		  "SubSystem"
 	}
@@ -1067,7 +1026,7 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [1190, 1029, 1330, 1061]
 	  ZOrder		  489
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.390"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_NOT"
 	  SourceType		  "SubSystem"
 	}
@@ -1078,7 +1037,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [1190, 910, 1330, 945]
 	  ZOrder		  487
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.390"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_OR"
 	  SourceType		  "SubSystem"
 	}
@@ -1089,7 +1048,7 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [1190, 1178, 1345, 1222]
 	  ZOrder		  622
-	  LibraryVersion	  "1.77"
+	  LibraryVersion	  "1.94"
 	  SourceBlock		  "Common_Library/Subtractors/1_Byte_Subtractor"
 	  SourceType		  "SubSystem"
 	}
@@ -1100,7 +1059,7 @@ Library {
 	  Ports			  [2, 1]
 	  Position		  [1190, 970, 1330, 1005]
 	  ZOrder		  488
-	  LibraryVersion	  "1.381"
+	  LibraryVersion	  "1.390"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_XOR"
 	  SourceType		  "SubSystem"
 	}
@@ -1172,12 +1131,12 @@ Library {
 	  BlockType		  Outport
 	  Name			  "Data_Out(1B)"
 	  SID			  "1678"
-	  Position		  [2210, 1323, 2240, 1337]
+	  Position		  [1935, 1328, 1965, 1342]
 	  ZOrder		  -2
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  SrcBlock		  "Data_Register_1(1B)"
+	  SrcBlock		  "Operand_1(1B)"
 	  SrcPort		  1
 	  Points		  [135, 0]
 	  Branch {
@@ -1219,7 +1178,7 @@ Library {
 	  }
 	}
 	Line {
-	  SrcBlock		  "Data_Register_2(1B)"
+	  SrcBlock		  "Operand_2(1B)"
 	  SrcPort		  1
 	  Points		  [119, 0]
 	  Branch {
@@ -1364,42 +1323,15 @@ Library {
 	  DstPort		  20
 	}
 	Line {
-	  SrcBlock		  "16_to_1_Byte_Multiplexer"
-	  SrcPort		  1
-	  DstBlock		  "Byte3"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Instruction_Register(1B)"
+	  SrcBlock		  "Instruction(1B)"
 	  SrcPort		  1
 	  DstBlock		  "Integer to Bit\nConverter"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "Clock"
-	  SrcPort		  1
-	  Points		  [947, 0; 0, 615]
-	  DstBlock		  "Byte3"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Byte3"
+	  SrcBlock		  "16_to_1_Byte_Multiplexer"
 	  SrcPort		  1
 	  DstBlock		  "Data_Out(1B)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Constant"
-	  SrcPort		  1
-	  Points		  [0, 25]
-	  DstBlock		  "Byte3"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Process(1b)"
-	  SrcPort		  1
-	  Points		  [989, 0; 0, 625]
-	  DstBlock		  "Byte3"
 	  DstPort		  1
 	}
 	Line {
@@ -5460,7 +5392,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [1315, 950, 1450, 1000]
 	  ZOrder		  549
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5471,7 +5403,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [1315, 1030, 1450, 1080]
 	  ZOrder		  550
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5482,7 +5414,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [3395, 1000, 3530, 1050]
 	  ZOrder		  595
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5493,7 +5425,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [3395, 1075, 3530, 1125]
 	  ZOrder		  596
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5504,7 +5436,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [3805, 1010, 3940, 1060]
 	  ZOrder		  598
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5515,7 +5447,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [3805, 1085, 3940, 1135]
 	  ZOrder		  599
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5526,7 +5458,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [4210, 1025, 4345, 1075]
 	  ZOrder		  601
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5537,7 +5469,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [4210, 1105, 4345, 1155]
 	  ZOrder		  602
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5548,7 +5480,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [1725, 960, 1860, 1010]
 	  ZOrder		  551
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5559,7 +5491,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [1725, 1035, 1860, 1085]
 	  ZOrder		  552
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5570,7 +5502,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [2135, 970, 2270, 1020]
 	  ZOrder		  554
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5581,7 +5513,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [2135, 1045, 2270, 1095]
 	  ZOrder		  555
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5592,7 +5524,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [2550, 985, 2685, 1035]
 	  ZOrder		  557
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5603,7 +5535,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [2550, 1060, 2685, 1110]
 	  ZOrder		  558
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5614,7 +5546,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [2970, 995, 3105, 1045]
 	  ZOrder		  593
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -5625,7 +5557,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [2970, 1070, 3105, 1120]
 	  ZOrder		  594
-	  LibraryVersion	  "1.78"
+	  LibraryVersion	  "1.90"
 	  SourceBlock		  "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
 	  SourceType		  "SubSystem"
 	}
@@ -6072,7 +6004,6 @@ Library {
 	Line {
 	  SrcBlock		  "Bit_2"
 	  SrcPort		  2
-	  Points		  [10, 0]
 	  DstBlock		  "Terminator11"
 	  DstPort		  1
 	}

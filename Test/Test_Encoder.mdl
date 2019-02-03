@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.24"
+    ComputedModelVersion    "1.32"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [593.0, 0.0, 929.0, 1080.0]
+      Location		      [202.0, 0.0, 1468.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[879.0, 906.0]
-	ZoomFactor		[0.8]
-	Offset			[-130.902688043975, -3.8424962103183589]
+	Extents			[1418.0, 906.0]
+	ZoomFactor		[1.25]
+	Offset			[-60.025970726596114, 91.130012721387331]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jun 03 18:24:35 2018"
-  RTWModifiedTimeStamp	  449951073
-  ModelVersionFormat	  "1.%<AutoIncrement:24>"
+  LastModifiedDate	  "Sun Feb 03 12:53:29 2019"
+  RTWModifiedTimeStamp	  471097888
+  ModelVersionFormat	  "1.%<AutoIncrement:32>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -835,7 +835,7 @@ Model {
   }
   System {
     Name		    "Test_Encoder"
-    Location		    [593, 0, 1522, 1080]
+    Location		    [202, 0, 1670, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -847,18 +847,19 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "65"
+    SIDHighWatermark	    "66"
     Block {
       BlockType		      Reference
       Name		      "16_to_4_Encoder"
       SID		      "1"
-      Ports		      [16, 4]
-      Position		      [445, 500, 540, 810]
+      Ports		      [4, 2]
+      Position		      [445, 502, 540, 813]
       ZOrder		      350
-      LibraryVersion	      "1.224"
-      SourceBlock	      "Computer_Library/Encoders/16_to_4_Encoder"
+      Commented		      on
+      LibraryVersion	      "1.94"
+      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
       SourceType	      "SubSystem"
     }
     Block {
@@ -866,21 +867,22 @@ Model {
       Name		      "4_to_2_Encoder"
       SID		      "28"
       Ports		      [4, 2]
-      Position		      [445, 152, 540, 228]
+      Position		      [445, 157, 595, 218]
       ZOrder		      372
-      LibraryVersion	      "1.224"
-      SourceBlock	      "Computer_Library/Encoders/4_to_2_Encoder"
+      LibraryVersion	      "1.94"
+      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
       SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Reference
       Name		      "8_to_3_Encoder1"
       SID		      "29"
-      Ports		      [8, 3]
-      Position		      [445, 290, 540, 440]
+      Ports		      [4, 2]
+      Position		      [445, 299, 585, 446]
       ZOrder		      371
-      LibraryVersion	      "1.224"
-      SourceBlock	      "Computer_Library/Encoders/8_to_3_Encoder1"
+      Commented		      on
+      LibraryVersion	      "1.94"
+      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
       SourceType	      "SubSystem"
     }
     Block {
@@ -891,6 +893,7 @@ Model {
       Position		      [680, 633, 760, 677]
       ZOrder		      354
       ShowName		      off
+      Commented		      on
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Bit to Integer\nConverter"
       SourceType	      "Bit to Integer Converter"
@@ -908,6 +911,7 @@ Model {
       Position		      [680, 343, 760, 387]
       ZOrder		      394
       ShowName		      off
+      Commented		      on
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Bit to Integer\nConverter"
       SourceType	      "Bit to Integer Converter"
@@ -922,16 +926,16 @@ Model {
       Name		      "Bit to Integer\nConverter2"
       SID		      "51"
       Ports		      [1, 1]
-      Position		      [680, 168, 760, 212]
+      Position		      [715, 168, 795, 212]
       ZOrder		      397
       ShowName		      off
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Bit to Integer\nConverter"
       SourceType	      "Bit to Integer Converter"
       nbits		      "2"
-      bitOrder		      "LSB first"
+      bitOrder		      "MSB first"
       signedOutputValues      "Unsigned"
-      outDtype		      "uint16"
+      outDtype		      "uint8"
       outDtypeSigned	      "Inherit via internal rule"
     }
     Block {
@@ -941,6 +945,7 @@ Model {
       Position		      [20, 630, 50, 660]
       ZOrder		      365
       ShowName		      off
+      Commented		      on
       Value		      "2"
     }
     Block {
@@ -950,16 +955,17 @@ Model {
       Position		      [20, 340, 50, 370]
       ZOrder		      377
       ShowName		      off
+      Commented		      on
       Value		      "2"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "42"
-      Position		      [20, 165, 50, 195]
+      Position		      [20, 175, 50, 205]
       ZOrder		      389
       ShowName		      off
-      Value		      "2"
+      Value		      "8"
     }
     Block {
       BlockType		      Demux
@@ -969,6 +975,7 @@ Model {
       Position		      [385, 502, 395, 808]
       ZOrder		      353
       ShowName		      off
+      Commented		      on
       Outputs		      "16"
       DisplayOption	      "bar"
     }
@@ -980,6 +987,7 @@ Model {
       Position		      [385, 289, 395, 441]
       ZOrder		      374
       ShowName		      off
+      Commented		      on
       Outputs		      "8"
       DisplayOption	      "bar"
     }
@@ -988,7 +996,7 @@ Model {
       Name		      "Demux2"
       SID		      "43"
       Ports		      [1, 4]
-      Position		      [385, 153, 395, 227]
+      Position		      [385, 160, 395, 215]
       ZOrder		      386
       ShowName		      off
       DisplayOption	      "bar"
@@ -1001,6 +1009,7 @@ Model {
       Position		      [815, 642, 890, 668]
       ZOrder		      351
       ShowName		      off
+      Commented		      on
       Decimation	      "1"
       Lockdown		      off
     }
@@ -1012,6 +1021,7 @@ Model {
       Position		      [815, 352, 890, 378]
       ZOrder		      392
       ShowName		      off
+      Commented		      on
       Decimation	      "1"
       Lockdown		      off
     }
@@ -1020,7 +1030,7 @@ Model {
       Name		      "Display2"
       SID		      "52"
       Ports		      [1]
-      Position		      [815, 177, 890, 203]
+      Position		      [850, 177, 925, 203]
       ZOrder		      395
       ShowName		      off
       Decimation	      "1"
@@ -1034,6 +1044,7 @@ Model {
       Position		      [255, 633, 335, 677]
       ZOrder		      356
       ShowName		      off
+      Commented		      on
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
@@ -1050,6 +1061,7 @@ Model {
       Position		      [255, 343, 335, 387]
       ZOrder		      375
       ShowName		      off
+      Commented		      on
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
@@ -1071,7 +1083,7 @@ Model {
       SourceType	      "Integer to Bit Converter"
       nbits		      "4"
       signedInputValues	      "Unsigned"
-      bitOrder		      "LSB first"
+      bitOrder		      "MSB first"
       outDtype		      "boolean"
     }
     Block {
@@ -1082,6 +1094,7 @@ Model {
       Position		      [170, 637, 200, 673]
       ZOrder		      361
       ShowName		      off
+      Commented		      on
       Operator		      "pow"
     }
     Block {
@@ -1092,16 +1105,7 @@ Model {
       Position		      [170, 347, 200, 383]
       ZOrder		      376
       ShowName		      off
-      Operator		      "pow"
-    }
-    Block {
-      BlockType		      Math
-      Name		      "Math\nFunction2"
-      SID		      "45"
-      Ports		      [2, 1]
-      Position		      [170, 172, 200, 208]
-      ZOrder		      388
-      ShowName		      off
+      Commented		      on
       Operator		      "pow"
     }
     Block {
@@ -1112,6 +1116,7 @@ Model {
       Position		      [620, 618, 630, 692]
       ZOrder		      352
       ShowName		      off
+      Commented		      on
       DisplayOption	      "bar"
     }
     Block {
@@ -1122,6 +1127,7 @@ Model {
       Position		      [620, 338, 630, 392]
       ZOrder		      393
       ShowName		      off
+      Commented		      on
       Inputs		      "3"
       DisplayOption	      "bar"
     }
@@ -1130,7 +1136,7 @@ Model {
       Name		      "Mux2"
       SID		      "53"
       Ports		      [2, 1]
-      Position		      [620, 170, 630, 210]
+      Position		      [655, 170, 665, 210]
       ZOrder		      396
       ShowName		      off
       Inputs		      "2"
@@ -1144,6 +1150,7 @@ Model {
       Position		      [85, 395, 115, 425]
       ZOrder		      379
       ShowName		      off
+      Commented		      on
       InputPortMap	      "u0"
       UpperLimit	      "7"
       LowerLimit	      "0"
@@ -1156,20 +1163,9 @@ Model {
       Position		      [85, 685, 115, 715]
       ZOrder		      367
       ShowName		      off
+      Commented		      on
       InputPortMap	      "u0"
       UpperLimit	      "15"
-      LowerLimit	      "0"
-    }
-    Block {
-      BlockType		      Saturate
-      Name		      "Saturation3"
-      SID		      "46"
-      Ports		      [1, 1]
-      Position		      [85, 220, 115, 250]
-      ZOrder		      391
-      ShowName		      off
-      InputPortMap	      "u0"
-      UpperLimit	      "3"
       LowerLimit	      "0"
     }
     Block {
@@ -1178,6 +1174,7 @@ Model {
       SID		      "17"
       Position		      [20, 685, 50, 715]
       ZOrder		      366
+      Commented		      on
       Value		      "15"
     }
     Block {
@@ -1186,15 +1183,8 @@ Model {
       SID		      "35"
       Position		      [20, 395, 50, 425]
       ZOrder		      378
+      Commented		      on
       Value		      "5"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "exponent2"
-      SID		      "47"
-      Position		      [20, 220, 50, 250]
-      ZOrder		      390
-      Value		      "2"
     }
     Line {
       SrcBlock		      "Demux"
@@ -1223,100 +1213,84 @@ Model {
     Line {
       SrcBlock		      "Demux"
       SrcPort		      5
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      5
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      7
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      7
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      8
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      8
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      6
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      6
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      9
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      9
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      10
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      10
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      11
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      11
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      12
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      12
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      13
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      13
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      14
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      14
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      15
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      15
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      16
-      DstBlock		      "16_to_4_Encoder"
-      DstPort		      16
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "16_to_4_Encoder"
       SrcPort		      1
-      Points		      [45, 0; 0, 80]
+      Points		      [45, 0; 0, 45]
       DstBlock		      "Mux"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "16_to_4_Encoder"
-      SrcPort		      4
-      Points		      [46, 0; 0, -85]
+      Points		      [545, 770; 46, 0; 0, -85]
       DstBlock		      "Mux"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "16_to_4_Encoder"
-      SrcPort		      3
-      Points		      [24, 0; 0, -30]
+      Points		      [545, 695; 24, 0; 0, -30]
       DstBlock		      "Mux"
       DstPort		      3
     }
     Line {
       SrcBlock		      "16_to_4_Encoder"
       SrcPort		      2
-      Points		      [24, 0; 0, 25]
+      Points		      [24, 0; 0, -90]
       DstBlock		      "Mux"
       DstPort		      2
     }
@@ -1397,50 +1371,50 @@ Model {
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      1
+      Points		      [30, 20]
       DstBlock		      "8_to_3_Encoder1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      2
+      Points		      [30, 35]
       DstBlock		      "8_to_3_Encoder1"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      3
+      Points		      [30, 50]
       DstBlock		      "8_to_3_Encoder1"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      4
+      Points		      [30, 65]
       DstBlock		      "8_to_3_Encoder1"
       DstPort		      4
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      5
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      5
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      6
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      6
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      7
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      7
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      8
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      8
+      Points		      [40, 0]
     }
     Line {
       SrcBlock		      "Integer to Bit\nConverter2"
@@ -1449,28 +1423,9 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Math\nFunction2"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter2"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
-      DstBlock		      "Math\nFunction2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Saturation3"
-      SrcPort		      1
-      Points		      [35, 0]
-      DstBlock		      "Math\nFunction2"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "exponent2"
-      SrcPort		      1
-      DstBlock		      "Saturation3"
+      DstBlock		      "Integer to Bit\nConverter2"
       DstPort		      1
     }
     Line {
@@ -1524,36 +1479,41 @@ Model {
     Line {
       SrcBlock		      "8_to_3_Encoder1"
       SrcPort		      2
+      Points		      [9, 0; 0, -45]
       DstBlock		      "Mux1"
       DstPort		      2
     }
     Line {
       SrcBlock		      "8_to_3_Encoder1"
       SrcPort		      1
-      Points		      [35, 0; 0, 30]
+      Points		      [9, 0; 0, 10]
       DstBlock		      "Mux1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "8_to_3_Encoder1"
-      SrcPort		      3
-      Points		      [35, 0; 0, -30]
+      Points		      [545, 415; 35, 0; 0, -30]
       DstBlock		      "Mux1"
       DstPort		      3
     }
     Line {
       SrcBlock		      "4_to_2_Encoder"
       SrcPort		      1
-      Points		      [35, 0; 0, 10]
+      Points		      [25, 0; 0, 5]
       DstBlock		      "Mux2"
       DstPort		      1
     }
     Line {
       SrcBlock		      "4_to_2_Encoder"
       SrcPort		      2
-      Points		      [35, 0; 0, -10]
+      Points		      [25, 0; 0, -5]
       DstBlock		      "Mux2"
       DstPort		      2
+    }
+    Annotation {
+      SID		      "66"
+      Name		      "\nInput values: 1, 2, 4, 8\n"
+      Position		      [73, 138]
+      DropShadow	      on
     }
   }
 }
