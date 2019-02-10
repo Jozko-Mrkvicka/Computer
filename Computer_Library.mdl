@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [57.0, -8.0, 1871.0, 1096.0]
+      Location		      [57.0, 0.0, 1871.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Feb 03 19:50:23 2019"
-  RTWModifiedTimeStamp	  471124220
-  ModelVersionFormat	  "1.%<AutoIncrement:392>"
+  LastModifiedDate	  "Fri Feb 08 22:04:46 2019"
+  RTWModifiedTimeStamp	  471564242
+  ModelVersionFormat	  "1.%<AutoIncrement:394>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -815,7 +815,7 @@ Library {
   }
   System {
     Name		    "Computer_Library"
-    Location		    [57, -8, 1928, 1088]
+    Location		    [57, 0, 1928, 1096]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -829,12 +829,12 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "2097"
+    SIDHighWatermark	    "2099"
     Block {
       BlockType		      SubSystem
       Name		      "ALU"
       SID		      "1505"
-      Ports		      [3, 1]
+      Ports		      [3, 3]
       Position		      [1155, 167, 1340, 213]
       ZOrder		      446
       MinAlgLoopOccurrences   off
@@ -846,7 +846,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"ALU"
-	Location		[57, -8, 1928, 1088]
+	Location		[57, 0, 1928, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -863,7 +863,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Instruction(1B)"
 	  SID			  "2069"
-	  Position		  [935, 788, 965, 802]
+	  Position		  [850, 788, 880, 802]
 	  ZOrder		  619
 	  IconDisplay		  "Port number"
 	}
@@ -871,7 +871,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Operand_1(1B)"
 	  SID			  "2070"
-	  Position		  [935, 853, 965, 867]
+	  Position		  [850, 853, 880, 867]
 	  ZOrder		  620
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -880,7 +880,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Operand_2(1B)"
 	  SID			  "2071"
-	  Position		  [935, 928, 965, 942]
+	  Position		  [850, 928, 880, 942]
 	  ZOrder		  621
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -911,7 +911,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_1"
 	  SID			  "1511"
-	  Position		  [1190, 1255, 1315, 1285]
+	  Position		  [1105, 1255, 1230, 1285]
 	  ZOrder		  347
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -920,7 +920,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_10"
 	  SID			  "1512"
-	  Position		  [1190, 1900, 1315, 1930]
+	  Position		  [1105, 1900, 1230, 1930]
 	  ZOrder		  356
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -929,7 +929,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_2"
 	  SID			  "1513"
-	  Position		  [1190, 1330, 1315, 1360]
+	  Position		  [1105, 1330, 1230, 1360]
 	  ZOrder		  348
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -938,7 +938,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_3"
 	  SID			  "1514"
-	  Position		  [1190, 1405, 1315, 1435]
+	  Position		  [1105, 1405, 1230, 1435]
 	  ZOrder		  349
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -947,7 +947,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_4"
 	  SID			  "1515"
-	  Position		  [1190, 1485, 1315, 1515]
+	  Position		  [1105, 1485, 1230, 1515]
 	  ZOrder		  350
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -956,7 +956,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_5"
 	  SID			  "1516"
-	  Position		  [1190, 1555, 1315, 1585]
+	  Position		  [1105, 1555, 1230, 1585]
 	  ZOrder		  351
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -965,7 +965,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_6"
 	  SID			  "1517"
-	  Position		  [1190, 1630, 1315, 1660]
+	  Position		  [1105, 1630, 1230, 1660]
 	  ZOrder		  352
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -974,7 +974,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_7"
 	  SID			  "1518"
-	  Position		  [1190, 1695, 1315, 1725]
+	  Position		  [1105, 1695, 1230, 1725]
 	  ZOrder		  353
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -983,7 +983,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_8"
 	  SID			  "1519"
-	  Position		  [1190, 1765, 1315, 1795]
+	  Position		  [1105, 1765, 1230, 1795]
 	  ZOrder		  354
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -992,7 +992,7 @@ Library {
 	  BlockType		  Constant
 	  Name			  "Instruction_9"
 	  SID			  "1520"
-	  Position		  [1190, 1835, 1315, 1865]
+	  Position		  [1105, 1835, 1230, 1865]
 	  ZOrder		  355
 	  Value			  "0"
 	  OutDataTypeStr	  "uint8"
@@ -1002,7 +1002,7 @@ Library {
 	  Name			  "Instruction_ADD(1_Byte_Adder)"
 	  SID			  "1968"
 	  Ports			  [2, 2]
-	  Position		  [1190, 1098, 1345, 1142]
+	  Position		  [1105, 1098, 1260, 1142]
 	  ZOrder		  617
 	  LibraryVersion	  "1.94"
 	  SourceBlock		  "Common_Library/Adders/1_Byte_Adder"
@@ -1013,9 +1013,9 @@ Library {
 	  Name			  "Instruction_AND"
 	  SID			  "1931"
 	  Ports			  [2, 1]
-	  Position		  [1190, 851, 1330, 884]
+	  Position		  [1105, 851, 1245, 884]
 	  ZOrder		  486
-	  LibraryVersion	  "1.390"
+	  LibraryVersion	  "1.393"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_AND"
 	  SourceType		  "SubSystem"
 	}
@@ -1024,9 +1024,9 @@ Library {
 	  Name			  "Instruction_NOT"
 	  SID			  "1932"
 	  Ports			  [1, 1]
-	  Position		  [1190, 1029, 1330, 1061]
+	  Position		  [1105, 1029, 1245, 1061]
 	  ZOrder		  489
-	  LibraryVersion	  "1.390"
+	  LibraryVersion	  "1.393"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_NOT"
 	  SourceType		  "SubSystem"
 	}
@@ -1035,9 +1035,9 @@ Library {
 	  Name			  "Instruction_OR"
 	  SID			  "1933"
 	  Ports			  [2, 1]
-	  Position		  [1190, 910, 1330, 945]
+	  Position		  [1105, 910, 1245, 945]
 	  ZOrder		  487
-	  LibraryVersion	  "1.390"
+	  LibraryVersion	  "1.393"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_OR"
 	  SourceType		  "SubSystem"
 	}
@@ -1046,7 +1046,7 @@ Library {
 	  Name			  "Instruction_SUB(1_Byte_Subtractor)"
 	  SID			  "2072"
 	  Ports			  [2, 2]
-	  Position		  [1190, 1178, 1345, 1222]
+	  Position		  [1105, 1178, 1260, 1222]
 	  ZOrder		  622
 	  LibraryVersion	  "1.94"
 	  SourceBlock		  "Common_Library/Subtractors/1_Byte_Subtractor"
@@ -1057,9 +1057,9 @@ Library {
 	  Name			  "Instruction_XOR"
 	  SID			  "1934"
 	  Ports			  [2, 1]
-	  Position		  [1190, 970, 1330, 1005]
+	  Position		  [1105, 970, 1245, 1005]
 	  ZOrder		  488
-	  LibraryVersion	  "1.390"
+	  LibraryVersion	  "1.393"
 	  SourceBlock		  "Computer_Library/Instructions/Instruction_XOR"
 	  SourceType		  "SubSystem"
 	}
@@ -1097,14 +1097,6 @@ Library {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Terminator12"
-	  SID			  "1969"
-	  Position		  [1385, 1120, 1405, 1140]
-	  ZOrder		  618
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  "1940"
 	  Position		  [1740, 1015, 1760, 1035]
@@ -1120,19 +1112,29 @@ Library {
 	  ShowName		  off
 	}
 	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator4"
-	  SID			  "2073"
-	  Position		  [1385, 1200, 1405, 1220]
-	  ZOrder		  623
-	  ShowName		  off
-	}
-	Block {
 	  BlockType		  Outport
 	  Name			  "Data_Out(1B)"
 	  SID			  "1678"
 	  Position		  [1935, 1328, 1965, 1342]
 	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Carry_Out(1b)"
+	  SID			  "2098"
+	  Position		  [1935, 628, 1965, 642]
+	  ZOrder		  624
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Borrow_Out(1b)"
+	  SID			  "2099"
+	  Position		  [1935, 678, 1965, 692]
+	  ZOrder		  625
+	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Line {
@@ -1213,112 +1215,112 @@ Library {
 	Line {
 	  SrcBlock		  "Instruction_AND"
 	  SrcPort		  1
-	  Points		  [229, 0; 0, 325]
+	  Points		  [314, 0; 0, 325]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  5
 	}
 	Line {
 	  SrcBlock		  "Instruction_OR"
 	  SrcPort		  1
-	  Points		  [203, 0; 0, 290]
+	  Points		  [288, 0; 0, 290]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  6
 	}
 	Line {
 	  SrcBlock		  "Instruction_XOR"
 	  SrcPort		  1
-	  Points		  [173, 0; 0, 255]
+	  Points		  [258, 0; 0, 255]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  7
 	}
 	Line {
 	  SrcBlock		  "Instruction_NOT"
 	  SrcPort		  1
-	  Points		  [143, 0; 0, 225]
+	  Points		  [228, 0; 0, 225]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  8
 	}
 	Line {
 	  SrcBlock		  "Instruction_ADD(1_Byte_Adder)"
 	  SrcPort		  1
-	  Points		  [98, 0; 0, 185]
+	  Points		  [183, 0; 0, 185]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  9
 	}
 	Line {
 	  SrcBlock		  "Instruction_SUB(1_Byte_Subtractor)"
 	  SrcPort		  1
-	  Points		  [67, 0; 0, 130]
+	  Points		  [152, 0; 0, 130]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  10
 	}
 	Line {
 	  SrcBlock		  "Instruction_1"
 	  SrcPort		  1
-	  Points		  [65, 0; 0, 75]
+	  Points		  [150, 0; 0, 75]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  11
 	}
 	Line {
 	  SrcBlock		  "Instruction_2"
 	  SrcPort		  1
-	  Points		  [32, 0; 0, 25]
+	  Points		  [117, 0; 0, 25]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  12
 	}
 	Line {
 	  SrcBlock		  "Instruction_3"
 	  SrcPort		  1
-	  Points		  [32, 0; 0, -25]
+	  Points		  [117, 0; 0, -25]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  13
 	}
 	Line {
 	  SrcBlock		  "Instruction_4"
 	  SrcPort		  1
-	  Points		  [69, 0; 0, -80]
+	  Points		  [154, 0; 0, -80]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  14
 	}
 	Line {
 	  SrcBlock		  "Instruction_5"
 	  SrcPort		  1
-	  Points		  [95, 0; 0, -125]
+	  Points		  [180, 0; 0, -125]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  15
 	}
 	Line {
 	  SrcBlock		  "Instruction_6"
 	  SrcPort		  1
-	  Points		  [121, 0; 0, -175]
+	  Points		  [206, 0; 0, -175]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  16
 	}
 	Line {
 	  SrcBlock		  "Instruction_7"
 	  SrcPort		  1
-	  Points		  [147, 0; 0, -215]
+	  Points		  [232, 0; 0, -215]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  17
 	}
 	Line {
 	  SrcBlock		  "Instruction_8"
 	  SrcPort		  1
-	  Points		  [174, 0; 0, -260]
+	  Points		  [259, 0; 0, -260]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  18
 	}
 	Line {
 	  SrcBlock		  "Instruction_9"
 	  SrcPort		  1
-	  Points		  [204, 0; 0, -305]
+	  Points		  [289, 0; 0, -305]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  19
 	}
 	Line {
 	  SrcBlock		  "Instruction_10"
 	  SrcPort		  1
-	  Points		  [232, 0; 0, -345]
+	  Points		  [317, 0; 0, -345]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  20
 	}
@@ -1396,13 +1398,15 @@ Library {
 	Line {
 	  SrcBlock		  "Instruction_ADD(1_Byte_Adder)"
 	  SrcPort		  2
-	  DstBlock		  "Terminator12"
+	  Points		  [89, 0; 0, -495]
+	  DstBlock		  "Carry_Out(1b)"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_SUB(1_Byte_Subtractor)"
 	  SrcPort		  2
-	  DstBlock		  "Terminator4"
+	  Points		  [107, 0; 0, -525]
+	  DstBlock		  "Borrow_Out(1b)"
 	  DstPort		  1
 	}
       }
