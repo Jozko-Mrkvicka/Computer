@@ -1,12 +1,12 @@
 Model {
-  Name			  "Test_Encoder"
+  Name			  "Test_Encoder_16_to_4"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.32"
+    ComputedModelVersion    "1.67"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [202.0, 0.0, 1468.0, 1080.0]
+      Location		      [319.0, 186.0, 1157.0, 623.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,9 +65,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1418.0, 906.0]
-	ZoomFactor		[1.25]
-	Offset			[-60.025970726596114, 91.130012721387331]
+	Extents			[1107.0, 449.0]
+	ZoomFactor		[1.0]
+	Offset			[47.695475785220992, 452.05810661488852]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Feb 03 12:53:29 2019"
-  RTWModifiedTimeStamp	  471097888
-  ModelVersionFormat	  "1.%<AutoIncrement:32>"
+  LastModifiedDate	  "Sat Feb 23 23:30:32 2019"
+  RTWModifiedTimeStamp	  472848217
+  ModelVersionFormat	  "1.%<AutoIncrement:67>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "len"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -769,17 +769,15 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
+      BlockType		      DataTypeConversion
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
       LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Demux
@@ -788,26 +786,13 @@ Model {
       BusSelectionMode	      off
     }
     Block {
-      BlockType		      Display
-      Format		      "short"
-      Decimation	      "10"
-      Floating		      off
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      OutDataTypeStr	      "Inherit: auto"
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Math
-      Operator		      "exp"
-      OutputSignalType	      "auto"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as first input"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	on
-      IntermediateResultsDataTypeStr "Inherit: Inherit via internal rule"
-      AlgorithmType	      "Newton-Raphson"
-      Iterations	      "3"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
     }
     Block {
       BlockType		      Mux
@@ -818,24 +803,19 @@ Model {
       NonVirtualBus	      off
     }
     Block {
-      BlockType		      Saturate
-      UpperLimitSource	      "Dialog"
-      UpperLimit	      "0.5"
-      LowerLimitSource	      "Dialog"
-      LowerLimit	      "-0.5"
-      LinearizeAsGain	      on
-      ZeroCross		      on
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Same as input"
-      LockScale		      off
-      RndMeth		      "Floor"
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
     }
   }
   System {
-    Name		    "Test_Encoder"
-    Location		    [202, 0, 1670, 1080]
+    Name		    "Test_Encoder_16_to_4"
+    Location		    [319, 186, 1476, 809]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -847,53 +827,17 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "66"
-    Block {
-      BlockType		      Reference
-      Name		      "16_to_4_Encoder"
-      SID		      "1"
-      Ports		      [4, 2]
-      Position		      [445, 502, 540, 813]
-      ZOrder		      350
-      Commented		      on
-      LibraryVersion	      "1.94"
-      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "4_to_2_Encoder"
-      SID		      "28"
-      Ports		      [4, 2]
-      Position		      [445, 157, 595, 218]
-      ZOrder		      372
-      LibraryVersion	      "1.94"
-      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "8_to_3_Encoder1"
-      SID		      "29"
-      Ports		      [4, 2]
-      Position		      [445, 299, 585, 446]
-      ZOrder		      371
-      Commented		      on
-      LibraryVersion	      "1.94"
-      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
-      SourceType	      "SubSystem"
-    }
+    SIDHighWatermark	    "75"
     Block {
       BlockType		      Reference
       Name		      "Bit to Integer\nConverter"
       SID		      "5"
       Ports		      [1, 1]
-      Position		      [680, 633, 760, 677]
+      Position		      [755, 633, 835, 677]
       ZOrder		      354
       ShowName		      off
-      Commented		      on
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Bit to Integer\nConverter"
       SourceType	      "Bit to Integer Converter"
@@ -904,147 +848,57 @@ Model {
       outDtypeSigned	      "Inherit via internal rule"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Bit to Integer\nConverter1"
-      SID		      "48"
-      Ports		      [1, 1]
-      Position		      [680, 343, 760, 387]
-      ZOrder		      394
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion"
+      SID		      "71"
+      Position		      [315, 643, 355, 667]
+      ZOrder		      505
       ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Bit to Integer\nConverter"
-      SourceType	      "Bit to Integer Converter"
-      nbits		      "3"
-      bitOrder		      "LSB first"
-      signedOutputValues      "Unsigned"
-      outDtype		      "uint16"
-      outDtypeSigned	      "Inherit via internal rule"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Bit to Integer\nConverter2"
-      SID		      "51"
-      Ports		      [1, 1]
-      Position		      [715, 168, 795, 212]
-      ZOrder		      397
-      ShowName		      off
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Bit to Integer\nConverter"
-      SourceType	      "Bit to Integer Converter"
-      nbits		      "2"
-      bitOrder		      "MSB first"
-      signedOutputValues      "Unsigned"
-      outDtype		      "uint8"
-      outDtypeSigned	      "Inherit via internal rule"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant"
-      SID		      "16"
-      Position		      [20, 630, 50, 660]
-      ZOrder		      365
-      ShowName		      off
-      Commented		      on
-      Value		      "2"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "30"
-      Position		      [20, 340, 50, 370]
-      ZOrder		      377
-      ShowName		      off
-      Commented		      on
-      Value		      "2"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "42"
-      Position		      [20, 175, 50, 205]
-      ZOrder		      389
-      ShowName		      off
-      Value		      "8"
+      OutDataTypeStr	      "uint16"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Demux
       Name		      "Demux"
       SID		      "4"
       Ports		      [1, 16]
-      Position		      [385, 502, 395, 808]
+      Position		      [495, 502, 505, 808]
       ZOrder		      353
       ShowName		      off
-      Commented		      on
       Outputs		      "16"
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Demux
-      Name		      "Demux1"
-      SID		      "31"
-      Ports		      [1, 8]
-      Position		      [385, 289, 395, 441]
-      ZOrder		      374
-      ShowName		      off
-      Commented		      on
-      Outputs		      "8"
-      DisplayOption	      "bar"
+      BlockType		      Reference
+      Name		      "Encoder_16_to_4"
+      SID		      "1"
+      Ports		      [16, 4]
+      Position		      [525, 496, 695, 814]
+      ZOrder		      350
+      LibraryVersion	      "1.13"
+      SourceBlock	      "Encoders_Lib/Encoders_Lib/Encoder_16_to_4"
+      SourceType	      "SubSystem"
     }
     Block {
-      BlockType		      Demux
-      Name		      "Demux2"
-      SID		      "43"
-      Ports		      [1, 4]
-      Position		      [385, 160, 395, 215]
-      ZOrder		      386
-      ShowName		      off
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display"
-      SID		      "2"
-      Ports		      [1]
-      Position		      [815, 642, 890, 668]
-      ZOrder		      351
-      ShowName		      off
-      Commented		      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display1"
-      SID		      "49"
-      Ports		      [1]
-      Position		      [815, 352, 890, 378]
-      ZOrder		      392
-      ShowName		      off
-      Commented		      on
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display2"
-      SID		      "52"
-      Ports		      [1]
-      Position		      [850, 177, 925, 203]
-      ZOrder		      395
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace"
+      SID		      "73"
+      Position		      [220, 640, 285, 670]
+      ZOrder		      507
+      VariableName	      "Input_Vect"
+      SampleTime	      "1"
+      Interpolate	      off
+      OutputAfterFinalValue   "Holding final value"
     }
     Block {
       BlockType		      Reference
       Name		      "Integer to Bit\nConverter"
       SID		      "7"
       Ports		      [1, 1]
-      Position		      [255, 633, 335, 677]
+      Position		      [385, 633, 465, 677]
       ZOrder		      356
       ShowName		      off
-      Commented		      on
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
@@ -1054,243 +908,143 @@ Model {
       outDtype		      "boolean"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter1"
-      SID		      "32"
-      Ports		      [1, 1]
-      Position		      [255, 343, 335, 387]
-      ZOrder		      375
-      ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "8"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "LSB first"
-      outDtype		      "boolean"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter2"
-      SID		      "44"
-      Ports		      [1, 1]
-      Position		      [255, 168, 335, 212]
-      ZOrder		      387
-      ShowName		      off
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "4"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "boolean"
-    }
-    Block {
-      BlockType		      Math
-      Name		      "Math\nFunction"
-      SID		      "12"
-      Ports		      [2, 1]
-      Position		      [170, 637, 200, 673]
-      ZOrder		      361
-      ShowName		      off
-      Commented		      on
-      Operator		      "pow"
-    }
-    Block {
-      BlockType		      Math
-      Name		      "Math\nFunction1"
-      SID		      "33"
-      Ports		      [2, 1]
-      Position		      [170, 347, 200, 383]
-      ZOrder		      376
-      ShowName		      off
-      Commented		      on
-      Operator		      "pow"
-    }
-    Block {
       BlockType		      Mux
       Name		      "Mux"
       SID		      "3"
       Ports		      [4, 1]
-      Position		      [620, 618, 630, 692]
+      Position		      [715, 498, 725, 812]
       ZOrder		      352
       ShowName		      off
-      Commented		      on
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "50"
-      Ports		      [3, 1]
-      Position		      [620, 338, 630, 392]
-      ZOrder		      393
-      ShowName		      off
-      Commented		      on
-      Inputs		      "3"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux2"
-      SID		      "53"
-      Ports		      [2, 1]
-      Position		      [655, 170, 665, 210]
-      ZOrder		      396
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Saturate
-      Name		      "Saturation1"
-      SID		      "34"
-      Ports		      [1, 1]
-      Position		      [85, 395, 115, 425]
-      ZOrder		      379
-      ShowName		      off
-      Commented		      on
-      InputPortMap	      "u0"
-      UpperLimit	      "7"
-      LowerLimit	      "0"
-    }
-    Block {
-      BlockType		      Saturate
-      Name		      "Saturation2"
-      SID		      "18"
-      Ports		      [1, 1]
-      Position		      [85, 685, 115, 715]
-      ZOrder		      367
-      ShowName		      off
-      Commented		      on
-      InputPortMap	      "u0"
-      UpperLimit	      "15"
-      LowerLimit	      "0"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "exponent"
-      SID		      "17"
-      Position		      [20, 685, 50, 715]
-      ZOrder		      366
-      Commented		      on
-      Value		      "15"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "exponent1"
-      SID		      "35"
-      Position		      [20, 395, 50, 425]
-      ZOrder		      378
-      Commented		      on
-      Value		      "5"
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "74"
+      Ports		      [1]
+      Position		      [865, 640, 935, 670]
+      ZOrder		      508
+      VariableName	      "Output_Vect"
+      MaxDataPoints	      "inf"
+      SampleTime	      "1"
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      1
-      DstBlock		      "16_to_4_Encoder"
+      DstBlock		      "Encoder_16_to_4"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      2
-      DstBlock		      "16_to_4_Encoder"
+      DstBlock		      "Encoder_16_to_4"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      3
-      DstBlock		      "16_to_4_Encoder"
+      DstBlock		      "Encoder_16_to_4"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      4
-      DstBlock		      "16_to_4_Encoder"
+      DstBlock		      "Encoder_16_to_4"
       DstPort		      4
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      5
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      5
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      7
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      7
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      8
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      8
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      6
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      6
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      9
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      9
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      10
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      10
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      11
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      11
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      12
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      12
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      13
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      13
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      14
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      14
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      15
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      15
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      16
-      Points		      [40, 0]
+      DstBlock		      "Encoder_16_to_4"
+      DstPort		      16
     }
     Line {
-      SrcBlock		      "16_to_4_Encoder"
+      SrcBlock		      "Encoder_16_to_4"
       SrcPort		      1
-      Points		      [45, 0; 0, 45]
       DstBlock		      "Mux"
       DstPort		      1
     }
     Line {
-      Points		      [545, 770; 46, 0; 0, -85]
+      SrcBlock		      "Encoder_16_to_4"
+      SrcPort		      4
       DstBlock		      "Mux"
       DstPort		      4
     }
     Line {
-      Points		      [545, 695; 24, 0; 0, -30]
+      SrcBlock		      "Encoder_16_to_4"
+      SrcPort		      3
       DstBlock		      "Mux"
       DstPort		      3
     }
     Line {
-      SrcBlock		      "16_to_4_Encoder"
+      SrcBlock		      "Encoder_16_to_4"
       SrcPort		      2
-      Points		      [24, 0; 0, -90]
       DstBlock		      "Mux"
       DstPort		      2
     }
@@ -1303,7 +1057,7 @@ Model {
     Line {
       SrcBlock		      "Bit to Integer\nConverter"
       SrcPort		      1
-      DstBlock		      "Display"
+      DstBlock		      "To Workspace"
       DstPort		      1
     }
     Line {
@@ -1313,207 +1067,16 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Math\nFunction"
+      SrcBlock		      "Data Type Conversion"
       SrcPort		      1
       DstBlock		      "Integer to Bit\nConverter"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant"
+      SrcBlock		      "From\nWorkspace"
       SrcPort		      1
-      DstBlock		      "Math\nFunction"
+      DstBlock		      "Data Type Conversion"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Saturation2"
-      SrcPort		      1
-      Points		      [20, 0; 0, -35]
-      DstBlock		      "Math\nFunction"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "exponent"
-      SrcPort		      1
-      DstBlock		      "Saturation2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter1"
-      SrcPort		      1
-      DstBlock		      "Demux1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Math\nFunction1"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant1"
-      SrcPort		      1
-      DstBlock		      "Math\nFunction1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Saturation1"
-      SrcPort		      1
-      Points		      [35, 0]
-      DstBlock		      "Math\nFunction1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "exponent1"
-      SrcPort		      1
-      DstBlock		      "Saturation1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      1
-      Points		      [30, 20]
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      2
-      Points		      [30, 35]
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      3
-      Points		      [30, 50]
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      4
-      Points		      [30, 65]
-      DstBlock		      "8_to_3_Encoder1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      5
-      Points		      [40, 0]
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      6
-      Points		      [40, 0]
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      7
-      Points		      [40, 0]
-    }
-    Line {
-      SrcBlock		      "Demux1"
-      SrcPort		      8
-      Points		      [40, 0]
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter2"
-      SrcPort		      1
-      DstBlock		      "Demux2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant2"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      4
-      DstBlock		      "4_to_2_Encoder"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      3
-      DstBlock		      "4_to_2_Encoder"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      2
-      DstBlock		      "4_to_2_Encoder"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      1
-      DstBlock		      "4_to_2_Encoder"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "Bit to Integer\nConverter1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Bit to Integer\nConverter1"
-      SrcPort		      1
-      DstBlock		      "Display1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Mux2"
-      SrcPort		      1
-      DstBlock		      "Bit to Integer\nConverter2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Bit to Integer\nConverter2"
-      SrcPort		      1
-      DstBlock		      "Display2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "8_to_3_Encoder1"
-      SrcPort		      2
-      Points		      [9, 0; 0, -45]
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "8_to_3_Encoder1"
-      SrcPort		      1
-      Points		      [9, 0; 0, 10]
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      Points		      [545, 415; 35, 0; 0, -30]
-      DstBlock		      "Mux1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "4_to_2_Encoder"
-      SrcPort		      1
-      Points		      [25, 0; 0, 5]
-      DstBlock		      "Mux2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "4_to_2_Encoder"
-      SrcPort		      2
-      Points		      [25, 0; 0, -5]
-      DstBlock		      "Mux2"
-      DstPort		      2
-    }
-    Annotation {
-      SID		      "66"
-      Name		      "\nInput values: 1, 2, 4, 8\n"
-      Position		      [73, 138]
-      DropShadow	      on
     }
   }
 }

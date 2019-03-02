@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.467"
+    ComputedModelVersion    "1.468"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [57.0, 0.0, 1741.0, 1080.0]
+      Location		      [57.0, -8.0, 1871.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -58,28 +58,16 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Array {
-	Type			"Simulink.EditorInfo"
-	Dimension		2
-	Object {
-	  $ObjectID		  6
-	  IsActive		  [0]
-	  ViewObjType		  "SimulinkTopLevel"
-	  LoadSaveID		  "0"
-	  Extents		  [1691.0, 903.0]
-	  ZoomFactor		  [1.25]
-	  Offset		  [3564.1580443615503, 653.81105926260307]
-	}
-	Object {
-	  $ObjectID		  7
-	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "4471"
-	  Extents		  [1691.0, 903.0]
-	  ZoomFactor		  [1.0]
-	  Offset		  [305.0, 0.0]
-	}
-	PropName		"EditorsInfo"
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		6
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1821.0, 922.0]
+	ZoomFactor		[0.8]
+	Offset			[1846.7633694897145, 973.03718237808926]
       }
     }
   }
@@ -89,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Feb 09 15:09:39 2019"
-  RTWModifiedTimeStamp	  471625430
-  ModelVersionFormat	  "1.%<AutoIncrement:467>"
+  LastModifiedDate	  "Sat Mar 02 13:57:02 2019"
+  RTWModifiedTimeStamp	  473435675
+  ModelVersionFormat	  "1.%<AutoIncrement:468>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -126,7 +114,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    8
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "pokus"
     overrideMode_	    [0.0]
@@ -185,13 +173,13 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      9
+      $ObjectID		      8
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
 	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  10
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "21"
@@ -226,7 +214,7 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  11
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
@@ -258,7 +246,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  12
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -314,7 +302,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  13
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -404,7 +392,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  14
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -445,7 +433,7 @@ Model {
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  15
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -460,7 +448,7 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  16
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -475,7 +463,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  17
+	  $ObjectID		  16
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -545,7 +533,7 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      18
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -614,7 +602,7 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      19
+	      $ObjectID		      18
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
@@ -694,7 +682,7 @@ Model {
 	  }
 	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  20
+	  $ObjectID		  19
 	  Version		  "1.13.0"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
@@ -716,11 +704,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    9
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    21
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -794,17 +782,6 @@ Model {
       PreserveConstantTs      off
     }
     Block {
-      BlockType		      DataTypeConversion
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit via back propagation"
-      LockScale		      off
-      ConvertRealWorld	      "Real World Value (RWV)"
-      RndMeth		      "Zero"
-      SaturateOnIntegerOverflow	on
-      SampleTime	      "-1"
-    }
-    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
@@ -816,16 +793,6 @@ Model {
       Decimation	      "10"
       Floating		      off
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      FromFile
-      FileName		      "untitled.mat"
-      OutDataTypeStr	      "Inherit: auto"
-      SampleTime	      "-1"
-      ExtrapolationBeforeFirstDataPoint	"Linear extrapolation"
-      InterpolationWithinTimeRange "Linear interpolation"
-      ExtrapolationAfterLastDataPoint "Linear extrapolation"
-      ZeroCross		      off
     }
     Block {
       BlockType		      Inport
@@ -901,7 +868,7 @@ Model {
   }
   System {
     Name		    "Computer"
-    Location		    [57, 0, 1798, 1080]
+    Location		    [57, -8, 1928, 1088]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -913,7 +880,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "4775"
     Block {
@@ -923,8 +890,8 @@ Model {
       Ports		      [3, 1]
       Position		      [1230, 1297, 1370, 1343]
       ZOrder		      846
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_2_to_1"
       SourceType	      "SubSystem"
     }
     Block {
@@ -934,8 +901,8 @@ Model {
       Ports		      [3, 1]
       Position		      [3835, 1172, 3975, 1218]
       ZOrder		      856
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Byte_Multiplexer"
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_2_to_1"
       SourceType	      "SubSystem"
     }
     Block {
@@ -945,8 +912,8 @@ Model {
       Ports		      [2, 4]
       Position		      [2850, 1342, 2995, 1403]
       ZOrder		      794
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Decoders/2_to_4_Decoder"
+      LibraryVersion	      "1.6"
+      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_2_to_4"
       SourceType	      "SubSystem"
     }
     Block {
@@ -956,8 +923,8 @@ Model {
       Ports		      [6, 1]
       Position		      [2540, 1497, 2695, 1588]
       ZOrder		      812
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Byte_Multiplexer"
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
       SourceType	      "SubSystem"
     }
     Block {
@@ -967,8 +934,8 @@ Model {
       Ports		      [6, 1]
       Position		      [3340, 1502, 3495, 1593]
       ZOrder		      854
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Byte_Multiplexer"
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
       SourceType	      "SubSystem"
     }
     Block {
@@ -978,8 +945,8 @@ Model {
       Ports		      [6, 1]
       Position		      [3340, 1627, 3495, 1718]
       ZOrder		      862
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Byte_Multiplexer"
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
       SourceType	      "SubSystem"
     }
     Block {
@@ -989,8 +956,8 @@ Model {
       Ports		      [6, 1]
       Position		      [1365, 1017, 1520, 1108]
       ZOrder		      845
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Byte_Multiplexer"
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
       SourceType	      "SubSystem"
     }
     Block {
@@ -1000,8 +967,8 @@ Model {
       Ports		      [4, 2]
       Position		      [2490, 1377, 2650, 1438]
       ZOrder		      813
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
+      LibraryVersion	      "1.13"
+      SourceBlock	      "Encoders_Lib/Encoders_Lib/Encoder_4_to_2"
       SourceType	      "SubSystem"
     }
     Block {
@@ -1011,276 +978,9 @@ Model {
       Ports		      [4, 2]
       Position		      [1000, 932, 1160, 993]
       ZOrder		      847
-      LibraryVersion	      "1.95"
-      SourceBlock	      "Common_Library/Encoders/4_to_2_Encoder"
+      LibraryVersion	      "1.13"
+      SourceBlock	      "Encoders_Lib/Encoders_Lib/Encoder_4_to_2"
       SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "4_to_4_Byte_Switch"
-      SID		      "4676"
-      Ports		      [8, 5]
-      Position		      [1365, 83, 1605, 212]
-      ZOrder		      855
-      Commented		      on
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"4_to_4_Byte_Switch"
-	Location		[57, 0, 1827, 1080]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"usletter"
-	PaperUnits		"inches"
-	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"125"
-	Block {
-	  BlockType		  Inport
-	  Name			  "Input_Address_1(1b)"
-	  SID			  "4707"
-	  Position		  [230, 273, 260, 287]
-	  ZOrder		  820
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Input_Address_0(1b)"
-	  SID			  "4708"
-	  Position		  [230, 313, 260, 327]
-	  ZOrder		  821
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Output_Address_1(1b)"
-	  SID			  "4710"
-	  Position		  [230, 153, 260, 167]
-	  ZOrder		  822
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Output_Address_0(1b)"
-	  SID			  "4711"
-	  Position		  [230, 193, 260, 207]
-	  ZOrder		  823
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Data_In_3(1B)"
-	  SID			  "4677"
-	  Position		  [230, 413, 260, 427]
-	  ZOrder		  -1
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Data_In_2(1B)"
-	  SID			  "4697"
-	  Position		  [230, 458, 260, 472]
-	  ZOrder		  810
-	  Port			  "6"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Data_In_1(1B)"
-	  SID			  "4698"
-	  Position		  [230, 503, 260, 517]
-	  ZOrder		  811
-	  Port			  "7"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
-	  Name			  "Data_In_0(1B)"
-	  SID			  "4699"
-	  Position		  [230, 548, 260, 562]
-	  ZOrder		  812
-	  Port			  "8"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "1_to_4_Byte_Demultiplexer"
-	  SID			  "4709"
-	  Ports			  [3, 4]
-	  Position		  [730, 422, 875, 483]
-	  ZOrder		  825
-	  LibraryVersion	  "1.94"
-	  SourceBlock		  "Common_Library/Demultiplexers/1_to_4_Byte_Demultiplexer"
-	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "4_to_1_Byte_Multiplexer4"
-	  SID			  "4712"
-	  Ports			  [6, 1]
-	  Position		  [420, 427, 575, 518]
-	  ZOrder		  834
-	  LibraryVersion	  "1.94"
-	  SourceBlock		  "Common_Library/Multiplexers/4_to_1_Byte_Multiplexer"
-	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Data_Out_3(1B)"
-	  SID			  "4678"
-	  Position		  [960, 378, 990, 392]
-	  ZOrder		  -2
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Data_Out_2(1B)"
-	  SID			  "4700"
-	  Position		  [960, 423, 990, 437]
-	  ZOrder		  813
-	  Port			  "2"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Data_Out_1(1B)"
-	  SID			  "4701"
-	  Position		  [960, 468, 990, 482]
-	  ZOrder		  814
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Data_Out_0(1B)"
-	  SID			  "4702"
-	  Position		  [960, 513, 990, 527]
-	  ZOrder		  815
-	  Port			  "4"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "Multiplexed_Data_Out(1B)"
-	  SID			  "4758"
-	  Position		  [960, 563, 990, 577]
-	  ZOrder		  835
-	  Port			  "5"
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "4_to_1_Byte_Multiplexer4"
-	  SrcPort		  1
-	  Points		  [71, 0]
-	  Branch {
-	    Points		    [0, 95]
-	    DstBlock		    "Multiplexed_Data_Out(1B)"
-	    DstPort		    1
-	  }
-	  Branch {
-	    DstBlock		    "1_to_4_Byte_Demultiplexer"
-	    DstPort		    3
-	  }
-	}
-	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  1
-	  Points		  [22, 0; 0, -45]
-	  DstBlock		  "Data_Out_3(1B)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  2
-	  Points		  [41, 0; 0, -15]
-	  DstBlock		  "Data_Out_2(1B)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  3
-	  Points		  [42, 0; 0, 15]
-	  DstBlock		  "Data_Out_1(1B)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "1_to_4_Byte_Demultiplexer"
-	  SrcPort		  4
-	  Points		  [24, 0; 0, 45]
-	  DstBlock		  "Data_Out_0(1B)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Data_In_0(1B)"
-	  SrcPort		  1
-	  Points		  [53, 0; 0, -45]
-	  DstBlock		  "4_to_1_Byte_Multiplexer4"
-	  DstPort		  6
-	}
-	Line {
-	  SrcBlock		  "Data_In_1(1B)"
-	  SrcPort		  1
-	  Points		  [34, 0; 0, -15]
-	  DstBlock		  "4_to_1_Byte_Multiplexer4"
-	  DstPort		  5
-	}
-	Line {
-	  SrcBlock		  "Data_In_2(1B)"
-	  SrcPort		  1
-	  Points		  [36, 0; 0, 15]
-	  DstBlock		  "4_to_1_Byte_Multiplexer4"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Data_In_3(1B)"
-	  SrcPort		  1
-	  Points		  [52, 0; 0, 45]
-	  DstBlock		  "4_to_1_Byte_Multiplexer4"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Input_Address_0(1b)"
-	  SrcPort		  1
-	  Points		  [102, 0; 0, 130]
-	  DstBlock		  "4_to_1_Byte_Multiplexer4"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Input_Address_1(1b)"
-	  SrcPort		  1
-	  Points		  [118, 0; 0, 155]
-	  DstBlock		  "4_to_1_Byte_Multiplexer4"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Output_Address_0(1b)"
-	  SrcPort		  1
-	  Points		  [408, 0; 0, 255]
-	  DstBlock		  "1_to_4_Byte_Demultiplexer"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Output_Address_1(1b)"
-	  SrcPort		  1
-	  Points		  [426, 0; 0, 275]
-	  DstBlock		  "1_to_4_Byte_Demultiplexer"
-	  DstPort		  1
-	}
-      }
     }
     Block {
       BlockType		      Reference
@@ -1289,7 +989,7 @@ Model {
       Ports		      [3, 3]
       Position		      [4080, 953, 4270, 997]
       ZOrder		      478
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.404"
       SourceBlock	      "Computer_Library/ALU"
       SourceType	      "SubSystem"
     }
@@ -1327,30 +1027,6 @@ Model {
       ShowName		      off
       Value		      "0"
       OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion"
-      SID		      "4453"
-      Position		      [1150, 143, 1185, 167]
-      ZOrder		      501
-      ShowName		      off
-      Commented		      on
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux1"
-      SID		      "4455"
-      Ports		      [1, 2]
-      Position		      [1220, 135, 1230, 175]
-      ZOrder		      503
-      ShowName		      off
-      Commented		      on
-      Outputs		      "2"
-      DisplayOption	      "bar"
     }
     Block {
       BlockType		      Demux
@@ -1417,19 +1093,6 @@ Model {
       ShowName		      off
       Decimation	      "1"
       Lockdown		      off
-    }
-    Block {
-      BlockType		      FromFile
-      Name		      "From File"
-      SID		      "4454"
-      Position		      [965, 143, 1110, 167]
-      ZOrder		      502
-      Commented		      on
-      FileName		      "Computer_Input_Vector.mat"
-      OutDataTypeStr	      "double"
-      SampleTime	      "1"
-      ExtrapolationBeforeFirstDataPoint	"Hold first value"
-      ExtrapolationAfterLastDataPoint "Ground value"
     }
     Block {
       BlockType		      Reference
@@ -3890,7 +3553,7 @@ Model {
       Ports		      [4, 1]
       Position		      [720, 1066, 880, 1129]
       ZOrder		      474
-      LibraryVersion	      "1.394"
+      LibraryVersion	      "1.404"
       SourceBlock	      "Computer_Library/Program_Counter"
       SourceType	      "SubSystem"
     }
@@ -4251,18 +3914,6 @@ Model {
 	  }
 	}
       }
-    }
-    Line {
-      SrcBlock		      "From File"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion"
-      SrcPort		      1
-      DstBlock		      "Demux1"
-      DstPort		      1
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
