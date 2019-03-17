@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [57.0, -8.0, 1871.0, 1096.0]
+      Location		      [65.0, 0.0, 927.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,9 +43,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"240"
-	Extents			[1821.0, 930.0]
+	Extents			[877.0, 914.0]
 	ZoomFactor		[1.0]
-	Offset			[-637.60928368337056, 336.8519300476342]
+	Offset			[-226.60928368337056, 125.94040601646702]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Mar 02 10:56:12 2019"
-  RTWModifiedTimeStamp	  473424908
-  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  LastModifiedDate	  "Sun Mar 10 21:51:01 2019"
+  RTWModifiedTimeStamp	  474155457
+  ModelVersionFormat	  "1.%<AutoIncrement:12>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -784,7 +784,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "488"
+    SIDHighWatermark	    "501"
     Block {
       BlockType		      SubSystem
       Name		      "Byte_Multiplexers_Lib"
@@ -801,7 +801,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Byte_Multiplexers_Lib"
-	Location		[57, -8, 1928, 1088]
+	Location		[65, 0, 992, 1080]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -7787,6 +7787,212 @@ Library {
 	      SrcPort		      8
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      11
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Byte_Multiplexor"
+	  SID			  "491"
+	  Ports			  [8, 1]
+	  Position		  [375, 384, 565, 511]
+	  ZOrder		  1325
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Byte_Multiplexor"
+	    Location		    [65, 0, 992, 1080]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "125"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Reserved"
+	      SID		      "492"
+	      Position		      [20, 18, 50, 32]
+	      ZOrder		      1325
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Select_Operand(1b)"
+	      SID		      "493"
+	      Position		      [20, 63, 50, 77]
+	      ZOrder		      1326
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Select_Register(1b)"
+	      SID		      "494"
+	      Position		      [20, 108, 50, 122]
+	      ZOrder		      1327
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Select_Memory(1b)\n"
+	      SID		      "495"
+	      Position		      [20, 148, 50, 162]
+	      ZOrder		      1328
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Reserved "
+	      SID		      "496"
+	      Position		      [20, 248, 50, 262]
+	      ZOrder		      1329
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "From_Operand(1B)"
+	      SID		      "497"
+	      Position		      [20, 293, 50, 307]
+	      ZOrder		      1330
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "From_Register(1B)"
+	      SID		      "498"
+	      Position		      [20, 333, 50, 347]
+	      ZOrder		      1331
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "From_Memory(1B)"
+	      SID		      "499"
+	      Position		      [20, 373, 50, 387]
+	      ZOrder		      1332
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_1_Byte_Multiplexer"
+	      SID		      "489"
+	      Ports		      [6, 1]
+	      Position		      [195, 217, 350, 308]
+	      ZOrder		      1323
+	      LibraryVersion	      "1.10"
+	      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_2_Encoder"
+	      SID		      "490"
+	      Ports		      [4, 2]
+	      Position		      [190, 102, 350, 163]
+	      ZOrder		      1324
+	      LibraryVersion	      "1.13"
+	      SourceBlock	      "Encoders_Lib/Encoders_Lib/Encoder_4_to_2"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_Out(1B)"
+	      SID		      "500"
+	      Position		      [440, 258, 470, 272]
+	      ZOrder		      1333
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "From_Operand(1B)"
+	      SrcPort		      1
+	      Points		      [61, 0; 0, -30]
+	      DstBlock		      "4_to_1_Byte_Multiplexer"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Reserved"
+	      SrcPort		      1
+	      Points		      [92, 0; 0, 85]
+	      DstBlock		      "4_to_2_Encoder"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Select_Register(1b)"
+	      SrcPort		      1
+	      Points		      [60, 0; 0, 25]
+	      DstBlock		      "4_to_2_Encoder"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "From_Memory(1B)"
+	      SrcPort		      1
+	      Points		      [95, 0; 0, -80]
+	      DstBlock		      "4_to_1_Byte_Multiplexer"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "From_Register(1B)"
+	      SrcPort		      1
+	      Points		      [73, 0; 0, -55]
+	      DstBlock		      "4_to_1_Byte_Multiplexer"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "4_to_1_Byte_Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "Data_Out(1B)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Select_Operand(1b)"
+	      SrcPort		      1
+	      Points		      [71, 0; 0, 55]
+	      DstBlock		      "4_to_2_Encoder"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Reserved "
+	      SrcPort		      1
+	      DstBlock		      "4_to_1_Byte_Multiplexer"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Select_Memory(1b)\n"
+	      SrcPort		      1
+	      DstBlock		      "4_to_2_Encoder"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "4_to_2_Encoder"
+	      SrcPort		      2
+	      Points		      [16, 0; 0, 38; -221, 0; 0, 52]
+	      DstBlock		      "4_to_1_Byte_Multiplexer"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "4_to_2_Encoder"
+	      SrcPort		      1
+	      Points		      [29, 0; 0, 82; -218, 0; 0, 23]
+	      DstBlock		      "4_to_1_Byte_Multiplexer"
+	      DstPort		      1
 	    }
 	  }
 	}

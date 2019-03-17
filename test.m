@@ -10,7 +10,6 @@ function result = test(Test_Name, Input_Vect, Expected_Vect)
 	
 	load_system(Test_Name);
 	len = length(Input_Vect(1,:)) - 1;
-	num_of_rows = length(Input_Vect(:, 1));
 	set_param(Test_Name, 'StopTime', 'len')
 
 	Output_Vect = 0;
@@ -22,7 +21,15 @@ function result = test(Test_Name, Input_Vect, Expected_Vect)
 	result = isequal(Output_Vect, Expected_Vect);
 	close_system(Test_Name);
 
-	border2 = repmat('-', 1, length(Input_Vect)*6 + 1);
+	num_of_input_rows =  length(Input_Vect(:, 1));
+	num_of_output_rows = length(Output_Vect(:, 1));
+	num_of_expected_rows = num_of_output_rows;
+	border = repmat('-', 1, length(Input_Vect(num_of_input_rows,:))*6 + 1);
+	
+	if (1 ~= num_of_output_rows)
+		Output_Vect = transpose(Output_Vect);
+	end
+
 	if (1 == result)
 		fprintf('PASS\n')
 	else
@@ -30,28 +37,28 @@ function result = test(Test_Name, Input_Vect, Expected_Vect)
 	end
 
 	if ((1 == show_results) || (0 == result))
-		if (3 == num_of_rows)
-			fprintf('\n+-----------------+%s+', border2)
-			fprintf('\n| Address Vector  | ')
-			fprintf('%5d ', Input_Vect(2, :))
-			fprintf('|')
-			fprintf('\n| Data Vector     | ')
-			fprintf('%5d ', Input_Vect(3, :))
-			fprintf('|')
-		else
-			fprintf('\n+-----------------+%s+', border2)
-			fprintf('\n| Input Vector    | ')
-			fprintf('%5d ', Input_Vect(2, :))
+		fprintf('\n+--------------------+%s+', border)
+		for (i = 2:num_of_input_rows)
+			fprintf('\n|    Input Vector %2d | ', i - 1)
+			fprintf('%5d ', Input_Vect(i, :))
 			fprintf('|')
 		end
-		fprintf('\n+-----------------+%s+', border2)
-		fprintf('\n| Output Vector   | ')
-		fprintf('%5d ', Output_Vect(:))
-		fprintf('|')
-		fprintf('\n| Expected Vector | ')
-		fprintf('%5d ', Expected_Vect(:))
-		fprintf('|')
-		fprintf('\n+-----------------+%s+', border2)
+
+		fprintf('\n+--------------------+%s+', border)
+		for (i = 1:num_of_output_rows)
+			fprintf('\n|   Output Vector %2d | ', i)
+			fprintf('%5d ', Output_Vect(i, :))
+			fprintf('|')
+		end
+
+		fprintf('\n+--------------------+%s+', border)
+		for (i = 1:num_of_expected_rows)
+			fprintf('\n| Expected Vector %2d | ', i)
+			fprintf('%5d ', Expected_Vect(i, :))
+			fprintf('|')
+		end
+
+		fprintf('\n+--------------------+%s+', border)
 		fprintf('\n\n')
 	end
 end

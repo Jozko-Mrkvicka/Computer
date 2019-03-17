@@ -1,16 +1,12 @@
 Instructions
 Addresses
 
-test_01 =             ...
+External_Memory =             ...
 [
-   MOV  768    8
-   MOV  8      768
-   MOV  REG_A  0
-   MOV  a10h   REG_B
-   MOV  a03h   aF0h
-   MOV  REG_D  aF1h
-   17   REG_A  REG_B
+   100 101 102
 ];
+
+Pointer_to_External_Memory = 1;
 
 test_02 =             ...
 [

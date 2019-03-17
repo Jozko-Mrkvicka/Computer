@@ -1,12 +1,12 @@
 Model {
-  Name			  "Test_Comparator"
+  Name			  "Test_Byte_Multiplexer_4_to_1"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.40"
+    ComputedModelVersion    "1.105"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -18,7 +18,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "Test_Comparator"
+      Cell		      "Test_Multiplexer"
       PropName		      "mdlProps"
     }
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 0.0, 1873.0, 1092.0]
+      Location		      [65.0, 0.0, 1030.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -50,7 +50,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[1]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -65,22 +65,22 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1823.0, 918.0]
-	ZoomFactor		[1.25]
-	Offset			[-335.77603515220153, 305.48929251498862]
+	Extents			[980.0, 906.0]
+	ZoomFactor		[1.0]
+	Offset			[853.79106139062856, -114.84567690816284]
       }
     }
   }
-  Created		  "Sun Jun 03 22:55:57 2018"
-  Creator		  "uzivatel"
+  Created		  "Sat Apr 08 22:24:40 2017"
+  Creator		  "N"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jul 07 16:48:12 2018"
-  RTWModifiedTimeStamp	  452882883
-  ModelVersionFormat	  "1.%<AutoIncrement:40>"
-  ConfigurationManager	  "None"
+  LastModifiedDate	  "Sun Mar 03 14:53:45 2019"
+  RTWModifiedTimeStamp	  473525622
+  ModelVersionFormat	  "1.%<AutoIncrement:105>"
+  ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "all"
@@ -116,12 +116,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Test_Comparator"
+    model_		    "Test_16_to_1_Multiplexer"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Test_Comparator"
+      Cell		      "Test_16_to_1_Multiplexer"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "len"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -220,7 +220,7 @@ Model {
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
 	  InitialState		  "xInitial"
-	  LimitDataPoints	  on
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "1000"
 	  LoadExternalInput	  off
 	  LoadInitialState	  off
@@ -317,8 +317,8 @@ Model {
 	  SaveWithDisabledLinksMsg "warning"
 	  SaveWithParameterizedLinksMsg	"warning"
 	  CheckSSInitialOutputMsg on
-	  UnderspecifiedInitializationDetection	"Classic"
-	  MergeDetectMultiDrivingBlocksExec "none"
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
 	  CheckExecutionContextPreStartOutputMsg off
 	  CheckExecutionContextRuntimeOutputMsg	off
 	  SignalResolutionControl "UseLocalSettings"
@@ -358,7 +358,7 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "warning"
+	  FrameProcessingCompatibilityMsg "error"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -373,7 +373,7 @@ Model {
 	  ModelReferenceDataLoggingMessage "warning"
 	  ModelReferenceSymbolNameMessage "warning"
 	  ModelReferenceExtraNoncontSigs "error"
-	  StateNameClashWarn	  "warning"
+	  StateNameClashWarn	  "none"
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  InitInArrayFormatMsg	  "warning"
@@ -401,15 +401,15 @@ Model {
 	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
-	  ProdBitPerPointer	  32
+	  ProdBitPerPointer	  64
 	  ProdLargestAtomicInteger "Char"
-	  ProdLargestAtomicFloat  "None"
-	  ProdIntDivRoundTo	  "Undefined"
-	  ProdEndianess		  "Unspecified"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
 	  ProdLongLongMode	  off
-	  ProdHWDeviceType	  "32-bit Generic"
+	  ProdHWDeviceType	  "Intel->x86-64 (Windows64)"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
@@ -444,7 +444,7 @@ Model {
 	  PropagateVarSize	  "Infer from blocks in model"
 	  ModelReferencePassRootInputsByReference on
 	  ModelReferenceMinAlgLoopOccurrences off
-	  PropagateSignalLabelsOutOfModel off
+	  PropagateSignalLabelsOutOfModel on
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
@@ -537,7 +537,7 @@ Model {
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
-		Dimension		22
+		Dimension		23
 		Cell			"IgnoreCustomStorageClasses"
 		Cell			"IgnoreTestpoints"
 		Cell			"InsertBlockDesc"
@@ -559,6 +559,7 @@ Model {
 		Cell			"CustomSymbolStrBlkIO"
 		Cell			"CustomSymbolStrTmpVar"
 		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
 		Cell			"ReqsInCode"
 		PropName		"DisabledProps"
 	      }
@@ -605,28 +606,26 @@ Model {
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
-		Dimension		15
+		Dimension		13
 		Cell			"GeneratePreprocessorConditionals"
 		Cell			"IncludeMdlTerminateFcn"
-		Cell			"CombineOutputUpdateFcns"
+		Cell			"SupportNonInlinedSFcns"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
 		Cell			"GenerateTestInterfaces"
 		Cell			"ModelStepFunctionPrototypeControlCompliant"
-		Cell			"CPPClassGenCompliant"
 		Cell			"GenerateAllocFcn"
 		Cell			"PurelyIntegerCode"
 		Cell			"SupportComplex"
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
-		Cell			"SupportNonInlinedSFcns"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
 	      TargetPreCompLibLocation ""
-	      CodeReplacementLibrary  "ANSI_C"
+	      CodeReplacementLibrary  "None"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
 	      ERTMultiwordLength      256
@@ -661,7 +660,7 @@ Model {
 	      ParenthesesLevel	      "Nominal"
 	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
-	      CPPClassGenCompliant    off
+	      CPPClassGenCompliant    on
 	      AutosarCompliant	      off
 	      GRTInterface	      off
 	      GenerateAllocFcn	      off
@@ -698,8 +697,8 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Diagnostics"
-      ConfigPrmDlgPosition     [ 727, 243, 1803, 911 ] 
+      CurrentDlgPage	      "Hardware Implementation"
+      ConfigPrmDlgPosition     [ 63, 41, 1038, 847 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -770,284 +769,374 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
+      BlockType		      DataTypeConversion
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
       LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
-      BlockType		      Display
-      Format		      "short"
-      Decimation	      "10"
-      Floating		      off
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      OutDataTypeStr	      "Inherit: auto"
       SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
     }
   }
   System {
-    Name		    "Test_Comparator"
-    Location		    [55, 0, 1928, 1092]
+    Name		    "Test_Byte_Multiplexer_4_to_1"
+    Location		    [65, 0, 1095, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
     PaperOrientation	    "landscape"
     PaperPositionMode	    "auto"
-    PaperType		    "A4"
-    PaperUnits		    "centimeters"
-    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "295"
+    SIDHighWatermark	    "471"
     Block {
       BlockType		      Reference
-      Name		      "1_Bit_Comparator"
-      SID		      "279"
-      Ports		      [5, 3]
-      Position		      [305, 408, 455, 482]
-      ZOrder		      427
-      LibraryVersion	      "1.270"
-      SourceBlock	      "Computer_Library/Comparators/1_Bit_Comparator"
+      Name		      "Byte_Multiplexer_4_to_1"
+      SID		      "356"
+      Ports		      [6, 1]
+      Position		      [1455, 187, 1595, 278]
+      ZOrder		      636
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
       SourceType	      "SubSystem"
     }
     Block {
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion"
+      SID		      "383"
+      Position		      [1235, 193, 1275, 217]
+      ZOrder		      673
+      ShowName		      off
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion10"
+      SID		      "421"
+      Position		      [1235, 313, 1275, 337]
+      ZOrder		      713
+      ShowName		      off
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion11"
+      SID		      "424"
+      Position		      [1235, 353, 1275, 377]
+      ZOrder		      715
+      ShowName		      off
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion3"
+      SID		      "384"
+      Position		      [1235, 233, 1275, 257]
+      ZOrder		      679
+      ShowName		      off
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion9"
+      SID		      "418"
+      Position		      [1235, 273, 1275, 297]
+      ZOrder		      710
+      ShowName		      off
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux11"
+      SID		      "368"
+      Ports		      [1, 2]
+      Position		      [1410, 188, 1425, 217]
+      ZOrder		      651
+      ShowName		      off
+      Outputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace"
+      SID		      "385"
+      Position		      [1050, 192, 1125, 218]
+      ZOrder		      674
+      VariableName	      "Input_Vect"
+      SampleTime	      "1"
+      Interpolate	      off
+      OutputAfterFinalValue   "Holding final value"
+    }
+    Block {
       BlockType		      Reference
-      Name		      "1_Byte_Comparator"
-      SID		      "290"
-      Ports		      [2, 3]
-      Position		      [305, 684, 455, 726]
-      ZOrder		      431
-      LibraryVersion	      "1.270"
-      SourceBlock	      "Computer_Library/Comparators/1_Byte_Comparator"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Constant
-      Name		      "Constant1"
-      SID		      "39"
-      Position		      [50, 465, 70, 485]
-      ZOrder		      368
+      Name		      "Integer to Bit\nConverter7"
+      SID		      "371"
+      Ports		      [1, 1]
+      Position		      [1300, 183, 1380, 227]
+      ZOrder		      652
       ShowName		      off
-      Value		      "0"
-      OutDataTypeStr	      "int16"
+      LibraryVersion	      "1.271"
+      SourceBlock	      "commutil2/Integer to Bit\nConverter"
+      SourceType	      "Integer to Bit Converter"
+      nbits		      "2"
+      signedInputValues	      "Unsigned"
+      bitOrder		      "MSB first"
+      outDtype		      "boolean"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant2"
-      SID		      "38"
-      Position		      [50, 405, 70, 425]
-      ZOrder		      367
+      BlockType		      Selector
+      Name		      "Selector"
+      SID		      "388"
+      Ports		      [1, 1]
+      Position		      [1165, 186, 1205, 224]
+      ZOrder		      677
       ShowName		      off
-      OutDataTypeStr	      "int16"
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
+      SampleTime	      "1"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "0"
+      OutputSizes	      "1"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant3"
-      SID		      "40"
-      Position		      [50, 435, 70, 455]
-      ZOrder		      369
+      BlockType		      Selector
+      Name		      "Selector1"
+      SID		      "389"
+      Ports		      [1, 1]
+      Position		      [1165, 226, 1205, 264]
+      ZOrder		      678
       ShowName		      off
-      Value		      "0"
-      OutDataTypeStr	      "int16"
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "1"
+      OutputSizes	      "1"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant4"
-      SID		      "41"
-      Position		      [50, 495, 70, 515]
-      ZOrder		      370
+      BlockType		      Selector
+      Name		      "Selector10"
+      SID		      "423"
+      Ports		      [1, 1]
+      Position		      [1165, 306, 1205, 344]
+      ZOrder		      712
       ShowName		      off
-      Value		      "0"
-      OutDataTypeStr	      "int16"
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "3"
+      OutputSizes	      "1"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant5"
-      SID		      "42"
-      Position		      [50, 525, 70, 545]
-      ZOrder		      371
+      BlockType		      Selector
+      Name		      "Selector11"
+      SID		      "425"
+      Ports		      [1, 1]
+      Position		      [1165, 346, 1205, 384]
+      ZOrder		      714
       ShowName		      off
-      OutDataTypeStr	      "int16"
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "4"
+      OutputSizes	      "1"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant6"
-      SID		      "291"
-      Position		      [50, 675, 70, 695]
-      ZOrder		      432
+      BlockType		      Selector
+      Name		      "Selector9"
+      SID		      "420"
+      Ports		      [1, 1]
+      Position		      [1165, 266, 1205, 304]
+      ZOrder		      709
       ShowName		      off
-      Value		      "206"
-      OutDataTypeStr	      "int16"
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "2"
+      OutputSizes	      "1"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Constant7"
-      SID		      "292"
-      Position		      [50, 715, 70, 735]
-      ZOrder		      433
-      ShowName		      off
-      Value		      "255"
-      OutDataTypeStr	      "int16"
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display1"
-      SID		      "45"
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "393"
       Ports		      [1]
-      Position		      [595, 434, 665, 456]
-      ZOrder		      417
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display2"
-      SID		      "44"
-      Ports		      [1]
-      Position		      [595, 409, 665, 431]
-      ZOrder		      416
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display3"
-      SID		      "46"
-      Ports		      [1]
-      Position		      [595, 459, 665, 481]
-      ZOrder		      418
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display4"
-      SID		      "293"
-      Ports		      [1]
-      Position		      [595, 694, 665, 716]
-      ZOrder		      435
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display5"
-      SID		      "294"
-      Ports		      [1]
-      Position		      [595, 669, 665, 691]
-      ZOrder		      434
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display6"
-      SID		      "295"
-      Ports		      [1]
-      Position		      [595, 719, 665, 741]
-      ZOrder		      436
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
+      Position		      [1625, 220, 1695, 250]
+      ZOrder		      683
+      VariableName	      "Output_Vect"
+      MaxDataPoints	      "inf"
+      SampleTime	      "1"
     }
     Line {
-      SrcBlock		      "Constant2"
+      SrcBlock		      "Byte_Multiplexer_4_to_1"
       SrcPort		      1
-      DstBlock		      "1_Bit_Comparator"
+      DstBlock		      "To Workspace"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Constant3"
-      SrcPort		      1
-      Points		      [35, 0; 0, -15]
-      DstBlock		      "1_Bit_Comparator"
+      SrcBlock		      "Demux11"
+      SrcPort		      2
+      DstBlock		      "Byte_Multiplexer_4_to_1"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Constant1"
+      SrcBlock		      "Integer to Bit\nConverter7"
       SrcPort		      1
-      Points		      [47, 0; 0, -30]
-      DstBlock		      "1_Bit_Comparator"
+      DstBlock		      "Demux11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux11"
+      SrcPort		      1
+      DstBlock		      "Byte_Multiplexer_4_to_1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector1"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Data Type Conversion3"
+      SrcPort		      1
+      Points		      [117, 0; 0, -20]
+      DstBlock		      "Byte_Multiplexer_4_to_1"
       DstPort		      3
     }
     Line {
-      SrcBlock		      "Constant4"
+      SrcBlock		      "Data Type Conversion"
       SrcPort		      1
-      Points		      [61, 0; 0, -45]
-      DstBlock		      "1_Bit_Comparator"
+      DstBlock		      "Integer to Bit\nConverter7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector9"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From\nWorkspace"
+      SrcPort		      1
+      Points		      [12, 0]
+      Branch {
+	Points			[0, 40]
+	Branch {
+	  Points		  [0, 40]
+	  Branch {
+	    Points		    [0, 40]
+	    Branch {
+	      Points		      [0, 40]
+	      DstBlock		      "Selector11"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Selector10"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "Selector9"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  DstBlock		  "Selector1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	DstBlock		"Selector"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Selector10"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Selector11"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion11"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Data Type Conversion9"
+      SrcPort		      1
+      Points		      [128, 0; 0, -45]
+      DstBlock		      "Byte_Multiplexer_4_to_1"
       DstPort		      4
     }
     Line {
-      SrcBlock		      "Constant5"
+      SrcBlock		      "Data Type Conversion10"
       SrcPort		      1
-      Points		      [76, 0; 0, -60]
-      DstBlock		      "1_Bit_Comparator"
+      Points		      [140, 0; 0, -70]
+      DstBlock		      "Byte_Multiplexer_4_to_1"
       DstPort		      5
     }
     Line {
-      SrcBlock		      "1_Bit_Comparator"
+      SrcBlock		      "Data Type Conversion11"
       SrcPort		      1
-      DstBlock		      "Display2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "1_Bit_Comparator"
-      SrcPort		      2
-      DstBlock		      "Display1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "1_Bit_Comparator"
-      SrcPort		      3
-      DstBlock		      "Display3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "1_Byte_Comparator"
-      SrcPort		      2
-      DstBlock		      "Display4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "1_Byte_Comparator"
-      SrcPort		      1
-      Points		      [65, 0; 0, -10]
-      DstBlock		      "Display5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "1_Byte_Comparator"
-      SrcPort		      3
-      Points		      [65, 0; 0, 10]
-      DstBlock		      "Display6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant6"
-      SrcPort		      1
-      Points		      [112, 0; 0, 10]
-      DstBlock		      "1_Byte_Comparator"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Constant7"
-      SrcPort		      1
-      Points		      [112, 0; 0, -10]
-      DstBlock		      "1_Byte_Comparator"
-      DstPort		      2
+      Points		      [152, 0; 0, -95]
+      DstBlock		      "Byte_Multiplexer_4_to_1"
+      DstPort		      6
     }
   }
 }

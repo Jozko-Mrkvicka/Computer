@@ -20,7 +20,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [139.0, 514.0, 524.0, 474.0]
+      Location		      [107.0, 572.0, 838.0, 541.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -44,9 +44,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[474.0, 308.0]
+	Extents			[788.0, 375.0]
 	ZoomFactor		[1.0]
-	Offset			[177.0, -74.402578407687315]
+	Offset			[183.0, -72.402578407687315]
       }
     }
   }
@@ -56,9 +56,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Mar 02 10:25:24 2019"
-  RTWModifiedTimeStamp	  473423112
-  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  LastModifiedDate	  "Sat Mar 09 14:19:05 2019"
+  RTWModifiedTimeStamp	  474041855
+  ModelVersionFormat	  "1.%<AutoIncrement:24>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -698,7 +698,7 @@ Library {
   }
   System {
     Name		    "Common_Lib"
-    Location		    [139, 514, 663, 988]
+    Location		    [107, 572, 945, 1113]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -712,7 +712,18 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "15"
+    SIDHighWatermark	    "21"
+    Block {
+      BlockType		      Reference
+      Name		      "Arithmetic_Operations_Lib"
+      SID		      "18"
+      Ports		      []
+      Position		      [630, 94, 730, 136]
+      ZOrder		      466
+      LibraryVersion	      "1.145"
+      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib"
+      SourceType	      "SubSystem"
+    }
     Block {
       BlockType		      Reference
       Name		      "Bit_Demultiplexers_Lib"
@@ -737,12 +748,23 @@ Library {
     }
     Block {
       BlockType		      Reference
+      Name		      "Byte_Demultiplexers_Lib"
+      SID		      "16"
+      Ports		      []
+      Position		      [490, 94, 590, 136]
+      ZOrder		      388
+      LibraryVersion	      "1.7"
+      SourceBlock	      "Byte_Demultiplexers_Lib/Byte_Demultiplexers_Lib"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Byte_Multiplexers_Lib"
       SID		      "15"
       Ports		      []
       Position		      [490, 19, 590, 61]
       ZOrder		      387
-      LibraryVersion	      "1.2"
+      LibraryVersion	      "1.8"
       SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib"
       SourceType	      "SubSystem"
     }
@@ -759,6 +781,17 @@ Library {
     }
     Block {
       BlockType		      Reference
+      Name		      "Displays"
+      SID		      "20"
+      Ports		      []
+      Position		      [770, 94, 870, 136]
+      ZOrder		      1014
+      LibraryVersion	      "1.2"
+      SourceBlock	      "Displays_Lib/Displays_Lib"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Encoders_Lib"
       SID		      "8"
       Ports		      []
@@ -766,6 +799,28 @@ Library {
       ZOrder		      376
       LibraryVersion	      "1.13"
       SourceBlock	      "Encoders_Lib/Encoders_Lib"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Logic_Operations_Lib"
+      SID		      "17"
+      Ports		      []
+      Position		      [630, 19, 730, 61]
+      ZOrder		      389
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Logic_Operations_Lib/Logic_Operations_Lib"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Memory_Blocks_Lib"
+      SID		      "19"
+      Ports		      []
+      Position		      [770, 19, 870, 61]
+      ZOrder		      467
+      LibraryVersion	      "1.11"
+      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib"
       SourceType	      "SubSystem"
     }
   }

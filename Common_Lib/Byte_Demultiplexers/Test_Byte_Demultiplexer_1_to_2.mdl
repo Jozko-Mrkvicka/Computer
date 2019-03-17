@@ -1,16 +1,27 @@
 Model {
-  Name			  "Test_Character_Table"
+  Name			  "Test_Byte_Demultiplexer_1_to_2"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.324"
+    ComputedModelVersion    "1.42"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
   SavedCharacterEncoding  "windows-1250"
+  slprops.hdlmdlprops {
+    $PropName		    "HDLParams"
+    $ObjectID		    1
+    Array {
+      Type		      "Cell"
+      Dimension		      2
+      Cell		      "HDLSubsystem"
+      Cell		      "Test_Demultiplexer"
+      PropName		      "mdlProps"
+    }
+  }
   SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -23,17 +34,17 @@ Model {
   MaxMDLFileLineLength	  120
   Object {
     $PropName		    "BdWindowsInfo"
-    $ObjectID		    1
+    $ObjectID		    2
     $ClassName		    "Simulink.BDWindowsInfo"
     Object {
       $PropName		      "WindowsInfo"
-      $ObjectID		      2
+      $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [196.0, 108.0, 1265.0, 972.0]
+      Location		      [62.0, 0.0, 1077.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
-	$ObjectID		3
+	$ObjectID		4
 	$ClassName		"Simulink.ModelBrowserInfo"
 	Visible			[0]
 	DockPosition		"Left"
@@ -43,33 +54,33 @@ Model {
       }
       Object {
 	$PropName		"ExplorerBarInfo"
-	$ObjectID		4
+	$ObjectID		5
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
-	$ObjectID		5
+	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1215.0, 798.0]
+	Extents			[1027.0, 906.0]
 	ZoomFactor		[1.0]
-	Offset			[450.07292618120789, 251.87005838422209]
+	Offset			[-144.87191342910978, -43.515243937476157]
       }
     }
   }
-  Created		  "Sat Apr 14 21:31:19 2018"
+  Created		  "Sun Apr 08 13:43:01 2018"
   Creator		  "N"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Mar 09 00:32:49 2019"
-  RTWModifiedTimeStamp	  473992363
-  ModelVersionFormat	  "1.%<AutoIncrement:324>"
-  ConfigurationManager	  "None"
+  LastModifiedDate	  "Mon Mar 04 22:07:15 2019"
+  RTWModifiedTimeStamp	  473638034
+  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "user"
@@ -103,14 +114,14 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Display"
+    model_		    "Test_Demultiplexer"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Display"
+      Cell		      "Test_Demultiplexer"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -162,16 +173,16 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
+      $ObjectID		      8
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
-	Dimension		8
+	Dimension		9
 	Simulink.SolverCC {
-	  $ObjectID		  8
+	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "2"
+	  StopTime		  "len"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -186,7 +197,7 @@ Model {
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
-	  SolverMode		  "SingleTasking"
+	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
 	  Solver		  "ode45"
@@ -203,20 +214,20 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
+	  $ObjectID		  10
 	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
 	  InitialState		  "xInitial"
-	  LimitDataPoints	  on
+	  LimitDataPoints	  off
 	  MaxDataPoints		  "1000"
 	  LoadExternalInput	  off
 	  LoadInitialState	  off
 	  SaveFinalState	  off
 	  SaveCompleteFinalSimState off
 	  SaveFormat		  "Array"
-	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SignalLoggingSaveFormat "Dataset"
 	  SaveOutput		  on
 	  SaveState		  off
 	  SignalLogging		  on
@@ -235,7 +246,7 @@ Model {
 	  Refine		  "1"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
+	  $ObjectID		  11
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -250,8 +261,8 @@ Model {
 	    Cell		    "UseSpecifiedMinMax"
 	    PropName		    "DisabledProps"
 	  }
-	  BlockReduction	  off
-	  BooleanDataType	  off
+	  BlockReduction	  on
+	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
@@ -291,7 +302,7 @@ Model {
 	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
+	  $ObjectID		  12
 	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
@@ -304,13 +315,13 @@ Model {
 	  AlgebraicLoopMsg	  "warning"
 	  ArtificialAlgebraicLoopMsg "warning"
 	  SaveWithDisabledLinksMsg "warning"
-	  SaveWithParameterizedLinksMsg	"none"
+	  SaveWithParameterizedLinksMsg	"warning"
 	  CheckSSInitialOutputMsg on
-	  UnderspecifiedInitializationDetection	"Classic"
-	  MergeDetectMultiDrivingBlocksExec "none"
+	  UnderspecifiedInitializationDetection	"Simplified"
+	  MergeDetectMultiDrivingBlocksExec "error"
 	  CheckExecutionContextPreStartOutputMsg off
 	  CheckExecutionContextRuntimeOutputMsg	off
-	  SignalResolutionControl "TryResolveAllWithWarning"
+	  SignalResolutionControl "UseLocalSettings"
 	  BlockPriorityViolationMsg "warning"
 	  MinStepSizeMsg	  "warning"
 	  TimeAdjustmentMsg	  "none"
@@ -320,8 +331,8 @@ Model {
 	  SolverPrmCheckMsg	  "none"
 	  InheritedTsInSrcMsg	  "warning"
 	  DiscreteInheritContinuousMsg "warning"
-	  MultiTaskDSMMsg	  "warning"
-	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
 	  SingleTaskRateTransMsg  "none"
 	  TasksWithSamePriorityMsg "warning"
@@ -347,7 +358,7 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "warning"
+	  FrameProcessingCompatibilityMsg "error"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
@@ -362,11 +373,11 @@ Model {
 	  ModelReferenceDataLoggingMessage "warning"
 	  ModelReferenceSymbolNameMessage "warning"
 	  ModelReferenceExtraNoncontSigs "error"
-	  StateNameClashWarn	  "warning"
+	  StateNameClashWarn	  "none"
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  InitInArrayFormatMsg	  "warning"
-	  StrictBusMsg		  "None"
+	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
 	  LoggingUnavailableSignals "error"
@@ -381,7 +392,7 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
+	  $ObjectID		  13
 	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
@@ -390,15 +401,15 @@ Model {
 	  ProdBitPerLongLong	  64
 	  ProdBitPerFloat	  32
 	  ProdBitPerDouble	  64
-	  ProdBitPerPointer	  32
+	  ProdBitPerPointer	  64
 	  ProdLargestAtomicInteger "Char"
-	  ProdLargestAtomicFloat  "None"
-	  ProdIntDivRoundTo	  "Undefined"
-	  ProdEndianess		  "Unspecified"
+	  ProdLargestAtomicFloat  "Float"
+	  ProdIntDivRoundTo	  "Zero"
+	  ProdEndianess		  "LittleEndian"
 	  ProdWordSize		  32
 	  ProdShiftRightIntArith  on
 	  ProdLongLongMode	  off
-	  ProdHWDeviceType	  "32-bit Generic"
+	  ProdHWDeviceType	  "Intel->x86-64 (Windows64)"
 	  TargetBitPerChar	  8
 	  TargetBitPerShort	  16
 	  TargetBitPerInt	  32
@@ -418,11 +429,11 @@ Model {
 	  TargetPreprocMaxBitsSint 32
 	  TargetPreprocMaxBitsUint 32
 	  TargetHWDeviceType	  "Specified"
-	  TargetUnknown		  on
+	  TargetUnknown		  off
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
+	  $ObjectID		  14
 	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
 	  CheckModelReferenceTargetMessage "error"
@@ -433,11 +444,11 @@ Model {
 	  PropagateVarSize	  "Infer from blocks in model"
 	  ModelReferencePassRootInputsByReference on
 	  ModelReferenceMinAlgLoopOccurrences off
-	  PropagateSignalLabelsOutOfModel off
+	  PropagateSignalLabelsOutOfModel on
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
+	  $ObjectID		  15
 	  Version		  "1.13.0"
 	  SFSimEnableDebug	  on
 	  SFSimOverflowDetection  on
@@ -452,7 +463,7 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
+	  $ObjectID		  16
 	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
@@ -505,7 +516,7 @@ Model {
 	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
-	  IncludeERTFirstTime	  on
+	  IncludeERTFirstTime	  off
 	  GenerateTraceInfo	  off
 	  GenerateTraceReport	  off
 	  GenerateTraceReportSl	  off
@@ -522,11 +533,11 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
+	      $ObjectID		      17
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
-		Dimension		22
+		Dimension		23
 		Cell			"IgnoreCustomStorageClasses"
 		Cell			"IgnoreTestpoints"
 		Cell			"InsertBlockDesc"
@@ -548,6 +559,7 @@ Model {
 		Cell			"CustomSymbolStrBlkIO"
 		Cell			"CustomSymbolStrTmpVar"
 		Cell			"CustomSymbolStrMacro"
+		Cell			"CustomSymbolStrUtil"
 		Cell			"ReqsInCode"
 		PropName		"DisabledProps"
 	      }
@@ -590,32 +602,30 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
+	      $ObjectID		      18
 	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
-		Dimension		15
+		Dimension		13
 		Cell			"GeneratePreprocessorConditionals"
 		Cell			"IncludeMdlTerminateFcn"
-		Cell			"CombineOutputUpdateFcns"
+		Cell			"SupportNonInlinedSFcns"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
 		Cell			"GenerateTestInterfaces"
 		Cell			"ModelStepFunctionPrototypeControlCompliant"
-		Cell			"CPPClassGenCompliant"
 		Cell			"GenerateAllocFcn"
 		Cell			"PurelyIntegerCode"
 		Cell			"SupportComplex"
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
-		Cell			"SupportNonInlinedSFcns"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
 	      TargetPreCompLibLocation ""
-	      CodeReplacementLibrary  "ANSI_C"
+	      CodeReplacementLibrary  "None"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
 	      ERTMultiwordLength      256
@@ -650,7 +660,7 @@ Model {
 	      ParenthesesLevel	      "Nominal"
 	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
-	      CPPClassGenCompliant    off
+	      CPPClassGenCompliant    on
 	      AutosarCompliant	      off
 	      GRTInterface	      off
 	      GenerateAllocFcn	      off
@@ -671,21 +681,34 @@ Model {
 	    PropName		    "Components"
 	  }
 	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  19
+	  Version		  "1.13.0"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    " "
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 430, 225, 1490, 855 ] 
+      CurrentDlgPage	      "Hardware Implementation"
+      ConfigPrmDlgPosition     [ 418, 150, 1564, 908 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    18
+    $ObjectID		    20
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -746,29 +769,24 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Concatenate
-      NumInputs		      "2"
-      Mode		      "Vector"
-      ConcatenateDimension    "1"
-    }
-    Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
+      BlockType		      DataTypeConversion
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
       LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      OutDataTypeStr	      "Inherit: auto"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
     }
     Block {
       BlockType		      Mux
@@ -778,10 +796,27 @@ Model {
       BusObject		      "BusObject"
       NonVirtualBus	      off
     }
+    Block {
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
+    }
   }
   System {
-    Name		    "Test_Character_Table"
-    Location		    [196, 108, 1461, 1080]
+    Name		    "Test_Byte_Demultiplexer_1_to_2"
+    Location		    [62, 0, 1139, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -795,248 +830,180 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3881"
+    SIDHighWatermark	    "120"
     Block {
       BlockType		      Reference
-      Name		      "Character_Table"
-      SID		      "3853"
-      Ports		      [1, 8]
-      Position		      [790, 508, 940, 637]
-      ZOrder		      1010
-      LibraryVersion	      "1.420"
-      SourceBlock	      "Computer_Library/Character_Table"
+      Name		      "Byte_Demultiplexer_1_to_2"
+      SID		      "79"
+      Ports		      [2, 2]
+      Position		      [425, 66, 570, 99]
+      ZOrder		      519
+      LibraryVersion	      "1.7"
+      SourceBlock	      "Byte_Demultiplexers_Lib/Byte_Demultiplexers_Lib/Byte_Demultiplexer_1_to_2"
       SourceType	      "SubSystem"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Const4"
-      SID		      "2352"
-      Position		      [565, 562, 720, 588]
-      ZOrder		      599
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion1"
+      SID		      "97"
+      Position		      [225, 63, 265, 87]
+      ZOrder		      731
       ShowName		      off
       OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "3865"
-      Ports		      [1, 8]
-      Position		      [1125, 510, 1135, 635]
-      ZOrder		      1284
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion7"
+      SID		      "114"
+      Position		      [225, 108, 265, 132]
+      ZOrder		      749
       ShowName		      off
-      Outputs		      "8"
-      DisplayOption	      "bar"
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace"
+      SID		      "99"
+      Position		      [35, 62, 110, 88]
+      ZOrder		      733
+      VariableName	      "Input_Vect"
+      SampleTime	      "1"
+      Interpolate	      off
+      OutputAfterFinalValue   "Holding final value"
     }
     Block {
       BlockType		      Reference
-      Name		      "Integer to Bit\nConverter8"
-      SID		      "3864"
+      Name		      "Integer to Bit\nConverter1"
+      SID		      "96"
       Ports		      [1, 1]
-      Position		      [1010, 558, 1085, 592]
-      ZOrder		      1283
+      Position		      [295, 53, 375, 97]
+      ZOrder		      730
       ShowName		      off
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
-      nbits		      "8"
+      nbits		      "1"
       signedInputValues	      "Unsigned"
       bitOrder		      "MSB first"
-      outDtype		      "uint8"
-    }
-    Block {
-      BlockType		      Concatenate
-      Name		      "Matrix\nConcatenate"
-      SID		      "374"
-      Ports		      [8, 1]
-      Position		      [1155, 513, 1265, 632]
-      ZOrder		      584
-      ShowName		      off
-      NumInputs		      "8"
-      Mode		      "Multidimensional array"
-      ConcatenateDimension    "2"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Matrix\nViewer2"
-      SID		      "372"
-      Ports		      [1]
-      Position		      [1410, 550, 1455, 600]
-      ZOrder		      583
-      ShowName		      off
-      LibraryVersion	      "1.498"
-      SourceBlock	      "dspsnks4/Matrix\nViewer"
-      SourceType	      "Matrix Viewer"
-      ShowPortLabels	      off
-      ImageParams	      off
-      CMapStr		      "hot(256)"
-      YMin		      "0"
-      YMax		      "1.0"
-      AxisColorbar	      on
-      AxisParams	      off
-      AxisOrigin	      "Upper left corner"
-      XLabel		      "X-axis"
-      YLabel		      "Y-axis"
-      ZLabel		      "Z-axis"
-      FigPos		      "[POS_X POS_Y WIDTH HEIGHT]"
-      AxisZoom		      on
+      outDtype		      "boolean"
     }
     Block {
       BlockType		      Mux
       Name		      "Mux"
-      SID		      "3866"
-      Ports		      [8, 1]
-      Position		      [960, 508, 970, 637]
-      ZOrder		      1285
+      SID		      "116"
+      Ports		      [2, 1]
+      Position		      [605, 66, 620, 99]
+      ZOrder		      750
       ShowName		      off
-      Inputs		      "8"
+      Inputs		      "2"
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Transpose2"
-      SID		      "3855"
+      BlockType		      Selector
+      Name		      "Selector2"
+      SID		      "98"
       Ports		      [1, 1]
-      Position		      [1310, 555, 1365, 595]
-      ZOrder		      1266
+      Position		      [145, 56, 185, 94]
+      ZOrder		      732
       ShowName		      off
-      LibraryVersion	      "1.898"
-      SourceBlock	      "dspmtrx3/Transpose"
-      SourceType	      "Transpose"
-      Hermitian		      off
-      overflowFlag	      off
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "2"
+      SampleTime	      "1"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "0"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector7"
+      SID		      "115"
+      Ports		      [1, 1]
+      Position		      [145, 101, 185, 139]
+      ZOrder		      748
+      ShowName		      off
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "2"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "1"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "95"
+      Ports		      [1]
+      Position		      [650, 70, 720, 100]
+      ZOrder		      729
+      VariableName	      "Output_Vect"
+      MaxDataPoints	      "inf"
+      SampleTime	      "1"
     }
     Line {
-      SrcBlock		      "Matrix\nConcatenate"
+      SrcBlock		      "Integer to Bit\nConverter1"
       SrcPort		      1
-      DstBlock		      "Transpose2"
+      DstBlock		      "Byte_Demultiplexer_1_to_2"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Const4"
+      SrcBlock		      "Data Type Conversion1"
       SrcPort		      1
-      DstBlock		      "Character_Table"
+      DstBlock		      "Integer to Bit\nConverter1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Transpose2"
+      SrcBlock		      "Selector2"
       SrcPort		      1
-      DstBlock		      "Matrix\nViewer2"
+      DstBlock		      "Data Type Conversion1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Character_Table"
+      SrcBlock		      "From\nWorkspace"
       SrcPort		      1
-      DstBlock		      "Mux"
-      DstPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, 45]
+	DstBlock		"Selector7"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Selector2"
+	DstPort			1
+      }
     }
     Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      2
-      DstBlock		      "Mux"
+      SrcBlock		      "Data Type Conversion7"
+      SrcPort		      1
+      Points		      [130, 0; 0, -30]
+      DstBlock		      "Byte_Demultiplexer_1_to_2"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      3
-      DstBlock		      "Mux"
-      DstPort		      3
+      SrcBlock		      "Selector7"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion7"
+      DstPort		      1
     }
     Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      4
+      SrcBlock		      "Byte_Demultiplexer_1_to_2"
+      SrcPort		      1
       DstBlock		      "Mux"
-      DstPort		      4
+      DstPort		      1
     }
     Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      5
+      SrcBlock		      "Byte_Demultiplexer_1_to_2"
+      SrcPort		      2
       DstBlock		      "Mux"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      6
-      DstBlock		      "Mux"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      7
-      DstBlock		      "Mux"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      8
-      DstBlock		      "Mux"
-      DstPort		      8
+      DstPort		      2
     }
     Line {
       SrcBlock		      "Mux"
       SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter8"
+      DstBlock		      "To Workspace"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter8"
-      SrcPort		      1
-      DstBlock		      "Demux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      3
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      4
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      5
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      6
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      7
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      8
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      8
-    }
-    Annotation {
-      SID		      "373"
-      Name		      "\nNote: char(row, column, table)\n"
-      Position		      [867, 475]
-      DropShadow	      on
-      ZOrder		      -1
     }
   }
 }

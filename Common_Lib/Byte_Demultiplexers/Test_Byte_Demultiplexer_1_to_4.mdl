@@ -1,12 +1,12 @@
 Model {
-  Name			  "Test_Multiplexer"
+  Name			  "Test_Byte_Demultiplexer_1_to_4"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.94"
+    ComputedModelVersion    "1.41"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -18,7 +18,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "Test_Multiplexer"
+      Cell		      "Test_Demultiplexer"
       PropName		      "mdlProps"
     }
   }
@@ -41,7 +41,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [338.0, 0.0, 1378.0, 1080.0]
+      Location		      [62.0, 0.0, 1077.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -65,25 +65,25 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1328.0, 906.0]
+	Extents			[1027.0, 906.0]
 	ZoomFactor		[1.0]
-	Offset			[878.903202540953, -12.794667776257576]
+	Offset			[-144.87191342910978, -43.515243937476157]
       }
     }
   }
-  Created		  "Sat Apr 08 22:24:40 2017"
+  Created		  "Sun Apr 08 13:43:01 2018"
   Creator		  "N"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Mar 02 10:40:00 2019"
-  RTWModifiedTimeStamp	  473423997
-  ModelVersionFormat	  "1.%<AutoIncrement:94>"
+  LastModifiedDate	  "Mon Mar 04 22:07:55 2019"
+  RTWModifiedTimeStamp	  473638074
+  ModelVersionFormat	  "1.%<AutoIncrement:41>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
-  LibraryLinkDisplay	  "all"
+  LibraryLinkDisplay	  "user"
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
@@ -116,12 +116,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Test_16_to_1_Multiplexer"
+    model_		    "Test_Demultiplexer"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Test_16_to_1_Multiplexer"
+      Cell		      "Test_Demultiplexer"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "len"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -698,7 +698,7 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Hardware Implementation"
-      ConfigPrmDlgPosition     [ 63, 41, 1038, 847 ] 
+      ConfigPrmDlgPosition     [ 418, 150, 1564, 908 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -795,6 +795,14 @@ Model {
       OutputAfterFinalValue   "Extrapolation"
     }
     Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      Selector
       NumberOfDimensions      "1"
       IndexMode		      "One-based"
@@ -813,8 +821,8 @@ Model {
     }
   }
   System {
-    Name		    "Test_Multiplexer"
-    Location		    [338, 0, 1716, 1080]
+    Name		    "Test_Byte_Demultiplexer_1_to_4"
+    Location		    [62, 0, 1139, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -828,110 +836,25 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "414"
+    SIDHighWatermark	    "120"
     Block {
       BlockType		      Reference
-      Name		      "Byte_Multiplexer_16_to_1"
-      SID		      "302"
-      Ports		      [20, 1]
-      Position		      [1455, 490, 1595, 795]
-      ZOrder		      583
-      Commented		      on
-      LibraryVersion	      "1.3"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1"
+      Name		      "Byte_Demultiplexer_1_to_4"
+      SID		      "80"
+      Ports		      [3, 4]
+      Position		      [425, 212, 570, 273]
+      ZOrder		      518
+      LibraryVersion	      "1.7"
+      SourceBlock	      "Byte_Demultiplexers_Lib/Byte_Demultiplexers_Lib/Byte_Demultiplexer_1_to_4"
       SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Byte_Multiplexer_2_to_1"
-      SID		      "355"
-      Ports		      [3, 1]
-      Position		      [1455, 52, 1595, 98]
-      ZOrder		      637
-      LibraryVersion	      "1.3"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_2_to_1"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Byte_Multiplexer_4_to_1"
-      SID		      "356"
-      Ports		      [6, 1]
-      Position		      [1455, 147, 1595, 238]
-      ZOrder		      636
-      Commented		      on
-      LibraryVersion	      "1.3"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Byte_Multiplexer_8_to_1"
-      SID		      "357"
-      Ports		      [11, 1]
-      Position		      [1455, 281, 1595, 449]
-      ZOrder		      638
-      Commented		      on
-      LibraryVersion	      "1.3"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_8_to_1"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion"
-      SID		      "383"
-      Position		      [1235, 153, 1275, 177]
-      ZOrder		      673
-      ShowName		      off
-      Commented		      on
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion1"
-      SID		      "396"
-      Position		      [1235, 293, 1275, 317]
-      ZOrder		      686
-      ShowName		      off
-      Commented		      on
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion2"
-      SID		      "397"
-      Position		      [1235, 378, 1275, 402]
-      ZOrder		      691
+      SID		      "100"
+      Position		      [205, 223, 245, 247]
+      ZOrder		      736
       ShowName		      off
-      Commented		      on
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion3"
-      SID		      "384"
-      Position		      [1235, 198, 1275, 222]
-      ZOrder		      679
-      ShowName		      off
-      Commented		      on
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion4"
-      SID		      "402"
-      Position		      [1235, 513, 1275, 537]
-      ZOrder		      692
-      ShowName		      off
-      Commented		      on
       OutDataTypeStr	      "uint8"
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	off
@@ -939,32 +862,9 @@ Model {
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion5"
-      SID		      "403"
-      Position		      [1235, 663, 1275, 687]
-      ZOrder		      697
-      ShowName		      off
-      Commented		      on
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion6"
-      SID		      "408"
-      Position		      [1235, 28, 1275, 52]
-      ZOrder		      699
-      ShowName		      off
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion7"
-      SID		      "409"
-      Position		      [1235, 73, 1275, 97]
-      ZOrder		      704
+      SID		      "110"
+      Position		      [205, 268, 245, 292]
+      ZOrder		      745
       ShowName		      off
       OutDataTypeStr	      "uint8"
       RndMeth		      "Floor"
@@ -972,190 +872,33 @@ Model {
     }
     Block {
       BlockType		      Demux
-      Name		      "Demux10"
-      SID		      "367"
-      Ports		      [1, 8]
-      Position		      [1410, 332, 1425, 443]
-      ZOrder		      648
-      ShowName		      off
-      Commented		      on
-      Outputs		      "8"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux11"
-      SID		      "368"
+      Name		      "Demux1"
+      SID		      "101"
       Ports		      [1, 2]
-      Position		      [1410, 148, 1425, 177]
-      ZOrder		      651
-      ShowName		      off
-      Commented		      on
-      Outputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux12"
-      SID		      "369"
-      Ports		      [1, 4]
-      Position		      [1410, 180, 1425, 235]
-      ZOrder		      654
-      ShowName		      off
-      Commented		      on
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux14"
-      SID		      "375"
-      Ports		      [1, 2]
-      Position		      [1410, 68, 1425, 97]
-      ZOrder		      656
+      Position		      [380, 215, 395, 255]
+      ZOrder		      734
       ShowName		      off
       Outputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux7"
-      SID		      "352"
-      Ports		      [1, 16]
-      Position		      [1410, 556, 1425, 789]
-      ZOrder		      633
-      ShowName		      off
-      Commented		      on
-      Outputs		      "16"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux8"
-      SID		      "353"
-      Ports		      [1, 4]
-      Position		      [1410, 495, 1425, 550]
-      ZOrder		      634
-      ShowName		      off
-      Commented		      on
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux9"
-      SID		      "366"
-      Ports		      [1, 3]
-      Position		      [1410, 284, 1425, 326]
-      ZOrder		      645
-      ShowName		      off
-      Commented		      on
-      Outputs		      "3"
       DisplayOption	      "bar"
     }
     Block {
       BlockType		      FromWorkspace
       Name		      "From\nWorkspace"
-      SID		      "385"
-      Position		      [1050, 152, 1125, 178]
-      ZOrder		      674
-      Commented		      on
+      SID		      "102"
+      Position		      [25, 222, 100, 248]
+      ZOrder		      737
       VariableName	      "Input_Vect"
       SampleTime	      "1"
       Interpolate	      off
       OutputAfterFinalValue   "Holding final value"
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "From\nWorkspace1"
-      SID		      "398"
-      Position		      [1050, 292, 1125, 318]
-      ZOrder		      687
-      Commented		      on
-      VariableName	      "Input_Vect"
-      SampleTime	      "1"
-      Interpolate	      off
-      OutputAfterFinalValue   "Holding final value"
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "From\nWorkspace2"
-      SID		      "404"
-      Position		      [1050, 512, 1125, 538]
-      ZOrder		      693
-      Commented		      on
-      VariableName	      "Input_Vect"
-      SampleTime	      "1"
-      Interpolate	      off
-      OutputAfterFinalValue   "Holding final value"
-    }
-    Block {
-      BlockType		      FromWorkspace
-      Name		      "From\nWorkspace3"
-      SID		      "410"
-      Position		      [1050, 27, 1125, 53]
-      ZOrder		      700
-      VariableName	      "Input_Vect"
-      SampleTime	      "1"
-      Interpolate	      off
-      OutputAfterFinalValue   "Holding final value"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter1"
-      SID		      "399"
-      Ports		      [1, 1]
-      Position		      [1300, 368, 1380, 412]
-      ZOrder		      688
-      ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "8"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "uint8"
     }
     Block {
       BlockType		      Reference
       Name		      "Integer to Bit\nConverter2"
-      SID		      "387"
+      SID		      "103"
       Ports		      [1, 1]
-      Position		      [1300, 188, 1380, 232]
-      ZOrder		      676
-      ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "4"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "uint8"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter3"
-      SID		      "405"
-      Ports		      [1, 1]
-      Position		      [1300, 653, 1380, 697]
-      ZOrder		      694
-      ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "16"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "uint8"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter4"
-      SID		      "411"
-      Ports		      [1, 1]
-      Position		      [1300, 63, 1380, 107]
-      ZOrder		      701
+      Position		      [270, 213, 350, 257]
+      ZOrder		      735
       ShowName		      off
       LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
@@ -1163,146 +906,26 @@ Model {
       nbits		      "2"
       signedInputValues	      "Unsigned"
       bitOrder		      "MSB first"
-      outDtype		      "uint8"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter5"
-      SID		      "249"
-      Ports		      [1, 1]
-      Position		      [1300, 503, 1380, 547]
-      ZOrder		      538
-      ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "4"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
       outDtype		      "boolean"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter6"
-      SID		      "370"
-      Ports		      [1, 1]
-      Position		      [1300, 283, 1380, 327]
-      ZOrder		      646
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      "117"
+      Ports		      [4, 1]
+      Position		      [605, 213, 620, 272]
+      ZOrder		      752
       ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "3"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "boolean"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter7"
-      SID		      "371"
-      Ports		      [1, 1]
-      Position		      [1300, 143, 1380, 187]
-      ZOrder		      652
-      ShowName		      off
-      Commented		      on
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "2"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "boolean"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter8"
-      SID		      "412"
-      Ports		      [1, 1]
-      Position		      [1300, 18, 1380, 62]
-      ZOrder		      698
-      ShowName		      off
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "1"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "boolean"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector"
-      SID		      "388"
-      Ports		      [1, 1]
-      Position		      [1165, 146, 1205, 184]
-      ZOrder		      677
-      ShowName		      off
-      Commented		      on
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "2"
-      SampleTime	      "1"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "0"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector1"
-      SID		      "389"
-      Ports		      [1, 1]
-      Position		      [1165, 191, 1205, 229]
-      ZOrder		      678
-      ShowName		      off
-      Commented		      on
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "2"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "1"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector2"
-      SID		      "400"
-      Ports		      [1, 1]
-      Position		      [1165, 286, 1205, 324]
-      ZOrder		      689
-      ShowName		      off
-      Commented		      on
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "2"
-      SampleTime	      "1"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "0"
-      OutputSizes	      "1"
+      DisplayOption	      "bar"
     }
     Block {
       BlockType		      Selector
       Name		      "Selector3"
-      SID		      "401"
+      SID		      "104"
       Ports		      [1, 1]
-      Position		      [1165, 371, 1205, 409]
-      ZOrder		      690
+      Position		      [135, 216, 175, 254]
+      ZOrder		      738
       ShowName		      off
-      Commented		      on
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "2"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "1"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector4"
-      SID		      "406"
-      Ports		      [1, 1]
-      Position		      [1165, 506, 1205, 544]
-      ZOrder		      695
-      ShowName		      off
-      Commented		      on
       IndexMode		      "Zero-based"
       InputPortWidth	      "2"
       SampleTime	      "1"
@@ -1313,40 +936,10 @@ Model {
     Block {
       BlockType		      Selector
       Name		      "Selector5"
-      SID		      "407"
+      SID		      "111"
       Ports		      [1, 1]
-      Position		      [1165, 656, 1205, 694]
-      ZOrder		      696
-      ShowName		      off
-      Commented		      on
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "2"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "1"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector6"
-      SID		      "413"
-      Ports		      [1, 1]
-      Position		      [1165, 21, 1205, 59]
-      ZOrder		      702
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "2"
-      SampleTime	      "1"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "0"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector7"
-      SID		      "414"
-      Ports		      [1, 1]
-      Position		      [1165, 66, 1205, 104]
-      ZOrder		      703
+      Position		      [135, 261, 175, 299]
+      ZOrder		      744
       ShowName		      off
       IndexMode		      "Zero-based"
       InputPortWidth	      "2"
@@ -1357,382 +950,18 @@ Model {
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace"
-      SID		      "392"
+      SID		      "118"
       Ports		      [1]
-      Position		      [1625, 60, 1695, 90]
-      ZOrder		      682
+      Position		      [650, 230, 720, 260]
+      ZOrder		      751
       VariableName	      "Output_Vect"
       MaxDataPoints	      "inf"
       SampleTime	      "1"
     }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace1"
-      SID		      "393"
-      Ports		      [1]
-      Position		      [1625, 180, 1695, 210]
-      ZOrder		      683
-      Commented		      on
-      VariableName	      "Output_Vect1"
-      MaxDataPoints	      "inf"
-      SampleTime	      "1"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace2"
-      SID		      "394"
-      Ports		      [1]
-      Position		      [1625, 350, 1695, 380]
-      ZOrder		      684
-      Commented		      on
-      VariableName	      "Output_Vect2"
-      MaxDataPoints	      "inf"
-      SampleTime	      "1"
-    }
-    Block {
-      BlockType		      ToWorkspace
-      Name		      "To Workspace3"
-      SID		      "395"
-      Ports		      [1]
-      Position		      [1625, 630, 1695, 660]
-      ZOrder		      685
-      Commented		      on
-      VariableName	      "Output_Vect3"
-      MaxDataPoints	      "inf"
-      SampleTime	      "1"
-    }
     Line {
-      SrcBlock		      "Integer to Bit\nConverter5"
+      SrcBlock		      "Integer to Bit\nConverter2"
       SrcPort		      1
-      DstBlock		      "Demux8"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter3"
-      SrcPort		      1
-      DstBlock		      "Demux7"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      1
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Byte_Multiplexer_16_to_1"
-      SrcPort		      1
-      DstBlock		      "To Workspace3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      2
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      3
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      4
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      8
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      5
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      9
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      6
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      10
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      7
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      11
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      8
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      12
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      9
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      13
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      10
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      14
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      11
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      15
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      12
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      16
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      13
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      17
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      14
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      18
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      15
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      19
-    }
-    Line {
-      SrcBlock		      "Demux7"
-      SrcPort		      16
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      20
-    }
-    Line {
-      SrcBlock		      "Demux8"
-      SrcPort		      1
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux8"
-      SrcPort		      3
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Demux8"
-      SrcPort		      2
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux8"
-      SrcPort		      4
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Byte_Multiplexer_4_to_1"
-      SrcPort		      1
-      DstBlock		      "To Workspace1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Byte_Multiplexer_8_to_1"
-      SrcPort		      1
-      DstBlock		      "To Workspace2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux9"
-      SrcPort		      1
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux9"
-      SrcPort		      2
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux9"
-      SrcPort		      3
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter6"
-      SrcPort		      1
-      DstBlock		      "Demux9"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      1
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      2
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      3
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      4
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      5
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      8
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      6
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      9
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      7
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      10
-    }
-    Line {
-      SrcBlock		      "Demux10"
-      SrcPort		      8
-      DstBlock		      "Byte_Multiplexer_8_to_1"
-      DstPort		      11
-    }
-    Line {
-      SrcBlock		      "Demux11"
-      SrcPort		      2
-      DstBlock		      "Byte_Multiplexer_4_to_1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter7"
-      SrcPort		      1
-      DstBlock		      "Demux11"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux12"
-      SrcPort		      1
-      DstBlock		      "Byte_Multiplexer_4_to_1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Demux12"
-      SrcPort		      2
-      DstBlock		      "Byte_Multiplexer_4_to_1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Demux12"
-      SrcPort		      3
-      DstBlock		      "Byte_Multiplexer_4_to_1"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Demux12"
-      SrcPort		      4
-      DstBlock		      "Byte_Multiplexer_4_to_1"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Demux11"
-      SrcPort		      1
-      DstBlock		      "Byte_Multiplexer_4_to_1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux14"
-      SrcPort		      1
-      DstBlock		      "Byte_Multiplexer_2_to_1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux14"
-      SrcPort		      2
-      DstBlock		      "Byte_Multiplexer_2_to_1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "From\nWorkspace"
-      SrcPort		      1
-      Points		      [12, 0]
-      Branch {
-	Points			[0, 45]
-	DstBlock		"Selector1"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Selector"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Selector"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Selector1"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion3"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Byte_Multiplexer_2_to_1"
-      SrcPort		      1
-      DstBlock		      "To Workspace"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From\nWorkspace1"
-      SrcPort		      1
-      Points		      [12, 0]
-      Branch {
-	Points			[0, 85]
-	DstBlock		"Selector3"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Selector2"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Selector2"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion1"
+      DstBlock		      "Demux1"
       DstPort		      1
     }
     Line {
@@ -1742,36 +971,36 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Data Type Conversion1"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter6"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Data Type Conversion2"
       SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter1"
+      DstBlock		      "Integer to Bit\nConverter2"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From\nWorkspace2"
+      SrcBlock		      "From\nWorkspace"
       SrcPort		      1
       Points		      [12, 0]
       Branch {
-	Points			[0, 150]
+	Points			[0, 45]
 	DstBlock		"Selector5"
 	DstPort			1
       }
       Branch {
-	DstBlock		"Selector4"
+	DstBlock		"Selector3"
 	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "Selector4"
+      SrcBlock		      "Demux1"
       SrcPort		      1
-      DstBlock		      "Data Type Conversion4"
+      DstBlock		      "Byte_Demultiplexer_1_to_4"
       DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      DstBlock		      "Byte_Demultiplexer_1_to_4"
+      DstPort		      2
     }
     Line {
       SrcBlock		      "Selector5"
@@ -1780,85 +1009,41 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Data Type Conversion4"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter5"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Data Type Conversion5"
       SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter3"
+      Points		      [138, 0; 0, -15]
+      DstBlock		      "Byte_Demultiplexer_1_to_4"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Integer to Bit\nConverter1"
+      SrcBlock		      "Byte_Demultiplexer_1_to_4"
       SrcPort		      1
-      DstBlock		      "Demux10"
+      DstBlock		      "Mux1"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Integer to Bit\nConverter2"
-      SrcPort		      1
-      DstBlock		      "Demux12"
-      DstPort		      1
+      SrcBlock		      "Byte_Demultiplexer_1_to_4"
+      SrcPort		      2
+      DstBlock		      "Mux1"
+      DstPort		      2
     }
     Line {
-      SrcBlock		      "Data Type Conversion"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter7"
-      DstPort		      1
+      SrcBlock		      "Byte_Demultiplexer_1_to_4"
+      SrcPort		      3
+      DstBlock		      "Mux1"
+      DstPort		      3
     }
     Line {
-      SrcBlock		      "Integer to Bit\nConverter8"
-      SrcPort		      1
-      Points		      [27, 0; 0, 20]
-      DstBlock		      "Byte_Multiplexer_2_to_1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From\nWorkspace3"
-      SrcPort		      1
-      Points		      [12, 0]
-      Branch {
-	Points			[0, 45]
-	DstBlock		"Selector7"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Selector6"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Selector6"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Selector7"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion7"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion7"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter4"
-      SrcPort		      1
-      DstBlock		      "Demux14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion6"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter8"
-      DstPort		      1
+      SrcBlock		      "Byte_Demultiplexer_1_to_4"
+      SrcPort		      4
+      DstBlock		      "Mux1"
+      DstPort		      4
     }
   }
 }

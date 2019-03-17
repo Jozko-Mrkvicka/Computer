@@ -1,12 +1,12 @@
 Model {
-  Name			  "Test_Character_Table"
+  Name			  "Test_Logic_Operation_Bitwise_NOT"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.324"
+    ComputedModelVersion    "1.30"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [196.0, 108.0, 1265.0, 972.0]
+      Location		      [485.0, 252.0, 685.0, 727.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,21 +54,21 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1215.0, 798.0]
+	Extents			[635.0, 553.0]
 	ZoomFactor		[1.0]
-	Offset			[450.07292618120789, 251.87005838422209]
+	Offset			[-29.100411178576678, -0.76100241014830772]
       }
     }
   }
-  Created		  "Sat Apr 14 21:31:19 2018"
-  Creator		  "N"
+  Created		  "Sat Jul 07 16:41:53 2018"
+  Creator		  "uzivatel"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Mar 09 00:32:49 2019"
-  RTWModifiedTimeStamp	  473992363
-  ModelVersionFormat	  "1.%<AutoIncrement:324>"
+  LastModifiedDate	  "Wed Mar 06 23:01:37 2019"
+  RTWModifiedTimeStamp	  473814096
+  ModelVersionFormat	  "1.%<AutoIncrement:30>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -105,12 +105,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Display"
+    model_		    "Test_Logic_Operations"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Display"
+      Cell		      "Test_Logic_Operations"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -166,12 +166,12 @@ Model {
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
-	Dimension		8
+	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "2"
+	  StopTime		  "len"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -186,11 +186,11 @@ Model {
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
-	  SolverMode		  "SingleTasking"
+	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -216,7 +216,7 @@ Model {
 	  SaveFinalState	  off
 	  SaveCompleteFinalSimState off
 	  SaveFormat		  "Array"
-	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SignalLoggingSaveFormat "Dataset"
 	  SaveOutput		  on
 	  SaveState		  off
 	  SignalLogging		  on
@@ -250,8 +250,8 @@ Model {
 	    Cell		    "UseSpecifiedMinMax"
 	    PropName		    "DisabledProps"
 	  }
-	  BlockReduction	  off
-	  BooleanDataType	  off
+	  BlockReduction	  on
+	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
 	  InlineParams		  off
 	  UseIntDivNetSlope	  off
@@ -304,24 +304,24 @@ Model {
 	  AlgebraicLoopMsg	  "warning"
 	  ArtificialAlgebraicLoopMsg "warning"
 	  SaveWithDisabledLinksMsg "warning"
-	  SaveWithParameterizedLinksMsg	"none"
+	  SaveWithParameterizedLinksMsg	"warning"
 	  CheckSSInitialOutputMsg on
 	  UnderspecifiedInitializationDetection	"Classic"
 	  MergeDetectMultiDrivingBlocksExec "none"
 	  CheckExecutionContextPreStartOutputMsg off
 	  CheckExecutionContextRuntimeOutputMsg	off
-	  SignalResolutionControl "TryResolveAllWithWarning"
+	  SignalResolutionControl "UseLocalSettings"
 	  BlockPriorityViolationMsg "warning"
 	  MinStepSizeMsg	  "warning"
 	  TimeAdjustmentMsg	  "none"
 	  MaxConsecutiveZCsMsg	  "error"
 	  MaskedZcDiagnostic	  "warning"
 	  IgnoredZcDiagnostic	  "warning"
-	  SolverPrmCheckMsg	  "none"
+	  SolverPrmCheckMsg	  "warning"
 	  InheritedTsInSrcMsg	  "warning"
 	  DiscreteInheritContinuousMsg "warning"
-	  MultiTaskDSMMsg	  "warning"
-	  MultiTaskCondExecSysMsg "none"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
 	  SingleTaskRateTransMsg  "none"
 	  TasksWithSamePriorityMsg "warning"
@@ -366,7 +366,7 @@ Model {
 	  SimStateInterfaceChecksumMismatchMsg "warning"
 	  SimStateOlderReleaseMsg "error"
 	  InitInArrayFormatMsg	  "warning"
-	  StrictBusMsg		  "None"
+	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
 	  LoggingUnavailableSignals "error"
@@ -418,7 +418,7 @@ Model {
 	  TargetPreprocMaxBitsSint 32
 	  TargetPreprocMaxBitsUint 32
 	  TargetHWDeviceType	  "Specified"
-	  TargetUnknown		  on
+	  TargetUnknown		  off
 	  ProdEqTarget		  on
 	}
 	Simulink.ModelReferenceCC {
@@ -505,7 +505,7 @@ Model {
 	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
-	  IncludeERTFirstTime	  on
+	  IncludeERTFirstTime	  off
 	  GenerateTraceInfo	  off
 	  GenerateTraceReport	  off
 	  GenerateTraceReportSl	  off
@@ -671,11 +671,24 @@ Model {
 	    PropName		    "Components"
 	  }
 	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  18
+	  Version		  "1.13.0"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    " "
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
 	PropName		"Components"
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 430, 225, 1490, 855 ] 
+      ConfigPrmDlgPosition     [ 422, 195, 1498, 863 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -685,7 +698,7 @@ Model {
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    18
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -746,297 +759,114 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Concatenate
-      NumInputs		      "2"
-      Mode		      "Vector"
-      ConcatenateDimension    "1"
-    }
-    Block {
-      BlockType		      Constant
-      Value		      "1"
-      VectorParams1D	      on
-      SamplingMode	      "Sample based"
+      BlockType		      DataTypeConversion
       OutMin		      "[]"
       OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      OutDataTypeStr	      "Inherit: Inherit via back propagation"
       LockScale		      off
-      SampleTime	      "inf"
-      FramePeriod	      "inf"
-      PreserveConstantTs      off
+      ConvertRealWorld	      "Real World Value (RWV)"
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
     }
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      OutDataTypeStr	      "Inherit: auto"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
     }
     Block {
-      BlockType		      Mux
-      Inputs		      "4"
-      DisplayOption	      "none"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      NonVirtualBus	      off
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
     }
   }
   System {
-    Name		    "Test_Character_Table"
-    Location		    [196, 108, 1461, 1080]
+    Name		    "Test_Logic_Operation_Bitwise_NOT"
+    Location		    [485, 252, 1170, 979]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
     PaperOrientation	    "landscape"
     PaperPositionMode	    "auto"
-    PaperType		    "usletter"
-    PaperUnits		    "inches"
-    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3881"
+    SIDHighWatermark	    "57"
     Block {
       BlockType		      Reference
-      Name		      "Character_Table"
-      SID		      "3853"
-      Ports		      [1, 8]
-      Position		      [790, 508, 940, 637]
-      ZOrder		      1010
-      LibraryVersion	      "1.420"
-      SourceBlock	      "Computer_Library/Character_Table"
+      Name		      "Bitwise_NOT"
+      SID		      "23"
+      Ports		      [1, 1]
+      Position		      [310, 419, 450, 451]
+      ZOrder		      465
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Logic_Operations_Lib/Logic_Operations_Lib/Bitwise_NOT"
       SourceType	      "SubSystem"
     }
     Block {
-      BlockType		      Constant
-      Name		      "Const4"
-      SID		      "2352"
-      Position		      [565, 562, 720, 588]
-      ZOrder		      599
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion6"
+      SID		      "53"
+      Position		      [215, 423, 255, 447]
+      ZOrder		      697
       ShowName		      off
       OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "3865"
-      Ports		      [1, 8]
-      Position		      [1125, 510, 1135, 635]
-      ZOrder		      1284
-      ShowName		      off
-      Outputs		      "8"
-      DisplayOption	      "bar"
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace"
+      SID		      "55"
+      Position		      [20, 420, 85, 450]
+      ZOrder		      698
+      VariableName	      "Input_Vect"
+      SampleTime	      "1"
+      Interpolate	      off
+      OutputAfterFinalValue   "Holding final value"
     }
     Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter8"
-      SID		      "3864"
-      Ports		      [1, 1]
-      Position		      [1010, 558, 1085, 592]
-      ZOrder		      1283
-      ShowName		      off
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "8"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "uint8"
-    }
-    Block {
-      BlockType		      Concatenate
-      Name		      "Matrix\nConcatenate"
-      SID		      "374"
-      Ports		      [8, 1]
-      Position		      [1155, 513, 1265, 632]
-      ZOrder		      584
-      ShowName		      off
-      NumInputs		      "8"
-      Mode		      "Multidimensional array"
-      ConcatenateDimension    "2"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Matrix\nViewer2"
-      SID		      "372"
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "33"
       Ports		      [1]
-      Position		      [1410, 550, 1455, 600]
-      ZOrder		      583
-      ShowName		      off
-      LibraryVersion	      "1.498"
-      SourceBlock	      "dspsnks4/Matrix\nViewer"
-      SourceType	      "Matrix Viewer"
-      ShowPortLabels	      off
-      ImageParams	      off
-      CMapStr		      "hot(256)"
-      YMin		      "0"
-      YMax		      "1.0"
-      AxisColorbar	      on
-      AxisParams	      off
-      AxisOrigin	      "Upper left corner"
-      XLabel		      "X-axis"
-      YLabel		      "Y-axis"
-      ZLabel		      "Z-axis"
-      FigPos		      "[POS_X POS_Y WIDTH HEIGHT]"
-      AxisZoom		      on
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux"
-      SID		      "3866"
-      Ports		      [8, 1]
-      Position		      [960, 508, 970, 637]
-      ZOrder		      1285
-      ShowName		      off
-      Inputs		      "8"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Transpose2"
-      SID		      "3855"
-      Ports		      [1, 1]
-      Position		      [1310, 555, 1365, 595]
-      ZOrder		      1266
-      ShowName		      off
-      LibraryVersion	      "1.898"
-      SourceBlock	      "dspmtrx3/Transpose"
-      SourceType	      "Transpose"
-      Hermitian		      off
-      overflowFlag	      off
+      Position		      [485, 420, 555, 450]
+      ZOrder		      516
+      VariableName	      "Output_Vect"
+      MaxDataPoints	      "inf"
+      SampleTime	      "1"
     }
     Line {
-      SrcBlock		      "Matrix\nConcatenate"
+      SrcBlock		      "Bitwise_NOT"
       SrcPort		      1
-      DstBlock		      "Transpose2"
+      DstBlock		      "To Workspace"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Const4"
+      SrcBlock		      "From\nWorkspace"
       SrcPort		      1
-      DstBlock		      "Character_Table"
+      DstBlock		      "Data Type Conversion6"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Transpose2"
+      SrcBlock		      "Data Type Conversion6"
       SrcPort		      1
-      DstBlock		      "Matrix\nViewer2"
+      DstBlock		      "Bitwise_NOT"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      1
-      DstBlock		      "Mux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      2
-      DstBlock		      "Mux"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      3
-      DstBlock		      "Mux"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      4
-      DstBlock		      "Mux"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      5
-      DstBlock		      "Mux"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      6
-      DstBlock		      "Mux"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      7
-      DstBlock		      "Mux"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Character_Table"
-      SrcPort		      8
-      DstBlock		      "Mux"
-      DstPort		      8
-    }
-    Line {
-      SrcBlock		      "Mux"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter8"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter8"
-      SrcPort		      1
-      DstBlock		      "Demux"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      1
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      3
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      4
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      5
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      6
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      7
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Demux"
-      SrcPort		      8
-      DstBlock		      "Matrix\nConcatenate"
-      DstPort		      8
-    }
-    Annotation {
-      SID		      "373"
-      Name		      "\nNote: char(row, column, table)\n"
-      Position		      [867, 475]
-      DropShadow	      on
-      ZOrder		      -1
     }
   }
 }

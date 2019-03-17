@@ -77,7 +77,7 @@ XOR = bin2dec('1101 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 11
+% Operation code = 11
 % Type of operands:
 %     ADDcr  CONST  REG    (000)
 %     ADDrr  REG    REG    (001)
@@ -107,8 +107,103 @@ SUBrr = bin2dec('1010 0001');
 SUB = bin2dec('1010 0000');
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation code: 7
+%
+% First operand:
+%     Index pointing to a data
+%     stored in external memory.
+%
+% Second operand:
+%     Destination RAM address.
+%
+% Type of operands:
+%     LOADcr  CONST  REG    (000) (Not implemented)
+%     LOADrr  REG    REG    (001) (Not implemented)
+%     LOADmr  MEM    REG    (010) (Not implemented)
+%     LOADcm  CONST  MEM    (011) (Not implemented)
+%     LOADrm  REG    MEM    (100) (Not implemented)
+%     LOADcc  CONST  CONST  (101) (Not implemented)
+%     LOADrc  REG    CONST  (110) (Not implemented)
+%     LOADmc  MEM    CONST  (111) (Not implemented)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+LOADcr = bin2dec('0011 0000');
+% LOADrr = bin2dec('0011 0001');
+% LOADmr = bin2dec('0011 0010');
+% LOADcm = bin2dec('0011 0011');
+% LOADrm = bin2dec('0011 0100');
+LOAD = bin2dec('0011 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation code: 6
+%
+% First operand:
+%     Source of data.
+%
+% Second operand:
+%     Destination.
+%
+% Type of operands:
+%     STOREcr  CONST  REG  (000)
+%     STORErr  REG    REG  (001)
+%     STOREmr  MEM    REG  (010)
+%     STOREcm  CONST  MEM  (011)
+%     STORErm  REG    MEM  (100)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% MOVcr = bin2dec('0011 0000');
+% MOVrr = bin2dec('0011 0001');
+% MOVmr = bin2dec('0011 0010');
+% MOVcm = bin2dec('0011 0011');
+% MOVrm = bin2dec('0011 0100');
+% MOV = bin2dec('0011 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation code: 5
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% GPR
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation code: 4
+%
+% First operand: 
+%     Character to print.
+%
+% Second operand:
+%     Position on display.
+%
+% Type of operands:
+%     TPRcr  CONST  REG    (000)
+%     TPRrr  REG    REG    (001)
+%     TPRmr  MEM    REG    (010)
+%     TPRcm  CONST  MEM    (011)
+%     TPRrm  REG    MEM    (100)
+%     TPRcc  CONST  CONST  (101)
+%     TPRrc  REG    CONST  (110)
+%     TPRmc  MEM    CONST  (111)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TPRcr = bin2dec('0100 0000');
+TPRrr = bin2dec('0100 0001');
+TPRmr = bin2dec('0100 0010');
+TPRcm = bin2dec('0100 0011');
+TPRrm = bin2dec('0100 0100');
+TPRcc = bin2dec('0100 0101');
+TPRrc = bin2dec('0100 0110');
+TPRmc = bin2dec('0100 0111');
+TPR = bin2dec('0100 0000');
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Operation code: 3
+%
+% First operand:
+%     Source of data.
+%
+% Second operand:
+%     Destination.
+%
 % Type of operands:
 %     MOVcr  CONST  REG  (000)
 %     MOVrr  REG    REG  (001)

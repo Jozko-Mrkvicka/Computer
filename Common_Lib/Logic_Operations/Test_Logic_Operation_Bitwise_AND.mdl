@@ -1,12 +1,12 @@
 Model {
-  Name			  "Test_ALU"
+  Name			  "Test_Logic_Operation_Bitwise_AND"
   Version		  8.1
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.31"
+    ComputedModelVersion    "1.30"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [63.0, 225.0, 1238.0, 855.0]
+      Location		      [485.0, 252.0, 685.0, 727.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -39,7 +39,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[1]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -54,21 +54,21 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1188.0, 681.0]
-	ZoomFactor		[1.5]
-	Offset			[-16.3178690275648, -15.724686573679092]
+	Extents			[635.0, 553.0]
+	ZoomFactor		[1.0]
+	Offset			[-38.062909634816378, -18.761002410148308]
       }
     }
   }
-  Created		  "Fri Dec 07 22:34:05 2018"
+  Created		  "Sat Jul 07 16:41:53 2018"
   Creator		  "uzivatel"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Dec 08 15:10:01 2018"
-  RTWModifiedTimeStamp	  466182598
-  ModelVersionFormat	  "1.%<AutoIncrement:31>"
+  LastModifiedDate	  "Wed Mar 06 23:02:21 2019"
+  RTWModifiedTimeStamp	  473814118
+  ModelVersionFormat	  "1.%<AutoIncrement:30>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -105,12 +105,12 @@ Model {
     $PropName		    "DataLoggingOverride"
     $ObjectID		    6
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
-    model_		    "Test_ALU"
+    model_		    "Test_Logic_Operations"
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
-      Cell		      "Test_ALU"
+      Cell		      "Test_Logic_Operations"
       PropName		      "logAsSpecifiedByModels_"
     }
     Array {
@@ -166,12 +166,12 @@ Model {
       Version		      "1.13.0"
       Array {
 	Type			"Handle"
-	Dimension		8
+	Dimension		9
 	Simulink.SolverCC {
 	  $ObjectID		  8
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "20.0"
+	  StopTime		  "len"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -189,8 +189,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -671,11 +671,24 @@ Model {
 	    PropName		    "Components"
 	  }
 	}
+	hdlcoderui.hdlcc {
+	  $ObjectID		  18
+	  Version		  "1.13.0"
+	  Description		  "HDL Coder custom configuration component"
+	  Name			  "HDL Coder"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    1
+	    Cell		    " "
+	    PropName		    "HDLConfigFile"
+	  }
+	  HDLCActiveTab		  "0"
+	}
 	PropName		"Components"
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 414, 165, 1506, 871 ] 
+      ConfigPrmDlgPosition     [ 422, 195, 1498, 863 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -685,7 +698,7 @@ Model {
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    18
+    $ObjectID		    19
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -757,250 +770,178 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
-    }
-    Block {
-      BlockType		      Display
-      Format		      "short"
-      Decimation	      "10"
-      Floating		      off
-      SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      FromFile
-      FileName		      "untitled.mat"
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
       OutDataTypeStr	      "Inherit: auto"
       SampleTime	      "-1"
-      ExtrapolationBeforeFirstDataPoint	"Linear extrapolation"
-      InterpolationWithinTimeRange "Linear interpolation"
-      ExtrapolationAfterLastDataPoint "Linear extrapolation"
+      Interpolate	      on
       ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
     }
     Block {
-      BlockType		      Scope
-      ModelBased	      off
-      TickLabels	      "OneTimeTick"
-      ZoomMode		      "on"
-      Grid		      "on"
-      TimeRange		      "auto"
-      YMin		      "-5"
-      YMax		      "5"
-      SaveToWorkspace	      off
-      SaveName		      "ScopeData"
-      DataFormat	      "Array"
-      LimitDataPoints	      on
-      MaxDataPoints	      "5000"
-      Decimation	      "1"
-      SampleInput	      off
+      BlockType		      Selector
+      NumberOfDimensions      "1"
+      IndexMode		      "One-based"
+      InputPortWidth	      "-1"
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      VariableName	      "simulink_output"
+      MaxDataPoints	      "1000"
+      Decimation	      "1"
+      SampleTime	      "0"
+      SaveFormat	      "Array"
+      FixptAsFi		      off
+      NumInputs		      "1"
     }
   }
   System {
-    Name		    "Test_ALU"
-    Location		    [63, 225, 1301, 1080]
+    Name		    "Test_Logic_Operation_Bitwise_AND"
+    Location		    [485, 252, 1170, 979]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
     PaperOrientation	    "landscape"
     PaperPositionMode	    "auto"
-    PaperType		    "usletter"
-    PaperUnits		    "inches"
-    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "16"
+    SIDHighWatermark	    "57"
     Block {
       BlockType		      Reference
-      Name		      "ALU"
-      SID		      "10"
-      Ports		      [4, 1]
-      Position		      [390, 201, 585, 279]
-      ZOrder		      493
-      ForegroundColor	      "red"
-      BackgroundColor	      "yellow"
-      LibraryVersion	      "1.336"
-      SourceBlock	      "Computer_Library/ALU"
+      Name		      "Bitwise_AND"
+      SID		      "22"
+      Ports		      [2, 1]
+      Position		      [310, 76, 450, 109]
+      ZOrder		      462
+      LibraryVersion	      "1.8"
+      SourceBlock	      "Logic_Operations_Lib/Logic_Operations_Lib/Bitwise_AND"
       SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Clock"
-      SID		      "3"
-      Ports		      [0, 1]
-      Position		      [40, 256, 80, 284]
-      ZOrder		      479
-      LibraryVersion	      "1.44"
-      SourceBlock	      "simulink_extras/Flip Flops/Clock"
-      SourceType	      "Digital clock"
-      period		      "1"
     }
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion"
-      SID		      "14"
-      Position		      [145, 108, 180, 132]
-      ZOrder		      500
+      SID		      "29"
+      Position		      [215, 58, 255, 82]
+      ZOrder		      512
       ShowName		      off
       OutDataTypeStr	      "uint8"
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      Demux
-      Name		      "Demux"
-      SID		      "16"
-      Ports		      [1, 3]
-      Position		      [235, 101, 240, 139]
-      ZOrder		      502
+      BlockType		      DataTypeConversion
+      Name		      "Data Type Conversion1"
+      SID		      "35"
+      Position		      [215, 103, 255, 127]
+      ZOrder		      679
       ShowName		      off
-      Outputs		      "3"
-      DisplayOption	      "bar"
+      OutDataTypeStr	      "uint8"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
     }
     Block {
-      BlockType		      Display
-      Name		      "Display2"
-      SID		      "6"
-      Ports		      [1]
-      Position		      [670, 227, 735, 253]
-      ZOrder		      486
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      FromFile
-      Name		      "From File"
-      SID		      "13"
-      Position		      [20, 108, 95, 132]
-      ZOrder		      496
-      FileName		      "Test_ALU.mat"
-      OutDataTypeStr	      "double"
+      BlockType		      FromWorkspace
+      Name		      "From\nWorkspace"
+      SID		      "30"
+      Position		      [20, 55, 85, 85]
+      ZOrder		      513
+      VariableName	      "Input_Vect"
       SampleTime	      "1"
-      ExtrapolationBeforeFirstDataPoint	"Hold first value"
-      ExtrapolationAfterLastDataPoint "Ground value"
+      Interpolate	      off
+      OutputAfterFinalValue   "Holding final value"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope6"
-      SID		      "9"
-      Ports		      [5]
-      Position		      [685, 104, 715, 176]
-      ZOrder		      492
+      BlockType		      Selector
+      Name		      "Selector"
+      SID		      "34"
+      Ports		      [1, 1]
+      Position		      [135, 51, 175, 89]
+      ZOrder		      678
       ShowName		      off
-      Floating		      off
-      Location		      [1310, 329, 1913, 1071]
-      Open		      on
-      NumInputPorts	      "5"
-      List {
-	ListType		AxesTitles
-	axes1			"Data_In"
-	axes2			"Data_Out"
-	axes3			"Process"
-	axes4			"Register_Select"
-	axes5			"Clock"
-      }
-      List {
-	ListType		ScopeGraphics
-	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
-	AxesColor		"[0 0 0]"
-	AxesTickColor		"[1 1 1]"
-	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-	LineStyles		"-|-|-|-|-|-"
-	LineWidths		"[3 0.5 0.5 0.5 0.5 0.5]"
-	MarkerStyles		"none|none|none|none|none|none"
-      }
-      ShowLegends	      off
-      YMin		      "0~0~0~0~0"
-      YMax		      "255~255~1.5~3~1.5"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "2"
+      SampleTime	      "1"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "0"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector1"
+      SID		      "36"
+      Ports		      [1, 1]
+      Position		      [135, 96, 175, 134]
+      ZOrder		      680
+      ShowName		      off
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "2"
+      SampleTime	      "1"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "1"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      ToWorkspace
+      Name		      "To Workspace"
+      SID		      "26"
+      Ports		      [1]
+      Position		      [485, 80, 555, 110]
+      ZOrder		      509
+      VariableName	      "Output_Vect"
+      MaxDataPoints	      "inf"
+      SampleTime	      "1"
     }
     Line {
-      SrcBlock		      "Demux"
-      SrcPort		      2
-      Points		      [52, 0; 0, 110; 42, 0]
-      Branch {
-	DstBlock		"ALU"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, -90]
-	DstBlock		"Scope6"
-	DstPort			3
-      }
-    }
-    Line {
-      SrcBlock		      "Demux"
+      SrcBlock		      "Data Type Conversion1"
       SrcPort		      1
-      Points		      [64, 0]
+      Points		      [16, 0; 0, -15]
+      DstBlock		      "Bitwise_AND"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Data Type Conversion"
+      SrcPort		      1
+      Points		      [17, 0; 0, 15]
+      DstBlock		      "Bitwise_AND"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From\nWorkspace"
+      SrcPort		      1
+      Points		      [18, 0]
       Branch {
-	Points			[0, 100]
-	DstBlock		"ALU"
+	Points			[0, 45]
+	DstBlock		"Selector1"
 	DstPort			1
       }
       Branch {
-	DstBlock		"Scope6"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Clock"
-      SrcPort		      1
-      Points		      [280, 0]
-      Branch {
-	DstBlock		"ALU"
-	DstPort			4
-      }
-      Branch {
-	Points			[0, -100]
-	DstBlock		"Scope6"
-	DstPort			5
-      }
-    }
-    Line {
-      SrcBlock		      "ALU"
-      SrcPort		      1
-      Points		      [38, 0]
-      Branch {
-	Points			[0, -115]
-	DstBlock		"Scope6"
-	DstPort			2
-      }
-      Branch {
-	DstBlock		"Display2"
+	DstBlock		"Selector"
 	DstPort			1
       }
     }
     Line {
-      SrcBlock		      "Demux"
-      SrcPort		      3
-      Points		      [38, 0; 0, 120; 69, 0]
-      Branch {
-	Points			[0, -95]
-	DstBlock		"Scope6"
-	DstPort			4
-      }
-      Branch {
-	DstBlock		"ALU"
-	DstPort			3
-      }
+      SrcBlock		      "Bitwise_AND"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
     }
     Line {
-      SrcBlock		      "From File"
+      SrcBlock		      "Selector"
       SrcPort		      1
       DstBlock		      "Data Type Conversion"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Data Type Conversion"
+      SrcBlock		      "Selector1"
       SrcPort		      1
-      DstBlock		      "Demux"
+      DstBlock		      "Data Type Conversion1"
       DstPort		      1
     }
   }
