@@ -2,7 +2,6 @@
 
 #include "Computer_sfun.h"
 #include "Computer_sfun_debug_macros.h"
-#include "c2_Computer.h"
 
 /* Type Definitions */
 
@@ -29,11 +28,6 @@ void Computer_terminator(void)
 unsigned int sf_Computer_method_dispatcher(SimStruct *simstructPtr, unsigned int
   chartFileNumber, const char* specsCksum, int_T method, void *data)
 {
-  if (chartFileNumber==2) {
-    c2_Computer_method_dispatcher(simstructPtr, method, data);
-    return 1;
-  }
-
   return 0;
 }
 
@@ -67,21 +61,14 @@ unsigned int sf_Computer_process_check_sum_call( int nlhs, mxArray * plhs[], int
       ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(0U);
       ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(0U);
     } else if (!strcmp(commandName,"makefile")) {
-      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(631628663U);
-      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(4283872682U);
-      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(4167855415U);
-      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(1365236089U);
+      ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(3114923078U);
+      ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(487093125U);
+      ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(322702811U);
+      ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(2782614995U);
     } else if (nrhs==3 && !strcmp(commandName,"chart")) {
       unsigned int chartFileNumber;
       chartFileNumber = (unsigned int)mxGetScalar(prhs[2]);
       switch (chartFileNumber) {
-       case 2:
-        {
-          extern void sf_c2_Computer_get_check_sum(mxArray *plhs[]);
-          sf_c2_Computer_get_check_sum(plhs);
-          break;
-        }
-
        default:
         ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(0.0);
         ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(0.0);
@@ -97,10 +84,10 @@ unsigned int sf_Computer_process_check_sum_call( int nlhs, mxArray * plhs[], int
       return 0;
     }
   } else {
-    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(1408232230U);
-    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(1821894546U);
-    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(3456117394U);
-    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3446218721U);
+    ((real_T *)mxGetPr((plhs[0])))[0] = (real_T)(2904821114U);
+    ((real_T *)mxGetPr((plhs[0])))[1] = (real_T)(3596904327U);
+    ((real_T *)mxGetPr((plhs[0])))[2] = (real_T)(2122904550U);
+    ((real_T *)mxGetPr((plhs[0])))[3] = (real_T)(3600815155U);
   }
 
   return 1;
@@ -136,18 +123,6 @@ unsigned int sf_Computer_autoinheritance_info( int nlhs, mxArray * plhs[], int
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 2:
-      {
-        if (strcmp(aiChksum, "B1oqy627JoeqaGS5hr1YiC") == 0) {
-          extern mxArray *sf_c2_Computer_get_autoinheritance_info(void);
-          plhs[0] = sf_c2_Computer_get_autoinheritance_info();
-          break;
-        }
-
-        plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
-        break;
-      }
-
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -183,17 +158,6 @@ unsigned int sf_Computer_get_eml_resolved_functions_info( int nlhs, mxArray *
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 2:
-      {
-        extern const mxArray *sf_c2_Computer_get_eml_resolved_functions_info
-          (void);
-        mxArray *persistentMxArray = (mxArray *)
-          sf_c2_Computer_get_eml_resolved_functions_info();
-        plhs[0] = mxDuplicateArray(persistentMxArray);
-        mxDestroyArray(persistentMxArray);
-        break;
-      }
-
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -229,15 +193,6 @@ unsigned int sf_Computer_third_party_uses_info( int nlhs, mxArray * plhs[], int
     unsigned int chartFileNumber;
     chartFileNumber = (unsigned int)mxGetScalar(prhs[1]);
     switch (chartFileNumber) {
-     case 2:
-      {
-        if (strcmp(tpChksum, "mH5ve1TTaD3NjP8ftJgQiF") == 0) {
-          extern mxArray *sf_c2_Computer_third_party_uses_info(void);
-          plhs[0] = sf_c2_Computer_third_party_uses_info();
-          break;
-        }
-      }
-
      default:
       plhs[0] = mxCreateDoubleMatrix(0,0,mxREAL);
     }
@@ -249,7 +204,7 @@ unsigned int sf_Computer_third_party_uses_info( int nlhs, mxArray * plhs[], int
 void Computer_debug_initialize(struct SfDebugInstanceStruct* debugInstance)
 {
   _ComputerMachineNumber_ = sf_debug_initialize_machine(debugInstance,"Computer",
-    "sfun",0,1,0,0,0);
+    "sfun",0,0,0,0,0);
   sf_debug_set_machine_event_thresholds(debugInstance,_ComputerMachineNumber_,0,
     0);
   sf_debug_set_machine_data_thresholds(debugInstance,_ComputerMachineNumber_,0);

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.651"
+    ComputedModelVersion    "1.707"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -67,7 +67,7 @@ Model {
 	LoadSaveID		"0"
 	Extents			[1466.0, 906.0]
 	ZoomFactor		[0.8]
-	Offset			[2549.8154685313007, 882.30883281541685]
+	Offset			[3749.9525093644984, 885.08646225828909]
       }
     }
   }
@@ -77,15 +77,15 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 17 14:04:45 2019"
-  RTWModifiedTimeStamp	  474732283
-  ModelVersionFormat	  "1.%<AutoIncrement:651>"
+  LastModifiedDate	  "Sun Apr 07 18:46:39 2019"
+  RTWModifiedTimeStamp	  476563414
+  ModelVersionFormat	  "1.%<AutoIncrement:707>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "user"
   WideLines		  off
-  ShowLineDimensions	  off
+  ShowLineDimensions	  on
   ShowPortDataTypes	  off
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
@@ -182,7 +182,7 @@ Model {
 	  $ObjectID		  9
 	  Version		  "1.13.0"
 	  StartTime		  "0.0"
-	  StopTime		  "21"
+	  StopTime		  "24"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -902,41 +902,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "80"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5076"
-    Block {
-      BlockType		      Reference
-      Name		      "1_to_4_Byte_Demultiplexer"
-      SID		      "5076"
-      Ports		      [3, 4]
-      Position		      [2955, 1822, 3100, 1883]
-      ZOrder		      1847
-      Commented		      on
-      LibraryVersion	      "1.7"
-      SourceBlock	      "Byte_Demultiplexers_Lib/Byte_Demultiplexers_Lib/Byte_Demultiplexer_1_to_4"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "2_to_1_Byte_Multiplexer"
-      SID		      "4572"
-      Ports		      [3, 1]
-      Position		      [2345, 1502, 2485, 1548]
-      ZOrder		      846
-      LibraryVersion	      "1.12"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_2_to_1"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "2_to_1_Byte_Multiplexer1"
-      SID		      "4760"
-      Ports		      [3, 1]
-      Position		      [4680, 1357, 4820, 1403]
-      ZOrder		      856
-      LibraryVersion	      "1.12"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_2_to_1"
-      SourceType	      "SubSystem"
-    }
+    SIDHighWatermark	    "5165"
     Block {
       BlockType		      Reference
       Name		      "2_to_4_Decoder"
@@ -946,17 +912,6 @@ Model {
       ZOrder		      794
       LibraryVersion	      "1.6"
       SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_2_to_4"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "4_to_1_Byte_Multiplexer"
-      SID		      "4717"
-      Ports		      [6, 1]
-      Position		      [3130, 1537, 3285, 1628]
-      ZOrder		      812
-      LibraryVersion	      "1.12"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
       SourceType	      "SubSystem"
     }
     Block {
@@ -983,39 +938,6 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "4_to_1_Byte_Multiplexer4"
-      SID		      "4750"
-      Ports		      [6, 1]
-      Position		      [2340, 1362, 2495, 1453]
-      ZOrder		      845
-      LibraryVersion	      "1.12"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "4_to_2_Encoder"
-      SID		      "4718"
-      Ports		      [4, 2]
-      Position		      [3080, 1417, 3240, 1478]
-      ZOrder		      813
-      LibraryVersion	      "1.13"
-      SourceBlock	      "Encoders_Lib/Encoders_Lib/Encoder_4_to_2"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "4_to_2_Encoder1"
-      SID		      "4751"
-      Ports		      [4, 2]
-      Position		      [2335, 1257, 2495, 1318]
-      ZOrder		      847
-      LibraryVersion	      "1.13"
-      SourceBlock	      "Encoders_Lib/Encoders_Lib/Encoder_4_to_2"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "ALU"
       SID		      "4439"
       Ports		      [3, 3]
@@ -1032,6 +954,7 @@ Model {
       Ports		      [1, 1]
       Position		      [6195, 1457, 6355, 1503]
       ZOrder		      1303
+      Commented		      on
       LibraryVersion	      "1.502"
       SourceBlock	      "Computer_Library/Character_Table"
       SourceType	      "SubSystem"
@@ -1054,6 +977,7 @@ Model {
       SID		      "5002"
       Position		      [7515, 1467, 7675, 1493]
       ZOrder		      1827
+      Commented		      on
       Value		      "External_Memory"
     }
     Block {
@@ -1062,6 +986,20 @@ Model {
       SID		      "4975"
       Position		      [5880, 1270, 5900, 1290]
       ZOrder		      1796
+      ShowName		      off
+      Commented		      on
+      Value		      "0"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant10"
+      SID		      "5158"
+      Position		      [2065, 750, 2085, 770]
+      ZOrder		      1852
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       ShowName		      off
       Value		      "0"
       OutDataTypeStr	      "boolean"
@@ -1073,6 +1011,7 @@ Model {
       Position		      [5880, 1435, 5900, 1455]
       ZOrder		      1797
       ShowName		      off
+      Commented		      on
       Value		      "0"
       OutDataTypeStr	      "boolean"
     }
@@ -1080,7 +1019,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant3"
       SID		      "4754"
-      Position		      [2290, 1255, 2310, 1275]
+      Position		      [2145, 1345, 2165, 1365]
       ZOrder		      850
       ShowName		      off
       Value		      "0"
@@ -1090,7 +1029,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant4"
       SID		      "4996"
-      Position		      [2255, 1390, 2275, 1410]
+      Position		      [2145, 1405, 2165, 1425]
       ZOrder		      1817
       ShowName		      off
       Value		      "0"
@@ -1103,6 +1042,7 @@ Model {
       Position		      [5880, 1495, 5900, 1515]
       ZOrder		      1798
       ShowName		      off
+      Commented		      on
       Value		      "0"
       OutDataTypeStr	      "uint8"
     }
@@ -1113,8 +1053,22 @@ Model {
       Position		      [5880, 1330, 5900, 1350]
       ZOrder		      1799
       ShowName		      off
+      Commented		      on
       Value		      "0"
       OutDataTypeStr	      "uint8"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant7"
+      SID		      "5157"
+      Position		      [1345, 605, 1365, 625]
+      ZOrder		      1851
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Value		      "0"
+      OutDataTypeStr	      "boolean"
     }
     Block {
       BlockType		      Constant
@@ -1123,6 +1077,7 @@ Model {
       Position		      [7370, 1260, 7390, 1280]
       ZOrder		      1842
       ShowName		      off
+      Commented		      on
       Value		      "0"
       OutDataTypeStr	      "boolean"
     }
@@ -1133,38 +1088,17 @@ Model {
       Position		      [7370, 1320, 7390, 1340]
       ZOrder		      1843
       ShowName		      off
+      Commented		      on
       Value		      "0"
       OutDataTypeStr	      "uint8"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux2"
-      SID		      "4660"
-      Ports		      [1, 8]
-      Position		      [3530, 1194, 3540, 1311]
-      ZOrder		      795
-      ShowName		      off
-      Outputs		      "8"
-      DisplayOption	      "bar"
-    }
-    Block {
-      BlockType		      Demux
-      Name		      "Demux3"
-      SID		      "4731"
-      Ports		      [1, 8]
-      Position		      [3855, 1139, 3865, 1256]
-      ZOrder		      826
-      ShowName		      off
-      Outputs		      "8"
-      DisplayOption	      "bar"
     }
     Block {
       BlockType		      LookupNDDirect
       Name		      "Direct Lookup\nTable (n-D)"
       SID		      "5004"
       Ports		      [1, 1]
-      Position		      [990, 1348, 1080, 1432]
-      ZOrder		      1829
+      Position		      [7855, 1553, 7945, 1637]
+      ZOrder		      1850
       Commented		      on
       NumberOfTableDimensions "1"
     }
@@ -1173,7 +1107,7 @@ Model {
       Name		      "Display1"
       SID		      "4776"
       Ports		      [1]
-      Position		      [845, 74, 910, 96]
+      Position		      [845, 94, 910, 116]
       ZOrder		      868
       ShowName		      off
       Decimation	      "1"
@@ -1184,19 +1118,8 @@ Model {
       Name		      "Display2"
       SID		      "4777"
       Ports		      [1]
-      Position		      [845, 99, 910, 121]
+      Position		      [845, 119, 910, 141]
       ZOrder		      869
-      ShowName		      off
-      Decimation	      "1"
-      Lockdown		      off
-    }
-    Block {
-      BlockType		      Display
-      Name		      "Display3"
-      SID		      "4778"
-      Ports		      [1]
-      Position		      [845, 124, 910, 146]
-      ZOrder		      870
       ShowName		      off
       Decimation	      "1"
       Lockdown		      off
@@ -1250,7 +1173,7 @@ Model {
       Name		      "Display8"
       SID		      "4779"
       Ports		      [1]
-      Position		      [845, 149, 910, 171]
+      Position		      [845, 144, 910, 166]
       ZOrder		      871
       ShowName		      off
       Decimation	      "1"
@@ -1263,13 +1186,14 @@ Model {
       Ports		      [16]
       Position		      [6595, 1325, 6710, 1570]
       ZOrder		      1753
+      Commented		      on
       LibraryVersion	      "1.32"
       SourceBlock	      "Displays_Lib/Displays_Lib/Display_16x1_Characters"
       SourceType	      "SubSystem"
     }
     Block {
       BlockType		      Reference
-      Name		      "General_Purpose_Register_A"
+      Name		      "General_Purpose_Register_0"
       SID		      "4658"
       Ports		      [4, 1]
       Position		      [3460, 1801, 3620, 1864]
@@ -1280,7 +1204,7 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "General_Purpose_Register_B"
+      Name		      "General_Purpose_Register_1"
       SID		      "4657"
       Ports		      [4, 1]
       Position		      [3460, 1716, 3620, 1779]
@@ -1291,7 +1215,7 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "General_Purpose_Register_C"
+      Name		      "General_Purpose_Register_2"
       SID		      "4577"
       Ports		      [4, 1]
       Position		      [3460, 1631, 3620, 1694]
@@ -1302,7 +1226,7 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "General_Purpose_Register_D"
+      Name		      "General_Purpose_Register_3"
       SID		      "4576"
       Ports		      [4, 1]
       Position		      [3460, 1546, 3620, 1609]
@@ -1315,8 +1239,8 @@ Model {
       BlockType		      SubSystem
       Name		      "Instruction_Decoder"
       SID		      "4529"
-      Ports		      [1, 10]
-      Position		      [1020, 70, 1160, 225]
+      Ports		      [1, 16]
+      Position		      [1020, 69, 1170, 316]
       ZOrder		      517
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1388,30 +1312,6 @@ Model {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Terminator1"
-	  SID			  "4536"
-	  Position		  [360, 525, 380, 545]
-	  ZOrder		  697
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator13"
-	  SID			  "4596"
-	  Position		  [925, 475, 945, 495]
-	  ZOrder		  745
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator14"
-	  SID			  "4597"
-	  Position		  [925, 545, 945, 565]
-	  ZOrder		  746
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
 	  Name			  "Terminator15"
 	  SID			  "4603"
 	  Position		  [925, 230, 945, 250]
@@ -1440,30 +1340,6 @@ Model {
 	  SID			  "4607"
 	  Position		  [925, 370, 945, 390]
 	  ZOrder		  756
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator2"
-	  SID			  "4643"
-	  Position		  [360, 555, 380, 575]
-	  ZOrder		  771
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator3"
-	  SID			  "4644"
-	  Position		  [360, 585, 380, 605]
-	  ZOrder		  772
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator4"
-	  SID			  "4645"
-	  Position		  [360, 615, 380, 635]
-	  ZOrder		  773
 	  ShowName		  off
 	}
 	Block {
@@ -1539,20 +1415,74 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "MOV(1b)"
-	  SID			  "4591"
+	  Name			  "MOVmr(1b)"
+	  SID			  "5093"
 	  Position		  [1055, 443, 1085, 457]
-	  ZOrder		  740
+	  ZOrder		  781
 	  Port			  "9"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "JMP(1b)"
+	  Name			  "MOVrm(1b)"
+	  SID			  "5092"
+	  Position		  [1055, 478, 1085, 492]
+	  ZOrder		  780
+	  Port			  "10"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "MOVrr(1b)"
 	  SID			  "4533"
 	  Position		  [1055, 513, 1085, 527]
 	  ZOrder		  2
-	  Port			  "10"
+	  Port			  "11"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "MOVrc(1b)"
+	  SID			  "4591"
+	  Position		  [1055, 548, 1085, 562]
+	  ZOrder		  740
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "REG_A1(1b)"
+	  SID			  "5077"
+	  Position		  [1055, 608, 1085, 622]
+	  ZOrder		  776
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "REG_A0(1b)"
+	  SID			  "5078"
+	  Position		  [1055, 648, 1085, 662]
+	  ZOrder		  777
+	  Port			  "14"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "REG_B1(1b)"
+	  SID			  "5079"
+	  Position		  [1055, 728, 1085, 742]
+	  ZOrder		  778
+	  Port			  "15"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "REG_B0(1b)"
+	  SID			  "5080"
+	  Position		  [1055, 768, 1085, 782]
+	  ZOrder		  779
+	  Port			  "16"
 	  IconDisplay		  "Port number"
 	}
 	Line {
@@ -1570,8 +1500,8 @@ Model {
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  5
-	  Points		  [89, 0; 0, 15]
-	  DstBlock		  "Terminator1"
+	  Points		  [108, 0; 0, 95]
+	  DstBlock		  "REG_A1(1b)"
 	  DstPort		  1
 	}
 	Line {
@@ -1610,13 +1540,13 @@ Model {
 	Line {
 	  SrcBlock		  "4_to_16_Decoder"
 	  SrcPort		  15
-	  DstBlock		  "JMP(1b)"
+	  DstBlock		  "MOVrr(1b)"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "4_to_16_Decoder"
-	  SrcPort		  13
-	  DstBlock		  "MOV(1b)"
+	  SrcPort		  16
+	  DstBlock		  "MOVrc(1b)"
 	  DstPort		  1
 	}
 	Line {
@@ -1682,13 +1612,13 @@ Model {
 	Line {
 	  SrcBlock		  "4_to_16_Decoder"
 	  SrcPort		  14
-	  DstBlock		  "Terminator13"
+	  DstBlock		  "MOVrm(1b)"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "4_to_16_Decoder"
-	  SrcPort		  16
-	  DstBlock		  "Terminator14"
+	  SrcPort		  13
+	  DstBlock		  "MOVmr(1b)"
 	  DstPort		  1
 	}
 	Line {
@@ -1700,22 +1630,22 @@ Model {
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  6
-	  Points		  [73, 0; 0, 30]
-	  DstBlock		  "Terminator2"
+	  Points		  [90, 0; 0, 120]
+	  DstBlock		  "REG_A0(1b)"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  7
-	  Points		  [57, 0; 0, 45]
-	  DstBlock		  "Terminator3"
+	  Points		  [72, 0; 0, 185]
+	  DstBlock		  "REG_B1(1b)"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  8
-	  Points		  [42, 0; 0, 60]
-	  DstBlock		  "Terminator4"
+	  Points		  [54, 0; 0, 210]
+	  DstBlock		  "REG_B0(1b)"
 	  DstPort		  1
 	}
 	Annotation {
@@ -1732,8 +1662,8 @@ Model {
       BlockType		      SubSystem
       Name		      "Instruction_Registers"
       SID		      "4487"
-      Ports		      [2, 4]
-      Position		      [580, 75, 760, 170]
+      Ports		      [2, 3]
+      Position		      [585, 94, 765, 166]
       ZOrder		      515
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -1756,7 +1686,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Data_Bus_In(1B)"
@@ -1790,7 +1720,7 @@ Model {
 	  Name			  "2_to_4_Decoder"
 	  SID			  "4491"
 	  Ports			  [2, 4]
-	  Position		  [1730, 950, 1880, 1015]
+	  Position		  [1725, 950, 1875, 1015]
 	  ZOrder		  627
 	  LibraryVersion	  "1.6"
 	  SourceBlock		  "Decoders_Lib/Decoders_Lib/Decoder_2_to_4"
@@ -1839,7 +1769,7 @@ Model {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Counter_3_to_0"
-	    Location		    [57, 0, 1430, 1080]
+	    Location		    [66, 0, 1582, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1946,7 +1876,7 @@ Model {
 	      LibraryVersion	      "1.44"
 	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
 	      SourceType	      "JKFlipFlop"
-	      initial_condition	      "0"
+	      initial_condition	      "1"
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -1959,7 +1889,7 @@ Model {
 	      LibraryVersion	      "1.44"
 	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
 	      SourceType	      "JKFlipFlop"
-	      initial_condition	      "0"
+	      initial_condition	      "1"
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -2271,6 +2201,30 @@ Model {
 	}
 	Block {
 	  BlockType		  Terminator
+	  Name			  "Terminator1"
+	  SID			  "5163"
+	  Position		  [1900, 1005, 1920, 1025]
+	  ZOrder		  693
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator2"
+	  SID			  "5164"
+	  Position		  [1900, 980, 1920, 1000]
+	  ZOrder		  694
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator3"
+	  SID			  "5165"
+	  Position		  [2255, 1185, 2275, 1205]
+	  ZOrder		  695
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
 	  Name			  "Terminator4"
 	  SID			  "4519"
 	  Position		  [1940, 1205, 1960, 1225]
@@ -2287,7 +2241,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "Operand_1(1B)"
+	  Name			  "Operand(1B)"
 	  SID			  "4521"
 	  Position		  [2250, 1073, 2280, 1087]
 	  ZOrder		  636
@@ -2296,20 +2250,11 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "Operand_2(1B)"
-	  SID			  "4522"
-	  Position		  [2250, 1188, 2280, 1202]
-	  ZOrder		  637
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Outport
 	  Name			  "Process(1b)"
 	  SID			  "4523"
 	  Position		  [2250, 913, 2280, 927]
 	  ZOrder		  692
-	  Port			  "4"
+	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Line {
@@ -2327,43 +2272,15 @@ Model {
 	  DstPort		  2
 	}
 	Line {
-	  SrcBlock		  "2_to_4_Decoder"
-	  SrcPort		  4
-	  Points		  [6, 0; 0, -85]
-	  Branch {
-	    Points		    [-537, 0; 0, 40]
-	    Branch {
-	      Points		      [0, 55]
-	      Branch {
-		Points			[0, 45]
-		DstBlock		"Logical\nOperator1"
-		DstPort			2
-	      }
-	      Branch {
-		DstBlock		"Logical\nOperator2"
-		DstPort			2
-	      }
-	    }
-	    Branch {
-	      DstBlock		      "Counter_3_to_0"
-	      DstPort		      1
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Process(1b)"
-	    DstPort		    1
-	  }
-	}
-	Line {
 	  SrcBlock		  "Operand_Register_0"
 	  SrcPort		  1
-	  DstBlock		  "Operand_2(1B)"
+	  DstBlock		  "Terminator3"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Operand_Register_1"
 	  SrcPort		  1
-	  DstBlock		  "Operand_1(1B)"
+	  DstBlock		  "Operand(1B)"
 	  DstPort		  1
 	}
 	Line {
@@ -2502,51 +2419,62 @@ Model {
 	}
 	Line {
 	  SrcBlock		  "2_to_4_Decoder"
-	  SrcPort		  2
-	  Points		  [42, 0; 0, 80]
-	  DstBlock		  "Operand_Register_1"
+	  SrcPort		  4
+	  Points		  [12, 0; 0, 10]
+	  DstBlock		  "Terminator1"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "2_to_4_Decoder"
 	  SrcPort		  3
-	  Points		  [25, 0; 0, 162; 115, 0; 0, 18]
-	  DstBlock		  "Operand_Register_0"
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [5, 0]
+	    Branch {
+	      Points		      [0, 136; 140, 0; 0, 44]
+	      DstBlock		      "Operand_Register_0"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Terminator2"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, -70]
+	    Branch {
+	      DstBlock		      "Process(1b)"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [-526, 0; 0, 40]
+	      Branch {
+		Points			[0, 55]
+		Branch {
+		  Points		  [0, 45]
+		  DstBlock		  "Logical\nOperator1"
+		  DstPort		  2
+		}
+		Branch {
+		  DstBlock		  "Logical\nOperator2"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		DstBlock		"Counter_3_to_0"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "2_to_4_Decoder"
+	  SrcPort		  2
+	  Points		  [7, 0; 0, -6; 49, 0; 0, 86]
+	  DstBlock		  "Operand_Register_1"
 	  DstPort		  1
 	}
       }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter"
-      SID		      "4661"
-      Ports		      [1, 1]
-      Position		      [3430, 1233, 3510, 1277]
-      ZOrder		      796
-      ShowName		      off
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "8"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "boolean"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Integer to Bit\nConverter1"
-      SID		      "4732"
-      Ports		      [1, 1]
-      Position		      [3740, 1178, 3820, 1222]
-      ZOrder		      827
-      ShowName		      off
-      LibraryVersion	      "1.271"
-      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-      SourceType	      "Integer to Bit Converter"
-      nbits		      "8"
-      signedInputValues	      "Unsigned"
-      bitOrder		      "MSB first"
-      outDtype		      "boolean"
     }
     Block {
       BlockType		      Logic
@@ -2566,10 +2494,11 @@ Model {
       Name		      "Logical\nOperator1"
       SID		      "4568"
       Ports		      [2, 1]
-      Position		      [1325, 705, 1365, 735]
+      Position		      [1325, 745, 1365, 775]
       ZOrder		      703
       BlockRotation	      270
       BlockMirror	      on
+      BackgroundColor	      "green"
       NamePlacement	      "alternate"
       ShowName		      off
       IconShape		      "distinctive"
@@ -2581,11 +2510,8 @@ Model {
       Name		      "Logical\nOperator10"
       SID		      "4730"
       Ports		      [4, 1]
-      Position		      [3002, 593, 3068, 628]
+      Position		      [3178, 582, 3213, 648]
       ZOrder		      825
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
       ShowName		      off
       Operator		      "OR"
       Inputs		      "4"
@@ -2598,10 +2524,11 @@ Model {
       Name		      "Logical\nOperator11"
       SID		      "4748"
       Ports		      [2, 1]
-      Position		      [3115, 680, 3155, 710]
+      Position		      [3310, 745, 3350, 775]
       ZOrder		      843
       BlockRotation	      270
       BlockMirror	      on
+      BackgroundColor	      "green"
       NamePlacement	      "alternate"
       ShowName		      off
       IconShape		      "distinctive"
@@ -2611,15 +2538,15 @@ Model {
     Block {
       BlockType		      Logic
       Name		      "Logical\nOperator12"
-      SID		      "4752"
+      SID		      "5159"
       Ports		      [2, 1]
-      Position		      [2155, 775, 2195, 805]
-      ZOrder		      848
+      Position		      [2165, 745, 2205, 775]
+      ZOrder		      1853
       BlockRotation	      270
       BlockMirror	      on
+      BackgroundColor	      "green"
       NamePlacement	      "alternate"
       ShowName		      off
-      Operator		      "OR"
       IconShape		      "distinctive"
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -2629,7 +2556,7 @@ Model {
       Name		      "Logical\nOperator13"
       SID		      "4753"
       Ports		      [5, 1]
-      Position		      [2199, 775, 2251, 805]
+      Position		      [2069, 845, 2121, 875]
       ZOrder		      849
       BlockRotation	      270
       BlockMirror	      on
@@ -2643,55 +2570,11 @@ Model {
     }
     Block {
       BlockType		      Logic
-      Name		      "Logical\nOperator14"
-      SID		      "4757"
-      Ports		      [2, 1]
-      Position		      [2550, 1190, 2580, 1230]
-      ZOrder		      853
-      ShowName		      off
-      IconShape		      "distinctive"
-      AllPortsSameDT	      off
-      OutDataTypeStr	      "boolean"
-    }
-    Block {
-      BlockType		      Logic
       Name		      "Logical\nOperator15"
       SID		      "4981"
       Ports		      [2, 1]
       Position		      [5805, 675, 5845, 705]
       ZOrder		      1802
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-      Operator		      "OR"
-      IconShape		      "distinctive"
-      AllPortsSameDT	      off
-      OutDataTypeStr	      "boolean"
-    }
-    Block {
-      BlockType		      Logic
-      Name		      "Logical\nOperator16"
-      SID		      "4990"
-      Ports		      [2, 1]
-      Position		      [2260, 850, 2300, 880]
-      ZOrder		      1811
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-      Operator		      "OR"
-      IconShape		      "distinctive"
-      AllPortsSameDT	      off
-      OutDataTypeStr	      "boolean"
-    }
-    Block {
-      BlockType		      Logic
-      Name		      "Logical\nOperator17"
-      SID		      "4991"
-      Ports		      [2, 1]
-      Position		      [2165, 850, 2205, 880]
-      ZOrder		      1812
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -2765,11 +2648,15 @@ Model {
     Block {
       BlockType		      Logic
       Name		      "Logical\nOperator3"
-      SID		      "4756"
+      SID		      "5156"
       Ports		      [2, 1]
-      Position		      [2550, 1245, 2580, 1285]
-      ZOrder		      852
+      Position		      [2155, 665, 2195, 695]
+      ZOrder		      1849
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
       ShowName		      off
+      Operator		      "OR"
       IconShape		      "distinctive"
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -2779,10 +2666,11 @@ Model {
       Name		      "Logical\nOperator4"
       SID		      "4574"
       Ports		      [2, 1]
-      Position		      [2115, 850, 2155, 880]
+      Position		      [2515, 745, 2555, 775]
       ZOrder		      707
       BlockRotation	      270
       BlockMirror	      on
+      BackgroundColor	      "green"
       NamePlacement	      "alternate"
       ShowName		      off
       IconShape		      "distinctive"
@@ -2880,6 +2768,7 @@ Model {
       Ports		      [2, 1]
       Position		      [7775, 1385, 7965, 1445]
       ZOrder		      1826
+      Commented		      on
       LibraryVersion	      "1.32"
       ErrorFcn		      "Stateflow.Translate.translate"
       PermitHierarchicalResolution "ExplicitOnly"
@@ -3017,7 +2906,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Memory"
-	Location		[65, 0, 1499, 1080]
+	Location		[66, 0, 1582, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3094,7 +2983,7 @@ Model {
 	  Ports			  [4, 1]
 	  Position		  [1715, 808, 1885, 867]
 	  ZOrder		  515
-	  LibraryVersion	  "1.492"
+	  LibraryVersion	  "1.502"
 	  SourceBlock		  "Computer_Library/16B_ROM_Memory"
 	  SourceType		  "SubSystem"
 	}
@@ -3475,41 +3364,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Operand_Decoder\n(Instruction_JMP)"
-      SID		      "5038"
-      Ports		      [2, 8]
-      Position		      [1270, 320, 1395, 510]
-      ZOrder		      1835
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.502"
-      FontName		      "Courier"
-      SourceBlock	      "Computer_Library/Operand_Decoder"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "Operand_Decoder\n(Instruction_LOAD)"
       SID		      "5036"
       Ports		      [2, 8]
       Position		      [7395, 260, 7520, 450]
       ZOrder		      1834
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.502"
-      FontName		      "Courier"
-      SourceBlock	      "Computer_Library/Operand_Decoder"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Operand_Decoder\n(Instruction_MOV)"
-      SID		      "5039"
-      Ports		      [2, 8]
-      Position		      [2840, 320, 2965, 510]
-      ZOrder		      1836
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -3535,21 +3394,6 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Operand_Decoder\n(Instructions_ALU)"
-      SID		      "5040"
-      Ports		      [2, 8]
-      Position		      [4490, 330, 4615, 520]
-      ZOrder		      1837
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.502"
-      FontName		      "Courier"
-      SourceBlock	      "Computer_Library/Operand_Decoder"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "Program_Counter"
       SID		      "4435"
       Ports		      [4, 1]
@@ -3560,12 +3404,425 @@ Model {
       SourceType	      "SubSystem"
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Select_Address"
+      SID		      "5144"
+      Ports		      [8, 1]
+      Position		      [2210, 1329, 2400, 1456]
+      ZOrder		      1848
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Select_Address"
+	Location		[66, 0, 1582, 1080]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_Operand(1b)"
+	  SID			  "5145"
+	  Position		  [20, 18, 50, 32]
+	  ZOrder		  1325
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_Memory(1b)\n"
+	  SID			  "5146"
+	  Position		  [20, 63, 50, 77]
+	  ZOrder		  1328
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_Register(1b)"
+	  SID			  "5147"
+	  Position		  [20, 108, 50, 122]
+	  ZOrder		  1327
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_PC(1b)"
+	  SID			  "5148"
+	  Position		  [20, 148, 50, 162]
+	  ZOrder		  1326
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_Operand(1B)"
+	  SID			  "5149"
+	  Position		  [20, 248, 50, 262]
+	  ZOrder		  1329
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_Memory(1B)"
+	  SID			  "5150"
+	  Position		  [20, 288, 50, 302]
+	  ZOrder		  1332
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_Register(1B)"
+	  SID			  "5151"
+	  Position		  [20, 333, 50, 347]
+	  ZOrder		  1331
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_PC(1B)"
+	  SID			  "5152"
+	  Position		  [20, 378, 50, 392]
+	  ZOrder		  1330
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "4_to_1_Byte_Multiplexer"
+	  SID			  "5153"
+	  Ports			  [6, 1]
+	  Position		  [195, 217, 350, 308]
+	  ZOrder		  1323
+	  LibraryVersion	  "1.12"
+	  SourceBlock		  "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "4_to_2_Encoder"
+	  SID			  "5154"
+	  Ports			  [4, 2]
+	  Position		  [190, 102, 350, 163]
+	  ZOrder		  1324
+	  LibraryVersion	  "1.13"
+	  SourceBlock		  "Encoders_Lib/Encoders_Lib/Encoder_4_to_2"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Address_Out(1B)"
+	  SID			  "5155"
+	  Position		  [440, 258, 470, 272]
+	  ZOrder		  1333
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "4_to_2_Encoder"
+	  SrcPort		  1
+	  Points		  [29, 0; 0, 82; -218, 0; 0, 23]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "4_to_2_Encoder"
+	  SrcPort		  2
+	  Points		  [16, 0; 0, 38; -221, 0; 0, 52]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Select_Memory(1b)\n"
+	  SrcPort		  1
+	  Points		  [76, 0; 0, 55]
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From_Operand(1B)"
+	  SrcPort		  1
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Select_PC(1b)"
+	  SrcPort		  1
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "4_to_1_Byte_Multiplexer"
+	  SrcPort		  1
+	  DstBlock		  "Address_Out(1B)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From_Register(1B)"
+	  SrcPort		  1
+	  Points		  [73, 0; 0, -55]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From_Memory(1B)"
+	  SrcPort		  1
+	  Points		  [58, 0; 0, -25]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Select_Register(1b)"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, 25]
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Select_Operand(1b)"
+	  SrcPort		  1
+	  Points		  [92, 0; 0, 85]
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From_PC(1B)"
+	  SrcPort		  1
+	  Points		  [88, 0; 0, -85]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  6
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Select_Data"
+      SID		      "5075"
+      Ports		      [8, 1]
+      Position		      [3085, 1519, 3275, 1646]
+      ZOrder		      1846
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Select_Data"
+	Location		[66, 0, 1582, 1080]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_ALU(1b)"
+	  SID			  "5081"
+	  Position		  [20, 18, 50, 32]
+	  ZOrder		  1325
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_Memory(1b)\n"
+	  SID			  "5084"
+	  Position		  [20, 63, 50, 77]
+	  ZOrder		  1328
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_Register(1b)"
+	  SID			  "5083"
+	  Position		  [20, 108, 50, 122]
+	  ZOrder		  1327
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Select_Operand(1b)"
+	  SID			  "5082"
+	  Position		  [20, 148, 50, 162]
+	  ZOrder		  1326
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_ALU(1B)"
+	  SID			  "5085"
+	  Position		  [20, 248, 50, 262]
+	  ZOrder		  1329
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_Memory(1B)"
+	  SID			  "5088"
+	  Position		  [20, 288, 50, 302]
+	  ZOrder		  1332
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_Register(1B)"
+	  SID			  "5087"
+	  Position		  [20, 333, 50, 347]
+	  ZOrder		  1331
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "From_Operand(1B)"
+	  SID			  "5086"
+	  Position		  [20, 378, 50, 392]
+	  ZOrder		  1330
+	  Port			  "8"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "4_to_1_Byte_Multiplexer"
+	  SID			  "5089"
+	  Ports			  [6, 1]
+	  Position		  [195, 217, 350, 308]
+	  ZOrder		  1323
+	  LibraryVersion	  "1.12"
+	  SourceBlock		  "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "4_to_2_Encoder"
+	  SID			  "5090"
+	  Ports			  [4, 2]
+	  Position		  [190, 102, 350, 163]
+	  ZOrder		  1324
+	  LibraryVersion	  "1.13"
+	  SourceBlock		  "Encoders_Lib/Encoders_Lib/Encoder_4_to_2"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Data_Out(1B)"
+	  SID			  "5091"
+	  Position		  [440, 258, 470, 272]
+	  ZOrder		  1333
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "4_to_2_Encoder"
+	  SrcPort		  1
+	  Points		  [29, 0; 0, 82; -218, 0; 0, 23]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "4_to_2_Encoder"
+	  SrcPort		  2
+	  Points		  [16, 0; 0, 38; -221, 0; 0, 52]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Select_Memory(1b)\n"
+	  SrcPort		  1
+	  Points		  [76, 0; 0, 55]
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "From_ALU(1B)"
+	  SrcPort		  1
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Select_Operand(1b)"
+	  SrcPort		  1
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "4_to_1_Byte_Multiplexer"
+	  SrcPort		  1
+	  DstBlock		  "Data_Out(1B)"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From_Register(1B)"
+	  SrcPort		  1
+	  Points		  [73, 0; 0, -55]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "From_Memory(1B)"
+	  SrcPort		  1
+	  Points		  [58, 0; 0, -25]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  4
+	}
+	Line {
+	  SrcBlock		  "Select_Register(1b)"
+	  SrcPort		  1
+	  Points		  [60, 0; 0, 25]
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Select_ALU(1b)"
+	  SrcPort		  1
+	  Points		  [92, 0; 0, 85]
+	  DstBlock		  "4_to_2_Encoder"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "From_Operand(1B)"
+	  SrcPort		  1
+	  Points		  [88, 0; 0, -85]
+	  DstBlock		  "4_to_1_Byte_Multiplexer"
+	  DstPort		  6
+	}
+      }
+    }
+    Block {
       BlockType		      Reference
       Name		      "Select_First_Operand(Index)"
       SID		      "4989"
       Ports		      [8, 1]
       Position		      [7500, 1259, 7690, 1386]
       ZOrder		      1810
+      Commented		      on
       LibraryVersion	      "1.12"
       SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexor"
       SourceType	      "SubSystem"
@@ -3577,6 +3834,7 @@ Model {
       Ports		      [8, 1]
       Position		      [5930, 1434, 6120, 1561]
       ZOrder		      1790
+      Commented		      on
       LibraryVersion	      "1.12"
       SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexor"
       SourceType	      "SubSystem"
@@ -3588,17 +3846,6 @@ Model {
       Ports		      [8, 1]
       Position		      [5930, 1269, 6120, 1396]
       ZOrder		      1791
-      LibraryVersion	      "1.12"
-      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexor"
-      SourceType	      "SubSystem"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Select_display_address1"
-      SID		      "5075"
-      Ports		      [8, 1]
-      Position		      [2320, 1589, 2510, 1716]
-      ZOrder		      1846
       Commented		      on
       LibraryVersion	      "1.12"
       SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexor"
@@ -3620,7 +3867,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Status_Register"
-	Location		[57, 0, 1430, 1080]
+	Location		[66, 0, 1582, 1080]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3683,95 +3930,9 @@ Model {
     Block {
       BlockType		      Terminator
       Name		      "Terminator1"
-      SID		      "4879"
-      Position		      [2915, 580, 2935, 600]
-      ZOrder		      1756
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator10"
-      SID		      "4737"
-      Position		      [3935, 1180, 3955, 1200]
-      ZOrder		      831
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator11"
-      SID		      "4662"
-      Position		      [3560, 1265, 3580, 1285]
-      ZOrder		      802
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator12"
-      SID		      "4663"
-      Position		      [3660, 1205, 3680, 1225]
-      ZOrder		      798
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator13"
-      SID		      "4664"
-      Position		      [3685, 1190, 3705, 1210]
-      ZOrder		      797
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator14"
-      SID		      "4665"
-      Position		      [3635, 1220, 3655, 1240]
-      ZOrder		      799
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator15"
-      SID		      "4910"
-      Position		      [4550, 585, 4570, 605]
-      ZOrder		      1761
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator16"
-      SID		      "4666"
-      Position		      [3610, 1235, 3630, 1255]
-      ZOrder		      800
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator17"
-      SID		      "4667"
-      Position		      [3585, 1250, 3605, 1270]
-      ZOrder		      801
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator18"
-      SID		      "4738"
-      Position		      [3910, 1195, 3930, 1215]
-      ZOrder		      832
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator19"
-      SID		      "4911"
-      Position		      [4535, 610, 4555, 630]
-      ZOrder		      1762
+      SID		      "5160"
+      Position		      [7425, 500, 7445, 520]
+      ZOrder		      1854
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -3787,131 +3948,10 @@ Model {
     }
     Block {
       BlockType		      Terminator
-      Name		      "Terminator20"
-      SID		      "4912"
-      Position		      [4520, 635, 4540, 655]
-      ZOrder		      1763
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator21"
-      SID		      "4913"
-      Position		      [4580, 585, 4600, 605]
-      ZOrder		      1764
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator22"
-      SID		      "4914"
-      Position		      [4490, 685, 4510, 705]
-      ZOrder		      1765
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator23"
-      SID		      "4915"
-      Position		      [4595, 560, 4615, 580]
-      ZOrder		      1766
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator24"
-      SID		      "4982"
-      Position		      [1375, 580, 1395, 600]
-      ZOrder		      1803
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator25"
-      SID		      "4983"
-      Position		      [1270, 580, 1290, 600]
-      ZOrder		      1804
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator26"
-      SID		      "4984"
-      Position		      [1285, 555, 1305, 575]
-      ZOrder		      1805
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
       Name		      "Terminator27"
       SID		      "4994"
       Position		      [8325, 1105, 8345, 1125]
       ZOrder		      1815
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator28"
-      SID		      "4985"
-      Position		      [1315, 555, 1335, 575]
-      ZOrder		      1806
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator29"
-      SID		      "4986"
-      Position		      [1360, 555, 1380, 575]
-      ZOrder		      1807
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator3"
-      SID		      "4880"
-      Position		      [2930, 605, 2950, 625]
-      ZOrder		      1757
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator30"
-      SID		      "4987"
-      Position		      [1330, 580, 1350, 600]
-      ZOrder		      1808
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
       ShowName		      off
     }
     Block {
@@ -3932,17 +3972,9 @@ Model {
     }
     Block {
       BlockType		      Terminator
-      Name		      "Terminator33"
-      SID		      "4925"
-      Position		      [8325, 985, 8345, 1005]
-      ZOrder		      1776
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
       Name		      "Terminator34"
       SID		      "4926"
-      Position		      [8325, 965, 8345, 985]
+      Position		      [8325, 985, 8345, 1005]
       ZOrder		      1777
       ShowName		      off
     }
@@ -3976,31 +4008,10 @@ Model {
     }
     Block {
       BlockType		      Terminator
-      Name		      "Terminator38"
-      SID		      "4930"
-      Position		      [430, 985, 450, 1005]
-      ZOrder		      1781
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
       Name		      "Terminator39"
       SID		      "4931"
-      Position		      [430, 965, 450, 985]
+      Position		      [430, 985, 450, 1005]
       ZOrder		      1782
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator4"
-      SID		      "4881"
-      Position		      [2945, 630, 2965, 650]
-      ZOrder		      1758
-      BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
       ShowName		      off
@@ -4053,17 +4064,6 @@ Model {
     }
     Block {
       BlockType		      Terminator
-      Name		      "Terminator45"
-      SID		      "4988"
-      Position		      [1300, 580, 1320, 600]
-      ZOrder		      1809
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
       Name		      "Terminator46"
       SID		      "5033"
       Position		      [7470, 480, 7490, 500]
@@ -4097,14 +4097,6 @@ Model {
     }
     Block {
       BlockType		      Terminator
-      Name		      "Terminator5"
-      SID		      "4733"
-      Position		      [3885, 1210, 3905, 1230]
-      ZOrder		      833
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
       Name		      "Terminator50"
       SID		      "5074"
       Position		      [430, 1105, 450, 1125]
@@ -4114,105 +4106,21 @@ Model {
       ShowName		      off
     }
     Block {
-      BlockType		      Terminator
-      Name		      "Terminator6"
-      SID		      "4734"
-      Position		      [3985, 1150, 4005, 1170]
-      ZOrder		      829
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator7"
-      SID		      "4735"
-      Position		      [4010, 1135, 4030, 1155]
-      ZOrder		      828
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator8"
-      SID		      "4909"
-      Position		      [4565, 560, 4585, 580]
-      ZOrder		      1760
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      ShowName		      off
-    }
-    Block {
-      BlockType		      Terminator
-      Name		      "Terminator9"
-      SID		      "4736"
-      Position		      [3960, 1165, 3980, 1185]
-      ZOrder		      830
-      ShowName		      off
-    }
-    Block {
       BlockType		      Reference
       Name		      "Text_Memory_16x1_Characters"
       SID		      "4810"
       Ports		      [4, 16]
       Position		      [6395, 1325, 6555, 1570]
       ZOrder		      1330
+      Commented		      on
       LibraryVersion	      "1.502"
       SourceBlock	      "Computer_Library/Text_Memory_16x1_Characters"
       SourceType	      "SubSystem"
     }
     Line {
       SrcBlock		      "Instruction_Registers"
-      SrcPort		      3
-      Points		      [25, 0]
-      Branch {
-	DstBlock		"Display3"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 860]
-	Branch {
-	  Points		  [1189, 0]
-	  Branch {
-	    Points		    [936, 0]
-	    Branch {
-	      Points		      [2776, 0]
-	      Branch {
-		DstBlock		"Terminator33"
-		DstPort			1
-	      }
-	      Branch {
-		Points			[0, 360]
-		DstBlock		"Select_display_address"
-		DstPort			6
-	      }
-	    }
-	    Branch {
-	      Points		      [0, 260]
-	      DstBlock		      "Integer to Bit\nConverter"
-	      DstPort		      1
-	    }
-	  }
-	  Branch {
-	    Points		    [0, 420]
-	    DstBlock		    "4_to_1_Byte_Multiplexer4"
-	    DstPort		    4
-	  }
-	}
-	Branch {
-	  DstBlock		  "Terminator38"
-	  DstPort		  1
-	}
-      }
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      6
-      DstBlock		      "Logical\nOperator1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Instruction_Registers"
       SrcPort		      2
-      Points		      [39, 0]
+      Points		      [34, 0]
       Branch {
 	DstBlock		"Display2"
 	DstPort			1
@@ -4222,66 +4130,43 @@ Model {
 	Branch {
 	  Points		  [553, 0]
 	  Branch {
-	    Points		    [610, 0]
+	    Points		    [620, 0]
 	    Branch {
-	      Points		      [933, 0]
+	      Points		      [937, 0]
 	      Branch {
-		Points			[1648, 0]
-		Branch {
-		  Points		  [1132, 0]
-		  Branch {
-		    Points		    [1556, 0]
-		    Branch {
-		    Points		    [0, 370]
-		    DstBlock		    "Select_First_Operand(Index)"
-		    DstPort		    6
-		    }
-		    Branch {
-		    DstBlock		    "Terminator34"
-		    DstPort		    1
-		    }
-		  }
-		  Branch {
-		    Points		    [0, 545]
-		    DstBlock		    "Select_character_to_display"
-		    DstPort		    6
-		  }
-		}
-		Branch {
-		  Points		  [0, 405]
-		  DstBlock		  "2_to_1_Byte_Multiplexer1"
-		  DstPort		  2
-		}
+		Points			[0, 640]
+		DstBlock		"Select_Data"
+		DstPort			8
 	      }
 	      Branch {
-		Points			[0, 195]
+		Points			[2766, 0]
 		Branch {
-		  Points		  [0, 450]
-		  DstBlock		  "4_to_1_Byte_Multiplexer"
-		  DstPort		  6
+		  Points		  [1556, 0]
+		  Branch {
+		    DstBlock		    "Terminator34"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 350]
+		    DstBlock		    "Select_First_Operand(Index)"
+		    DstPort		    6
+		  }
 		}
 		Branch {
-		  Points		  [823, 0; 0, 30]
-		  DstBlock		  "Integer to Bit\nConverter1"
-		  DstPort		  1
+		  Points		  [0, 525]
+		  DstBlock		  "Select_character_to_display"
+		  DstPort		  6
 		}
 	      }
 	    }
 	    Branch {
-	      Points		      [0, 455]
-	      Branch {
-		DstBlock		"4_to_1_Byte_Multiplexer4"
-		DstPort			5
-	      }
-	      Branch {
-		Points			[0, 110]
-		DstBlock		"2_to_1_Byte_Multiplexer"
-		DstPort			3
-	      }
+	      Points		      [0, 405]
+	      DstBlock		      "Select_Address"
+	      DstPort		      5
 	    }
 	  }
 	  Branch {
-	    Points		    [0, 385]
+	    Points		    [0, 365]
 	    DstBlock		    "Program_Counter"
 	    DstPort		    1
 	  }
@@ -4294,60 +4179,46 @@ Model {
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
-      SrcPort		      9
-      Points		      [1770, 0]
-      DstBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      DstPort		      2
+      SrcPort		      12
+      Points		      [1841, 0; 0, 345]
+      Branch {
+	Points			[0, 985]
+	DstBlock		"Select_Data"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Logical\nOperator10"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Instruction_Registers"
       SrcPort		      1
-      Points		      [52, 0]
+      Points		      [47, 0]
       Branch {
-	Points			[0, -61; 174, 0]
+	Points			[0, -81; 174, 0]
 	Branch {
-	  Points		  [314, 0]
+	  Points		  [3639, 0]
 	  Branch {
-	    Points		    [1570, 0]
+	    Points		    [1325, 0]
 	    Branch {
-	      Points		      [1650, 0]
-	      Branch {
-		Points			[105, 0]
-		Branch {
-		  Points		  [1325, 0]
-		  Branch {
-		    Points		    [1475, 0]
-		    DstBlock		    "Operand_Decoder\n(Instruction_LOAD)"
-		    DstPort		    1
-		  }
-		  Branch {
-		    DstBlock		    "Operand_Decoder\n(Instruction_TPR)"
-		    DstPort		    1
-		  }
-		}
-		Branch {
-		  Points		  [0, 1436]
-		  DstBlock		  "ALU"
-		  DstPort		  1
-		}
-	      }
-	      Branch {
-		DstBlock		"Operand_Decoder\n(Instructions_ALU)"
-		DstPort			1
-	      }
+	      Points		      [1475, 0]
+	      DstBlock		      "Operand_Decoder\n(Instruction_LOAD)"
+	      DstPort		      1
 	    }
 	    Branch {
-	      DstBlock		      "Operand_Decoder\n(Instruction_MOV)"
+	      DstBlock		      "Operand_Decoder\n(Instruction_TPR)"
 	      DstPort		      1
 	    }
 	  }
 	  Branch {
-	    DstBlock		    "Operand_Decoder\n(Instruction_JMP)"
+	    Points		    [0, 1436]
+	    DstBlock		    "ALU"
 	    DstPort		    1
 	  }
 	}
 	Branch {
-	  Points		  [0, 126]
+	  Points		  [0, 171]
 	  DstBlock		  "Instruction_Decoder"
 	  DstPort		  1
 	}
@@ -4366,45 +4237,49 @@ Model {
     Line {
       SrcBlock		      "Logical\nOperator1"
       SrcPort		      1
-      Points		      [0, 635]
+      Points		      [0, 595]
       DstBlock		      "Program_Counter"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "4_to_1_Byte_Multiplexer4"
+      SrcBlock		      "Select_Address"
       SrcPort		      1
-      Points		      [20, 0; 0, 50]
+      Points		      [67, 0; 0, 65]
       DstBlock		      "Memory"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Logical\nOperator4"
       SrcPort		      1
-      Points		      [0, 605]
+      Points		      [0, 710]
       DstBlock		      "Memory"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
       SrcPort		      1
+      Points		      [0, 0]
       DstBlock		      "Logical\nOperator19"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
       SrcPort		      2
+      Points		      [0, 0]
       DstBlock		      "Logical\nOperator19"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
       SrcPort		      3
+      Points		      [0, 0]
       DstBlock		      "Logical\nOperator19"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
       SrcPort		      4
+      Points		      [0, 0]
       DstBlock		      "Logical\nOperator19"
       DstPort		      4
     }
@@ -4418,104 +4293,32 @@ Model {
       SrcBlock		      "2_to_4_Decoder"
       SrcPort		      4
       Points		      [9, 0; 0, 31; -254, 0; 0, 344]
-      DstBlock		      "General_Purpose_Register_A"
+      DstBlock		      "General_Purpose_Register_0"
       DstPort		      1
     }
     Line {
       SrcBlock		      "2_to_4_Decoder"
       SrcPort		      3
       Points		      [23, 0; 0, 62; -253, 0; 0, 243]
-      DstBlock		      "General_Purpose_Register_B"
+      DstBlock		      "General_Purpose_Register_1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "2_to_4_Decoder"
       SrcPort		      2
       Points		      [37, 0; 0, 91; -252, 0; 0, 144]
-      DstBlock		      "General_Purpose_Register_C"
+      DstBlock		      "General_Purpose_Register_2"
       DstPort		      1
     }
     Line {
       SrcBlock		      "2_to_4_Decoder"
       SrcPort		      1
       Points		      [51, 0; 0, 120; -252, 0; 0, 45]
-      DstBlock		      "General_Purpose_Register_D"
+      DstBlock		      "General_Purpose_Register_3"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Integer to Bit\nConverter"
-      SrcPort		      1
-      DstBlock		      "Demux2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      8
-      Points		      [9, 0]
-      Branch {
-	Points			[305, 0; 0, 385]
-	DstBlock		"4_to_1_Byte_Multiplexer2"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, 34; -177, 0; 0, 91]
-	DstBlock		"2_to_4_Decoder"
-	DstPort			2
-      }
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      7
-      Points		      [24, 0]
-      Branch {
-	Points			[0, 64; -178, 0; 0, 46]
-	DstBlock		"2_to_4_Decoder"
-	DstPort			1
-      }
-      Branch {
-	Points			[304, 0; 0, 385]
-	DstBlock		"4_to_1_Byte_Multiplexer2"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      1
-      DstBlock		      "Terminator13"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      2
-      DstBlock		      "Terminator12"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      3
-      DstBlock		      "Terminator14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      4
-      DstBlock		      "Terminator16"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      5
-      DstBlock		      "Terminator17"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux2"
-      SrcPort		      6
-      DstBlock		      "Terminator11"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "General_Purpose_Register_D"
+      SrcBlock		      "General_Purpose_Register_3"
       SrcPort		      1
       Points		      [191, 0]
       Branch {
@@ -4536,7 +4339,7 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "General_Purpose_Register_C"
+      SrcBlock		      "General_Purpose_Register_2"
       SrcPort		      1
       Points		      [12, 0; 0, -70; 166, 0]
       Branch {
@@ -4557,7 +4360,7 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "General_Purpose_Register_B"
+      SrcBlock		      "General_Purpose_Register_1"
       SrcPort		      1
       Points		      [28, 0; 0, -140; 137, 0]
       Branch {
@@ -4578,66 +4381,6 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      2
-      Points		      [0, 40]
-      Branch {
-	Points			[0, 205; 153, 0; 0, 710]
-	DstBlock		"4_to_2_Encoder"
-	DstPort			4
-      }
-      Branch {
-	Points			[175, 0]
-	DstBlock		"Logical\nOperator10"
-	DstPort			3
-      }
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      1
-      Points		      [0, 52]
-      Branch {
-	Points			[175, 0]
-	DstBlock		"Logical\nOperator10"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, 132; 179, 0; 0, 756]
-	DstBlock		"4_to_2_Encoder"
-	DstPort			3
-      }
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      4
-      Points		      [0, 26]
-      Branch {
-	Points			[0, 145]
-	Branch {
-	  Points		  [-625, 0]
-	  Branch {
-	    Points		    [-45, 0]
-	    DstBlock		    "Logical\nOperator13"
-	    DstPort		    3
-	  }
-	  Branch {
-	    DstBlock		    "Logical\nOperator16"
-	    DstPort		    1
-	  }
-	}
-	Branch {
-	  Points		  [146, 0; 0, 754]
-	  DstBlock		  "4_to_2_Encoder"
-	  DstPort		  2
-	}
-      }
-      Branch {
-	Points			[160, 0]
-	DstBlock		"Logical\nOperator10"
-	DstPort			4
-      }
-    }
-    Line {
       SrcBlock		      "ALU"
       SrcPort		      1
       Points		      [14, 0; 0, -385]
@@ -4648,253 +4391,123 @@ Model {
       Branch {
 	Points			[-1921, 0]
 	Branch {
-	  DstBlock		  "Terminator42"
-	  DstPort		  1
+	  Points		  [0, 515]
+	  DstBlock		  "Select_Data"
+	  DstPort		  5
 	}
 	Branch {
-	  Points		  [0, 500]
-	  DstBlock		  "4_to_1_Byte_Multiplexer"
-	  DstPort		  3
+	  DstBlock		  "Terminator42"
+	  DstPort		  1
 	}
       }
     }
     Line {
-      SrcBlock		      "4_to_1_Byte_Multiplexer"
+      SrcBlock		      "Select_Data"
       SrcPort		      1
-      Points		      [22, 0]
+      Points		      [32, 0]
       Branch {
 	Points			[0, 85]
 	Branch {
 	  Points		  [0, 85]
 	  Branch {
 	    Points		    [0, 85]
-	    DstBlock		    "General_Purpose_Register_A"
+	    DstBlock		    "General_Purpose_Register_0"
 	    DstPort		    3
 	  }
 	  Branch {
-	    DstBlock		    "General_Purpose_Register_B"
+	    DstBlock		    "General_Purpose_Register_1"
 	    DstPort		    3
 	  }
 	}
 	Branch {
-	  DstBlock		  "General_Purpose_Register_C"
+	  DstBlock		  "General_Purpose_Register_2"
 	  DstPort		  3
 	}
       }
       Branch {
-	DstBlock		"General_Purpose_Register_D"
+	DstBlock		"General_Purpose_Register_3"
 	DstPort			3
       }
     }
     Line {
-      SrcBlock		      "4_to_2_Encoder"
-      SrcPort		      1
-      Points		      [27, 0; 0, 80; -171, 0; 0, 30]
-      DstBlock		      "4_to_1_Byte_Multiplexer"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "4_to_2_Encoder"
-      SrcPort		      2
-      Points		      [12, 0; 0, 36; -172, 0; 0, 59]
-      DstBlock		      "4_to_1_Byte_Multiplexer"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Integer to Bit\nConverter1"
-      SrcPort		      1
-      DstBlock		      "Demux3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      1
-      DstBlock		      "Terminator7"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      2
-      DstBlock		      "Terminator6"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      3
-      DstBlock		      "Terminator9"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      4
-      DstBlock		      "Terminator10"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      5
-      DstBlock		      "Terminator18"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      6
-      DstBlock		      "Terminator5"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      8
-      Points		      [17, 0; 0, 315]
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      16
+      Points		      [2714, 0; 0, 1260]
       DstBlock		      "4_to_1_Byte_Multiplexer1"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Demux3"
-      SrcPort		      7
-      Points		      [31, 0; 0, 315]
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      15
+      Points		      [2727, 0; 0, 1260]
       DstBlock		      "4_to_1_Byte_Multiplexer1"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Logical\nOperator10"
       SrcPort		      1
-      Points		      [0, 18; 90, 0]
+      Points		      [102, 0]
       DstBlock		      "Logical\nOperator11"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      5
-      Points		      [0, 215; -705, 0]
-      Branch {
-	Points			[-20, 0]
-	Branch {
-	  Points		  [-82, 0; 0, 780]
-	  DstBlock		  "2_to_1_Byte_Multiplexer"
-	  DstPort		  1
-	}
-	Branch {
-	  DstBlock		  "Logical\nOperator12"
-	  DstPort		  2
-	}
-      }
-      Branch {
-	DstBlock		"Logical\nOperator13"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      3
-      Points		      [0, 195; -665, 0]
-      Branch {
-	Points			[-50, 0]
-	DstBlock		"Logical\nOperator12"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Logical\nOperator13"
-	DstPort			2
-      }
-    }
-    Line {
       SrcBlock		      "Logical\nOperator11"
       SrcPort		      1
-      Points		      [0, 690; 195, 0; 0, 165]
+      Points		      [0, 790]
       Branch {
 	Points			[0, 85]
 	Branch {
 	  Points		  [0, 85]
 	  Branch {
 	    Points		    [0, 85]
-	    DstBlock		    "General_Purpose_Register_A"
+	    DstBlock		    "General_Purpose_Register_0"
 	    DstPort		    2
 	  }
 	  Branch {
-	    DstBlock		    "General_Purpose_Register_B"
+	    DstBlock		    "General_Purpose_Register_1"
 	    DstPort		    2
 	  }
 	}
 	Branch {
-	  DstBlock		  "General_Purpose_Register_C"
+	  DstBlock		  "General_Purpose_Register_2"
 	  DstPort		  2
 	}
       }
       Branch {
-	DstBlock		"General_Purpose_Register_D"
+	DstBlock		"General_Purpose_Register_3"
 	DstPort			2
       }
     }
     Line {
-      SrcBlock		      "Logical\nOperator17"
-      SrcPort		      1
-      Points		      [0, 395]
-      DstBlock		      "4_to_2_Encoder1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "4_to_2_Encoder1"
-      SrcPort		      2
-      Points		      [13, 0; 0, -105]
-      DstBlock		      "Logical\nOperator14"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "4_to_2_Encoder1"
-      SrcPort		      1
-      DstBlock		      "Logical\nOperator3"
-      DstPort		      2
-    }
-    Line {
       SrcBlock		      "Logical\nOperator13"
       SrcPort		      1
-      Points		      [0, 500]
-      DstBlock		      "4_to_2_Encoder1"
+      Points		      [0, 505]
+      DstBlock		      "Select_Address"
       DstPort		      4
     }
     Line {
       SrcBlock		      "Constant3"
       SrcPort		      1
-      DstBlock		      "4_to_2_Encoder1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Logical\nOperator14"
-      SrcPort		      1
-      Points		      [20, 0; 0, 141; -282, 0; 0, 34]
-      DstBlock		      "4_to_1_Byte_Multiplexer4"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Logical\nOperator3"
-      SrcPort		      1
-      Points		      [8, 0; 0, 72; -282, 0; 0, 33]
-      DstBlock		      "4_to_1_Byte_Multiplexer4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "2_to_1_Byte_Multiplexer"
-      SrcPort		      1
-      Points		      [29, 0; 0, -50]
-      DstBlock		      "Memory"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "2_to_1_Byte_Multiplexer1"
-      SrcPort		      1
-      Points		      [9, 0; 0, 46; -188, 0; 0, 49]
-      DstBlock		      "ALU"
-      DstPort		      2
+      Points		      [16, 0]
+      Branch {
+	Points			[0, 15]
+	DstBlock		"Select_Address"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"Select_Address"
+	DstPort			2
+      }
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
       SrcPort		      5
+      Points		      [0, 0]
       DstBlock		      "Logical\nOperator19"
       DstPort		      5
     }
     Line {
-      SrcBlock		      "General_Purpose_Register_A"
+      SrcBlock		      "General_Purpose_Register_0"
       SrcPort		      1
       Points		      [44, 0; 0, -210; 109, 0]
       Branch {
@@ -4915,33 +4528,17 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      2
-      Points		      [0, 840]
-      DstBlock		      "2_to_1_Byte_Multiplexer1"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Logical\nOperator19"
       SrcPort		      1
-      Points		      [1749, 0]
+      Points		      [1810, 0; 0, 515]
       Branch {
-	Points			[0, 456]
-	Branch {
-	  Points		  [0, 97; 61, 0; 0, 752]
-	  DstBlock		  "4_to_2_Encoder"
-	  DstPort		  1
-	}
-	Branch {
-	  Points		  [18, 0]
-	  DstBlock		  "Logical\nOperator10"
-	  DstPort		  1
-	}
+	DstBlock		"Logical\nOperator10"
+	DstPort			4
       }
       Branch {
-	Points			[1593, 0]
-	DstBlock		"Operand_Decoder\n(Instructions_ALU)"
-	DstPort			2
+	Points			[0, 895]
+	DstBlock		"Select_Data"
+	DstPort			1
       }
     }
     Line {
@@ -4975,9 +4572,9 @@ Model {
       Branch {
 	Points			[804, 0]
 	Branch {
-	  Points		  [1182, 0]
+	  Points		  [1178, 0]
 	  Branch {
-	    Points		    [892, 0]
+	    Points		    [896, 0]
 	    Branch {
 	      Points		      [0, -120]
 	      Branch {
@@ -4986,21 +4583,21 @@ Model {
 		  Points		  [0, -85]
 		  Branch {
 		    Points		    [0, -85]
-		    DstBlock		    "General_Purpose_Register_D"
+		    DstBlock		    "General_Purpose_Register_3"
 		    DstPort		    4
 		  }
 		  Branch {
-		    DstBlock		    "General_Purpose_Register_C"
+		    DstBlock		    "General_Purpose_Register_2"
 		    DstPort		    4
 		  }
 		}
 		Branch {
-		  DstBlock		  "General_Purpose_Register_B"
+		  DstBlock		  "General_Purpose_Register_1"
 		  DstPort		  4
 		}
 	      }
 	      Branch {
-		DstBlock		"General_Purpose_Register_A"
+		DstBlock		"General_Purpose_Register_0"
 		DstPort			4
 	      }
 	    }
@@ -5023,7 +4620,7 @@ Model {
 	}
       }
       Branch {
-	Points			[0, -1830]
+	Points			[0, -1825]
 	DstBlock		"Instruction_Registers"
 	DstPort			2
       }
@@ -5044,22 +4641,18 @@ Model {
     }
     Line {
       SrcBlock		      "Instruction_Registers"
-      SrcPort		      4
-      Points		      [12, 0]
+      SrcPort		      3
+      Points		      [7, 0]
       Branch {
-	DstBlock		"Display8"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -147; 480, 0]
+	Points			[0, -142; 478, 0]
 	Branch {
-	  Points		  [868, 0]
+	  Points		  [950, 0]
 	  Branch {
-	    Points		    [405, 0]
+	    Points		    [320, 0]
 	    Branch {
-	      Points		      [615, 0]
+	      Points		      [815, 0]
 	      Branch {
-		Points			[2920, 0]
+		Points			[2725, 0]
 		DstBlock		"Logical\nOperator2"
 		DstPort			1
 	      }
@@ -5069,36 +4662,33 @@ Model {
 	      }
 	    }
 	    Branch {
-	      Points		      [0, 1207]
-	      Branch {
-		Points			[0, 35]
-		DstBlock		"Logical\nOperator3"
-		DstPort			1
-	      }
-	      Branch {
-		DstBlock		"Logical\nOperator14"
-		DstPort			2
-	      }
+	      DstBlock		      "Logical\nOperator4"
+	      DstPort		      1
 	    }
 	  }
 	  Branch {
-	    DstBlock		    "Logical\nOperator4"
-	    DstPort		    1
+	    Points		    [0, 700; -10, 0]
+	    DstBlock		    "Logical\nOperator12"
+	    DstPort		    2
 	  }
 	}
 	Branch {
 	  Points		  [0, 600]
 	  Branch {
-	    Points		    [78, 0]
-	    DstBlock		    "Logical\nOperator1"
-	    DstPort		    1
-	  }
-	  Branch {
 	    Points		    [0, 777]
 	    DstBlock		    "Logical\nOperator"
 	    DstPort		    1
 	  }
+	  Branch {
+	    Points		    [80, 0]
+	    DstBlock		    "Logical\nOperator1"
+	    DstPort		    1
+	  }
 	}
+      }
+      Branch {
+	DstBlock		"Display8"
+	DstPort			1
       }
     }
     Line {
@@ -5111,14 +4701,14 @@ Model {
     Line {
       SrcBlock		      "Instruction_Decoder"
       SrcPort		      8
-      Points		      [4850, 0]
+      Points		      [0, 0; 4840, 0]
       Branch {
-	Points			[70, 0]
-	DstBlock		"Logical\nOperator2"
+	DstBlock		"Operand_Decoder\n(Instruction_TPR)"
 	DstPort			2
       }
       Branch {
-	DstBlock		"Operand_Decoder\n(Instruction_TPR)"
+	Points			[70, 0]
+	DstBlock		"Logical\nOperator2"
 	DstPort			2
       }
     }
@@ -5219,66 +4809,6 @@ Model {
       DstPort		      16
     }
     Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      6
-      DstBlock		      "Terminator1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      8
-      DstBlock		      "Terminator4"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_MOV)"
-      SrcPort		      7
-      DstBlock		      "Terminator3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      6
-      DstBlock		      "Terminator8"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      5
-      DstBlock		      "Terminator15"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      4
-      DstBlock		      "Terminator19"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      3
-      DstBlock		      "Terminator20"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      7
-      DstBlock		      "Terminator21"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      1
-      DstBlock		      "Terminator22"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instructions_ALU)"
-      SrcPort		      8
-      DstBlock		      "Terminator23"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "Operand_Decoder\n(Instruction_TPR)"
       SrcPort		      7
       Points		      [0, 132; -105, 0]
@@ -5374,14 +4904,14 @@ Model {
       SrcPort		      1
       Points		      [28, 0; 0, -575]
       Branch {
-	Points			[444, 0]
+	Points			[486, 0]
 	Branch {
-	  Points		  [0, 380]
-	  DstBlock		  "2_to_1_Byte_Multiplexer1"
+	  Points		  [0, 475]
+	  DstBlock		  "ALU"
 	  DstPort		  3
 	}
 	Branch {
-	  Points		  [1142, 0]
+	  Points		  [1100, 0]
 	  Branch {
 	    Points		    [1547, 0]
 	    Branch {
@@ -5404,21 +4934,21 @@ Model {
       Branch {
 	Points			[-1189, 0]
 	Branch {
+	  Points		  [0, 605]
+	  DstBlock		  "Select_Data"
+	  DstPort		  7
+	}
+	Branch {
 	  Points		  [-938, 0]
+	  Branch {
+	    Points		    [0, 460]
+	    DstBlock		    "Memory"
+	    DstPort		    2
+	  }
 	  Branch {
 	    DstBlock		    "Terminator37"
 	    DstPort		    1
 	  }
-	  Branch {
-	    Points		    [0, 510]
-	    DstBlock		    "2_to_1_Byte_Multiplexer"
-	    DstPort		    2
-	  }
-	}
-	Branch {
-	  Points		  [0, 590]
-	  DstBlock		  "4_to_1_Byte_Multiplexer"
-	  DstPort		  5
 	}
       }
     }
@@ -5433,13 +4963,18 @@ Model {
 	  DstPort		  1
 	}
 	Branch {
-	  Points		  [0, -955]
+	  Points		  [0, -940]
 	  DstBlock		  "Instruction_Registers"
 	  DstPort		  1
 	}
       }
       Branch {
 	Points			[165, 0]
+	Branch {
+	  Points		  [0, 550]
+	  DstBlock		  "Select_Data"
+	  DstPort		  6
+	}
 	Branch {
 	  Points		  [2784, 0]
 	  Branch {
@@ -5459,11 +4994,6 @@ Model {
 	    }
 	  }
 	}
-	Branch {
-	  Points		  [0, 535]
-	  DstBlock		  "4_to_1_Byte_Multiplexer"
-	  DstPort		  4
-	}
       }
     }
     Line {
@@ -5471,14 +5001,14 @@ Model {
       SrcPort		      1
       Points		      [43, 0; 0, -680]
       Branch {
-	Points			[443, 0]
+	Points			[484, 0]
 	Branch {
-	  Points		  [0, 455]
+	  Points		  [0, 440]
 	  DstBlock		  "ALU"
-	  DstPort		  3
+	  DstPort		  2
 	}
 	Branch {
-	  Points		  [1140, 0]
+	  Points		  [1099, 0]
 	  Branch {
 	    DstBlock		    "Terminator31"
 	    DstPort		    1
@@ -5502,13 +5032,13 @@ Model {
       Branch {
 	Points			[435, 0]
 	Branch {
-	  DstBlock		  "Terminator44"
-	  DstPort		  1
+	  Points		  [0, 350]
+	  DstBlock		  "Select_Address"
+	  DstPort		  8
 	}
 	Branch {
-	  Points		  [0, 350]
-	  DstBlock		  "4_to_1_Byte_Multiplexer4"
-	  DstPort		  6
+	  DstBlock		  "Terminator44"
+	  DstPort		  1
 	}
       }
       Branch {
@@ -5518,10 +5048,17 @@ Model {
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
-      SrcPort		      10
-      Points		      [200, 0]
-      DstBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      DstPort		      2
+      SrcPort		      11
+      Points		      [1854, 0; 0, 375]
+      Branch {
+	DstBlock		"Logical\nOperator10"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 955]
+	DstBlock		"Select_Data"
+	DstPort			3
+      }
     }
     Line {
       SrcBlock		      "Select_character_to_display"
@@ -5579,8 +5116,16 @@ Model {
     Line {
       SrcBlock		      "Constant6"
       SrcPort		      1
-      DstBlock		      "Select_display_address"
-      DstPort		      5
+      Points		      [7, 0]
+      Branch {
+	Points			[0, 15]
+	DstBlock		"Select_display_address"
+	DstPort			6
+      }
+      Branch {
+	DstBlock		"Select_display_address"
+	DstPort			5
+      }
     }
     Line {
       SrcBlock		      "Logical\nOperator8"
@@ -5597,118 +5142,32 @@ Model {
       DstPort		      3
     }
     Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      1
-      DstBlock		      "Terminator25"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      2
-      DstBlock		      "Terminator26"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      4
-      DstBlock		      "Terminator28"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      8
-      DstBlock		      "Terminator24"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      7
-      DstBlock		      "Terminator29"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      5
-      DstBlock		      "Terminator30"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Operand_Decoder\n(Instruction_JMP)"
-      SrcPort		      3
-      DstBlock		      "Terminator45"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Logical\nOperator16"
-      SrcPort		      1
-      Points		      [0, 410]
-      DstBlock		      "4_to_2_Encoder1"
-      DstPort		      3
-    }
-    Line {
       SrcBlock		      "Logical\nOperator7"
       SrcPort		      1
-      Points		      [0, 78]
-      Branch {
-	Points			[0, 30; -3380, 0]
-	Branch {
-	  Points		  [0, -72; -55, 0]
-	  DstBlock		  "Logical\nOperator13"
-	  DstPort		  4
-	}
-	Branch {
-	  DstBlock		  "Logical\nOperator16"
-	  DstPort		  2
-	}
-      }
-      Branch {
-	Points			[117, 0; 0, 702]
-	DstBlock		"Select_character_to_display"
-	DstPort			4
-      }
-    }
-    Line {
-      SrcBlock		      "Logical\nOperator12"
-      SrcPort		      1
-      Points		      [0, 13]
-      Branch {
-	Points			[-30, 0]
-	DstBlock		"Logical\nOperator4"
-	DstPort			2
-      }
-      Branch {
-	DstBlock		"Logical\nOperator17"
-	DstPort			1
-      }
+      Points		      [0, 78; 117, 0; 0, 702]
+      DstBlock		      "Select_character_to_display"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "Logical\nOperator15"
       SrcPort		      1
-      Points		      [0, 120]
-      Branch {
-	Points			[0, 495]
-	DstBlock		"Select_display_address"
-	DstPort			4
-      }
-      Branch {
-	Points			[-3562, 0]
-	Branch {
-	  Points		  [-68, 0]
-	  DstBlock		  "Logical\nOperator17"
-	  DstPort		  2
-	}
-	Branch {
-	  Points		  [0, -75; -18, 0]
-	  DstBlock		  "Logical\nOperator13"
-	  DstPort		  5
-	}
-      }
+      Points		      [0, 615]
+      DstBlock		      "Select_display_address"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "Constant4"
       SrcPort		      1
-      DstBlock		      "4_to_1_Byte_Multiplexer4"
-      DstPort		      3
+      Points		      [17, 0]
+      Branch {
+	Points			[0, 15]
+	DstBlock		"Select_Address"
+	DstPort			7
+      }
+      Branch {
+	DstBlock		"Select_Address"
+	DstPort			6
+      }
     }
     Line {
       SrcBlock		      "Constant"
@@ -5720,7 +5179,7 @@ Model {
     Line {
       SrcBlock		      "Instruction_Decoder"
       SrcPort		      7
-      Points		      [6325, 0]
+      Points		      [6315, 0]
       DstBlock		      "Operand_Decoder\n(Instruction_LOAD)"
       DstPort		      2
     }
@@ -5832,6 +5291,132 @@ Model {
 	DstPort			1
       }
     }
+    Line {
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      13
+      Points		      [2237, 0; 0, 1071]
+      Branch {
+	Points			[0, 69]
+	DstBlock		"2_to_4_Decoder"
+	DstPort			1
+      }
+      Branch {
+	Points			[463, 0; 0, 344]
+	DstBlock		"4_to_1_Byte_Multiplexer2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      14
+      Points		      [2223, 0; 0, 1070]
+      Branch {
+	Points			[0, 85]
+	DstBlock		"2_to_4_Decoder"
+	DstPort			2
+      }
+      Branch {
+	Points			[464, 0; 0, 345]
+	DstBlock		"4_to_1_Byte_Multiplexer2"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      10
+      Points		      [990, 0]
+      Branch {
+	Points			[876, 0; 0, 405]
+	Branch {
+	  DstBlock		  "Logical\nOperator10"
+	  DstPort		  3
+	}
+	Branch {
+	  Points		  [0, 925]
+	  DstBlock		  "Select_Data"
+	  DstPort		  2
+	}
+      }
+      Branch {
+	DstBlock		"Logical\nOperator3"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      9
+      Points		      [1010, 0]
+      Branch {
+	Points			[360, 0]
+	DstBlock		"Logical\nOperator4"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Logical\nOperator3"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator12"
+      SrcPort		      1
+      Points		      [0, 41]
+      Branch {
+	Points			[-70, 0]
+	DstBlock		"Logical\nOperator13"
+	DstPort			5
+      }
+      Branch {
+	Points			[0, 519]
+	DstBlock		"Select_Address"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Constant7"
+      SrcPort		      1
+      DstBlock		      "Logical\nOperator1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Constant10"
+      SrcPort		      1
+      Points		      [0, 44]
+      Branch {
+	Points			[10, 0]
+	Branch {
+	  Points		  [10, 0]
+	  Branch {
+	    Points		    [10, 0]
+	    DstBlock		    "Logical\nOperator13"
+	    DstPort		    4
+	  }
+	  Branch {
+	    DstBlock		    "Logical\nOperator13"
+	    DstPort		    3
+	  }
+	}
+	Branch {
+	  DstBlock		  "Logical\nOperator13"
+	  DstPort		  2
+	}
+      }
+      Branch {
+	DstBlock		"Logical\nOperator13"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator3"
+      SrcPort		      1
+      DstBlock		      "Logical\nOperator12"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Operand_Decoder\n(Instruction_LOAD)"
+      SrcPort		      3
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
     Annotation {
       SID		      "4971"
       Name		      "Memory"
@@ -5847,14 +5432,8 @@ Model {
     Annotation {
       SID		      "4967"
       Name		      "Operand 1"
-      Position		      [8380, 973]
-      ZOrder		      -3
-    }
-    Annotation {
-      SID		      "4968"
-      Name		      "Operand 2"
       Position		      [8380, 993]
-      ZOrder		      -1
+      ZOrder		      -3
     }
     Annotation {
       SID		      "4970"
