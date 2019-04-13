@@ -60,16 +60,20 @@
 % Second operand:
 %     Source of data.
 %
-% Type of operands:
-%     MRC  REG  IMM
-%     MRR  REG  REG
-%     MRM  REG  MEM
-%     MMR  MEM  REG
+% Type of operands:      Example:
+%     MRC   REG  IMM       MRC   r0     10
+%     MRR   REG  REG       MRR   r1     r0
+%     MRM   REG  REG       MRM   r2     a(r1)
+%     MRMI  REG  MEM       MRMI  r2     a(10)
+%     MMR   REG  REG       MMR   a(r1)  r3
+%     MMRI  MEM  REG       MMRI  a(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MRC = bin2dec('0000 0000');
-MRR = bin2dec('0001 0000');
-MRM = bin2dec('0010 0000');
-MMR = bin2dec('0011 0000');
+MRC =  bin2dec('0000 0000');
+MRR =  bin2dec('0001 0000');
+MRM =  bin2dec('0010 0000');
+MRMI = bin2dec('0011 0000');
+MMR =  bin2dec('0100 0000');
+MMRI = bin2dec('0101 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

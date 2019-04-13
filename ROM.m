@@ -8,14 +8,20 @@ clc
 % ROM code definition
 RomCode =                        ...
 [
-	bin2dec('0000 0000')	51  %MRC   r0    51
-	bin2dec('0000 0100')	52  %MRC   r1    52
+	% bin2dec('0000 0100')	55  %MRC   r1    55
+	% bin2dec('0001 1001')	00  %MRR   r2    r1
+	% bin2dec('0101 0001')	16  %MMRI  a(16) r1
+	% bin2dec('0011 1100')	16  %MRMI  r3    a(16)
 
-	bin2dec('0011 0000')	16  %MMR   a(16) r0
-	bin2dec('0011 0001')	17  %MMR   a(17) r1
+%===
+	bin2dec('0000 0000')	55  %MRC   r0    55
+	bin2dec('0000 1000')	44  %MRC   r2    44
+	bin2dec('0101 0000')	16  %MMRI  a(16) r0
+	bin2dec('0000 0000')	16  %MRC   r0    a(16)
 
-	bin2dec('0010 1000')	16  %MRM   r2    a(16)
-	bin2dec('0010 1100')	17  %MRM   r3    a(17)
+	bin2dec('0010 0100')	00  %MRM   r1    a(r0)
+	bin2dec('0100 0010')	00  %MMR   a(r0) r2
+%===
 
 	% bin2dec('0011 0000')	16  %MRC   r0    51
 	% bin2dec('0011 0001')	17  %MRC   r1    52
