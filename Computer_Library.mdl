@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [57.0, -8.0, 1871.0, 1096.0]
+      Location		      [57.0, 0.0, 1871.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"2148"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1821.0, 930.0]
-	ZoomFactor		[1.0]
-	Offset			[104.22937036801318, 113.10784451020959]
+	ZoomFactor		[1.25]
+	Offset			[726.6936115876133, 43.732004445019385]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Mar 12 23:22:59 2019"
-  RTWModifiedTimeStamp	  474333775
-  ModelVersionFormat	  "1.%<AutoIncrement:502>"
+  LastModifiedDate	  "Sat Apr 13 23:11:32 2019"
+  RTWModifiedTimeStamp	  477097862
+  ModelVersionFormat	  "1.%<AutoIncrement:504>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -807,8 +807,8 @@ Library {
   }
   System {
     Name		    "Computer_Library"
-    Location		    [57, -8, 1928, 1088]
-    Open		    off
+    Location		    [57, 0, 1928, 1096]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -819,7 +819,7 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "5445"
     Block {
@@ -1228,8 +1228,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"4_to_4_Byte_Switch"
-	Location		[57, -8, 1928, 1088]
-	Open			on
+	Location		[57, 0, 1928, 1096]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1670,7 +1670,7 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"ALU"
-	Location		[162, 0, 1437, 1080]
+	Location		[57, 0, 1928, 1096]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1682,7 +1682,7 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"60"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Instruction(1B)"
@@ -1716,7 +1716,7 @@ Library {
 	  Ports			  [20, 1]
 	  Position		  [1710, 1080, 1880, 1585]
 	  ZOrder		  491
-	  LibraryVersion	  "1.8"
+	  LibraryVersion	  "1.12"
 	  SourceBlock		  "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1"
 	  SourceType		  "SubSystem"
 	}
@@ -1826,8 +1826,8 @@ Library {
 	  Name			  "Instruction_ADD"
 	  SID			  "1968"
 	  Ports			  [2, 2]
-	  Position		  [1095, 1098, 1250, 1142]
-	  ZOrder		  617
+	  Position		  [1095, 818, 1250, 862]
+	  ZOrder		  627
 	  LibraryVersion	  "1.145"
 	  SourceBlock		  "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Byte_Adder"
 	  SourceType		  "SubSystem"
@@ -1837,8 +1837,8 @@ Library {
 	  Name			  "Instruction_AND"
 	  SID			  "1931"
 	  Ports			  [2, 1]
-	  Position		  [1095, 818, 1250, 862]
-	  ZOrder		  486
+	  Position		  [1095, 1098, 1250, 1142]
+	  ZOrder		  626
 	  LibraryVersion	  "1.8"
 	  SourceBlock		  "Logic_Operations_Lib/Logic_Operations_Lib/Bitwise_AND"
 	  SourceType		  "SubSystem"
@@ -1860,7 +1860,8 @@ Library {
 	  SID			  "1933"
 	  Ports			  [2, 1]
 	  Position		  [1095, 888, 1250, 932]
-	  ZOrder		  487
+	  ZOrder		  628
+	  Commented		  on
 	  LibraryVersion	  "1.8"
 	  SourceBlock		  "Logic_Operations_Lib/Logic_Operations_Lib/Bitwise_OR"
 	  SourceType		  "SubSystem"
@@ -1968,18 +1969,22 @@ Library {
 	  Branch {
 	    Points		    [0, 70]
 	    Branch {
+	      DstBlock		      "Instruction_OR"
+	      DstPort		      1
+	    }
+	    Branch {
 	      Points		      [0, 70]
 	      Branch {
 		Points			[0, 80]
 		Branch {
 		  Points		  [0, 60]
 		  Branch {
-		    Points		    [0, 75]
-		    DstBlock		    "Instruction_SUB"
+		    DstBlock		    "Instruction_AND"
 		    DstPort		    1
 		  }
 		  Branch {
-		    DstBlock		    "Instruction_ADD"
+		    Points		    [0, 75]
+		    DstBlock		    "Instruction_SUB"
 		    DstPort		    1
 		  }
 		}
@@ -1993,13 +1998,9 @@ Library {
 		DstPort			1
 	      }
 	    }
-	    Branch {
-	      DstBlock		      "Instruction_OR"
-	      DstPort		      1
-	    }
 	  }
 	  Branch {
-	    DstBlock		    "Instruction_AND"
+	    DstBlock		    "Instruction_ADD"
 	    DstPort		    1
 	  }
 	}
@@ -2010,16 +2011,20 @@ Library {
 	  Branch {
 	    Points		    [0, 70]
 	    Branch {
+	      DstBlock		      "Instruction_OR"
+	      DstPort		      2
+	    }
+	    Branch {
 	      Points		      [0, 70]
 	      Branch {
 		Points			[0, 140]
 		Branch {
-		  Points		  [0, 75]
-		  DstBlock		  "Instruction_SUB"
+		  DstBlock		  "Instruction_AND"
 		  DstPort		  2
 		}
 		Branch {
-		  DstBlock		  "Instruction_ADD"
+		  Points		  [0, 75]
+		  DstBlock		  "Instruction_SUB"
 		  DstPort		  2
 		}
 	      }
@@ -2028,29 +2033,25 @@ Library {
 		DstPort			2
 	      }
 	    }
-	    Branch {
-	      DstBlock		      "Instruction_OR"
-	      DstPort		      2
-	    }
 	  }
 	  Branch {
-	    DstBlock		    "Instruction_AND"
+	    DstBlock		    "Instruction_ADD"
 	    DstPort		    2
 	  }
 	}
 	Line {
-	  SrcBlock		  "Instruction_AND"
+	  SrcBlock		  "Instruction_ADD"
 	  SrcPort		  1
-	  Points		  [309, 0; 0, 355]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  5
-	}
-	Line {
-	  SrcBlock		  "Instruction_OR"
-	  SrcPort		  1
-	  Points		  [283, 0; 0, 310]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  6
+	  Points		  [309, 0; 0, 365]
+	  Branch {
+	    Points		    [0, 25]
+	    DstBlock		    "16_to_1_Byte_Multiplexer"
+	    DstPort		    6
+	  }
+	  Branch {
+	    DstBlock		    "16_to_1_Byte_Multiplexer"
+	    DstPort		    5
+	  }
 	}
 	Line {
 	  SrcBlock		  "Instruction_XOR"
@@ -2067,9 +2068,9 @@ Library {
 	  DstPort		  8
 	}
 	Line {
-	  SrcBlock		  "Instruction_ADD"
+	  SrcBlock		  "Instruction_AND"
 	  SrcPort		  1
-	  Points		  [193, 0; 0, 185]
+	  Points		  [193, 0; 0, 175]
 	  DstBlock		  "16_to_1_Byte_Multiplexer"
 	  DstPort		  9
 	}
@@ -2224,7 +2225,7 @@ Library {
 	Line {
 	  SrcBlock		  "Instruction_ADD"
 	  SrcPort		  2
-	  Points		  [99, 0; 0, -495]
+	  Points		  [95, 0; 0, -215]
 	  DstBlock		  "Carry_Out(1b)"
 	  DstPort		  1
 	}

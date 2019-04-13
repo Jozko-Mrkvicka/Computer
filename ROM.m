@@ -14,13 +14,19 @@ RomCode =                        ...
 	% bin2dec('0011 1100')	16  %MRMI  r3    a(16)
 
 %===
-	bin2dec('0000 0000')	55  %MRC   r0    55
-	bin2dec('0000 1000')	44  %MRC   r2    44
-	bin2dec('0101 0000')	16  %MMRI  a(16) r0
-	bin2dec('0000 0000')	16  %MRC   r0    a(16)
+	% bin2dec('0000 0000')	55  %MRC   r0    55
+	% bin2dec('0000 1000')	44  %MRC   r2    44
+	% bin2dec('0101 0000')	16  %MMRI  a(16) r0
+	% bin2dec('0000 0000')	16  %MRC   r0    a(16)
 
-	bin2dec('0010 0100')	00  %MRM   r1    a(r0)
-	bin2dec('0100 0010')	00  %MMR   a(r0) r2
+	% bin2dec('0010 0100')	00  %MRM   r1    a(r0)
+	% bin2dec('0100 0010')	00  %MMR   a(r0) r2
+
+%===
+	% bin2dec('0000 0000')	7  %MRC   r0    7
+	% bin2dec('0000 0100')	4  %MRC   r1    4
+	% bin2dec('1111 0001')	0  %ADD   r0    r1
+	% bin2dec('1110 0000')	1  %ADI   r0    1	
 %===
 
 	% bin2dec('0011 0000')	16  %MRC   r0    51
@@ -32,11 +38,28 @@ RomCode =                        ...
 	% bin2dec('0001 0111')	00  %MRR   r1    r3
 	% bin2dec('0001 1011')	00  %MRR   r2    r3
 	% bin2dec('0001 1111')	00  %MRR   r3    r3
-	
+
+%===
+	bin2dec('0000 0000')   16  %MRC   r0    16
+	bin2dec('0000 0100')   18  %MRC   r1    18
+	bin2dec('0000 1000')  255  %MRC   r2   255
+
+	bin2dec('0100 0010')    0  %MMR   a(r0) r2
+	bin2dec('1110 0000')    1  %ADI   r0    1
+	bin2dec('0111 0001')    6  %JNE   r0    r1	 6
+%===
+
+
 	00  00
 	00	00
 	00  00
 	00  00
+
+	00  00
+	00	00
+	00  00
+	00  00
+
 ]
 
   % TPR   a(10) a(REG_A)
