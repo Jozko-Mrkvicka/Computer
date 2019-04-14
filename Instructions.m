@@ -53,9 +53,9 @@
 %     MRC   REG  IMM         MRC   r0     10
 %     MRR   REG  REG         MRR   r1     r0
 %     MRM   REG  REG         MRM   r2     a(r1)
-%     MRMI  REG  MEM         MRMI  r2     a(10)
+%     MRMI  REG  MEM         MRMI  r2     10
 %     MMR   REG  REG         MMR   a(r1)  r3
-%     MMRI  MEM  REG         MMRI  a(11)  r3
+%     MMRI  MEM  REG         MMRI  11     r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 MRC =  bin2dec('0000 0000');
 MRR =  bin2dec('0001 0000');
@@ -66,7 +66,7 @@ MMRI = bin2dec('0101 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      JMP instruction
+%      JMP instructions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First operand:
 %     Value to compare.
@@ -85,8 +85,27 @@ JPE = bin2dec('0110 0000');
 JNE = bin2dec('0111 0000');
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      TXT instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand: 
+%     Character to print.
+%
+% Second operand:
+%     Position to display.
+%
+% Type of operands:        Example:
+%     TMR  REG  REG          TMR  a(r0)  r1
+%     TRR  REG  REG          TRR  r0     r1
+%     TIR  IMM  REG          TIR  J      r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TMR = bin2dec('1000 0000');
+TRR = bin2dec('1001 0000');
+TIR = bin2dec('1010 0000');
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ADD instruction
+%      ADD instructions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First operand:
 %     Value to add and also destination for the result.
@@ -95,7 +114,7 @@ JNE = bin2dec('0111 0000');
 %     Value to add.
 %
 % Type of operands:        Example:
-%     ADI  REG  IMM          ADD  r0  25
+%     ADI  REG  IMM          ADI  r0  25
 %     ADD  REG  REG          ADD  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ADI = bin2dec('1110 0000');
@@ -153,36 +172,6 @@ ADD = bin2dec('1111 0000');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      RSH instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 4
-%
-% First operand: 
-%     Character to print.
-%
-% Second operand:
-%     Position on display.
-%
-% Type of operands:
-%     TPRcr  CONST  REG    (000)
-%     TPRrr  REG    REG    (001)
-%     TPRmr  MEM    REG    (010)
-%     TPRcm  CONST  MEM    (011)
-%     TPRrm  REG    MEM    (100)
-%     TPRcc  CONST  CONST  (101)
-%     TPRrc  REG    CONST  (110)
-%     TPRmc  MEM    CONST  (111)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TPRcr = bin2dec('0100 0000');
-% TPRrr = bin2dec('0100 0001');
-% TPRmr = bin2dec('0100 0010');
-% TPRcm = bin2dec('0100 0011');
-% TPRrm = bin2dec('0100 0100');
-% TPRcc = bin2dec('0100 0101');
-% TPRrc = bin2dec('0100 0110');
-% TPRmc = bin2dec('0100 0111');
-% TPR = bin2dec('0100 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
