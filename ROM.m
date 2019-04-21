@@ -73,17 +73,28 @@ RomCode =                        ...
 	% bin2dec('1001 0001')    0  %TRR   r0    r1
 %===
 
-	bin2dec('1010 0000')    A  %TIR   A    r0
+	% bin2dec('1010 0000')    A  %TIR   A    r0
 
-	bin2dec('0000 0000')    1  %MRC   r0    1
-	bin2dec('1010 0000')    H  %TIR   H    r0
+	% bin2dec('0000 0000')    1  %MRC   r0    1
+	% bin2dec('1010 0000')    H  %TIR   H    r0
 
-	bin2dec('0000 0000')    2  %MRC   r0    2
-	bin2dec('1010 0000')    O  %TIR   O    r0
+	% bin2dec('0000 0000')    2  %MRC   r0    2
+	% bin2dec('1010 0000')    O  %TIR   O    r0
 
-	bin2dec('0000 0000')    3  %MRC   r0    3
-	bin2dec('1010 0000')    J  %TIR   J    r0
+	% bin2dec('0000 0000')    3  %MRC   r0    3
+	% bin2dec('1010 0000')    J  %TIR   J    r0
 %===
+
+	bin2dec('1011 0001')    1  %DIS   r0   r1   1
+	
+	bin2dec('0000 0000')	1  %MRC   r0   1
+	bin2dec('0000 0100')	1  %MRC   r1   1
+	bin2dec('1011 0001')    1  %DIS   r0   r1   1
+
+	bin2dec('0000 0000')	2  %MRC   r0   2
+	bin2dec('0000 0100')	2  %MRC   r1   2
+	bin2dec('1011 0001')    1  %DIS   r0   r1   1
+
 
 	00  00
 	00	00

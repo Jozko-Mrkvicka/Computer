@@ -104,6 +104,24 @@ TRR = bin2dec('1001 0000');
 TIR = bin2dec('1010 0000');
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      DIS instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand: 
+%     Horizontal position (X) in range 0..15
+%
+% Second operand:
+%     Vertical position (Y) in range 0..23
+%
+% Third operand:
+%     Pixel to set (switch off = 0 / switch on = 1)
+%
+% Type of operands:        Example:
+%     DIS REG REG IMM      DIS r0 r1 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+DIS = bin2dec('1011 0000');
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      ADD instructions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -149,12 +167,6 @@ ADD = bin2dec('1111 0000');
 % Type of operands:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % STORE = bin2dec('0011 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% GPR
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

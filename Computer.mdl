@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.785"
+    ComputedModelVersion    "1.790"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -63,11 +63,11 @@ Model {
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"4965"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1372.0, 906.0]
-	ZoomFactor		[1.25]
-	Offset			[-200.80000000000007, -105.9435916863132]
+	ZoomFactor		[1.0]
+	Offset			[4599.4084866983467, 1150.5007263095126]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 14 16:13:22 2019"
-  RTWModifiedTimeStamp	  477159201
-  ModelVersionFormat	  "1.%<AutoIncrement:785>"
+  LastModifiedDate	  "Sat Apr 20 16:37:44 2019"
+  RTWModifiedTimeStamp	  477678033
+  ModelVersionFormat	  "1.%<AutoIncrement:790>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -889,7 +889,7 @@ Model {
   System {
     Name		    "Computer"
     Location		    [66, 0, 1488, 1080]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -900,9 +900,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5215"
+    SIDHighWatermark	    "5217"
     Block {
       BlockType		      Reference
       Name		      "2_to_4_Decoder"
@@ -910,7 +910,7 @@ Model {
       Ports		      [2, 4]
       Position		      [3440, 1667, 3585, 1728]
       ZOrder		      794
-      LibraryVersion	      "1.6"
+      LibraryVersion	      "1.9"
       SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_2_to_4"
       SourceType	      "SubSystem"
     }
@@ -921,7 +921,7 @@ Model {
       Ports		      [3, 3]
       Position		      [4670, 1738, 4860, 1782]
       ZOrder		      478
-      LibraryVersion	      "1.504"
+      LibraryVersion	      "1.516"
       SourceBlock	      "Computer_Library/ALU"
       SourceType	      "SubSystem"
     }
@@ -943,7 +943,8 @@ Model {
       Ports		      [1, 1]
       Position		      [6180, 1742, 6340, 1788]
       ZOrder		      1303
-      LibraryVersion	      "1.504"
+      Commented		      on
+      LibraryVersion	      "1.516"
       SourceBlock	      "Computer_Library/Character_Table"
       SourceType	      "SubSystem"
     }
@@ -1095,6 +1096,7 @@ Model {
       Ports		      [16]
       Position		      [6595, 1610, 6710, 1855]
       ZOrder		      1753
+      Commented		      on
       LibraryVersion	      "1.32"
       SourceBlock	      "Displays_Lib/Displays_Lib/Display_16x1_Characters"
       SourceType	      "SubSystem"
@@ -1106,7 +1108,7 @@ Model {
       Ports		      [4, 1]
       Position		      [3460, 2086, 3620, 2149]
       ZOrder		      793
-      LibraryVersion	      "1.15"
+      LibraryVersion	      "1.23"
       SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
       SourceType	      "SubSystem"
     }
@@ -1117,7 +1119,7 @@ Model {
       Ports		      [4, 1]
       Position		      [3460, 2001, 3620, 2064]
       ZOrder		      792
-      LibraryVersion	      "1.15"
+      LibraryVersion	      "1.23"
       SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
       SourceType	      "SubSystem"
     }
@@ -1128,7 +1130,7 @@ Model {
       Ports		      [4, 1]
       Position		      [3460, 1916, 3620, 1979]
       ZOrder		      709
-      LibraryVersion	      "1.15"
+      LibraryVersion	      "1.23"
       SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
       SourceType	      "SubSystem"
     }
@@ -1139,8 +1141,19 @@ Model {
       Ports		      [4, 1]
       Position		      [3460, 1831, 3620, 1894]
       ZOrder		      708
-      LibraryVersion	      "1.15"
+      LibraryVersion	      "1.23"
       SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+      SourceType	      "SubSystem"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Graphic_Subsystem"
+      SID		      "5216"
+      Ports		      [5]
+      Position		      [5345, 1656, 5440, 1734]
+      ZOrder		      1875
+      LibraryVersion	      "1.516"
+      SourceBlock	      "Computer_Library/Graphic_Subsystem"
       SourceType	      "SubSystem"
     }
     Block {
@@ -1187,7 +1200,7 @@ Model {
 	  Ports			  [4, 16]
 	  Position		  [645, 16, 790, 569]
 	  ZOrder		  742
-	  LibraryVersion	  "1.6"
+	  LibraryVersion	  "1.9"
 	  SourceBlock		  "Decoders_Lib/Decoders_Lib/Decoder_4_to_16"
 	  SourceType		  "SubSystem"
 	}
@@ -1255,9 +1268,9 @@ Model {
 	}
 	Block {
 	  BlockType		  Outport
-	  Name			  "__AND__(1b)"
+	  Name			  "DIS(1b)"
 	  SID			  "4598"
-	  Position		  [990, 163, 1020, 177]
+	  Position		  [1055, 163, 1085, 177]
 	  ZOrder		  747
 	  Port			  "5"
 	  IconDisplay		  "Port number"
@@ -1464,7 +1477,7 @@ Model {
 	Line {
 	  SrcBlock		  "4_to_16_Decoder"
 	  SrcPort		  5
-	  DstBlock		  "__AND__(1b)"
+	  DstBlock		  "DIS(1b)"
 	  DstPort		  1
 	}
 	Line {
@@ -2529,12 +2542,12 @@ Model {
       BlockType		      Logic
       Name		      "Logical\nOperator19"
       SID		      "4768"
-      Ports		      [5, 1]
-      Position		      [1403, 214, 1448, 306]
+      Ports		      [4, 1]
+      Position		      [1403, 211, 1448, 289]
       ZOrder		      864
       ShowName		      off
       Operator		      "OR"
-      Inputs		      "5"
+      Inputs		      "4"
       IconShape		      "distinctive"
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -2698,6 +2711,22 @@ Model {
       ShowName		      off
       Operator		      "OR"
       Inputs		      "3"
+      IconShape		      "distinctive"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator7"
+      SID		      "5217"
+      Ports		      [2, 1]
+      Position		      [5300, 1030, 5340, 1060]
+      ZOrder		      1876
+      BlockRotation	      270
+      BlockMirror	      on
+      BackgroundColor	      "green"
+      NamePlacement	      "alternate"
+      ShowName		      off
       IconShape		      "distinctive"
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -3310,7 +3339,7 @@ Model {
       Ports		      [4, 1]
       Position		      [1535, 1656, 1695, 1719]
       ZOrder		      474
-      LibraryVersion	      "1.504"
+      LibraryVersion	      "1.516"
       SourceBlock	      "Computer_Library/Program_Counter"
       SourceType	      "SubSystem"
     }
@@ -3936,6 +3965,7 @@ Model {
       Ports		      [6, 1]
       Position		      [5930, 1715, 6120, 1810]
       ZOrder		      1790
+      Commented		      on
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -3946,7 +3976,7 @@ Model {
       System {
 	Name			"Select_character_to_display"
 	Location		[66, 0, 1488, 1080]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4381,7 +4411,8 @@ Model {
       Ports		      [4, 16]
       Position		      [6395, 1610, 6555, 1855]
       ZOrder		      1330
-      LibraryVersion	      "1.504"
+      Commented		      on
+      LibraryVersion	      "1.516"
       SourceBlock	      "Computer_Library/Text_Memory_16x1_Characters"
       SourceType	      "SubSystem"
     }
@@ -4409,8 +4440,15 @@ Model {
 	      Branch {
 		Points			[1411, 0]
 		Branch {
-		  Points		  [1349, 0]
+		  Points		  [938, 0]
 		  Branch {
+		    Points		    [0, 415]
+		    DstBlock		    "Graphic_Subsystem"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [411, 0]
+		    Branch {
 		    Points		    [1562, 0]
 		    Branch {
 		    DstBlock		    "Terminator34"
@@ -4421,11 +4459,12 @@ Model {
 		    DstBlock		    "Select_First_Operand(Index)"
 		    DstPort		    6
 		    }
-		  }
-		  Branch {
+		    }
+		    Branch {
 		    Points		    [0, 490]
 		    DstBlock		    "Select_character_to_display"
 		    DstPort		    4
+		    }
 		  }
 		}
 		Branch {
@@ -4515,13 +4554,6 @@ Model {
       Points		      [0, 645]
       DstBlock		      "Memory"
       DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Instruction_Decoder"
-      SrcPort		      5
-      Points		      [178, 0; 0, -120]
-      DstBlock		      "Logical\nOperator19"
-      DstPort		      5
     }
     Line {
       SrcBlock		      "Instruction_Decoder"
@@ -4779,7 +4811,7 @@ Model {
     Line {
       SrcBlock		      "Logical\nOperator19"
       SrcPort		      1
-      Points		      [1601, 0; 0, 670]
+      Points		      [1601, 0; 0, 680]
       Branch {
 	DstBlock		"Logical\nOperator10"
 	DstPort			5
@@ -4851,9 +4883,17 @@ Model {
 	      }
 	    }
 	    Branch {
-	      Points		      [2922, 0; 0, -435]
-	      DstBlock		      "Text_Memory_16x1_Characters"
-	      DstPort		      4
+	      Points		      [1895, 0]
+	      Branch {
+		Points			[0, -535]
+		DstBlock		"Graphic_Subsystem"
+		DstPort			5
+	      }
+	      Branch {
+		Points			[1027, 0; 0, -435]
+		DstBlock		"Text_Memory_16x1_Characters"
+		DstPort			4
+	      }
 	    }
 	  }
 	  Branch {
@@ -5060,23 +5100,31 @@ Model {
 	  DstPort		  3
 	}
 	Branch {
-	  Points		  [1353, 0]
+	  Points		  [939, 0]
 	  Branch {
-	    Points		    [1560, 0]
-	    Branch {
-	      Points		      [0, 345]
-	      DstBlock		      "Select_First_Operand(Index)"
-	      DstPort		      7
-	    }
-	    Branch {
-	      DstBlock		      "Terminator32"
-	      DstPort		      1
-	    }
+	    Points		    [0, 365]
+	    DstBlock		    "Graphic_Subsystem"
+	    DstPort		    1
 	  }
 	  Branch {
-	    Points		    [0, 345]
-	    DstBlock		    "Text_Memory_16x1_Characters"
-	    DstPort		    1
+	    Points		    [414, 0]
+	    Branch {
+	      Points		      [1560, 0]
+	      Branch {
+		Points			[0, 345]
+		DstBlock		"Select_First_Operand(Index)"
+		DstPort			7
+	      }
+	      Branch {
+		DstBlock		"Terminator32"
+		DstPort			1
+	      }
+	    }
+	    Branch {
+	      Points		      [0, 345]
+	      DstBlock		      "Text_Memory_16x1_Characters"
+	      DstPort		      1
+	    }
 	  }
 	}
       }
@@ -5124,15 +5172,23 @@ Model {
       Branch {
 	Points			[219, 0]
 	Branch {
-	  Points		  [1358, 0]
+	  Points		  [940, 0]
 	  Branch {
-	    Points		    [0, 465]
-	    DstBlock		    "Select_character_to_display"
-	    DstPort		    5
+	    Points		    [0, 360]
+	    DstBlock		    "Graphic_Subsystem"
+	    DstPort		    2
 	  }
 	  Branch {
-	    DstBlock		    "Terminator31"
-	    DstPort		    1
+	    Points		    [418, 0]
+	    Branch {
+	      Points		      [0, 465]
+	      DstBlock		      "Select_character_to_display"
+	      DstPort		      5
+	    }
+	    Branch {
+	      DstBlock		      "Terminator31"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Branch {
@@ -5333,7 +5389,6 @@ Model {
     Line {
       SrcBlock		      "Logical\nOperator16"
       SrcPort		      1
-      Points		      [0, 0]
       DstBlock		      "Logical\nOperator4"
       DstPort		      1
     }
@@ -5537,9 +5592,16 @@ Model {
 		    Branch {
 		    Points		    [875, 0]
 		    Branch {
-		    Points		    [3020, 0]
+		    Points		    [1990, 0]
+		    Branch {
+		    DstBlock		    "Logical\nOperator7"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [1030, 0]
 		    DstBlock		    "Logical\nOperator5"
 		    DstPort		    2
+		    }
 		    }
 		    Branch {
 		    DstBlock		    "Logical\nOperator11"
@@ -5609,6 +5671,20 @@ Model {
 	DstBlock		"Select_character_to_display"
 	DstPort			1
       }
+    }
+    Line {
+      SrcBlock		      "Instruction_Decoder"
+      SrcPort		      5
+      Points		      [4135, 0]
+      DstBlock		      "Logical\nOperator7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator7"
+      SrcPort		      1
+      Points		      [0, 645]
+      DstBlock		      "Graphic_Subsystem"
+      DstPort		      4
     }
     Annotation {
       SID		      "4971"
