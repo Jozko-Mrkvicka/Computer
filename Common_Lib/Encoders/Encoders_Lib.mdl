@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"160"
 	Extents			[1074.0, 832.0]
-	ZoomFactor		[1.0]
-	Offset			[70.36659806396581, 33.043992191742014]
+	ZoomFactor		[1.25]
+	Offset			[-171.46179400671167, -42.353931335570593]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Feb 23 18:44:33 2019"
-  RTWModifiedTimeStamp	  472848248
-  ModelVersionFormat	  "1.%<AutoIncrement:13>"
+  LastModifiedDate	  "Sun Apr 21 17:09:30 2019"
+  RTWModifiedTimeStamp	  477767369
+  ModelVersionFormat	  "1.%<AutoIncrement:15>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -769,7 +769,7 @@ Library {
   System {
     Name		    "Encoders_Lib"
     Location		    [154, 42, 1278, 1040]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1518,7 +1518,7 @@ Library {
 	  System {
 	    Name		    "Encoder_8_to_3"
 	    Location		    [154, 42, 1278, 1040]
-	    Open		    off
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1533,71 +1533,71 @@ Library {
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_7(1b)"
-	      SID		      "176"
-	      Position		      [20, 23, 50, 37]
-	      ZOrder		      -1
+	      SID		      "183"
+	      Position		      [20, 308, 50, 322]
+	      ZOrder		      10
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Select_6(1b)\n"
-	      SID		      "177"
-	      Position		      [20, 63, 50, 77]
-	      ZOrder		      4
+	      Name		      "Select_6(1b)"
+	      SID		      "179"
+	      Position		      [20, 268, 50, 282]
+	      ZOrder		      6
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_5(1b)"
-	      SID		      "178"
-	      Position		      [20, 103, 50, 117]
-	      ZOrder		      5
+	      SID		      "181"
+	      Position		      [20, 228, 50, 242]
+	      ZOrder		      8
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Select_4(1b)"
-	      SID		      "179"
-	      Position		      [20, 143, 50, 157]
-	      ZOrder		      6
+	      Name		      "Select_4(1b)\n"
+	      SID		      "177"
+	      Position		      [20, 188, 50, 202]
+	      ZOrder		      4
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_3(1b)"
-	      SID		      "180"
-	      Position		      [20, 183, 50, 197]
-	      ZOrder		      7
+	      SID		      "182"
+	      Position		      [20, 148, 50, 162]
+	      ZOrder		      9
 	      Port		      "5"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_2(1b)"
-	      SID		      "181"
-	      Position		      [20, 223, 50, 237]
-	      ZOrder		      8
+	      SID		      "178"
+	      Position		      [20, 108, 50, 122]
+	      ZOrder		      5
 	      Port		      "6"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_1(1b)"
-	      SID		      "182"
-	      Position		      [20, 263, 50, 277]
-	      ZOrder		      9
+	      SID		      "180"
+	      Position		      [20, 68, 50, 82]
+	      ZOrder		      7
 	      Port		      "7"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_0(1b)"
-	      SID		      "183"
-	      Position		      [20, 308, 50, 322]
-	      ZOrder		      10
+	      SID		      "176"
+	      Position		      [20, 28, 50, 42]
+	      ZOrder		      -1
 	      Port		      "8"
 	      IconDisplay	      "Port number"
 	    }
@@ -1647,7 +1647,7 @@ Library {
 	      BlockType		      Terminator
 	      Name		      "Terminator"
 	      SID		      "187"
-	      Position		      [210, 20, 230, 40]
+	      Position		      [480, 25, 500, 45]
 	      ZOrder		      23
 	      ShowName		      off
 	    }
@@ -1696,23 +1696,23 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Select_6(1b)\n"
+	      SrcBlock		      "Select_4(1b)\n"
 	      SrcPort		      1
-	      Points		      [172, 0; 0, 215]
+	      Points		      [172, 0; 0, 90]
 	      DstBlock		      "Logical\nOperator"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Select_5(1b)"
+	      SrcBlock		      "Select_2(1b)"
 	      SrcPort		      1
-	      Points		      [155, 0; 0, 240]
+	      Points		      [155, 0; 0, 235]
 	      DstBlock		      "Logical\nOperator1"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Select_4(1b)"
+	      SrcBlock		      "Select_6(1b)"
 	      SrcPort		      1
-	      Points		      [139, 0; 0, 145]
+	      Points		      [139, 0; 0, 20]
 	      Branch {
 		Points			[0, 65]
 		DstBlock		"Logical\nOperator1"
@@ -1724,16 +1724,16 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "Select_3(1b)"
+	      SrcBlock		      "Select_1(1b)"
 	      SrcPort		      1
-	      Points		      [121, 0; 0, 225]
+	      Points		      [121, 0; 0, 340]
 	      DstBlock		      "Logical\nOperator2"
 	      DstPort		      1
 	    }
 	    Line {
-	      SrcBlock		      "Select_2(1b)"
+	      SrcBlock		      "Select_5(1b)"
 	      SrcPort		      1
-	      Points		      [103, 0; 0, 75]
+	      Points		      [103, 0; 0, 70]
 	      Branch {
 		Points			[0, 120]
 		DstBlock		"Logical\nOperator2"
@@ -1745,9 +1745,9 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "Select_1(1b)"
+	      SrcBlock		      "Select_3(1b)"
 	      SrcPort		      1
-	      Points		      [84, 0; 0, 100]
+	      Points		      [84, 0; 0, 215]
 	      Branch {
 		Points			[0, 65]
 		DstBlock		"Logical\nOperator2"
@@ -1759,7 +1759,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "Select_0(1b)"
+	      SrcBlock		      "Select_7(1b)"
 	      SrcPort		      1
 	      Points		      [66, 0]
 	      Branch {
@@ -1780,7 +1780,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      SrcBlock		      "Select_7(1b)"
+	      SrcBlock		      "Select_0(1b)"
 	      SrcPort		      1
 	      DstBlock		      "Terminator"
 	      DstPort		      1

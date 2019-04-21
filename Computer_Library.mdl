@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [127.0, 0.0, 1622.0, 1080.0]
+      Location		      [64.0, 0.0, 1622.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"5446"
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
 	Extents			[1572.0, 914.0]
-	ZoomFactor		[1.25]
-	Offset			[-27.874050938271026, 1049.6785166813731]
+	ZoomFactor		[1.5]
+	Offset			[835.20191560405135, -22.090337382507975]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 20 16:43:15 2019"
-  RTWModifiedTimeStamp	  477679391
-  ModelVersionFormat	  "1.%<AutoIncrement:518>"
+  LastModifiedDate	  "Sun Apr 21 15:21:27 2019"
+  RTWModifiedTimeStamp	  477760883
+  ModelVersionFormat	  "1.%<AutoIncrement:523>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -813,8 +813,8 @@ Library {
   }
   System {
     Name		    "Computer_Library"
-    Location		    [127, 0, 1749, 1080]
-    Open		    off
+    Location		    [64, 0, 1686, 1080]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -827,7 +827,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5488"
+    SIDHighWatermark	    "5490"
     Block {
       BlockType		      SubSystem
       Name		      "16B_ROM_Memory"
@@ -23270,8 +23270,8 @@ Library {
       BlockType		      SubSystem
       Name		      "Graphic_Subsystem"
       SID		      "5446"
-      Ports		      [5]
-      Position		      [1200, 46, 1290, 124]
+      Ports		      [5, 1]
+      Position		      [1175, 41, 1320, 119]
       ZOrder		      1832
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -23282,8 +23282,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Graphic_Subsystem"
-	Location		[127, 0, 1749, 1080]
-	Open			on
+	Location		[64, 0, 1686, 1080]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -23294,12 +23294,12 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Sel_Pos_X(1B)"
 	  SID			  "5447"
-	  Position		  [20, 323, 50, 337]
+	  Position		  [25, 198, 55, 212]
 	  ZOrder		  1587
 	  IconDisplay		  "Port number"
 	}
@@ -23307,7 +23307,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Sel_Pos_Y(1B)"
 	  SID			  "5448"
-	  Position		  [20, 108, 50, 122]
+	  Position		  [25, 18, 55, 32]
 	  ZOrder		  1585
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -23316,7 +23316,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Data(1B)"
 	  SID			  "5449"
-	  Position		  [30, 1578, 60, 1592]
+	  Position		  [20, 1973, 50, 1987]
 	  ZOrder		  1588
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -23325,7 +23325,7 @@ Library {
 	  BlockType		  Inport
 	  Name			  "Write(1b)"
 	  SID			  "5479"
-	  Position		  [20, 63, 50, 77]
+	  Position		  [25, 63, 55, 77]
 	  ZOrder		  1590
 	  Port			  "4"
 	  IconDisplay		  "Port number"
@@ -23334,17 +23334,28 @@ Library {
 	  BlockType		  Inport
 	  Name			  "CLK"
 	  SID			  "5450"
-	  Position		  [30, 1673, 60, 1687]
+	  Position		  [20, 2068, 50, 2082]
 	  ZOrder		  1589
 	  Port			  "5"
 	  IconDisplay		  "Port number"
 	}
 	Block {
 	  BlockType		  Reference
+	  Name			  "Bit_Multiplexer_16_to_1"
+	  SID			  "5489"
+	  Ports			  [20, 1]
+	  Position		  [1415, 202, 1570, 503]
+	  ZOrder		  1616
+	  LibraryVersion	  "1.5"
+	  SourceBlock		  "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
+	  SourceType		  "SubSystem"
+	}
+	Block {
+	  BlockType		  Reference
 	  Name			  "Decoder_4_to_16"
 	  SID			  "5451"
 	  Ports			  [4, 16]
-	  Position		  [400, 167, 540, 408]
+	  Position		  [390, 562, 530, 803]
 	  ZOrder		  1574
 	  LibraryVersion	  "1.9"
 	  SourceBlock		  "Decoders_Lib/Decoders_Lib/Decoder_4_to_16"
@@ -23355,7 +23366,7 @@ Library {
 	  Name			  "Demux1"
 	  SID			  "5452"
 	  Ports			  [1, 8]
-	  Position		  [215, 263, 225, 392]
+	  Position		  [220, 138, 230, 267]
 	  ZOrder		  1579
 	  ShowName		  off
 	  Outputs		  "8"
@@ -23366,7 +23377,7 @@ Library {
 	  Name			  "Demux2"
 	  SID			  "5480"
 	  Ports			  [1, 8]
-	  Position		  [260, 1510, 270, 1660]
+	  Position		  [250, 1905, 260, 2055]
 	  ZOrder		  1592
 	  ShowName		  off
 	  Outputs		  "8"
@@ -23377,7 +23388,7 @@ Library {
 	  Name			  "Demux4"
 	  SID			  "5453"
 	  Ports			  [1, 16]
-	  Position		  [1525, 194, 1535, 441]
+	  Position		  [1805, 609, 1815, 856]
 	  ZOrder		  1432
 	  ShowName		  off
 	  Outputs		  "16"
@@ -23387,10 +23398,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit"
 	  SID			  "5454"
-	  Ports			  [5, 1]
-	  Position		  [895, 168, 1050, 242]
-	  ZOrder		  1558
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 563, 1035, 637]
+	  ZOrder		  1600
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23398,10 +23409,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit1"
 	  SID			  "5455"
-	  Ports			  [5, 1]
-	  Position		  [895, 263, 1050, 337]
-	  ZOrder		  1559
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 658, 1035, 732]
+	  ZOrder		  1601
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23409,10 +23420,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit10"
 	  SID			  "5456"
-	  Ports			  [5, 1]
-	  Position		  [895, 1118, 1050, 1192]
-	  ZOrder		  1568
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1513, 1035, 1587]
+	  ZOrder		  1610
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23420,10 +23431,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit11"
 	  SID			  "5457"
-	  Ports			  [5, 1]
-	  Position		  [895, 1213, 1050, 1287]
-	  ZOrder		  1569
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1608, 1035, 1682]
+	  ZOrder		  1611
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23431,10 +23442,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit12"
 	  SID			  "5458"
-	  Ports			  [5, 1]
-	  Position		  [895, 1308, 1050, 1382]
-	  ZOrder		  1570
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1703, 1035, 1777]
+	  ZOrder		  1612
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23442,10 +23453,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit13"
 	  SID			  "5459"
-	  Ports			  [5, 1]
-	  Position		  [895, 1403, 1050, 1477]
-	  ZOrder		  1571
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1798, 1035, 1872]
+	  ZOrder		  1613
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23453,10 +23464,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit14"
 	  SID			  "5460"
-	  Ports			  [5, 1]
-	  Position		  [895, 1498, 1050, 1572]
-	  ZOrder		  1572
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1893, 1035, 1967]
+	  ZOrder		  1614
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23464,10 +23475,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit15"
 	  SID			  "5461"
-	  Ports			  [5, 1]
-	  Position		  [895, 1593, 1050, 1667]
-	  ZOrder		  1573
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1988, 1035, 2062]
+	  ZOrder		  1615
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23475,10 +23486,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit2"
 	  SID			  "5462"
-	  Ports			  [5, 1]
-	  Position		  [895, 358, 1050, 432]
-	  ZOrder		  1560
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 753, 1035, 827]
+	  ZOrder		  1602
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23486,10 +23497,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit3"
 	  SID			  "5463"
-	  Ports			  [5, 1]
-	  Position		  [895, 453, 1050, 527]
-	  ZOrder		  1561
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 848, 1035, 922]
+	  ZOrder		  1603
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23497,10 +23508,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit4"
 	  SID			  "5464"
-	  Ports			  [5, 1]
-	  Position		  [895, 548, 1050, 622]
-	  ZOrder		  1562
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 943, 1035, 1017]
+	  ZOrder		  1604
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23508,10 +23519,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit5"
 	  SID			  "5465"
-	  Ports			  [5, 1]
-	  Position		  [895, 643, 1050, 717]
-	  ZOrder		  1563
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1038, 1035, 1112]
+	  ZOrder		  1605
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23519,10 +23530,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit6"
 	  SID			  "5466"
-	  Ports			  [5, 1]
-	  Position		  [895, 738, 1050, 812]
-	  ZOrder		  1564
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1133, 1035, 1207]
+	  ZOrder		  1606
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23530,10 +23541,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit7"
 	  SID			  "5467"
-	  Ports			  [5, 1]
-	  Position		  [895, 833, 1050, 907]
-	  ZOrder		  1565
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1228, 1035, 1302]
+	  ZOrder		  1607
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23541,10 +23552,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit8"
 	  SID			  "5468"
-	  Ports			  [5, 1]
-	  Position		  [895, 928, 1050, 1002]
-	  ZOrder		  1566
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1323, 1035, 1397]
+	  ZOrder		  1608
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23552,10 +23563,10 @@ Library {
 	  BlockType		  Reference
 	  Name			  "Graphic_memory_24bit9"
 	  SID			  "5469"
-	  Ports			  [5, 1]
-	  Position		  [895, 1023, 1050, 1097]
-	  ZOrder		  1567
-	  LibraryVersion	  "1.23"
+	  Ports			  [5, 2]
+	  Position		  [880, 1418, 1035, 1492]
+	  ZOrder		  1609
+	  LibraryVersion	  "1.29"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	}
@@ -23564,7 +23575,7 @@ Library {
 	  Name			  "Integer to Bit\nConverter1"
 	  SID			  "5470"
 	  Ports			  [1, 1]
-	  Position		  [110, 315, 180, 345]
+	  Position		  [115, 190, 185, 220]
 	  ZOrder		  1578
 	  ShowName		  off
 	  LibraryVersion	  "1.271"
@@ -23580,7 +23591,7 @@ Library {
 	  Name			  "Integer to Bit\nConverter2"
 	  SID			  "5481"
 	  Ports			  [1, 1]
-	  Position		  [155, 1570, 225, 1600]
+	  Position		  [145, 1965, 215, 1995]
 	  ZOrder		  1591
 	  ShowName		  off
 	  LibraryVersion	  "1.271"
@@ -23596,7 +23607,7 @@ Library {
 	  Name			  "Integer to Bit\nConverter5"
 	  SID			  "5471"
 	  Ports			  [1, 1]
-	  Position		  [1420, 305, 1490, 335]
+	  Position		  [1700, 720, 1770, 750]
 	  ZOrder		  1431
 	  ShowName		  off
 	  LibraryVersion	  "1.271"
@@ -23612,7 +23623,7 @@ Library {
 	  Name			  "Matrix\nConcatenate6"
 	  SID			  "5472"
 	  Ports			  [16, 1]
-	  Position		  [1945, 564, 2170, 801]
+	  Position		  [2225, 994, 2450, 1231]
 	  ZOrder		  1430
 	  ShowName		  off
 	  NumInputs		  "16"
@@ -23624,7 +23635,7 @@ Library {
 	  Name			  "Matrix\nViewer2"
 	  SID			  "5473"
 	  Ports			  [1]
-	  Position		  [2240, 660, 2285, 710]
+	  Position		  [2520, 1090, 2565, 1140]
 	  ZOrder		  1435
 	  ShowName		  off
 	  LibraryVersion	  "1.498"
@@ -23649,7 +23660,7 @@ Library {
 	  Name			  "Mux"
 	  SID			  "5474"
 	  Ports			  [16, 1]
-	  Position		  [1370, 197, 1380, 438]
+	  Position		  [1650, 612, 1660, 853]
 	  ZOrder		  1557
 	  ShowName		  off
 	  Inputs		  "16"
@@ -23659,7 +23670,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator"
 	  SID			  "5475"
-	  Position		  [300, 295, 320, 315]
+	  Position		  [305, 170, 325, 190]
 	  ZOrder		  1580
 	  ShowName		  off
 	}
@@ -23667,7 +23678,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator1"
 	  SID			  "5476"
-	  Position		  [300, 275, 320, 295]
+	  Position		  [305, 150, 325, 170]
 	  ZOrder		  1581
 	  ShowName		  off
 	}
@@ -23675,7 +23686,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator10"
 	  SID			  "5488"
-	  Position		  [305, 1625, 325, 1645]
+	  Position		  [295, 2020, 315, 2040]
 	  ZOrder		  1599
 	  ShowName		  off
 	}
@@ -23683,7 +23694,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  "5477"
-	  Position		  [300, 255, 320, 275]
+	  Position		  [305, 130, 325, 150]
 	  ZOrder		  1582
 	  ShowName		  off
 	}
@@ -23691,7 +23702,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator3"
 	  SID			  "5478"
-	  Position		  [300, 235, 320, 255]
+	  Position		  [305, 110, 325, 130]
 	  ZOrder		  1583
 	  ShowName		  off
 	}
@@ -23699,7 +23710,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator4"
 	  SID			  "5482"
-	  Position		  [305, 1565, 325, 1585]
+	  Position		  [295, 1960, 315, 1980]
 	  ZOrder		  1593
 	  ShowName		  off
 	}
@@ -23707,7 +23718,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator5"
 	  SID			  "5483"
-	  Position		  [305, 1545, 325, 1565]
+	  Position		  [295, 1940, 315, 1960]
 	  ZOrder		  1594
 	  ShowName		  off
 	}
@@ -23715,7 +23726,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator6"
 	  SID			  "5484"
-	  Position		  [305, 1525, 325, 1545]
+	  Position		  [295, 1920, 315, 1940]
 	  ZOrder		  1595
 	  ShowName		  off
 	}
@@ -23723,7 +23734,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator7"
 	  SID			  "5485"
-	  Position		  [305, 1505, 325, 1525]
+	  Position		  [295, 1900, 315, 1920]
 	  ZOrder		  1596
 	  ShowName		  off
 	}
@@ -23731,7 +23742,7 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator8"
 	  SID			  "5486"
-	  Position		  [305, 1585, 325, 1605]
+	  Position		  [295, 1980, 315, 2000]
 	  ZOrder		  1597
 	  ShowName		  off
 	}
@@ -23739,120 +23750,128 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator9"
 	  SID			  "5487"
-	  Position		  [305, 1605, 325, 1625]
+	  Position		  [295, 2000, 315, 2020]
 	  ZOrder		  1598
 	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Get_Pixel(1b)"
+	  SID			  "5490"
+	  Position		  [2525, 348, 2555, 362]
+	  ZOrder		  1617
+	  IconDisplay		  "Port number"
 	}
 	Line {
 	  SrcBlock		  "Sel_Pos_Y(1B)"
 	  SrcPort		  1
-	  Points		  [788, 0; 0, 75]
+	  Points		  [773, 0; 0, 560]
+	  Branch {
+	    DstBlock		    "Graphic_memory_24bit"
+	    DstPort		    2
+	  }
 	  Branch {
 	    Points		    [0, 95]
 	    Branch {
+	      DstBlock		      "Graphic_memory_24bit1"
+	      DstPort		      2
+	    }
+	    Branch {
 	      Points		      [0, 95]
+	      Branch {
+		DstBlock		"Graphic_memory_24bit2"
+		DstPort			2
+	      }
 	      Branch {
 		Points			[0, 95]
 		Branch {
+		  DstBlock		  "Graphic_memory_24bit3"
+		  DstPort		  2
+		}
+		Branch {
 		  Points		  [0, 95]
+		  Branch {
+		    DstBlock		    "Graphic_memory_24bit4"
+		    DstPort		    2
+		  }
 		  Branch {
 		    Points		    [0, 95]
 		    Branch {
-		    Points		    [0, 95]
+		    DstBlock		    "Graphic_memory_24bit5"
+		    DstPort		    2
+		    }
 		    Branch {
 		    Points		    [0, 95]
 		    Branch {
-		    Points		    [0, 95]
+		    DstBlock		    "Graphic_memory_24bit6"
+		    DstPort		    2
+		    }
 		    Branch {
 		    Points		    [0, 95]
 		    Branch {
-		    Points		    [0, 95]
+		    DstBlock		    "Graphic_memory_24bit7"
+		    DstPort		    2
+		    }
 		    Branch {
 		    Points		    [0, 95]
 		    Branch {
-		    Points		    [0, 95]
+		    DstBlock		    "Graphic_memory_24bit8"
+		    DstPort		    2
+		    }
 		    Branch {
 		    Points		    [0, 95]
 		    Branch {
+		    DstBlock		    "Graphic_memory_24bit9"
+		    DstPort		    2
+		    }
+		    Branch {
 		    Points		    [0, 95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit10"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit11"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit12"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit13"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit14"
+		    DstPort		    2
+		    }
 		    Branch {
 		    Points		    [0, 95]
 		    DstBlock		    "Graphic_memory_24bit15"
 		    DstPort		    2
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit14"
-		    DstPort		    2
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit13"
-		    DstPort		    2
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit12"
-		    DstPort		    2
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit11"
-		    DstPort		    2
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit10"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit9"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit8"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit7"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit6"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit5"
-		    DstPort		    2
 		    }
 		  }
-		  Branch {
-		    DstBlock		    "Graphic_memory_24bit4"
-		    DstPort		    2
-		  }
-		}
-		Branch {
-		  DstBlock		  "Graphic_memory_24bit3"
-		  DstPort		  2
 		}
 	      }
-	      Branch {
-		DstBlock		"Graphic_memory_24bit2"
-		DstPort			2
-	      }
 	    }
-	    Branch {
-	      DstBlock		      "Graphic_memory_24bit1"
-	      DstPort		      2
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Graphic_memory_24bit"
-	    DstPort		    2
 	  }
 	}
 	Line {
@@ -23872,16 +23891,30 @@ Library {
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  5
-	  Points		  [109, 0; 0, -135]
-	  DstBlock		  "Decoder_4_to_16"
-	  DstPort		  1
+	  Points		  [120, 0]
+	  Branch {
+	    Points		    [0, 385]
+	    DstBlock		    "Decoder_4_to_16"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Bit_Multiplexer_16_to_1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  7
-	  Points		  [137, 0; 0, -45]
-	  DstBlock		  "Decoder_4_to_16"
-	  DstPort		  3
+	  Points		  [97, 0]
+	  Branch {
+	    DstBlock		    "Bit_Multiplexer_16_to_1"
+	    DstPort		    3
+	  }
+	  Branch {
+	    Points		    [0, 475]
+	    DstBlock		    "Decoder_4_to_16"
+	    DstPort		    3
+	  }
 	}
 	Line {
 	  SrcBlock		  "Sel_Pos_X(1B)"
@@ -23894,125 +23927,140 @@ Library {
 	  SrcPort		  8
 	  Points		  [581, 0; 0, -25]
 	  Branch {
+	    DstBlock		    "Graphic_memory_24bit15"
+	    DstPort		    3
+	  }
+	  Branch {
 	    Points		    [0, -95]
+	    Branch {
+	      DstBlock		      "Graphic_memory_24bit14"
+	      DstPort		      3
+	    }
 	    Branch {
 	      Points		      [0, -95]
 	      Branch {
+		DstBlock		"Graphic_memory_24bit13"
+		DstPort			3
+	      }
+	      Branch {
 		Points			[0, -95]
+		Branch {
+		  DstBlock		  "Graphic_memory_24bit12"
+		  DstPort		  3
+		}
 		Branch {
 		  Points		  [0, -95]
 		  Branch {
+		    DstBlock		    "Graphic_memory_24bit11"
+		    DstPort		    3
+		  }
+		  Branch {
 		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit10"
+		    DstPort		    3
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
-		    Points		    [0, -95]
+		    DstBlock		    "Graphic_memory_24bit9"
+		    DstPort		    3
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
-		    Points		    [0, -95]
+		    DstBlock		    "Graphic_memory_24bit8"
+		    DstPort		    3
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
-		    Points		    [0, -95]
+		    DstBlock		    "Graphic_memory_24bit7"
+		    DstPort		    3
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
-		    Points		    [0, -95]
+		    DstBlock		    "Graphic_memory_24bit6"
+		    DstPort		    3
+		    }
 		    Branch {
 		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit5"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit4"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit3"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit2"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit1"
+		    DstPort		    3
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    DstBlock		    "Graphic_memory_24bit"
 		    DstPort		    3
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit1"
-		    DstPort		    3
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit2"
-		    DstPort		    3
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit3"
-		    DstPort		    3
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit4"
-		    DstPort		    3
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit5"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit6"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit7"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit8"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit9"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit10"
-		    DstPort		    3
 		    }
 		  }
-		  Branch {
-		    DstBlock		    "Graphic_memory_24bit11"
-		    DstPort		    3
-		  }
-		}
-		Branch {
-		  DstBlock		  "Graphic_memory_24bit12"
-		  DstPort		  3
 		}
 	      }
-	      Branch {
-		DstBlock		"Graphic_memory_24bit13"
-		DstPort			3
-	      }
 	    }
-	    Branch {
-	      DstBlock		      "Graphic_memory_24bit14"
-	      DstPort		      3
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Graphic_memory_24bit15"
-	    DstPort		    3
 	  }
 	}
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  6
-	  Points		  [123, 0; 0, -90]
-	  DstBlock		  "Decoder_4_to_16"
-	  DstPort		  2
+	  Points		  [109, 0]
+	  Branch {
+	    DstBlock		    "Bit_Multiplexer_16_to_1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, 430]
+	    DstBlock		    "Decoder_4_to_16"
+	    DstPort		    2
+	  }
 	}
 	Line {
 	  SrcBlock		  "Demux1"
 	  SrcPort		  8
-	  DstBlock		  "Decoder_4_to_16"
-	  DstPort		  4
+	  Points		  [84, 0]
+	  Branch {
+	    DstBlock		    "Bit_Multiplexer_16_to_1"
+	    DstPort		    4
+	  }
+	  Branch {
+	    Points		    [0, 520]
+	    DstBlock		    "Decoder_4_to_16"
+	    DstPort		    4
+	  }
 	}
 	Line {
 	  SrcBlock		  "Integer to Bit\nConverter1"
@@ -24061,8 +24109,8 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit2"
-	  SrcPort		  1
-	  Points		  [51, 0; 0, -160]
+	  SrcPort		  2
+	  Points		  [331, 0; 0, -160]
 	  DstBlock		  "Mux"
 	  DstPort		  3
 	}
@@ -24075,35 +24123,35 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit9"
-	  SrcPort		  1
-	  Points		  [147, 0; 0, -720]
+	  SrcPort		  2
+	  Points		  [427, 0; 0, -720]
 	  DstBlock		  "Mux"
 	  DstPort		  10
 	}
 	Line {
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  11
-	  Points		  [108, 0; 0, 800]
+	  Points		  [109, 0; 0, 800]
 	  DstBlock		  "Graphic_memory_24bit10"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit4"
-	  SrcPort		  1
-	  Points		  [81, 0; 0, -320]
+	  SrcPort		  2
+	  Points		  [361, 0; 0, -320]
 	  DstBlock		  "Mux"
 	  DstPort		  5
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit"
-	  SrcPort		  1
+	  SrcPort		  2
 	  DstBlock		  "Mux"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit13"
-	  SrcPort		  1
-	  Points		  [200, 0; 0, -1040]
+	  SrcPort		  2
+	  Points		  [480, 0; 0, -1040]
 	  DstBlock		  "Mux"
 	  DstPort		  14
 	}
@@ -24116,15 +24164,15 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit15"
-	  SrcPort		  1
-	  Points		  [226, 0; 0, -1200]
+	  SrcPort		  2
+	  Points		  [506, 0; 0, -1200]
 	  DstBlock		  "Mux"
 	  DstPort		  16
 	}
 	Line {
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  16
-	  Points		  [38, 0; 0, 1200]
+	  Points		  [40, 0; 0, 1200]
 	  DstBlock		  "Graphic_memory_24bit15"
 	  DstPort		  1
 	}
@@ -24133,31 +24181,87 @@ Library {
 	  SrcPort		  1
 	  Points		  [804, 0; 0, -20]
 	  Branch {
+	    DstBlock		    "Graphic_memory_24bit15"
+	    DstPort		    5
+	  }
+	  Branch {
 	    Points		    [0, -95]
+	    Branch {
+	      DstBlock		      "Graphic_memory_24bit14"
+	      DstPort		      5
+	    }
 	    Branch {
 	      Points		      [0, -95]
 	      Branch {
+		DstBlock		"Graphic_memory_24bit13"
+		DstPort			5
+	      }
+	      Branch {
 		Points			[0, -95]
+		Branch {
+		  DstBlock		  "Graphic_memory_24bit12"
+		  DstPort		  5
+		}
 		Branch {
 		  Points		  [0, -95]
 		  Branch {
+		    DstBlock		    "Graphic_memory_24bit11"
+		    DstPort		    5
+		  }
+		  Branch {
 		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit10"
+		    DstPort		    5
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
-		    Points		    [0, -95]
+		    DstBlock		    "Graphic_memory_24bit9"
+		    DstPort		    5
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
-		    Points		    [0, -95]
+		    DstBlock		    "Graphic_memory_24bit8"
+		    DstPort		    5
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
-		    Points		    [0, -95]
+		    DstBlock		    "Graphic_memory_24bit7"
+		    DstPort		    5
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
+		    DstBlock		    "Graphic_memory_24bit6"
+		    DstPort		    5
+		    }
+		    Branch {
 		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit5"
+		    DstPort		    5
+		    }
+		    Branch {
+		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit4"
+		    DstPort		    5
+		    }
+		    Branch {
+		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit3"
+		    DstPort		    5
+		    }
+		    Branch {
+		    Points		    [0, -95]
+		    Branch {
+		    DstBlock		    "Graphic_memory_24bit2"
+		    DstPort		    5
+		    }
 		    Branch {
 		    Points		    [0, -95]
 		    Branch {
@@ -24170,74 +24274,18 @@ Library {
 		    DstPort		    5
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit2"
-		    DstPort		    5
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit3"
-		    DstPort		    5
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit4"
-		    DstPort		    5
 		    }
 		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit5"
-		    DstPort		    5
 		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit6"
-		    DstPort		    5
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit7"
-		    DstPort		    5
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit8"
-		    DstPort		    5
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit9"
-		    DstPort		    5
-		    }
-		    }
-		    Branch {
-		    DstBlock		    "Graphic_memory_24bit10"
-		    DstPort		    5
 		    }
 		  }
-		  Branch {
-		    DstBlock		    "Graphic_memory_24bit11"
-		    DstPort		    5
-		  }
-		}
-		Branch {
-		  DstBlock		  "Graphic_memory_24bit12"
-		  DstPort		  5
 		}
 	      }
-	      Branch {
-		DstBlock		"Graphic_memory_24bit13"
-		DstPort			5
-	      }
 	    }
-	    Branch {
-	      DstBlock		      "Graphic_memory_24bit14"
-	      DstPort		      5
-	    }
-	  }
-	  Branch {
-	    DstBlock		    "Graphic_memory_24bit15"
-	    DstPort		    5
 	  }
 	}
 	Line {
@@ -24248,22 +24296,22 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit3"
-	  SrcPort		  1
-	  Points		  [66, 0; 0, -240]
+	  SrcPort		  2
+	  Points		  [346, 0; 0, -240]
 	  DstBlock		  "Mux"
 	  DstPort		  4
 	}
 	Line {
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  10
-	  Points		  [121, 0; 0, 720]
+	  Points		  [122, 0; 0, 720]
 	  DstBlock		  "Graphic_memory_24bit9"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit12"
-	  SrcPort		  1
-	  Points		  [187, 0; 0, -960]
+	  SrcPort		  2
+	  Points		  [467, 0; 0, -960]
 	  DstBlock		  "Mux"
 	  DstPort		  13
 	}
@@ -24276,15 +24324,15 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit5"
-	  SrcPort		  1
-	  Points		  [95, 0; 0, -400]
+	  SrcPort		  2
+	  Points		  [375, 0; 0, -400]
 	  DstBlock		  "Mux"
 	  DstPort		  6
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit1"
-	  SrcPort		  1
-	  Points		  [37, 0; 0, -80]
+	  SrcPort		  2
+	  Points		  [317, 0; 0, -80]
 	  DstBlock		  "Mux"
 	  DstPort		  2
 	}
@@ -24311,8 +24359,8 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit11"
-	  SrcPort		  1
-	  Points		  [174, 0; 0, -880]
+	  SrcPort		  2
+	  Points		  [454, 0; 0, -880]
 	  DstBlock		  "Mux"
 	  DstPort		  12
 	}
@@ -24325,22 +24373,22 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit6"
-	  SrcPort		  1
-	  Points		  [108, 0; 0, -480]
+	  SrcPort		  2
+	  Points		  [388, 0; 0, -480]
 	  DstBlock		  "Mux"
 	  DstPort		  7
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit7"
-	  SrcPort		  1
-	  Points		  [121, 0; 0, -560]
+	  SrcPort		  2
+	  Points		  [401, 0; 0, -560]
 	  DstBlock		  "Mux"
 	  DstPort		  8
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit8"
-	  SrcPort		  1
-	  Points		  [134, 0; 0, -640]
+	  SrcPort		  2
+	  Points		  [414, 0; 0, -640]
 	  DstBlock		  "Mux"
 	  DstPort		  9
 	}
@@ -24353,15 +24401,15 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit14"
-	  SrcPort		  1
-	  Points		  [213, 0; 0, -1120]
+	  SrcPort		  2
+	  Points		  [493, 0; 0, -1120]
 	  DstBlock		  "Mux"
 	  DstPort		  15
 	}
 	Line {
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  15
-	  Points		  [52, 0; 0, 1120]
+	  Points		  [53, 0; 0, 1120]
 	  DstBlock		  "Graphic_memory_24bit14"
 	  DstPort		  1
 	}
@@ -24381,127 +24429,127 @@ Library {
 	}
 	Line {
 	  SrcBlock		  "Graphic_memory_24bit10"
-	  SrcPort		  1
-	  Points		  [160, 0; 0, -800]
+	  SrcPort		  2
+	  Points		  [440, 0; 0, -800]
 	  DstBlock		  "Mux"
 	  DstPort		  11
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  16
-	  Points		  [56, 0; 0, 140]
+	  Points		  [56, 0; 0, 155]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  15
-	  Points		  [73, 0; 0, 170]
+	  Points		  [73, 0; 0, 185]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  14
-	  Points		  [91, 0; 0, 200]
+	  Points		  [91, 0; 0, 215]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  3
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  13
-	  Points		  [108, 0; 0, 230]
+	  Points		  [108, 0; 0, 245]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  4
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  12
-	  Points		  [124, 0; 0, 260]
+	  Points		  [124, 0; 0, 275]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  5
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  11
-	  Points		  [142, 0; 0, 290]
+	  Points		  [142, 0; 0, 305]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  6
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  10
-	  Points		  [159, 0; 0, 320]
+	  Points		  [159, 0; 0, 335]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  7
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  9
-	  Points		  [176, 0; 0, 350]
+	  Points		  [176, 0; 0, 365]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  8
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  8
-	  Points		  [193, 0; 0, 380]
+	  Points		  [193, 0; 0, 395]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  9
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  7
-	  Points		  [210, 0; 0, 410]
+	  Points		  [210, 0; 0, 425]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  10
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  6
-	  Points		  [227, 0; 0, 440]
+	  Points		  [227, 0; 0, 455]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  11
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  5
-	  Points		  [243, 0; 0, 470]
+	  Points		  [243, 0; 0, 485]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  12
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  4
-	  Points		  [260, 0; 0, 500]
+	  Points		  [260, 0; 0, 515]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  13
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  3
-	  Points		  [276, 0; 0, 530]
+	  Points		  [276, 0; 0, 545]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  14
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  2
-	  Points		  [291, 0; 0, 560]
+	  Points		  [291, 0; 0, 575]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  15
 	}
 	Line {
 	  SrcBlock		  "Demux4"
 	  SrcPort		  1
-	  Points		  [305, 0; 0, 590]
+	  Points		  [305, 0; 0, 605]
 	  DstBlock		  "Matrix\nConcatenate6"
 	  DstPort		  16
 	}
 	Line {
 	  SrcBlock		  "Write(1b)"
 	  SrcPort		  1
-	  Points		  [777, 0; 0, 150]
+	  Points		  [762, 0; 0, 545]
 	  Branch {
 	    DstBlock		    "Graphic_memory_24bit"
 	    DstPort		    4
@@ -24662,6 +24710,124 @@ Library {
 	  SrcBlock		  "Demux2"
 	  SrcPort		  5
 	  DstBlock		  "Terminator8"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit"
+	  SrcPort		  1
+	  Points		  [24, 0; 0, -315]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit1"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -395]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit2"
+	  SrcPort		  1
+	  Points		  [46, 0; 0, -475]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  7
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit3"
+	  SrcPort		  1
+	  Points		  [59, 0; 0, -555]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  8
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit4"
+	  SrcPort		  1
+	  Points		  [71, 0; 0, -635]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  9
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit5"
+	  SrcPort		  1
+	  Points		  [83, 0; 0, -715]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  10
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit6"
+	  SrcPort		  1
+	  Points		  [95, 0; 0, -795]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  11
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit7"
+	  SrcPort		  1
+	  Points		  [106, 0; 0, -875]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  12
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit8"
+	  SrcPort		  1
+	  Points		  [116, 0; 0, -955]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  13
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit9"
+	  SrcPort		  1
+	  Points		  [127, 0; 0, -1035]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  14
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit10"
+	  SrcPort		  1
+	  Points		  [138, 0; 0, -1115]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  15
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit11"
+	  SrcPort		  1
+	  Points		  [150, 0; 0, -1195]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  16
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit12"
+	  SrcPort		  1
+	  Points		  [161, 0; 0, -1275]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  17
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit13"
+	  SrcPort		  1
+	  Points		  [172, 0; 0, -1355]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  18
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit14"
+	  SrcPort		  1
+	  Points		  [184, 0; 0, -1435]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  19
+	}
+	Line {
+	  SrcBlock		  "Graphic_memory_24bit15"
+	  SrcPort		  1
+	  Points		  [196, 0; 0, -1515]
+	  DstBlock		  "Bit_Multiplexer_16_to_1"
+	  DstPort		  20
+	}
+	Line {
+	  SrcBlock		  "Bit_Multiplexer_16_to_1"
+	  SrcPort		  1
+	  DstBlock		  "Get_Pixel(1b)"
 	  DstPort		  1
 	}
       }

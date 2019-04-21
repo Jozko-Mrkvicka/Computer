@@ -105,7 +105,7 @@ TIR = bin2dec('1010 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      DIS instructions
+%      DIS instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % First operand: 
 %     Horizontal position (X) in range 0..15
@@ -120,6 +120,37 @@ TIR = bin2dec('1010 0000');
 %     DIS REG REG IMM      DIS r0 r1 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 DIS = bin2dec('1011 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      GPX instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand: 
+%     In: Horizontal position (X) in range 0..15.
+%     Out: Read pixel value is stored here. 
+%
+% Second operand:
+%     Vertical position (Y) in range 0..23
+%
+% Type of operands:        Example:
+%     DIS REG REG IMM      DIS r0 r1 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     GPX REG REG          GPX r0 r1
+GPX = bin2dec('1100 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Operation code = 10
+% Type of operands:
+%     SUBcr  CONST  REG    (000)
+%     SUBrr  REG    REG    (001)
+%     SUBmr  MEM    REG    (010)  (Not implemented)
+%     SUBcm  CONST  MEM    (011)  (Not implemented)
+%     SUBrm  REG    MEM    (100)  (Not implemented)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% SUBcr = bin2dec('1010 0000');
+% SUBrr = bin2dec('1010 0001');
+% SUB = bin2dec('1010 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -247,19 +278,5 @@ r3 = bin2dec('01 0000 0011');
 %     NOTrm  REG    MEM    (100)  (Not implemented)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %NOT = bin2dec('1100 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code = 10
-% Type of operands:
-%     SUBcr  CONST  REG    (000)
-%     SUBrr  REG    REG    (001)
-%     SUBmr  MEM    REG    (010)  (Not implemented)
-%     SUBcm  CONST  MEM    (011)  (Not implemented)
-%     SUBrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% SUBcr = bin2dec('1010 0000');
-% SUBrr = bin2dec('1010 0001');
-% SUB = bin2dec('1010 0000');
 
 

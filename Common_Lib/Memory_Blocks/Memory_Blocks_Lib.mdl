@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [65.0, 0.0, 1489.0, 1080.0]
+      Location		      [65.0, 0.0, 1568.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"1"
-	Extents			[1439.0, 914.0]
-	ZoomFactor		[1.5]
-	Offset			[211.82875907544349, -79.029677677053854]
+	LoadSaveID		"167"
+	Extents			[1518.0, 914.0]
+	ZoomFactor		[0.8]
+	Offset			[1013.1648922219867, -27.361638538559419]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Apr 20 16:04:18 2019"
-  RTWModifiedTimeStamp	  477677057
-  ModelVersionFormat	  "1.%<AutoIncrement:23>"
+  LastModifiedDate	  "Sun Apr 21 14:54:45 2019"
+  RTWModifiedTimeStamp	  477759283
+  ModelVersionFormat	  "1.%<AutoIncrement:29>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -695,6 +695,19 @@ Library {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
       BlockType		      Demux
       Outputs		      "4"
       DisplayOption	      "none"
@@ -796,7 +809,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "210"
+    SIDHighWatermark	    "216"
     Block {
       BlockType		      SubSystem
       Name		      "Memory_Blocks_Lib"
@@ -813,8 +826,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Memory_Blocks_Lib"
-	Location		[65, 0, 1554, 1080]
-	Open			on
+	Location		[65, 0, 1633, 1080]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -4308,7 +4321,6 @@ Library {
 	    Line {
 	      SrcBlock		      "Logical\nOperator2"
 	      SrcPort		      1
-	      Points		      [22, 0]
 	      DstBlock		      "J-K\nFlip-Flop"
 	      DstPort		      3
 	    }
@@ -4321,7 +4333,6 @@ Library {
 	    Line {
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
-	      Points		      [85, 0]
 	      DstBlock		      "Logical\nOperator2"
 	      DstPort		      3
 	    }
@@ -4335,7 +4346,6 @@ Library {
 		DstPort			2
 	      }
 	      Branch {
-		Points			[41, 0]
 		DstBlock		"Logical\nOperator1"
 		DstPort			2
 	      }
@@ -4407,7 +4417,7 @@ Library {
 	  BlockType		  SubSystem
 	  Name			  "Graphic_memory_24bit"
 	  SID			  "167"
-	  Ports			  [5, 1]
+	  Ports			  [5, 2]
 	  Position		  [410, 5, 565, 85]
 	  ZOrder		  1458
 	  MinAlgLoopOccurrences	  off
@@ -4419,8 +4429,8 @@ Library {
 	  MaskHideContents	  off
 	  System {
 	    Name		    "Graphic_memory_24bit"
-	    Location		    [65, 0, 1554, 1080]
-	    Open		    off
+	    Location		    [65, 0, 1633, 1080]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -4431,12 +4441,12 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "80"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Sel_Pos_X(1b)"
 	      SID		      "168"
-	      Position		      [20, 68, 50, 82]
+	      Position		      [20, 158, 50, 172]
 	      ZOrder		      1457
 	      IconDisplay	      "Port number"
 	    }
@@ -4444,7 +4454,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Sel_Pos_Y(1B)"
 	      SID		      "169"
-	      Position		      [20, 573, 50, 587]
+	      Position		      [20, 423, 50, 437]
 	      ZOrder		      1470
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -4453,7 +4463,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_In(1b)"
 	      SID		      "171"
-	      Position		      [20, 2433, 50, 2447]
+	      Position		      [20, 2908, 50, 2922]
 	      ZOrder		      1555
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -4462,7 +4472,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Write(1b)"
 	      SID		      "210"
-	      Position		      [20, 18, 50, 32]
+	      Position		      [20, 108, 50, 122]
 	      ZOrder		      1559
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -4471,7 +4481,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "CLK"
 	      SID		      "170"
-	      Position		      [20, 2493, 50, 2507]
+	      Position		      [20, 2968, 50, 2982]
 	      ZOrder		      1554
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -4481,7 +4491,7 @@ Library {
 	      Name		      "Bit to Integer\nConverter"
 	      SID		      "172"
 	      Ports		      [1, 1]
-	      Position		      [2075, 463, 2155, 507]
+	      Position		      [2175, 938, 2255, 982]
 	      ZOrder		      1558
 	      ShowName		      off
 	      LibraryVersion	      "1.271"
@@ -4495,10 +4505,63 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1"
+	      SID		      "214"
+	      Ports		      [6, 1]
+	      Position		      [2200, 17, 2355, 108]
+	      ZOrder		      1563
+	      LibraryVersion	      "1.5"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_8_to_1"
+	      SID		      "211"
+	      Ports		      [11, 1]
+	      Position		      [1870, 442, 2025, 608]
+	      ZOrder		      1560
+	      LibraryVersion	      "1.5"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_8_to_2"
+	      SID		      "212"
+	      Ports		      [11, 1]
+	      Position		      [1870, 252, 2025, 418]
+	      ZOrder		      1561
+	      LibraryVersion	      "1.5"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_8_to_3"
+	      SID		      "213"
+	      Ports		      [11, 1]
+	      Position		      [1870, 62, 2025, 228]
+	      ZOrder		      1562
+	      LibraryVersion	      "1.5"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "215"
+	      Position		      [2135, 45, 2155, 65]
+	      ZOrder		      1564
+	      ShowName		      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Reference
 	      Name		      "Decoder_2_to_4"
 	      SID		      "173"
 	      Ports		      [2, 4]
-	      Position		      [305, 227, 450, 288]
+	      Position		      [300, 352, 445, 413]
 	      ZOrder		      1455
 	      LibraryVersion	      "1.9"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_2_to_4"
@@ -4509,7 +4572,7 @@ Library {
 	      Name		      "Decoder_3_to_8_Enable"
 	      SID		      "174"
 	      Ports		      [4, 8]
-	      Position		      [605, 232, 750, 353]
+	      Position		      [605, 707, 750, 828]
 	      ZOrder		      1452
 	      LibraryVersion	      "1.9"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_3_to_8_Enable"
@@ -4520,7 +4583,7 @@ Library {
 	      Name		      "Decoder_3_to_8_Enable1"
 	      SID		      "175"
 	      Ports		      [4, 8]
-	      Position		      [605, 377, 750, 498]
+	      Position		      [605, 852, 750, 973]
 	      ZOrder		      1453
 	      LibraryVersion	      "1.9"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_3_to_8_Enable"
@@ -4531,7 +4594,7 @@ Library {
 	      Name		      "Decoder_3_to_8_Enable2"
 	      SID		      "176"
 	      Ports		      [4, 8]
-	      Position		      [605, 522, 750, 643]
+	      Position		      [605, 997, 750, 1118]
 	      ZOrder		      1454
 	      LibraryVersion	      "1.9"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_3_to_8_Enable"
@@ -4542,7 +4605,7 @@ Library {
 	      Name		      "Demux5"
 	      SID		      "177"
 	      Ports		      [1, 8]
-	      Position		      [175, 515, 185, 640]
+	      Position		      [175, 365, 185, 490]
 	      ZOrder		      1433
 	      ShowName		      off
 	      Outputs		      "8"
@@ -4553,9 +4616,9 @@ Library {
 	      Name		      "G_Bit"
 	      SID		      "178"
 	      Ports		      [5, 1]
-	      Position		      [1230, 597, 1390, 673]
+	      Position		      [1230, 1072, 1390, 1148]
 	      ZOrder		      1009
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4565,9 +4628,9 @@ Library {
 	      Name		      "G_Bit1"
 	      SID		      "179"
 	      Ports		      [5, 1]
-	      Position		      [1230, 977, 1390, 1053]
+	      Position		      [1230, 1452, 1390, 1528]
 	      ZOrder		      1010
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4577,9 +4640,9 @@ Library {
 	      Name		      "G_Bit10"
 	      SID		      "180"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1547, 1390, 1623]
+	      Position		      [1230, 2022, 1390, 2098]
 	      ZOrder		      1019
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4589,9 +4652,9 @@ Library {
 	      Name		      "G_Bit11"
 	      SID		      "181"
 	      Ports		      [5, 1]
-	      Position		      [1230, 407, 1390, 483]
+	      Position		      [1230, 882, 1390, 958]
 	      ZOrder		      1020
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4601,9 +4664,9 @@ Library {
 	      Name		      "G_Bit12"
 	      SID		      "182"
 	      Ports		      [5, 1]
-	      Position		      [1230, 882, 1390, 958]
+	      Position		      [1230, 1357, 1390, 1433]
 	      ZOrder		      1021
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4613,9 +4676,9 @@ Library {
 	      Name		      "G_Bit13"
 	      SID		      "183"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1262, 1390, 1338]
+	      Position		      [1230, 1737, 1390, 1813]
 	      ZOrder		      1022
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4625,9 +4688,9 @@ Library {
 	      Name		      "G_Bit14"
 	      SID		      "184"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1642, 1390, 1718]
+	      Position		      [1230, 2117, 1390, 2193]
 	      ZOrder		      1023
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4637,9 +4700,9 @@ Library {
 	      Name		      "G_Bit15"
 	      SID		      "185"
 	      Ports		      [5, 1]
-	      Position		      [1230, 502, 1390, 578]
+	      Position		      [1230, 977, 1390, 1053]
 	      ZOrder		      1024
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4649,9 +4712,9 @@ Library {
 	      Name		      "G_Bit16"
 	      SID		      "186"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1737, 1390, 1813]
+	      Position		      [1230, 2212, 1390, 2288]
 	      ZOrder		      1436
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4661,9 +4724,9 @@ Library {
 	      Name		      "G_Bit17"
 	      SID		      "187"
 	      Ports		      [5, 1]
-	      Position		      [1230, 2307, 1390, 2383]
+	      Position		      [1230, 2782, 1390, 2858]
 	      ZOrder		      1441
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4673,9 +4736,9 @@ Library {
 	      Name		      "G_Bit18"
 	      SID		      "188"
 	      Ports		      [5, 1]
-	      Position		      [1230, 2022, 1390, 2098]
+	      Position		      [1230, 2497, 1390, 2573]
 	      ZOrder		      1442
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4685,9 +4748,9 @@ Library {
 	      Name		      "G_Bit19"
 	      SID		      "189"
 	      Ports		      [5, 1]
-	      Position		      [1230, 2402, 1390, 2478]
+	      Position		      [1230, 2877, 1390, 2953]
 	      ZOrder		      1443
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4697,9 +4760,9 @@ Library {
 	      Name		      "G_Bit2"
 	      SID		      "190"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1357, 1390, 1433]
+	      Position		      [1230, 1832, 1390, 1908]
 	      ZOrder		      1011
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4709,9 +4772,9 @@ Library {
 	      Name		      "G_Bit20"
 	      SID		      "191"
 	      Ports		      [5, 1]
-	      Position		      [1230, 2117, 1390, 2193]
+	      Position		      [1230, 2592, 1390, 2668]
 	      ZOrder		      1437
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4721,9 +4784,9 @@ Library {
 	      Name		      "G_Bit21"
 	      SID		      "192"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1832, 1390, 1908]
+	      Position		      [1230, 2307, 1390, 2383]
 	      ZOrder		      1438
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4733,9 +4796,9 @@ Library {
 	      Name		      "G_Bit22"
 	      SID		      "193"
 	      Ports		      [5, 1]
-	      Position		      [1230, 2212, 1390, 2288]
+	      Position		      [1230, 2687, 1390, 2763]
 	      ZOrder		      1439
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4745,9 +4808,9 @@ Library {
 	      Name		      "G_Bit23"
 	      SID		      "194"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1927, 1390, 2003]
+	      Position		      [1230, 2402, 1390, 2478]
 	      ZOrder		      1440
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4757,9 +4820,9 @@ Library {
 	      Name		      "G_Bit3"
 	      SID		      "195"
 	      Ports		      [5, 1]
-	      Position		      [1230, 217, 1390, 293]
+	      Position		      [1230, 692, 1390, 768]
 	      ZOrder		      1012
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4769,9 +4832,9 @@ Library {
 	      Name		      "G_Bit4"
 	      SID		      "196"
 	      Ports		      [5, 1]
-	      Position		      [1230, 692, 1390, 768]
+	      Position		      [1230, 1167, 1390, 1243]
 	      ZOrder		      1013
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4781,9 +4844,9 @@ Library {
 	      Name		      "G_Bit5"
 	      SID		      "197"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1072, 1390, 1148]
+	      Position		      [1230, 1547, 1390, 1623]
 	      ZOrder		      1014
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4793,9 +4856,9 @@ Library {
 	      Name		      "G_Bit6"
 	      SID		      "198"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1452, 1390, 1528]
+	      Position		      [1230, 1927, 1390, 2003]
 	      ZOrder		      1015
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4805,9 +4868,9 @@ Library {
 	      Name		      "G_Bit7"
 	      SID		      "199"
 	      Ports		      [5, 1]
-	      Position		      [1230, 312, 1390, 388]
+	      Position		      [1230, 787, 1390, 863]
 	      ZOrder		      1016
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4817,9 +4880,9 @@ Library {
 	      Name		      "G_Bit8"
 	      SID		      "200"
 	      Ports		      [5, 1]
-	      Position		      [1230, 787, 1390, 863]
+	      Position		      [1230, 1262, 1390, 1338]
 	      ZOrder		      1017
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4829,9 +4892,9 @@ Library {
 	      Name		      "G_Bit9"
 	      SID		      "201"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1167, 1390, 1243]
+	      Position		      [1230, 1642, 1390, 1718]
 	      ZOrder		      1018
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.28"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -4841,7 +4904,7 @@ Library {
 	      Name		      "Integer to Bit\nConverter1"
 	      SID		      "202"
 	      Ports		      [1, 1]
-	      Position		      [70, 565, 140, 595]
+	      Position		      [70, 415, 140, 445]
 	      ZOrder		      1451
 	      ShowName		      off
 	      LibraryVersion	      "1.271"
@@ -4857,7 +4920,7 @@ Library {
 	      Name		      "Mux"
 	      SID		      "203"
 	      Ports		      [24, 1]
-	      Position		      [1945, 247, 1960, 723]
+	      Position		      [1945, 722, 1960, 1198]
 	      ZOrder		      1556
 	      ShowName		      off
 	      Inputs		      "24"
@@ -4867,48 +4930,67 @@ Library {
 	      BlockType		      Terminator
 	      Name		      "Terminator"
 	      SID		      "204"
-	      Position		      [275, 140, 295, 160]
+	      Position		      [185, 275, 205, 295]
 	      ZOrder		      1448
+	      BlockRotation	      270
 	      ShowName		      off
 	    }
 	    Block {
 	      BlockType		      Terminator
 	      Name		      "Terminator1"
 	      SID		      "205"
-	      Position		      [275, 165, 295, 185]
+	      Position		      [205, 275, 225, 295]
 	      ZOrder		      1449
+	      BlockRotation	      270
 	      ShowName		      off
 	    }
 	    Block {
 	      BlockType		      Terminator
 	      Name		      "Terminator2"
 	      SID		      "206"
-	      Position		      [275, 190, 295, 210]
+	      Position		      [225, 275, 245, 295]
 	      ZOrder		      1450
+	      BlockRotation	      270
 	      ShowName		      off
 	    }
 	    Block {
 	      BlockType		      Terminator
 	      Name		      "Terminator3"
 	      SID		      "207"
-	      Position		      [485, 225, 505, 245]
+	      Position		      [480, 350, 500, 370]
 	      ZOrder		      1456
 	      ShowName		      off
 	    }
 	    Block {
 	      BlockType		      Outport
+	      Name		      "Get_Pixel(1b)"
+	      SID		      "216"
+	      Position		      [2420, 58, 2450, 72]
+	      ZOrder		      1565
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
 	      Name		      "Data_Out(24b)"
 	      SID		      "208"
-	      Position		      [2260, 478, 2290, 492]
+	      Position		      [2420, 953, 2450, 967]
 	      ZOrder		      1557
+	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
 	      SrcBlock		      "Demux5"
 	      SrcPort		      5
-	      Points		      [80, 0; 0, -310]
-	      DstBlock		      "Decoder_2_to_4"
-	      DstPort		      2
+	      Points		      [83, 0; 0, -35]
+	      Branch {
+		Points			[0, -360]
+		DstBlock		"Bit_Multiplexer_4_to_1"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"Decoder_2_to_4"
+		DstPort			2
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "Integer to Bit\nConverter1"
@@ -4926,7 +5008,7 @@ Library {
 	    Line {
 	      SrcBlock		      "Demux5"
 	      SrcPort		      3
-	      Points		      [51, 0; 0, -355]
+	      Points		      [45, 0]
 	      DstBlock		      "Terminator2"
 	      DstPort		      1
 	    }
@@ -5128,6 +5210,7 @@ Library {
 	    Line {
 	      SrcBlock		      "Decoder_2_to_4"
 	      SrcPort		      2
+	      Points		      [60, 0; 0, 350]
 	      DstBlock		      "Decoder_3_to_8_Enable"
 	      DstPort		      1
 	    }
@@ -5140,28 +5223,50 @@ Library {
 	    Line {
 	      SrcBlock		      "Demux5"
 	      SrcPort		      7
-	      Points		      [368, 0; 0, -15]
+	      Points		      [368, 0]
 	      Branch {
-		Points			[0, -145]
+		Points			[1263, 0]
 		Branch {
-		  Points		  [0, -145]
-		  DstBlock		  "Decoder_3_to_8_Enable"
-		  DstPort		  3
+		  Points		  [0, -190]
+		  Branch {
+		    DstBlock		    "Bit_Multiplexer_8_to_2"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, -190]
+		    DstBlock		    "Bit_Multiplexer_8_to_3"
+		    DstPort		    2
+		  }
 		}
 		Branch {
-		  DstBlock		  "Decoder_3_to_8_Enable1"
-		  DstPort		  3
+		  DstBlock		  "Bit_Multiplexer_8_to_1"
+		  DstPort		  2
 		}
 	      }
 	      Branch {
-		DstBlock		"Decoder_3_to_8_Enable2"
-		DstPort			3
+		Points			[0, 320]
+		Branch {
+		  Points		  [0, 145]
+		  Branch {
+		    Points		    [0, 145]
+		    DstBlock		    "Decoder_3_to_8_Enable2"
+		    DstPort		    3
+		  }
+		  Branch {
+		    DstBlock		    "Decoder_3_to_8_Enable1"
+		    DstPort		    3
+		  }
+		}
+		Branch {
+		  DstBlock		  "Decoder_3_to_8_Enable"
+		  DstPort		  3
+		}
 	      }
 	    }
 	    Line {
 	      SrcBlock		      "Decoder_2_to_4"
 	      SrcPort		      3
-	      Points		      [50, 0; 0, 130]
+	      Points		      [42, 0; 0, 480]
 	      DstBlock		      "Decoder_3_to_8_Enable1"
 	      DstPort		      1
 	    }
@@ -5307,34 +5412,56 @@ Library {
 	    Line {
 	      SrcBlock		      "Demux5"
 	      SrcPort		      1
-	      Points		      [21, 0; 0, -375]
+	      Points		      [5, 0]
 	      DstBlock		      "Terminator"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Demux5"
 	      SrcPort		      2
-	      Points		      [36, 0; 0, -365]
+	      Points		      [25, 0]
 	      DstBlock		      "Terminator1"
 	      DstPort		      1
 	    }
 	    Line {
 	      SrcBlock		      "Demux5"
 	      SrcPort		      6
-	      Points		      [354, 0; 0, -30]
+	      Points		      [354, 0]
 	      Branch {
-		DstBlock		"Decoder_3_to_8_Enable2"
-		DstPort			2
-	      }
-	      Branch {
-		Points			[0, -145]
+		Points			[1260, 0]
 		Branch {
-		  Points		  [0, -145]
-		  DstBlock		  "Decoder_3_to_8_Enable"
-		  DstPort		  2
+		  Points		  [0, -190]
+		  Branch {
+		    DstBlock		    "Bit_Multiplexer_8_to_2"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, -190]
+		    DstBlock		    "Bit_Multiplexer_8_to_3"
+		    DstPort		    1
+		  }
 		}
 		Branch {
-		  DstBlock		  "Decoder_3_to_8_Enable1"
+		  DstBlock		  "Bit_Multiplexer_8_to_1"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 305]
+		Branch {
+		  Points		  [0, 145]
+		  Branch {
+		    Points		    [0, 145]
+		    DstBlock		    "Decoder_3_to_8_Enable2"
+		    DstPort		    2
+		  }
+		  Branch {
+		    DstBlock		    "Decoder_3_to_8_Enable1"
+		    DstPort		    2
+		  }
+		}
+		Branch {
+		  DstBlock		  "Decoder_3_to_8_Enable"
 		  DstPort		  2
 		}
 	      }
@@ -5342,7 +5469,7 @@ Library {
 	    Line {
 	      SrcBlock		      "Decoder_2_to_4"
 	      SrcPort		      4
-	      Points		      [35, 0; 0, 260]
+	      Points		      [25, 0; 0, 610]
 	      DstBlock		      "Decoder_3_to_8_Enable2"
 	      DstPort		      1
 	    }
@@ -5351,33 +5478,62 @@ Library {
 	      SrcPort		      8
 	      Points		      [382, 0]
 	      Branch {
-		Points			[0, -145]
+		Points			[0, 335]
 		Branch {
-		  Points		  [0, -145]
-		  DstBlock		  "Decoder_3_to_8_Enable"
-		  DstPort		  4
+		  Points		  [0, 145]
+		  Branch {
+		    Points		    [0, 145]
+		    DstBlock		    "Decoder_3_to_8_Enable2"
+		    DstPort		    4
+		  }
+		  Branch {
+		    DstBlock		    "Decoder_3_to_8_Enable1"
+		    DstPort		    4
+		  }
 		}
 		Branch {
-		  DstBlock		  "Decoder_3_to_8_Enable1"
+		  DstBlock		  "Decoder_3_to_8_Enable"
 		  DstPort		  4
 		}
 	      }
 	      Branch {
-		DstBlock		"Decoder_3_to_8_Enable2"
-		DstPort			4
+		Points			[1265, 0]
+		Branch {
+		  Points		  [0, -190]
+		  Branch {
+		    DstBlock		    "Bit_Multiplexer_8_to_2"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [0, -190]
+		    DstBlock		    "Bit_Multiplexer_8_to_3"
+		    DstPort		    3
+		  }
+		}
+		Branch {
+		  DstBlock		  "Bit_Multiplexer_8_to_1"
+		  DstPort		  3
+		}
 	      }
 	    }
 	    Line {
 	      SrcBlock		      "Demux5"
 	      SrcPort		      4
-	      Points		      [66, 0; 0, -325]
-	      DstBlock		      "Decoder_2_to_4"
-	      DstPort		      1
+	      Points		      [70, 0; 0, -50]
+	      Branch {
+		Points			[0, -345]
+		DstBlock		"Bit_Multiplexer_4_to_1"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Decoder_2_to_4"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "Sel_Pos_X(1b)"
 	      SrcPort		      1
-	      Points		      [1140, 0; 0, 150]
+	      Points		      [1140, 0; 0, 535]
 	      Branch {
 		Points			[0, 95]
 		Branch {
@@ -5713,169 +5869,324 @@ Library {
 	    Line {
 	      SrcBlock		      "G_Bit3"
 	      SrcPort		      1
-	      DstBlock		      "Mux"
-	      DstPort		      1
+	      Points		      [58, 0]
+	      Branch {
+		Points			[0, -615]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			4
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			1
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit7"
 	      SrcPort		      1
 	      Points		      [74, 0; 0, -75]
-	      DstBlock		      "Mux"
-	      DstPort		      2
+	      Branch {
+		Points			[0, -620]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			5
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			2
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit11"
 	      SrcPort		      1
 	      Points		      [91, 0; 0, -150]
-	      DstBlock		      "Mux"
-	      DstPort		      3
+	      Branch {
+		Points			[0, -625]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			6
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			3
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit15"
 	      SrcPort		      1
 	      Points		      [108, 0; 0, -225]
-	      DstBlock		      "Mux"
-	      DstPort		      4
+	      Branch {
+		Points			[0, -630]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			7
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			4
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit"
 	      SrcPort		      1
 	      Points		      [126, 0; 0, -300]
-	      DstBlock		      "Mux"
-	      DstPort		      5
+	      Branch {
+		Points			[0, -635]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			8
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			5
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit4"
 	      SrcPort		      1
 	      Points		      [144, 0; 0, -375]
-	      DstBlock		      "Mux"
-	      DstPort		      6
+	      Branch {
+		Points			[0, -640]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			9
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			6
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit8"
 	      SrcPort		      1
 	      Points		      [162, 0; 0, -450]
-	      DstBlock		      "Mux"
-	      DstPort		      7
-	    }
-	    Line {
-	      SrcBlock		      "G_Bit12"
-	      SrcPort		      1
-	      Points		      [179, 0; 0, -525]
-	      DstBlock		      "Mux"
-	      DstPort		      8
+	      Branch {
+		Points			[0, -645]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			10
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			7
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit1"
 	      SrcPort		      1
 	      Points		      [195, 0; 0, -600]
-	      DstBlock		      "Mux"
-	      DstPort		      9
+	      Branch {
+		Points			[0, -585]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			4
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			9
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit5"
 	      SrcPort		      1
 	      Points		      [211, 0; 0, -675]
-	      DstBlock		      "Mux"
-	      DstPort		      10
+	      Branch {
+		Points			[0, -590]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			5
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			10
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit9"
 	      SrcPort		      1
 	      Points		      [227, 0; 0, -750]
-	      DstBlock		      "Mux"
-	      DstPort		      11
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			11
+	      }
+	      Branch {
+		Points			[0, -595]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			6
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit13"
 	      SrcPort		      1
 	      Points		      [243, 0; 0, -825]
-	      DstBlock		      "Mux"
-	      DstPort		      12
+	      Branch {
+		Points			[0, -600]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			7
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			12
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit2"
 	      SrcPort		      1
 	      Points		      [257, 0; 0, -900]
-	      DstBlock		      "Mux"
-	      DstPort		      13
+	      Branch {
+		Points			[0, -605]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			8
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			13
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit6"
 	      SrcPort		      1
 	      Points		      [273, 0; 0, -975]
-	      DstBlock		      "Mux"
-	      DstPort		      14
+	      Branch {
+		Points			[0, -610]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			9
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			14
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit10"
 	      SrcPort		      1
 	      Points		      [290, 0; 0, -1050]
-	      DstBlock		      "Mux"
-	      DstPort		      15
+	      Branch {
+		Points			[0, -615]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			10
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			15
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit14"
 	      SrcPort		      1
 	      Points		      [306, 0; 0, -1125]
-	      DstBlock		      "Mux"
-	      DstPort		      16
+	      Branch {
+		Points			[0, -620]
+		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstPort			11
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			16
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit16"
 	      SrcPort		      1
 	      Points		      [322, 0; 0, -1200]
-	      DstBlock		      "Mux"
-	      DstPort		      17
+	      Branch {
+		Points			[0, -555]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			4
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			17
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit21"
 	      SrcPort		      1
 	      Points		      [338, 0; 0, -1275]
-	      DstBlock		      "Mux"
-	      DstPort		      18
+	      Branch {
+		Points			[0, -560]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			5
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			18
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit23"
 	      SrcPort		      1
 	      Points		      [354, 0; 0, -1350]
-	      DstBlock		      "Mux"
-	      DstPort		      19
+	      Branch {
+		Points			[0, -565]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			6
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			19
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit18"
 	      SrcPort		      1
 	      Points		      [370, 0; 0, -1425]
-	      DstBlock		      "Mux"
-	      DstPort		      20
+	      Branch {
+		Points			[0, -570]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			7
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			20
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit20"
 	      SrcPort		      1
 	      Points		      [386, 0; 0, -1500]
-	      DstBlock		      "Mux"
-	      DstPort		      21
+	      Branch {
+		Points			[0, -575]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			8
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			21
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit22"
 	      SrcPort		      1
 	      Points		      [403, 0; 0, -1575]
-	      DstBlock		      "Mux"
-	      DstPort		      22
+	      Branch {
+		Points			[0, -580]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			9
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			22
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit17"
 	      SrcPort		      1
 	      Points		      [419, 0; 0, -1650]
-	      DstBlock		      "Mux"
-	      DstPort		      23
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			23
+	      }
+	      Branch {
+		Points			[0, -585]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			10
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "G_Bit19"
 	      SrcPort		      1
 	      Points		      [435, 0; 0, -1725]
-	      DstBlock		      "Mux"
-	      DstPort		      24
+	      Branch {
+		Points			[0, -590]
+		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstPort			11
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			24
+	      }
 	    }
 	    Line {
 	      SrcBlock		      "Mux"
@@ -5892,7 +6203,7 @@ Library {
 	    Line {
 	      SrcBlock		      "Write(1b)"
 	      SrcPort		      1
-	      Points		      [1112, 0; 0, 245]
+	      Points		      [1112, 0; 0, 630]
 	      Branch {
 		DstBlock		"G_Bit3"
 		DstPort			4
@@ -6056,6 +6367,53 @@ Library {
 		  }
 		}
 	      }
+	    }
+	    Line {
+	      SrcBlock		      "G_Bit12"
+	      SrcPort		      1
+	      Points		      [179, 0; 0, -525]
+	      Branch {
+		Points			[0, -650]
+		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstPort			11
+	      }
+	      Branch {
+		DstBlock		"Mux"
+		DstPort			8
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Bit_Multiplexer_8_to_3"
+	      SrcPort		      1
+	      Points		      [60, 0; 0, -75]
+	      DstBlock		      "Bit_Multiplexer_4_to_1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Bit_Multiplexer_8_to_2"
+	      SrcPort		      1
+	      Points		      [76, 0; 0, -250]
+	      DstBlock		      "Bit_Multiplexer_4_to_1"
+	      DstPort		      5
+	    }
+	    Line {
+	      SrcBlock		      "Bit_Multiplexer_8_to_1"
+	      SrcPort		      1
+	      Points		      [92, 0; 0, -425]
+	      DstBlock		      "Bit_Multiplexer_4_to_1"
+	      DstPort		      6
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      DstBlock		      "Bit_Multiplexer_4_to_1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Bit_Multiplexer_4_to_1"
+	      SrcPort		      1
+	      DstBlock		      "Get_Pixel(1b)"
+	      DstPort		      1
 	    }
 	  }
 	}
