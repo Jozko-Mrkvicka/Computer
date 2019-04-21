@@ -1,39 +1,212 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format: XXXX YZZZ where:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 1: OOOODDSS IIIIIIII
+%   OOOO     - Operation code
+%   DD       - Register 1 (Destination)
+%   SS       - Register 2 (Source)
+%   IIIIIIII - Immediate value
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 2.1: FF|OO|DD|SS IIIIIIII
+%   FF       - Format
+%   OO       - Operation code
+%   DD       - Register 1 (Destination)
+%   SS       - Register 2 (Source)
+%   IIIIIIII - Immediate value
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 2.2: FF|OOO|DDD IIIIIIII
+%   FF       - Format
+%   OOO      - Operation code
+%   DDD      - Register 1 (Destination)
+%   IIIIIIII - Immediate value
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 2.3: FF|OOOO|RR RR|DDD|SSS
+%   FF       - Format
+%   OOOO     - Operation code
+%   RRRR     - Reserved
+%   DDD      - Register 1 (Destination)
+%   SSS      - Register 2 (Source)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 2.4: FF|RRRRRR RRRRRRRR
+%   FF              - Format
+%   RRRRRR RRRRRRRR - Reserved
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MOV instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand:
+%     Destination.
 %
-%   XXXX - Operation code:
-%       ALU Operations: 11
-%       MEM Operations (which read
-%           or write to/from memory):
-%           3
-%       JMP Operations: N/A
+% Second operand:
+%     Source of data.
 %
-%   Y - Reserved
+% Type of operands:        Example:
+%     MRC   REG  IMM         MRC   r0     10
+%     MRR   REG  REG         MRR   r1     r0
+%     MRM   REG  REG         MRM   r2     a(r1)
+%     MRMI  REG  MEM         MRMI  r2     10
+%     MMR   REG  REG         MMR   a(r1)  r3
+%     MMRI  MEM  REG         MMRI  11     r3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MRC =  bin2dec('0000 0000');
+MRR =  bin2dec('0001 0000');
+MRM =  bin2dec('0010 0000');
+MRMI = bin2dec('0011 0000');
+MMR =  bin2dec('0100 0000');
+MMRI = bin2dec('0101 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      JMP instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand:
+%     Value to compare.
 %
-%   ZZZ - Operands type:
-%     INSTRcr  CONST  REG    (000)
-%     INSTRrr  REG    REG    (001)
-%     INSTRmr  MEM    REG    (010)
-%     INSTRcm  CONST  MEM    (011)
-%     INSTRrm  REG    MEM    (100)
-%     INSTRcc  CONST  CONST  (101)
-%     INSTRrc  REG    CONST  (110)
-%     INSTRmc  MEM    CONST  (111)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Second operand:
+%     Value to compare.
+%
+% Third operand:
+%     Address to jump.
+%
+% Type of operands:        Example:
+%     JPE  REG  REG  IMM     JPE  r0  r1  16
+%     JNE  REG  REG  IMM     JPE  r0  r1  16
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+JPE = bin2dec('0110 0000');
+JNE = bin2dec('0111 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      TXT instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand: 
+%     Character to print.
+%
+% Second operand:
+%     Position to display.
+%
+% Type of operands:        Example:
+%     TMR  REG  REG          TMR  a(r0)  r1
+%     TRR  REG  REG          TRR  r0     r1
+%     TIR  IMM  REG          TIR  J      r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TMR = bin2dec('1000 0000');
+TRR = bin2dec('1001 0000');
+TIR = bin2dec('1010 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      DIS instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand: 
+%     Horizontal position (X) in range 0..15
+%
+% Second operand:
+%     Vertical position (Y) in range 0..23
+%
+% Third operand:
+%     Pixel to set (switch off = 0 / switch on = 1)
+%
+% Type of operands:        Example:
+%     DIS REG REG IMM      DIS r0 r1 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+DIS = bin2dec('1011 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code = 15
+%      ADD instructions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand:
+%     Value to add and also destination for the result.
+%
+% Second operand:
+%     Value to add.
+%
+% Type of operands:        Example:
+%     ADI  REG  IMM          ADI  r0  25
+%     ADD  REG  REG          ADD  r0  r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ADI = bin2dec('1110 0000');
+ADD = bin2dec('1111 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      LOAD instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand:
+%     Index pointing to a data
+%     stored in external memory.
+%
+% Second operand:
+%     Destination RAM address.
+%
 % Type of operands:
-%     ANDcr  CONST  REG    (000)
-%     ANDrr  REG    REG    (001)
-%     ANDmr  MEM    REG    (010)  (Not implemented)
-%     ANDcm  CONST  MEM    (011)  (Not implemented)
-%     ANDrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ANDcr = bin2dec('1111 0000');
-ANDrr = bin2dec('1111 0001');
-AND = bin2dec('1111 0000');
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOAD = bin2dec('0011 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      STORE instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% First operand:
+%     Source of data.
+%
+% Second operand:
+%     Destination.
+%
+% Type of operands:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STORE = bin2dec('0011 0000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      PUSH instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      POP instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      LSH instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      RSH instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General purpose register definitions
+%
+% Prefix "01" means that the number represents a register.
+% Prefix is used only by preprocessor and is erased 
+% (set to zero) after preprocessing.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+r0 = bin2dec('01 0000 0000');
+r1 = bin2dec('01 0000 0001');
+r2 = bin2dec('01 0000 0010');
+r3 = bin2dec('01 0000 0011');
+
+
+
+
+
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -45,9 +218,9 @@ AND = bin2dec('1111 0000');
 %     ORcm  CONST  MEM    (011)  (Not implemented)
 %     ORrm  REG    MEM    (100)  (Not implemented)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ORcr = bin2dec('1110 0000');
-ORrr = bin2dec('1110 0001');
-OR = bin2dec('1110 0000');
+% ORcr = bin2dec('1110 0000');
+% ORrr = bin2dec('1110 0001');
+% OR = bin2dec('1110 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -59,9 +232,9 @@ OR = bin2dec('1110 0000');
 %     XORcm  CONST  MEM    (011)  (Not implemented)
 %     XORrm  REG    MEM    (100)  (Not implemented)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-XORcr = bin2dec('1101 0000');
-XORrr = bin2dec('1101 0001');
-XOR = bin2dec('1101 0000');
+% XORcr = bin2dec('1101 0000');
+% XORrr = bin2dec('1101 0001');
+% XOR = bin2dec('1101 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -77,23 +250,6 @@ XOR = bin2dec('1101 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code = 11
-% Type of operands:
-%     ADDcr  CONST  REG    (000)
-%     ADDrr  REG    REG    (001)
-%     ADDmr  MEM    REG    (010)  (Not implemented)
-%     ADDcm  CONST  MEM    (011)  (Not implemented)
-%     ADDrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADDcr = bin2dec('1011 0000');
-ADDrr = bin2dec('1011 0001');
-%ADDmr = bin2dec('1011 0010');
-%ADDcm = bin2dec('1011 0011');
-%ADDrm = bin2dec('1011 0100');
-ADD = bin2dec('1011 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Operation code = 10
 % Type of operands:
 %     SUBcr  CONST  REG    (000)
@@ -102,162 +258,8 @@ ADD = bin2dec('1011 0000');
 %     SUBcm  CONST  MEM    (011)  (Not implemented)
 %     SUBrm  REG    MEM    (100)  (Not implemented)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SUBcr = bin2dec('1010 0000');
-SUBrr = bin2dec('1010 0001');
-SUB = bin2dec('1010 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 7
-%
-% First operand:
-%     Index pointing to a data
-%     stored in external memory.
-%
-% Second operand:
-%     Destination RAM address.
-%
-% Type of operands:
-%     LOADcr  CONST  REG    (000) (Not implemented)
-%     LOADrr  REG    REG    (001) (Not implemented)
-%     LOADmr  MEM    REG    (010) (Not implemented)
-%     LOADcm  CONST  MEM    (011) (Not implemented)
-%     LOADrm  REG    MEM    (100) (Not implemented)
-%     LOADcc  CONST  CONST  (101) (Not implemented)
-%     LOADrc  REG    CONST  (110) (Not implemented)
-%     LOADmc  MEM    CONST  (111) (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LOADcr = bin2dec('0011 0000');
-% LOADrr = bin2dec('0011 0001');
-% LOADmr = bin2dec('0011 0010');
-% LOADcm = bin2dec('0011 0011');
-% LOADrm = bin2dec('0011 0100');
-LOAD = bin2dec('0011 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 6
-%
-% First operand:
-%     Source of data.
-%
-% Second operand:
-%     Destination.
-%
-% Type of operands:
-%     STOREcr  CONST  REG  (000)
-%     STORErr  REG    REG  (001)
-%     STOREmr  MEM    REG  (010)
-%     STOREcm  CONST  MEM  (011)
-%     STORErm  REG    MEM  (100)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% MOVcr = bin2dec('0011 0000');
-% MOVrr = bin2dec('0011 0001');
-% MOVmr = bin2dec('0011 0010');
-% MOVcm = bin2dec('0011 0011');
-% MOVrm = bin2dec('0011 0100');
-% MOV = bin2dec('0011 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 5
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% GPR
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 4
-%
-% First operand: 
-%     Character to print.
-%
-% Second operand:
-%     Position on display.
-%
-% Type of operands:
-%     TPRcr  CONST  REG    (000)
-%     TPRrr  REG    REG    (001)
-%     TPRmr  MEM    REG    (010)
-%     TPRcm  CONST  MEM    (011)
-%     TPRrm  REG    MEM    (100)
-%     TPRcc  CONST  CONST  (101)
-%     TPRrc  REG    CONST  (110)
-%     TPRmc  MEM    CONST  (111)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TPRcr = bin2dec('0100 0000');
-TPRrr = bin2dec('0100 0001');
-TPRmr = bin2dec('0100 0010');
-TPRcm = bin2dec('0100 0011');
-TPRrm = bin2dec('0100 0100');
-TPRcc = bin2dec('0100 0101');
-TPRrc = bin2dec('0100 0110');
-TPRmc = bin2dec('0100 0111');
-TPR = bin2dec('0100 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 3
-%
-% First operand:
-%     Source of data.
-%
-% Second operand:
-%     Destination.
-%
-% Type of operands:
-%     MOVcr  CONST  REG  (000)
-%     MOVrr  REG    REG  (001)
-%     MOVmr  MEM    REG  (010)
-%     MOVcm  CONST  MEM  (011)
-%     MOVrm  REG    MEM  (100)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVcr = bin2dec('0011 0000');
-MOVrr = bin2dec('0011 0001');
-MOVmr = bin2dec('0011 0010');
-MOVcm = bin2dec('0011 0011');
-MOVrm = bin2dec('0011 0100');
-MOV = bin2dec('0011 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code: 1
-% Type of operands:
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%JMP = bin2dec('0001 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% operation code = 0
-% number of operands = 2
-% operands type = 00 (direct, direct)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%JEQ = bin2dec('0000 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% General purpose register definitions
-%
-% Prefix "01" means that the number represents a register.
-% Prefix is used only by preprocessor and is erased 
-% (set to zero) after preprocessing.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-REG_A = bin2dec('0000 0000');
-REG_B = bin2dec('0000 0001');
-REG_C = bin2dec('0000 0010');
-REG_D = bin2dec('0000 0011');
-REG_A = bitor(REG_A, bin2dec('01 0000 0000'));
-REG_B = bitor(REG_B, bin2dec('01 0000 0000'));
-REG_C = bitor(REG_C, bin2dec('01 0000 0000'));
-REG_D = bitor(REG_D, bin2dec('01 0000 0000'));
-
-
-
-
-
-
-
-
-
-
+% SUBcr = bin2dec('1010 0000');
+% SUBrr = bin2dec('1010 0001');
+% SUB = bin2dec('1010 0000');
 
 

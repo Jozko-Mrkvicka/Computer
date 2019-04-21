@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [746.0, 226.0, 914.0, 822.0]
+      Location		      [275.0, 69.0, 1212.0, 986.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[864.0, 656.0]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"117"
+	Extents			[1162.0, 820.0]
 	ZoomFactor		[1.0]
-	Offset			[413.74140406974118, 368.77499982714653]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Feb 24 11:20:33 2019"
-  RTWModifiedTimeStamp	  472908029
-  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  LastModifiedDate	  "Sat Apr 20 11:50:23 2019"
+  RTWModifiedTimeStamp	  477661822
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -793,7 +793,7 @@ Library {
   System {
     Name		    "Decoders_Lib"
     Location		    [746, 226, 1660, 1048]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -806,7 +806,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "156"
+    SIDHighWatermark	    "180"
     Block {
       BlockType		      SubSystem
       Name		      "Decoders_Lib"
@@ -823,8 +823,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"Decoders_Lib"
-	Location		[784, 174, 1698, 996]
-	Open			off
+	Location		[275, 69, 1487, 1055]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1599,6 +1599,606 @@ Library {
 	      SrcPort		      1
 	      DstBlock		      "Select_7(1b)"
 	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Decoder_3_to_8_Enable"
+	  SID			  "157"
+	  Ports			  [4, 8]
+	  Position		  [285, 112, 430, 233]
+	  ZOrder		  374
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Decoder_3_to_8_Enable"
+	    Location		    [275, 69, 1487, 1055]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "125"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Enable(1b)"
+	      SID		      "180"
+	      Position		      [50, 718, 80, 732]
+	      ZOrder		      59
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Address_2(1b)\n"
+	      SID		      "158"
+	      Position		      [50, 773, 80, 787]
+	      ZOrder		      1
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Address_1(1b)"
+	      SID		      "159"
+	      Position		      [50, 833, 80, 847]
+	      ZOrder		      27
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Address_0(1b)"
+	      SID		      "160"
+	      Position		      [50, 893, 80, 907]
+	      ZOrder		      28
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator10"
+	      SID		      "161"
+	      Ports		      [4, 1]
+	      Position		      [598, 878, 633, 912]
+	      ZOrder		      51
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator11"
+	      SID		      "162"
+	      Ports		      [4, 1]
+	      Position		      [598, 933, 633, 967]
+	      ZOrder		      52
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator12"
+	      SID		      "163"
+	      Ports		      [4, 1]
+	      Position		      [598, 988, 633, 1022]
+	      ZOrder		      53
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator13"
+	      SID		      "164"
+	      Ports		      [4, 1]
+	      Position		      [598, 1043, 633, 1077]
+	      ZOrder		      54
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator14"
+	      SID		      "165"
+	      Ports		      [4, 1]
+	      Position		      [598, 1098, 633, 1132]
+	      ZOrder		      55
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator15"
+	      SID		      "166"
+	      Ports		      [4, 1]
+	      Position		      [598, 1153, 633, 1187]
+	      ZOrder		      56
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator16"
+	      SID		      "167"
+	      Ports		      [4, 1]
+	      Position		      [598, 1208, 633, 1242]
+	      ZOrder		      57
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator17"
+	      SID		      "168"
+	      Ports		      [4, 1]
+	      Position		      [598, 1263, 633, 1297]
+	      ZOrder		      58
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator22"
+	      SID		      "169"
+	      Ports		      [1, 1]
+	      Position		      [165, 854, 185, 876]
+	      ZOrder		      29
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator23"
+	      SID		      "170"
+	      Ports		      [1, 1]
+	      Position		      [165, 914, 185, 936]
+	      ZOrder		      30
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator5"
+	      SID		      "171"
+	      Ports		      [1, 1]
+	      Position		      [165, 794, 185, 816]
+	      ZOrder		      10
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_7(1b)"
+	      SID		      "172"
+	      Position		      [775, 888, 805, 902]
+	      ZOrder		      35
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_6(1b)"
+	      SID		      "173"
+	      Position		      [775, 943, 805, 957]
+	      ZOrder		      36
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_5(1b)"
+	      SID		      "174"
+	      Position		      [775, 998, 805, 1012]
+	      ZOrder		      37
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_4(1b)"
+	      SID		      "175"
+	      Position		      [775, 1053, 805, 1067]
+	      ZOrder		      38
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_3(1b)"
+	      SID		      "176"
+	      Position		      [775, 1108, 805, 1122]
+	      ZOrder		      39
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_2(1b)"
+	      SID		      "177"
+	      Position		      [775, 1163, 805, 1177]
+	      ZOrder		      40
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_1(1b)"
+	      SID		      "178"
+	      Position		      [775, 1218, 805, 1232]
+	      ZOrder		      41
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select_0(1b)"
+	      SID		      "179"
+	      Position		      [775, 1273, 805, 1287]
+	      ZOrder		      42
+	      Port		      "8"
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Address_0(1b)"
+	      SrcPort		      1
+	      Points		      [35, 0]
+	      Branch {
+		Points			[262, 0]
+		Branch {
+		  DstBlock		  "Logical\nOperator10"
+		  DstPort		  3
+		}
+		Branch {
+		  Points		  [0, 110]
+		  Branch {
+		    Points		    [201, 0]
+		    DstBlock		    "Logical\nOperator12"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [0, 110]
+		    Branch {
+		    Points		    [201, 0]
+		    DstBlock		    "Logical\nOperator14"
+		    DstPort		    3
+		    }
+		    Branch {
+		    Points		    [0, 100]
+		    DstBlock		    "Logical\nOperator16"
+		    DstPort		    2
+		    }
+		  }
+		}
+	      }
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Logical\nOperator23"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator22"
+	      SrcPort		      1
+	      Points		      [88, 0; 0, 135]
+	      Branch {
+		Points			[305, 0]
+		DstBlock		"Logical\nOperator12"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 55]
+		Branch {
+		  Points		  [305, 0]
+		  DstBlock		  "Logical\nOperator13"
+		  DstPort		  2
+		}
+		Branch {
+		  Points		  [0, 175]
+		  Branch {
+		    Points		    [305, 0]
+		    DstBlock		    "Logical\nOperator16"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Logical\nOperator17"
+		    DstPort		    3
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator23"
+	      SrcPort		      1
+	      Points		      [64, 0; 0, 30]
+	      Branch {
+		Points			[329, 0]
+		DstBlock		"Logical\nOperator11"
+		DstPort			3
+	      }
+	      Branch {
+		Points			[0, 110]
+		Branch {
+		  Points		  [329, 0]
+		  DstBlock		  "Logical\nOperator13"
+		  DstPort		  3
+		}
+		Branch {
+		  Points		  [0, 110]
+		  Branch {
+		    Points		    [329, 0]
+		    DstBlock		    "Logical\nOperator15"
+		    DstPort		    3
+		  }
+		  Branch {
+		    Points		    [0, 100]
+		    DstBlock		    "Logical\nOperator17"
+		    DstPort		    2
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator5"
+	      SrcPort		      1
+	      Points		      [109, 0; 0, 295]
+	      Branch {
+		Points			[284, 0]
+		DstBlock		"Logical\nOperator14"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[0, 55]
+		Branch {
+		  Points		  [284, 0]
+		  DstBlock		  "Logical\nOperator15"
+		  DstPort		  1
+		}
+		Branch {
+		  Points		  [0, 55]
+		  Branch {
+		    Points		    [284, 0]
+		    DstBlock		    "Logical\nOperator16"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Logical\nOperator17"
+		    DstPort		    1
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Address_1(1b)"
+	      SrcPort		      1
+	      Points		      [34, 0; 0, 1]
+	      Branch {
+		Points			[282, 0; 0, 49]
+		Branch {
+		  Points		  [0, 55]
+		  Branch {
+		    Points		    [182, 0]
+		    DstBlock		    "Logical\nOperator11"
+		    DstPort		    2
+		  }
+		  Branch {
+		    Points		    [0, 165]
+		    Branch {
+		    Points		    [182, 0]
+		    DstBlock		    "Logical\nOperator14"
+		    DstPort		    2
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Logical\nOperator15"
+		    DstPort		    2
+		    }
+		  }
+		}
+		Branch {
+		  DstBlock		  "Logical\nOperator10"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		Points			[0, 24]
+		DstBlock		"Logical\nOperator22"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Address_2(1b)\n"
+	      SrcPort		      1
+	      Points		      [36, 0; 0, 1]
+	      Branch {
+		Points			[301, 0; 0, 99]
+		Branch {
+		  Points		  [0, 55]
+		  Branch {
+		    Points		    [161, 0]
+		    DstBlock		    "Logical\nOperator11"
+		    DstPort		    1
+		  }
+		  Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    Points		    [161, 0]
+		    DstBlock		    "Logical\nOperator12"
+		    DstPort		    1
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Logical\nOperator13"
+		    DstPort		    1
+		    }
+		  }
+		}
+		Branch {
+		  DstBlock		  "Logical\nOperator10"
+		  DstPort		  1
+		}
+	      }
+	      Branch {
+		Points			[0, 24]
+		DstBlock		"Logical\nOperator5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator17"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_0(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator16"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_1(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator15"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_2(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator14"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_3(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator13"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_4(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator12"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_5(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator11"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_6(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Logical\nOperator10"
+	      SrcPort		      1
+	      Points		      [122, 0]
+	      DstBlock		      "Select_7(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Enable(1b)"
+	      SrcPort		      1
+	      Points		      [460, 0; 0, 185]
+	      Branch {
+		DstBlock		"Logical\nOperator10"
+		DstPort			4
+	      }
+	      Branch {
+		Points			[0, 55]
+		Branch {
+		  DstBlock		  "Logical\nOperator11"
+		  DstPort		  4
+		}
+		Branch {
+		  Points		  [0, 55]
+		  Branch {
+		    DstBlock		    "Logical\nOperator12"
+		    DstPort		    4
+		  }
+		  Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "Logical\nOperator14"
+		    DstPort		    4
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "Logical\nOperator15"
+		    DstPort		    4
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    Branch {
+		    DstBlock		    "Logical\nOperator16"
+		    DstPort		    4
+		    }
+		    Branch {
+		    Points		    [0, 55]
+		    DstBlock		    "Logical\nOperator17"
+		    DstPort		    4
+		    }
+		    }
+		    }
+		    }
+		    Branch {
+		    DstBlock		    "Logical\nOperator13"
+		    DstPort		    4
+		    }
+		  }
+		}
+	      }
 	    }
 	  }
 	}
