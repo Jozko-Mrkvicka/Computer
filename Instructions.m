@@ -40,9 +40,67 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      ADD instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+%
+% First operand:
+%     In: First value to add.
+%     Out: Destination for result.
+%
+% Second operand:
+%     Value to add.
+%
+% Type of operands:        Example:
+%     ADD  REG  REG          ADD  r0  r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ADD = bin2dec('11011000 00000000');
+ADD = bin2dec('11011000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      GPX instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+%
+% First operand: 
+%     In: Horizontal position (X) in range 0..15.
+%     Out: Read pixel value is stored here. 
+%
+% Second operand:
+%     Vertical position (Y) in range 0..23
+%
+% Type of operands:        Example:
+%     DIS REG REG          DIS r0 r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+GPX = bin2dec('11010100');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     TXT instructions (TRR, TMR)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+%
+% First operand: 
+%     Character to print.
+%
+% Second operand:
+%     Position on display.
+%
+% Type of operands:        Example:
+%     TRR  REG  REG          TRR  r0     r1
+%     TMR  REG  REG          TMR  a(r0)  r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TRR = bin2dec('11010000');
+TMR = bin2dec('11001100');
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MOV instructions
+%      MOV instructions (MMR, MRM, MRR)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+%
 % First operand:
 %     Destination.
 %
@@ -50,63 +108,76 @@
 %     Source of data.
 %
 % Type of operands:        Example:
-%     MRC   REG  IMM         MRC   r0     10
-%     MRR   REG  REG         MRR   r1     r0
-%     MRM   REG  REG         MRM   r2     a(r1)
-%     MRMI  REG  MEM         MRMI  r2     10
 %     MMR   REG  REG         MMR   a(r1)  r3
-%     MMRI  MEM  REG         MMRI  11     r3
+%     MRM   REG  REG         MRM   r2     a(r1)
+%     MRR   REG  REG         MRR   r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MRC =  bin2dec('0000 0000');
-MRR =  bin2dec('0001 0000');
-MRM =  bin2dec('0010 0000');
-MRMI = bin2dec('0011 0000');
-MMR =  bin2dec('0100 0000');
-MMRI = bin2dec('0101 0000');
+MMR =  bin2dec('11001000');
+MRM =  bin2dec('11000100');
+MRR =  bin2dec('11000000');
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      JMP instructions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      ADI instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.2: FF|OOO|DDD IIIIIIII
+%
 % First operand:
-%     Value to compare.
+%     In: First value to add.
+%     Out: Destination for result.
 %
 % Second operand:
-%     Value to compare.
-%
-% Third operand:
-%     Address to jump.
+%     Value to add.
 %
 % Type of operands:        Example:
-%     JPE  REG  REG  IMM     JPE  r0  r1  16
-%     JNE  REG  REG  IMM     JPE  r0  r1  16
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JPE = bin2dec('0110 0000');
-JNE = bin2dec('0111 0000');
+%     ADI  REG  IMM          ADI  r0  25
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ADI = bin2dec('10100000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      TXT instructions
+%      TIR instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.2: FF|OOO|DDD IIIIIIII
+%
 % First operand: 
 %     Character to print.
 %
 % Second operand:
-%     Position to display.
+%     Position on display.
 %
 % Type of operands:        Example:
-%     TMR  REG  REG          TMR  a(r0)  r1
-%     TRR  REG  REG          TRR  r0     r1
 %     TIR  IMM  REG          TIR  J      r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TMR = bin2dec('1000 0000');
-TRR = bin2dec('1001 0000');
-TIR = bin2dec('1010 0000');
+TIR = bin2dec('10011000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MOV instructions (MMRI, MRMI, MRC)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.2: FF|OOO|DDD IIIIIIII
+%
+% First operand:
+%     Destination.
+%
+% Second operand:
+%     Source of data.
+%
+% Type of operands:        Example:
+%     MMRI  IMM  REG         MMRI  a(11)  r3
+%     MRMI  REG  IMM         MRMI  r2     a(10)
+%     MRC   REG  IMM         MRC   r0     10
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MMRI = bin2dec('10010000');
+MRMI = bin2dec('10001000');
+MRC =  bin2dec('10000000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      DIS instruction
+%      SPX instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.1: FF|OO|DD|SS IIIIIIII
+%
 % First operand: 
 %     Horizontal position (X) in range 0..15
 %
@@ -117,26 +188,31 @@ TIR = bin2dec('1010 0000');
 %     Pixel to set (switch off = 0 / switch on = 1)
 %
 % Type of operands:        Example:
-%     DIS REG REG IMM      DIS r0 r1 1
+%     SPX REG REG IMM      SPX r0 r1 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-DIS = bin2dec('1011 0000');
+SPX = bin2dec('01100000');
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      GPX instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% First operand: 
-%     In: Horizontal position (X) in range 0..15.
-%     Out: Read pixel value is stored here. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      JMP instructions (JPE, JNE)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2.1: FF|OO|DD|SS IIIIIIII
+%
+% First operand:
+%     Value to compare.
 %
 % Second operand:
-%     Vertical position (Y) in range 0..23
+%     Value to compare.
+%
+% Third operand:
+%     Address to jump.
 %
 % Type of operands:        Example:
-%     DIS REG REG IMM      DIS r0 r1 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     GPX REG REG          GPX r0 r1
-GPX = bin2dec('1100 0000');
+%     JNE  REG  REG  IMM     JPE  r0  r1  16
+%     JPE  REG  REG  IMM     JPE  r0  r1  16
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+JNE = bin2dec('01010000');
+JPE = bin2dec('01000000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -151,23 +227,6 @@ GPX = bin2dec('1100 0000');
 % SUBcr = bin2dec('1010 0000');
 % SUBrr = bin2dec('1010 0001');
 % SUB = bin2dec('1010 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ADD instructions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% First operand:
-%     Value to add and also destination for the result.
-%
-% Second operand:
-%     Value to add.
-%
-% Type of operands:        Example:
-%     ADI  REG  IMM          ADI  r0  25
-%     ADD  REG  REG          ADD  r0  r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADI = bin2dec('1110 0000');
-ADD = bin2dec('1111 0000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -224,10 +283,10 @@ ADD = bin2dec('1111 0000');
 % Prefix is used only by preprocessor and is erased 
 % (set to zero) after preprocessing.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-r0 = bin2dec('01 0000 0000');
-r1 = bin2dec('01 0000 0001');
-r2 = bin2dec('01 0000 0010');
-r3 = bin2dec('01 0000 0011');
+r0 = bin2dec('0000 0000');
+r1 = bin2dec('0000 0001');
+r2 = bin2dec('0000 0010');
+r3 = bin2dec('0000 0011');
 
 
 

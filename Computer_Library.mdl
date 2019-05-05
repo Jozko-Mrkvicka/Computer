@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"1505"
 	Extents			[1572.0, 914.0]
-	ZoomFactor		[1.5]
-	Offset			[835.20191560405135, -22.090337382507975]
+	ZoomFactor		[0.8]
+	Offset			[378.06096925849056, 527.06732070815337]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 21 15:21:27 2019"
-  RTWModifiedTimeStamp	  477760883
-  ModelVersionFormat	  "1.%<AutoIncrement:523>"
+  LastModifiedDate	  "Sun May 05 17:52:22 2019"
+  RTWModifiedTimeStamp	  478979418
+  ModelVersionFormat	  "1.%<AutoIncrement:527>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -814,7 +814,7 @@ Library {
   System {
     Name		    "Computer_Library"
     Location		    [64, 0, 1686, 1080]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -827,7 +827,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "5490"
+    SIDHighWatermark	    "5521"
     Block {
       BlockType		      SubSystem
       Name		      "16B_ROM_Memory"
@@ -1676,8 +1676,8 @@ Library {
       MaskHideContents	      off
       System {
 	Name			"ALU"
-	Location		[57, 0, 1928, 1096]
-	Open			off
+	Location		[64, 0, 1686, 1080]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1688,10 +1688,10 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
-	  Name			  "Instruction(1B)"
+	  Name			  "ADD_or_ADDI(1b)"
 	  SID			  "2069"
 	  Position		  [850, 733, 880, 747]
 	  ZOrder		  619
@@ -1714,28 +1714,6 @@ Library {
 	  ZOrder		  621
 	  Port			  "3"
 	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "16_to_1_Byte_Multiplexer"
-	  SID			  "1936"
-	  Ports			  [20, 1]
-	  Position		  [1710, 1080, 1880, 1585]
-	  ZOrder		  491
-	  LibraryVersion	  "1.12"
-	  SourceBlock		  "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1"
-	  SourceType		  "SubSystem"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux"
-	  SID			  "1937"
-	  Ports			  [1, 8]
-	  Position		  [1610, 865, 1625, 1060]
-	  ZOrder		  492
-	  ShowName		  off
-	  Outputs		  "8"
-	  DisplayOption		  "bar"
 	}
 	Block {
 	  BlockType		  Constant
@@ -1895,26 +1873,245 @@ Library {
 	  SourceType		  "SubSystem"
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "Integer to Bit\nConverter"
-	  SID			  "1959"
-	  Ports			  [1, 1]
-	  Position		  [1475, 718, 1555, 762]
-	  ZOrder		  608
-	  ShowName		  off
-	  LibraryVersion	  "1.271"
-	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
-	  SourceType		  "Integer to Bit Converter"
-	  nbits			  "8"
-	  signedInputValues	  "Unsigned"
-	  bitOrder		  "MSB first"
-	  outDtype		  "boolean"
+	  BlockType		  SubSystem
+	  Name			  "Select_Data"
+	  SID			  "5491"
+	  Ports			  [2, 1]
+	  Position		  [1795, 1081, 1985, 1234]
+	  ZOrder		  1847
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Select_Data"
+	    Location		    [64, 0, 1686, 1080]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Select_ADD_or_ADDI(1b)"
+	      SID		      "5492"
+	      Position		      [20, 88, 50, 102]
+	      ZOrder		      1325
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "From_ADD_or_ADDI(1B)"
+	      SID		      "5497"
+	      Position		      [20, 418, 50, 432]
+	      ZOrder		      1329
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte_Multiplexer_8_to_1"
+	      SID		      "5503"
+	      Ports		      [11, 1]
+	      Position		      [275, 371, 430, 539]
+	      ZOrder		      1336
+	      LibraryVersion	      "1.12"
+	      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_8_to_1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant"
+	      SID		      "5504"
+	      Position		      [185, 430, 205, 450]
+	      ZOrder		      1339
+	      ShowName		      off
+	      Value		      "0"
+	      OutDataTypeStr	      "uint8"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      SID		      "5505"
+	      Position		      [185, 100, 205, 120]
+	      ZOrder		      1340
+	      ShowName		      off
+	      Value		      "0"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Encoder_8_to_3"
+	      SID		      "5507"
+	      Ports		      [8, 3]
+	      Position		      [270, 86, 430, 209]
+	      ZOrder		      1334
+	      LibraryVersion	      "1.15"
+	      SourceBlock	      "Encoders_Lib/Encoders_Lib/Encoder_8_to_3"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_Out(1B)"
+	      SID		      "5509"
+	      Position		      [520, 448, 550, 462]
+	      ZOrder		      1333
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Encoder_8_to_3"
+	      SrcPort		      1
+	      Points		      [58, 0; 0, 200; -251, 0; 0, 70]
+	      DstBlock		      "Byte_Multiplexer_8_to_1"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Encoder_8_to_3"
+	      SrcPort		      2
+	      Points		      [42, 0; 0, 145; -249, 0; 0, 100]
+	      DstBlock		      "Byte_Multiplexer_8_to_1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "From_ADD_or_ADDI(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Byte_Multiplexer_8_to_1"
+	      DstPort		      4
+	    }
+	    Line {
+	      SrcBlock		      "Byte_Multiplexer_8_to_1"
+	      SrcPort		      1
+	      DstBlock		      "Data_Out(1B)"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Select_ADD_or_ADDI(1b)"
+	      SrcPort		      1
+	      DstBlock		      "Encoder_8_to_3"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Encoder_8_to_3"
+	      SrcPort		      3
+	      Points		      [27, 0; 0, 89; -248, 0; 0, 131]
+	      DstBlock		      "Byte_Multiplexer_8_to_1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Constant"
+	      SrcPort		      1
+	      Points		      [39, 0]
+	      Branch {
+		DstBlock		"Byte_Multiplexer_8_to_1"
+		DstPort			5
+	      }
+	      Branch {
+		Points			[0, 15]
+		Branch {
+		  DstBlock		  "Byte_Multiplexer_8_to_1"
+		  DstPort		  6
+		}
+		Branch {
+		  Points		  [0, 15]
+		  Branch {
+		    DstBlock		    "Byte_Multiplexer_8_to_1"
+		    DstPort		    7
+		  }
+		  Branch {
+		    Points		    [0, 15]
+		    Branch {
+		    DstBlock		    "Byte_Multiplexer_8_to_1"
+		    DstPort		    8
+		    }
+		    Branch {
+		    Points		    [0, 15]
+		    Branch {
+		    DstBlock		    "Byte_Multiplexer_8_to_1"
+		    DstPort		    9
+		    }
+		    Branch {
+		    Points		    [0, 15]
+		    Branch {
+		    DstBlock		    "Byte_Multiplexer_8_to_1"
+		    DstPort		    10
+		    }
+		    Branch {
+		    Points		    [0, 15]
+		    DstBlock		    "Byte_Multiplexer_8_to_1"
+		    DstPort		    11
+		    }
+		    }
+		    }
+		  }
+		}
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      Points		      [39, 0]
+	      Branch {
+		DstBlock		"Encoder_8_to_3"
+		DstPort			2
+	      }
+	      Branch {
+		Points			[0, 15]
+		Branch {
+		  DstBlock		  "Encoder_8_to_3"
+		  DstPort		  3
+		}
+		Branch {
+		  Points		  [0, 15]
+		  Branch {
+		    DstBlock		    "Encoder_8_to_3"
+		    DstPort		    4
+		  }
+		  Branch {
+		    Points		    [0, 15]
+		    Branch {
+		    DstBlock		    "Encoder_8_to_3"
+		    DstPort		    5
+		    }
+		    Branch {
+		    Points		    [0, 15]
+		    Branch {
+		    DstBlock		    "Encoder_8_to_3"
+		    DstPort		    6
+		    }
+		    Branch {
+		    Points		    [0, 15]
+		    Branch {
+		    DstBlock		    "Encoder_8_to_3"
+		    DstPort		    7
+		    }
+		    Branch {
+		    Points		    [0, 15]
+		    DstBlock		    "Encoder_8_to_3"
+		    DstPort		    8
+		    }
+		    }
+		    }
+		  }
+		}
+	      }
+	    }
+	  }
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator"
 	  SID			  "1938"
-	  Position		  [1740, 965, 1760, 985]
+	  Position		  [1715, 1235, 1735, 1255]
 	  ZOrder		  493
 	  ShowName		  off
 	}
@@ -1922,15 +2119,47 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator1"
 	  SID			  "1939"
-	  Position		  [1740, 990, 1760, 1010]
+	  Position		  [1715, 1260, 1735, 1280]
 	  ZOrder		  494
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator10"
+	  SID			  "5516"
+	  Position		  [1715, 1485, 1735, 1505]
+	  ZOrder		  1854
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator11"
+	  SID			  "5517"
+	  Position		  [1715, 1510, 1735, 1530]
+	  ZOrder		  1855
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator12"
+	  SID			  "5518"
+	  Position		  [1715, 1535, 1735, 1555]
+	  ZOrder		  1856
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator13"
+	  SID			  "5519"
+	  Position		  [1715, 1560, 1735, 1580]
+	  ZOrder		  1857
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  "1940"
-	  Position		  [1740, 1015, 1760, 1035]
+	  Position		  [1715, 1285, 1735, 1305]
 	  ZOrder		  495
 	  ShowName		  off
 	}
@@ -1938,15 +2167,63 @@ Library {
 	  BlockType		  Terminator
 	  Name			  "Terminator3"
 	  SID			  "1941"
-	  Position		  [1740, 1040, 1760, 1060]
+	  Position		  [1715, 1310, 1735, 1330]
 	  ZOrder		  496
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator4"
+	  SID			  "5510"
+	  Position		  [1715, 1335, 1735, 1355]
+	  ZOrder		  1848
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator5"
+	  SID			  "5511"
+	  Position		  [1715, 1360, 1735, 1380]
+	  ZOrder		  1849
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator6"
+	  SID			  "5512"
+	  Position		  [1715, 1385, 1735, 1405]
+	  ZOrder		  1850
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator7"
+	  SID			  "5513"
+	  Position		  [1715, 1410, 1735, 1430]
+	  ZOrder		  1851
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator8"
+	  SID			  "5514"
+	  Position		  [1715, 1435, 1735, 1455]
+	  ZOrder		  1852
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  "Terminator9"
+	  SID			  "5515"
+	  Position		  [1715, 1460, 1735, 1480]
+	  ZOrder		  1853
 	  ShowName		  off
 	}
 	Block {
 	  BlockType		  Outport
 	  Name			  "Data_Out(1B)"
 	  SID			  "1678"
-	  Position		  [1935, 1328, 1965, 1342]
+	  Position		  [2055, 1153, 2085, 1167]
 	  ZOrder		  -2
 	  IconDisplay		  "Port number"
 	}
@@ -2049,183 +2326,118 @@ Library {
 	  SrcBlock		  "Instruction_ADD"
 	  SrcPort		  1
 	  Points		  [309, 0; 0, 365]
-	  Branch {
-	    Points		    [0, 25]
-	    DstBlock		    "16_to_1_Byte_Multiplexer"
-	    DstPort		    6
-	  }
-	  Branch {
-	    DstBlock		    "16_to_1_Byte_Multiplexer"
-	    DstPort		    5
-	  }
+	  DstBlock		  "Select_Data"
+	  DstPort		  2
 	}
 	Line {
 	  SrcBlock		  "Instruction_XOR"
 	  SrcPort		  1
-	  Points		  [253, 0; 0, 265]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  7
+	  Points		  [266, 0; 0, 265]
+	  DstBlock		  "Terminator"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_NOT"
 	  SrcPort		  1
-	  Points		  [223, 0; 0, 220]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  8
+	  Points		  [230, 0; 0, 220]
+	  DstBlock		  "Terminator1"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_AND"
 	  SrcPort		  1
-	  Points		  [193, 0; 0, 175]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  9
+	  Points		  [196, 0; 0, 175]
+	  DstBlock		  "Terminator2"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_SUB"
 	  SrcPort		  1
-	  Points		  [162, 0; 0, 135]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  10
+	  Points		  [163, 0; 0, 135]
+	  DstBlock		  "Terminator3"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_1"
 	  SrcPort		  1
-	  Points		  [150, 0; 0, 75]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  11
+	  Points		  [128, 0; 0, 75]
+	  DstBlock		  "Terminator4"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_2"
 	  SrcPort		  1
-	  Points		  [117, 0; 0, 25]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  12
+	  Points		  [73, 0; 0, 25]
+	  DstBlock		  "Terminator5"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_3"
 	  SrcPort		  1
-	  Points		  [117, 0; 0, -25]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  13
+	  Points		  [72, 0; 0, -25]
+	  DstBlock		  "Terminator6"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_4"
 	  SrcPort		  1
-	  Points		  [154, 0; 0, -80]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  14
+	  Points		  [149, 0; 0, -80]
+	  DstBlock		  "Terminator7"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_5"
 	  SrcPort		  1
-	  Points		  [180, 0; 0, -125]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  15
+	  Points		  [178, 0; 0, -125]
+	  DstBlock		  "Terminator8"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_6"
 	  SrcPort		  1
-	  Points		  [206, 0; 0, -175]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  16
+	  Points		  [207, 0; 0, -175]
+	  DstBlock		  "Terminator9"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_7"
 	  SrcPort		  1
-	  Points		  [232, 0; 0, -215]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  17
+	  Points		  [233, 0; 0, -215]
+	  DstBlock		  "Terminator10"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_8"
 	  SrcPort		  1
-	  Points		  [259, 0; 0, -260]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  18
+	  Points		  [261, 0; 0, -260]
+	  DstBlock		  "Terminator11"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_9"
 	  SrcPort		  1
 	  Points		  [289, 0; 0, -305]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  19
+	  DstBlock		  "Terminator12"
+	  DstPort		  1
 	}
 	Line {
 	  SrcBlock		  "Instruction_10"
 	  SrcPort		  1
-	  Points		  [317, 0; 0, -345]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  20
-	}
-	Line {
-	  SrcBlock		  "Instruction(1B)"
-	  SrcPort		  1
-	  DstBlock		  "Integer to Bit\nConverter"
+	  Points		  [313, 0; 0, -345]
+	  DstBlock		  "Terminator13"
 	  DstPort		  1
 	}
 	Line {
-	  SrcBlock		  "16_to_1_Byte_Multiplexer"
+	  SrcBlock		  "ADD_or_ADDI(1b)"
+	  SrcPort		  1
+	  Points		  [794, 0; 0, 380]
+	  DstBlock		  "Select_Data"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Select_Data"
 	  SrcPort		  1
 	  DstBlock		  "Data_Out(1B)"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Integer to Bit\nConverter"
-	  SrcPort		  1
-	  Points		  [29, 0; 0, 225]
-	  DstBlock		  "Demux"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  4
-	  Points		  [11, 0; 0, 220]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  4
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  3
-	  Points		  [22, 0; 0, 220]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  2
-	  Points		  [34, 0; 0, 220]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  1
-	  Points		  [47, 0; 0, 220]
-	  DstBlock		  "16_to_1_Byte_Multiplexer"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  8
-	  DstBlock		  "Terminator3"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  7
-	  DstBlock		  "Terminator2"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  6
-	  DstBlock		  "Terminator1"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  5
-	  DstBlock		  "Terminator"
 	  DstPort		  1
 	}
 	Line {
