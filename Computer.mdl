@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.875"
+    ComputedModelVersion    "1.876"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -66,8 +66,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1406.0, 906.0]
-	ZoomFactor		[1.25]
-	Offset			[83.932680477707322, 1385.562682125367]
+	ZoomFactor		[0.2]
+	Offset			[-89.399891887857166, -764.46980787733628]
       }
     }
   }
@@ -77,9 +77,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun May 05 18:01:28 2019"
-  RTWModifiedTimeStamp	  478980085
-  ModelVersionFormat	  "1.%<AutoIncrement:875>"
+  LastModifiedDate	  "Sun May 05 20:44:28 2019"
+  RTWModifiedTimeStamp	  478980546
+  ModelVersionFormat	  "1.%<AutoIncrement:876>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -908,7 +908,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "20"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "5459"
     Block {
@@ -8056,9 +8056,9 @@ Model {
     Line {
       SrcBlock		      "Instruction_Decoder\n(Format 2.3: FF|OOOO|RR   RR|DDD|SSS)"
       SrcPort		      15
-      Points		      [1150, 0; 0, 1285]
+      Points		      [1150, 0; 0, 1508]
       Branch {
-	Points			[942, 0; 0, 330]
+	Points			[942, 0; 0, 107]
 	Branch {
 	  Points		  [0, 780]
 	  DstBlock		  "Logical\nOperator14"

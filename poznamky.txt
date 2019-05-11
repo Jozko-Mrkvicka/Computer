@@ -1,0 +1,179 @@
+=====
+Znaky
+=====
+16x16x8[B] = 256x8[B] = 2048[B]
+..X.............
+..X.............
+..XX............
+................
+................
+................
+Toto je 16 znako
+................
+................
+................
+................
+................
+................
+.......X....XX..
+......XX....XX..
+XXXX..X.........
+
+
+8x8x8[B] = 64x8[B] = 512[B]
+........
+Toto je.
+osem....
+znakov..
+........
+........
+........
+........
+
+
+1x32x8[B] = 256[B]
+Tu je 32 znakov.................
+
+
+======
+Pixely
+======
+16x16[p] = 2[B]x16 = 32[B]
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X X . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . X . .
+. . . . . . . . | . . . X X X X .
+. . . . . . . . | . . . X X . . .
+. . . . . . . . | X X X X X . . .
+. . . . . . . X | X . . . . . . .
+X X X X . . . X | X . . . . . . .
+
+
+16x24[p] = 2[B]x24 = 48[B]
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X X . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . X . .
+. . . . . . . . | . . . X X X X .
+. . . . . . . . | . . . X X . . .
+. . . . . . . . | X X X X X . . .
+. . . . . . . X | X . . . . . . .
+X X X X . . . X | X . . . . . . .
+
+
+16x32[p] = 2[B]x32 = 64[B]
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+
+
+
+=======================================================
+
+Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1
+Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1
+
+Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1
+Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_8_to_1
+Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1
+Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_2_to_1
+
+Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_2
+Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_4
+Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_8
+
+Byte_Demultiplexers_Lib/Byte_Demultiplexers_Lib/Byte_Demultiplexer_1_to_4
+
+Encoders_Lib/Encoders_Lib/Encoder_4_to_2
+
+Decoders_Lib/Decoders_Lib/Decoder_2_to_4
+Decoders_Lib/Decoders_Lib/Decoder_3_to_8
+Decoders_Lib/Decoders_Lib/Decoder_4_to_16
+
+Byte_Demultiplexers_Lib
+
+Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Byte_Adder
+Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder
+Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Subtractor
+
+Logic_Operations_Lib/Logic_Operations_Lib/Bitwise_AND
+
+Memory_Blocks_Lib/Memory_Blocks_Lib/Byte
+Memory_Blocks_Lib/Memory_Blocks_Lib/
+
+
+===============
+Co treba urobit
+===============
+- rozsirit ALU (left shift, right shift)
+
+- zautomatizovat testovanie
+	- Memory_Blocks
+	- Arithmetic_Operations
+- urobit "boot loader" + nacitavanie do RAMky z externeho suboru (LOAD, STORE)
+- pridat stack + skoky do podprogramov (POP, PUSH)
+- pridat vstupy (tlacitka/klavesnicu)
+- zamysliet sa nad interruptami
+- pridat dalsie instrukcie (podla inych 8bit procesorov)
+- v 16-bit encoderu je asi chyba
+- tetris
+- snake
+
