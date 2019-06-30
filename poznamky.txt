@@ -173,7 +173,6 @@ Co treba urobit
 - pridat vstupy (tlacitka/klavesnicu)
 - zamysliet sa nad interruptami
 - pridat dalsie instrukcie (podla inych 8bit procesorov)
-- v 16-bit encoderu je asi chyba
 - tetris
 - snake
 

@@ -1,49 +1,55 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 1: OOOODDSS IIIIIIII
-%   OOOO     - Operation code
-%   DD       - Register 1 (Destination)
-%   SS       - Register 2 (Source)
-%   IIIIIIII - Immediate value
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 2.1: FF|OO|DD|SS IIIIIIII
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 0: FF|OOO|RRR RRRRR|DDD
+%   FF              - Format
+%   RRRRRR RRRRRRRR - Reserved
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 1: FF|OO|DD|SS IIIIIIII
 %   FF       - Format
 %   OO       - Operation code
 %   DD       - Register 1 (Destination)
 %   SS       - Register 2 (Source)
 %   IIIIIIII - Immediate value
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 2.2: FF|OOO|DDD IIIIIIII
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction format 2: FF|OOO|DDD IIIIIIII
 %   FF       - Format
 %   OOO      - Operation code
 %   DDD      - Register 1 (Destination)
 %   IIIIIIII - Immediate value
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 2.3: FF|OOOO|RR RR|DDD|SSS
+% Instruction format 3: FF|OOOO|RR RR|DDD|SSS
 %   FF       - Format
 %   OOOO     - Operation code
 %   RRRR     - Reserved
 %   DDD      - Register 1 (Destination)
 %   SSS      - Register 2 (Source)
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 2.4: FF|RRRRRR RRRRRRRR
-%   FF              - Format
-%   RRRRRR RRRRRRRR - Reserved
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      GCH (Get CHar) instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOO|RR RR|DDD|SSS
+%
+% First operand:
+%     Destination for read button code.
+%
+% Second operand:
+%     Not used.
+%
+% Type of operands:        Example:
+%     GCH  REG  REG          GCH  r0  r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+GCH = bin2dec('11 0111 00');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ADD instruction
+%      ADD (ADD registers) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+% Format 3: FF|OOOO|RR RR|DDD|SSS
 %
 % First operand:
 %     In: First value to add.
@@ -55,14 +61,13 @@
 % Type of operands:        Example:
 %     ADD  REG  REG          ADD  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ADD = bin2dec('11011000 00000000');
 ADD = bin2dec('11011000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      GPX instruction
+%      GPX (Get PiXel) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+% Format 3: FF|OOOO|RR RR|DDD|SSS
 %
 % First operand: 
 %     In: Horizontal position (X) in range 0..15.
@@ -78,9 +83,9 @@ GPX = bin2dec('11010100');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     TXT instructions (TRR, TMR)
+%     TXT (print TeXT character) instructions (TRR, TMR)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+% Format 3: FF|OOOO|RR RR|DDD|SSS
 %
 % First operand: 
 %     Character to print.
@@ -99,7 +104,7 @@ TMR = bin2dec('11001100');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MOV instructions (MMR, MRM, MRR)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.3: FF|OOOO|RR RR|DDD|SSS
+% Format 3: FF|OOOO|RR RR|DDD|SSS
 %
 % First operand:
 %     Destination.
@@ -118,9 +123,27 @@ MRR =  bin2dec('11000000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ADI instruction
+%      SUBI (SUBtract Immediate) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.2: FF|OOO|DDD IIIIIIII
+% Format 2: FF|OOO|DDD IIIIIIII
+%
+% First operand:
+%     In: 
+%     Out: Destination for result.
+%
+% Second operand:
+%     
+%
+% Type of operands:        Example:
+%     SUI  REG  IMM          SUI  r0  25
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+SUBI = bin2dec('10101000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      ADDI (ADD Immediate) instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OOO|DDD IIIIIIII
 %
 % First operand:
 %     In: First value to add.
@@ -130,15 +153,15 @@ MRR =  bin2dec('11000000');
 %     Value to add.
 %
 % Type of operands:        Example:
-%     ADI  REG  IMM          ADI  r0  25
+%     ADDI  REG  IMM          ADDI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADI = bin2dec('10100000');
+ADDI = bin2dec('10100000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      TIR instruction
+%      TIR (Print immediate text character) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.2: FF|OOO|DDD IIIIIIII
+% Format 2: FF|OOO|DDD IIIIIIII
 %
 % First operand: 
 %     Character to print.
@@ -155,7 +178,7 @@ TIR = bin2dec('10011000');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      MOV instructions (MMRI, MRMI, MRC)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.2: FF|OOO|DDD IIIIIIII
+% Format 2: FF|OOO|DDD IIIIIIII
 %
 % First operand:
 %     Destination.
@@ -174,9 +197,9 @@ MRC =  bin2dec('10000000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      SPX instruction
+%      SPX (Set PiXel) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.1: FF|OO|DD|SS IIIIIIII
+% Format 1: FF|OO|DD|SS IIIIIIII
 %
 % First operand: 
 %     Horizontal position (X) in range 0..15
@@ -196,7 +219,7 @@ SPX = bin2dec('01100000');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      JMP instructions (JPE, JNE)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2.1: FF|OO|DD|SS IIIIIIII
+% Format 1: FF|OO|DD|SS IIIIIIII
 %
 % First operand:
 %     Value to compare.
@@ -289,14 +312,20 @@ r2 = bin2dec('0000 0010');
 r3 = bin2dec('0000 0011');
 
 
+%%%%%%%%%%%%%%%%%%%
+% Screen Resolution
+%%%%%%%%%%%%%%%%%%%
+MIN_X = 0;
+MIN_Y = 0;
+MAX_X = 15;
+MAX_Y = 23;
 
 
-
-
-
-
-
-
+%%%%%%%%%%%%%%%%%%%%%
+% Pixel switch on/off 
+%%%%%%%%%%%%%%%%%%%%%
+ON  = 1;
+OFF = 0;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
