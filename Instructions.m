@@ -199,7 +199,7 @@ MRC =  bin2dec('10000000');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      SPX (Set PiXel) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|DD|SS IIIIIIII
+% Format 1: FF|OO|DDD|S SS|IIIIII
 %
 % First operand: 
 %     Horizontal position (X) in range 0..15
@@ -219,7 +219,7 @@ SPX = bin2dec('01100000');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      JMP instructions (JPE, JNE)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|DD|SS IIIIIIII
+% Format 1: FF|OO|DDD|S SS|IIIIII
 %
 % First operand:
 %     Value to compare.
@@ -310,6 +310,10 @@ r0 = bin2dec('0000 0000');
 r1 = bin2dec('0000 0001');
 r2 = bin2dec('0000 0010');
 r3 = bin2dec('0000 0011');
+r4 = bin2dec('0000 0100');
+r5 = bin2dec('0000 0101');
+r6 = bin2dec('0000 0110');
+r7 = bin2dec('0000 0111');
 
 
 %%%%%%%%%%%%%%%%%%%
