@@ -4,7 +4,7 @@
 %   RRRRRR RRRRRRRR - Reserved
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 1: FF|OO|DD|SS IIIIIIII
+% Instruction format 1: FF|OO|DDD|S SS|IIIIII
 %   FF       - Format
 %   OO       - Operation code
 %   DD       - Register 1 (Destination)
@@ -120,6 +120,23 @@ TMR = bin2dec('11001100');
 MMR =  bin2dec('11001000');
 MRM =  bin2dec('11000100');
 MRR =  bin2dec('11000000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      JMP instruction (unconditional JuMP)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OOO|DDD IIIIIIII
+%
+% First operand:
+%     Address to jump.
+%
+% Second operand:
+%     None.
+%
+% Type of operands:        Example:
+%     JMP  REG  IMM          JMP  a(11)  r3   (not finished)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+JMP = bin2dec('10110000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
