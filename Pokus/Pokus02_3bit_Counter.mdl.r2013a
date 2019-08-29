@@ -1,18 +1,25 @@
 Model {
   Name			  "Pokus02_3bit_Counter"
-  Version		  8.7
-  MdlSubVersion		  1
-  SavedCharacterEncoding  "windows-1250"
+  Version		  8.1
+  MdlSubVersion		  0
   GraphicalInterface {
-    NumRootInports	    0
+    NumRootInports	    2
+    Inport {
+      BusObject		      ""
+      Name		      "Set_Direct(1b)"
+    }
+    Inport {
+      BusObject		      ""
+      Name		      "Increment(1b)"
+    }
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.84"
+    ComputedModelVersion    "1.80"
     NumModelReferences	    0
     NumTestPointedSignals   0
-    NumProvidedFunctions    0
-    NumRequiredFunctions    0
   }
+  SavedCharacterEncoding  "windows-1250"
+  SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
@@ -22,7 +29,6 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  LastSavedArchitecture	  "win64"
   Object {
     $PropName		    "BdWindowsInfo"
     $ObjectID		    1
@@ -32,7 +38,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, -8.0, 1874.0, 1096.0]
+      Location		      [55.0, 0.0, 1624.0, 955.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +62,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1824.0, 918.0]
-	ZoomFactor		[1.5]
-	Offset			[-42.9519829034839, 1410.9705777060985]
+	Extents			[1574.0, 781.0]
+	ZoomFactor		[0.5]
+	Offset			[-237.15980746621153, 1010.0750045302625]
       }
     }
   }
@@ -66,22 +72,18 @@ Model {
   Creator		  "uzivatel"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Jozko Mrkvicka"
+  LastModifiedBy	  "uzivatel"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Aug 26 20:00:48 2019"
-  RTWModifiedTimeStamp	  488750446
-  ModelVersionFormat	  "1.%<AutoIncrement:84>"
-  ConfigurationManager	  "none"
+  LastModifiedDate	  "Sun Dec 02 12:29:39 2018"
+  RTWModifiedTimeStamp	  465654564
+  ModelVersionFormat	  "1.%<AutoIncrement:80>"
+  ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "user"
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
-  ShowEditTimeErrors	  on
-  ShowEditTimeWarnings	  off
-  ShowEditTimeAdvisorChecks off
-  ShowPortUnits		  off
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
@@ -90,25 +92,16 @@ Model {
   ShowSignalResolutionIcons on
   ShowViewerIcons	  on
   SortedOrder		  off
-  VariantCondition	  off
   ExecutionContextIcon	  off
   ShowLinearizationAnnotations on
-  ShowVisualizeInsertedRTB on
-  ShowMarkup		  on
   BlockNameDataTip	  off
   BlockParametersDataTip  off
   BlockDescriptionStringDataTip	off
   ToolBar		  on
   StatusBar		  on
   BrowserShowLibraryLinks off
-  FunctionConnectors	  off
   BrowserLookUnderMasks	  off
   SimulationMode	  "normal"
-  PauseTimes		  "5"
-  NumberOfSteps		  1
-  SnapshotBufferSize	  10
-  SnapshotInterval	  10
-  NumberOfLastSnapshots	  0
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -135,6 +128,20 @@ Model {
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  CovForceBlockReductionOff on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  CovExternalEMLEnable	  off
   ExtModeBatchMode	  off
   ExtModeEnableFloating	  on
   ExtModeTrigType	  "manual"
@@ -156,6 +163,7 @@ Model {
   ExtModeSkipDownloadWhenConnect off
   ExtModeLogAll		  on
   ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
   ShowModelReferenceBlockVersion off
   ShowModelReferenceBlockIO off
   Array {
@@ -163,17 +171,17 @@ Model {
     Dimension		    1
     Simulink.ConfigSet {
       $ObjectID		      7
-      Version		      "1.16.2"
+      Version		      "1.13.0"
       Array {
 	Type			"Handle"
-	Dimension		9
+	Dimension		8
 	Simulink.SolverCC {
 	  $ObjectID		  8
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
 	  StartTime		  "0.0"
 	  StopTime		  "20"
 	  AbsTol		  "auto"
-	  FixedStep		  "1"
+	  FixedStep		  "auto"
 	  InitialStep		  "auto"
 	  MaxNumMinSteps	  "-1"
 	  MaxOrder		  5
@@ -182,22 +190,20 @@ Model {
 	  MaxConsecutiveZCs	  "1000"
 	  ExtrapolationOrder	  4
 	  NumberNewtonIterations  1
-	  MaxStep		  "1"
+	  MaxStep		  "auto"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
 	  RelTol		  "1e-3"
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "VariableStepDiscrete"
-	  SolverName		  "VariableStepDiscrete"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
 	  ZeroCrossAlgorithm	  "Nonadaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
-	  SolverInfoToggleStatus  on
-	  IsAutoAppliedInSIP	  off
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
 	  AutoInsertRateTranBlk	  off
@@ -206,7 +212,7 @@ Model {
 	}
 	Simulink.DataIOCC {
 	  $ObjectID		  9
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -224,9 +230,6 @@ Model {
 	  SignalLogging		  on
 	  DSMLogging		  on
 	  InspectSignalLogs	  off
-	  VisualizeSimOutput	  on
-	  StreamToWorkspace	  off
-	  StreamVariableName	  "streamout"
 	  SaveTime		  on
 	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
@@ -238,13 +241,10 @@ Model {
 	  OutputTimes		  "[]"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
-	  LoggingToFile		  off
-	  LoggingFileName	  "out.mat"
-	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
 	  $ObjectID		  10
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -261,17 +261,14 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  DefaultParameterBehavior "Tunable"
-	  UseDivisionForNetSlopeComputation "off"
+	  InlineParams		  off
+	  UseIntDivNetSlope	  off
 	  UseFloatMulNetSlope	  off
-	  DefaultUnderspecifiedDataType	"double"
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
 	  EnhancedBackFolding	  off
-	  CachingGlobalReferences off
-	  GlobalBufferReuse	  on
 	  StrengthReduction	  off
 	  ExpressionFolding	  on
 	  BooleansAsBitfields	  off
@@ -279,13 +276,14 @@ Model {
 	  EnableMemcpy		  on
 	  MemcpyThreshold	  64
 	  PassReuseOutputArgsAs	  "Structure reference"
-	  PassReuseOutputArgsThreshold 12
 	  ExpressionDepthLimit	  128
+	  FoldNonRolledExpr	  on
 	  LocalBlockOutputs	  on
 	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
 	  StateBitsets		  off
 	  DataBitsets		  off
-	  ActiveStateOutputEnumStorageType "Native Integer"
+	  UseTempVars		  off
 	  ZeroExternalMemoryAtStartup on
 	  ZeroInternalMemoryAtStartup on
 	  InitFltsAndDblsToZero	  off
@@ -296,12 +294,13 @@ Model {
 	  LifeSpan		  "inf"
 	  MaxStackSize		  "Inherit from target"
 	  BufferReusableBoundary  on
-	  SimCompilerOptimization "off"
+	  SimCompilerOptimization "Off"
 	  AccelVerboseBuild	  off
+	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
 	  $ObjectID		  11
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -328,6 +327,7 @@ Model {
 	  IgnoredZcDiagnostic	  "warning"
 	  SolverPrmCheckMsg	  "warning"
 	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
 	  MultiTaskDSMMsg	  "error"
 	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
@@ -355,16 +355,17 @@ Model {
 	  UnconnectedOutputMsg	  "warning"
 	  UnconnectedLineMsg	  "warning"
 	  SFcnCompatibilityMsg	  "none"
-	  FrameProcessingCompatibilityMsg "error"
+	  FrameProcessingCompatibilityMsg "warning"
 	  UniqueDataStoreMsg	  "none"
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
 	  AssertControl		  "UseLocalSettings"
-	  AllowSymbolicDim	  on
+	  EnableOverflowDetection off
 	  ModelReferenceIOMsg	  "none"
 	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
 	  ModelReferenceVersionMismatchMessage "none"
 	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
 	  UnknownTsInhSupMsg	  "warning"
 	  ModelReferenceDataLoggingMessage "warning"
 	  ModelReferenceSymbolNameMessage "warning"
@@ -376,9 +377,7 @@ Model {
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
-	  SymbolicDimMinMaxWarning "warning"
-	  LossOfSymbolicDimsSimulationWarning "warning"
-	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  LoggingUnavailableSignals "error"
 	  BlockIODiagnostic	  "none"
 	  SFUnusedDataAndEventsDiag "warning"
 	  SFUnexpectedBacktrackingDiag "warning"
@@ -388,15 +387,10 @@ Model {
 	  SFUnconditionalTransitionShadowingDiag "warning"
 	  SFUndirectedBroadcastEventsDiag "warning"
 	  SFTransitionActionBeforeConditionDiag	"warning"
-	  SFOutputUsedAsStateInMooreChartDiag "error"
-	  IntegerSaturationMsg	  "warning"
-	  AllowedUnitSystems	  "all"
-	  UnitsInconsistencyMsg	  "warning"
-	  AllowAutomaticUnitConversions	on
 	}
 	Simulink.HardwareCC {
 	  $ObjectID		  12
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -428,19 +422,17 @@ Model {
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
 	  TargetPreprocMaxBitsSint 32
 	  TargetPreprocMaxBitsUint 32
 	  TargetHWDeviceType	  "Specified"
 	  TargetUnknown		  off
 	  ProdEqTarget		  on
-	  UseEmbeddedCoderFeatures on
-	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
 	  $ObjectID		  13
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
-	  EnableRefExpFcnMdlSchedulingChecks on
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
 	  ParallelModelReferenceErrorOnInvalidPool on
@@ -454,19 +446,22 @@ Model {
 	}
 	Simulink.SFSimCC {
 	  $ObjectID		  14
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
 	  SFSimEcho		  on
+	  SimBlas		  on
 	  SimCtrlC		  on
+	  SimExtrinsic		  on
 	  SimIntegrity		  on
 	  SimUseLocalCustomCode	  off
 	  SimParseCustomCode	  on
 	  SimBuildMode		  "sf_incremental_build"
-	  SimGenImportedTypeDefs  off
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
 	  $ObjectID		  15
-	  Version		  "1.16.2"
+	  Version		  "1.13.0"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    15
@@ -488,15 +483,11 @@ Model {
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "grt.tlc"
-	  HardwareBoard		  "None"
-	  TLCOptions		  ""
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  PackageGeneratedCodeAndArtifacts off
 	  TemplateMakefile	  "grt_default_tmf"
-	  PostCodeGenCommand	  ""
-	  Description		  ""
 	  GenerateReport	  off
 	  SaveLog		  off
 	  RTWVerbose		  on
@@ -505,13 +496,15 @@ Model {
 	  TLCDebug		  off
 	  TLCCoverage		  off
 	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
-	  Toolchain		  "Automatically locate an installed toolchain"
-	  BuildConfiguration	  "Faster Builds"
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
 	  PortableWordSizes	  off
+	  GenerateErtSFunction	  off
 	  CreateSILPILBlock	  "None"
 	  CodeExecutionProfiling  off
 	  CodeExecutionProfileVariable "executionProfile"
@@ -520,25 +513,25 @@ Model {
 	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
 	  GenerateTraceInfo	  off
 	  GenerateTraceReport	  off
 	  GenerateTraceReportSl	  off
 	  GenerateTraceReportSf	  off
 	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
 	  GenerateWebview	  off
 	  GenerateCodeMetricsReport off
 	  GenerateCodeReplacementReport	off
-	  GenerateMissedCodeReplacementReport off
-	  RTWCompilerOptimization "off"
-	  RTWCustomCompilerOptimizations ""
+	  RTWCompilerOptimization "Off"
 	  CheckMdlBeforeBuild	  "Off"
-	  SharedConstantsCachingThreshold 1024
+	  CustomRebuildMode	  "OnUpdate"
 	  Array {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
 	      $ObjectID		      16
-	      Version		      "1.16.2"
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
 		Dimension		22
@@ -568,7 +561,6 @@ Model {
 	      }
 	      ForceParamTrailComments off
 	      GenerateComments	      on
-	      CommentStyle	      "Auto"
 	      IgnoreCustomStorageClasses on
 	      IgnoreTestpoints	      off
 	      IncHierarchyInIds	      off
@@ -591,7 +583,6 @@ Model {
 	      CustomSymbolStrBlkIO    "rtb_$N$M"
 	      CustomSymbolStrTmpVar   "$N$M"
 	      CustomSymbolStrMacro    "$R$N$M"
-	      CustomSymbolStrUtil     "$N$C"
 	      DefineNamingRule	      "None"
 	      ParamNamingRule	      "None"
 	      SignalNamingRule	      "None"
@@ -608,13 +599,13 @@ Model {
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
 	      $ObjectID		      17
-	      Version		      "1.16.2"
+	      Version		      "1.13.0"
 	      Array {
 		Type			"Cell"
-		Dimension		14
+		Dimension		15
 		Cell			"GeneratePreprocessorConditionals"
 		Cell			"IncludeMdlTerminateFcn"
-		Cell			"SupportNonInlinedSFcns"
+		Cell			"CombineOutputUpdateFcns"
 		Cell			"SuppressErrorStatus"
 		Cell			"ERTCustomFileBanners"
 		Cell			"GenerateSampleERTMain"
@@ -626,21 +617,21 @@ Model {
 		Cell			"SupportComplex"
 		Cell			"SupportAbsoluteTime"
 		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
 		PropName		"DisabledProps"
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
-	      GenFloatMathFcnCalls    "NOT IN USE"
-	      TargetLangStandard      "C89/C90 (ANSI)"
-	      CodeReplacementLibrary  "None"
+	      TargetPreCompLibLocation ""
+	      CodeReplacementLibrary  "ANSI_C"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
-	      InferredTypesCompatibility off
 	      GenerateSampleERTMain   off
 	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
@@ -657,23 +648,20 @@ Model {
 	      LogVarNameModifier      "rt_"
 	      MatFileLogging	      on
 	      MultiInstanceERTCode    off
-	      CodeInterfacePackaging  "Nonreusable function"
 	      SupportNonFinite	      on
 	      SupportComplex	      on
 	      PurelyIntegerCode	      off
 	      SupportContinuousTime   on
 	      SupportNonInlinedSFcns  on
 	      SupportVariableSizeSignals off
+	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
-	      CastingMode	      "Nominal"
 	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
-	      CPPClassGenCompliant    on
+	      CPPClassGenCompliant    off
 	      AutosarCompliant	      off
 	      GRTInterface	      off
 	      GenerateAllocFcn	      off
-	      UseToolchainInfoCompliant	on
-	      GenerateSharedConstants on
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -687,48 +675,14 @@ Model {
 	      RTWCAPIStates	      off
 	      RTWCAPIRootIO	      off
 	      GenerateASAP2	      off
-	      MultiInstanceErrorCode  "Error"
 	    }
 	    PropName		    "Components"
 	  }
 	}
-	SlCovCC.ConfigComp {
-	  $ObjectID		  18
-	  Version		  "1.16.2"
-	  Description		  "Simulink Coverage Configuration Component"
-	  Name			  "Simulink Coverage"
-	  CovEnable		  off
-	  CovScope		  "EntireSystem"
-	  CovIncludeTopModel	  on
-	  RecordCoverage	  off
-	  CovPath		  "/"
-	  CovSaveName		  "covdata"
-	  CovMetricSettings	  "dw"
-	  CovNameIncrementing	  off
-	  CovHtmlReporting	  on
-	  CovForceBlockReductionOff on
-	  CovEnableCumulative	  on
-	  CovSaveCumulativeToWorkspaceVar on
-	  CovSaveSingleToWorkspaceVar on
-	  CovCumulativeVarName	  "covCumulativeData"
-	  CovCumulativeReport	  off
-	  CovSaveOutputData	  on
-	  CovOutputDir		  "slcov_output/$ModelName$"
-	  CovDataFileName	  "$ModelName$_cvdata"
-	  CovReportOnPause	  on
-	  CovModelRefEnable	  "Off"
-	  CovExternalEMLEnable	  off
-	  CovSFcnEnable		  on
-	  CovBoundaryAbsTol	  1e-05
-	  CovBoundaryRelTol	  0.01
-	  CovUseTimeInterval	  off
-	  CovStartTime		  0
-	  CovStopTime		  0
-	}
 	PropName		"Components"
       }
       Name		      "Configuration"
-      CurrentDlgPage	      "Solver"
+      CurrentDlgPage	      "Optimization/Signals and Parameters"
       ConfigPrmDlgPosition     [ 406, 135, 1514, 879 ] 
     }
     PropName		    "ConfigurationSets"
@@ -739,7 +693,7 @@ Model {
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    18
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -782,7 +736,7 @@ Model {
   MaskDefaults {
     SelfModifiable	    "off"
     IconFrame		    "on"
-    IconOpaque		    "opaque"
+    IconOpaque		    "on"
     RunInitForIconRedraw    "off"
     IconRotate		    "none"
     PortRotate		    "default"
@@ -834,7 +788,6 @@ Model {
       Format		      "short"
       Decimation	      "10"
       Floating		      off
-      Lockdown		      off
       SampleTime	      "-1"
     }
     Block {
@@ -845,6 +798,24 @@ Model {
       Interpolate	      on
       ZeroCross		      off
       OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
     }
     Block {
       BlockType		      Logic
@@ -871,7 +842,6 @@ Model {
       OutDataTypeStr	      "Inherit: auto"
       LockScale		      off
       BusOutputAsStruct	      off
-      Unit		      "inherit"
       PortDimensions	      "-1"
       VarSizeSig	      "Inherit"
       SampleTime	      "-1"
@@ -883,9 +853,21 @@ Model {
     }
     Block {
       BlockType		      Scope
-      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
-      NumInputPorts	      "1"
-      Floating		      off
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      DataFormat	      "Array"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
     }
     Block {
       BlockType		      Step
@@ -902,15 +884,11 @@ Model {
       Permissions	      "ReadWrite"
       PermitHierarchicalResolution "All"
       TreatAsAtomicUnit	      off
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
       CheckFcnCallInpInsideContextMsg off
       SystemSampleTime	      "-1"
-      RTWSystemCode	      "Auto"
       RTWFcnNameOpts	      "Auto"
       RTWFileNameOpts	      "Auto"
       FunctionInterfaceSpec   "void_void"
-      FunctionWithSeparateData off
       RTWMemSecFuncInitTerm   "Inherit from model"
       RTWMemSecFuncExecute    "Inherit from model"
       RTWMemSecDataConstants  "Inherit from model"
@@ -920,13 +898,9 @@ Model {
       DataTypeOverride	      "UseLocalSettings"
       DataTypeOverrideAppliesTo	"AllNumericTypes"
       MinMaxOverflowLogging   "UseLocalSettings"
-      Opaque		      off
-      MaskHideContents	      off
       SFBlockType	      "NONE"
+      Variant		      off
       GeneratePreprocessorConditionals off
-      TreatAsGroupedWhenPropagatingVariantConditions on
-      ContentPreviewEnabled   off
-      IsWebBlock	      off
     }
     Block {
       BlockType		      Terminator
@@ -934,7 +908,7 @@ Model {
   }
   System {
     Name		    "Pokus02_3bit_Counter"
-    Location		    [54, -8, 1928, 1088]
+    Location		    [55, 0, 1679, 955]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -946,104 +920,113 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "50"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "89"
+    Block {
+      BlockType		      Inport
+      Name		      "Set_Direct(1b)"
+      SID		      "77"
+      Position		      [265, 1408, 295, 1422]
+      ZOrder		      517
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "Increment(1b)"
+      SID		      "78"
+      Position		      [265, 1313, 295, 1327]
+      ZOrder		      516
+      Port		      "2"
+      IconDisplay	      "Port number"
+    }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer"
       SID		      "61"
       Ports		      [3, 1]
-      Position		      [390, 1640, 525, 1690]
+      Position		      [390, 1640, 495, 1690]
       ZOrder		      498
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer1"
       SID		      "62"
       Ports		      [3, 1]
-      Position		      [390, 1720, 525, 1770]
+      Position		      [390, 1720, 495, 1770]
       ZOrder		      499
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer2"
       SID		      "63"
       Ports		      [3, 1]
-      Position		      [1160, 1660, 1290, 1710]
+      Position		      [1160, 1660, 1265, 1710]
       ZOrder		      502
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer3"
       SID		      "64"
       Ports		      [3, 1]
-      Position		      [1160, 1740, 1290, 1790]
+      Position		      [1160, 1740, 1265, 1790]
       ZOrder		      503
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer4"
       SID		      "66"
       Ports		      [3, 1]
-      Position		      [1600, 1680, 1730, 1730]
+      Position		      [1600, 1680, 1705, 1730]
       ZOrder		      505
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer5"
       SID		      "67"
       Ports		      [3, 1]
-      Position		      [1600, 1760, 1730, 1810]
+      Position		      [1600, 1760, 1705, 1810]
       ZOrder		      506
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer6"
       SID		      "69"
       Ports		      [3, 1]
-      Position		      [2085, 1715, 2210, 1765]
+      Position		      [2085, 1715, 2190, 1765]
       ZOrder		      508
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
       Name		      "2_to_1_Bit_Multiplexer7"
       SID		      "70"
       Ports		      [3, 1]
-      Position		      [2085, 1795, 2210, 1845]
+      Position		      [2085, 1795, 2190, 1845]
       ZOrder		      509
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/2_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Reference
@@ -1052,10 +1035,9 @@ Model {
       Ports		      [6, 1]
       Position		      [890, 1585, 1045, 1680]
       ZOrder		      523
-      LibraryVersion	      "1.5"
-      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+      LibraryVersion	      "1.31"
+      SourceBlock	      "Common_Library/Multiplexers/4_to_1_Bit_Multiplexer"
       SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Constant
@@ -1074,8 +1056,8 @@ Model {
       Position		      [2070, 978, 2150, 1022]
       ZOrder		      35
       ShowName		      off
-      Commented		      "on"
-      LibraryVersion	      "1.278"
+      Commented		      on
+      LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Bit to Integer\nConverter"
       SourceType	      "Bit to Integer Converter"
       nbits		      "4"
@@ -1092,7 +1074,7 @@ Model {
       Position		      [2330, 1263, 2410, 1307]
       ZOrder		      53
       ShowName		      off
-      LibraryVersion	      "1.278"
+      LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Bit to Integer\nConverter"
       SourceType	      "Bit to Integer Converter"
       nbits		      "4"
@@ -1108,11 +1090,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1135, 192, 1180, 268]
       ZOrder		      2
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1122,11 +1103,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1135, 612, 1180, 688]
       ZOrder		      10
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1136,11 +1116,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1135, 1092, 1180, 1168]
       ZOrder		      20
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1150,10 +1129,9 @@ Model {
       Ports		      [3, 2]
       Position		      [555, 1682, 600, 1758]
       ZOrder		      40
-      LibraryVersion	      "1.58"
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1163,10 +1141,9 @@ Model {
       Ports		      [3, 2]
       Position		      [1340, 1702, 1385, 1778]
       ZOrder		      41
-      LibraryVersion	      "1.58"
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1176,10 +1153,9 @@ Model {
       Ports		      [3, 2]
       Position		      [1760, 1722, 1805, 1798]
       ZOrder		      45
-      LibraryVersion	      "1.58"
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1189,10 +1165,9 @@ Model {
       Ports		      [3, 2]
       Position		      [2230, 1757, 2275, 1833]
       ZOrder		      48
-      LibraryVersion	      "1.58"
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1202,11 +1177,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1345, 1097, 1390, 1173]
       ZOrder		      21
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1216,11 +1190,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1580, 1092, 1625, 1168]
       ZOrder		      26
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1230,11 +1203,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1815, 1082, 1860, 1158]
       ZOrder		      29
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1244,11 +1216,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1345, 617, 1390, 693]
       ZOrder		      11
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1258,11 +1229,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1580, 612, 1625, 688]
       ZOrder		      16
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1272,11 +1242,10 @@ Model {
       Ports		      [3, 2]
       Position		      [1345, 197, 1390, 273]
       ZOrder		      3
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
       SourceType	      "JKFlipFlop"
-      ContentPreviewEnabled   off
       initial_condition	      "0"
     }
     Block {
@@ -1286,11 +1255,10 @@ Model {
       Ports		      [0, 1]
       Position		      [995, 311, 1035, 339]
       ZOrder		      1
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/Clock"
       SourceType	      "Digital clock"
-      ContentPreviewEnabled   off
       period		      "1"
     }
     Block {
@@ -1300,11 +1268,10 @@ Model {
       Ports		      [0, 1]
       Position		      [995, 731, 1035, 759]
       ZOrder		      9
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/Clock"
       SourceType	      "Digital clock"
-      ContentPreviewEnabled   off
       period		      "1"
     }
     Block {
@@ -1314,11 +1281,10 @@ Model {
       Ports		      [0, 1]
       Position		      [995, 1211, 1035, 1239]
       ZOrder		      19
-      Commented		      "on"
-      LibraryVersion	      "1.58"
+      Commented		      on
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/Clock"
       SourceType	      "Digital clock"
-      ContentPreviewEnabled   off
       period		      "1"
     }
     Block {
@@ -1328,10 +1294,9 @@ Model {
       Ports		      [0, 1]
       Position		      [20, 1866, 60, 1894]
       ZOrder		      39
-      LibraryVersion	      "1.58"
+      LibraryVersion	      "1.44"
       SourceBlock	      "simulink_extras/Flip Flops/Clock"
       SourceType	      "Digital clock"
-      ContentPreviewEnabled   off
       period		      "1"
     }
     Block {
@@ -1341,7 +1306,7 @@ Model {
       Position		      [1000, 190, 1030, 220]
       ZOrder		      5
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
       OutDataTypeStr	      "boolean"
     }
     Block {
@@ -1351,7 +1316,7 @@ Model {
       Position		      [1000, 610, 1030, 640]
       ZOrder		      12
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
       OutDataTypeStr	      "boolean"
     }
     Block {
@@ -1361,7 +1326,7 @@ Model {
       Position		      [1000, 1090, 1030, 1120]
       ZOrder		      22
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
       OutDataTypeStr	      "boolean"
     }
     Block {
@@ -1382,8 +1347,9 @@ Model {
       Position		      [2205, 987, 2270, 1013]
       ZOrder		      36
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
       Decimation	      "1"
+      Lockdown		      off
     }
     Block {
       BlockType		      Display
@@ -1394,6 +1360,7 @@ Model {
       ZOrder		      54
       ShowName		      off
       Decimation	      "1"
+      Lockdown		      off
     }
     Block {
       BlockType		      Constant
@@ -1401,7 +1368,6 @@ Model {
       SID		      "89"
       Position		      [25, 1580, 55, 1610]
       ZOrder		      528
-      Value		      "0"
       OutDataTypeStr	      "boolean"
     }
     Block {
@@ -1425,12 +1391,16 @@ Model {
       ClipboardFcn	      "sigbuilder_block('clipboard');"
       OpenFcn		      "sigbuilder_block('open',[270 27.75 550.5 399.75 ]);"
       CloseFcn		      "sigbuilder_block('close');"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      on
-      Variant		      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		20
+	$ObjectID		19
 	$ClassName		"Simulink.Mask"
 	Type			"Sigbuilder block"
 	Description		"Simulink:masks:SigbuilderBlock_MD"
@@ -1439,7 +1409,7 @@ Model {
 	SelfModifiable		"on"
 	Display			"plot(0, 0, 100, 100,[2, 2, 32, 32, 2], [68, 8, 8, 68, 68],[32, 2], [38, 38], [32, 19, 2],[53, 60, 44], [32"
 	", 17, 17, 2],[16, 16, 31, 31]);txt = getActiveGroup(gcbh);text(2, 100, txt,'verticalAlignment', 'top');"
-	IconOpaque		"transparent"
+	IconOpaque		"off"
 	IconRotate		"port"
 	Capabilities		"slmaskedcaps(gcbh)"
       }
@@ -1492,7 +1462,6 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  1
 	  SrcBlock		  "FromWs"
 	  SrcPort		  1
 	  Points		  [5, 0; 0, -5]
@@ -1500,7 +1469,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  2
 	  SrcBlock		  "Demux"
 	  SrcPort		  1
 	  DstBlock		  "Signal 1"
@@ -1544,7 +1512,7 @@ Model {
       Position		      [110, 1488, 190, 1532]
       ZOrder		      511
       ShowName		      off
-      LibraryVersion	      "1.278"
+      LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
       nbits		      "4"
@@ -1560,7 +1528,7 @@ Model {
       Position		      [160, 1783, 240, 1827]
       ZOrder		      515
       ShowName		      off
-      LibraryVersion	      "1.278"
+      LibraryVersion	      "1.271"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
       nbits		      "1"
@@ -1576,7 +1544,7 @@ Model {
       Position		      [1465, 606, 1495, 644]
       ZOrder		      18
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
       IconShape		      "distinctive"
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -1589,7 +1557,31 @@ Model {
       Position		      [1465, 1066, 1495, 1104]
       ZOrder		      28
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
+      IconShape		      "distinctive"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator10"
+      SID		      "80"
+      Ports		      [2, 1]
+      Position		      [460, 1386, 490, 1424]
+      ZOrder		      519
+      ShowName		      off
+      IconShape		      "distinctive"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Logic
+      Name		      "Logical\nOperator11"
+      SID		      "81"
+      Ports		      [2, 1]
+      Position		      [460, 1311, 490, 1349]
+      ZOrder		      520
+      ShowName		      off
       IconShape		      "distinctive"
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -1602,7 +1594,7 @@ Model {
       Position		      [1700, 1076, 1730, 1114]
       ZOrder		      32
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
       IconShape		      "distinctive"
       AllPortsSameDT	      off
       OutDataTypeStr	      "boolean"
@@ -1659,6 +1651,19 @@ Model {
     }
     Block {
       BlockType		      Logic
+      Name		      "Logical\nOperator7"
+      SID		      "79"
+      Ports		      [2, 1]
+      Position		      [375, 1346, 405, 1384]
+      ZOrder		      518
+      ShowName		      off
+      Operator		      "NAND"
+      IconShape		      "distinctive"
+      AllPortsSameDT	      off
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Logic
       Name		      "Logical\nOperator8"
       SID		      "65"
       Ports		      [1, 1]
@@ -1691,7 +1696,7 @@ Model {
       Position		      [2000, 966, 2010, 1029]
       ZOrder		      34
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
       DisplayOption	      "bar"
     }
     Block {
@@ -1720,7 +1725,7 @@ Model {
       Ports		      [0, 1]
       Position		      [25, 2064, 55, 2096]
       ZOrder		      513
-      Commented		      "on"
+      Commented		      on
       PulseType		      "Time based"
       Period		      "10"
       PulseWidth	      "5"
@@ -1732,15 +1737,31 @@ Model {
       Ports		      [2]
       Position		      [1455, 111, 1485, 144]
       ZOrder		      8
-      Commented		      "on"
-      ScopeSpecificationString "C++SS(StrPVP('Location','[1426, 650, 1908, 1063]'),StrPVP('Open','off'),MxPVP('AxesTit"
-      "les',24,'struct(''axes1'',''Bit_1'',''axes2'',''Bit_0'')'),MxPVP('ScopeGraphics',28,'struct(''FigureColor'',''[0"
-      ".501960784313725 0.501960784313725 0.501960784313725]'',''AxesColor'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',"
-      "''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineStyles'',''-|-|-|-|-|-'',''LineWidths'',''[3 0.5 "
-      "0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|none'')'),StrPVP('ShowLegends','off'),StrPVP('YMi"
-      "n','0~0'),StrPVP('YMax','1.5~1.5'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),S"
-      "trPVP('LimitDataPoints','on'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
+      Commented		      on
+      Floating		      off
+      Location		      [1426, 650, 1908, 1063]
+      Open		      off
       NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"Bit_1"
+	axes2			"Bit_0"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[3 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "0~0"
+      YMax		      "1.5~1.5"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
@@ -1749,16 +1770,33 @@ Model {
       Ports		      [3]
       Position		      [1720, 493, 1750, 527]
       ZOrder		      15
-      Commented		      "on"
-      ScopeSpecificationString "C++SS(StrPVP('Location','[1426, 650, 1908, 1063]'),StrPVP('Open','off'),MxPVP('AxesTit"
-      "les',24,'struct(''axes1'',''Bit_2'',''axes2'',''Bit_1'',''axes3'',''Bit_0'')'),MxPVP('ScopeGraphics',28,'struct("
-      "''FigureColor'',''[0.501960784313725 0.501960784313725 0.501960784313725]'',''AxesColor'',''[0 0 0]'',''AxesTick"
-      "Color'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineStyles'',''-|-|-|-|-|-'',''Li"
-      "neWidths'',''[3 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|none'')'),StrPVP('ShowLegends"
-      "','off'),StrPVP('YMin','0~0~0'),StrPVP('YMax','1.5~1.5~1.5'),StrPVP('SaveName','ScopeData1'),StrPVP('DataFormat'"
-      ",'StructureWithTime'),StrPVP('BlockParamSampleTime','0'),StrPVP('LimitDataPoints','on'),StrPVP('Decimation','1')"
-      ",StrPVP('BlockParamSampleInput','off'))"
+      Commented		      on
+      Floating		      off
+      Location		      [1426, 650, 1908, 1063]
+      Open		      off
       NumInputPorts	      "3"
+      List {
+	ListType		AxesTitles
+	axes1			"Bit_2"
+	axes2			"Bit_1"
+	axes3			"Bit_0"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[3 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "0~0~0"
+      YMax		      "1.5~1.5~1.5"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
@@ -1767,16 +1805,34 @@ Model {
       Ports		      [4]
       Position		      [2000, 873, 2030, 907]
       ZOrder		      33
-      Commented		      "on"
-      ScopeSpecificationString "C++SS(StrPVP('Location','[1164, 650, 1908, 1063]'),StrPVP('Open','off'),MxPVP('AxesTit"
-      "les',24,'struct(''axes1'',''Bit_3'',''axes2'',''Bit_2'',''axes3'',''Bit_1'',''axes4'',''Bit_0'')'),MxPVP('ScopeG"
-      "raphics',28,'struct(''FigureColor'',''[0.501960784313725 0.501960784313725 0.501960784313725]'',''AxesColor'',''"
-      "[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineStyles'',"
-      "''-|-|-|-|-|-'',''LineWidths'',''[3 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|none'')')"
-      ",StrPVP('ShowLegends','off'),StrPVP('YMin','0~0~0~0'),StrPVP('YMax','1.5~1.5~1.5~1.5'),StrPVP('SaveName','ScopeD"
-      "ata2'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),StrPVP('LimitDataPoints','on'"
-      "),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
+      Commented		      on
+      Floating		      off
+      Location		      [1164, 650, 1908, 1063]
+      Open		      off
       NumInputPorts	      "4"
+      List {
+	ListType		AxesTitles
+	axes1			"Bit_3"
+	axes2			"Bit_2"
+	axes3			"Bit_1"
+	axes4			"Bit_0"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[3 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "0~0~0~0"
+      YMax		      "1.5~1.5~1.5~1.5"
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
@@ -1785,14 +1841,31 @@ Model {
       Ports		      [1]
       Position		      [2205, 873, 2235, 907]
       ZOrder		      38
-      Commented		      "on"
-      ScopeSpecificationString "C++SS(StrPVP('Location','[1164, 650, 1908, 1063]'),StrPVP('Open','off'),MxPVP('AxesTit"
-      "les',24,'struct(''axes1'',''Value'')'),MxPVP('ScopeGraphics',28,'struct(''FigureColor'',''[0.501960784313725 0.5"
-      "01960784313725 0.501960784313725]'',''AxesColor'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 "
-      "1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineStyles'',''-|-|-|-|-|-'',''LineWidths'',''[3 0.5 0.5 0.5 0.5 0.5]'','"
-      "'MarkerStyles'',''none|none|none|none|none|none'')'),StrPVP('ShowLegends','off'),StrPVP('YMin','0'),StrPVP('YMax"
-      "','20'),StrPVP('SaveName','ScopeData3'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','"
-      "0'),StrPVP('LimitDataPoints','on'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
+      Commented		      on
+      Floating		      off
+      Location		      [1164, 650, 1908, 1063]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"Value"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[3 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "0"
+      YMax		      "20"
+      SaveName		      "ScopeData3"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
@@ -1801,15 +1874,33 @@ Model {
       Ports		      [4]
       Position		      [2260, 1158, 2290, 1192]
       ZOrder		      51
-      ScopeSpecificationString "C++SS(StrPVP('Location','[1164, 57, 1908, 431]'),StrPVP('Open','off'),MxPVP('AxesTitle"
-      "s',24,'struct(''axes1'',''Bit_3'',''axes2'',''Bit_2'',''axes3'',''Bit_1'',''axes4'',''Bit_0'')'),MxPVP('ScopeGra"
-      "phics',28,'struct(''FigureColor'',''[0.501960784313725 0.501960784313725 0.501960784313725]'',''AxesColor'',''[0"
-      " 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',''LineStyles'',''"
-      "-|-|-|-|-|-'',''LineWidths'',''[3 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none|none|none'')'),S"
-      "trPVP('ShowLegends','off'),StrPVP('YMin','0~0~0~0'),StrPVP('YMax','1.5~1.5~1.5~1.5'),StrPVP('SaveName','ScopeDat"
-      "a4'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),StrPVP('LimitDataPoints','on'),"
-      "StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
+      Floating		      off
+      Location		      [1164, 57, 1908, 431]
+      Open		      off
       NumInputPorts	      "4"
+      List {
+	ListType		AxesTitles
+	axes1			"Bit_3"
+	axes2			"Bit_2"
+	axes3			"Bit_1"
+	axes4			"Bit_0"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[3 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "0~0~0~0"
+      YMax		      "1.5~1.5~1.5~1.5"
+      SaveName		      "ScopeData4"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
@@ -1818,15 +1909,33 @@ Model {
       Ports		      [4]
       Position		      [2465, 1440, 2500, 1505]
       ZOrder		      55
-      ScopeSpecificationString "C++SS(StrPVP('Location','[1164, 497, 1908, 1063]'),StrPVP('Open','off'),MxPVP('AxesTit"
-      "les',24,'struct(''axes1'',''Address_Out'',''axes2'',''Set_Direct'',''axes3'',''Increment'',''axes4'',''Clock'')'"
-      "),MxPVP('ScopeGraphics',28,'struct(''FigureColor'',''[0.501960784313725 0.501960784313725 0.501960784313725]'','"
-      "'AxesColor'',''[0 0 0]'',''AxesTickColor'',''[1 1 1]'',''LineColors'',''[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]'',"
-      "''LineStyles'',''-|-|-|-|-|-'',''LineWidths'',''[3 0.5 0.5 0.5 0.5 0.5]'',''MarkerStyles'',''none|none|none|none"
-      "|none|none'')'),StrPVP('ShowLegends','off'),StrPVP('YMin','0~0~0~0'),StrPVP('YMax','17~1.5~1.5~1.5'),StrPVP('Sav"
-      "eName','ScopeData5'),StrPVP('DataFormat','StructureWithTime'),StrPVP('BlockParamSampleTime','0'),StrPVP('LimitDa"
-      "taPoints','on'),StrPVP('Decimation','1'),StrPVP('BlockParamSampleInput','off'))"
+      Floating		      off
+      Location		      [1164, 497, 1908, 1063]
+      Open		      off
       NumInputPorts	      "4"
+      List {
+	ListType		AxesTitles
+	axes1			"Address_Out"
+	axes2			"Set_Direct"
+	axes3			"Increment"
+	axes4			"Clock"
+      }
+      List {
+	ListType		ScopeGraphics
+	FigureColor		"[0.501960784313725 0.501960784313725 0.501960784313725]"
+	AxesColor		"[0 0 0]"
+	AxesTickColor		"[1 1 1]"
+	LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+	LineStyles		"-|-|-|-|-|-"
+	LineWidths		"[3 0.5 0.5 0.5 0.5 0.5]"
+	MarkerStyles		"none|none|none|none|none|none"
+      }
+      ShowLegends	      off
+      YMin		      "0~0~0~0"
+      YMax		      "17~1.5~1.5~1.5"
+      SaveName		      "ScopeData5"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Constant
@@ -1834,7 +1943,7 @@ Model {
       SID		      "55"
       Position		      [25, 1925, 55, 1955]
       ZOrder		      56
-      Commented		      "on"
+      Commented		      on
       OutDataTypeStr	      "boolean"
     }
     Block {
@@ -1843,7 +1952,7 @@ Model {
       SID		      "73"
       Position		      [25, 1990, 55, 2020]
       ZOrder		      512
-      Commented		      "on"
+      Commented		      on
       Time		      "10"
       SampleTime	      "0"
     }
@@ -1868,12 +1977,16 @@ Model {
       ClipboardFcn	      "sigbuilder_block('clipboard');"
       OpenFcn		      "sigbuilder_block('open',[270 27.75 550.5 399.75 ]);"
       CloseFcn		      "sigbuilder_block('close');"
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
       RequestExecContextInheritance off
       MaskHideContents	      on
-      Variant		      off
       Object {
 	$PropName		"MaskObject"
-	$ObjectID		21
+	$ObjectID		20
 	$ClassName		"Simulink.Mask"
 	Type			"Sigbuilder block"
 	Description		"Simulink:masks:SigbuilderBlock_MD"
@@ -1882,7 +1995,7 @@ Model {
 	SelfModifiable		"on"
 	Display			"plot(0, 0, 100, 100,[2, 2, 32, 32, 2], [68, 8, 8, 68, 68],[32, 2], [38, 38], [32, 19, 2],[53, 60, 44], [32"
 	", 17, 17, 2],[16, 16, 31, 31]);txt = getActiveGroup(gcbh);text(2, 100, txt,'verticalAlignment', 'top');"
-	IconOpaque		"transparent"
+	IconOpaque		"off"
 	IconRotate		"port"
 	Capabilities		"slmaskedcaps(gcbh)"
       }
@@ -1935,7 +2048,6 @@ Model {
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  1
 	  SrcBlock		  "Demux"
 	  SrcPort		  1
 	  Points		  [50, 0; 0, -280]
@@ -1943,7 +2055,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  2
 	  SrcBlock		  "FromWs"
 	  SrcPort		  1
 	  Points		  [5, 0; 0, -10]
@@ -1959,7 +2070,7 @@ Model {
       Position		      [1210, 240, 1230, 260]
       ZOrder		      6
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -1968,7 +2079,7 @@ Model {
       Position		      [1420, 245, 1440, 265]
       ZOrder		      7
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2001,7 +2112,7 @@ Model {
       Position		      [1210, 660, 1230, 680]
       ZOrder		      13
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2010,7 +2121,7 @@ Model {
       Position		      [1420, 665, 1440, 685]
       ZOrder		      14
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2019,7 +2130,7 @@ Model {
       Position		      [1665, 660, 1685, 680]
       ZOrder		      17
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2028,7 +2139,7 @@ Model {
       Position		      [1210, 1140, 1230, 1160]
       ZOrder		      23
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2037,7 +2148,7 @@ Model {
       Position		      [1420, 1145, 1440, 1165]
       ZOrder		      24
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2046,7 +2157,7 @@ Model {
       Position		      [1665, 1140, 1685, 1160]
       ZOrder		      27
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2055,7 +2166,7 @@ Model {
       Position		      [1900, 1130, 1920, 1150]
       ZOrder		      30
       ShowName		      off
-      Commented		      "on"
+      Commented		      on
     }
     Block {
       BlockType		      Terminator
@@ -2066,83 +2177,69 @@ Model {
       ShowName		      off
     }
     Line {
-      ZOrder		      1
       SrcBlock		      "Bit_0"
       SrcPort		      1
       Points		      [37, 0]
       Branch {
-	ZOrder			2
 	Points			[42, 0]
 	Branch {
-	  ZOrder		  3
 	  Points		  [0, 50]
 	  DstBlock		  "Bit_1"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  4
 	  DstBlock		  "Bit_1"
 	  DstPort		  1
 	}
       }
       Branch {
-	ZOrder			5
 	Points			[0, -75]
 	DstBlock		"Scope1"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      6
       SrcBlock		      "Constant"
       SrcPort		      1
       Points		      [43, 0]
       Branch {
-	ZOrder			7
 	Points			[0, 50]
 	DstBlock		"Bit_0"
 	DstPort			3
       }
       Branch {
-	ZOrder			8
 	DstBlock		"Bit_0"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      9
       SrcBlock		      "Bit_0"
       SrcPort		      2
       DstBlock		      "Terminator"
       DstPort		      1
     }
     Line {
-      ZOrder		      10
       SrcBlock		      "Bit_1"
       SrcPort		      2
       DstBlock		      "Terminator1"
       DstPort		      1
     }
     Line {
-      ZOrder		      11
       SrcBlock		      "Clock"
       SrcPort		      1
       Points		      [62, 0]
       Branch {
-	ZOrder			12
 	Points			[208, 0; 0, -90]
 	DstBlock		"Bit_1"
 	DstPort			2
       }
       Branch {
-	ZOrder			13
 	Points			[0, -95]
 	DstBlock		"Bit_0"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      14
       SrcBlock		      "Bit_1"
       SrcPort		      1
       Points		      [27, 0; 0, -95]
@@ -2150,73 +2247,61 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      15
       SrcBlock		      "Constant1"
       SrcPort		      1
       Points		      [43, 0]
       Branch {
-	ZOrder			16
 	Points			[0, 50]
 	DstBlock		"Bit_00"
 	DstPort			3
       }
       Branch {
-	ZOrder			17
 	DstBlock		"Bit_00"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      18
       SrcBlock		      "Bit_00"
       SrcPort		      2
       DstBlock		      "Terminator2"
       DstPort		      1
     }
     Line {
-      ZOrder		      19
       SrcBlock		      "Bit_01"
       SrcPort		      2
       DstBlock		      "Terminator3"
       DstPort		      1
     }
     Line {
-      ZOrder		      20
       SrcBlock		      "Clock1"
       SrcPort		      1
       Points		      [62, 0]
       Branch {
-	ZOrder			21
 	Points			[208, 0]
 	Branch {
-	  ZOrder		  22
 	  Points		  [234, 0; 0, -95]
 	  DstBlock		  "Bit_02"
 	  DstPort		  2
 	}
 	Branch {
-	  ZOrder		  23
 	  Points		  [0, -90]
 	  DstBlock		  "Bit_01"
 	  DstPort		  2
 	}
       }
       Branch {
-	ZOrder			24
 	Points			[0, -95]
 	DstBlock		"Bit_00"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      25
       SrcBlock		      "Bit_02"
       SrcPort		      2
       DstBlock		      "Terminator4"
       DstPort		      1
     }
     Line {
-      ZOrder		      26
       SrcBlock		      "Bit_02"
       SrcPort		      1
       Points		      [39, 0; 0, -130]
@@ -2224,36 +2309,29 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      27
       SrcBlock		      "Bit_00"
       SrcPort		      1
       Points		      [37, 0]
       Branch {
-	ZOrder			28
 	Points			[62, 0]
 	Branch {
-	  ZOrder		  29
 	  Points		  [0, 50]
 	  DstBlock		  "Bit_01"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  30
 	  DstBlock		  "Bit_01"
 	  DstPort		  1
 	}
       }
       Branch {
-	ZOrder			31
 	Points			[0, -55]
 	Branch {
-	  ZOrder		  32
 	  Points		  [219, 0; 0, 40]
 	  DstBlock		  "Logical\nOperator"
 	  DstPort		  1
 	}
 	Branch {
-	  ZOrder		  33
 	  Points		  [0, -55]
 	  DstBlock		  "Scope2"
 	  DstPort		  3
@@ -2261,339 +2339,277 @@ Model {
       }
     }
     Line {
-      ZOrder		      34
       SrcBlock		      "Bit_01"
       SrcPort		      1
       Points		      [24, 0]
       Branch {
-	ZOrder			35
 	Points			[0, -125]
 	DstBlock		"Scope2"
 	DstPort			2
       }
       Branch {
-	ZOrder			36
 	DstBlock		"Logical\nOperator"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      37
       SrcBlock		      "Logical\nOperator"
       SrcPort		      1
       Points		      [12, 0]
       Branch {
-	ZOrder			38
 	Points			[0, 50]
 	DstBlock		"Bit_02"
 	DstPort			3
       }
       Branch {
-	ZOrder			39
 	DstBlock		"Bit_02"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      40
       SrcBlock		      "Constant2"
       SrcPort		      1
       Points		      [43, 0]
       Branch {
-	ZOrder			41
 	Points			[0, 50]
 	DstBlock		"Bit_000"
 	DstPort			3
       }
       Branch {
-	ZOrder			42
 	DstBlock		"Bit_000"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      43
       SrcBlock		      "Bit_000"
       SrcPort		      2
       DstBlock		      "Terminator5"
       DstPort		      1
     }
     Line {
-      ZOrder		      44
       SrcBlock		      "Bit_001"
       SrcPort		      2
       DstBlock		      "Terminator6"
       DstPort		      1
     }
     Line {
-      ZOrder		      45
       SrcBlock		      "Clock2"
       SrcPort		      1
       Points		      [62, 0]
       Branch {
-	ZOrder			46
 	Points			[208, 0]
 	Branch {
-	  ZOrder		  47
 	  Points		  [234, 0]
 	  Branch {
-	    ZOrder		    48
 	    Points		    [231, 0; 0, -105]
 	    DstBlock		    "Bit_003"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    49
 	    Points		    [0, -95]
 	    DstBlock		    "Bit_002"
 	    DstPort		    2
 	  }
 	}
 	Branch {
-	  ZOrder		  50
 	  Points		  [0, -90]
 	  DstBlock		  "Bit_001"
 	  DstPort		  2
 	}
       }
       Branch {
-	ZOrder			51
 	Points			[0, -95]
 	DstBlock		"Bit_000"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      52
       SrcBlock		      "Bit_002"
       SrcPort		      2
       DstBlock		      "Terminator7"
       DstPort		      1
     }
     Line {
-      ZOrder		      53
       SrcBlock		      "Bit_000"
       SrcPort		      1
       Points		      [37, 0]
       Branch {
-	ZOrder			54
 	Points			[62, 0]
 	Branch {
-	  ZOrder		  55
 	  Points		  [0, 50]
 	  DstBlock		  "Bit_001"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  56
 	  DstBlock		  "Bit_001"
 	  DstPort		  1
 	}
       }
       Branch {
-	ZOrder			57
 	Points			[0, -35]
 	Branch {
-	  ZOrder		  58
 	  Points		  [0, -55; 749, 0]
 	  Branch {
-	    ZOrder		    59
 	    Points		    [0, -115]
 	    DstBlock		    "Scope3"
 	    DstPort		    4
 	  }
 	  Branch {
-	    ZOrder		    60
 	    DstBlock		    "Mux"
 	    DstPort		    4
 	  }
 	}
 	Branch {
-	  ZOrder		  61
 	  DstBlock		  "Logical\nOperator1"
 	  DstPort		  1
 	}
       }
     }
     Line {
-      ZOrder		      62
       SrcBlock		      "Bit_001"
       SrcPort		      1
       Points		      [24, 0; 0, -20]
       Branch {
-	ZOrder			63
 	Points			[0, -90; 542, 0]
 	Branch {
-	  ZOrder		  64
 	  Points		  [0, -110]
 	  DstBlock		  "Scope3"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  65
 	  DstBlock		  "Mux"
 	  DstPort		  3
 	}
       }
       Branch {
-	ZOrder			66
 	DstBlock		"Logical\nOperator1"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      67
       SrcBlock		      "Logical\nOperator1"
       SrcPort		      1
       Points		      [12, 0]
       Branch {
-	ZOrder			68
 	Points			[0, 20]
 	Branch {
-	  ZOrder		  69
 	  Points		  [0, 50]
 	  DstBlock		  "Bit_002"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  70
 	  DstBlock		  "Bit_002"
 	  DstPort		  1
 	}
       }
       Branch {
-	ZOrder			71
 	DstBlock		"Logical\nOperator2"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      72
       SrcBlock		      "Bit_003"
       SrcPort		      2
       DstBlock		      "Terminator8"
       DstPort		      1
     }
     Line {
-      ZOrder		      73
       SrcBlock		      "Logical\nOperator2"
       SrcPort		      1
       Points		      [13, 0]
       Branch {
-	ZOrder			74
 	Points			[0, 50]
 	DstBlock		"Bit_003"
 	DstPort			3
       }
       Branch {
-	ZOrder			75
 	DstBlock		"Bit_003"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      76
       SrcBlock		      "Bit_002"
       SrcPort		      1
       Points		      [39, 0; 0, -5]
       Branch {
-	ZOrder			77
 	Points			[0, -115; 281, 0]
 	Branch {
-	  ZOrder		  78
 	  Points		  [0, -105]
 	  DstBlock		  "Scope3"
 	  DstPort		  2
 	}
 	Branch {
-	  ZOrder		  79
 	  DstBlock		  "Mux"
 	  DstPort		  2
 	}
       }
       Branch {
-	ZOrder			80
 	DstBlock		"Logical\nOperator2"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      81
       SrcBlock		      "Bit_003"
       SrcPort		      1
       Points		      [30, 0; 0, -125; 44, 0]
       Branch {
-	ZOrder			82
 	Points			[0, -100]
 	DstBlock		"Scope3"
 	DstPort			1
       }
       Branch {
-	ZOrder			83
 	DstBlock		"Mux"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      84
       SrcBlock		      "Bit to Integer\nConverter"
       SrcPort		      1
       Points		      [21, 0]
       Branch {
-	ZOrder			85
 	Points			[0, -110]
 	DstBlock		"Scope4"
 	DstPort			1
       }
       Branch {
-	ZOrder			86
 	DstBlock		"Display"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      87
       SrcBlock		      "Mux"
       SrcPort		      1
       DstBlock		      "Bit to Integer\nConverter"
       DstPort		      1
     }
     Line {
-      ZOrder		      88
       SrcBlock		      "Increment"
       SrcPort		      1
       Points		      [19, 0]
       Branch {
-	ZOrder			89
 	Points			[0, 298; 2291, 0; 0, -498]
 	DstBlock		"Scope6"
 	DstPort			3
       }
       Branch {
-	ZOrder			90
 	Points			[152, 0]
 	Branch {
-	  ZOrder		  91
 	  Points		  [0, 80]
 	  DstBlock		  "2_to_1_Bit_Multiplexer1"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  92
 	  DstBlock		  "2_to_1_Bit_Multiplexer"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  93
 	  Points		  [0, -55]
 	  Branch {
-	    ZOrder		    94
 	    Points		    [0, -15]
 	    DstBlock		    "4_to_1_Bit_Multiplexer"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    95
 	    DstBlock		    "Increment\nEnabled"
 	    DstPort		    1
 	  }
@@ -2601,60 +2617,50 @@ Model {
       }
     }
     Line {
-      ZOrder		      96
       SrcBlock		      "Bit_0000"
       SrcPort		      2
       DstBlock		      "Terminator9"
       DstPort		      1
     }
     Line {
-      ZOrder		      97
       SrcBlock		      "Bit_0001"
       SrcPort		      2
       DstBlock		      "Terminator10"
       DstPort		      1
     }
     Line {
-      ZOrder		      98
       SrcBlock		      "Clock3"
       SrcPort		      1
-      Points		      [474, 0]
+      Points		      [468, 0]
       Branch {
-	ZOrder			99
 	Points			[0, -160]
 	DstBlock		"Bit_0000"
 	DstPort			2
       }
       Branch {
-	ZOrder			100
-	Points			[763, 0]
+	Points			[769, 0]
 	Branch {
-	  ZOrder		  101
-	  Points		  [440, 0]
+	  Points		  [432, 0]
 	  Branch {
-	    ZOrder		    102
 	    Points		    [0, -120]
 	    DstBlock		    "Bit_0002"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    103
-	    Points		    [473, 0]
+	    Points		    [475, 0]
 	    Branch {
-	      ZOrder		      104
+	      Points		      [0, -85]
 	      DstBlock		      "Bit_0003"
 	      DstPort		      2
 	    }
 	    Branch {
-	      ZOrder		      105
-	      Points		      [224, 0; 0, -385]
+	      Points		      [230, 0; 0, -385]
 	      DstBlock		      "Scope6"
 	      DstPort		      4
 	    }
 	  }
 	}
 	Branch {
-	  ZOrder		  106
 	  Points		  [0, -140]
 	  DstBlock		  "Bit_0001"
 	  DstPort		  2
@@ -2662,303 +2668,247 @@ Model {
       }
     }
     Line {
-      ZOrder		      107
       SrcBlock		      "Bit_0002"
       SrcPort		      2
       DstBlock		      "Terminator11"
       DstPort		      1
     }
     Line {
-      ZOrder		      108
       SrcBlock		      "4_to_1_Bit_Multiplexer"
       SrcPort		      1
       Points		      [15, 0]
       Branch {
-	ZOrder			109
 	Points			[0, 65]
 	Branch {
-	  ZOrder		  110
 	  Points		  [0, 80]
 	  DstBlock		  "2_to_1_Bit_Multiplexer3"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  111
 	  DstBlock		  "2_to_1_Bit_Multiplexer2"
 	  DstPort		  3
 	}
       }
       Branch {
-	ZOrder			112
 	DstBlock		"Logical\nOperator3"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      113
       SrcBlock		      "Bit_0001"
       SrcPort		      1
       Points		      [24, 0; 0, -65]
       Branch {
-	ZOrder			114
 	Points			[0, -365; 750, 0]
 	Branch {
-	  ZOrder		  115
 	  Points		  [0, -110]
 	  DstBlock		  "Scope5"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  116
 	  DstBlock		  "Mux1"
 	  DstPort		  3
 	}
       }
       Branch {
-	ZOrder			117
 	DstBlock		"Logical\nOperator3"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      118
       SrcBlock		      "Logical\nOperator3"
       SrcPort		      1
       Points		      [42, 0]
       Branch {
-	ZOrder			119
 	Points			[0, 75]
 	Branch {
-	  ZOrder		  120
 	  Points		  [0, 80]
 	  DstBlock		  "2_to_1_Bit_Multiplexer5"
 	  DstPort		  3
 	}
 	Branch {
-	  ZOrder		  121
 	  DstBlock		  "2_to_1_Bit_Multiplexer4"
 	  DstPort		  3
 	}
       }
       Branch {
-	ZOrder			122
 	DstBlock		"Logical\nOperator4"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      123
       SrcBlock		      "Bit_0003"
       SrcPort		      2
       DstBlock		      "Terminator12"
       DstPort		      1
     }
     Line {
-      ZOrder		      124
       SrcBlock		      "Logical\nOperator4"
       SrcPort		      1
       Points		      [95, 0; 0, 100]
       Branch {
-	ZOrder			125
 	Points			[0, 80]
 	DstBlock		"2_to_1_Bit_Multiplexer7"
 	DstPort			3
       }
       Branch {
-	ZOrder			126
 	DstBlock		"2_to_1_Bit_Multiplexer6"
 	DstPort			3
       }
     }
     Line {
-      ZOrder		      127
       SrcBlock		      "Bit_0002"
       SrcPort		      1
       Points		      [26, 0; 0, -75]
       Branch {
-	ZOrder			128
 	Points			[0, -390; 316, 0]
 	Branch {
-	  ZOrder		  129
 	  Points		  [0, -105]
 	  DstBlock		  "Scope5"
 	  DstPort		  2
 	}
 	Branch {
-	  ZOrder		  130
 	  DstBlock		  "Mux1"
 	  DstPort		  2
 	}
       }
       Branch {
-	ZOrder			131
 	DstBlock		"Logical\nOperator4"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      132
       SrcBlock		      "Bit_0003"
       SrcPort		      1
       Points		      [9, 0; 0, -120; -148, 0; 0, -395]
       Branch {
-	ZOrder			133
 	Points			[0, -100]
 	DstBlock		"Scope5"
 	DstPort			1
       }
       Branch {
-	ZOrder			134
 	DstBlock		"Mux1"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      135
       SrcBlock		      "Bit to Integer\nConverter1"
       SrcPort		      1
       Points		      [21, 0]
       Branch {
-	ZOrder			136
 	Points			[0, 165]
 	DstBlock		"Scope6"
 	DstPort			1
       }
       Branch {
-	ZOrder			137
 	DstBlock		"Display1"
 	DstPort			1
       }
     }
     Line {
-      ZOrder		      138
       SrcBlock		      "Mux1"
       SrcPort		      1
       DstBlock		      "Bit to Integer\nConverter1"
       DstPort		      1
     }
     Line {
-      ZOrder		      139
       SrcBlock		      "Address"
       SrcPort		      1
       DstBlock		      "Integer to Bit\nConverter"
       DstPort		      1
     }
     Line {
-      ZOrder		      140
       SrcBlock		      "Demux"
       SrcPort		      4
       Points		      [29, 0; 0, 135]
       Branch {
-	ZOrder			141
 	Points			[0, 80]
 	DstBlock		"Logical\nOperator6"
 	DstPort			1
       }
       Branch {
-	ZOrder			142
 	DstBlock		"2_to_1_Bit_Multiplexer"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      143
       SrcBlock		      "2_to_1_Bit_Multiplexer1"
       SrcPort		      1
       DstBlock		      "Bit_0000"
       DstPort		      3
     }
     Line {
-      ZOrder		      144
       SrcBlock		      "2_to_1_Bit_Multiplexer"
       SrcPort		      1
-      Points		      [6, 0; 0, 30]
+      Points		      [19, 0; 0, 30]
       DstBlock		      "Bit_0000"
       DstPort		      1
     }
     Line {
-      ZOrder		      145
       SrcBlock		      "Logical\nOperator6"
       SrcPort		      1
       DstBlock		      "2_to_1_Bit_Multiplexer1"
       DstPort		      2
     }
     Line {
-      ZOrder		      146
       SrcBlock		      "Integer to Bit\nConverter1"
       SrcPort		      1
       Points		      [119, 0]
       Branch {
-	ZOrder			147
 	Points			[0, -75]
 	Branch {
-	  ZOrder		  148
 	  Points		  [0, -80]
 	  DstBlock		  "2_to_1_Bit_Multiplexer"
 	  DstPort		  1
 	}
 	Branch {
-	  ZOrder		  149
 	  DstBlock		  "2_to_1_Bit_Multiplexer1"
 	  DstPort		  1
 	}
       }
       Branch {
-	ZOrder			150
 	Points			[0, 96; 775, 0]
 	Branch {
-	  ZOrder		  151
 	  Points		  [0, -151]
 	  Branch {
-	    ZOrder		    152
 	    Points		    [0, -80]
 	    DstBlock		    "2_to_1_Bit_Multiplexer2"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    153
 	    DstBlock		    "2_to_1_Bit_Multiplexer3"
 	    DstPort		    1
 	  }
 	}
 	Branch {
-	  ZOrder		  154
 	  Points		  [441, 0]
 	  Branch {
-	    ZOrder		    155
 	    Points		    [0, -131]
 	    Branch {
-	      ZOrder		      156
 	      Points		      [0, -80]
 	      DstBlock		      "2_to_1_Bit_Multiplexer4"
 	      DstPort		      1
 	    }
 	    Branch {
-	      ZOrder		      157
 	      DstBlock		      "2_to_1_Bit_Multiplexer5"
 	      DstPort		      1
 	    }
 	  }
 	  Branch {
-	    ZOrder		    158
 	    Points		    [482, 0]
 	    Branch {
-	      ZOrder		      159
 	      Points		      [0, -96]
 	      Branch {
-		ZOrder			160
 		Points			[0, -80]
 		DstBlock		"2_to_1_Bit_Multiplexer6"
 		DstPort			1
 	      }
 	      Branch {
-		ZOrder			161
 		DstBlock		"2_to_1_Bit_Multiplexer7"
 		DstPort			1
 	      }
 	    }
 	    Branch {
-	      ZOrder		      162
 	      Points		      [341, 0; 0, -436]
 	      DstBlock		      "Scope6"
 	      DstPort		      2
@@ -2968,163 +2918,181 @@ Model {
       }
     }
     Line {
-      ZOrder		      163
       SrcBlock		      "2_to_1_Bit_Multiplexer2"
       SrcPort		      1
-      Points		      [7, 0; 0, 30]
+      Points		      [32, 0; 0, 30]
       DstBlock		      "Bit_0001"
       DstPort		      1
     }
     Line {
-      ZOrder		      164
       SrcBlock		      "2_to_1_Bit_Multiplexer3"
       SrcPort		      1
       DstBlock		      "Bit_0001"
       DstPort		      3
     }
     Line {
-      ZOrder		      165
       SrcBlock		      "Logical\nOperator8"
       SrcPort		      1
       DstBlock		      "2_to_1_Bit_Multiplexer3"
       DstPort		      2
     }
     Line {
-      ZOrder		      166
       SrcBlock		      "Demux"
       SrcPort		      3
       Points		      [812, 0; 0, 170]
       Branch {
-	ZOrder			167
 	Points			[0, 80]
 	DstBlock		"Logical\nOperator8"
 	DstPort			1
       }
       Branch {
-	ZOrder			168
 	DstBlock		"2_to_1_Bit_Multiplexer2"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      169
       SrcBlock		      "2_to_1_Bit_Multiplexer4"
       SrcPort		      1
-      Points		      [6, 0; 0, 30]
+      Points		      [22, 0; 0, 30]
       DstBlock		      "Bit_0002"
       DstPort		      1
     }
     Line {
-      ZOrder		      170
       SrcBlock		      "2_to_1_Bit_Multiplexer5"
       SrcPort		      1
       DstBlock		      "Bit_0002"
       DstPort		      3
     }
     Line {
-      ZOrder		      171
       SrcBlock		      "Demux"
       SrcPort		      2
       Points		      [1258, 0; 0, 205]
       Branch {
-	ZOrder			172
 	Points			[0, 80]
 	DstBlock		"Logical\nOperator9"
 	DstPort			1
       }
       Branch {
-	ZOrder			173
 	DstBlock		"2_to_1_Bit_Multiplexer4"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      174
       SrcBlock		      "Logical\nOperator9"
       SrcPort		      1
       DstBlock		      "2_to_1_Bit_Multiplexer5"
       DstPort		      2
     }
     Line {
-      ZOrder		      175
       SrcBlock		      "2_to_1_Bit_Multiplexer7"
       SrcPort		      1
       DstBlock		      "Bit_0003"
       DstPort		      3
     }
     Line {
-      ZOrder		      176
       SrcBlock		      "2_to_1_Bit_Multiplexer6"
       SrcPort		      1
+      Points		      [15, 0; 0, 30]
       DstBlock		      "Bit_0003"
       DstPort		      1
     }
     Line {
-      ZOrder		      177
       SrcBlock		      "Logical\nOperator5"
       SrcPort		      1
       DstBlock		      "2_to_1_Bit_Multiplexer7"
       DstPort		      2
     }
     Line {
-      ZOrder		      178
       SrcBlock		      "Demux"
       SrcPort		      1
       Points		      [1738, 0; 0, 255]
       Branch {
-	ZOrder			179
 	Points			[0, 80]
 	DstBlock		"Logical\nOperator5"
 	DstPort			1
       }
       Branch {
-	ZOrder			180
 	DstBlock		"2_to_1_Bit_Multiplexer6"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      181
       SrcBlock		      "Integer to Bit\nConverter"
       SrcPort		      1
       DstBlock		      "Demux"
       DstPort		      1
     }
     Line {
-      ZOrder		      182
       SrcBlock		      "Set_Direct2"
       SrcPort		      1
       DstBlock		      "Integer to Bit\nConverter1"
       DstPort		      1
     }
     Line {
-      ZOrder		      192
+      SrcBlock		      "Increment(1b)"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	DstBlock		"Logical\nOperator11"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 35]
+	DstBlock		"Logical\nOperator7"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Logical\nOperator7"
+      SrcPort		      1
+      Points		      [29, 0]
+      Branch {
+	Points			[0, -25]
+	DstBlock		"Logical\nOperator11"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 30]
+	DstBlock		"Logical\nOperator10"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Set_Direct(1b)"
+      SrcPort		      1
+      Points		      [36, 0]
+      Branch {
+	Points			[0, -40]
+	DstBlock		"Logical\nOperator7"
+	DstPort			2
+      }
+      Branch {
+	DstBlock		"Logical\nOperator10"
+	DstPort			2
+      }
+    }
+    Line {
       SrcBlock		      "Bit_0000"
       SrcPort		      1
       Points		      [14, 0; 0, -55]
       Branch {
-	ZOrder			193
 	Points			[0, -340; 1556, 0]
 	Branch {
-	  ZOrder		  194
 	  Points		  [0, -115]
 	  DstBlock		  "Scope5"
 	  DstPort		  4
 	}
 	Branch {
-	  ZOrder		  195
 	  DstBlock		  "Mux1"
 	  DstPort		  4
 	}
       }
       Branch {
-	ZOrder			196
 	DstBlock		"Increment\nEnabled"
 	DstPort			2
       }
     }
     Line {
-      ZOrder		      197
       SrcBlock		      "N/A"
       SrcPort		      1
       Points		      [17, 0; 0, -20]
@@ -3132,7 +3100,6 @@ Model {
       DstPort		      3
     }
     Line {
-      ZOrder		      198
       SrcBlock		      "Incrementation_Disabled"
       SrcPort		      1
       Points		      [65, 0; 0, -140]
@@ -3140,7 +3107,6 @@ Model {
       DstPort		      6
     }
     Line {
-      ZOrder		      199
       SrcBlock		      "Increment\nEnabled"
       SrcPort		      1
       Points		      [33, 0; 0, 118; 136, 0; 0, -98]
@@ -3148,7 +3114,6 @@ Model {
       DstPort		      5
     }
     Line {
-      ZOrder		      200
       SrcBlock		      "Increment_by_2"
       SrcPort		      1
       Points		      [33, 0; 0, -60]
@@ -3156,7 +3121,6 @@ Model {
       DstPort		      4
     }
     Line {
-      ZOrder		      201
       SrcBlock		      "Incr_by_2"
       SrcPort		      1
       DstBlock		      "4_to_1_Bit_Multiplexer"

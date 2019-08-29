@@ -1,6 +1,6 @@
-=====
-Znaky
-=====
+#############################################
+# Znaky
+#############################################
 16x16x8[B] = 256x8[B] = 2048[B]
 ..X.............
 ..X.............
@@ -35,9 +35,9 @@ znakov..
 Tu je 32 znakov.................
 
 
-======
-Pixely
-======
+#############################################
+# Pixely
+#############################################
 16x16[p] = 2[B]x16 = 32[B]
 . . . . . . . . | . . . . . . . .
 . . . . . . . . | . . . . . . . .
@@ -126,53 +126,34 @@ X X X X . . . X | X . . . . . . .
 
 
 
-=======================================================
 
-Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1
-Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1
+#############################################
+# Co treba urobit
+#############################################
+- Pridat ROM
+- Upravit preprocessor na roznu dlzku instrukcii.
+- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
+- Rozsirit ALU (left shift, right shift).
+- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
+- Rozsirit adresovy priestor aspon na 9-bitov (alebo 10).
+- Pridat GP registre (dokopy 16).
+- Spojit graficku a textovu pamat s RAM pamatou.
+- Dokoncit testy.
 
-Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1
-Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_8_to_1
-Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_4_to_1
-Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_2_to_1
+- Clean-up:
+	- Pridat zbernicu (adresova, datova, riadiaca).
+	- Spocitat pouzite bloky, zjednotit, zjednodusit.
+	- Zbavit sa warningov.
+	- Ucesat nazvy.
+	- Pridat komentare.
+	- Ucesat Preprocessor.
 
-Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_2
-Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_4
-Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_8
+- Naprogramovat:
+	- Faktorial
+	- Tetris
+	- Snake
+	- Kalkulacku
 
-Byte_Demultiplexers_Lib/Byte_Demultiplexers_Lib/Byte_Demultiplexer_1_to_4
-
-Encoders_Lib/Encoders_Lib/Encoder_4_to_2
-
-Decoders_Lib/Decoders_Lib/Decoder_2_to_4
-Decoders_Lib/Decoders_Lib/Decoder_3_to_8
-Decoders_Lib/Decoders_Lib/Decoder_4_to_16
-
-Byte_Demultiplexers_Lib
-
-Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Byte_Adder
-Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder
-Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Subtractor
-
-Logic_Operations_Lib/Logic_Operations_Lib/Bitwise_AND
-
-Memory_Blocks_Lib/Memory_Blocks_Lib/Byte
-Memory_Blocks_Lib/Memory_Blocks_Lib/
-
-
-===============
-Co treba urobit
-===============
-- rozsirit ALU (left shift, right shift)
-
-- zautomatizovat testovanie
+- Zautomatizovat testovanie:
 	- Memory_Blocks
 	- Arithmetic_Operations
-- urobit "boot loader" + nacitavanie do RAMky z externeho suboru (LOAD, STORE)
-- pridat stack + skoky do podprogramov (POP, PUSH)
-- pridat vstupy (tlacitka/klavesnicu)
-- zamysliet sa nad interruptami
-- pridat dalsie instrukcie (podla inych 8bit procesorov)
-- tetris
-- snake
-

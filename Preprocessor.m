@@ -46,13 +46,21 @@ function compiledCode = Preprocessor(program, const)
             case const.INSTR_FORMAT_0
                 % Not implemented
 
-            case const.INSTR_FORMAT_1
+            case const.INSTR_FORMAT_1_MASK
                 i = i + 3;
 
-            case const.INSTR_FORMAT_2
-                i = i + 2;
+            case const.INSTR_FORMAT_2_MASK
+                % TODO: dostat tu dajakym sposobom konstanty z Instructions.m
+                CALL = bin2dec('10 111 000');
+                JMP  = bin2dec('10 110 000');
+                if ((bitand(CALL, const.FORMAT_2_MASK) ~= bitand(value, const.FORMAT_2_OPCODE_MASK)) && ...
+                   (bitand(JMP,  const.FORMAT_2_MASK) ~= bitand(value, const.FORMAT_2_OPCODE_MASK)))
+                    i = i + 2;
+                else
+                    i = i + 1;
+                end
 
-            case const.INSTR_FORMAT_3
+            case const.INSTR_FORMAT_3_MASK
                 i = i + 2;
 
             otherwise
@@ -85,16 +93,16 @@ function compiledCode = Preprocessor(program, const)
 
         % Compile an instruction accoring to its format.
         switch (bitand(value, const.INSTR_FORMAT_MASK))
-            case const.INSTR_FORMAT_0
+            case const.INSTR_FORMAT_0_MASK
                 [instr_byte_1, instr_byte_0, i] = compile_instr_format_2(i);
 
-            case const.INSTR_FORMAT_1
+            case const.INSTR_FORMAT_1_MASK
                 [instr_byte_1, instr_byte_0, i] = compile_instr_format_1(program, value, label_address_array, i, j, const);
 
-            case const.INSTR_FORMAT_2
+            case const.INSTR_FORMAT_2_MASK
                 [instr_byte_1, instr_byte_0, i] = compile_instr_format_2(program, value, label_address_array, i, j, const);
 
-            case const.INSTR_FORMAT_3
+            case const.INSTR_FORMAT_3_MASK
                 [instr_byte_1, instr_byte_0, i] = compile_instr_format_3(program, value, i);
 
             otherwise
@@ -152,9 +160,7 @@ function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_forma
 
     if (const.LABEL_SRC_PREFIX == bitand(op3, const.LABEL_PREFIX_MASK))
         idx = bitand(op3, const.LABEL_MASK);
-        % This is the absolute addressing mode.
-        % op3 = label_address_array(idx);
-        
+
         % This is the relative addressing mode.
         % (j - 1) => pretoze polia v matlabe su indexovane od 1 a adresovy priestor ktory pouzivam indexujem od 0
         % (- 2)  => pretoze ked pripocitavam relativnu adresu ku PC, tak je PC uz posunute o dva bajty na dalsiu instrukciu. Preto sa musim o dva bajty vratit naspat.
@@ -196,9 +202,19 @@ end
 %             ADDI | r0       | 25  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_format_2(src_code, opcode, label_address_array, i, j, const)
-    op1 = src_code(1, i);
-    compiled_instr_byte_1 = bitor(opcode, bitshift(op1, 0));
+    % TODO: dostat tu dajakym sposobom konstanty z Instructions.m
+    CALL = bin2dec('10 111 000');
+    JMP  = bin2dec('10 110 000');
+
+    op1 = bin2dec('0000 0000');
+    % Prvy operand nacitaj iba v pripade ze sa nejedna o instrukcie CALL alebo JMP.
+    if ((bitand(CALL, const.FORMAT_2_MASK) ~= bitand(opcode, const.FORMAT_2_OPCODE_MASK)) && ...
+       (bitand(JMP,  const.FORMAT_2_MASK) ~= bitand(opcode, const.FORMAT_2_OPCODE_MASK)))
+        op1 = src_code(1, i);
     i = i + 1;
+    end
+    
+    compiled_instr_byte_1 = bitor(opcode, bitshift(op1, 0));
 
     op2 = src_code(1, i);
     % Check that on the operand position is source label, not destionation label.
@@ -209,14 +225,22 @@ function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_forma
 
     if (const.LABEL_SRC_PREFIX == bitand(op2, const.LABEL_PREFIX_MASK))
         idx = bitand(op2, const.LABEL_MASK);
-        op2 = (label_address_array(idx) - (j - 1)) - 2;
 
-        % if (op2 > 128)
-        %     % todo: treba vypisat podrobnosti - odkial, kam
-        %     error('### ERROR: jump too long!!! ###')
-        % end
+        % Ak sa vykonava instrukcia CALL tak pouzij absolutne adresovanie.
+        if (bitand(CALL, const.FORMAT_2_MASK) == bitand(opcode, const.FORMAT_2_OPCODE_MASK))
+            % This is the absolute addressing mode.
+            op2 = label_address_array(idx);
+        
+        % Pre vsetky ostatne skoky pouzij relative adresovanie.
+        else    
+            op2 = (label_address_array(idx) - (j - 1)) - 2;
+            % if (op2 > 128)
+            %     % todo: treba vypisat podrobnosti - odkial, kam
+            %     error('### ERROR: jump too long!!! ###')
+            % end
 
-        op2 = typecast(int8(op2), 'uint8');
+            op2 = typecast(int8(op2), 'uint8');
+        end
     end
 
     compiled_instr_byte_0 = op2;

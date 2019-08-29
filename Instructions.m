@@ -29,6 +29,58 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      RET instruction (not finished)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOO|RR RR|DDD|SSS
+%
+% First operand:
+%     
+%
+% Second operand:
+%     
+%
+% Type of operands:        Example:
+%     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+RET = bin2dec('11 1010 00');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      POP instruction (not finished)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOO|RR RR|DDD|SSS
+%
+% First operand:
+%     
+%
+% Second operand:
+%     
+%
+% Type of operands:        Example:
+%     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+POP = bin2dec('11 1001 00');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      PUSH instruction (not finished)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOO|RR RR|DDD|SSS
+%
+% First operand:
+%     Destination in memory (selected by stack pointer).
+%
+% Second operand:
+%     Source register to push on stack.
+%
+% Type of operands:        Example:
+%     PUSH  REG  REG          PUSH  a(sp)  r0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PUSH = bin2dec('11 1000 00');
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      GCH (Get CHar) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -61,7 +113,7 @@ GCH = bin2dec('11 0111 00');
 % Type of operands:        Example:
 %     ADD  REG  REG          ADD  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADD = bin2dec('11011000');
+ADD = bin2dec('11 0110 00');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -79,7 +131,7 @@ ADD = bin2dec('11011000');
 % Type of operands:        Example:
 %     DIS REG REG          DIS r0 r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-GPX = bin2dec('11010100');
+GPX = bin2dec('11 0101 00');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,8 +149,8 @@ GPX = bin2dec('11010100');
 %     TRR  REG  REG          TRR  r0     r1
 %     TMR  REG  REG          TMR  a(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TRR = bin2dec('11010000');
-TMR = bin2dec('11001100');
+TRR = bin2dec('11 0100 00');
+TMR = bin2dec('11 0011 00');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -117,9 +169,26 @@ TMR = bin2dec('11001100');
 %     MRM   REG  REG         MRM   r2     a(r1)
 %     MRR   REG  REG         MRR   r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MMR =  bin2dec('11001000');
-MRM =  bin2dec('11000100');
-MRR =  bin2dec('11000000');
+MMR =  bin2dec('11 0010 00');
+MRM =  bin2dec('11 0001 00');
+MRR =  bin2dec('11 0000 00');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      CALL instruction (not finished)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OOO|DDD IIIIIIII
+%
+% First operand:
+%     Not used.
+%
+% Second operand:
+%     Address of a subroutine to call.
+%
+% Type of operands:        Example:
+%     CALL  REG  IMM         CALL  r0  LABEL  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+CALL = bin2dec('10 111 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -128,15 +197,15 @@ MRR =  bin2dec('11000000');
 % Format 2: FF|OOO|DDD IIIIIIII
 %
 % First operand:
-%     Address to jump.
+%     Not used.
 %
 % Second operand:
-%     None.
+%     Address to jump.
 %
 % Type of operands:        Example:
-%     JMP  REG  IMM          JMP  a(11)  r3   (not finished)
+%     JMP  REG  IMM          JMP  r0  LABEL   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JMP = bin2dec('10110000');
+JMP = bin2dec('10 110 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -154,7 +223,7 @@ JMP = bin2dec('10110000');
 % Type of operands:        Example:
 %     SUI  REG  IMM          SUI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SUBI = bin2dec('10101000');
+SUBI = bin2dec('10 101 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -172,7 +241,7 @@ SUBI = bin2dec('10101000');
 % Type of operands:        Example:
 %     ADDI  REG  IMM          ADDI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADDI = bin2dec('10100000');
+ADDI = bin2dec('10 100 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -189,7 +258,7 @@ ADDI = bin2dec('10100000');
 % Type of operands:        Example:
 %     TIR  IMM  REG          TIR  J      r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TIR = bin2dec('10011000');
+TIR = bin2dec('10 011 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -208,9 +277,9 @@ TIR = bin2dec('10011000');
 %     MRMI  REG  IMM         MRMI  r2     a(10)
 %     MRC   REG  IMM         MRC   r0     10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MMRI = bin2dec('10010000');
-MRMI = bin2dec('10001000');
-MRC =  bin2dec('10000000');
+MMRI = bin2dec('10 010 000');
+MRMI = bin2dec('10 001 000');
+MRC =  bin2dec('10 000 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -230,7 +299,7 @@ MRC =  bin2dec('10000000');
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SPX = bin2dec('01100000');
+SPX = bin2dec('01 10 000 0');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -251,8 +320,8 @@ SPX = bin2dec('01100000');
 %     JNE  REG  REG  IMM     JPE  r0  r1  16
 %     JPE  REG  REG  IMM     JPE  r0  r1  16
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JNE = bin2dec('01010000');
-JPE = bin2dec('01000000');
+JNE = bin2dec('01 01 000 0');
+JPE = bin2dec('01 00 000 0');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -299,13 +368,6 @@ JPE = bin2dec('01000000');
 % STORE = bin2dec('0011 0000');
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      PUSH instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      POP instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      LSH instruction
