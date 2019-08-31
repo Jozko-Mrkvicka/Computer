@@ -1,33 +1,22 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 0: FF|OOO|RRR RRRRR|DDD
-%   FF              - Format
-%   RRRRRR RRRRRRRR - Reserved
+% Instruction formats:
+%
+% 0.) FF|OO|IIII   IIIIIIII
+%
+% 1.) FF|OO|DDD|S  SS|IIIIII
+%
+% 2.) FF|OOO|DDD   IIIIIIII
+%
+% 3.) FF|OOOO|RR   RR|DDD|SSS
+%
+%   F - Format
+%   O - Operation code
+%   D - Register 1 (Destination)
+%   S - Register 2 (Source)
+%   I - Immediate value
+%   R - Reserved
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 1: FF|OO|DDD|S SS|IIIIII
-%   FF       - Format
-%   OO       - Operation code
-%   DD       - Register 1 (Destination)
-%   SS       - Register 2 (Source)
-%   IIIIIIII - Immediate value
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 2: FF|OOO|DDD IIIIIIII
-%   FF       - Format
-%   OOO      - Operation code
-%   DDD      - Register 1 (Destination)
-%   IIIIIIII - Immediate value
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction format 3: FF|OOOO|RR RR|DDD|SSS
-%   FF       - Format
-%   OOOO     - Operation code
-%   RRRR     - Reserved
-%   DDD      - Register 1 (Destination)
-%   SSS      - Register 2 (Source)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -48,18 +37,18 @@ RET = bin2dec('11 1010 00');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      POP instruction (not finished)
+%      POP instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR RR|DDD|SSS
 %
 % First operand:
-%     
+%     Destination register to pop from stack. 
 %
 % Second operand:
-%     
+%     Not used.
 %
 % Type of operands:        Example:
-%     
+%     POP  REG  REG          POP  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 POP = bin2dec('11 1001 00');
 
@@ -70,13 +59,13 @@ POP = bin2dec('11 1001 00');
 % Format 3: FF|OOOO|RR RR|DDD|SSS
 %
 % First operand:
-%     Destination in memory (selected by stack pointer).
+%     Not used.
 %
 % Second operand:
 %     Source register to push on stack.
 %
 % Type of operands:        Example:
-%     PUSH  REG  REG          PUSH  a(sp)  r0
+%     PUSH  REG  REG         PUSH  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 PUSH = bin2dec('11 1000 00');
 
@@ -209,21 +198,20 @@ JMP = bin2dec('10 110 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      SUBI (SUBtract Immediate) instruction
+%      Not Used
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OOO|DDD IIIIIIII
 %
 % First operand:
-%     In: 
-%     Out: Destination for result.
+%     N/A
 %
 % Second operand:
-%     
+%     N/A
 %
 % Type of operands:        Example:
-%     SUI  REG  IMM          SUI  r0  25
+%     N/A  REG  IMM          N/A  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SUBI = bin2dec('10 101 000');
+% Not_Used = bin2dec('10 101 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -322,51 +310,6 @@ SPX = bin2dec('01 10 000 0');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 JNE = bin2dec('01 01 000 0');
 JPE = bin2dec('01 00 000 0');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Operation code = 10
-% Type of operands:
-%     SUBcr  CONST  REG    (000)
-%     SUBrr  REG    REG    (001)
-%     SUBmr  MEM    REG    (010)  (Not implemented)
-%     SUBcm  CONST  MEM    (011)  (Not implemented)
-%     SUBrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% SUBcr = bin2dec('1010 0000');
-% SUBrr = bin2dec('1010 0001');
-% SUB = bin2dec('1010 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      LOAD instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% First operand:
-%     Index pointing to a data
-%     stored in external memory.
-%
-% Second operand:
-%     Destination RAM address.
-%
-% Type of operands:
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LOAD = bin2dec('0011 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      STORE instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% First operand:
-%     Source of data.
-%
-% Second operand:
-%     Destination.
-%
-% Type of operands:
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% STORE = bin2dec('0011 0000');
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

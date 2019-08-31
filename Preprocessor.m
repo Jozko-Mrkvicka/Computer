@@ -1,10 +1,6 @@
-function compiledCode = Preprocessor(program, const)
+function compiledCode = Preprocessor(program, c)
     % clc
-    fprintf('########################\n');
-    fprintf('# Assembler Preprocessor\n');
-    fprintf('########################\n');
-
-    label_address_array = hex2dec('FFFFFFFF') * ones(1, const.LBL_CNT);
+    label_address_array = hex2dec('FFFFFFFF') * ones(1, c.LBL_CNT);
 
     % address = 0;
     label_idx = 0;
@@ -21,15 +17,15 @@ function compiledCode = Preprocessor(program, const)
         value = program(1, i);
 
         % Check that on the label position is a destionation label, not a source label.
-        if (const.LABEL_SRC_PREFIX == bitand(value, const.LABEL_PREFIX_MASK))
+        if (c.LABEL_SRC_PREFIX == bitand(value, c.LABEL_PREFIX_MASK))
             % todo: treba vypisat podrobnosti
             error('### ERROR: A label with a source prefix is placed on position of a destination prefix!!! ###')
         end
 
         % Check if the first value on a line is a destination label (for example LABEL_).
         % If yes then save the address of the particular line (address of destination label).
-        if (const.LABEL_DEST_PREFIX == bitand(value, const.LABEL_PREFIX_MASK))
-            idx = bitand(value, const.LABEL_MASK);
+        if (c.LABEL_DEST_PREFIX == bitand(value, c.LABEL_PREFIX_MASK))
+            idx = bitand(value, c.LABEL_MASK);
 
             % todo: treba vypisat podrobnosti
             if (label_address_array(idx) ~= hex2dec('FFFFFFFF'))
@@ -42,25 +38,24 @@ function compiledCode = Preprocessor(program, const)
             value = program(1, i);
         end
 
-        switch (bitand(value, const.INSTR_FORMAT_MASK))
-            case const.INSTR_FORMAT_0
+        switch (bitand(value, c.INSTR_FORMAT_MASK))
+            %case c.INSTR_FORMAT_0
                 % Not implemented
 
-            case const.INSTR_FORMAT_1_MASK
+            case c.INSTR_FORMAT_1
                 i = i + 3;
 
-            case const.INSTR_FORMAT_2_MASK
+            case c.INSTR_FORMAT_2
                 % TODO: dostat tu dajakym sposobom konstanty z Instructions.m
                 CALL = bin2dec('10 111 000');
                 JMP  = bin2dec('10 110 000');
-                if ((bitand(CALL, const.FORMAT_2_MASK) ~= bitand(value, const.FORMAT_2_OPCODE_MASK)) && ...
-                   (bitand(JMP,  const.FORMAT_2_MASK) ~= bitand(value, const.FORMAT_2_OPCODE_MASK)))
+                if ((CALL ~= value) && (JMP ~= value))
                     i = i + 2;
                 else
                     i = i + 1;
                 end
 
-            case const.INSTR_FORMAT_3_MASK
+            case c.INSTR_FORMAT_3
                 i = i + 2;
 
             otherwise
@@ -83,7 +78,7 @@ function compiledCode = Preprocessor(program, const)
         value = program(1, i);
 
         % If the value is a destination label then skip it.
-        if (const.LABEL_DEST_PREFIX == bitand(value, const.LABEL_PREFIX_MASK));
+        if (c.LABEL_DEST_PREFIX == bitand(value, c.LABEL_PREFIX_MASK));
             i = i + 1;
 
             % Read next value on particular line of a processed source code.
@@ -92,17 +87,17 @@ function compiledCode = Preprocessor(program, const)
         i = i + 1;
 
         % Compile an instruction accoring to its format.
-        switch (bitand(value, const.INSTR_FORMAT_MASK))
-            case const.INSTR_FORMAT_0_MASK
-                [instr_byte_1, instr_byte_0, i] = compile_instr_format_2(i);
+        switch (bitand(value, c.INSTR_FORMAT_MASK))
+            case c.INSTR_FORMAT_0
+                %[instr_byte_1, instr_byte_0, i] = compile_instr_format_2(i);
 
-            case const.INSTR_FORMAT_1_MASK
-                [instr_byte_1, instr_byte_0, i] = compile_instr_format_1(program, value, label_address_array, i, j, const);
+            case c.INSTR_FORMAT_1
+                [instr_byte_1, instr_byte_0, i] = compile_instr_format_1(program, value, label_address_array, i, j, c);
 
-            case const.INSTR_FORMAT_2_MASK
-                [instr_byte_1, instr_byte_0, i] = compile_instr_format_2(program, value, label_address_array, i, j, const);
+            case c.INSTR_FORMAT_2
+                [instr_byte_1, instr_byte_0, i] = compile_instr_format_2(program, value, label_address_array, i, j, c);
 
-            case const.INSTR_FORMAT_3_MASK
+            case c.INSTR_FORMAT_3
                 [instr_byte_1, instr_byte_0, i] = compile_instr_format_3(program, value, i);
 
             otherwise
@@ -137,7 +132,7 @@ end
 %          --------+-----+-----+------
 %              JPE | r0  | r1  | LOOP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_format_1(src_code, opcode, label_address_array, i, j, const)
+function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_format_1(src_code, opcode, label_address_array, i, j, c)
     compiled_instr_byte_1 = 0;
     compiled_instr_byte_0 = 0;
 
@@ -148,23 +143,23 @@ function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_forma
     op2 = src_code(1, i);
     compiled_instr_byte_1 = bitor(compiled_instr_byte_1, bitshift(op2, -2));
     compiled_instr_byte_0 = bitor(compiled_instr_byte_0, bitshift(op2, 6));
-    compiled_instr_byte_0 = bitand(compiled_instr_byte_0, const.BYTE_MASK);
+    compiled_instr_byte_0 = bitand(compiled_instr_byte_0, c.BYTE_MASK);  % tento riadok je tu mozno zbytocny
     i = i + 1;
 
     op3 = src_code(1, i);
     % Check that on the operand position is source label, not destionation label.
-    if (const.LABEL_DEST_PREFIX == bitand(op3, const.LABEL_PREFIX_MASK))
+    if (c.LABEL_DEST_PREFIX == bitand(op3, c.LABEL_PREFIX_MASK))
         % todo: treba vypisat podrobnosti
         error('### ERROR: A label with a destination prefix is placed on position of a source prefix!!! ###')
     end
 
-    if (const.LABEL_SRC_PREFIX == bitand(op3, const.LABEL_PREFIX_MASK))
-        idx = bitand(op3, const.LABEL_MASK);
+    if (c.LABEL_SRC_PREFIX == bitand(op3, c.LABEL_PREFIX_MASK))
+        idx = bitand(op3, c.LABEL_MASK);
 
         % This is the relative addressing mode.
         % (j - 1) => pretoze polia v matlabe su indexovane od 1 a adresovy priestor ktory pouzivam indexujem od 0
         % (- 2)  => pretoze ked pripocitavam relativnu adresu ku PC, tak je PC uz posunute o dva bajty na dalsiu instrukciu. Preto sa musim o dva bajty vratit naspat.
-        op3 = (label_address_array(idx) - (j - 1)) - 2;
+        op3 = (label_address_array(idx) - (j - 1)) - 2
 
         % % Dopredu (k vyssim adresam) sa da skakat o 64 bytov (o 32 instrukcii).
         % % Dozadu (k nizsim adresam) sa da skakat len o 62 bytov (o 31 instrukcii).
@@ -181,14 +176,14 @@ function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_forma
         % setrim miesto v instrukcii JPE -> zvacsujem rozsah skoku dvakrat
         op3 = bitshift(op3, -1);
 
-        op3 = bitand(op3, bin2dec('0011 1111'));
-
         % if (label_address_array(idx) >= (j - 1))
         %     op3 = label_address_array(idx) - (j - 1);
         % else
         %     op3 = (j - 1) - label_address_array(idx);
         % end
     end
+
+    op3 = bitand(op3, bin2dec('0011 1111'));
     compiled_instr_byte_0 = bitor(compiled_instr_byte_0, op3);
     i = i + 1;
 end
@@ -201,33 +196,32 @@ end
 %          --------+----------+-----
 %             ADDI | r0       | 25  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_format_2(src_code, opcode, label_address_array, i, j, const)
+function [compiled_instr_byte_1, compiled_instr_byte_0, i] = compile_instr_format_2(src_code, opcode, label_address_array, i, j, c)
     % TODO: dostat tu dajakym sposobom konstanty z Instructions.m
     CALL = bin2dec('10 111 000');
     JMP  = bin2dec('10 110 000');
 
     op1 = bin2dec('0000 0000');
     % Prvy operand nacitaj iba v pripade ze sa nejedna o instrukcie CALL alebo JMP.
-    if ((bitand(CALL, const.FORMAT_2_MASK) ~= bitand(opcode, const.FORMAT_2_OPCODE_MASK)) && ...
-       (bitand(JMP,  const.FORMAT_2_MASK) ~= bitand(opcode, const.FORMAT_2_OPCODE_MASK)))
+    if ((CALL ~= opcode) && (JMP ~= opcode))
         op1 = src_code(1, i);
-    i = i + 1;
+        i = i + 1;
     end
-    
+
     compiled_instr_byte_1 = bitor(opcode, bitshift(op1, 0));
 
     op2 = src_code(1, i);
     % Check that on the operand position is source label, not destionation label.
-    if (const.LABEL_DEST_PREFIX == bitand(op2, const.LABEL_PREFIX_MASK))
+    if (c.LABEL_DEST_PREFIX == bitand(op2, c.LABEL_PREFIX_MASK))
         % todo: treba vypisat podrobnosti - odkial, kam
         error('### ERROR: A label with a destination prefix is placed on position of a source prefix!!! ###')
     end
 
-    if (const.LABEL_SRC_PREFIX == bitand(op2, const.LABEL_PREFIX_MASK))
-        idx = bitand(op2, const.LABEL_MASK);
+    if (c.LABEL_SRC_PREFIX == bitand(op2, c.LABEL_PREFIX_MASK))
+        idx = bitand(op2, c.LABEL_MASK);
 
         % Ak sa vykonava instrukcia CALL tak pouzij absolutne adresovanie.
-        if (bitand(CALL, const.FORMAT_2_MASK) == bitand(opcode, const.FORMAT_2_OPCODE_MASK))
+        if (CALL == opcode)
             % This is the absolute addressing mode.
             op2 = label_address_array(idx);
         

@@ -124,13 +124,12 @@ X X X X . . . X | X . . . . . . .
 . . . . . . . . | . . . . . . . .
 . . . . . . . . | . . . . . . . .
 
-
+0
 
 
 #############################################
 # Co treba urobit
 #############################################
-- Pridat ROM
 - Upravit preprocessor na roznu dlzku instrukcii.
 - Pridat dalsie instrukcie (podla inych 8-bit procesorov).
 - Rozsirit ALU (left shift, right shift).
@@ -139,6 +138,10 @@ X X X X . . . X | X . . . . . . .
 - Pridat GP registre (dokopy 16).
 - Spojit graficku a textovu pamat s RAM pamatou.
 - Dokoncit testy.
+- Hardwarovy generator nahodnych cisel.
+- Porozmyslat nad argument registrami a0 .. a3, ktore by sa automaticky 
+  ukladali na zasobnik pri vykonani instrukcii PUSH/POP + vymysliet register s return value.
+- Vylepsit preprocesor tak aby som mohol priamo zadavat zaporne immediate hodnoty (-1 namiesto 255)
 
 - Clean-up:
 	- Pridat zbernicu (adresova, datova, riadiaca).
