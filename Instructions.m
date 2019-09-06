@@ -163,40 +163,6 @@ MRM =  bin2dec('11 0001 00');
 MRR =  bin2dec('11 0000 00');
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      CALL instruction (not finished)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OOO|DDD IIIIIIII
-%
-% First operand:
-%     Not used.
-%
-% Second operand:
-%     Address of a subroutine to call.
-%
-% Type of operands:        Example:
-%     CALL  REG  IMM         CALL  r0  LABEL  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CALL = bin2dec('10 111 000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      JMP instruction (unconditional JuMP)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OOO|DDD IIIIIIII
-%
-% First operand:
-%     Not used.
-%
-% Second operand:
-%     Address to jump.
-%
-% Type of operands:        Example:
-%     JMP  REG  IMM          JMP  r0  LABEL   
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JMP = bin2dec('10 110 000');
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Not Used
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -310,6 +276,40 @@ SPX = bin2dec('01 10 000 0');
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 JNE = bin2dec('01 01 000 0');
 JPE = bin2dec('01 00 000 0');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      CALL instruction (not finished)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 0: FF|OO|IIII IIIIIIII
+%
+% First operand:
+%     Not used.
+%
+% Second operand:
+%     Address of a subroutine to call.
+%
+% Type of operands:        Example:
+%     CALL  REG  IMM         CALL  r0  LABEL  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+CALL = bin2dec('00 010 000');
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      JMP instruction (unconditional JuMP) (not finished)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 0: FF|OO|IIII IIIIIIII
+%
+% First operand:
+%     Not used.
+%
+% Second operand:
+%     Address to jump.
+%
+% Type of operands:        Example:
+%     JMP  REG  IMM          JMP  r0  LABEL   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+JMP = bin2dec('00 000 000');
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
