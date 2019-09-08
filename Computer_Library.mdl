@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Sep 01 22:46:33 2019"
-  RTWModifiedTimeStamp	  489273690
-  ModelVersionFormat	  "1.%<AutoIncrement:537>"
+  LastModifiedDate	  "Sun Sep 08 00:46:18 2019"
+  RTWModifiedTimeStamp	  489804375
+  ModelVersionFormat	  "1.%<AutoIncrement:539>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -880,7 +880,7 @@ Library {
   System {
     Name		    "Computer_Library"
     Location		    [64, 0, 1686, 1080]
-    Open		    off
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -24822,7 +24822,7 @@ Library {
       Ports		      [5, 1]
       Position		      [1175, 41, 1320, 119]
       ZOrder		      1875
-      LibraryVersion	      "*1.537"
+      LibraryVersion	      "*1.538"
       RequestExecContextInheritance off
       Variant		      off
       System {
@@ -24839,7 +24839,7 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"40"
+	ZoomFactor		"175"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Sel_Pos_X(2B)"
@@ -24859,9 +24859,9 @@ Library {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "Data(2B)"
+	  Name			  "Data(1b)"
 	  SID			  "5449"
-	  Position		  [25, 1893, 55, 1907]
+	  Position		  [25, 2018, 55, 2032]
 	  ZOrder		  1588
 	  Port			  "3"
 	  IconDisplay		  "Port number"
@@ -24921,17 +24921,6 @@ Library {
 	}
 	Block {
 	  BlockType		  Demux
-	  Name			  "Demux2"
-	  SID			  "5480"
-	  Ports			  [1, 16]
-	  Position		  [250, 1745, 260, 2055]
-	  ZOrder		  1627
-	  ShowName		  off
-	  Outputs		  "16"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Demux
 	  Name			  "Demux4"
 	  SID			  "5453"
 	  Ports			  [1, 16]
@@ -24948,7 +24937,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 563, 1035, 637]
 	  ZOrder		  1600
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -24960,7 +24949,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 658, 1035, 732]
 	  ZOrder		  1601
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -24972,7 +24961,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1513, 1035, 1587]
 	  ZOrder		  1610
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -24984,7 +24973,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1608, 1035, 1682]
 	  ZOrder		  1611
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -24996,7 +24985,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1703, 1035, 1777]
 	  ZOrder		  1612
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25008,7 +24997,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1798, 1035, 1872]
 	  ZOrder		  1613
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25020,7 +25009,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1893, 1035, 1967]
 	  ZOrder		  1614
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25032,7 +25021,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1988, 1035, 2062]
 	  ZOrder		  1615
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25044,7 +25033,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 753, 1035, 827]
 	  ZOrder		  1602
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25056,7 +25045,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 848, 1035, 922]
 	  ZOrder		  1603
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25068,7 +25057,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 943, 1035, 1017]
 	  ZOrder		  1604
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25080,7 +25069,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1038, 1035, 1112]
 	  ZOrder		  1605
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25092,7 +25081,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1133, 1035, 1207]
 	  ZOrder		  1606
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25104,7 +25093,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1228, 1035, 1302]
 	  ZOrder		  1607
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25116,7 +25105,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1323, 1035, 1397]
 	  ZOrder		  1608
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25128,7 +25117,7 @@ Library {
 	  Ports			  [5, 2]
 	  Position		  [880, 1418, 1035, 1492]
 	  ZOrder		  1609
-	  LibraryVersion	  "1.33"
+	  LibraryVersion	  "1.34"
 	  SourceBlock		  "Memory_Blocks_Lib/Memory_Blocks_Lib/Graphic_memory_24bit"
 	  SourceType		  "SubSystem"
 	  ContentPreviewEnabled	  off
@@ -25140,22 +25129,6 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [115, 130, 185, 160]
 	  ZOrder		  1578
-	  ShowName		  off
-	  LibraryVersion	  "1.278"
-	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
-	  SourceType		  "Integer to Bit Converter"
-	  nbits			  "16"
-	  signedInputValues	  "Unsigned"
-	  bitOrder		  "MSB first"
-	  outDtype		  "boolean"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Integer to Bit\nConverter2"
-	  SID			  "5481"
-	  Ports			  [1, 1]
-	  Position		  [115, 1885, 185, 1915]
-	  ZOrder		  1591
 	  ShowName		  off
 	  LibraryVersion	  "1.278"
 	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
@@ -25250,14 +25223,6 @@ Library {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Terminator10"
-	  SID			  "5488"
-	  Position		  [295, 2020, 315, 2040]
-	  ZOrder		  1599
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
 	  Name			  "Terminator11"
 	  SID			  "5565"
 	  Position		  [260, 127, 275, 143]
@@ -25322,14 +25287,6 @@ Library {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Terminator19"
-	  SID			  "5573"
-	  Position		  [295, 1880, 315, 1900]
-	  ZOrder		  1634
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
 	  Name			  "Terminator2"
 	  SID			  "5477"
 	  Position		  [260, 157, 275, 173]
@@ -25338,114 +25295,10 @@ Library {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Terminator20"
-	  SID			  "5574"
-	  Position		  [295, 1820, 315, 1840]
-	  ZOrder		  1628
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator21"
-	  SID			  "5575"
-	  Position		  [295, 1800, 315, 1820]
-	  ZOrder		  1629
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator22"
-	  SID			  "5576"
-	  Position		  [295, 1780, 315, 1800]
-	  ZOrder		  1630
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator23"
-	  SID			  "5577"
-	  Position		  [295, 1760, 315, 1780]
-	  ZOrder		  1631
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator24"
-	  SID			  "5578"
-	  Position		  [295, 1840, 315, 1860]
-	  ZOrder		  1632
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator25"
-	  SID			  "5579"
-	  Position		  [295, 1860, 315, 1880]
-	  ZOrder		  1633
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator26"
-	  SID			  "5580"
-	  Position		  [295, 1740, 315, 1760]
-	  ZOrder		  1635
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
 	  Name			  "Terminator3"
 	  SID			  "5478"
 	  Position		  [260, 142, 275, 158]
 	  ZOrder		  1583
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator4"
-	  SID			  "5482"
-	  Position		  [295, 1960, 315, 1980]
-	  ZOrder		  1593
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator5"
-	  SID			  "5483"
-	  Position		  [295, 1940, 315, 1960]
-	  ZOrder		  1594
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator6"
-	  SID			  "5484"
-	  Position		  [295, 1920, 315, 1940]
-	  ZOrder		  1595
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator7"
-	  SID			  "5485"
-	  Position		  [295, 1900, 315, 1920]
-	  ZOrder		  1596
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator8"
-	  SID			  "5486"
-	  Position		  [295, 1980, 315, 2000]
-	  ZOrder		  1597
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator9"
-	  SID			  "5487"
-	  Position		  [295, 2000, 315, 2020]
-	  ZOrder		  1598
 	  ShowName		  off
 	}
 	Block {
@@ -25458,164 +25311,140 @@ Library {
 	}
 	Line {
 	  ZOrder		  1
-	  SrcBlock		  "Demux2"
-	  SrcPort		  1
-	  DstBlock		  "Terminator26"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  2
-	  SrcBlock		  "Demux2"
-	  SrcPort		  2
-	  DstBlock		  "Terminator23"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  3
-	  SrcBlock		  "Demux2"
-	  SrcPort		  3
-	  DstBlock		  "Terminator22"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  4
-	  SrcBlock		  "Demux2"
-	  SrcPort		  5
-	  DstBlock		  "Terminator20"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  5
-	  SrcBlock		  "Demux2"
-	  SrcPort		  4
-	  DstBlock		  "Terminator21"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  6
-	  SrcBlock		  "Demux2"
-	  SrcPort		  8
-	  DstBlock		  "Terminator19"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  7
-	  SrcBlock		  "Demux2"
-	  SrcPort		  7
-	  DstBlock		  "Terminator25"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  8
-	  SrcBlock		  "Demux2"
-	  SrcPort		  6
-	  DstBlock		  "Terminator24"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  9
 	  SrcBlock		  "Demux1"
 	  SrcPort		  1
 	  DstBlock		  "Terminator18"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  10
+	  ZOrder		  2
 	  SrcBlock		  "Demux1"
 	  SrcPort		  2
 	  DstBlock		  "Terminator17"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  11
+	  ZOrder		  3
 	  SrcBlock		  "Demux1"
 	  SrcPort		  4
 	  DstBlock		  "Terminator15"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  12
+	  ZOrder		  4
 	  SrcBlock		  "Demux1"
 	  SrcPort		  3
 	  DstBlock		  "Terminator16"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  13
+	  ZOrder		  5
 	  SrcBlock		  "Demux1"
 	  SrcPort		  5
 	  DstBlock		  "Terminator14"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  14
+	  ZOrder		  6
 	  SrcBlock		  "Demux1"
 	  SrcPort		  6
 	  DstBlock		  "Terminator13"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  15
+	  ZOrder		  7
 	  SrcBlock		  "Demux1"
 	  SrcPort		  8
 	  DstBlock		  "Terminator11"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  16
+	  ZOrder		  8
 	  SrcBlock		  "Demux1"
 	  SrcPort		  7
 	  DstBlock		  "Terminator12"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  17
+	  ZOrder		  9
 	  SrcBlock		  "Sel_Pos_Y(2B)"
 	  SrcPort		  1
 	  Points		  [773, 0; 0, 635]
 	  Branch {
-	    ZOrder		    18
+	    ZOrder		    10
 	    DstBlock		    "Graphic_memory_24bit(0)"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    19
+	    ZOrder		    11
 	    Points		    [0, 95]
 	    Branch {
-	      ZOrder		      20
+	      ZOrder		      12
 	      DstBlock		      "Graphic_memory_24bit(1)"
 	      DstPort		      2
 	    }
 	    Branch {
-	      ZOrder		      21
+	      ZOrder		      13
 	      Points		      [0, 95]
 	      Branch {
-		ZOrder			22
+		ZOrder			14
 		DstBlock		"Graphic_memory_24bit(2)"
 		DstPort			2
 	      }
 	      Branch {
-		ZOrder			23
+		ZOrder			15
 		Points			[0, 95]
 		Branch {
-		  ZOrder		  24
+		  ZOrder		  16
 		  DstBlock		  "Graphic_memory_24bit(3)"
 		  DstPort		  2
 		}
 		Branch {
-		  ZOrder		  25
+		  ZOrder		  17
 		  Points		  [0, 95]
 		  Branch {
-		    ZOrder		    26
+		    ZOrder		    18
 		    DstBlock		    "Graphic_memory_24bit(4)"
 		    DstPort		    2
 		  }
 		  Branch {
+		    ZOrder		    19
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    20
+		    DstBlock		    "Graphic_memory_24bit(5)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    ZOrder		    21
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    22
+		    DstBlock		    "Graphic_memory_24bit(6)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    ZOrder		    23
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    24
+		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    ZOrder		    25
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    26
+		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstPort		    2
+		    }
+		    Branch {
 		    ZOrder		    27
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    28
-		    DstBlock		    "Graphic_memory_24bit(5)"
+		    DstBlock		    "Graphic_memory_24bit(9)"
 		    DstPort		    2
 		    }
 		    Branch {
@@ -25623,7 +25452,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    30
-		    DstBlock		    "Graphic_memory_24bit(6)"
+		    DstBlock		    "Graphic_memory_24bit(10)"
 		    DstPort		    2
 		    }
 		    Branch {
@@ -25631,7 +25460,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    32
-		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstBlock		    "Graphic_memory_24bit(11)"
 		    DstPort		    2
 		    }
 		    Branch {
@@ -25639,7 +25468,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    34
-		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstBlock		    "Graphic_memory_24bit(12)"
 		    DstPort		    2
 		    }
 		    Branch {
@@ -25647,7 +25476,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    36
-		    DstBlock		    "Graphic_memory_24bit(9)"
+		    DstBlock		    "Graphic_memory_24bit(13)"
 		    DstPort		    2
 		    }
 		    Branch {
@@ -25655,43 +25484,11 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    38
-		    DstBlock		    "Graphic_memory_24bit(10)"
-		    DstPort		    2
-		    }
-		    Branch {
-		    ZOrder		    39
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    40
-		    DstBlock		    "Graphic_memory_24bit(11)"
-		    DstPort		    2
-		    }
-		    Branch {
-		    ZOrder		    41
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    42
-		    DstBlock		    "Graphic_memory_24bit(12)"
-		    DstPort		    2
-		    }
-		    Branch {
-		    ZOrder		    43
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    44
-		    DstBlock		    "Graphic_memory_24bit(13)"
-		    DstPort		    2
-		    }
-		    Branch {
-		    ZOrder		    45
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    46
 		    DstBlock		    "Graphic_memory_24bit(14)"
 		    DstPort		    2
 		    }
 		    Branch {
-		    ZOrder		    47
+		    ZOrder		    39
 		    Points		    [0, 95]
 		    DstBlock		    "Graphic_memory_24bit(15)"
 		    DstPort		    2
@@ -25712,108 +25509,140 @@ Library {
 	  }
 	}
 	Line {
-	  ZOrder		  48
+	  ZOrder		  40
 	  SrcBlock		  "Demux1"
 	  SrcPort		  9
 	  DstBlock		  "Terminator3"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  49
+	  ZOrder		  41
 	  SrcBlock		  "Demux1"
 	  SrcPort		  10
 	  DstBlock		  "Terminator2"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  50
+	  ZOrder		  42
 	  SrcBlock		  "Demux1"
 	  SrcPort		  13
 	  Points		  [120, 0]
 	  Branch {
-	    ZOrder		    51
+	    ZOrder		    43
 	    DstBlock		    "Bit_Multiplexer_16_to_1"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    52
+	    ZOrder		    44
 	    Points		    [0, 385]
 	    DstBlock		    "Decoder_4_to_16"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  ZOrder		  53
+	  ZOrder		  45
 	  SrcBlock		  "Demux1"
 	  SrcPort		  15
 	  Points		  [97, 0]
 	  Branch {
-	    ZOrder		    54
+	    ZOrder		    46
 	    DstBlock		    "Bit_Multiplexer_16_to_1"
 	    DstPort		    3
 	  }
 	  Branch {
-	    ZOrder		    55
+	    ZOrder		    47
 	    Points		    [0, 475]
 	    DstBlock		    "Decoder_4_to_16"
 	    DstPort		    3
 	  }
 	}
 	Line {
-	  ZOrder		  56
+	  ZOrder		  48
 	  SrcBlock		  "Sel_Pos_X(2B)"
 	  SrcPort		  1
 	  DstBlock		  "Integer to Bit\nConverter1"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  57
-	  SrcBlock		  "Demux2"
-	  SrcPort		  16
-	  Points		  [581, 0; 0, -25]
+	  ZOrder		  49
+	  SrcBlock		  "Data(1b)"
+	  SrcPort		  1
+	  Points		  [786, 0]
 	  Branch {
-	    ZOrder		    58
+	    ZOrder		    50
 	    DstBlock		    "Graphic_memory_24bit(15)"
 	    DstPort		    3
 	  }
 	  Branch {
-	    ZOrder		    59
+	    ZOrder		    51
 	    Points		    [0, -95]
 	    Branch {
-	      ZOrder		      60
+	      ZOrder		      52
 	      DstBlock		      "Graphic_memory_24bit(14)"
 	      DstPort		      3
 	    }
 	    Branch {
-	      ZOrder		      61
+	      ZOrder		      53
 	      Points		      [0, -95]
 	      Branch {
-		ZOrder			62
+		ZOrder			54
 		DstBlock		"Graphic_memory_24bit(13)"
 		DstPort			3
 	      }
 	      Branch {
-		ZOrder			63
+		ZOrder			55
 		Points			[0, -95]
 		Branch {
-		  ZOrder		  64
+		  ZOrder		  56
 		  DstBlock		  "Graphic_memory_24bit(12)"
 		  DstPort		  3
 		}
 		Branch {
-		  ZOrder		  65
+		  ZOrder		  57
 		  Points		  [0, -95]
 		  Branch {
-		    ZOrder		    66
+		    ZOrder		    58
 		    DstBlock		    "Graphic_memory_24bit(11)"
 		    DstPort		    3
 		  }
 		  Branch {
+		    ZOrder		    59
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    60
+		    DstBlock		    "Graphic_memory_24bit(10)"
+		    DstPort		    3
+		    }
+		    Branch {
+		    ZOrder		    61
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    62
+		    DstBlock		    "Graphic_memory_24bit(9)"
+		    DstPort		    3
+		    }
+		    Branch {
+		    ZOrder		    63
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    64
+		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstPort		    3
+		    }
+		    Branch {
+		    ZOrder		    65
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    66
+		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstPort		    3
+		    }
+		    Branch {
 		    ZOrder		    67
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    68
-		    DstBlock		    "Graphic_memory_24bit(10)"
+		    DstBlock		    "Graphic_memory_24bit(6)"
 		    DstPort		    3
 		    }
 		    Branch {
@@ -25821,7 +25650,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    70
-		    DstBlock		    "Graphic_memory_24bit(9)"
+		    DstBlock		    "Graphic_memory_24bit(5)"
 		    DstPort		    3
 		    }
 		    Branch {
@@ -25829,7 +25658,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    72
-		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstBlock		    "Graphic_memory_24bit(4)"
 		    DstPort		    3
 		    }
 		    Branch {
@@ -25837,7 +25666,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    74
-		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstBlock		    "Graphic_memory_24bit(3)"
 		    DstPort		    3
 		    }
 		    Branch {
@@ -25845,7 +25674,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    76
-		    DstBlock		    "Graphic_memory_24bit(6)"
+		    DstBlock		    "Graphic_memory_24bit(2)"
 		    DstPort		    3
 		    }
 		    Branch {
@@ -25853,43 +25682,11 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    78
-		    DstBlock		    "Graphic_memory_24bit(5)"
-		    DstPort		    3
-		    }
-		    Branch {
-		    ZOrder		    79
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    80
-		    DstBlock		    "Graphic_memory_24bit(4)"
-		    DstPort		    3
-		    }
-		    Branch {
-		    ZOrder		    81
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    82
-		    DstBlock		    "Graphic_memory_24bit(3)"
-		    DstPort		    3
-		    }
-		    Branch {
-		    ZOrder		    83
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    84
-		    DstBlock		    "Graphic_memory_24bit(2)"
-		    DstPort		    3
-		    }
-		    Branch {
-		    ZOrder		    85
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    86
 		    DstBlock		    "Graphic_memory_24bit(1)"
 		    DstPort		    3
 		    }
 		    Branch {
-		    ZOrder		    87
+		    ZOrder		    79
 		    Points		    [0, -95]
 		    DstBlock		    "Graphic_memory_24bit(0)"
 		    DstPort		    3
@@ -25910,69 +25707,69 @@ Library {
 	  }
 	}
 	Line {
-	  ZOrder		  88
+	  ZOrder		  80
 	  SrcBlock		  "Demux1"
 	  SrcPort		  14
 	  Points		  [109, 0]
 	  Branch {
-	    ZOrder		    89
+	    ZOrder		    81
 	    DstBlock		    "Bit_Multiplexer_16_to_1"
 	    DstPort		    2
 	  }
 	  Branch {
-	    ZOrder		    90
+	    ZOrder		    82
 	    Points		    [0, 430]
 	    DstBlock		    "Decoder_4_to_16"
 	    DstPort		    2
 	  }
 	}
 	Line {
-	  ZOrder		  91
+	  ZOrder		  83
 	  SrcBlock		  "Demux1"
 	  SrcPort		  16
 	  Points		  [84, 0]
 	  Branch {
-	    ZOrder		    92
+	    ZOrder		    84
 	    DstBlock		    "Bit_Multiplexer_16_to_1"
 	    DstPort		    4
 	  }
 	  Branch {
-	    ZOrder		    93
+	    ZOrder		    85
 	    Points		    [0, 520]
 	    DstBlock		    "Decoder_4_to_16"
 	    DstPort		    4
 	  }
 	}
 	Line {
-	  ZOrder		  94
+	  ZOrder		  86
 	  SrcBlock		  "Integer to Bit\nConverter1"
 	  SrcPort		  1
 	  DstBlock		  "Demux1"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  95
+	  ZOrder		  87
 	  SrcBlock		  "Demux1"
 	  SrcPort		  12
 	  DstBlock		  "Terminator"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  96
+	  ZOrder		  88
 	  SrcBlock		  "Demux1"
 	  SrcPort		  11
 	  DstBlock		  "Terminator1"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  97
+	  ZOrder		  89
 	  SrcBlock		  "Mux"
 	  SrcPort		  1
 	  DstBlock		  "Integer to Bit\nConverter5"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  98
+	  ZOrder		  90
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  13
 	  Points		  [81, 0; 0, 960]
@@ -25980,21 +25777,21 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  99
+	  ZOrder		  91
 	  SrcBlock		  "Matrix\nConcatenate6"
 	  SrcPort		  1
 	  DstBlock		  "Matrix\nViewer2"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  100
+	  ZOrder		  92
 	  SrcBlock		  "Integer to Bit\nConverter5"
 	  SrcPort		  1
 	  DstBlock		  "Demux4"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  101
+	  ZOrder		  93
 	  SrcBlock		  "Graphic_memory_24bit(2)"
 	  SrcPort		  2
 	  Points		  [331, 0; 0, -160]
@@ -26002,7 +25799,7 @@ Library {
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  102
+	  ZOrder		  94
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  6
 	  Points		  [174, 0; 0, 400]
@@ -26010,7 +25807,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  103
+	  ZOrder		  95
 	  SrcBlock		  "Graphic_memory_24bit(9)"
 	  SrcPort		  2
 	  Points		  [427, 0; 0, -720]
@@ -26018,7 +25815,7 @@ Library {
 	  DstPort		  10
 	}
 	Line {
-	  ZOrder		  104
+	  ZOrder		  96
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  11
 	  Points		  [109, 0; 0, 800]
@@ -26026,7 +25823,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  105
+	  ZOrder		  97
 	  SrcBlock		  "Graphic_memory_24bit(4)"
 	  SrcPort		  2
 	  Points		  [361, 0; 0, -320]
@@ -26034,14 +25831,14 @@ Library {
 	  DstPort		  5
 	}
 	Line {
-	  ZOrder		  106
+	  ZOrder		  98
 	  SrcBlock		  "Graphic_memory_24bit(0)"
 	  SrcPort		  2
 	  DstBlock		  "Mux"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  107
+	  ZOrder		  99
 	  SrcBlock		  "Graphic_memory_24bit(13)"
 	  SrcPort		  2
 	  Points		  [480, 0; 0, -1040]
@@ -26049,7 +25846,7 @@ Library {
 	  DstPort		  14
 	}
 	Line {
-	  ZOrder		  108
+	  ZOrder		  100
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  3
 	  Points		  [213, 0; 0, 160]
@@ -26057,7 +25854,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  109
+	  ZOrder		  101
 	  SrcBlock		  "Graphic_memory_24bit(15)"
 	  SrcPort		  2
 	  Points		  [506, 0; 0, -1200]
@@ -26065,7 +25862,7 @@ Library {
 	  DstPort		  16
 	}
 	Line {
-	  ZOrder		  110
+	  ZOrder		  102
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  16
 	  Points		  [40, 0; 0, 1200]
@@ -26073,53 +25870,85 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  111
+	  ZOrder		  103
 	  SrcBlock		  "CLK"
 	  SrcPort		  1
 	  Points		  [799, 0; 0, -20]
 	  Branch {
-	    ZOrder		    112
+	    ZOrder		    104
 	    DstBlock		    "Graphic_memory_24bit(15)"
 	    DstPort		    5
 	  }
 	  Branch {
-	    ZOrder		    113
+	    ZOrder		    105
 	    Points		    [0, -95]
 	    Branch {
-	      ZOrder		      114
+	      ZOrder		      106
 	      DstBlock		      "Graphic_memory_24bit(14)"
 	      DstPort		      5
 	    }
 	    Branch {
-	      ZOrder		      115
+	      ZOrder		      107
 	      Points		      [0, -95]
 	      Branch {
-		ZOrder			116
+		ZOrder			108
 		DstBlock		"Graphic_memory_24bit(13)"
 		DstPort			5
 	      }
 	      Branch {
-		ZOrder			117
+		ZOrder			109
 		Points			[0, -95]
 		Branch {
-		  ZOrder		  118
+		  ZOrder		  110
 		  DstBlock		  "Graphic_memory_24bit(12)"
 		  DstPort		  5
 		}
 		Branch {
-		  ZOrder		  119
+		  ZOrder		  111
 		  Points		  [0, -95]
 		  Branch {
-		    ZOrder		    120
+		    ZOrder		    112
 		    DstBlock		    "Graphic_memory_24bit(11)"
 		    DstPort		    5
 		  }
 		  Branch {
+		    ZOrder		    113
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    114
+		    DstBlock		    "Graphic_memory_24bit(10)"
+		    DstPort		    5
+		    }
+		    Branch {
+		    ZOrder		    115
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    116
+		    DstBlock		    "Graphic_memory_24bit(9)"
+		    DstPort		    5
+		    }
+		    Branch {
+		    ZOrder		    117
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    118
+		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstPort		    5
+		    }
+		    Branch {
+		    ZOrder		    119
+		    Points		    [0, -95]
+		    Branch {
+		    ZOrder		    120
+		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstPort		    5
+		    }
+		    Branch {
 		    ZOrder		    121
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    122
-		    DstBlock		    "Graphic_memory_24bit(10)"
+		    DstBlock		    "Graphic_memory_24bit(6)"
 		    DstPort		    5
 		    }
 		    Branch {
@@ -26127,7 +25956,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    124
-		    DstBlock		    "Graphic_memory_24bit(9)"
+		    DstBlock		    "Graphic_memory_24bit(5)"
 		    DstPort		    5
 		    }
 		    Branch {
@@ -26135,7 +25964,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    126
-		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstBlock		    "Graphic_memory_24bit(4)"
 		    DstPort		    5
 		    }
 		    Branch {
@@ -26143,7 +25972,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    128
-		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstBlock		    "Graphic_memory_24bit(3)"
 		    DstPort		    5
 		    }
 		    Branch {
@@ -26151,7 +25980,7 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    130
-		    DstBlock		    "Graphic_memory_24bit(6)"
+		    DstBlock		    "Graphic_memory_24bit(2)"
 		    DstPort		    5
 		    }
 		    Branch {
@@ -26159,44 +25988,12 @@ Library {
 		    Points		    [0, -95]
 		    Branch {
 		    ZOrder		    132
-		    DstBlock		    "Graphic_memory_24bit(5)"
-		    DstPort		    5
-		    }
-		    Branch {
-		    ZOrder		    133
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    134
-		    DstBlock		    "Graphic_memory_24bit(4)"
-		    DstPort		    5
-		    }
-		    Branch {
-		    ZOrder		    135
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    136
-		    DstBlock		    "Graphic_memory_24bit(3)"
-		    DstPort		    5
-		    }
-		    Branch {
-		    ZOrder		    137
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    138
-		    DstBlock		    "Graphic_memory_24bit(2)"
-		    DstPort		    5
-		    }
-		    Branch {
-		    ZOrder		    139
-		    Points		    [0, -95]
-		    Branch {
-		    ZOrder		    140
 		    Points		    [0, -95]
 		    DstBlock		    "Graphic_memory_24bit(0)"
 		    DstPort		    5
 		    }
 		    Branch {
-		    ZOrder		    141
+		    ZOrder		    133
 		    DstBlock		    "Graphic_memory_24bit(1)"
 		    DstPort		    5
 		    }
@@ -26216,14 +26013,14 @@ Library {
 	  }
 	}
 	Line {
-	  ZOrder		  142
+	  ZOrder		  134
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  1
 	  DstBlock		  "Graphic_memory_24bit(0)"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  143
+	  ZOrder		  135
 	  SrcBlock		  "Graphic_memory_24bit(3)"
 	  SrcPort		  2
 	  Points		  [346, 0; 0, -240]
@@ -26231,7 +26028,7 @@ Library {
 	  DstPort		  4
 	}
 	Line {
-	  ZOrder		  144
+	  ZOrder		  136
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  10
 	  Points		  [122, 0; 0, 720]
@@ -26239,7 +26036,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  145
+	  ZOrder		  137
 	  SrcBlock		  "Graphic_memory_24bit(12)"
 	  SrcPort		  2
 	  Points		  [467, 0; 0, -960]
@@ -26247,7 +26044,7 @@ Library {
 	  DstPort		  13
 	}
 	Line {
-	  ZOrder		  146
+	  ZOrder		  138
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  12
 	  Points		  [95, 0; 0, 880]
@@ -26255,7 +26052,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  147
+	  ZOrder		  139
 	  SrcBlock		  "Graphic_memory_24bit(5)"
 	  SrcPort		  2
 	  Points		  [375, 0; 0, -400]
@@ -26263,7 +26060,7 @@ Library {
 	  DstPort		  6
 	}
 	Line {
-	  ZOrder		  148
+	  ZOrder		  140
 	  SrcBlock		  "Graphic_memory_24bit(1)"
 	  SrcPort		  2
 	  Points		  [317, 0; 0, -80]
@@ -26271,7 +26068,7 @@ Library {
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  149
+	  ZOrder		  141
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  2
 	  Points		  [225, 0; 0, 80]
@@ -26279,7 +26076,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  150
+	  ZOrder		  142
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  4
 	  Points		  [200, 0; 0, 240]
@@ -26287,7 +26084,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  151
+	  ZOrder		  143
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  9
 	  Points		  [135, 0; 0, 640]
@@ -26295,7 +26092,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  152
+	  ZOrder		  144
 	  SrcBlock		  "Graphic_memory_24bit(11)"
 	  SrcPort		  2
 	  Points		  [454, 0; 0, -880]
@@ -26303,7 +26100,7 @@ Library {
 	  DstPort		  12
 	}
 	Line {
-	  ZOrder		  153
+	  ZOrder		  145
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  5
 	  Points		  [187, 0; 0, 320]
@@ -26311,7 +26108,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  154
+	  ZOrder		  146
 	  SrcBlock		  "Graphic_memory_24bit(6)"
 	  SrcPort		  2
 	  Points		  [388, 0; 0, -480]
@@ -26319,7 +26116,7 @@ Library {
 	  DstPort		  7
 	}
 	Line {
-	  ZOrder		  155
+	  ZOrder		  147
 	  SrcBlock		  "Graphic_memory_24bit(7)"
 	  SrcPort		  2
 	  Points		  [401, 0; 0, -560]
@@ -26327,7 +26124,7 @@ Library {
 	  DstPort		  8
 	}
 	Line {
-	  ZOrder		  156
+	  ZOrder		  148
 	  SrcBlock		  "Graphic_memory_24bit(8)"
 	  SrcPort		  2
 	  Points		  [414, 0; 0, -640]
@@ -26335,7 +26132,7 @@ Library {
 	  DstPort		  9
 	}
 	Line {
-	  ZOrder		  157
+	  ZOrder		  149
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  14
 	  Points		  [67, 0; 0, 1040]
@@ -26343,7 +26140,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  158
+	  ZOrder		  150
 	  SrcBlock		  "Graphic_memory_24bit(14)"
 	  SrcPort		  2
 	  Points		  [493, 0; 0, -1120]
@@ -26351,7 +26148,7 @@ Library {
 	  DstPort		  15
 	}
 	Line {
-	  ZOrder		  159
+	  ZOrder		  151
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  15
 	  Points		  [53, 0; 0, 1120]
@@ -26359,7 +26156,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  160
+	  ZOrder		  152
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  8
 	  Points		  [148, 0; 0, 560]
@@ -26367,7 +26164,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  161
+	  ZOrder		  153
 	  SrcBlock		  "Decoder_4_to_16"
 	  SrcPort		  7
 	  Points		  [161, 0; 0, 480]
@@ -26375,7 +26172,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  162
+	  ZOrder		  154
 	  SrcBlock		  "Graphic_memory_24bit(10)"
 	  SrcPort		  2
 	  Points		  [440, 0; 0, -800]
@@ -26383,7 +26180,7 @@ Library {
 	  DstPort		  11
 	}
 	Line {
-	  ZOrder		  163
+	  ZOrder		  155
 	  SrcBlock		  "Demux4"
 	  SrcPort		  16
 	  Points		  [56, 0; 0, 155]
@@ -26391,7 +26188,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  164
+	  ZOrder		  156
 	  SrcBlock		  "Demux4"
 	  SrcPort		  15
 	  Points		  [73, 0; 0, 185]
@@ -26399,7 +26196,7 @@ Library {
 	  DstPort		  2
 	}
 	Line {
-	  ZOrder		  165
+	  ZOrder		  157
 	  SrcBlock		  "Demux4"
 	  SrcPort		  14
 	  Points		  [91, 0; 0, 215]
@@ -26407,7 +26204,7 @@ Library {
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  166
+	  ZOrder		  158
 	  SrcBlock		  "Demux4"
 	  SrcPort		  13
 	  Points		  [108, 0; 0, 245]
@@ -26415,7 +26212,7 @@ Library {
 	  DstPort		  4
 	}
 	Line {
-	  ZOrder		  167
+	  ZOrder		  159
 	  SrcBlock		  "Demux4"
 	  SrcPort		  12
 	  Points		  [124, 0; 0, 275]
@@ -26423,7 +26220,7 @@ Library {
 	  DstPort		  5
 	}
 	Line {
-	  ZOrder		  168
+	  ZOrder		  160
 	  SrcBlock		  "Demux4"
 	  SrcPort		  11
 	  Points		  [142, 0; 0, 305]
@@ -26431,7 +26228,7 @@ Library {
 	  DstPort		  6
 	}
 	Line {
-	  ZOrder		  169
+	  ZOrder		  161
 	  SrcBlock		  "Demux4"
 	  SrcPort		  10
 	  Points		  [159, 0; 0, 335]
@@ -26439,7 +26236,7 @@ Library {
 	  DstPort		  7
 	}
 	Line {
-	  ZOrder		  170
+	  ZOrder		  162
 	  SrcBlock		  "Demux4"
 	  SrcPort		  9
 	  Points		  [176, 0; 0, 365]
@@ -26447,7 +26244,7 @@ Library {
 	  DstPort		  8
 	}
 	Line {
-	  ZOrder		  171
+	  ZOrder		  163
 	  SrcBlock		  "Demux4"
 	  SrcPort		  8
 	  Points		  [193, 0; 0, 395]
@@ -26455,7 +26252,7 @@ Library {
 	  DstPort		  9
 	}
 	Line {
-	  ZOrder		  172
+	  ZOrder		  164
 	  SrcBlock		  "Demux4"
 	  SrcPort		  7
 	  Points		  [210, 0; 0, 425]
@@ -26463,7 +26260,7 @@ Library {
 	  DstPort		  10
 	}
 	Line {
-	  ZOrder		  173
+	  ZOrder		  165
 	  SrcBlock		  "Demux4"
 	  SrcPort		  6
 	  Points		  [227, 0; 0, 455]
@@ -26471,7 +26268,7 @@ Library {
 	  DstPort		  11
 	}
 	Line {
-	  ZOrder		  174
+	  ZOrder		  166
 	  SrcBlock		  "Demux4"
 	  SrcPort		  5
 	  Points		  [243, 0; 0, 485]
@@ -26479,7 +26276,7 @@ Library {
 	  DstPort		  12
 	}
 	Line {
-	  ZOrder		  175
+	  ZOrder		  167
 	  SrcBlock		  "Demux4"
 	  SrcPort		  4
 	  Points		  [260, 0; 0, 515]
@@ -26487,7 +26284,7 @@ Library {
 	  DstPort		  13
 	}
 	Line {
-	  ZOrder		  176
+	  ZOrder		  168
 	  SrcBlock		  "Demux4"
 	  SrcPort		  3
 	  Points		  [276, 0; 0, 545]
@@ -26495,7 +26292,7 @@ Library {
 	  DstPort		  14
 	}
 	Line {
-	  ZOrder		  177
+	  ZOrder		  169
 	  SrcBlock		  "Demux4"
 	  SrcPort		  2
 	  Points		  [291, 0; 0, 575]
@@ -26503,7 +26300,7 @@ Library {
 	  DstPort		  15
 	}
 	Line {
-	  ZOrder		  178
+	  ZOrder		  170
 	  SrcBlock		  "Demux4"
 	  SrcPort		  1
 	  Points		  [305, 0; 0, 605]
@@ -26511,53 +26308,85 @@ Library {
 	  DstPort		  16
 	}
 	Line {
-	  ZOrder		  179
+	  ZOrder		  171
 	  SrcBlock		  "Write(1b)"
 	  SrcPort		  1
 	  Points		  [762, 0; 0, 620]
 	  Branch {
-	    ZOrder		    180
+	    ZOrder		    172
 	    DstBlock		    "Graphic_memory_24bit(0)"
 	    DstPort		    4
 	  }
 	  Branch {
-	    ZOrder		    181
+	    ZOrder		    173
 	    Points		    [0, 95]
 	    Branch {
-	      ZOrder		      182
+	      ZOrder		      174
 	      DstBlock		      "Graphic_memory_24bit(1)"
 	      DstPort		      4
 	    }
 	    Branch {
-	      ZOrder		      183
+	      ZOrder		      175
 	      Points		      [0, 95]
 	      Branch {
-		ZOrder			184
+		ZOrder			176
 		DstBlock		"Graphic_memory_24bit(2)"
 		DstPort			4
 	      }
 	      Branch {
-		ZOrder			185
+		ZOrder			177
 		Points			[0, 95]
 		Branch {
-		  ZOrder		  186
+		  ZOrder		  178
 		  DstBlock		  "Graphic_memory_24bit(3)"
 		  DstPort		  4
 		}
 		Branch {
-		  ZOrder		  187
+		  ZOrder		  179
 		  Points		  [0, 95]
 		  Branch {
-		    ZOrder		    188
+		    ZOrder		    180
 		    DstBlock		    "Graphic_memory_24bit(4)"
 		    DstPort		    4
 		  }
 		  Branch {
+		    ZOrder		    181
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    182
+		    DstBlock		    "Graphic_memory_24bit(5)"
+		    DstPort		    4
+		    }
+		    Branch {
+		    ZOrder		    183
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    184
+		    DstBlock		    "Graphic_memory_24bit(6)"
+		    DstPort		    4
+		    }
+		    Branch {
+		    ZOrder		    185
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    186
+		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstPort		    4
+		    }
+		    Branch {
+		    ZOrder		    187
+		    Points		    [0, 95]
+		    Branch {
+		    ZOrder		    188
+		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstPort		    4
+		    }
+		    Branch {
 		    ZOrder		    189
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    190
-		    DstBlock		    "Graphic_memory_24bit(5)"
+		    DstBlock		    "Graphic_memory_24bit(9)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -26565,7 +26394,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    192
-		    DstBlock		    "Graphic_memory_24bit(6)"
+		    DstBlock		    "Graphic_memory_24bit(10)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -26573,7 +26402,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    194
-		    DstBlock		    "Graphic_memory_24bit(7)"
+		    DstBlock		    "Graphic_memory_24bit(11)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -26581,7 +26410,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    196
-		    DstBlock		    "Graphic_memory_24bit(8)"
+		    DstBlock		    "Graphic_memory_24bit(12)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -26589,7 +26418,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    198
-		    DstBlock		    "Graphic_memory_24bit(9)"
+		    DstBlock		    "Graphic_memory_24bit(13)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -26597,43 +26426,11 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    200
-		    DstBlock		    "Graphic_memory_24bit(10)"
-		    DstPort		    4
-		    }
-		    Branch {
-		    ZOrder		    201
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    202
-		    DstBlock		    "Graphic_memory_24bit(11)"
-		    DstPort		    4
-		    }
-		    Branch {
-		    ZOrder		    203
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    204
-		    DstBlock		    "Graphic_memory_24bit(12)"
-		    DstPort		    4
-		    }
-		    Branch {
-		    ZOrder		    205
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    206
-		    DstBlock		    "Graphic_memory_24bit(13)"
-		    DstPort		    4
-		    }
-		    Branch {
-		    ZOrder		    207
-		    Points		    [0, 95]
-		    Branch {
-		    ZOrder		    208
 		    DstBlock		    "Graphic_memory_24bit(14)"
 		    DstPort		    4
 		    }
 		    Branch {
-		    ZOrder		    209
+		    ZOrder		    201
 		    Points		    [0, 95]
 		    DstBlock		    "Graphic_memory_24bit(15)"
 		    DstPort		    4
@@ -26654,70 +26451,7 @@ Library {
 	  }
 	}
 	Line {
-	  ZOrder		  210
-	  SrcBlock		  "Demux2"
-	  SrcPort		  9
-	  DstBlock		  "Terminator7"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  211
-	  SrcBlock		  "Demux2"
-	  SrcPort		  10
-	  DstBlock		  "Terminator6"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  212
-	  SrcBlock		  "Integer to Bit\nConverter2"
-	  SrcPort		  1
-	  DstBlock		  "Demux2"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  213
-	  SrcBlock		  "Demux2"
-	  SrcPort		  12
-	  DstBlock		  "Terminator4"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  214
-	  SrcBlock		  "Demux2"
-	  SrcPort		  11
-	  DstBlock		  "Terminator5"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  215
-	  SrcBlock		  "Data(2B)"
-	  SrcPort		  1
-	  DstBlock		  "Integer to Bit\nConverter2"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  216
-	  SrcBlock		  "Demux2"
-	  SrcPort		  15
-	  DstBlock		  "Terminator10"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  217
-	  SrcBlock		  "Demux2"
-	  SrcPort		  14
-	  DstBlock		  "Terminator9"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  218
-	  SrcBlock		  "Demux2"
-	  SrcPort		  13
-	  DstBlock		  "Terminator8"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  219
+	  ZOrder		  202
 	  SrcBlock		  "Graphic_memory_24bit(0)"
 	  SrcPort		  1
 	  Points		  [24, 0; 0, -315]
@@ -26725,7 +26459,7 @@ Library {
 	  DstPort		  5
 	}
 	Line {
-	  ZOrder		  220
+	  ZOrder		  203
 	  SrcBlock		  "Graphic_memory_24bit(1)"
 	  SrcPort		  1
 	  Points		  [35, 0; 0, -395]
@@ -26733,7 +26467,7 @@ Library {
 	  DstPort		  6
 	}
 	Line {
-	  ZOrder		  221
+	  ZOrder		  204
 	  SrcBlock		  "Graphic_memory_24bit(2)"
 	  SrcPort		  1
 	  Points		  [46, 0; 0, -475]
@@ -26741,7 +26475,7 @@ Library {
 	  DstPort		  7
 	}
 	Line {
-	  ZOrder		  222
+	  ZOrder		  205
 	  SrcBlock		  "Graphic_memory_24bit(3)"
 	  SrcPort		  1
 	  Points		  [59, 0; 0, -555]
@@ -26749,7 +26483,7 @@ Library {
 	  DstPort		  8
 	}
 	Line {
-	  ZOrder		  223
+	  ZOrder		  206
 	  SrcBlock		  "Graphic_memory_24bit(4)"
 	  SrcPort		  1
 	  Points		  [71, 0; 0, -635]
@@ -26757,7 +26491,7 @@ Library {
 	  DstPort		  9
 	}
 	Line {
-	  ZOrder		  224
+	  ZOrder		  207
 	  SrcBlock		  "Graphic_memory_24bit(5)"
 	  SrcPort		  1
 	  Points		  [83, 0; 0, -715]
@@ -26765,7 +26499,7 @@ Library {
 	  DstPort		  10
 	}
 	Line {
-	  ZOrder		  225
+	  ZOrder		  208
 	  SrcBlock		  "Graphic_memory_24bit(6)"
 	  SrcPort		  1
 	  Points		  [95, 0; 0, -795]
@@ -26773,7 +26507,7 @@ Library {
 	  DstPort		  11
 	}
 	Line {
-	  ZOrder		  226
+	  ZOrder		  209
 	  SrcBlock		  "Graphic_memory_24bit(7)"
 	  SrcPort		  1
 	  Points		  [106, 0; 0, -875]
@@ -26781,7 +26515,7 @@ Library {
 	  DstPort		  12
 	}
 	Line {
-	  ZOrder		  227
+	  ZOrder		  210
 	  SrcBlock		  "Graphic_memory_24bit(8)"
 	  SrcPort		  1
 	  Points		  [116, 0; 0, -955]
@@ -26789,7 +26523,7 @@ Library {
 	  DstPort		  13
 	}
 	Line {
-	  ZOrder		  228
+	  ZOrder		  211
 	  SrcBlock		  "Graphic_memory_24bit(9)"
 	  SrcPort		  1
 	  Points		  [127, 0; 0, -1035]
@@ -26797,7 +26531,7 @@ Library {
 	  DstPort		  14
 	}
 	Line {
-	  ZOrder		  229
+	  ZOrder		  212
 	  SrcBlock		  "Graphic_memory_24bit(10)"
 	  SrcPort		  1
 	  Points		  [138, 0; 0, -1115]
@@ -26805,7 +26539,7 @@ Library {
 	  DstPort		  15
 	}
 	Line {
-	  ZOrder		  230
+	  ZOrder		  213
 	  SrcBlock		  "Graphic_memory_24bit(11)"
 	  SrcPort		  1
 	  Points		  [150, 0; 0, -1195]
@@ -26813,7 +26547,7 @@ Library {
 	  DstPort		  16
 	}
 	Line {
-	  ZOrder		  231
+	  ZOrder		  214
 	  SrcBlock		  "Graphic_memory_24bit(12)"
 	  SrcPort		  1
 	  Points		  [161, 0; 0, -1275]
@@ -26821,7 +26555,7 @@ Library {
 	  DstPort		  17
 	}
 	Line {
-	  ZOrder		  232
+	  ZOrder		  215
 	  SrcBlock		  "Graphic_memory_24bit(13)"
 	  SrcPort		  1
 	  Points		  [172, 0; 0, -1355]
@@ -26829,7 +26563,7 @@ Library {
 	  DstPort		  18
 	}
 	Line {
-	  ZOrder		  233
+	  ZOrder		  216
 	  SrcBlock		  "Graphic_memory_24bit(14)"
 	  SrcPort		  1
 	  Points		  [184, 0; 0, -1435]
@@ -26837,7 +26571,7 @@ Library {
 	  DstPort		  19
 	}
 	Line {
-	  ZOrder		  234
+	  ZOrder		  217
 	  SrcBlock		  "Graphic_memory_24bit(15)"
 	  SrcPort		  1
 	  Points		  [196, 0; 0, -1515]
@@ -26845,7 +26579,7 @@ Library {
 	  DstPort		  20
 	}
 	Line {
-	  ZOrder		  235
+	  ZOrder		  218
 	  SrcBlock		  "Bit_Multiplexer_16_to_1"
 	  SrcPort		  1
 	  DstBlock		  "Get_Pixel(1b)"
@@ -29700,12 +29434,12 @@ Library {
       Ports		      [4, 1]
       Position		      [1155, 247, 1340, 308]
       ZOrder		      474
-      LibraryVersion	      "*1.536"
+      LibraryVersion	      "*1.537"
       RequestExecContextInheritance off
       Variant		      off
       System {
 	Name			"Program_Counter"
-	Location		[54, -8, 1928, 1088]
+	Location		[61, 0, 1389, 1087]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -29717,7 +29451,7 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"30"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Address_In(2B)"
@@ -30768,7 +30502,7 @@ Library {
 	  ZOrder		  14
 	  SrcBlock		  "Clock"
 	  SrcPort		  1
-	  Points		  [0, 0; 478, 0]
+	  Points		  [478, 0]
 	  Branch {
 	    ZOrder		    15
 	    Points		    [405, 0]

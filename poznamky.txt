@@ -130,34 +130,32 @@ X X X X . . . X | X . . . . . . .
 #############################################
 # Co treba urobit
 #############################################
-- Zjednodusit Instruction_Register
-- Upravit preprocessor na roznu dlzku instrukcii.
-- Preprocessor -> pridat check na maximalne hodnoty immediate operandov.
-- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
 - Pridat instrukciu "load upper byte" (MRC).
-- Vylepsit preprocessor tak aby som mohol priamo zadavat zaporne immediate hodnoty (-1 namiesto 255).
-- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
-- Rozsirit ALU (left shift, right shift).
-- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
-- Pridat GP registre (dokopy 16).
-- Spojit graficku a textovu pamat s RAM pamatou.
-- Dokoncit testy.
-	- Memory_Blocks
-	- Arithmetic_Operations
-- Hardwarovy generator nahodnych cisel.
-- Porozmyslat nad argument registrami a0 .. a3, ktore by sa automaticky 
-  ukladali na zasobnik pri vykonani instrukcii PUSH/POP + vymysliet register s return value.
-- Rozsirit 7-bitovy relativny skok o jeden byt (pomocou bit-shiftu).
+- Porozmyslat nad argument registrami a0 .. a3, ktore by sa automaticky   ukladali na zasobnik pri vykonani instrukcii PUSH/POP + vymysliet register s return value.
+
+- Zjednodusit Instruction_Register
 - Zistit ci potrebujem kazdu instrukciu enablovat (zeleny AND).
-- Pridat instrukciu compare (CMP) a do stavoveho registra zapisovat jej vysledok. Potom ho budu pouzivat instrukcie skoku (JPE, JNE).
+- Spojit graficku a textovu pamat s RAM pamatou.
+
+Pridat nove veci:
+	- Rozsirit ALU (left shift, right shift).
+	- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
+	- Hardwarovy generator nahodnych cisel.
+	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
+
+Preprocessor:
+	- Pridat check na maximalne hodnoty immediate operandov.
+	- Vylepsit preprocessor tak aby som mohol priamo zadavat zaporne immediate hodnoty (-1 namiesto 255).
 
 - Clean-up:
+	- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
 	- Pridat zbernicu (adresova, datova, riadiaca).
 	- Spocitat pouzite bloky, zjednotit, zjednodusit.
 	- Zbavit sa warningov.
 	- Ucesat nazvy.
 	- Pridat komentare.
 	- Ucesat Preprocessor.
+	- Dokoncit testy.
 
 - Naprogramovat:
 	- Faktorial
@@ -165,3 +163,11 @@ X X X X . . . X | X . . . . . . .
 	- Snake
 	- Kalkulacku
 
+
+GIT:
+	- instrukcny format 1 zmeneny
+	- Pridat GP registre (dokopy 16).
+	- nova instrukcia CMP
+	- Pridat instrukciu compare (CMPI)
+	- SPX -> SPX0, SPX1
+	- instrukcie JPE a JNE pouzivaju absolutne adresovanie
