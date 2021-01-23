@@ -1,0 +1,172 @@
+#############################################
+# Znaky
+#############################################
+16x16x8[B] = 256x8[B] = 2048[B]
+..X.............
+..X.............
+..XX............
+................
+................
+................
+Toto je 16 znako
+................
+................
+................
+................
+................
+................
+.......X....XX..
+......XX....XX..
+XXXX..X.........
+
+
+8x8x8[B] = 64x8[B] = 512[B]
+........
+Toto je.
+osem....
+znakov..
+........
+........
+........
+........
+
+
+1x32x8[B] = 256[B]
+Tu je 32 znakov.................
+
+
+#############################################
+# Pixely
+#############################################
+16x16[p] = 2[B]x16 = 32[B]
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X X . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . X . .
+. . . . . . . . | . . . X X X X .
+. . . . . . . . | . . . X X . . .
+. . . . . . . . | X X X X X . . .
+. . . . . . . X | X . . . . . . .
+X X X X . . . X | X . . . . . . .
+
+
+16x24[p] = 2[B]x24 = 48[B]
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X . . | . . . . . . . .
+. . . . . X X . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . X . .
+. . . . . . . . | . . . X X X X .
+. . . . . . . . | . . . X X . . .
+. . . . . . . . | X X X X X . . .
+. . . . . . . X | X . . . . . . .
+X X X X . . . X | X . . . . . . .
+
+
+16x32[p] = 2[B]x32 = 64[B]
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+----------------+----------------
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+. . . . . . . . | . . . . . . . .
+
+
+
+#############################################
+# Co treba urobit
+#############################################
+- Pridat instrukciu "load upper byte" (MRC).
+- Hardwarovy generator nahodnych cisel.
+
+- Zjednodusit Instruction_Register
+- Zistit ci potrebujem kazdu instrukciu enablovat (zeleny AND).
+- Spojit graficku a textovu pamat s RAM pamatou.
+
+Pridat nove veci:
+	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
+	- Automaticky ukladat return value register.
+	- Rozsirit ALU (left shift, right shift).
+	- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
+	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
+
+Preprocessor:
+	- Pridat check na maximalne hodnoty immediate operandov.
+	- Vylepsit preprocessor tak aby som mohol priamo zadavat zaporne immediate hodnoty (-1 namiesto 255).
+
+- Clean-up:
+	- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
+	- Pridat zbernicu (adresova, datova, riadiaca).
+	- Spocitat pouzite bloky, zjednotit, zjednodusit.
+	- Zbavit sa warningov.
+	- Ucesat nazvy.
+	- Pridat komentare.
+	- Ucesat Preprocessor.
+	- Dokoncit testy.
+	- Systemove testy (kazdu instrukciu otestovat samostatne).
+
+- Naprogramovat:
+	- Faktorial
+	- Tetris
+	- Snake
+	- Kalkulacku
+
+
+GIT:
+	- MRIL, MRIU
+	- RAM posunuta na adresu 256 (adresovanie ramky posunute o 256, to znamena ze adresa 256 sa interpretuje ako 0)
+	- had sa hybe do vsetkych stran, rastie o jeden pixel
+

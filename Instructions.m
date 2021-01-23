@@ -238,33 +238,22 @@ c.MRR = MRR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Not Used
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OOO|DDD IIIIIIII
-%
-% First operand:
-%     N/A
-%
-% Second operand:
-%     N/A
-%
-% Type of operands:        Example:
-%     N/A  REG  IMM          N/A  r0  25
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Not_Used = bin2dec('10 101 000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ADDI (ADD Immediate) instruction
+%      ADDI (ADD Immediate) Instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
+% 
+% Description:
+%     The ADDI instruction adds an immediate value
+%     to a register. The result is stored in the
+%     same register. Immediate value is signed and 
+%     must be from range <-128 .. +127>.
 %
 % First operand:
-%     In: First value to add.
-%     Out: Destination for result.
+%     In: Value (stored in a register) to be added.
+%     Out: Destination of the sum.
 %
 % Second operand:
-%     Value to add.
+%     Immediate value to be added.
 %
 % Type of operands:        Example:
 %     ADDI  REG  IMM          ADDI  r0  25
@@ -273,58 +262,154 @@ ADDI = bin2dec('10 11 0000');
 c.ADDI = ADDI;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      TIR (Print immediate text character) instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OOO|DDD IIIIIIII
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MMRI Instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OO|SSSS IIIIIIII
 %
-% First operand: 
-%     Character to print.
+% Description:
+%     The MMRI instruction moves a value (stored 
+%     in a register) to memory (pointed by immediate value).
+% 
+% First operand:
+%     Source register to be saved into RAM.
 %
 % Second operand:
-%     Position on display.
+%     Destination address of RAM.
 %
 % Type of operands:        Example:
-%     TIR  IMM  REG          TIR  J      r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% TIR = bin2dec('10 011 000');
-% c.TIR = TIR;
+%     MMRI  REG  IMM         MMRI  r3  a(11)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MMRI = bin2dec('01 01 0000');
+c.MMRI = MMRI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MOV instructions (MMRI, MRMI, MRC)
+%      MRMI Instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
+% Description:
+%     The MRMI instruction moves a value stored 
+%     in RAM (pointed by immediate value) to a register.
+% 
 % First operand:
-%     Destination.
+%     Destination register.
 %
 % Second operand:
-%     Source of data.
+%     Source address of RAM. 
 %
 % Type of operands:        Example:
-%     MMRI  REG  IMM         MMRI  r3  a(11) -> ulozi hodnotu(REG) na adresu(IMM) v pamati
 %     MRMI  REG  IMM         MRMI  r2  a(10)
-%     MRC   REG  IMM         MRC   r0  10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MMRI = bin2dec('10 10 0000');
 MRMI = bin2dec('10 01 0000');
-MRC =  bin2dec('10 00 0000');
-c.MMRI = MMRI;
 c.MRMI = MRMI;
-c.MRC = MRC;
 
 
-% format 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      MRIL Instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OO|DDDD IIIIIIII
+%
+% Description:
+%     The MRIL instruction stores an immediate
+%     value into lower byte of a register. 
+%     Immediate value is signed and must be from
+%     range <-128 .. +127>. The sign bit is copied
+%     to upper byte of the register.
+% 
+% First operand:
+%     Destination register.
+%
+% Second operand:
+%     Immediate value to be stored in a register.
+%
+% Type of operands:        Example:
+%     MRI   REG  IMM         MRI   r0  10
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MRIL =  bin2dec('10 00 0000');
+c.MRIL = MRIL;
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%      TIR (Print immediate text character) instruction
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Format 1: 				FF|OOO|DDD IIIIIIII
+	%
+	% First operand: 
+	%     Character to print.
+	%
+	% Second operand:
+	%     Position on display.
+	%
+	% Type of operands:        Example:
+	%     TIR  IMM  REG          TIR  J      r1
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% NOT_USED = bin2dec('10 011 000');
+% c.NOT_USED = NOT_USED;
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%      MOV instructions (MMRI, MRMI, MRC)
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Format 1: FF|OO|SSSS IIIIIIII
+	%
+	% First operand:
+	%     Destination.
+	%
+	% Second operand:
+	%     Source of data.
+	%
+	% Type of operands:        Example:
+	%     MMRI  REG  IMM         MMRI  r3  a(11) -> ulozi hodnotu(REG) na adresu(IMM) v pamati
+	%     MRMI  REG  IMM         MRMI  r2  a(10)
+	%     MRC   REG  IMM         MRC   r0  10
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TIR = bin2dec('01 10 0000');
 c.TIR = TIR;
 
 
-% format 1
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%      MRIU Instruction
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Format 2: FF|OO|DDDD IIIIIIII
+	%
+	% Description:
+	%     The MRIL instruction stores an immediate
+	%     value into lower byte of a register. 
+	%     The value must be from range <0 .. 255>.
+	% 
+	% First operand:
+	%     Destination register.
+	%
+	% Second operand:
+	%     Immediate value to be stored in a register.
+	%
+	% Type of operands:        Example:
+	%     MRI   REG  IMM         MRI   r0  10
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MRIU =  bin2dec('10 10 0000');
+c.MRIU = MRIU;
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%      MOV instructions (MMRI, MRMI, MRC)
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	% Format 1: FF|OO|SSSS IIIIIIII
+	%
+	% First operand:
+	%     Destination.
+	%
+	% Second operand:
+	%     Source of data.
+	%
+	% Type of operands:        Example:
+	%     MMRI  REG  IMM         MMRI  r3  a(11) -> ulozi hodnotu(REG) na adresu(IMM) v pamati
+	%     MRMI  REG  IMM         MRMI  r2  a(10)
+	%     MRC   REG  IMM         MRC   r0  10
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 CMPI = bin2dec('01 00 0000');
 c.CMPI = CMPI;
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -444,12 +529,27 @@ a3 = r15;
 
 
 %%%%%%%%%%%%%%%%%%%
-% Screen Resolution
+% Screen resolution
 %%%%%%%%%%%%%%%%%%%
 MIN_X = 0;
 MIN_Y = 0;
 MAX_X = 15;
 MAX_Y = 23;
+
+
+%%%%%%%%%%%%%%%%%%%
+% Button definition
+%%%%%%%%%%%%%%%%%%%
+BTN_0 = 0;
+BTN_1 = 1;
+BTN_2 = 2;
+BTN_3 = 3;
+BTN_4 = 4;
+BTN_5 = 5;
+BTN_6 = 6;
+BTN_7 = 7;
+BTN_8 = 8;
+BTN_9 = 9;
 
 
 %%%%%%%%%%%%%%%%%%%%%
