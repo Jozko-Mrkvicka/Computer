@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.37"
+    ComputedModelVersion    "1.41"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -32,7 +32,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 0.0, 943.0, 1087.0]
+      Location		      [54.0, -8.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -56,9 +56,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[893.0, 912.0]
-	ZoomFactor		[1.7499999999999998]
-	Offset			[382.14214517811922, 771.79142325126418]
+	Extents			[1824.0, 921.0]
+	ZoomFactor		[1.25]
+	Offset			[144.14286021747387, 653.57206526567529]
       }
     }
   }
@@ -68,9 +68,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Aug 26 19:56:36 2019"
-  RTWModifiedTimeStamp	  488750194
-  ModelVersionFormat	  "1.%<AutoIncrement:37>"
+  LastModifiedDate	  "Sun Jan 24 17:01:47 2021"
+  RTWModifiedTimeStamp	  533408447
+  ModelVersionFormat	  "1.%<AutoIncrement:41>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -170,8 +170,8 @@ Model {
 	Simulink.SolverCC {
 	  $ObjectID		  8
 	  Version		  "1.16.2"
-	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StartTime		  "0"
+	  StopTime		  "10"
 	  AbsTol		  "auto"
 	  FixedStep		  "1"
 	  InitialStep		  "auto"
@@ -189,8 +189,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "FixedStepAuto"
-	  SolverName		  "FixedStepAuto"
+	  Solver		  "VariableStepDiscrete"
+	  SolverName		  "VariableStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -899,7 +899,7 @@ Model {
   }
   System {
     Name		    "Pokus05_2bit_Counter"
-    Location		    [55, 0, 998, 1087]
+    Location		    [54, -8, 1928, 1088]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -911,9 +911,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "175"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "87"
+    SIDHighWatermark	    "89"
     Block {
       BlockType		      Reference
       Name		      "Bit to Integer\nConverter2"
@@ -933,11 +933,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Clock2"
-      SID		      "24"
+      Name		      "Clock"
+      SID		      "88"
       Ports		      [0, 1]
-      Position		      [505, 976, 545, 1004]
-      ZOrder		      601
+      Position		      [500, 976, 540, 1004]
+      ZOrder		      609
       LibraryVersion	      "1.58"
       SourceBlock	      "simulink_extras/Flip Flops/Clock"
       SourceType	      "Digital clock"
@@ -955,7 +955,7 @@ Model {
       Variant		      off
       System {
 	Name			"Counter_3_to_0"
-	Location		[55, 0, 998, 1087]
+	Location		[54, -8, 1928, 1088]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -967,7 +967,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "CLK"
@@ -1227,10 +1227,6 @@ Model {
 	  FixedWidth		  off
 	  DropShadow		  on
 	  ZOrder		  -1
-	  FontName		  "Helvetica"
-	  FontSize		  10
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	}
       }
     }
@@ -1613,10 +1609,6 @@ Model {
 	  }
 	}
 	Line {
-	  FontName		  "Helvetica"
-	  FontSize		  9
-	  FontWeight		  "normal"
-	  FontAngle		  "normal"
 	  ZOrder		  30
 	  SrcBlock		  "Data_0_In(1b)"
 	  SrcPort		  1
@@ -1696,7 +1688,7 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      2
+      ZOrder		      22
       SrcBlock		      "Bit to Integer\nConverter2"
       SrcPort		      1
       DstBlock		      "Display2"
@@ -1717,18 +1709,18 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      8
-      SrcBlock		      "Clock2"
-      SrcPort		      1
-      DstBlock		      "Counter_3_to_0"
-      DstPort		      1
-    }
-    Line {
       ZOrder		      14
       SrcBlock		      "Counter_3_to_0"
       SrcPort		      2
       DstBlock		      "Mux1"
       DstPort		      2
+    }
+    Line {
+      ZOrder		      23
+      SrcBlock		      "Clock"
+      SrcPort		      1
+      DstBlock		      "Counter_3_to_0"
+      DstPort		      1
     }
   }
 }

@@ -129,12 +129,16 @@ X X X X . . . X | X . . . . . . .
 #############################################
 # Co treba urobit
 #############################################
+- Pridat do common kniznice bloky counter.
 - Pridat instrukciu "load upper byte" (MRC).
 - Hardwarovy generator nahodnych cisel.
-
-- Zjednodusit Instruction_Register
-- Zistit ci potrebujem kazdu instrukciu enablovat (zeleny AND).
 - Spojit graficku a textovu pamat s RAM pamatou.
+- Premenovat instrukcie ktore citaju/zapisuju register do/z pamate na STORE, STOREI, LOAD, LOADI
+- Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
+- Vytvorit "control unit" (zlucit uz existujuce bloky) aby pocitac pripominal von Neumannovu schemu.
+- Vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami.
+- Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu.
+
 
 Pridat nove veci:
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
@@ -146,6 +150,7 @@ Pridat nove veci:
 Preprocessor:
 	- Pridat check na maximalne hodnoty immediate operandov.
 	- Vylepsit preprocessor tak aby som mohol priamo zadavat zaporne immediate hodnoty (-1 namiesto 255).
+	- Ucesat Preprocessor.
 
 - Clean-up:
 	- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
@@ -154,19 +159,17 @@ Preprocessor:
 	- Zbavit sa warningov.
 	- Ucesat nazvy.
 	- Pridat komentare.
-	- Ucesat Preprocessor.
 	- Dokoncit testy.
 	- Systemove testy (kazdu instrukciu otestovat samostatne).
 
 - Naprogramovat:
-	- Faktorial
-	- Tetris
 	- Snake
+	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register).
+	- Tetris
 	- Kalkulacku
+	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli.
 
 
 GIT:
-	- MRIL, MRIU
-	- RAM posunuta na adresu 256 (adresovanie ramky posunute o 256, to znamena ze adresa 256 sa interpretuje ako 0)
-	- had sa hybe do vsetkych stran, rastie o jeden pixel
+	- The Instruction Register block simplified.
 
