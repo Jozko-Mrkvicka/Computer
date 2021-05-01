@@ -19,9 +19,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      SPX (Set PiXel) instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand: 
@@ -35,14 +35,14 @@
 %
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 SPX0 = bin2dec('11 1101 00');
 c.SPX0 = SPX0;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      SPX (Set PiXel) instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand: 
@@ -56,14 +56,14 @@ c.SPX0 = SPX0;
 %
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 SPX1 = bin2dec('11 1100 00');
 c.SPX1 = SPX1;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      RET instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand:
@@ -77,14 +77,14 @@ c.SPX1 = SPX1;
 %
 % Type of operands:        Example:
 %     CMP  REG  REG          CMP  r0  r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 CMP = bin2dec('11 1011 00');
 c.CMP = CMP;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      RET instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand:
@@ -95,14 +95,14 @@ c.CMP = CMP;
 %
 % Type of operands:        Example:
 %     N/A                    RET
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 RET = bin2dec('11 1010 00');
 c.RET = RET;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      POP instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand:
@@ -113,14 +113,14 @@ c.RET = RET;
 %
 % Type of operands:        Example:
 %     POP  REG               POP  r0
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 POP = bin2dec('11 1001 00');
 c.POP = POP;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      PUSH instruction (not finished)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand:
@@ -131,14 +131,14 @@ c.POP = POP;
 %
 % Type of operands:        Example:
 %     PUSH  REG  REG         PUSH  r0
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 PUSH = bin2dec('11 1000 00');
 c.PUSH = PUSH;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      GCH (Get CHar) instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand:
@@ -149,14 +149,14 @@ c.PUSH = PUSH;
 %
 % Type of operands:        Example:
 %     GCH  REG  REG          GCH  r0  r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 GCH = bin2dec('11 0111 00');
 c.GCH = GCH;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      ADD (ADD registers) instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand:
@@ -168,14 +168,14 @@ c.GCH = GCH;
 %
 % Type of operands:        Example:
 %     ADD  REG  REG          ADD  r0  r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ADD = bin2dec('11 0110 00');
 c.ADD = ADD;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      GPX (Get PiXel) instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand: 
@@ -187,14 +187,14 @@ c.ADD = ADD;
 %
 % Type of operands:        Example:
 %     DIS REG REG          DIS r0 r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 GPX = bin2dec('11 0101 00');
 c.GPX = GPX;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     TXT (print TeXT character) instructions (TRR, TMR)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand: 
@@ -206,7 +206,7 @@ c.GPX = GPX;
 % Type of operands:        Example:
 %     TRR  REG  REG          TRR  r0     r1
 %     TMR  REG  REG          TMR  a(r0)  r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 TRR = bin2dec('11 0100 00');
 TMR = bin2dec('11 0011 00');
 c.TRR = TRR;
@@ -214,10 +214,18 @@ c.TMR = TMR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MOV instructions (MMR, MRM, MRR)
+%      MOV instructions (MMR, MRM, MOV)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
+% The MMR instruction moves data stored in source
+% register to memory (pointed by destination register).
+% 
+% The MRM instruction moves data stored in memory
+% (pointed by source register) to destination register.
+% 
+% The MOV instruction moves data between two registers.
+% 
 % First operand:
 %     Destination.
 %
@@ -227,19 +235,19 @@ c.TMR = TMR;
 % Type of operands:        Example:
 %     MMR   REG  REG         MMR   a(r1)  r3
 %     MRM   REG  REG         MRM   r2     a(r1)
-%     MRR   REG  REG         MRR   r1     r0
+%     MOV   REG  REG         MOV   r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 MMR =  bin2dec('11 0010 00');
 MRM =  bin2dec('11 0001 00');
-MRR =  bin2dec('11 0000 00');
+MOV =  bin2dec('11 0000 00');
 c.MMR = MMR;
 c.MRM = MRM;
-c.MRR = MRR;
+c.MOV = MOV;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      ADDI (ADD Immediate) Instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 % 
 % Description:
@@ -257,7 +265,7 @@ c.MRR = MRR;
 %
 % Type of operands:        Example:
 %     ADDI  REG  IMM          ADDI  r0  25
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ADDI = bin2dec('10 11 0000');
 c.ADDI = ADDI;
 
@@ -268,8 +276,8 @@ c.ADDI = ADDI;
 % Format 1: FF|OO|SSSS IIIIIIII
 %
 % Description:
-%     The MMRI instruction moves a value (stored 
-%     in a register) to memory (pointed by immediate value).
+%     The MMRI instruction moves value (stored 
+%     in register) to memory (pointed by immediate value).
 % 
 % First operand:
 %     Source register to be saved into RAM.
@@ -307,14 +315,14 @@ c.MRMI = MRMI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MRIL Instruction
+%      Move Lower Byte instruction (MOVL)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
 % Description:
-%     The MRIL instruction stores an immediate
+%     The MOVL instruction movess an immediate
 %     value into lower byte of a register. 
-%     Immediate value is signed and must be from
+%     Immediate value is signed and it is from
 %     range <-128 .. +127>. The sign bit is copied
 %     to upper byte of the register.
 % 
@@ -322,18 +330,18 @@ c.MRMI = MRMI;
 %     Destination register.
 %
 % Second operand:
-%     Immediate value to be stored in a register.
+%     Immediate value to be moved to register.
 %
 % Type of operands:        Example:
-%     MRI   REG  IMM         MRI   r0  10
+%     MOVL  REG  IMM         MOVL  r0  10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MRIL =  bin2dec('10 00 0000');
-c.MRIL = MRIL;
+MOVL =  bin2dec('10 00 0000');
+c.MOVL = MOVL;
 
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	%      TIR (Print immediate text character) instruction
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 	% Format 1: 				FF|OOO|DDD IIIIIIII
 	%
 	% First operand: 
@@ -344,7 +352,7 @@ c.MRIL = MRIL;
 	%
 	% Type of operands:        Example:
 	%     TIR  IMM  REG          TIR  J      r1
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % NOT_USED = bin2dec('10 011 000');
 % c.NOT_USED = NOT_USED;
 
@@ -369,27 +377,27 @@ TIR = bin2dec('01 10 0000');
 c.TIR = TIR;
 
 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%      MRIU Instruction
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% Format 2: FF|OO|DDDD IIIIIIII
-	%
-	% Description:
-	%     The MRIL instruction stores an immediate
-	%     value into lower byte of a register. 
-	%     The value must be from range <0 .. 255>.
-	% 
-	% First operand:
-	%     Destination register.
-	%
-	% Second operand:
-	%     Immediate value to be stored in a register.
-	%
-	% Type of operands:        Example:
-	%     MRI   REG  IMM         MRI   r0  10
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MRIU =  bin2dec('10 10 0000');
-c.MRIU = MRIU;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Move Upper Byte instruction (MOVU)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OO|DDDD IIIIIIII
+%
+% Description:
+%     The MOVU instruction moves an immediate
+%     value to upper byte of register. 
+%     The value is from range <0 .. 255>.
+% 
+% First operand:
+%     Destination register.
+%
+% Second operand:
+%     Immediate value to be moved to register.
+%
+% Type of operands:        Example:
+%     MOVU  REG  IMM         MOVU  r0  255
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MOVU =  bin2dec('10 10 0000');
+c.MOVU = MOVU;
 
 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -497,13 +505,13 @@ c.JMP = JMP;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General purpose register definitions
 %
 % Prefix "01" means that the number represents a register.
 % Prefix is used only by preprocessor and is erased 
 % (set to zero) after preprocessing.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 r0  = bin2dec('0000 0000');
 r1  = bin2dec('0000 0001');
 r2  = bin2dec('0000 0010');
@@ -559,7 +567,7 @@ ON  = 1;
 OFF = 0;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % operation code = 14
 % Type of operands:
 %     ORcr  CONST  REG    (000)
@@ -567,13 +575,13 @@ OFF = 0;
 %     ORmr  MEM    REG    (010)  (Not implemented)
 %     ORcm  CONST  MEM    (011)  (Not implemented)
 %     ORrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ORcr = bin2dec('1110 0000');
 % ORrr = bin2dec('1110 0001');
 % OR = bin2dec('1110 0000');
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % operation code = 13
 % Type of operands:
 %     XORcr  CONST  REG    (000)
@@ -581,13 +589,13 @@ OFF = 0;
 %     XORmr  MEM    REG    (010)  (Not implemented)
 %     XORcm  CONST  MEM    (011)  (Not implemented)
 %     XORrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % XORcr = bin2dec('1101 0000');
 % XORrr = bin2dec('1101 0001');
 % XOR = bin2dec('1101 0000');
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % operation code = 12
 % Type of operands:
 %     NOTcr  CONST  REG    (000)
@@ -595,7 +603,7 @@ OFF = 0;
 %     NOTmr  MEM    REG    (010)  (Not implemented)
 %     NOTcm  CONST  MEM    (011)  (Not implemented)
 %     NOTrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %NOT = bin2dec('1100 0000');
 
 

@@ -259,7 +259,7 @@ end
 
 
 function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
-    fprintf('|   %03d:  |    %5d    | %3d | %3d |', j - 1, compiledCode(1, j), instr_msb, instr_lsb)
+    fprintf('|   %03d:  |    %05d    | %03d | %03d |', j - 1, compiledCode(1, j), instr_msb, instr_lsb)
 
     switch (bitand(instr_msb, c.INSTR_FORMAT_MASK))
         case c.INSTR_FORMAT_0
@@ -297,11 +297,11 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
                 case c.MRMI
                     fprintf('   MRMI    r%d  m(%03d)         |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
 
-                case c.MRIU
-                    fprintf('   MRIU    r%d    %3d          |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+                case c.MOVU
+                    fprintf('   MOVU    r%d    %3d          |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 
-                case c.MRIL
-                    fprintf('   MRIL    r%d    %3d          |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
+                case c.MOVL
+                    fprintf('   MOVL    r%d    %3d          |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
             end
 
         case c.INSTR_FORMAT_3
@@ -345,8 +345,8 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
                 case c.MRM
                     fprintf('   MRM     r%d   m(r%d)         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.MRR
-                    fprintf('   MRR     r%d    r%d          |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                case c.MOV
+                    fprintf('   MOV     r%d    r%d          |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
             end
     end
 

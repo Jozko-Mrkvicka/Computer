@@ -126,19 +126,38 @@ X X X X . . . X | X . . . . . . .
 
 
 
+
+
+Immediate        -->         Register      <-->        Register            <-->             Memory
+           MOVU r0 imm (->)            MOV r0 r1 (->)            STORE   a(r0)  r1    (->)
+           MOVL r0 imm (->)            MOV r0 r1 (<-)            STOREI  a(10)  r1    (->)
+                                                                 LOAD    r1     a(r0) (<-)      
+                                                                 LOADI   r1     a(10) (<-)
+                                                                  
+
+Old Syntax         | New Syntax       | Example (New Syntax) | Status
+-------------------+------------------+----------------------+-------
+MRIU  r0     10    | MOVU    reg  imm | MOVU    r0     10    | Done
+MRIL  r0     10    | MOVL    reg  imm | MOVL    r0     10    | Done
+MMR   a(r1)  r3    | STORE   reg  reg | STORE   a(r0)  r1    |
+MRM   r2     a(r1) | LOAD    reg  reg | LOAD    r0     a(r1) |
+MRR   r1     r0    | MOV     reg  reg | MOV     r0     r1    |
+MMRI  r3     a(11) | STOREI  imm  reg | STOREI  a(10)  r0    |
+MRMI  r2     a(10) | LOADI   reg  imm | LOADI   r0     a(10) |
+
+
+
 #############################################
 # Co treba urobit
 #############################################
-- Pridat do common kniznice bloky counter.
 - Pridat instrukciu "load upper byte" (MRC).
+- Premenovat instrukcie ktore citaju/zapisuju register do/z pamate na STORE, STOREI, LOAD, LOADI
+- Pridat do common kniznice bloky counter.
 - Hardwarovy generator nahodnych cisel.
 - Spojit graficku a textovu pamat s RAM pamatou.
-- Premenovat instrukcie ktore citaju/zapisuju register do/z pamate na STORE, STOREI, LOAD, LOADI
 - Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 - Vytvorit "control unit" (zlucit uz existujuce bloky) aby pocitac pripominal von Neumannovu schemu.
-- Vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami.
 - Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu.
-
 
 Pridat nove veci:
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
@@ -157,7 +176,7 @@ Preprocessor:
 	- Pridat zbernicu (adresova, datova, riadiaca).
 	- Spocitat pouzite bloky, zjednotit, zjednodusit.
 	- Zbavit sa warningov.
-	- Ucesat nazvy.
+	- Ucesat nazvy, zmenit typ pisma na Currier.
 	- Pridat komentare.
 	- Dokoncit testy.
 	- Systemove testy (kazdu instrukciu otestovat samostatne).
@@ -167,9 +186,14 @@ Preprocessor:
 	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register).
 	- Tetris
 	- Kalkulacku
-	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli.
+	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami).
 
 
 GIT:
-	- The Instruction Register block simplified.
+The following instructions have been renamed:
+	- MRIU -> MOVU
+	- MRIL -> MOVL
+	- MRR  -> MOV
+	
+
 
