@@ -150,7 +150,6 @@ MRMI  r2     a(10) | LOADI   reg  imm | LOADI   r0     a(10) |
 #############################################
 # Co treba urobit
 #############################################
-- Pridat instrukciu "load upper byte" (MRC).
 - Premenovat instrukcie ktore citaju/zapisuju register do/z pamate na STORE, STOREI, LOAD, LOADI
 - Pridat do common kniznice bloky counter.
 - Hardwarovy generator nahodnych cisel.
@@ -190,10 +189,9 @@ Preprocessor:
 
 
 GIT:
-The following instructions have been renamed:
-	- MRIU -> MOVU
-	- MRIL -> MOVL
-	- MRR  -> MOV
-	
+- The Select_Src_Reg and Select_Dest_Reg blocks, originally represented by Word_Multiplexer_4_to_1 block, changed to Byte_Multiplexer_4_to_1 block.
+- Implemented new instruction Move Upper Byte (MOVU).
+- Created new folders ROM and Preprocessor. Related files moved to them.
+- Created script Flash.m.
 
 

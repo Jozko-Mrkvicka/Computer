@@ -5,7 +5,10 @@ function compiledCode = Preprocessor(program, c)
     fprintf('| ADDRESS | INSTRUCTION | MSB | LSB |              CODE            |\n');
     fprintf('+---------+-------------+-----+-----+------------------------------+\n');
 
-    [label_address_array] = find_all_destination_labels(program, c);
+    % Check if there are any labels in the code (it means if variable c.LBL_CNT does exist).
+    if (1 == isfield(c, 'LBL_CNT'))
+        [label_address_array] = find_all_destination_labels(program, c);
+    end
 
     % The counter "i" counts number of values in a source code (labels, instructions, operands ... all together).
     i = 1;

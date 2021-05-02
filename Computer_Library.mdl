@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [64.0, 0.0, 1622.0, 1080.0]
+      Location		      [64.0, 0.0, 1161.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -41,11 +41,11 @@ Library {
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"1505"
-	Extents			[1572.0, 913.0]
-	ZoomFactor		[1.75]
-	Offset			[725.42504258908684, 910.85714285714289]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1111.0, 913.0]
+	ZoomFactor		[1.0]
+	Offset			[940.42361218760743, 4.5923579015974383]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 01 20:46:19 2021"
-  RTWModifiedTimeStamp	  541802778
-  ModelVersionFormat	  "1.%<AutoIncrement:541>"
+  LastModifiedDate	  "Sun May 02 00:36:06 2021"
+  RTWModifiedTimeStamp	  541816541
+  ModelVersionFormat	  "1.%<AutoIncrement:544>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -879,8 +879,8 @@ Library {
   }
   System {
     Name		    "Computer_Library"
-    Location		    [64, 0, 1686, 1080]
-    Open		    off
+    Location		    [64, 0, 1225, 1080]
+    Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1774,13 +1774,15 @@ Library {
       Ports		      [5, 4]
       Position		      [1155, 145, 1340, 225]
       ZOrder		      478
-      LibraryVersion	      "*1.538"
+      ForegroundColor	      "blue"
+      BackgroundColor	      "cyan"
+      LibraryVersion	      "*1.543"
       RequestExecContextInheritance off
       Variant		      off
       System {
 	Name			"ALU"
-	Location		[64, 0, 1686, 1080]
-	Open			on
+	Location		[147, 0, 1741, 1087]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1791,7 +1793,7 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"175"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "ADD_or_ADDI(1b)"
@@ -1981,7 +1983,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Instruction_MOVU"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [147, 0, 1741, 1087]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1993,21 +1995,21 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_1(2B)"
-	      SID		      "5707"
-	      Position		      [695, -1117, 725, -1103]
-	      ZOrder		      584
+	      Name		      "Data_In_A(2B)"
+	      SID		      "5708"
+	      Position		      [690, -1117, 720, -1103]
+	      ZOrder		      585
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_0(2B)"
-	      SID		      "5708"
-	      Position		      [695, -1457, 725, -1443]
-	      ZOrder		      585
+	      Name		      "Data_In_B(2B)"
+	      SID		      "5707"
+	      Position		      [690, -1457, 720, -1443]
+	      ZOrder		      584
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -2525,16 +2527,16 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      35
-	      SrcBlock		      "Data_In_1(2B)"
+	      SrcBlock		      "Data_In_B(2B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter2"
+	      DstBlock		      "Integer to Bit\nConverter3"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      36
-	      SrcBlock		      "Data_In_0(2B)"
+	      SrcBlock		      "Data_In_A(2B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter3"
+	      DstBlock		      "Integer to Bit\nConverter2"
 	      DstPort		      1
 	    }
 	    Line {
@@ -3107,13 +3109,13 @@ Library {
 		    Points		    [0, 60]
 		    Branch {
 		    ZOrder		    16
-		    DstBlock		    "Instruction_AND"
+		    Points		    [0, 70]
+		    DstBlock		    "Instruction_MOVU"
 		    DstPort		    1
 		    }
 		    Branch {
 		    ZOrder		    17
-		    Points		    [0, 70]
-		    DstBlock		    "Instruction_MOVU"
+		    DstBlock		    "Instruction_AND"
 		    DstPort		    1
 		    }
 		  }
@@ -3166,13 +3168,13 @@ Library {
 		  Points		  [0, 140]
 		  Branch {
 		    ZOrder		    28
-		    DstBlock		    "Instruction_AND"
+		    Points		    [0, 70]
+		    DstBlock		    "Instruction_MOVU"
 		    DstPort		    2
 		  }
 		  Branch {
 		    ZOrder		    29
-		    Points		    [0, 70]
-		    DstBlock		    "Instruction_MOVU"
+		    DstBlock		    "Instruction_AND"
 		    DstPort		    2
 		  }
 		}

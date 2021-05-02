@@ -1,48 +1,3 @@
-clc
-clear
-% Load symbolic constants (instructions)
-Instructions
-% Video_Adapter
-% CharTable
-
-% 0.) FF|OO|IIII   IIIIIIII
-%
-% 1.) FF|OO|DDD|S  SS|IIIIII
-%
-% 2.) FF|OOO|DDD   IIIIIIII
-%
-% 3.) FF|OOOO|RR   RR|DDD|SSS
-
-% Constant definition
-c.FORMAT_0_OPERAND_1_MASK = bin2dec('0000 1111');
-c.FORMAT_1_OPERAND_1_MASK = bin2dec('0000 1111');
-c.FORMAT_2_OPERAND_1_MASK = bin2dec('0000 1111');
-c.FORMAT_3_OPERAND_1_MASK = bin2dec('1111 0000');
-c.FORMAT_3_OPERAND_2_MASK = bin2dec('0000 1111');
-
-c.FORMAT_0_OPCODE_MASK = bin2dec('0011 0000');
-c.FORMAT_1_OPCODE_MASK = bin2dec('0011 0000');
-c.FORMAT_2_OPCODE_MASK = bin2dec('0011 0000');
-c.FORMAT_3_OPCODE_MASK = bin2dec('0011 1100');
-
-c.INSTR_FORMAT_MASK = bin2dec('1100 0000');
-
-c.INSTR_FORMAT_0 = bin2dec('0000 0000');
-c.INSTR_FORMAT_1 = bin2dec('0100 0000');
-c.INSTR_FORMAT_2 = bin2dec('1000 0000');
-c.INSTR_FORMAT_3 = bin2dec('1100 0000');
-
-
-% Destination label (for example "LOOP_") represents absolute memory address.
-c.LABEL_DEST_PREFIX = bin2dec('11111110 00000000');
-c.LABEL_SRC_PREFIX  = bin2dec('11111101 00000000');
-c.LABEL_PREFIX_MASK = bin2dec('11111111 00000000');
-c.LABEL_MASK = bin2dec('00000000 11111111'); % LABEL_INDEX_MASK
-
-c.BYTE_MASK = bin2dec('1111 1111');
-
-
-
 idx = 1;
 LOOP_  = bitor(c.LABEL_DEST_PREFIX, idx);
 LOOP   = bitor(c.LABEL_SRC_PREFIX,  idx);
@@ -162,39 +117,31 @@ CHECK_EXIT  = bitor(c.LABEL_SRC_PREFIX,  idx);
 c.LBL_CNT = idx;
 
 
-% Range of RAM addresses.
-RAM_START  = 0;
-RAM_END    = 31;
-
-
-p_tail_addr    = RAM_START + 0;
+p_tail_addr    = c.RAM_START + 0;
 
 % Address of snake`s direction.
-ADDR_DIRECTION = RAM_START + 1;
+ADDR_DIRECTION = c.RAM_START + 1;
 
 % Address of the increase in X-axis.
-ADDR_INCR_X    = RAM_START + 2;
+ADDR_INCR_X    = c.RAM_START + 2;
 
 % Address of the increase in Y-axis.
-ADDR_INCR_Y    = RAM_START + 3;
+ADDR_INCR_Y    = c.RAM_START + 3;
 
 % X-position of a point/pixel to take.
-ADDR_POINT_X   = RAM_START + 4;
+ADDR_POINT_X   = c.RAM_START + 4;
 
 % Y-position of a point/pixel to take.
-ADDR_POINT_Y   = RAM_START + 5;
+ADDR_POINT_Y   = c.RAM_START + 5;
 
 % Address of snake`s head.
-ADDR_HEAD      = RAM_START + 6;
+ADDR_HEAD      = c.RAM_START + 6;
 
 % Initial address of snake`s tail.
-ADDR_INIT_TAIL = RAM_START + 11;
+ADDR_INIT_TAIL = c.RAM_START + 11;
 
 
-m = @(n) n;
-
-
-RomCode = ...
+SourceCode = ...
 [
 					MOVL		r0			7					... % Initial position of point/pixel to take.
 					MMRI		r0			m(ADDR_POINT_X)		...
@@ -501,25 +448,7 @@ MOVE_LOOP_			MRM			r0			m(r2)				... % Copy snake`s Y-position to r0.
 					ADDI		r0			0					...
 					ADDI		r0			0					...
 					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
-					ADDI		r0			0					...
 ];
-RomCode = Preprocessor(RomCode, c);
 
 
 % FNC_INIT_SNAKE_	PUSH	r0							... % Initialization of snake. 
