@@ -139,10 +139,10 @@ Old Syntax         | New Syntax       | Example (New Syntax) | Status
 -------------------+------------------+----------------------+-------
 MRIU  r0     10    | MOVU    reg  imm | MOVU    r0     10    | Done
 MRIL  r0     10    | MOVL    reg  imm | MOVL    r0     10    | Done
-MMR   a(r1)  r3    | STORE   reg  reg | STORE   a(r0)  r1    |
-MRM   r2     a(r1) | LOAD    reg  reg | LOAD    r0     a(r1) |
-MRR   r1     r0    | MOV     reg  reg | MOV     r0     r1    |
-MMRI  r3     a(11) | STOREI  imm  reg | STOREI  a(10)  r0    |
+MMR   a(r1)  r3    | STORE   reg  reg | STORE   a(r0)  r1    | Done
+MRM   r2     a(r1) | LOAD    reg  reg | LOAD    r0     a(r1) | Done
+MRR   r1     r0    | MOV     reg  reg | MOV     r0     r1    | Done
+MMRI  r3     a(11) | STOREI  imm  reg | STOREI  a(10)  r0    | Done
 MRMI  r2     a(10) | LOADI   reg  imm | LOADI   r0     a(10) |
 
 
@@ -150,7 +150,6 @@ MRMI  r2     a(10) | LOADI   reg  imm | LOADI   r0     a(10) |
 #############################################
 # Co treba urobit
 #############################################
-- Premenovat instrukcie ktore citaju/zapisuju register do/z pamate na STORE, STOREI, LOAD, LOADI
 - Pridat do common kniznice bloky counter.
 - Hardwarovy generator nahodnych cisel.
 - Spojit graficku a textovu pamat s RAM pamatou.
@@ -189,9 +188,9 @@ Preprocessor:
 
 
 GIT:
-- The Select_Src_Reg and Select_Dest_Reg blocks, originally represented by Word_Multiplexer_4_to_1 block, changed to Byte_Multiplexer_4_to_1 block.
-- Implemented new instruction Move Upper Byte (MOVU).
-- Created new folders ROM and Preprocessor. Related files moved to them.
-- Created script Flash.m.
-
-
+- Block Bit_Demultiplexer_1_to_16 updated and test for it created.
+- The following instructions have been renamed:
+	- MMR  -> STORE
+	- MRM  -> LOAD
+	- MMRI -> STOREI
+	- MRMI -> LOADI

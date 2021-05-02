@@ -147,11 +147,15 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|DDD|S SS|IIIIII
+% Format 1: FF|OO|SSSS IIIIIIII
 %
-% Example:  opcode | op1 | op2 | op3
-%          --------+-----+-----+------
-%              JPE | r0  | r1  | LOOP
+% Example 1:  opcode | op1  | op2                         opcode | op1 | op2
+%            --------+------+-----  will be compiled to  --------+-----+-----
+%             STOREI | m(5) | r0                          STOREI | r0  | m(5) 
+%
+% The reason for this swap of operands is that we want to have destination
+% operand always on left side (for unification of all data transfer instructions).
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, label_address_array, i, j, c)
     % instr_msb = 0;
@@ -194,13 +198,21 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
     % instr_lsb = bitor(instr_lsb, op3);
     % i = i + 1;
 
+    % Read first operand.
     op1 = src_code(1, i);
-    instr_msb = bitor(opcode, op1);
     i = i + 1;
     
+    % Read second operand.
     op2 = src_code(1, i);
-    instr_lsb = op2;
     i = i + 1;
+
+    if (c.STOREI == opcode)
+        instr_msb = bitor(opcode, op2);
+        instr_lsb = op1;
+    else
+        instr_msb = bitor(opcode, op1);
+        instr_lsb = op2;
+    end
 end
 
 
@@ -268,26 +280,26 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
         case c.INSTR_FORMAT_0
             switch (bitor(bitand(instr_msb, c.FORMAT_0_OPCODE_MASK), c.INSTR_FORMAT_0))
                 case c.CALL
-                    fprintf('   CALL   %3d                 |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   CALL    m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
 
                 case c.JMP
-                    fprintf('   JMP    %3d                 |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   JMP     m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
 
                 case c.JPE
-                    fprintf('   JPE    %3d                 |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   JPE     m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
 
                 case c.JNE
-                    fprintf('   JNE    %3d                 |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   JNE     m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
             end
         case c.INSTR_FORMAT_1
             switch (bitor(bitand(instr_msb, c.FORMAT_1_OPCODE_MASK), c.INSTR_FORMAT_1))
                 case c.CMPI
-                    fprintf('   CMPI    r%d    %3d          |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   CMPI    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 
                 % case c.TIR
 
-                case c.MMRI
-                    fprintf('   MMRI    r%d  m(%03d)         |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
+                case c.STOREI
+                    fprintf('   STOREI  m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK))
 
                 % case c.NOT_USED
             end
@@ -295,28 +307,28 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
         case c.INSTR_FORMAT_2
             switch (bitor(bitand(instr_msb, c.FORMAT_2_OPCODE_MASK), c.INSTR_FORMAT_2))
                 case c.ADDI
-                    fprintf('   ADDI    r%d    %3d          |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   ADDI    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
 
-                case c.MRMI
-                    fprintf('   MRMI    r%d  m(%03d)         |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
+                case c.LOADI
+                    fprintf('   LOADI   r%d      m(%03d)     |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
 
                 case c.MOVU
-                    fprintf('   MOVU    r%d    %3d          |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   MOVU    r%d    %-3d          |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 
                 case c.MOVL
-                    fprintf('   MOVL    r%d    %3d          |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   MOVL    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
             end
 
         case c.INSTR_FORMAT_3
             switch (bitor(bitand(instr_msb, c.FORMAT_3_OPCODE_MASK), c.INSTR_FORMAT_3))
                 case c.SPX0
-                    fprintf('   SPX0    r%d     r%d          |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   SPX0    r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.SPX1
-                    fprintf('   SPX1    r%d     r%d          |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   SPX1    r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.CMP
-                    fprintf('   CMP     r%d     r%d          |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   CMP     r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.RET
                     fprintf('   RET                        |\n')
@@ -331,25 +343,25 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
                     fprintf('   GCH     r%d                 |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4))
 
                 case c.ADD
-                    fprintf('   ADD     r%d    r%d          |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   ADD     r%d      r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.GPX
-                    fprintf('   GPX     r%d    r%d          |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   GPX     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.TRR
-                    fprintf('   TRR     r%d    r%d          |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   TRR     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.TMR
-                    fprintf('   TMR     r%d    r%d          |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   TMR     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.MMR
-                    fprintf('   MMR   m(r%d)    r%d          |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                case c.STORE
+                    fprintf('   STORE   m(r%d)   r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.MRM
-                    fprintf('   MRM     r%d   m(r%d)         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                case c.LOAD
+                    fprintf('   LOAD    r%d      m(r%d)      |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.MOV
-                    fprintf('   MOV     r%d    r%d          |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                    fprintf('   MOV     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
             end
     end
 

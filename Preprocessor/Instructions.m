@@ -214,14 +214,14 @@ c.TMR = TMR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MOV instructions (MMR, MRM, MOV)
+%      Data transfer instructions (STORE, LOAD, MOV)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
-% The MMR instruction moves data stored in source
+% The STORE instruction moves data from source
 % register to memory (pointed by destination register).
 % 
-% The MRM instruction moves data stored in memory
+% The LOAD instruction moves data from memory
 % (pointed by source register) to destination register.
 % 
 % The MOV instruction moves data between two registers.
@@ -233,16 +233,16 @@ c.TMR = TMR;
 %     Source of data.
 %
 % Type of operands:        Example:
-%     MMR   REG  REG         MMR   a(r1)  r3
-%     MRM   REG  REG         MRM   r2     a(r1)
-%     MOV   REG  REG         MOV   r1     r0
+%     STORE  REG  REG        STORE  a(r1)  r3
+%     LOAD   REG  REG        LOAD   r2     a(r1)
+%     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MMR =  bin2dec('11 0010 00');
-MRM =  bin2dec('11 0001 00');
-MOV =  bin2dec('11 0000 00');
-c.MMR = MMR;
-c.MRM = MRM;
-c.MOV = MOV;
+STORE =  bin2dec('11 0010 00');
+LOAD  =  bin2dec('11 0001 00');
+MOV   =  bin2dec('11 0000 00');
+c.STORE = STORE;
+c.LOAD  = LOAD;
+c.MOV   = MOV;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -271,47 +271,55 @@ c.ADDI = ADDI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MMRI Instruction
+%      STOREI Instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
 % Description:
-%     The MMRI instruction moves value (stored 
-%     in register) to memory (pointed by immediate value).
+%     The STOREI instruction moves value from 
+%     register to memory (pointed by immediate).
 % 
 % First operand:
-%     Source register to be saved into RAM.
+%     Assembly code: Destination memory address.
+%     Compiled binary: Source register to be saved into memory.
 %
-% Second operand:
-%     Destination address of RAM.
+% Second operand: 
+%     Assembly code: Source register to be saved into memory.
+%     Compiled binary: Destination memory address.
 %
-% Type of operands:        Example:
-%     MMRI  REG  IMM         MMRI  r3  a(11)
+% Note:
+%     Order of operands in assembly source code and in compiled
+%     binary code is vice versa. The reason is to unify all data
+%     transfer instructions so they have destination operand
+%     on left side.
+% 
+% Type of operands:                 Example:
+%     (assembly) STOREI  IMM  REG      STOREI  a(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MMRI = bin2dec('01 01 0000');
-c.MMRI = MMRI;
+STOREI = bin2dec('01 01 0000');
+c.STOREI = STOREI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      MRMI Instruction
+%      LOADI Instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
 % Description:
-%     The MRMI instruction moves a value stored 
-%     in RAM (pointed by immediate value) to a register.
+%     The LOADI instruction moves value from 
+%     memory (pointed by immediate) to register.
 % 
 % First operand:
 %     Destination register.
 %
 % Second operand:
-%     Source address of RAM. 
+%     Source memory address. 
 %
 % Type of operands:        Example:
-%     MRMI  REG  IMM         MRMI  r2  a(10)
+%     LOADI  REG  IMM         LOADI  r2  a(10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MRMI = bin2dec('10 01 0000');
-c.MRMI = MRMI;
+LOADI = bin2dec('10 01 0000');
+c.LOADI = LOADI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
