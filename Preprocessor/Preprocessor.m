@@ -8,6 +8,8 @@ function compiledCode = Preprocessor(program, c)
     % Check if there are any labels in the code (it means if variable c.LBL_CNT does exist).
     if (1 == isfield(c, 'LBL_CNT'))
         [label_address_array] = find_all_destination_labels(program, c);
+    else
+        label_address_array = 0;
     end
 
     % The counter "i" counts number of values in a source code (labels, instructions, operands ... all together).
@@ -122,34 +124,40 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 0: FF|OO|IIII IIIIIIII
+% Format 0: FF|OO|CCCC   CCCCCCCC
 %
-% This format is not used yet.
+% Example:  opcode | op1(reg) | op2(imm) 
+%          --------+----------+---------
+%              JMP | Not Used | LABEL  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_0(src_code, opcode, label_address_array, i, j, c)
-    op = src_code(1, i);
+    operand = src_code(1, i);
 
     % Check that on the operand position is source label, not destionation label.
-    if (c.LABEL_DEST_PREFIX == bitand(op, c.LABEL_PREFIX_MASK))
+    if (c.LABEL_DEST_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK))
         error('### PREPROCESSOR ERROR: A label with a destination prefix is placed on position of a source prefix (Address = %03d)!! ###\n', j - 1)
     end
 
-    if (c.LABEL_SRC_PREFIX == bitand(op, c.LABEL_PREFIX_MASK))
-        idx = bitand(op, c.LABEL_MASK);
-        op = label_address_array(idx);
+    if (c.LABEL_SRC_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK))
+        idx = bitand(operand, c.LABEL_MASK);
+        operand = label_address_array(idx);
     end
 
-    instr_msb = bitor(opcode, bitshift(op, -8));
-    instr_lsb = bitand(op, c.BYTE_MASK);
+    instr_msb = bitor(opcode, bitshift(operand, -8));
+    instr_lsb = bitand(operand, c.BYTE_MASK);
 
     i = i + 1;
 end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|SSSS IIIIIIII
+% Format 1: FF|OO|SSSS   CCCCCCCC
 %
-% Example 1:  opcode | op1  | op2                         opcode | op1 | op2
+% Example 1:  opcode | op1  | op2
+%            --------+------+-----
+%              LOADI | m(5) | r0  
+% 
+% Example 2:  opcode | op1  | op2                         opcode | op1 | op2
 %            --------+------+-----  will be compiled to  --------+-----+-----
 %             STOREI | m(5) | r0                          STOREI | r0  | m(5) 
 %
@@ -206,6 +214,12 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
     op2 = src_code(1, i);
     i = i + 1;
 
+    % If operand is negative (less than zero) then convert it to two`s complement.
+    % if (op2 < 0)
+    %     op2 = op2 * (-1);
+    %     op2 = bitcmp(op2, 'uint8') + 1;
+    % end
+
     if (c.STOREI == opcode)
         instr_msb = bitor(opcode, op2);
         instr_lsb = op1;
@@ -217,7 +231,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
+% Format 2: FF|OO|DDDD   CCCCCCCC
 %
 % Example:  opcode | op1(reg) | op2(imm) 
 %          --------+----------+-----
@@ -235,7 +249,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOO|RR   DDDD|SSSS
 %
 % Example:  opcode | op1 | op2 
 %           -------+-----+----
@@ -269,7 +283,6 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_3(src_code, opcode, i,
         instr_lsb = bitor(instr_lsb, op2);
         i = i + 1;
     end
-    
 end
 
 
@@ -313,7 +326,7 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
                     fprintf('   LOADI   r%d      m(%03d)     |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
 
                 case c.MOVU
-                    fprintf('   MOVU    r%d    %-3d          |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   MOVU    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 
                 case c.MOVL
                     fprintf('   MOVL    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
