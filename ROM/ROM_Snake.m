@@ -1,119 +1,40 @@
-idx = 1;
-LOOP_ =            bitor(c.LABEL_DEST_PREFIX, idx);
-LOOP  =            bitor(c.LABEL_SRC_PREFIX,  idx);
 
-idx = idx + 1;
-LEFT_ =            bitor(c.LABEL_DEST_PREFIX, idx);
-LEFT  =            bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-RIGHT_ =           bitor(c.LABEL_DEST_PREFIX, idx);
-RIGHT  =           bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-UP_ =              bitor(c.LABEL_DEST_PREFIX, idx);
-UP  =              bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DOWN_ =            bitor(c.LABEL_DEST_PREFIX, idx);
-DOWN  =            bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_READ_KEY_ =    bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_READ_KEY  =    bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_ERASE_SCR_ =   bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_ERASE_SCR  =   bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-UPROW_ =           bitor(c.LABEL_DEST_PREFIX, idx);
-UPROW  =           bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-UPCOL_ =           bitor(c.LABEL_DEST_PREFIX, idx);
-UPCOL  =           bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DNROW_ =           bitor(c.LABEL_DEST_PREFIX, idx);
-DNROW  =           bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DNCOL_ =           bitor(c.LABEL_DEST_PREFIX, idx);
-DNCOL  =           bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-CONTINUE_ =        bitor(c.LABEL_DEST_PREFIX, idx);
-CONTINUE  =        bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_INIT_SNAKE_ =  bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_INIT_SNAKE  =  bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_DRAW_SNAKE_ =  bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_DRAW_SNAKE  =  bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_ERASE_SNAKE_ = bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_ERASE_SNAKE  = bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DRAW_LOOP_ =       bitor(c.LABEL_DEST_PREFIX, idx);
-DRAW_LOOP  =       bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-ERASE_LOOP_ =      bitor(c.LABEL_DEST_PREFIX, idx);
-ERASE_LOOP  =      bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_MOVE_SNAKE_ =  bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_MOVE_SNAKE  =  bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_READ_DIR_ =    bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_READ_DIR  =    bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DIR_LEFT_ =        bitor(c.LABEL_DEST_PREFIX, idx);
-DIR_LEFT  =        bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DIR_RIGHT_ =       bitor(c.LABEL_DEST_PREFIX, idx);
-DIR_RIGHT  =       bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DIR_UP_ =          bitor(c.LABEL_DEST_PREFIX, idx);
-DIR_UP  =          bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DIR_DOWN_ =        bitor(c.LABEL_DEST_PREFIX, idx);
-DIR_DOWN  =        bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DIR_SAVE_ =        bitor(c.LABEL_DEST_PREFIX, idx);
-DIR_SAVE  =        bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-DIR_EXIT_ =        bitor(c.LABEL_DEST_PREFIX, idx);
-DIR_EXIT  =        bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-MAIN_LOOP_ =       bitor(c.LABEL_DEST_PREFIX, idx);
-MAIN_LOOP  =       bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-MOVE_LOOP_ =       bitor(c.LABEL_DEST_PREFIX, idx);
-MOVE_LOOP  =       bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-FNC_CHECK_ =       bitor(c.LABEL_DEST_PREFIX, idx);
-FNC_CHECK  =       bitor(c.LABEL_SRC_PREFIX,  idx);
-
-idx = idx + 1;
-CHECK_EXIT_ =      bitor(c.LABEL_DEST_PREFIX, idx);
-CHECK_EXIT  =      bitor(c.LABEL_SRC_PREFIX,  idx);
-
+label = ...
+{
+	'LOOP',
+	'LEFT',
+	'RIGHT',
+	'UP',
+	'DOWN',
+	'FNC_READ_KEY',
+	'FNC_ERASE_SCR',
+	'UPROW',
+	'UPCOL',
+	'DNROW',
+	'DNCOL',
+	'CONTINUE',
+	'FNC_INIT_SNAKE',
+	'FNC_DRAW_SNAKE',
+	'FNC_ERASE_SNAKE',
+	'DRAW_LOOP',
+	'ERASE_LOOP',
+	'FNC_MOVE_SNAKE',
+	'FNC_READ_DIR',
+	'DIR_LEFT',
+	'DIR_RIGHT',
+	'DIR_UP',
+	'DIR_DOWN',
+	'DIR_SAVE',
+	'DIR_EXIT',
+	'MAIN_LOOP',
+	'MOVE_LOOP',
+	'FNC_CHECK',
+	'CHECK_EXIT'
+};
+for (idx = 1:size(label))
+	eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
+	eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
+end
 c.LBL_CNT = idx;
 
 
