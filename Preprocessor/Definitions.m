@@ -61,10 +61,10 @@ OFF = 0;
 
 
 % Destination label (for example "LOOP_") represents absolute memory address.
-c.LABEL_DEST_PREFIX = bin2dec('11111110 00000000');
-c.LABEL_SRC_PREFIX  = bin2dec('11111101 00000000');
-c.LABEL_PREFIX_MASK = bin2dec('11111111 00000000');
-c.LABEL_MASK = bin2dec('00000000 11111111'); % LABEL_INDEX_MASK
+c.LABEL_DEST_PREFIX = bin2dec('11100000 00000000');
+c.LABEL_SRC_PREFIX  = bin2dec('11010000 00000000');
+c.LABEL_PREFIX_MASK = bin2dec('11110000 00000000');
+c.LABEL_VALUE_MASK =  bin2dec('00001111 11111111');
 
 % Constant definition
 c.FORMAT_0_OPERAND_1_MASK = bin2dec('0000 1111');

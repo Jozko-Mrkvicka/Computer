@@ -1,9 +1,9 @@
 function compiledCode = Preprocessor(program, c)
-    fprintf('+------------------------------------------------------------------+\n');
-    fprintf('|                      Assembler Preprocessor                      |\n');
-    fprintf('+---------+-------------+-----+-----+------------------------------+\n');
-    fprintf('| ADDRESS | INSTRUCTION | MSB | LSB |              CODE            |\n');
-    fprintf('+---------+-------------+-----+-----+------------------------------+\n');
+    fprintf('+--------------------------------------------------------------------+\n');
+    fprintf('|                       Assembler Preprocessor                       |\n');
+    fprintf('+---------+-------------+------+------+------------------------------+\n');
+    fprintf('| ADDRESS | INSTRUCTION | MSB  | LSB  |             CODE             |\n');
+    fprintf('+---------+-------------+------+------+------------------------------+\n');
 
     % Check if there are any labels in the code (it means if variable c.LBL_CNT does exist).
     if (1 == isfield(c, 'LBL_CNT'))
@@ -17,6 +17,7 @@ function compiledCode = Preprocessor(program, c)
     % The counter "j" counts number of bytes in a compiled code (each instruction has two bytes).
     j = 1;
     while (i <= size(program, 2))
+    % while (i <= 1)
         % Read first value on particular line of a processed source code.
         value = program(1, i);
 
@@ -38,7 +39,7 @@ function compiledCode = Preprocessor(program, c)
                 [instr_msb, instr_lsb, i] = compile_instr_format_1(program, value, label_address_array, i, j, c);
 
             case c.INSTR_FORMAT_2
-                [instr_msb, instr_lsb, i] = compile_instr_format_2(program, value, i);
+                [instr_msb, instr_lsb, i] = compile_instr_format_2(program, value, i, j);
 
             case c.INSTR_FORMAT_3
                 [instr_msb, instr_lsb, i] = compile_instr_format_3(program, value, i, c);
@@ -47,13 +48,23 @@ function compiledCode = Preprocessor(program, c)
                 % Error
         end
 
-        compiledCode(1, j) = bitor(uint16(bitshift(instr_msb, 8)), uint16(instr_lsb));
-        print_source_code(compiledCode, instr_msb, instr_lsb, j, c);
+        % Convert variable of double type to uint8 type.
+        temp = int16(instr_msb);
+        temp = typecast(temp, 'uint8');
+        uint8_instr_msb = temp(1);
+
+        % Convert variable of double type to uint8 type.
+        temp = int16(instr_lsb);
+        temp = typecast(temp, 'uint8');
+        uint8_instr_lsb = temp(1);
+
+        compiledCode(1, j) = bitor(bitshift(uint16(uint8_instr_msb), 8), uint16(uint8_instr_lsb));
+        print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c);
 
         j = j + 1;
     end
 
-    fprintf('+---------+-------------+-----+-----+------------------------------+\n');
+    fprintf('+---------+-------------+------+------+------------------------------+\n');
 end
 
 
@@ -79,7 +90,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
         % Check if the first value on a line is destination label (for example LABEL_).
         % If yes then save the address of the particular line (address of destination label).
         if (c.LABEL_DEST_PREFIX == bitand(value, c.LABEL_PREFIX_MASK))
-            idx = bitand(value, c.LABEL_MASK);
+            idx = bitand(value, c.LABEL_VALUE_MASK);
 
             if (label_address_array(idx) ~= hex2dec('FFFFFFFFFFFFFFFF'))
                 error('### PREPROCESSOR ERROR: Multiple destination labels with the same address!! ###')
@@ -124,23 +135,31 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 0: FF|OO|CCCC   CCCCCCCC
+% Format 0: FF|OO|CCCC  CCCCCCCC
 %
-% Example:  opcode | op1(reg) | op2(imm) 
-%          --------+----------+---------
-%              JMP | Not Used | LABEL  
+% Example:  opcode | op1 | op2 
+%          --------+-----+-------
+%              JMP | N/A | LABEL  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_0(src_code, opcode, label_address_array, i, j, c)
     operand = src_code(1, i);
 
     % Check that on the operand position is source label, not destionation label.
-    if (c.LABEL_DEST_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK))
+    if (c.LABEL_DEST_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK, 'int64'))
         error('### PREPROCESSOR ERROR: A label with a destination prefix is placed on position of a source prefix (Address = %03d)!! ###\n', j - 1)
     end
 
-    if (c.LABEL_SRC_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK))
-        idx = bitand(operand, c.LABEL_MASK);
+    % If operand is correct (source) label then replace the label with actual address the label is pointing to.
+    if (c.LABEL_SRC_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK, 'int64'))
+        idx = bitand(operand, c.LABEL_VALUE_MASK);
         operand = label_address_array(idx);
+
+    % The operand is neither destination nor source label. It means it is immediate value (direct address).
+    else
+        % Check that the operand (direct address) is in appropriate range.
+        if ((operand < 0) || (operand > bin2dec('00001111 11111111')))
+            error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is 0 .. 4095, actual value is %d (Address = %03d)!! ###\n', operand, j - 1)
+        end
     end
 
     instr_msb = bitor(opcode, bitshift(operand, -8));
@@ -155,7 +174,7 @@ end
 %
 % Example 1:  opcode | op1  | op2
 %            --------+------+-----
-%              LOADI | m(5) | r0  
+%              LOADI |  r0  | m(5) 
 % 
 % Example 2:  opcode | op1  | op2                         opcode | op1 | op2
 %            --------+------+-----  will be compiled to  --------+-----+-----
@@ -166,46 +185,6 @@ end
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, label_address_array, i, j, c)
-    % instr_msb = 0;
-    % instr_lsb = 0;
-
-    % op1 = src_code(1, i);
-    % instr_msb = bitor(opcode, op1);
-    % i = i + 1;
-
-    % op2 = src_code(1, i);
-    % instr_msb = bitor(instr_msb, bitshift(op2, -2));
-    % instr_lsb = bitor(instr_lsb, bitshift(op2, 6));
-    % instr_lsb = bitand(instr_lsb, c.BYTE_MASK);  % tento riadok je tu mozno zbytocny
-    % i = i + 1;
-
-    % op3 = src_code(1, i);
-    % % Check that on the operand position is source label, not destionation label.
-    % if (c.LABEL_DEST_PREFIX == bitand(op3, c.LABEL_PREFIX_MASK))
-    %     error('### PREPROCESSOR ERROR: A label with a destination prefix is placed on position of a source prefix (Address = %03d)!! ###\n', j - 1)
-    % end
-
-    % if (c.LABEL_SRC_PREFIX == bitand(op3, c.LABEL_PREFIX_MASK))
-    %     idx = bitand(op3, c.LABEL_MASK);
-
-    %     % This is the relative addressing mode.
-    %     op3 = label_address_array(idx) - j;
-
-    %     % % Dopredu (k vyssim adresam) sa da skakat o 64 bytov (o 32 instrukcii).
-    %     % % Dozadu (k nizsim adresam) sa da skakat len o 62 bytov (o 31 instrukcii).
-    %     % (+ 2) tam je pretoze v dobe skoku je PC posunuty uz na dalsiu instrukciu
-    %     % if (abs(op3) > (62 + 2))
-    %         % todo: treba vypisat podrobnosti - odkial, kam
-    %     %     error('### ERROR: Jump too long!!! ###')
-    %     % end
-
-    %     op3 = typecast(int8(op3), 'uint8');
-    % end
-
-    % op3 = bitand(op3, bin2dec('0011 1111'));
-    % instr_lsb = bitor(instr_lsb, op3);
-    % i = i + 1;
-
     % Read first operand.
     op1 = src_code(1, i);
     i = i + 1;
@@ -214,11 +193,10 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
     op2 = src_code(1, i);
     i = i + 1;
 
-    % If operand is negative (less than zero) then convert it to two`s complement.
-    % if (op2 < 0)
-    %     op2 = op2 * (-1);
-    %     op2 = bitcmp(op2, 'uint8') + 1;
-    % end
+    % Check that second operand is in appropriate range.
+    if ((op2 < -128) || (op2 > 255))
+        error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
+    end
 
     if (c.STOREI == opcode)
         instr_msb = bitor(opcode, op2);
@@ -233,11 +211,11 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD   CCCCCCCC
 %
-% Example:  opcode | op1(reg) | op2(imm) 
-%          --------+----------+-----
-%             ADDI | r0       | 25  
+% Example:  opcode | op1 | op2 
+%          --------+-----+-----
+%             ADDI | r0  | 25  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i)
+function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i, j)
     op1 = src_code(1, i);
     instr_msb = bitor(opcode, op1);
     i = i + 1;
@@ -245,6 +223,11 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i)
     op2 = src_code(1, i);
     instr_lsb = op2;
     i = i + 1;
+
+    % Check that second operand is in appropriate range.
+    if ((op2 < -128) || (op2 > 255))
+        error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
+    end
 end
 
 
@@ -286,28 +269,28 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_3(src_code, opcode, i,
 end
 
 
-function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
-    fprintf('|   %03d:  |    %05d    | %03d | %03d |', j - 1, compiledCode(1, j), instr_msb, instr_lsb)
+function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c)
+    fprintf('|   %03d:  |    0x%04X   | 0x%02X | 0x%02X |', j - 1, compiledCode(1, j), uint8_instr_msb, uint8_instr_lsb)
 
     switch (bitand(instr_msb, c.INSTR_FORMAT_MASK))
         case c.INSTR_FORMAT_0
             switch (bitor(bitand(instr_msb, c.FORMAT_0_OPCODE_MASK), c.INSTR_FORMAT_0))
                 case c.CALL
-                    fprintf('   CALL    m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   CALL    m(%04d)            |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
 
                 case c.JMP
-                    fprintf('   JMP     m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   JMP     m(%04d)            |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
 
                 case c.JPE
-                    fprintf('   JPE     m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   JPE     m(%04d)            |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
 
                 case c.JNE
-                    fprintf('   JNE     m(%03d)             |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
+                    fprintf('   JNE     m(%04d)            |', bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb))
             end
         case c.INSTR_FORMAT_1
             switch (bitor(bitand(instr_msb, c.FORMAT_1_OPCODE_MASK), c.INSTR_FORMAT_1))
                 case c.CMPI
-                    fprintf('   CMPI    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   CMPI    r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 
                 % case c.TIR
 
@@ -320,16 +303,16 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, j, c)
         case c.INSTR_FORMAT_2
             switch (bitor(bitand(instr_msb, c.FORMAT_2_OPCODE_MASK), c.INSTR_FORMAT_2))
                 case c.ADDI
-                    fprintf('   ADDI    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   ADDI    r%d      %-4d       |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
 
                 case c.LOADI
                     fprintf('   LOADI   r%d      m(%03d)     |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
 
                 case c.MOVU
-                    fprintf('   MOVU    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   MOVU    r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 
                 case c.MOVL
-                    fprintf('   MOVL    r%d      %-3d        |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
+                    fprintf('   MOVL    r%d      %-4d       |', bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK), instr_lsb)
             end
 
         case c.INSTR_FORMAT_3

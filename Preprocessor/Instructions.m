@@ -1,34 +1,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Instruction formats:
 %
-% 0.) FF|OO|IIII   IIIIIIII
+% Format 0: FF|OO|CCCC   CCCCCCCC
 %
-% 1.) FF|OO|DDD|S  SS|IIIIII
+% Format 1: FF|OO|SSSS   CCCCCCCC
 %
-% 2.) FF|OOO|DDD   IIIIIIII
+% Format 2: FF|OO|DDDD   CCCCCCCC
 %
-% 3.) FF|OOOO|RR   RR|DDD|SSS
+% Format 3: FF|OOOO|RR   DDDD|SSSS
 %
 %   F - Format
 %   O - Operation code
-%   D - Register 1 (Destination)
-%   S - Register 2 (Source)
-%   I - Immediate value
+%   D - Destination Register
+%   S - Source Register
+%   C - Immediate value
 %   R - Reserved
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      SPX (Set PiXel) instruction
+%      Set Pixel to Zero instruction (SPX0)     TODO: Fix description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand: 
-%     Horizontal position (X) in range 0..15
+%     Horizontal position (X) in range 0..15.
 %
 % Second operand:
-%     Vertical position (Y) in range 0..23
+%     Vertical position (Y) in range 0..23.
 %
 % Third operand:
 %     Pixel to set (switch off = 0 / switch on = 1)
@@ -41,18 +41,18 @@ c.SPX0 = SPX0;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      SPX (Set PiXel) instruction
+%      Set Pixel to One instruction (SPX1)      TODO: Fix description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand: 
-%     Horizontal position (X) in range 0..15
+%     Horizontal position (X) in range 0..15.
 %
 % Second operand:
-%     Vertical position (Y) in range 0..23
+%     Vertical position (Y) in range 0..23.
 %
 % Third operand:
-%     Pixel to set (switch off = 0 / switch on = 1)
+%     Pixel to set (switch off = 0 / switch on = 1).
 %
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
@@ -62,8 +62,8 @@ c.SPX1 = SPX1;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      RET instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      RET instruction                          TODO: Doplnit kde sa uklada vysledok.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Fix the title.
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
 % First operand:
@@ -83,7 +83,7 @@ c.CMP = CMP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      RET instruction
+%      RET instruction                          TODO: Add description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
@@ -101,7 +101,7 @@ c.RET = RET;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      POP instruction
+%      POP instruction                          TODO: Add description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
@@ -119,7 +119,7 @@ c.POP = POP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      PUSH instruction (not finished)
+%      PUSH instruction                         TODO: Add description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
@@ -137,7 +137,7 @@ c.PUSH = PUSH;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      GCH (Get CHar) instruction
+%      Get Char instruction (GCH)               TODO: Fix example.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
@@ -155,7 +155,7 @@ c.GCH = GCH;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ADD (ADD registers) instruction
+%      Add instruction (ADD)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
@@ -174,7 +174,7 @@ c.ADD = ADD;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      GPX (Get PiXel) instruction
+%      Get PiXel instruction (GPX)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
@@ -183,17 +183,17 @@ c.ADD = ADD;
 %     Out: Read pixel value is stored here. 
 %
 % Second operand:
-%     Vertical position (Y) in range 0..23
+%     Vertical position (Y) in range 0..23.
 %
 % Type of operands:        Example:
-%     DIS REG REG          DIS r0 r1
+%     GPX REG REG          GPX r0 r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 GPX = bin2dec('11 0101 00');
 c.GPX = GPX;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     TXT (print TeXT character) instructions (TRR, TMR)
+%     TXT (print TeXT character) instructions (TRR, TMR) TODO: Update and split to two separate descriptions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR DDDD|SSSS
 %
@@ -246,7 +246,7 @@ c.MOV   = MOV;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      ADDI (ADD Immediate) Instruction
+%      Add Immediate instruction (ADDI)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 % 
@@ -271,8 +271,111 @@ c.ADDI = ADDI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      STOREI Instruction
+%      Move Upper Byte instruction (MOVU)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OO|DDDD IIIIIIII
+%
+% Description:
+%     The MOVU instruction moves an immediate
+%     value to upper byte of register. 
+%     The value is from range <0 .. 255>.
+% 
+% First operand:
+%     Destination register.
+%
+% Second operand:
+%     Immediate value to be moved to register.
+%
+% Type of operands:        Example:
+%     MOVU  REG  IMM         MOVU  r0  255
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MOVU =  bin2dec('10 10 0000');
+c.MOVU = MOVU;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Load Immediate instruction (LOADI)       TODO: Ako nahrat hodnotu ktora je inde nez na adrese v rozsahu 8-bitov? Napriklad loadovanie dat z ROM? Mozno by som mohol skusit pouzit specialny bazovy register ktory by sa vzdy pripocital k danej adrese.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OO|DDDD IIIIIIII
+%
+% Description:
+%     The LOADI instruction moves value from 
+%     memory (pointed by immediate) to register.
+% 
+% First operand:
+%     Destination register.
+%
+% Second operand:
+%     Source memory address. 
+%
+% Type of operands:        Example:
+%     LOADI  REG  IMM         LOADI  r2  a(10)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+LOADI = bin2dec('10 01 0000');
+c.LOADI = LOADI;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Move Lower Byte instruction (MOVL)       TODO: Co sa stane ked tam vlozim uint8? Napr. 128? Zdokumentovat. Skontrolovat ostatne instrukcie.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OO|DDDD IIIIIIII
+%
+% Description:
+%     The MOVL instruction moves an immediate
+%     value into lower byte of a register. 
+%     Immediate value is signed and it is from
+%     range <-128 .. +127>. The sign bit is copied
+%     to upper byte of the register.
+% 
+% First operand:
+%     Destination register.
+%
+% Second operand:
+%     Immediate value to be moved to register.
+%
+% Type of operands:        Example:
+%     MOVL  REG  IMM         MOVL  r0  10
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+MOVL =  bin2dec('10 00 0000');
+c.MOVL = MOVL;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      This opcode is not yet used.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OO|SSSS IIIIIIII
+%
+% First operand: 
+%     N/A
+%
+% Second operand:
+%     N/A
+%
+% Type of operands:        Example:
+%     N/A  N/A  N/A          N/A  N/A  N/A
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED = bin2dec('01 11 0000');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                               TODO: Add description.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu.
+% Format 1: FF|OO|SSSS IIIIIIII
+%
+% First operand:
+%
+% Second operand:
+%
+% Type of operands:        Example:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+TIR = bin2dec('01 10 0000');
+c.TIR = TIR;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Store Immediate instruction (STOREI)     TODO: Ako ulozit hodnotu na adresu ktora je inde nez v rozsahu 8-bitov? Mozno by som mohol skusit pouzit specialny bazovy register ktory by sa vzdy pripocital k danej adrese.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu.
 % Format 1: FF|OO|SSSS IIIIIIII
 %
 % Description:
@@ -301,176 +404,62 @@ c.STOREI = STOREI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      LOADI Instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
+%      Compare Immediate instruction (CMPI)     TODO: Doplnit kde sa uklada vysledok.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu.
+% Format 1: FF|OO|SSSS IIIIIIII                 TODO: Doplnit ci porovnava iba na rovnost, alebo aj vacsi/mensi.
 %
-% Description:
-%     The LOADI instruction moves value from 
-%     memory (pointed by immediate) to register.
-% 
 % First operand:
-%     Destination register.
+%     Data to compare.
 %
 % Second operand:
-%     Source memory address. 
+%     Data to compare.
 %
 % Type of operands:        Example:
-%     LOADI  REG  IMM         LOADI  r2  a(10)
+%     CMPI  REG  IMM         CMPI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LOADI = bin2dec('10 01 0000');
-c.LOADI = LOADI;
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Move Lower Byte instruction (MOVL)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
-%
-% Description:
-%     The MOVL instruction movess an immediate
-%     value into lower byte of a register. 
-%     Immediate value is signed and it is from
-%     range <-128 .. +127>. The sign bit is copied
-%     to upper byte of the register.
-% 
-% First operand:
-%     Destination register.
-%
-% Second operand:
-%     Immediate value to be moved to register.
-%
-% Type of operands:        Example:
-%     MOVL  REG  IMM         MOVL  r0  10
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVL =  bin2dec('10 00 0000');
-c.MOVL = MOVL;
-
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%      TIR (Print immediate text character) instruction
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% Format 1: 				FF|OOO|DDD IIIIIIII
-	%
-	% First operand: 
-	%     Character to print.
-	%
-	% Second operand:
-	%     Position on display.
-	%
-	% Type of operands:        Example:
-	%     TIR  IMM  REG          TIR  J      r1
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% NOT_USED = bin2dec('10 011 000');
-% c.NOT_USED = NOT_USED;
-
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%      MOV instructions (MMRI, MRMI, MRC)
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% Format 1: FF|OO|SSSS IIIIIIII
-	%
-	% First operand:
-	%     Destination.
-	%
-	% Second operand:
-	%     Source of data.
-	%
-	% Type of operands:        Example:
-	%     MMRI  REG  IMM         MMRI  r3  a(11) -> ulozi hodnotu(REG) na adresu(IMM) v pamati
-	%     MRMI  REG  IMM         MRMI  r2  a(10)
-	%     MRC   REG  IMM         MRC   r0  10
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TIR = bin2dec('01 10 0000');
-c.TIR = TIR;
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Move Upper Byte instruction (MOVU)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
-%
-% Description:
-%     The MOVU instruction moves an immediate
-%     value to upper byte of register. 
-%     The value is from range <0 .. 255>.
-% 
-% First operand:
-%     Destination register.
-%
-% Second operand:
-%     Immediate value to be moved to register.
-%
-% Type of operands:        Example:
-%     MOVU  REG  IMM         MOVU  r0  255
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVU =  bin2dec('10 10 0000');
-c.MOVU = MOVU;
-
-
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	%      MOV instructions (MMRI, MRMI, MRC)
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	% Format 1: FF|OO|SSSS IIIIIIII
-	%
-	% First operand:
-	%     Destination.
-	%
-	% Second operand:
-	%     Source of data.
-	%
-	% Type of operands:        Example:
-	%     MMRI  REG  IMM         MMRI  r3  a(11) -> ulozi hodnotu(REG) na adresu(IMM) v pamati
-	%     MRMI  REG  IMM         MRMI  r2  a(10)
-	%     MRC   REG  IMM         MRC   r0  10
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 CMPI = bin2dec('01 00 0000');
 c.CMPI = CMPI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      JMP instructions (JPE, JNE)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 0: FF|OO|DDD|S SS|IIIIII
+%      Jump If Not Equal instruction (JNE)      TODO: Doplnit kde sa nachadza podmienka skoku.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu (adresy).
+% Format 0: FF|OO|IIII IIIIIIII
 %
 % First operand:
-%     Value to compare.
+%     Not used.
 %
 % Second operand:
-%     Value to compare.
-%
-% Third operand:
 %     Address to jump.
 %
 % Type of operands:        Example:
-%     JNE  REG  REG  IMM     JPE  r0  r1  16
-%     JPE  REG  REG  IMM     JPE  r0  r1  16
+%     JNE  IMM               JNE  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 JNE = bin2dec('00 11 000 0');
 c.JNE = JNE;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      JPE instruction (not finished)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Jump If Equal instruction (JPE)          TODO: Doplnit kde sa nachadza podmienka skoku.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu (adresy).
 % Format 0: FF|OO|IIII IIIIIIII
 %
 % First operand:
 %     Not used.
 %
 % Second operand:
-%     Address of a subroutine to call.
+%     Address to jump.
 %
 % Type of operands:        Example:
-%     CALL  REG  IMM         CALL  r0  LABEL  
+%     JPE  IMM               JPE  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 JPE = bin2dec('00 10 0000');
 c.JPE = JPE;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      CALL instruction (not finished)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Function Call instruction (CALL)         TODO: Zdokumentovat "call & jump" funkcionalitu.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu (adresy).
 % Format 0: FF|OO|IIII IIIIIIII
 %
 % First operand:
@@ -480,14 +469,14 @@ c.JPE = JPE;
 %     Address of a subroutine to call.
 %
 % Type of operands:        Example:
-%     CALL  REG  IMM         CALL  r0  LABEL  
+%     CALL  IMM              CALL  LABEL  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 CALL = bin2dec('00 01 0000');
 c.CALL = CALL;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      JMP instruction (unconditional JuMP) (not finished)
+%      Unconditional Jump instruction (JMP)     TODO: Doplnit maximalny rozsah operandu (adresy).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
@@ -498,57 +487,8 @@ c.CALL = CALL;
 %     Address to jump.
 %
 % Type of operands:        Example:
-%     JMP  REG  IMM          JMP  r0  LABEL   
+%     JMP  IMM               JMP  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 JMP = bin2dec('00 00 0000');
 c.JMP = JMP;
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      LSH instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      RSH instruction
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% operation code = 14
-% Type of operands:
-%     ORcr  CONST  REG    (000)
-%     ORrr  REG    REG    (001)
-%     ORmr  MEM    REG    (010)  (Not implemented)
-%     ORcm  CONST  MEM    (011)  (Not implemented)
-%     ORrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ORcr = bin2dec('1110 0000');
-% ORrr = bin2dec('1110 0001');
-% OR = bin2dec('1110 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% operation code = 13
-% Type of operands:
-%     XORcr  CONST  REG    (000)
-%     XORrr  REG    REG    (001)
-%     XORmr  MEM    REG    (010)  (Not implemented)
-%     XORcm  CONST  MEM    (011)  (Not implemented)
-%     XORrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% XORcr = bin2dec('1101 0000');
-% XORrr = bin2dec('1101 0001');
-% XOR = bin2dec('1101 0000');
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% operation code = 12
-% Type of operands:
-%     NOTcr  CONST  REG    (000)
-%     NOTrr  REG    REG    (001)
-%     NOTmr  MEM    REG    (010)  (Not implemented)
-%     NOTcm  CONST  MEM    (011)  (Not implemented)
-%     NOTrm  REG    MEM    (100)  (Not implemented)
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%NOT = bin2dec('1100 0000');
 

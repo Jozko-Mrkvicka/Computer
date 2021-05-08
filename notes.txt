@@ -156,6 +156,8 @@ MRMI  r2     a(10) | LOADI   reg  imm | LOADI   r0     a(10) |
 - Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 - Vytvorit "control unit" (zlucit uz existujuce bloky) aby pocitac pripominal von Neumannovu schemu.
 - Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu.
+- Pamat nie je nijak chranena. Napriklad s instrukciou JMP by sa malo dat skocit doprostred zasobniku. Vymysliet ochranu + hard faulty.
+- Pridat BASE register ktory sa pripocita ku adrese na ktoru chcem skocit pomocou JMP, CALL, ... To by mi dovolilo skakat v rozsahu 16-bitov a zaroven by som mohol zredukovat formaty instrukcii. Format 1 a 2 by som pravdepodobne nepotreboval. BASE register by sa dal tiez pouzit v instrukcii CMPI na porovnanie vacsieho cisla nez int8_t.
 
 Pridat nove veci:
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
@@ -163,11 +165,12 @@ Pridat nove veci:
 	- Rozsirit ALU (left shift, right shift).
 	- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
 	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
+	- Pridat MPROM modul (Manually/Mechanically Programable Read Only Memory) - novy blok pamate tvoreny mechanickymi prepinacmi. Budu umiestnene na prednom panely pocitaca. 
 
 Preprocessor:
-	- Pridat check na maximalne hodnoty immediate operandov.
-	- Vylepsit preprocessor tak aby som mohol priamo zadavat zaporne immediate hodnoty (-1 namiesto 255).
+	- LABELy ukladat do samostatneho pola, zjednodusit/zprehladnit zapis.
 	- Ucesat Preprocessor.
+	- Automaticky naflashovat ROM_Empty.m. Potom ju prepisat s konkretnym imageom ktory moze byt aj kratsi ako je celkova velkost ROM.
 
 - Clean-up:
 	- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
@@ -178,19 +181,18 @@ Preprocessor:
 	- Pridat komentare.
 	- Dokoncit testy.
 	- Systemove testy (kazdu instrukciu otestovat samostatne).
+	- Instructions.m
 
 - Naprogramovat:
-	- Snake
-	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register).
 	- Tetris
+	- Snake
 	- Kalkulacku
+	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register).
 	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami).
 
 
 GIT:
-- Block Bit_Demultiplexer_1_to_16 updated and test for it created.
-- The following instructions have been renamed:
-	- MMR  -> STORE
-	- MRM  -> LOAD
-	- MMRI -> STOREI
-	- MRMI -> LOADI
+	- The immediate operand range check added.
+	- Preprocessor updated. Now it is possible to directly enter negative immediate values.
+	- Instruction description polished.
+

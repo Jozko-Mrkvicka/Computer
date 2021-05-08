@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun May 02 00:36:06 2021"
-  RTWModifiedTimeStamp	  541816541
-  ModelVersionFormat	  "1.%<AutoIncrement:544>"
+  LastModifiedDate	  "Sat May 08 16:28:19 2021"
+  RTWModifiedTimeStamp	  542384834
+  ModelVersionFormat	  "1.%<AutoIncrement:545>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1771,17 +1771,17 @@ Library {
       BlockType		      SubSystem
       Name		      "ALU"
       SID		      "1505"
-      Ports		      [5, 4]
+      Ports		      [4, 4]
       Position		      [1155, 145, 1340, 225]
       ZOrder		      478
       ForegroundColor	      "blue"
       BackgroundColor	      "cyan"
-      LibraryVersion	      "*1.543"
+      LibraryVersion	      "*1.544"
       RequestExecContextInheritance off
       Variant		      off
       System {
 	Name			"ALU"
-	Location		[147, 0, 1741, 1087]
+	Location		[117, 2, 1661, 1045]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1793,7 +1793,7 @@ Library {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
 	  Name			  "ADD_or_ADDI(1b)"
@@ -1813,20 +1813,11 @@ Library {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "CMP_or_CMPI(1b)"
-	  SID			  "5692"
-	  Position		  [850, 738, 880, 752]
-	  ZOrder		  2041
-	  Port			  "3"
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Inport
 	  Name			  "Operand_1(2B)"
 	  SID			  "2070"
 	  Position		  [850, 788, 880, 802]
 	  ZOrder		  620
-	  Port			  "4"
+	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -1835,7 +1826,7 @@ Library {
 	  SID			  "2071"
 	  Position		  [850, 843, 880, 857]
 	  ZOrder		  621
-	  Port			  "5"
+	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -2939,14 +2930,6 @@ Library {
 	}
 	Block {
 	  BlockType		  Terminator
-	  Name			  "Terminator3"
-	  SID			  "5700"
-	  Position		  [945, 735, 965, 755]
-	  ZOrder		  2046
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
 	  Name			  "Terminator5"
 	  SID			  "5511"
 	  Position		  [1715, 1360, 1735, 1380]
@@ -3049,13 +3032,6 @@ Library {
 	}
 	Line {
 	  ZOrder		  4
-	  SrcBlock		  "CMP_or_CMPI(1b)"
-	  SrcPort		  1
-	  DstBlock		  "Terminator3"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  5
 	  SrcBlock		  "Instruction_CMP"
 	  SrcPort		  3
 	  Points		  [731, 0; 0, 60]
@@ -3063,7 +3039,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  6
+	  ZOrder		  5
 	  SrcBlock		  "Instruction_CMP"
 	  SrcPort		  2
 	  Points		  [742, 0; 0, 30]
@@ -3071,109 +3047,109 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  7
+	  ZOrder		  6
 	  SrcBlock		  "Instruction_CMP"
 	  SrcPort		  1
 	  DstBlock		  "A>B(1b)"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  8
+	  ZOrder		  7
 	  SrcBlock		  "Operand_1(2B)"
 	  SrcPort		  1
 	  Points		  [135, 0; 0, 35]
 	  Branch {
-	    ZOrder		    9
+	    ZOrder		    8
 	    Points		    [0, 70]
 	    Branch {
-	      ZOrder		      10
+	      ZOrder		      9
 	      Points		      [0, 85]
 	      Branch {
-		ZOrder			11
+		ZOrder			10
 		DstBlock		"Instruction_OR"
 		DstPort			1
 	      }
 	      Branch {
-		ZOrder			12
+		ZOrder			11
 		Points			[0, 70]
 		Branch {
-		  ZOrder		  13
+		  ZOrder		  12
 		  Points		  [0, 80]
 		  Branch {
-		    ZOrder		    14
+		    ZOrder		    13
 		    DstBlock		    "Instruction_NOT"
 		    DstPort		    1
 		  }
 		  Branch {
-		    ZOrder		    15
+		    ZOrder		    14
 		    Points		    [0, 60]
 		    Branch {
-		    ZOrder		    16
+		    ZOrder		    15
 		    Points		    [0, 70]
 		    DstBlock		    "Instruction_MOVU"
 		    DstPort		    1
 		    }
 		    Branch {
-		    ZOrder		    17
+		    ZOrder		    16
 		    DstBlock		    "Instruction_AND"
 		    DstPort		    1
 		    }
 		  }
 		}
 		Branch {
-		  ZOrder		  18
+		  ZOrder		  17
 		  DstBlock		  "Instruction_XOR"
 		  DstPort		  1
 		}
 	      }
 	    }
 	    Branch {
-	      ZOrder		      19
+	      ZOrder		      18
 	      DstBlock		      "Instruction_CMP"
 	      DstPort		      1
 	    }
 	  }
 	  Branch {
-	    ZOrder		    20
+	    ZOrder		    19
 	    DstBlock		    "Instruction_ADD"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  ZOrder		  21
+	  ZOrder		  20
 	  SrcBlock		  "Operand_2(2B)"
 	  SrcPort		  1
 	  Points		  [119, 0]
 	  Branch {
-	    ZOrder		    22
+	    ZOrder		    21
 	    Points		    [0, 75]
 	    Branch {
-	      ZOrder		      23
+	      ZOrder		      22
 	      Points		      [0, 80]
 	      Branch {
-		ZOrder			24
+		ZOrder			23
 		DstBlock		"Instruction_OR"
 		DstPort			2
 	      }
 	      Branch {
-		ZOrder			25
+		ZOrder			24
 		Points			[0, 70]
 		Branch {
-		  ZOrder		  26
+		  ZOrder		  25
 		  DstBlock		  "Instruction_XOR"
 		  DstPort		  2
 		}
 		Branch {
-		  ZOrder		  27
+		  ZOrder		  26
 		  Points		  [0, 140]
 		  Branch {
-		    ZOrder		    28
+		    ZOrder		    27
 		    Points		    [0, 70]
 		    DstBlock		    "Instruction_MOVU"
 		    DstPort		    2
 		  }
 		  Branch {
-		    ZOrder		    29
+		    ZOrder		    28
 		    DstBlock		    "Instruction_AND"
 		    DstPort		    2
 		  }
@@ -3181,19 +3157,19 @@ Library {
 	      }
 	    }
 	    Branch {
-	      ZOrder		      30
+	      ZOrder		      29
 	      DstBlock		      "Instruction_CMP"
 	      DstPort		      2
 	    }
 	  }
 	  Branch {
-	    ZOrder		    31
+	    ZOrder		    30
 	    DstBlock		    "Instruction_ADD"
 	    DstPort		    2
 	  }
 	}
 	Line {
-	  ZOrder		  32
+	  ZOrder		  31
 	  SrcBlock		  "Instruction_ADD"
 	  SrcPort		  1
 	  Points		  [339, 0; 0, 425]
@@ -3201,21 +3177,21 @@ Library {
 	  DstPort		  3
 	}
 	Line {
-	  ZOrder		  33
+	  ZOrder		  32
 	  SrcBlock		  "Instruction_XOR"
 	  SrcPort		  1
 	  DstBlock		  "Terminator"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  34
+	  ZOrder		  33
 	  SrcBlock		  "Instruction_NOT"
 	  SrcPort		  1
 	  DstBlock		  "Terminator1"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  35
+	  ZOrder		  34
 	  SrcBlock		  "Instruction_2"
 	  SrcPort		  1
 	  Points		  [73, 0; 0, 25]
@@ -3223,7 +3199,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  36
+	  ZOrder		  35
 	  SrcBlock		  "Instruction_3"
 	  SrcPort		  1
 	  Points		  [72, 0; 0, -25]
@@ -3231,7 +3207,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  37
+	  ZOrder		  36
 	  SrcBlock		  "Instruction_4"
 	  SrcPort		  1
 	  Points		  [149, 0; 0, -80]
@@ -3239,7 +3215,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  38
+	  ZOrder		  37
 	  SrcBlock		  "Instruction_5"
 	  SrcPort		  1
 	  Points		  [178, 0; 0, -125]
@@ -3247,7 +3223,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  39
+	  ZOrder		  38
 	  SrcBlock		  "Instruction_6"
 	  SrcPort		  1
 	  Points		  [207, 0; 0, -175]
@@ -3255,7 +3231,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  40
+	  ZOrder		  39
 	  SrcBlock		  "Instruction_7"
 	  SrcPort		  1
 	  Points		  [233, 0; 0, -215]
@@ -3263,7 +3239,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  41
+	  ZOrder		  40
 	  SrcBlock		  "Instruction_8"
 	  SrcPort		  1
 	  Points		  [261, 0; 0, -260]
@@ -3271,7 +3247,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  42
+	  ZOrder		  41
 	  SrcBlock		  "Instruction_9"
 	  SrcPort		  1
 	  Points		  [289, 0; 0, -305]
@@ -3279,7 +3255,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  43
+	  ZOrder		  42
 	  SrcBlock		  "Instruction_10"
 	  SrcPort		  1
 	  Points		  [313, 0; 0, -345]
@@ -3287,7 +3263,7 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  44
+	  ZOrder		  43
 	  SrcBlock		  "ADD_or_ADDI(1b)"
 	  SrcPort		  1
 	  Points		  [794, 0; 0, 560]
@@ -3295,14 +3271,14 @@ Library {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  45
+	  ZOrder		  44
 	  SrcBlock		  "Select_Data"
 	  SrcPort		  1
 	  DstBlock		  "Data_Out(2B)"
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  46
+	  ZOrder		  45
 	  SrcBlock		  "Instruction_ADD"
 	  SrcPort		  2
 	  DstBlock		  "Carry_Out(1b)"
