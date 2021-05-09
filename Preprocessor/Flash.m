@@ -1,5 +1,7 @@
 function Flash(file)
 	clc
+	clear SourceCode
+	clear RomCode
 
 	% Load constants and definitions (instructions, registers, ...).
 	Instructions
@@ -7,8 +9,8 @@ function Flash(file)
 	% Video_Adapter
 	% CharTable
 
-	% Load the variable SourceCode from source file.
-	run(file)
+	% Load a program to be executed (load variable SourceCode from source file).
+	run(file);
 
 	% Compile source code (assembly language) to binary code and "flash" it to ROM.
 	% "Flashing" means to assign the RomCode array to particular constants

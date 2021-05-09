@@ -5,6 +5,9 @@ function compiledCode = Preprocessor(program, c)
     fprintf('| ADDRESS | INSTRUCTION | MSB  | LSB  |             CODE             |\n');
     fprintf('+---------+-------------+------+------+------------------------------+\n');
 
+    % Initialize whole ROM memory with zeros. Zeros will be interpreted as JMP m(0x0000).
+    compiledCode(1:(c.ROM_SIZE_MAX/c.WORD_SIZE)) = uint16(0);
+
     % Check if there are any labels in the code (it means if variable c.LBL_CNT does exist).
     if (1 == isfield(c, 'LBL_CNT'))
         [label_address_array] = find_all_destination_labels(program, c);
@@ -17,7 +20,6 @@ function compiledCode = Preprocessor(program, c)
     % The counter "j" counts number of bytes in a compiled code (each instruction has two bytes).
     j = 1;
     while (i <= size(program, 2))
-    % while (i <= 1)
         % Read first value on particular line of a processed source code.
         value = program(1, i);
 
@@ -62,6 +64,11 @@ function compiledCode = Preprocessor(program, c)
         print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c);
 
         j = j + 1;
+    end
+
+    % Check that compiled code will fit into ROM memory.
+    if (c.WORD_SIZE*size(compiledCode, 2) > c.ROM_SIZE_MAX)
+      error('###\nPREPROCESSOR ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d\nActual image size:    %d\n###', c.ROM_SIZE_MAX, c.WORD_SIZE*size(compiledCode, 2))
     end
 
     fprintf('+---------+-------------+------+------+------------------------------+\n');

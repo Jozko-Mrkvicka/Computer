@@ -92,6 +92,11 @@ c.BYTE_MASK = bin2dec('1111 1111');
 c.RAM_START  = 0;
 c.RAM_END    = 31;
 
+% ROM size in bytes.
+c.ROM_SIZE_MAX = 512;
+
+% Word size in bytes.
+c.WORD_SIZE = 2;
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".
 % This function is used just to visually emphasise that an immediate value

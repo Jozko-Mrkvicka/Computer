@@ -168,9 +168,7 @@ Pridat nove veci:
 	- Pridat MPROM modul (Manually/Mechanically Programable Read Only Memory) - novy blok pamate tvoreny mechanickymi prepinacmi. Budu umiestnene na prednom panely pocitaca. 
 
 Preprocessor:
-	- LABELy ukladat do samostatneho pola, zjednodusit/zprehladnit zapis.
 	- Ucesat Preprocessor.
-	- Automaticky naflashovat ROM_Empty.m. Potom ju prepisat s konkretnym imageom ktory moze byt aj kratsi ako je celkova velkost ROM.
 
 - Clean-up:
 	- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
@@ -192,7 +190,7 @@ Preprocessor:
 
 
 GIT:
-	- The immediate operand range check added.
-	- Preprocessor updated. Now it is possible to directly enter negative immediate values.
-	- Instruction description polished.
+	Preprocessor updated:
+		- Added check for maximal size of source code.
+		- ROM memory is initialized to zero at the beginning of compilation.
 
