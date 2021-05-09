@@ -1,9 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General purpose register definitions
-%
-% Prefix "01" means that the number represents a register.
-% Prefix is used only by preprocessor and is erased 
-% (set to zero) after preprocessing.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 r0  = bin2dec('0000 0000');
 r1  = bin2dec('0000 0001');
@@ -20,13 +16,12 @@ r11 = bin2dec('0000 1011');
 r12 = bin2dec('0000 1100');
 r13 = bin2dec('0000 1101');
 r14 = bin2dec('0000 1110');
-r15 = bin2dec('0000 1111');
 
-v  = r11; 
-a0 = r12;
-a1 = r13;
-a2 = r14;
-a3 = r15;
+% General purpose register 15 is used as a base register.
+% It contains upper byte of a word (usually address) used by some other instructions.
+% It can be also used like normal general purpose register.
+r15 = bin2dec('0000 1111');
+base = r15;
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -64,7 +59,7 @@ OFF = 0;
 c.LABEL_DEST_PREFIX = bin2dec('11100000 00000000');
 c.LABEL_SRC_PREFIX  = bin2dec('11010000 00000000');
 c.LABEL_PREFIX_MASK = bin2dec('11110000 00000000');
-c.LABEL_VALUE_MASK =  bin2dec('00001111 11111111');
+c.LABEL_VALUE_MASK  = bin2dec('00001111 11111111');
 
 % Constant definition
 c.FORMAT_0_OPERAND_1_MASK = bin2dec('0000 1111');
@@ -88,18 +83,25 @@ c.INSTR_FORMAT_3 = bin2dec('1100 0000');
 c.BYTE_MASK = bin2dec('1111 1111');
 
 
-% Range of RAM addresses.
-c.RAM_START  = 0;
-c.RAM_END    = 31;
+% Start address of MPROM memory in physical address space and it`s size in words.
+c.MPROM_START = 0;
+c.MPROM_SIZE  = 256;
 
-% ROM size in bytes.
-c.ROM_SIZE_MAX = 512;
+% Start address of ROM memory in physical address space and it`s size in words.
+c.ROM_START   = 256;
+c.ROM_SIZE    = 256;
 
-% Word size in bytes.
-c.WORD_SIZE = 2;
+% Start address of RAM memory in physical address space and it`s size in words.
+c.RAM_START   = 512;
+c.RAM_SIZE    = 32;
+
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".
 % This function is used just to visually emphasise that an immediate value
 % is a pointer/memory address.
 m = @(n) n;
+
+% Functions returning most significant and least significat byte from 16-bit word.
+msb = @(n) bitshift(n, -8);
+lsb = @(n) bitand(n, 255);
 

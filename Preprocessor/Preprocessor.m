@@ -6,7 +6,7 @@ function compiledCode = Preprocessor(program, c)
     fprintf('+---------+-------------+------+------+------------------------------+\n');
 
     % Initialize whole ROM memory with zeros. Zeros will be interpreted as JMP m(0x0000).
-    compiledCode(1:(c.ROM_SIZE_MAX/c.WORD_SIZE)) = uint16(0);
+    compiledCode(1:c.ROM_SIZE) = uint16(0);
 
     % Check if there are any labels in the code (it means if variable c.LBL_CNT does exist).
     if (1 == isfield(c, 'LBL_CNT'))
@@ -67,7 +67,7 @@ function compiledCode = Preprocessor(program, c)
     end
 
     % Check that compiled code will fit into ROM memory.
-    if (c.WORD_SIZE*size(compiledCode, 2) > c.ROM_SIZE_MAX)
+    if (size(compiledCode, 2) > c.ROM_SIZE)
       error('###\nPREPROCESSOR ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d\nActual image size:    %d\n###', c.ROM_SIZE_MAX, c.WORD_SIZE*size(compiledCode, 2))
     end
 
@@ -84,7 +84,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
     % The counter "i" counts number of values in a source code (labels, instructions, operands ... all together).
     i = 1;
     % The counter "j" counts number of bytes in a compiled code (each instruction has two bytes).
-    j = 1;
+    j = c.ROM_START;
     % Go through the program and save all addresses of destination labels.
     while (i <= size(src_code, 2))
         value = src_code(1, i);
@@ -103,8 +103,8 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
                 error('### PREPROCESSOR ERROR: Multiple destination labels with the same address!! ###')
             end
 
-            % "j - 1" because matlab arrays are indexed from one but address space is indexed from zero.
-            label_address_array(idx) = j - 1;
+            % Save current address to the label array.
+            label_address_array(idx) = j;
             i = i + 1;
             value = src_code(1, i);
         end
@@ -141,13 +141,13 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|CCCC  CCCCCCCC
 %
 % Example:  opcode | op1 | op2 
 %          --------+-----+-------
 %              JMP | N/A | LABEL  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_0(src_code, opcode, label_address_array, i, j, c)
     operand = src_code(1, i);
 
@@ -176,7 +176,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_0(src_code, opcode, la
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS   CCCCCCCC
 %
 % Example 1:  opcode | op1  | op2
@@ -190,7 +190,7 @@ end
 % The reason for this swap of operands is that we want to have destination
 % operand always on left side (for unification of all data transfer instructions).
 % 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, label_address_array, i, j, c)
     % Read first operand.
     op1 = src_code(1, i);
@@ -200,28 +200,34 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
     op2 = src_code(1, i);
     i = i + 1;
 
-    % Check that second operand is in appropriate range.
-    if ((op2 < -128) || (op2 > 255))
-        error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
-    end
 
     if (c.STOREI == opcode)
+        % Check that first operand is in appropriate range.
+        if ((op1 < -128) || (op1 > 255))
+            error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op1, j - 1)
+        end
+
         instr_msb = bitor(opcode, op2);
         instr_lsb = op1;
     else
+        % Check that second operand is in appropriate range.
+        if ((op2 < -128) || (op2 > 255))
+            error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
+        end
+
         instr_msb = bitor(opcode, op1);
         instr_lsb = op2;
     end
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD   CCCCCCCC
 %
 % Example:  opcode | op1 | op2 
 %          --------+-----+-----
 %             ADDI | r0  | 25  
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i, j)
     op1 = src_code(1, i);
     instr_msb = bitor(opcode, op1);
@@ -238,13 +244,13 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i,
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOO|RR   DDDD|SSSS
 %
 % Example:  opcode | op1 | op2 
 %           -------+-----+----
 %              ADD | r0  | r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_3(src_code, opcode, i, c)
     instr_msb = opcode;
     instr_lsb = 0;
@@ -277,7 +283,7 @@ end
 
 
 function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c)
-    fprintf('|   %03d:  |    0x%04X   | 0x%02X | 0x%02X |', j - 1, compiledCode(1, j), uint8_instr_msb, uint8_instr_lsb)
+    fprintf('|   %03d:  |    0x%04X   | 0x%02X | 0x%02X |', c.ROM_START + j - 1, compiledCode(1, j), uint8_instr_msb, uint8_instr_lsb)
 
     switch (bitand(instr_msb, c.INSTR_FORMAT_MASK))
         case c.INSTR_FORMAT_0

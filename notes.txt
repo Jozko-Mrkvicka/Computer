@@ -133,64 +133,51 @@ Immediate        -->         Register      <-->        Register            <--> 
            MOVL r0 imm (->)            MOV r0 r1 (<-)            STOREI  a(10)  r1    (->)
                                                                  LOAD    r1     a(r0) (<-)      
                                                                  LOADI   r1     a(10) (<-)
-                                                                  
-
-Old Syntax         | New Syntax       | Example (New Syntax) | Status
--------------------+------------------+----------------------+-------
-MRIU  r0     10    | MOVU    reg  imm | MOVU    r0     10    | Done
-MRIL  r0     10    | MOVL    reg  imm | MOVL    r0     10    | Done
-MMR   a(r1)  r3    | STORE   reg  reg | STORE   a(r0)  r1    | Done
-MRM   r2     a(r1) | LOAD    reg  reg | LOAD    r0     a(r1) | Done
-MRR   r1     r0    | MOV     reg  reg | MOV     r0     r1    | Done
-MMRI  r3     a(11) | STOREI  imm  reg | STOREI  a(10)  r0    | Done
-MRMI  r2     a(10) | LOADI   reg  imm | LOADI   r0     a(10) |
-
 
 
 #############################################
 # Co treba urobit
 #############################################
 - Pridat do common kniznice bloky counter.
-- Hardwarovy generator nahodnych cisel.
+- Na jeden z GP registrov namapovat hardwarovy generator nahodnych cisel.
 - Spojit graficku a textovu pamat s RAM pamatou.
 - Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 - Vytvorit "control unit" (zlucit uz existujuce bloky) aby pocitac pripominal von Neumannovu schemu.
 - Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu.
 - Pamat nie je nijak chranena. Napriklad s instrukciou JMP by sa malo dat skocit doprostred zasobniku. Vymysliet ochranu + hard faulty.
-- Pridat BASE register ktory sa pripocita ku adrese na ktoru chcem skocit pomocou JMP, CALL, ... To by mi dovolilo skakat v rozsahu 16-bitov a zaroven by som mohol zredukovat formaty instrukcii. Format 1 a 2 by som pravdepodobne nepotreboval. BASE register by sa dal tiez pouzit v instrukcii CMPI na porovnanie vacsieho cisla nez int8_t.
+- Pridat zbernicu (adresova, datova, riadiaca).
 
 Pridat nove veci:
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
 	- Automaticky ukladat return value register.
 	- Rozsirit ALU (left shift, right shift).
-	- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
 	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
-	- Pridat MPROM modul (Manually/Mechanically Programable Read Only Memory) - novy blok pamate tvoreny mechanickymi prepinacmi. Budu umiestnene na prednom panely pocitaca. 
+	- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
 
 Preprocessor:
-	- Ucesat Preprocessor.
+	
 
 - Clean-up:
 	- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
-	- Pridat zbernicu (adresova, datova, riadiaca).
+	- Instructions.m
 	- Spocitat pouzite bloky, zjednotit, zjednodusit.
 	- Zbavit sa warningov.
 	- Ucesat nazvy, zmenit typ pisma na Currier.
 	- Pridat komentare.
-	- Dokoncit testy.
-	- Systemove testy (kazdu instrukciu otestovat samostatne).
-	- Instructions.m
 
-- Naprogramovat:
+- Testy
+	- Dokoncit unit testy.
+	- Pridat systemove testy - kazdu instrukciu otestovat samostatne.
+
+- Firmware:
 	- Tetris
 	- Snake
 	- Kalkulacku
 	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register).
 	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami).
 
-
 GIT:
-	Preprocessor updated:
-		- Added check for maximal size of source code.
-		- ROM memory is initialized to zero at the beginning of compilation.
-
+	- Pridat MPROM modul (Manually/Mechanically Programable Read Only Memory) - novy blok pamate tvoreny mechanickymi prepinacmi. Budu umiestnene na prednom panely pocitaca.
+	- Jeden z GP registrov prerobit na BASE register:
+		- V instrukciach STOREI a LOADI by dovolil adresovat vacsi rozsah pamate nez iba 8-bitov.
+	- Fixed bug in Preprocessor (immediate argument check in instruction format 1).

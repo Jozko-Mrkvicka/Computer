@@ -271,7 +271,7 @@ c.ADDI = ADDI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Move Upper Byte instruction (MOVU)
+%      Move Upper Byte instruction (MOVU)       TODO: Pridat prerequisite ze najprv sa musi naloadovat spodny byte lebo v opacnom poradi by spodny byte prepisal uz ulozeny horny byte.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
