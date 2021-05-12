@@ -148,11 +148,12 @@ Immediate        -->         Register      <-->        Register            <--> 
 - Pridat zbernicu (adresova, datova, riadiaca).
 
 Pridat nove veci:
+	- Rozsirit ALU (left shift, right shift).
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
 	- Automaticky ukladat return value register.
-	- Rozsirit ALU (left shift, right shift).
 	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
 	- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
+	- Citacku diernych stitkov (bude postavena z optozavor).
 
 Preprocessor:
 	
@@ -177,7 +178,8 @@ Preprocessor:
 	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami).
 
 GIT:
-	- Pridat MPROM modul (Manually/Mechanically Programable Read Only Memory) - novy blok pamate tvoreny mechanickymi prepinacmi. Budu umiestnene na prednom panely pocitaca.
-	- Jeden z GP registrov prerobit na BASE register:
-		- V instrukciach STOREI a LOADI by dovolil adresovat vacsi rozsah pamate nez iba 8-bitov.
-	- Fixed bug in Preprocessor (immediate argument check in instruction format 1).
+	- Color of control lines changed to blue.
+	- New block Word_Multiplexer_2_to_1 added to Common library.
+	- New block Bitwise_Shift added to Common library.
+	- New test for the Bitwise_Shift block created.
+
