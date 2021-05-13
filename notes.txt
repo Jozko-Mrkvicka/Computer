@@ -178,8 +178,6 @@ Preprocessor:
 	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami).
 
 GIT:
-	- Color of control lines changed to blue.
-	- New block Word_Multiplexer_2_to_1 added to Common library.
-	- New block Bitwise_Shift added to Common library.
-	- New test for the Bitwise_Shift block created.
-
+	- Obsolete library blocks deleted.
+	- The Selector blocks added to Decoder library.
+	- The Control Bus added.
