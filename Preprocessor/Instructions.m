@@ -1,23 +1,41 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Instruction formats:
 %
-% Format 0: FF|OO|CCCC   CCCCCCCC
+% Format 0
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ I I I I ┃ ┃ I I I I I I I I ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
 %
-% Format 1: FF|OO|SSSS   CCCCCCCC
+% Format 1
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ S S S S ┃ ┃ I I I I I I I I ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
 %
-% Format 2: FF|OO|DDDD   CCCCCCCC
+% Format 2
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ D D D D ┃ ┃ I I I I I I I I ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
 %
-% Format 3: FF|OOOO|RR   DDDD|SSSS
+% Format 3
+% ┏━━━━━┳━━━━━━━━━┳━━━━━┓ ┏━━━━━━━━━┳━━━━━━━━━┓
+% ┃ F F ┃ O O O O ┃ R R ┃ ┃ D D D D ┃ S S S S ┃
+% ┗━━━━━┻━━━━━━━━━┻━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┛
 %
 %   F - Format
 %   O - Operation code
 %   D - Destination Register
 %   S - Source Register
-%   C - Immediate value
+%   I - Immediate value
 %   R - Reserved
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Instruction Format 3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Set Pixel to Zero instruction (SPX0)     TODO: Fix description.
@@ -245,6 +263,12 @@ c.LOAD  = LOAD;
 c.MOV   = MOV;
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Instruction Format 2
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Add Immediate instruction (ADDI)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -254,11 +278,11 @@ c.MOV   = MOV;
 %     The ADDI instruction adds an immediate value
 %     to a register. The result is stored in the
 %     same register. Immediate value is signed and 
-%     must be from range <-128 .. +127>.
+%     must be from range <-128, +127>.
 %
 % First operand:
 %     In: Value (stored in a register) to be added.
-%     Out: Destination of the sum.
+%     Out: Destination of result.
 %
 % Second operand:
 %     Immediate value to be added.
@@ -271,14 +295,21 @@ c.ADDI = ADDI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Move Upper Byte instruction (MOVU)       TODO: Pridat prerequisite ze najprv sa musi naloadovat spodny byte lebo v opacnom poradi by spodny byte prepisal uz ulozeny horny byte.
+%      Move Upper Byte instruction (MOVU)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
 % Description:
-%     The MOVU instruction moves an immediate
-%     value to upper byte of register. 
-%     The value is from range <0 .. 255>.
+%     The MOVU instruction moves an immediate value
+%     to MSB byte of a register. The value is from 
+%     range <0, 255>.
+% 
+% Note:
+%     The LSB byte of a register must be set before
+%     instruction MOVU is executed. Otherwise whole
+%     MSB byte will be overwritten by most significant
+%     bit of LSB byte when the instruction MOVL
+%     is executed.
 % 
 % First operand:
 %     Destination register.
@@ -294,13 +325,18 @@ c.MOVU = MOVU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Load Immediate instruction (LOADI)       TODO: Ako nahrat hodnotu ktora je inde nez na adrese v rozsahu 8-bitov? Napriklad loadovanie dat z ROM? Mozno by som mohol skusit pouzit specialny bazovy register ktory by sa vzdy pripocital k danej adrese.
+%      Load Immediate instruction (LOADI)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
 % Description:
 %     The LOADI instruction moves value from 
 %     memory (pointed by immediate) to register.
+%     Immediate value is unsigned. Range is <0, 255>.
+%     The final address of memory is composed from MSB byte
+%     of Base Register and LSB byte of the immediate.
+%     The Base Register must be updated before STOREI
+%     instruction is executed.
 % 
 % First operand:
 %     Destination register.
@@ -316,16 +352,19 @@ c.LOADI = LOADI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Move Lower Byte instruction (MOVL)       TODO: Co sa stane ked tam vlozim uint8? Napr. 128? Zdokumentovat. Skontrolovat ostatne instrukcie.
+%      Move Lower Byte instruction (MOVL)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
 % Description:
-%     The MOVL instruction moves an immediate
-%     value into lower byte of a register. 
-%     Immediate value is signed and it is from
-%     range <-128 .. +127>. The sign bit is copied
-%     to upper byte of the register.
+%     The MOVL instruction moves an immediate value
+%     into LSB byte of a register. Immediate value
+%     is signed and it is in range <-128, +127>.
+%     The sign bit is copied to MSB byte of the register.
+%     If higher value than 127 needs to be stored
+%     to LSB byte of a register (in range <128, 255>)
+%     then the MSB byte of the register must be set
+%     to zero with instruction MOVU.
 % 
 % First operand:
 %     Destination register.
@@ -340,22 +379,29 @@ MOVL =  bin2dec('10 00 0000');
 c.MOVL = MOVL;
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Instruction Format 1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      This opcode is not yet used.
+%      Bitwise Shift instruction (SHIFT)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
 % First operand: 
-%     N/A
+%     In: Data to shift.
+%     Out: Result of shift operation.
 %
 % Second operand:
-%     N/A
+%     Amount of bits to shift. Signed. Range is <-15, +15>.
 %
 % Type of operands:        Example:
-%     N/A  N/A  N/A          N/A  N/A  N/A
+%     SHIFT  REG  IMM        SHIFT  r0  -3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('01 11 0000');
-c.NOT_USED = NOT_USED;
+SHIFT = bin2dec('01 11 0000');
+c.SHIFT = SHIFT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -374,13 +420,17 @@ c.TIR = TIR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Store Immediate instruction (STOREI)     TODO: Ako ulozit hodnotu na adresu ktora je inde nez v rozsahu 8-bitov? Mozno by som mohol skusit pouzit specialny bazovy register ktory by sa vzdy pripocital k danej adrese.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu.
+%      Store Immediate instruction (STOREI)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
 % Description:
-%     The STOREI instruction moves value from 
-%     register to memory (pointed by immediate).
+%     The STOREI instruction moves value from register
+%     to memory (pointed by immediate). Immediate value 
+%     is unsigned. Range is <0, 255>. The final address
+%     of memory is composed from MSB byte of Base Register
+%     and LSB byte of the immediate. The Base Register 
+%     must be updated before STOREI instruction is executed.
 % 
 % First operand:
 %     Assembly code: Destination memory address.
@@ -404,15 +454,21 @@ c.STOREI = STOREI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Compare Immediate instruction (CMPI)     TODO: Doplnit kde sa uklada vysledok.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu.
-% Format 1: FF|OO|SSSS IIIIIIII                 TODO: Doplnit ci porovnava iba na rovnost, alebo aj vacsi/mensi.
+%      Compare Immediate instruction (CMPI)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OO|SSSS IIIIIIII
 %
+% Description:
+%     This instruction compares two values for equality.
+%     The result is stored in Equality Bit of Status
+%     Register.
+% 
 % First operand:
-%     Data to compare.
+%     Data to compare. 
 %
 % Second operand:
-%     Data to compare.
+%     Data to compare. Immediate value is interpreted
+%     as signed. Range is <-128, +127>.
 %
 % Type of operands:        Example:
 %     CMPI  REG  IMM         CMPI  r0  25
@@ -421,16 +477,28 @@ CMPI = bin2dec('01 00 0000');
 c.CMPI = CMPI;
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Instruction Format 0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Jump If Not Equal instruction (JNE)      TODO: Doplnit kde sa nachadza podmienka skoku.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu (adresy).
+%      Jump If Not Equal instruction (JNE)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
+% Description:
+%     This instruction performs conditional jump.
+%     The jump is performed only if the Equality Bit
+%     of Status Register is set to one.
+% 
 % First operand:
 %     Not used.
 %
 % Second operand:
-%     Address to jump.
+%     Absolute address to jump. Unsigned.
+%     Range is <0, 4095>.
 %
 % Type of operands:        Example:
 %     JNE  IMM               JNE  LABEL
@@ -440,15 +508,21 @@ c.JNE = JNE;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Jump If Equal instruction (JPE)          TODO: Doplnit kde sa nachadza podmienka skoku.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu (adresy).
+%      Jump If Equal instruction (JPE)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
+% Description:
+%     This instruction performs conditional jump.
+%     The jump is performed only if the Equality Bit
+%     of Status Register is set to one.
+% 
 % First operand:
 %     Not used.
 %
 % Second operand:
-%     Address to jump.
+%     Absolute address to jump. Unsigned.
+%     Range is <0, 4095>.
 %
 % Type of operands:        Example:
 %     JPE  IMM               JPE  LABEL
@@ -458,15 +532,24 @@ c.JPE = JPE;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Function Call instruction (CALL)         TODO: Zdokumentovat "call & jump" funkcionalitu.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu (adresy).
+%      Function Call instruction (CALL)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
+% Description:
+%     This instruction performs the following actions:
+%       - Decrements SP register.
+%       - Stores old value of RA register on stack.
+%       - Stores actual value of PC register to RA register.
+%       - Sets the PC register to new value specified
+%         by the instruction immediate (new address).
+% 
 % First operand:
 %     Not used.
 %
 % Second operand:
-%     Address of a subroutine to call.
+%     Absolute address of a subroutine to call.
+%     Unsigned. Range is <0, 4095>.
 %
 % Type of operands:        Example:
 %     CALL  IMM              CALL  LABEL  
@@ -476,15 +559,20 @@ c.CALL = CALL;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Unconditional Jump instruction (JMP)     TODO: Doplnit maximalny rozsah operandu (adresy).
+%      Unconditional Jump instruction (JMP)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
+% Description:
+%     This instruction sets the PC register to
+%     specified value (address).
+% 
 % First operand:
 %     Not used.
 %
 % Second operand:
-%     Address to jump.
+%     Absolute address to jump. Unsigned.
+%     Range is <0, 4095>.
 %
 % Type of operands:        Example:
 %     JMP  IMM               JMP  LABEL

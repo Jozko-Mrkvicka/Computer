@@ -125,59 +125,44 @@ X X X X . . . X | X . . . . . . .
 . . . . . . . . | . . . . . . . .
 
 
-
-
-
-Immediate        -->         Register      <-->        Register            <-->             Memory
-           MOVU r0 imm (->)            MOV r0 r1 (->)            STORE   a(r0)  r1    (->)
-           MOVL r0 imm (->)            MOV r0 r1 (<-)            STOREI  a(10)  r1    (->)
-                                                                 LOAD    r1     a(r0) (<-)      
-                                                                 LOADI   r1     a(10) (<-)
-
-
 #############################################
 # Co treba urobit
 #############################################
-- Pridat do common kniznice bloky counter.
-- Na jeden z GP registrov namapovat hardwarovy generator nahodnych cisel.
-- Spojit graficku a textovu pamat s RAM pamatou.
-- Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
-- Vytvorit "control unit" (zlucit uz existujuce bloky) aby pocitac pripominal von Neumannovu schemu.
-- Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu.
-- Pamat nie je nijak chranena. Napriklad s instrukciou JMP by sa malo dat skocit doprostred zasobniku. Vymysliet ochranu + hard faulty.
-- Pridat zbernicu (adresova, datova, riadiaca).
-
-Pridat nove veci:
-	- Rozsirit ALU (left shift, right shift).
-	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
-	- Automaticky ukladat return value register.
+- Computer:
+	- Rozsirit ALU (left shift, right shift, AND, OR, XOR, NOT, nasobicka, delicka).
+	- Na jeden z GP registrov namapovat hardwarovy generator nahodnych cisel.
 	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
-	- Pridat dalsie instrukcie (podla inych 8-bit procesorov).
-	- Citacku diernych stitkov (bude postavena z optozavor).
+	- Spojit graficku a textovu pamat s RAM pamatou.
+	- Pamat nie je nijak chranena. Napriklad s instrukciou JMP by sa malo dat skocit doprostred zasobniku. Vymysliet ochranu + hard faulty.
+	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
+	- Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
+	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than.
 
 Preprocessor:
-	
+	-
 
 - Clean-up:
-	- Pridat do definicie instrukcii (Instructions.m) informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
-	- Instructions.m
+	- Instructions.m - Pridat do definicie instrukcii informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
+	- Pridat zbernicu (adresova, datova). Zlucit uz existujuce bloky aby pocitac pripominal von Neumannovu schemu.
+	- Pridat do common kniznice bloky counter.
+	- Fix all TODOs.
 	- Spocitat pouzite bloky, zjednotit, zjednodusit.
 	- Zbavit sa warningov.
 	- Ucesat nazvy, zmenit typ pisma na Currier.
 	- Pridat komentare.
 
-- Testy
-	- Dokoncit unit testy.
+- System testy
 	- Pridat systemove testy - kazdu instrukciu otestovat samostatne.
+
+- Unit testy
+	-
 
 - Firmware:
 	- Tetris
 	- Snake
 	- Kalkulacku
 	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register).
-	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami).
+	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 
 GIT:
-	- Obsolete library blocks deleted.
-	- The Selector blocks added to Decoder library.
-	- The Control Bus added.
+	- 

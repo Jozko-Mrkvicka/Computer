@@ -211,8 +211,14 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
         instr_lsb = op1;
     else
         % Check that second operand is in appropriate range.
-        if ((op2 < -128) || (op2 > 255))
-            error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
+        if (c.SHIFT == opcode)
+            if ((op2 < -15) || (op2 > 15))
+                error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-15, +15>. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
+            end
+        else
+            if ((op2 < -128) || (op2 > 255))
+                error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
+            end
         end
 
         instr_msb = bitor(opcode, op1);
@@ -310,7 +316,8 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 case c.STOREI
                     fprintf('   STOREI  m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK))
 
-                % case c.NOT_USED
+                case c.SHIFT
+                    fprintf('   SHIFT   r%d      %-4d       |', instr_lsb, bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK))
             end
 
         case c.INSTR_FORMAT_2
