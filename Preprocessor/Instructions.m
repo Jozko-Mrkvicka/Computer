@@ -17,9 +17,9 @@
 % ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
 %
 % Format 3
-% ┏━━━━━┳━━━━━━━━━┳━━━━━┓ ┏━━━━━━━━━┳━━━━━━━━━┓
-% ┃ F F ┃ O O O O ┃ R R ┃ ┃ D D D D ┃ S S S S ┃
-% ┗━━━━━┻━━━━━━━━━┻━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┛
+% ┏━━━━━┳━━━━━━━━━━━┳━━━┓ ┏━━━━━━━━━┳━━━━━━━━━┓
+% ┃ F F ┃ O O O O O ┃ R ┃ ┃ D D D D ┃ S S S S ┃
+% ┗━━━━━┻━━━━━━━━━━━┻━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┛
 %
 %   F - Format
 %   O - Operation code
@@ -38,9 +38,81 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                TODO: Fix description.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R DDDD|SSSS
+%
+% First operand: 
+%     
+%
+% Second operand:
+%
+%
+% Type of operands:        Example:
+%     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT = bin2dec('11 10001 0');
+c.NOT = NOT;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                TODO: Fix description.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R DDDD|SSSS
+%
+% First operand: 
+%     
+%
+% Second operand:
+%
+%
+% Type of operands:        Example:
+%     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+XOR = bin2dec('11 10000 0');
+c.XOR = XOR;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                TODO: Fix description.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R DDDD|SSSS
+%
+% First operand: 
+%     
+%
+% Second operand:
+%
+%
+% Type of operands:        Example:
+%     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+OR = bin2dec('11 01111 0');
+c.OR = OR;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                TODO: Fix description.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R DDDD|SSSS
+%
+% First operand: 
+%     
+%
+% Second operand:
+%
+%
+% Type of operands:        Example:
+%     
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AND = bin2dec('11 01110 0');
+c.AND = AND;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Set Pixel to Zero instruction (SPX0)     TODO: Fix description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand: 
 %     Horizontal position (X) in range 0..15.
@@ -54,14 +126,14 @@
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SPX0 = bin2dec('11 1101 00');
+SPX0 = bin2dec('11 01101 0');
 c.SPX0 = SPX0;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Set Pixel to One instruction (SPX1)      TODO: Fix description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand: 
 %     Horizontal position (X) in range 0..15.
@@ -75,14 +147,14 @@ c.SPX0 = SPX0;
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SPX1 = bin2dec('11 1100 00');
+SPX1 = bin2dec('11 01100 0');
 c.SPX1 = SPX1;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      RET instruction                          TODO: Doplnit kde sa uklada vysledok.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Fix the title.
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
 %     First value to compare.
@@ -96,14 +168,14 @@ c.SPX1 = SPX1;
 % Type of operands:        Example:
 %     CMP  REG  REG          CMP  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CMP = bin2dec('11 1011 00');
+CMP = bin2dec('11 01011 0');
 c.CMP = CMP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      RET instruction                          TODO: Add description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
 %     Not used.
@@ -114,14 +186,14 @@ c.CMP = CMP;
 % Type of operands:        Example:
 %     N/A                    RET
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-RET = bin2dec('11 1010 00');
+RET = bin2dec('11 01010 0');
 c.RET = RET;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      POP instruction                          TODO: Add description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
 %     Destination register to pop from stack. 
@@ -132,14 +204,14 @@ c.RET = RET;
 % Type of operands:        Example:
 %     POP  REG               POP  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-POP = bin2dec('11 1001 00');
+POP = bin2dec('11 01001 0');
 c.POP = POP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      PUSH instruction                         TODO: Add description.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
 %     Not used.
@@ -150,14 +222,14 @@ c.POP = POP;
 % Type of operands:        Example:
 %     PUSH  REG  REG         PUSH  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-PUSH = bin2dec('11 1000 00');
+PUSH = bin2dec('11 01000 0');
 c.PUSH = PUSH;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Get Char instruction (GCH)               TODO: Fix example.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
 %     Destination for read button code.
@@ -168,14 +240,14 @@ c.PUSH = PUSH;
 % Type of operands:        Example:
 %     GCH  REG  REG          GCH  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-GCH = bin2dec('11 0111 00');
+GCH = bin2dec('11 00111 0');
 c.GCH = GCH;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Add instruction (ADD)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
 %     In: First value to add.
@@ -187,14 +259,14 @@ c.GCH = GCH;
 % Type of operands:        Example:
 %     ADD  REG  REG          ADD  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADD = bin2dec('11 0110 00');
+ADD = bin2dec('11 00110 0');
 c.ADD = ADD;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Get PiXel instruction (GPX)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand: 
 %     In: Horizontal position (X) in range 0..15.
@@ -206,14 +278,14 @@ c.ADD = ADD;
 % Type of operands:        Example:
 %     GPX REG REG          GPX r0 r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-GPX = bin2dec('11 0101 00');
+GPX = bin2dec('11 00101 0');
 c.GPX = GPX;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     TXT (print TeXT character) instructions (TRR, TMR) TODO: Update and split to two separate descriptions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand: 
 %     Character to print.
@@ -225,8 +297,8 @@ c.GPX = GPX;
 %     TRR  REG  REG          TRR  r0     r1
 %     TMR  REG  REG          TMR  a(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TRR = bin2dec('11 0100 00');
-TMR = bin2dec('11 0011 00');
+TRR = bin2dec('11 00100 0');
+TMR = bin2dec('11 00011 0');
 c.TRR = TRR;
 c.TMR = TMR;
 
@@ -234,7 +306,7 @@ c.TMR = TMR;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Data transfer instructions (STORE, LOAD, MOV)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR DDDD|SSSS
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % The STORE instruction moves data from source
 % register to memory (pointed by destination register).
@@ -255,9 +327,9 @@ c.TMR = TMR;
 %     LOAD   REG  REG        LOAD   r2     a(r1)
 %     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STORE =  bin2dec('11 0010 00');
-LOAD  =  bin2dec('11 0001 00');
-MOV   =  bin2dec('11 0000 00');
+STORE =  bin2dec('11 00010 0');
+LOAD  =  bin2dec('11 00001 0');
+MOV   =  bin2dec('11 00000 0');
 c.STORE = STORE;
 c.LOAD  = LOAD;
 c.MOV   = MOV;

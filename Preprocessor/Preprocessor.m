@@ -269,7 +269,9 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_3(src_code, opcode, i,
         instr_lsb = op2;
         i = i + 1;
 
-    elseif ((c.POP == opcode) || (c.GCH == opcode))
+    elseif ((c.POP == opcode) || ...
+            (c.GCH == opcode) || ...
+            (c.NOT == opcode))
         op1 = src_code(1, i);
         instr_lsb = bitshift(op1, 4);
         i = i + 1;
@@ -314,10 +316,10 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 % case c.TIR
 
                 case c.STOREI
-                    fprintf('   STOREI  m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK))
+                    fprintf('   STOREI  m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
 
                 case c.SHIFT
-                    fprintf('   SHIFT   r%d      %-4d       |', instr_lsb, bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK))
+                    fprintf('   SHIFT   r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
             end
 
         case c.INSTR_FORMAT_2
@@ -337,6 +339,18 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
 
         case c.INSTR_FORMAT_3
             switch (bitor(bitand(instr_msb, c.FORMAT_3_OPCODE_MASK), c.INSTR_FORMAT_3))
+                case c.NOT
+                    fprintf('   NOT     r%d                 |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4))
+
+                case c.XOR
+                    fprintf('   XOR     r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+
+                case c.OR
+                    fprintf('   OR      r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+
+                case c.AND
+                    fprintf('   AND     r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+
                 case c.SPX0
                     fprintf('   SPX0    r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 

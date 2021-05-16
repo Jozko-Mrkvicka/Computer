@@ -129,7 +129,7 @@ X X X X . . . X | X . . . . . . .
 # Co treba urobit
 #############################################
 - Computer:
-	- Rozsirit ALU (left shift, right shift, AND, OR, XOR, NOT, nasobicka, delicka).
+	- Rozsirit ALU (nasobicka, delicka).
 	- Na jeden z GP registrov namapovat hardwarovy generator nahodnych cisel.
 	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
 	- Spojit graficku a textovu pamat s RAM pamatou.
@@ -139,7 +139,7 @@ X X X X . . . X | X . . . . . . .
 	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than.
 
 Preprocessor:
-	-
+	- 
 
 - Clean-up:
 	- Instructions.m - Pridat do definicie instrukcii informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
@@ -165,4 +165,12 @@ Preprocessor:
 	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 
 GIT:
-	- 
+	- Common library updated. Added block Decoder_5_to_32.
+	- Preprocessor updated. Added support for hexadecimal numbers.
+	- Opcode of the instruction format 3 extended from 4 to 5 bits.
+	- The following instructions added:
+		- SHIFT
+		- AND
+		- OR
+		- XOR
+		- NOT
