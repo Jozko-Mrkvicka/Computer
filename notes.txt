@@ -129,14 +129,11 @@ X X X X . . . X | X . . . . . . .
 # Co treba urobit
 #############################################
 - Computer:
-	- Rozsirit ALU (nasobicka, delicka).
-	- Na jeden z GP registrov namapovat hardwarovy generator nahodnych cisel.
 	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
+	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
 	- Spojit graficku a textovu pamat s RAM pamatou.
 	- Pamat nie je nijak chranena. Napriklad s instrukciou JMP by sa malo dat skocit doprostred zasobniku. Vymysliet ochranu + hard faulty.
-	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL
 	- Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
-	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than.
 
 Preprocessor:
 	- 
@@ -164,13 +161,11 @@ Preprocessor:
 	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register).
 	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 
+- Nerealizovane napady:
+	- Rozsirit ALU (nasobicka, delicka).
+	- Pridat floating point unit.
+	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL. Jedna instrukcia na ulozenie vsetkych registrov (viz ARM)??
+
 GIT:
-	- Common library updated. Added block Decoder_5_to_32.
-	- Preprocessor updated. Added support for hexadecimal numbers.
-	- Opcode of the instruction format 3 extended from 4 to 5 bits.
-	- The following instructions added:
-		- SHIFT
-		- AND
-		- OR
-		- XOR
-		- NOT
+	- Added new library block Linear_Feedback_Shift_Register_15bit (random number generator). The generator is mapped to memory address space.
+	- Fixed a bug which caused that the base register was always added to memory address.

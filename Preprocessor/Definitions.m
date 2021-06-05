@@ -95,6 +95,8 @@ c.ROM_SIZE    = 256;
 c.RAM_START   = 512;
 c.RAM_SIZE    = 32;
 
+% Address of random number generator.
+c.RAND_NUM_GEN = 1023;
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".
 % This function is used just to visually emphasise that an immediate value
@@ -106,14 +108,9 @@ msb = @(n) bitshift(n, -8);
 lsb = @(n) bitand(n, 255);
 
 
+
+
 % Hexadecimal constants
-h00 = 0;
-
-
-
-
-
-
 h00 = 0;
 h01 = 1;
 h02 = 2;
