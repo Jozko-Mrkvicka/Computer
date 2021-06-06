@@ -407,7 +407,7 @@ c.MOVU = MOVU;
 %     Immediate value is unsigned. Range is <0, 255>.
 %     The final address of memory is composed from MSB byte
 %     of Base Register and LSB byte of the immediate.
-%     The Base Register must be updated before STOREI
+%     The Base Register must be updated before LOADI
 %     instruction is executed.
 % 
 % First operand:
@@ -462,6 +462,12 @@ c.MOVL = MOVL;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
+% Description:
+%     The SHIFT instruction shifts bits in register.
+%     If the immediate is positive then the shift is
+%     to left side. If the immediate is negative then
+%     the shift is to right side.
+% 
 % First operand: 
 %     In: Data to shift.
 %     Out: Result of shift operation.

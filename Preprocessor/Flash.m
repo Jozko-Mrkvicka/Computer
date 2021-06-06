@@ -17,4 +17,5 @@ function Flash(file)
 	% in the Simulink model (ROM memory).
 	RomCode = Preprocessor(SourceCode, c);
 	assignin('base', 'RomCode', RomCode);
+	assignin('base', 'c', c);
 end

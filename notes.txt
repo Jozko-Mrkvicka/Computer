@@ -132,8 +132,8 @@ X X X X . . . X | X . . . . . . .
 	- Pridat vstupy (tlacitka/klavesnicu) + zamysliet sa nad interruptami.
 	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
 	- Spojit graficku a textovu pamat s RAM pamatou.
-	- Pamat nie je nijak chranena. Napriklad s instrukciou JMP by sa malo dat skocit doprostred zasobniku. Vymysliet ochranu + hard faulty.
 	- Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
+	- Detekovat stack overflow/underflow.
 
 Preprocessor:
 	- 
@@ -167,5 +167,5 @@ Preprocessor:
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL. Jedna instrukcia na ulozenie vsetkych registrov (viz ARM)??
 
 GIT:
-	- Added new library block Linear_Feedback_Shift_Register_15bit (random number generator). The generator is mapped to memory address space.
-	- Fixed a bug which caused that the base register was always added to memory address.
+	- Fixed bug in Stack Pointer Register. The initial value of the register was incorrect.
+

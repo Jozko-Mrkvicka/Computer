@@ -95,6 +95,9 @@ c.ROM_SIZE    = 256;
 c.RAM_START   = 512;
 c.RAM_SIZE    = 32;
 
+% Start address of stack. The stack grows towards lower addresses - it decreases.
+c.STACK_START = 543;
+
 % Address of random number generator.
 c.RAND_NUM_GEN = 1023;
 
