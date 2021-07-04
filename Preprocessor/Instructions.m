@@ -227,21 +227,21 @@ c.PUSH = PUSH;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Get Char instruction (GCH)               TODO: Fix example.
+%      NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
-%     Destination for read button code.
+%     NOT_USED
 %
 % Second operand:
-%     Not used.
+%     NOT_USED
 %
 % Type of operands:        Example:
-%     GCH  REG  REG          GCH  r0  r1
+%     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-GCH = bin2dec('11 00111 0');
-c.GCH = GCH;
+NOT_USED = bin2dec('11 00111 0');
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

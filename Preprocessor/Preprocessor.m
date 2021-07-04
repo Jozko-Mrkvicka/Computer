@@ -120,7 +120,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
                 i = i + 2;
 
             case c.INSTR_FORMAT_3
-                if ((c.PUSH == value) || (c.POP == value) || (c.GCH == value))
+                if ((c.PUSH == value) || (c.POP == value)) %|| (c.NOT_USED == value))
                     i = i + 1;
                 elseif (c.RET == value)
                     % Do nothing.
@@ -270,8 +270,8 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_3(src_code, opcode, i,
         i = i + 1;
 
     elseif ((c.POP == opcode) || ...
-            (c.GCH == opcode) || ...
             (c.NOT == opcode))
+            % (c.NOT_USED == opcode) || ...
         op1 = src_code(1, i);
         instr_lsb = bitshift(op1, 4);
         i = i + 1;
@@ -369,8 +369,8 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 case c.PUSH
                     fprintf('   PUSH    r%d                 |', bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.GCH
-                    fprintf('   GCH     r%d                 |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4))
+                % case c.NOT_USED
+                %     fprintf('   NOT_USED     r%d                 |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4))
 
                 case c.ADD
                     fprintf('   ADD     r%d      r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))

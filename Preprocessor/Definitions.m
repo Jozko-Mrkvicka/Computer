@@ -84,22 +84,26 @@ c.BYTE_MASK = bin2dec('1111 1111');
 
 
 % Start address of MPROM memory in physical address space and it`s size in words.
-c.MPROM_START = 0;
-c.MPROM_SIZE  = 256;
+c.MPROM_START  = 0;
+c.MPROM_SIZE   = 256;
 
 % Start address of ROM memory in physical address space and it`s size in words.
-c.ROM_START   = 256;
-c.ROM_SIZE    = 256;
+c.ROM_START    = 256;
+c.ROM_SIZE     = 256;
 
 % Start address of RAM memory in physical address space and it`s size in words.
-c.RAM_START   = 512;
-c.RAM_SIZE    = 32;
+c.RAM_START    = 512;
+c.RAM_SIZE     = 32;
 
 % Start address of stack. The stack grows towards lower addresses - it decreases.
-c.STACK_START = 543;
+c.STACK_START  = 543;
+
+% Address of keyboard.
+c.KEYBOARD     = 1022;
 
 % Address of random number generator.
 c.RAND_NUM_GEN = 1023;
+
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".
 % This function is used just to visually emphasise that an immediate value
