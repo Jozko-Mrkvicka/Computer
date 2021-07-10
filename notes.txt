@@ -137,14 +137,19 @@ Preprocessor:
 	- 
 
 - Clean-up:
+	- Spocitat pouzite bloky, zjednotit, zjednodusit:
+		- Prerobit bloky Byte_Multiplexer, nahradit muxy/demuxy obycajnymi kablami.
+		- Zistit ktore bloky niesu vobec pouzite a premenovat ich na "_NOT_USED".
+		- Bloky ktore su pouzite iba par krat nahradit blokmi ktore su pouzite castejsie.
+		- Zamysliet sa nad pouzitim demultiplexerov.
 	- Instructions.m - Pridat do definicie instrukcii informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
 	- Pridat zbernicu (adresova, datova). Zlucit uz existujuce bloky aby pocitac pripominal von Neumannovu schemu.
 	- Pridat do common kniznice bloky counter.
 	- Fix all TODOs.
-	- Spocitat pouzite bloky, zjednotit, zjednodusit.
 	- Zbavit sa warningov.
 	- Ucesat nazvy, zmenit typ pisma na Currier.
 	- Pridat komentare.
+		
 
 - System testy
 	- Pridat systemove testy - kazdu instrukciu otestovat samostatne.
@@ -165,8 +170,4 @@ Preprocessor:
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL. Jedna instrukcia na ulozenie vsetkych registrov (viz ARM)??
 
 GIT:
-	- Added new block Encoder_64_to_6.
-	- The keyboard module finished. Keyboard has now 64 characters and it also contains latches for storing pressed key.
-	- Instruction Get Char (GCH) removed. This instruction is not needed because keyboard is now mapped directly to address bus and pressed key is read to register by LOAD/LOADI instructions (like normal memory cell).
-	- ROM_Snake.m updated to reflect changes in keyboard module.
-
+	-

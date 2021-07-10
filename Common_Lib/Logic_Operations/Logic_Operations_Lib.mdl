@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun May 16 01:48:09 2021"
-  RTWModifiedTimeStamp	  543030487
-  ModelVersionFormat	  "1.%<AutoIncrement:20>"
+  LastModifiedDate	  "Sat Jul 10 13:27:12 2021"
+  RTWModifiedTimeStamp	  547824426
+  ModelVersionFormat	  "1.%<AutoIncrement:21>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -874,7 +874,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "641"
+    SIDHighWatermark	    "642"
     Block {
       BlockType		      SubSystem
       Name		      "Logic_Operations_Lib"
@@ -3011,13 +3011,13 @@ Library {
 	  SID			  "209"
 	  Ports			  [2, 1]
 	  Position		  [250, 186, 390, 219]
-	  ZOrder		  2157
-	  LibraryVersion	  "*1.14"
+	  ZOrder		  2159
+	  LibraryVersion	  "*1.20"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Bitwise_Shift"
-	    Location		    [58, 0, 1044, 1087]
+	    Location		    [155, 0, 1827, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3029,7 +3029,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "60"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Count(2B)"
@@ -6641,7 +6641,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [845, -2686, 1000, -2379]
 	      ZOrder		      629
-	      LibraryVersion	      "1.55"
+	      LibraryVersion	      "1.87"
 	      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/Word_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -6653,7 +6653,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [855, -6096, 1010, -5789]
 	      ZOrder		      861
-	      LibraryVersion	      "1.55"
+	      LibraryVersion	      "1.87"
 	      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/Word_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -6661,12 +6661,12 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Word_Multiplexer_2_to_1"
-	      SID		      "622"
+	      SID		      "642"
 	      Ports		      [3, 1]
 	      Position		      [1135, -6152, 1290, -6108]
-	      ZOrder		      1327
-	      LibraryVersion	      "1.39"
-	      SourceBlock	      "Common_Lib/Word_Multiplexers_Lib/Word_Multiplexer_2_to_1"
+	      ZOrder		      1329
+	      LibraryVersion	      "1.87"
+	      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/Word_Multiplexer_2_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }

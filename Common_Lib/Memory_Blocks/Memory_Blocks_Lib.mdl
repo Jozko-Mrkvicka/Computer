@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jun 05 22:05:30 2021"
-  RTWModifiedTimeStamp	  544830572
-  ModelVersionFormat	  "1.%<AutoIncrement:39>"
+  LastModifiedDate	  "Sat Jul 10 14:29:12 2021"
+  RTWModifiedTimeStamp	  547828144
+  ModelVersionFormat	  "1.%<AutoIncrement:41>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -16258,13 +16258,13 @@ Library {
 	  SID			  "167"
 	  Ports			  [5, 2]
 	  Position		  [410, -15, 565, 65]
-	  ZOrder		  1600
-	  LibraryVersion	  "*1.33"
+	  ZOrder		  1609
+	  LibraryVersion	  "*1.40"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Graphic_memory_24bit"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [155, 0, 1827, 1080]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -16276,7 +16276,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "25"
+	    ZoomFactor		    "50"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Sel_Pos_X(1b)"
@@ -16345,43 +16345,45 @@ Library {
 	      Ports		      [6, 1]
 	      Position		      [2200, 17, 2355, 108]
 	      ZOrder		      1563
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.7"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_8_to_1"
-	      SID		      "211"
-	      Ports		      [11, 1]
-	      Position		      [1870, 442, 2025, 608]
-	      ZOrder		      1560
-	      LibraryVersion	      "1.5"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_8_to_2"
-	      SID		      "212"
-	      Ports		      [11, 1]
-	      Position		      [1870, 252, 2025, 418]
-	      ZOrder		      1561
-	      LibraryVersion	      "1.5"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_8_to_3"
+	      Name		      "Bit_Multiplexer_8_to_1(0)"
 	      SID		      "213"
 	      Ports		      [11, 1]
 	      Position		      [1870, 62, 2025, 228]
 	      ZOrder		      1562
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.7"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_8_to_1(1)"
+	      SID		      "212"
+	      Ports		      [11, 1]
+	      Position		      [1870, 252, 2025, 418]
+	      ZOrder		      1561
+	      ForegroundColor	      "blue"
+	      BackgroundColor	      "cyan"
+	      LibraryVersion	      "1.7"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_8_to_1(2)"
+	      SID		      "211"
+	      Ports		      [11, 1]
+	      Position		      [1870, 442, 2025, 608]
+	      ZOrder		      1560
+	      LibraryVersion	      "1.7"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_8_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -16402,43 +16404,43 @@ Library {
 	      Ports		      [2, 4]
 	      Position		      [300, 352, 445, 413]
 	      ZOrder		      1455
-	      LibraryVersion	      "1.9"
+	      LibraryVersion	      "1.21"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_2_to_4"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Decoder_3_to_8_Enable"
+	      Name		      "Decoder_3_to_8_Enable(0)"
 	      SID		      "174"
 	      Ports		      [4, 8]
 	      Position		      [605, 707, 750, 828]
 	      ZOrder		      1452
-	      LibraryVersion	      "1.9"
+	      LibraryVersion	      "1.21"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_3_to_8_Enable"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Decoder_3_to_8_Enable1"
+	      Name		      "Decoder_3_to_8_Enable(1)"
 	      SID		      "175"
 	      Ports		      [4, 8]
 	      Position		      [605, 852, 750, 973]
 	      ZOrder		      1453
-	      LibraryVersion	      "1.9"
+	      LibraryVersion	      "1.21"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_3_to_8_Enable"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Decoder_3_to_8_Enable2"
+	      Name		      "Decoder_3_to_8_Enable(2)"
 	      SID		      "176"
 	      Ports		      [4, 8]
 	      Position		      [605, 997, 750, 1118]
 	      ZOrder		      1454
-	      LibraryVersion	      "1.9"
+	      LibraryVersion	      "1.21"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_3_to_8_Enable"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -16456,155 +16458,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit"
-	      SID		      "178"
-	      Ports		      [5, 1]
-	      Position		      [1230, 1072, 1390, 1148]
-	      ZOrder		      1009
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit1"
-	      SID		      "179"
-	      Ports		      [5, 1]
-	      Position		      [1230, 1452, 1390, 1528]
-	      ZOrder		      1010
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit10"
-	      SID		      "180"
-	      Ports		      [5, 1]
-	      Position		      [1230, 2022, 1390, 2098]
-	      ZOrder		      1019
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit11"
-	      SID		      "181"
-	      Ports		      [5, 1]
-	      Position		      [1230, 882, 1390, 958]
-	      ZOrder		      1020
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit12"
-	      SID		      "182"
-	      Ports		      [5, 1]
-	      Position		      [1230, 1357, 1390, 1433]
-	      ZOrder		      1021
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit13"
-	      SID		      "183"
-	      Ports		      [5, 1]
-	      Position		      [1230, 1737, 1390, 1813]
-	      ZOrder		      1022
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit14"
-	      SID		      "184"
-	      Ports		      [5, 1]
-	      Position		      [1230, 2117, 1390, 2193]
-	      ZOrder		      1023
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit15"
-	      SID		      "185"
-	      Ports		      [5, 1]
-	      Position		      [1230, 977, 1390, 1053]
-	      ZOrder		      1024
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit16"
-	      SID		      "186"
-	      Ports		      [5, 1]
-	      Position		      [1230, 2212, 1390, 2288]
-	      ZOrder		      1436
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit17"
-	      SID		      "187"
-	      Ports		      [5, 1]
-	      Position		      [1230, 2782, 1390, 2858]
-	      ZOrder		      1441
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit18"
-	      SID		      "188"
-	      Ports		      [5, 1]
-	      Position		      [1230, 2497, 1390, 2573]
-	      ZOrder		      1442
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit19"
+	      Name		      "G_Bit(00)"
 	      SID		      "189"
 	      Ports		      [5, 1]
 	      Position		      [1230, 2877, 1390, 2953]
 	      ZOrder		      1443
-	      LibraryVersion	      "1.33"
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16612,12 +16471,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit2"
-	      SID		      "190"
+	      Name		      "G_Bit(01)"
+	      SID		      "187"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1832, 1390, 1908]
-	      ZOrder		      1011
-	      LibraryVersion	      "1.33"
+	      Position		      [1230, 2782, 1390, 2858]
+	      ZOrder		      1441
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16625,38 +16484,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit20"
-	      SID		      "191"
-	      Ports		      [5, 1]
-	      Position		      [1230, 2592, 1390, 2668]
-	      ZOrder		      1437
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit21"
-	      SID		      "192"
-	      Ports		      [5, 1]
-	      Position		      [1230, 2307, 1390, 2383]
-	      ZOrder		      1438
-	      LibraryVersion	      "1.33"
-	      FontName		      "Courier"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "G_Bit22"
+	      Name		      "G_Bit(02)"
 	      SID		      "193"
 	      Ports		      [5, 1]
 	      Position		      [1230, 2687, 1390, 2763]
 	      ZOrder		      1439
-	      LibraryVersion	      "1.33"
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16664,12 +16497,38 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit23"
+	      Name		      "G_Bit(03)"
+	      SID		      "191"
+	      Ports		      [5, 1]
+	      Position		      [1230, 2592, 1390, 2668]
+	      ZOrder		      1437
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(04)"
+	      SID		      "188"
+	      Ports		      [5, 1]
+	      Position		      [1230, 2497, 1390, 2573]
+	      ZOrder		      1442
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(05)"
 	      SID		      "194"
 	      Ports		      [5, 1]
 	      Position		      [1230, 2402, 1390, 2478]
 	      ZOrder		      1440
-	      LibraryVersion	      "1.33"
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16677,12 +16536,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit3"
-	      SID		      "195"
+	      Name		      "G_Bit(06)"
+	      SID		      "192"
 	      Ports		      [5, 1]
-	      Position		      [1230, 692, 1390, 768]
-	      ZOrder		      1012
-	      LibraryVersion	      "1.33"
+	      Position		      [1230, 2307, 1390, 2383]
+	      ZOrder		      1438
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16690,12 +16549,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit4"
-	      SID		      "196"
+	      Name		      "G_Bit(07)"
+	      SID		      "186"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1167, 1390, 1243]
-	      ZOrder		      1013
-	      LibraryVersion	      "1.33"
+	      Position		      [1230, 2212, 1390, 2288]
+	      ZOrder		      1436
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16703,12 +16562,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit5"
-	      SID		      "197"
+	      Name		      "G_Bit(08)"
+	      SID		      "184"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1547, 1390, 1623]
-	      ZOrder		      1014
-	      LibraryVersion	      "1.33"
+	      Position		      [1230, 2117, 1390, 2193]
+	      ZOrder		      1023
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16716,12 +16575,25 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit6"
+	      Name		      "G_Bit(09)"
+	      SID		      "180"
+	      Ports		      [5, 1]
+	      Position		      [1230, 2022, 1390, 2098]
+	      ZOrder		      1019
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(10)"
 	      SID		      "198"
 	      Ports		      [5, 1]
 	      Position		      [1230, 1927, 1390, 2003]
 	      ZOrder		      1015
-	      LibraryVersion	      "1.33"
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16729,12 +16601,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit7"
-	      SID		      "199"
+	      Name		      "G_Bit(11)"
+	      SID		      "190"
 	      Ports		      [5, 1]
-	      Position		      [1230, 787, 1390, 863]
-	      ZOrder		      1016
-	      LibraryVersion	      "1.33"
+	      Position		      [1230, 1832, 1390, 1908]
+	      ZOrder		      1011
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16742,12 +16614,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit8"
-	      SID		      "200"
+	      Name		      "G_Bit(12)"
+	      SID		      "183"
 	      Ports		      [5, 1]
-	      Position		      [1230, 1262, 1390, 1338]
-	      ZOrder		      1017
-	      LibraryVersion	      "1.33"
+	      Position		      [1230, 1737, 1390, 1813]
+	      ZOrder		      1022
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -16755,12 +16627,142 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "G_Bit9"
+	      Name		      "G_Bit(13)"
 	      SID		      "201"
 	      Ports		      [5, 1]
 	      Position		      [1230, 1642, 1390, 1718]
 	      ZOrder		      1018
-	      LibraryVersion	      "1.33"
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(14)"
+	      SID		      "197"
+	      Ports		      [5, 1]
+	      Position		      [1230, 1547, 1390, 1623]
+	      ZOrder		      1014
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(15)"
+	      SID		      "179"
+	      Ports		      [5, 1]
+	      Position		      [1230, 1452, 1390, 1528]
+	      ZOrder		      1010
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(16)"
+	      SID		      "182"
+	      Ports		      [5, 1]
+	      Position		      [1230, 1357, 1390, 1433]
+	      ZOrder		      1021
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(17)"
+	      SID		      "200"
+	      Ports		      [5, 1]
+	      Position		      [1230, 1262, 1390, 1338]
+	      ZOrder		      1017
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(18)"
+	      SID		      "196"
+	      Ports		      [5, 1]
+	      Position		      [1230, 1167, 1390, 1243]
+	      ZOrder		      1013
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(19)"
+	      SID		      "178"
+	      Ports		      [5, 1]
+	      Position		      [1230, 1072, 1390, 1148]
+	      ZOrder		      1009
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(20)"
+	      SID		      "185"
+	      Ports		      [5, 1]
+	      Position		      [1230, 977, 1390, 1053]
+	      ZOrder		      1024
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(21)"
+	      SID		      "181"
+	      Ports		      [5, 1]
+	      Position		      [1230, 882, 1390, 958]
+	      ZOrder		      1020
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(22)"
+	      SID		      "199"
+	      Ports		      [5, 1]
+	      Position		      [1230, 787, 1390, 863]
+	      ZOrder		      1016
+	      LibraryVersion	      "1.40"
+	      FontName		      "Courier"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "G_Bit(23)"
+	      SID		      "195"
+	      Ports		      [5, 1]
+	      Position		      [1230, 692, 1390, 768]
+	      ZOrder		      1012
+	      LibraryVersion	      "1.40"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -17007,10 +17009,10 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      13
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      8
 	      Points		      [179, 0; 0, 1175]
-	      DstBlock		      "G_Bit14"
+	      DstBlock		      "G_Bit(08)"
 	      DstPort		      2
 	    }
 	    Line {
@@ -17023,26 +17025,26 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      6
 	      Points		      [210, 0; 0, 1015]
-	      DstBlock		      "G_Bit6"
+	      DstBlock		      "G_Bit(10)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      2
 	      Points		      [267, 0; 0, 695]
-	      DstBlock		      "G_Bit5"
+	      DstBlock		      "G_Bit(14)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      17
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      1
 	      Points		      [282, 0; 0, 615]
-	      DstBlock		      "G_Bit1"
+	      DstBlock		      "G_Bit(15)"
 	      DstPort		      2
 	    }
 	    Line {
@@ -17126,144 +17128,144 @@ Library {
 		    Branch {
 		    ZOrder		    42
 		    Points		    [0, -95]
-		    DstBlock		    "G_Bit3"
+		    DstBlock		    "G_Bit(23)"
 		    DstPort		    5
 		    }
 		    Branch {
 		    ZOrder		    43
-		    DstBlock		    "G_Bit7"
+		    DstBlock		    "G_Bit(22)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    44
-		    DstBlock		    "G_Bit11"
+		    DstBlock		    "G_Bit(21)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    45
-		    DstBlock		    "G_Bit15"
+		    DstBlock		    "G_Bit(20)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    46
-		    DstBlock		    "G_Bit"
+		    DstBlock		    "G_Bit(19)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    47
-		    DstBlock		    "G_Bit4"
+		    DstBlock		    "G_Bit(18)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    48
-		    DstBlock		    "G_Bit8"
+		    DstBlock		    "G_Bit(17)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    49
-		    DstBlock		    "G_Bit12"
+		    DstBlock		    "G_Bit(16)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    50
-		    DstBlock		    "G_Bit1"
+		    DstBlock		    "G_Bit(15)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    51
-		    DstBlock		    "G_Bit5"
+		    DstBlock		    "G_Bit(14)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    52
-		    DstBlock		    "G_Bit9"
+		    DstBlock		    "G_Bit(13)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    53
-		    DstBlock		    "G_Bit13"
+		    DstBlock		    "G_Bit(12)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    54
-		    DstBlock		    "G_Bit2"
+		    DstBlock		    "G_Bit(11)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    55
-		    DstBlock		    "G_Bit6"
+		    DstBlock		    "G_Bit(10)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    56
-		    DstBlock		    "G_Bit10"
+		    DstBlock		    "G_Bit(09)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    57
-		    DstBlock		    "G_Bit14"
+		    DstBlock		    "G_Bit(08)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    58
-		    DstBlock		    "G_Bit16"
+		    DstBlock		    "G_Bit(07)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    59
-		    DstBlock		    "G_Bit21"
+		    DstBlock		    "G_Bit(06)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    60
-		    DstBlock		    "G_Bit23"
+		    DstBlock		    "G_Bit(05)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    61
-		    DstBlock		    "G_Bit18"
+		    DstBlock		    "G_Bit(04)"
 		    DstPort		    5
 		    }
 		    }
 		    Branch {
 		    ZOrder		    62
-		    DstBlock		    "G_Bit20"
+		    DstBlock		    "G_Bit(03)"
 		    DstPort		    5
 		    }
 		  }
 		  Branch {
 		    ZOrder		    63
-		    DstBlock		    "G_Bit22"
+		    DstBlock		    "G_Bit(02)"
 		    DstPort		    5
 		  }
 		}
 		Branch {
 		  ZOrder		  64
-		  DstBlock		  "G_Bit17"
+		  DstBlock		  "G_Bit(01)"
 		  DstPort		  5
 		}
 	      }
 	      Branch {
 		ZOrder			65
-		DstBlock		"G_Bit19"
+		DstBlock		"G_Bit(00)"
 		DstPort			5
 	      }
 	    }
@@ -17272,7 +17274,7 @@ Library {
 	      SrcBlock		      "Decoder_2_to_4"
 	      SrcPort		      2
 	      Points		      [60, 0; 0, 350]
-	      DstBlock		      "Decoder_3_to_8_Enable"
+	      DstBlock		      "Decoder_3_to_8_Enable(0)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -17295,19 +17297,19 @@ Library {
 		  Points		  [0, -190]
 		  Branch {
 		    ZOrder		    71
-		    DstBlock		    "Bit_Multiplexer_8_to_2"
+		    DstBlock		    "Bit_Multiplexer_8_to_1(1)"
 		    DstPort		    2
 		  }
 		  Branch {
 		    ZOrder		    72
 		    Points		    [0, -190]
-		    DstBlock		    "Bit_Multiplexer_8_to_3"
+		    DstBlock		    "Bit_Multiplexer_8_to_1(0)"
 		    DstPort		    2
 		  }
 		}
 		Branch {
 		  ZOrder		  73
-		  DstBlock		  "Bit_Multiplexer_8_to_1"
+		  DstBlock		  "Bit_Multiplexer_8_to_1(2)"
 		  DstPort		  2
 		}
 	      }
@@ -17320,18 +17322,18 @@ Library {
 		  Branch {
 		    ZOrder		    76
 		    Points		    [0, 145]
-		    DstBlock		    "Decoder_3_to_8_Enable2"
+		    DstBlock		    "Decoder_3_to_8_Enable(2)"
 		    DstPort		    3
 		  }
 		  Branch {
 		    ZOrder		    77
-		    DstBlock		    "Decoder_3_to_8_Enable1"
+		    DstBlock		    "Decoder_3_to_8_Enable(1)"
 		    DstPort		    3
 		  }
 		}
 		Branch {
 		  ZOrder		  78
-		  DstBlock		  "Decoder_3_to_8_Enable"
+		  DstBlock		  "Decoder_3_to_8_Enable(0)"
 		  DstPort		  3
 		}
 	      }
@@ -17341,166 +17343,166 @@ Library {
 	      SrcBlock		      "Decoder_2_to_4"
 	      SrcPort		      3
 	      Points		      [42, 0; 0, 480]
-	      DstBlock		      "Decoder_3_to_8_Enable1"
+	      DstBlock		      "Decoder_3_to_8_Enable(1)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      80
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      3
 	      Points		      [367, 0; 0, 160]
-	      DstBlock		      "G_Bit11"
+	      DstBlock		      "G_Bit(21)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      81
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      2
 	      Points		      [380, 0; 0, 80]
-	      DstBlock		      "G_Bit7"
+	      DstBlock		      "G_Bit(22)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      82
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      3
 	      Points		      [253, 0; 0, 775]
-	      DstBlock		      "G_Bit9"
+	      DstBlock		      "G_Bit(13)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      83
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      3
 	      Points		      [132, 0; 0, 1390]
-	      DstBlock		      "G_Bit23"
+	      DstBlock		      "G_Bit(05)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      84
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      4
 	      Points		      [239, 0; 0, 855]
-	      DstBlock		      "G_Bit13"
+	      DstBlock		      "G_Bit(12)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      85
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      7
 	      Points		      [195, 0; 0, 1095]
-	      DstBlock		      "G_Bit10"
+	      DstBlock		      "G_Bit(09)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      86
-	      SrcBlock		      "Decoder_3_to_8_Enable1"
+	      SrcBlock		      "Decoder_3_to_8_Enable(1)"
 	      SrcPort		      5
 	      Points		      [224, 0; 0, 935]
-	      DstBlock		      "G_Bit2"
+	      DstBlock		      "G_Bit(11)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      87
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      1
 	      Points		      [164, 0; 0, 1230]
-	      DstBlock		      "G_Bit16"
+	      DstBlock		      "G_Bit(07)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      88
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      8
 	      Points		      [47, 0; 0, 1790]
-	      DstBlock		      "G_Bit19"
+	      DstBlock		      "G_Bit(00)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      89
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      8
 	      Points		      [297, 0; 0, 560]
-	      DstBlock		      "G_Bit12"
+	      DstBlock		      "G_Bit(16)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      90
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      5
 	      Points		      [98, 0; 0, 1550]
-	      DstBlock		      "G_Bit20"
+	      DstBlock		      "G_Bit(03)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      91
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      7
 	      Points		      [64, 0; 0, 1710]
-	      DstBlock		      "G_Bit17"
+	      DstBlock		      "G_Bit(01)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      92
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      4
 	      Points		      [354, 0; 0, 240]
-	      DstBlock		      "G_Bit15"
+	      DstBlock		      "G_Bit(20)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      93
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      7
 	      Points		      [311, 0; 0, 480]
-	      DstBlock		      "G_Bit8"
+	      DstBlock		      "G_Bit(17)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      94
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      2
 	      Points		      [148, 0; 0, 1310]
-	      DstBlock		      "G_Bit21"
+	      DstBlock		      "G_Bit(06)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      95
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      5
 	      Points		      [340, 0; 0, 320]
-	      DstBlock		      "G_Bit"
+	      DstBlock		      "G_Bit(19)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      96
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      4
 	      Points		      [114, 0; 0, 1470]
-	      DstBlock		      "G_Bit18"
+	      DstBlock		      "G_Bit(04)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      97
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      6
 	      Points		      [325, 0; 0, 400]
-	      DstBlock		      "G_Bit4"
+	      DstBlock		      "G_Bit(18)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      98
-	      SrcBlock		      "Decoder_3_to_8_Enable2"
+	      SrcBlock		      "Decoder_3_to_8_Enable(2)"
 	      SrcPort		      6
 	      Points		      [80, 0; 0, 1630]
-	      DstBlock		      "G_Bit22"
+	      DstBlock		      "G_Bit(02)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      99
-	      SrcBlock		      "Decoder_3_to_8_Enable"
+	      SrcBlock		      "Decoder_3_to_8_Enable(0)"
 	      SrcPort		      1
-	      DstBlock		      "G_Bit3"
+	      DstBlock		      "G_Bit(23)"
 	      DstPort		      2
 	    }
 	    Line {
@@ -17532,19 +17534,19 @@ Library {
 		  Points		  [0, -190]
 		  Branch {
 		    ZOrder		    105
-		    DstBlock		    "Bit_Multiplexer_8_to_2"
+		    DstBlock		    "Bit_Multiplexer_8_to_1(1)"
 		    DstPort		    1
 		  }
 		  Branch {
 		    ZOrder		    106
 		    Points		    [0, -190]
-		    DstBlock		    "Bit_Multiplexer_8_to_3"
+		    DstBlock		    "Bit_Multiplexer_8_to_1(0)"
 		    DstPort		    1
 		  }
 		}
 		Branch {
 		  ZOrder		  107
-		  DstBlock		  "Bit_Multiplexer_8_to_1"
+		  DstBlock		  "Bit_Multiplexer_8_to_1(2)"
 		  DstPort		  1
 		}
 	      }
@@ -17557,18 +17559,18 @@ Library {
 		  Branch {
 		    ZOrder		    110
 		    Points		    [0, 145]
-		    DstBlock		    "Decoder_3_to_8_Enable2"
+		    DstBlock		    "Decoder_3_to_8_Enable(2)"
 		    DstPort		    2
 		  }
 		  Branch {
 		    ZOrder		    111
-		    DstBlock		    "Decoder_3_to_8_Enable1"
+		    DstBlock		    "Decoder_3_to_8_Enable(1)"
 		    DstPort		    2
 		  }
 		}
 		Branch {
 		  ZOrder		  112
-		  DstBlock		  "Decoder_3_to_8_Enable"
+		  DstBlock		  "Decoder_3_to_8_Enable(0)"
 		  DstPort		  2
 		}
 	      }
@@ -17578,7 +17580,7 @@ Library {
 	      SrcBlock		      "Decoder_2_to_4"
 	      SrcPort		      4
 	      Points		      [25, 0; 0, 610]
-	      DstBlock		      "Decoder_3_to_8_Enable2"
+	      DstBlock		      "Decoder_3_to_8_Enable(2)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -17595,18 +17597,18 @@ Library {
 		  Branch {
 		    ZOrder		    117
 		    Points		    [0, 145]
-		    DstBlock		    "Decoder_3_to_8_Enable2"
+		    DstBlock		    "Decoder_3_to_8_Enable(2)"
 		    DstPort		    4
 		  }
 		  Branch {
 		    ZOrder		    118
-		    DstBlock		    "Decoder_3_to_8_Enable1"
+		    DstBlock		    "Decoder_3_to_8_Enable(1)"
 		    DstPort		    4
 		  }
 		}
 		Branch {
 		  ZOrder		  119
-		  DstBlock		  "Decoder_3_to_8_Enable"
+		  DstBlock		  "Decoder_3_to_8_Enable(0)"
 		  DstPort		  4
 		}
 	      }
@@ -17618,19 +17620,19 @@ Library {
 		  Points		  [0, -190]
 		  Branch {
 		    ZOrder		    122
-		    DstBlock		    "Bit_Multiplexer_8_to_2"
+		    DstBlock		    "Bit_Multiplexer_8_to_1(1)"
 		    DstPort		    3
 		  }
 		  Branch {
 		    ZOrder		    123
 		    Points		    [0, -190]
-		    DstBlock		    "Bit_Multiplexer_8_to_3"
+		    DstBlock		    "Bit_Multiplexer_8_to_1(0)"
 		    DstPort		    3
 		  }
 		}
 		Branch {
 		  ZOrder		  124
-		  DstBlock		  "Bit_Multiplexer_8_to_1"
+		  DstBlock		  "Bit_Multiplexer_8_to_1(2)"
 		  DstPort		  3
 		}
 	      }
@@ -17725,145 +17727,145 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    151
-		    DstBlock		    "G_Bit17"
+		    DstBlock		    "G_Bit(01)"
 		    DstPort		    1
 		    }
 		    Branch {
 		    ZOrder		    152
 		    Points		    [0, 95]
-		    DstBlock		    "G_Bit19"
+		    DstBlock		    "G_Bit(00)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    153
-		    DstBlock		    "G_Bit22"
+		    DstBlock		    "G_Bit(02)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    154
-		    DstBlock		    "G_Bit20"
+		    DstBlock		    "G_Bit(03)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    155
-		    DstBlock		    "G_Bit18"
+		    DstBlock		    "G_Bit(04)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    156
-		    DstBlock		    "G_Bit23"
+		    DstBlock		    "G_Bit(05)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    157
-		    DstBlock		    "G_Bit21"
+		    DstBlock		    "G_Bit(06)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    158
-		    DstBlock		    "G_Bit16"
+		    DstBlock		    "G_Bit(07)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    159
-		    DstBlock		    "G_Bit14"
+		    DstBlock		    "G_Bit(08)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    160
-		    DstBlock		    "G_Bit10"
+		    DstBlock		    "G_Bit(09)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    161
-		    DstBlock		    "G_Bit6"
+		    DstBlock		    "G_Bit(10)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    162
-		    DstBlock		    "G_Bit2"
+		    DstBlock		    "G_Bit(11)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    163
-		    DstBlock		    "G_Bit13"
+		    DstBlock		    "G_Bit(12)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    164
-		    DstBlock		    "G_Bit9"
+		    DstBlock		    "G_Bit(13)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    165
-		    DstBlock		    "G_Bit5"
+		    DstBlock		    "G_Bit(14)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    166
-		    DstBlock		    "G_Bit1"
+		    DstBlock		    "G_Bit(15)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    167
-		    DstBlock		    "G_Bit12"
+		    DstBlock		    "G_Bit(16)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    168
-		    DstBlock		    "G_Bit8"
+		    DstBlock		    "G_Bit(17)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    169
-		    DstBlock		    "G_Bit4"
+		    DstBlock		    "G_Bit(18)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    170
-		    DstBlock		    "G_Bit"
+		    DstBlock		    "G_Bit(19)"
 		    DstPort		    1
 		    }
 		    }
 		    Branch {
 		    ZOrder		    171
-		    DstBlock		    "G_Bit15"
+		    DstBlock		    "G_Bit(20)"
 		    DstPort		    1
 		    }
 		  }
 		  Branch {
 		    ZOrder		    172
-		    DstBlock		    "G_Bit11"
+		    DstBlock		    "G_Bit(21)"
 		    DstPort		    1
 		  }
 		}
 		Branch {
 		  ZOrder		  173
-		  DstBlock		  "G_Bit7"
+		  DstBlock		  "G_Bit(22)"
 		  DstPort		  1
 		}
 	      }
 	      Branch {
 		ZOrder			174
-		DstBlock		"G_Bit3"
+		DstBlock		"G_Bit(23)"
 		DstPort			1
 	      }
 	    }
@@ -17941,156 +17943,156 @@ Library {
 		    Branch {
 		    ZOrder		    198
 		    Points		    [0, -95]
-		    DstBlock		    "G_Bit3"
+		    DstBlock		    "G_Bit(23)"
 		    DstPort		    3
 		    }
 		    Branch {
 		    ZOrder		    199
-		    DstBlock		    "G_Bit7"
+		    DstBlock		    "G_Bit(22)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    200
-		    DstBlock		    "G_Bit11"
+		    DstBlock		    "G_Bit(21)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    201
-		    DstBlock		    "G_Bit15"
+		    DstBlock		    "G_Bit(20)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    202
-		    DstBlock		    "G_Bit"
+		    DstBlock		    "G_Bit(19)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    203
-		    DstBlock		    "G_Bit4"
+		    DstBlock		    "G_Bit(18)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    204
-		    DstBlock		    "G_Bit8"
+		    DstBlock		    "G_Bit(17)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    205
-		    DstBlock		    "G_Bit12"
+		    DstBlock		    "G_Bit(16)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    206
-		    DstBlock		    "G_Bit1"
+		    DstBlock		    "G_Bit(15)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    207
-		    DstBlock		    "G_Bit5"
+		    DstBlock		    "G_Bit(14)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    208
-		    DstBlock		    "G_Bit9"
+		    DstBlock		    "G_Bit(13)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    209
-		    DstBlock		    "G_Bit13"
+		    DstBlock		    "G_Bit(12)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    210
-		    DstBlock		    "G_Bit2"
+		    DstBlock		    "G_Bit(11)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    211
-		    DstBlock		    "G_Bit6"
+		    DstBlock		    "G_Bit(10)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    212
-		    DstBlock		    "G_Bit10"
+		    DstBlock		    "G_Bit(09)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    213
-		    DstBlock		    "G_Bit14"
+		    DstBlock		    "G_Bit(08)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    214
-		    DstBlock		    "G_Bit16"
+		    DstBlock		    "G_Bit(07)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    215
-		    DstBlock		    "G_Bit21"
+		    DstBlock		    "G_Bit(06)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    216
-		    DstBlock		    "G_Bit23"
+		    DstBlock		    "G_Bit(05)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    217
-		    DstBlock		    "G_Bit18"
+		    DstBlock		    "G_Bit(04)"
 		    DstPort		    3
 		    }
 		    }
 		    Branch {
 		    ZOrder		    218
-		    DstBlock		    "G_Bit20"
+		    DstBlock		    "G_Bit(03)"
 		    DstPort		    3
 		    }
 		  }
 		  Branch {
 		    ZOrder		    219
-		    DstBlock		    "G_Bit22"
+		    DstBlock		    "G_Bit(02)"
 		    DstPort		    3
 		  }
 		}
 		Branch {
 		  ZOrder		  220
-		  DstBlock		  "G_Bit17"
+		  DstBlock		  "G_Bit(01)"
 		  DstPort		  3
 		}
 	      }
 	      Branch {
 		ZOrder			221
-		DstBlock		"G_Bit19"
+		DstBlock		"G_Bit(00)"
 		DstPort			3
 	      }
 	    }
 	    Line {
 	      ZOrder		      222
-	      SrcBlock		      "G_Bit3"
+	      SrcBlock		      "G_Bit(23)"
 	      SrcPort		      1
 	      Points		      [58, 0]
 	      Branch {
 		ZOrder			223
 		Points			[0, -615]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			4
 	      }
 	      Branch {
@@ -18101,13 +18103,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      225
-	      SrcBlock		      "G_Bit7"
+	      SrcBlock		      "G_Bit(22)"
 	      SrcPort		      1
 	      Points		      [74, 0; 0, -75]
 	      Branch {
 		ZOrder			226
 		Points			[0, -620]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			5
 	      }
 	      Branch {
@@ -18118,13 +18120,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      228
-	      SrcBlock		      "G_Bit11"
+	      SrcBlock		      "G_Bit(21)"
 	      SrcPort		      1
 	      Points		      [91, 0; 0, -150]
 	      Branch {
 		ZOrder			229
 		Points			[0, -625]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			6
 	      }
 	      Branch {
@@ -18135,13 +18137,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      231
-	      SrcBlock		      "G_Bit15"
+	      SrcBlock		      "G_Bit(20)"
 	      SrcPort		      1
 	      Points		      [108, 0; 0, -225]
 	      Branch {
 		ZOrder			232
 		Points			[0, -630]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			7
 	      }
 	      Branch {
@@ -18152,13 +18154,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      234
-	      SrcBlock		      "G_Bit"
+	      SrcBlock		      "G_Bit(19)"
 	      SrcPort		      1
 	      Points		      [126, 0; 0, -300]
 	      Branch {
 		ZOrder			235
 		Points			[0, -635]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			8
 	      }
 	      Branch {
@@ -18169,13 +18171,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      237
-	      SrcBlock		      "G_Bit4"
+	      SrcBlock		      "G_Bit(18)"
 	      SrcPort		      1
 	      Points		      [144, 0; 0, -375]
 	      Branch {
 		ZOrder			238
 		Points			[0, -640]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			9
 	      }
 	      Branch {
@@ -18186,13 +18188,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      240
-	      SrcBlock		      "G_Bit8"
+	      SrcBlock		      "G_Bit(17)"
 	      SrcPort		      1
 	      Points		      [162, 0; 0, -450]
 	      Branch {
 		ZOrder			241
 		Points			[0, -645]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			10
 	      }
 	      Branch {
@@ -18203,13 +18205,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      243
-	      SrcBlock		      "G_Bit1"
+	      SrcBlock		      "G_Bit(15)"
 	      SrcPort		      1
 	      Points		      [195, 0; 0, -600]
 	      Branch {
 		ZOrder			244
 		Points			[0, -585]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			4
 	      }
 	      Branch {
@@ -18220,13 +18222,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      246
-	      SrcBlock		      "G_Bit5"
+	      SrcBlock		      "G_Bit(14)"
 	      SrcPort		      1
 	      Points		      [211, 0; 0, -675]
 	      Branch {
 		ZOrder			247
 		Points			[0, -590]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			5
 	      }
 	      Branch {
@@ -18237,7 +18239,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      249
-	      SrcBlock		      "G_Bit9"
+	      SrcBlock		      "G_Bit(13)"
 	      SrcPort		      1
 	      Points		      [227, 0; 0, -750]
 	      Branch {
@@ -18248,19 +18250,19 @@ Library {
 	      Branch {
 		ZOrder			251
 		Points			[0, -595]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			6
 	      }
 	    }
 	    Line {
 	      ZOrder		      252
-	      SrcBlock		      "G_Bit13"
+	      SrcBlock		      "G_Bit(12)"
 	      SrcPort		      1
 	      Points		      [243, 0; 0, -825]
 	      Branch {
 		ZOrder			253
 		Points			[0, -600]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			7
 	      }
 	      Branch {
@@ -18271,13 +18273,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      255
-	      SrcBlock		      "G_Bit2"
+	      SrcBlock		      "G_Bit(11)"
 	      SrcPort		      1
 	      Points		      [257, 0; 0, -900]
 	      Branch {
 		ZOrder			256
 		Points			[0, -605]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			8
 	      }
 	      Branch {
@@ -18288,13 +18290,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      258
-	      SrcBlock		      "G_Bit6"
+	      SrcBlock		      "G_Bit(10)"
 	      SrcPort		      1
 	      Points		      [273, 0; 0, -975]
 	      Branch {
 		ZOrder			259
 		Points			[0, -610]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			9
 	      }
 	      Branch {
@@ -18305,13 +18307,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      261
-	      SrcBlock		      "G_Bit10"
+	      SrcBlock		      "G_Bit(09)"
 	      SrcPort		      1
 	      Points		      [290, 0; 0, -1050]
 	      Branch {
 		ZOrder			262
 		Points			[0, -615]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			10
 	      }
 	      Branch {
@@ -18322,13 +18324,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      264
-	      SrcBlock		      "G_Bit14"
+	      SrcBlock		      "G_Bit(08)"
 	      SrcPort		      1
 	      Points		      [306, 0; 0, -1125]
 	      Branch {
 		ZOrder			265
 		Points			[0, -620]
-		DstBlock		"Bit_Multiplexer_8_to_2"
+		DstBlock		"Bit_Multiplexer_8_to_1(1)"
 		DstPort			11
 	      }
 	      Branch {
@@ -18339,13 +18341,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      267
-	      SrcBlock		      "G_Bit16"
+	      SrcBlock		      "G_Bit(07)"
 	      SrcPort		      1
 	      Points		      [322, 0; 0, -1200]
 	      Branch {
 		ZOrder			268
 		Points			[0, -555]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			4
 	      }
 	      Branch {
@@ -18356,13 +18358,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      270
-	      SrcBlock		      "G_Bit21"
+	      SrcBlock		      "G_Bit(06)"
 	      SrcPort		      1
 	      Points		      [338, 0; 0, -1275]
 	      Branch {
 		ZOrder			271
 		Points			[0, -560]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			5
 	      }
 	      Branch {
@@ -18373,13 +18375,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      273
-	      SrcBlock		      "G_Bit23"
+	      SrcBlock		      "G_Bit(05)"
 	      SrcPort		      1
 	      Points		      [354, 0; 0, -1350]
 	      Branch {
 		ZOrder			274
 		Points			[0, -565]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			6
 	      }
 	      Branch {
@@ -18390,13 +18392,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      276
-	      SrcBlock		      "G_Bit18"
+	      SrcBlock		      "G_Bit(04)"
 	      SrcPort		      1
 	      Points		      [370, 0; 0, -1425]
 	      Branch {
 		ZOrder			277
 		Points			[0, -570]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			7
 	      }
 	      Branch {
@@ -18407,13 +18409,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      279
-	      SrcBlock		      "G_Bit20"
+	      SrcBlock		      "G_Bit(03)"
 	      SrcPort		      1
 	      Points		      [386, 0; 0, -1500]
 	      Branch {
 		ZOrder			280
 		Points			[0, -575]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			8
 	      }
 	      Branch {
@@ -18424,13 +18426,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      282
-	      SrcBlock		      "G_Bit22"
+	      SrcBlock		      "G_Bit(02)"
 	      SrcPort		      1
 	      Points		      [403, 0; 0, -1575]
 	      Branch {
 		ZOrder			283
 		Points			[0, -580]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			9
 	      }
 	      Branch {
@@ -18441,7 +18443,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      285
-	      SrcBlock		      "G_Bit17"
+	      SrcBlock		      "G_Bit(01)"
 	      SrcPort		      1
 	      Points		      [419, 0; 0, -1650]
 	      Branch {
@@ -18452,19 +18454,19 @@ Library {
 	      Branch {
 		ZOrder			287
 		Points			[0, -585]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			10
 	      }
 	    }
 	    Line {
 	      ZOrder		      288
-	      SrcBlock		      "G_Bit19"
+	      SrcBlock		      "G_Bit(00)"
 	      SrcPort		      1
 	      Points		      [435, 0; 0, -1725]
 	      Branch {
 		ZOrder			289
 		Points			[0, -590]
-		DstBlock		"Bit_Multiplexer_8_to_1"
+		DstBlock		"Bit_Multiplexer_8_to_1(2)"
 		DstPort			11
 	      }
 	      Branch {
@@ -18494,7 +18496,7 @@ Library {
 	      Points		      [1337, 0; 0, 635]
 	      Branch {
 		ZOrder			294
-		DstBlock		"G_Bit3"
+		DstBlock		"G_Bit(23)"
 		DstPort			4
 	      }
 	      Branch {
@@ -18502,7 +18504,7 @@ Library {
 		Points			[0, 95]
 		Branch {
 		  ZOrder		  296
-		  DstBlock		  "G_Bit7"
+		  DstBlock		  "G_Bit(22)"
 		  DstPort		  4
 		}
 		Branch {
@@ -18510,7 +18512,7 @@ Library {
 		  Points		  [0, 95]
 		  Branch {
 		    ZOrder		    298
-		    DstBlock		    "G_Bit11"
+		    DstBlock		    "G_Bit(21)"
 		    DstPort		    4
 		  }
 		  Branch {
@@ -18518,7 +18520,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    300
-		    DstBlock		    "G_Bit15"
+		    DstBlock		    "G_Bit(20)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18526,7 +18528,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    302
-		    DstBlock		    "G_Bit"
+		    DstBlock		    "G_Bit(19)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18534,7 +18536,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    304
-		    DstBlock		    "G_Bit4"
+		    DstBlock		    "G_Bit(18)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18542,7 +18544,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    306
-		    DstBlock		    "G_Bit8"
+		    DstBlock		    "G_Bit(17)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18550,7 +18552,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    308
-		    DstBlock		    "G_Bit12"
+		    DstBlock		    "G_Bit(16)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18558,7 +18560,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    310
-		    DstBlock		    "G_Bit1"
+		    DstBlock		    "G_Bit(15)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18569,7 +18571,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    313
-		    DstBlock		    "G_Bit9"
+		    DstBlock		    "G_Bit(13)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18577,7 +18579,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    315
-		    DstBlock		    "G_Bit13"
+		    DstBlock		    "G_Bit(12)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18585,7 +18587,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    317
-		    DstBlock		    "G_Bit2"
+		    DstBlock		    "G_Bit(11)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18593,7 +18595,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    319
-		    DstBlock		    "G_Bit6"
+		    DstBlock		    "G_Bit(10)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18601,7 +18603,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    321
-		    DstBlock		    "G_Bit10"
+		    DstBlock		    "G_Bit(09)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18609,7 +18611,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    323
-		    DstBlock		    "G_Bit14"
+		    DstBlock		    "G_Bit(08)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18617,7 +18619,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    325
-		    DstBlock		    "G_Bit16"
+		    DstBlock		    "G_Bit(07)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18625,7 +18627,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    327
-		    DstBlock		    "G_Bit21"
+		    DstBlock		    "G_Bit(06)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18633,7 +18635,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    329
-		    DstBlock		    "G_Bit23"
+		    DstBlock		    "G_Bit(05)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18641,7 +18643,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    331
-		    DstBlock		    "G_Bit18"
+		    DstBlock		    "G_Bit(04)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18649,7 +18651,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    333
-		    DstBlock		    "G_Bit20"
+		    DstBlock		    "G_Bit(03)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18657,7 +18659,7 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    335
-		    DstBlock		    "G_Bit22"
+		    DstBlock		    "G_Bit(02)"
 		    DstPort		    4
 		    }
 		    Branch {
@@ -18665,13 +18667,13 @@ Library {
 		    Points		    [0, 95]
 		    Branch {
 		    ZOrder		    337
-		    DstBlock		    "G_Bit17"
+		    DstBlock		    "G_Bit(01)"
 		    DstPort		    4
 		    }
 		    Branch {
 		    ZOrder		    338
 		    Points		    [0, 95]
-		    DstBlock		    "G_Bit19"
+		    DstBlock		    "G_Bit(00)"
 		    DstPort		    4
 		    }
 		    }
@@ -18689,7 +18691,7 @@ Library {
 		    }
 		    Branch {
 		    ZOrder		    339
-		    DstBlock		    "G_Bit5"
+		    DstBlock		    "G_Bit(14)"
 		    DstPort		    4
 		    }
 		    }
@@ -18704,13 +18706,13 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      340
-	      SrcBlock		      "G_Bit12"
+	      SrcBlock		      "G_Bit(16)"
 	      SrcPort		      1
 	      Points		      [179, 0; 0, -525]
 	      Branch {
 		ZOrder			341
 		Points			[0, -650]
-		DstBlock		"Bit_Multiplexer_8_to_3"
+		DstBlock		"Bit_Multiplexer_8_to_1(0)"
 		DstPort			11
 	      }
 	      Branch {
@@ -18721,7 +18723,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      343
-	      SrcBlock		      "Bit_Multiplexer_8_to_3"
+	      SrcBlock		      "Bit_Multiplexer_8_to_1(0)"
 	      SrcPort		      1
 	      Points		      [60, 0; 0, -75]
 	      DstBlock		      "Bit_Multiplexer_4_to_1"
@@ -18729,7 +18731,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      344
-	      SrcBlock		      "Bit_Multiplexer_8_to_2"
+	      SrcBlock		      "Bit_Multiplexer_8_to_1(1)"
 	      SrcPort		      1
 	      Points		      [76, 0; 0, -250]
 	      DstBlock		      "Bit_Multiplexer_4_to_1"
@@ -18737,7 +18739,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      345
-	      SrcBlock		      "Bit_Multiplexer_8_to_1"
+	      SrcBlock		      "Bit_Multiplexer_8_to_1(2)"
 	      SrcPort		      1
 	      Points		      [92, 0; 0, -425]
 	      DstBlock		      "Bit_Multiplexer_4_to_1"
