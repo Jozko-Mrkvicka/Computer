@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"6242"
+	LoadSaveID		"6250"
 	Extents			[1534.0, 920.0]
 	ZoomFactor		[2.0]
-	Offset			[168.84433924441862, -172.55640180636217]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Sep 18 22:03:37 2021"
-  RTWModifiedTimeStamp	  553903415
-  ModelVersionFormat	  "1.%<AutoIncrement:620>"
+  LastModifiedDate	  "Sun Sep 19 12:03:42 2021"
+  RTWModifiedTimeStamp	  553953814
+  ModelVersionFormat	  "1.%<AutoIncrement:623>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -818,6 +818,15 @@ Library {
       Interpolate	      on
     }
     Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Mux
       Inputs		      "4"
       DisplayOption	      "none"
@@ -893,9 +902,9 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "1000"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6249"
+    SIDHighWatermark	    "6254"
     Block {
       BlockType		      SubSystem
       Name		      "Character_Table"
@@ -23028,7 +23037,7 @@ Library {
       Variant		      off
       System {
 	Name			"Color"
-	Location		[64, 0, 1225, 1087]
+	Location		[57, 0, 1641, 1087]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -23091,7 +23100,7 @@ Library {
       System {
 	Name			"Convertor_uint16_to_bus"
 	Location		[57, 0, 1641, 1087]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -25168,6 +25177,88 @@ Library {
 	  SrcPort		  1
 	  DstBlock		  "Get_Pixel(1b)"
 	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Name"
+      SID		      "6250"
+      Ports		      [1, 1]
+      Position		      [1535, 93, 1540, 97]
+      ZOrder		      2148
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Name"
+	Location		[57, 0, 1641, 1087]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"200"
+	Block {
+	  BlockType		  Inport
+	  Name			  " "
+	  SID			  "6251"
+	  Position		  [110, 103, 140, 117]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  SID			  "6254"
+	  Ports			  [1, 1]
+	  Position		  [248, 102, 263, 118]
+	  ZOrder		  2064
+	  Inputs		  "1"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "  "
+	  SID			  "6252"
+	  Position		  [360, 103, 390, 117]
+	  ZOrder		  -2
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  " "
+	  SrcPort		  1
+	  Points		  [88, 0]
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "  "
+	  DstPort		  1
+	}
+	Annotation {
+	  SID			  "6253"
+	  Name			  "This block is just a workaround for changing name of a signal which is connected to it (Simulink does not"
+	  " allow to assign multiple signals with the same name to the one bus creator block)."
+	  Position		  [152, 22, 360, 97]
+	  InternalMargins	  [0, 0, 0, 0]
+	  FixedHeight		  on
+	  FixedWidth		  on
+	  HorizontalAlignment	  "left"
+	  VerticalAlignment	  "top"
+	  ZOrder		  -1
+	  FontName		  "Courier"
 	}
       }
     }

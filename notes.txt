@@ -137,10 +137,12 @@ Preprocessor:
 	- 
 
 - Clean-up:
+	- Vsetky riadiace prvky dat na jedno miesto (klavesnica, reg view, ...). Pouzit bloky GOFROM/GOTO.
 	- Spocitat pouzite bloky, zjednotit, zjednodusit:
 		- Prerobit bloky Byte_Multiplexer, nahradit muxy/demuxy obycajnymi kablami.
 		- Zistit ktore bloky niesu vobec pouzite a premenovat ich na "_NOT_USED".
 		- Bloky ktore su pouzite iba par krat nahradit blokmi ktore su pouzite castejsie.
+(AAA)		- Nahradit vsetky word multiplexory pomocou word multiplexoru 4_to_1.
 		- Zamysliet sa nad pouzitim demultiplexerov.
 	- Instructions.m - Pridat do definicie instrukcii informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
 	- Pridat zbernicu (adresova, datova). Zlucit uz existujuce bloky aby pocitac pripominal von Neumannovu schemu.
@@ -170,4 +172,6 @@ Preprocessor:
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL. Jedna instrukcia na ulozenie vsetkych registrov (viz ARM)??
 
 GIT:
-	-
+	- Muxes/demuxes on control bus replaced with bus creators/selectors.
+	- Logic operations library deleted. Logic blocks are now directly part of the Computer model.
+

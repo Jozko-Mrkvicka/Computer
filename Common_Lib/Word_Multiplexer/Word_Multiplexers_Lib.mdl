@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, 0.0, 1874.0, 1096.0]
+      Location		      [54.0, -8.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -44,8 +44,8 @@ Library {
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"240"
 	Extents			[1824.0, 929.0]
-	ZoomFactor		[0.8]
-	Offset			[-809.75, -114.72044781228465]
+	ZoomFactor		[1.0]
+	Offset			[-581.75, 1.4045521877153533]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Sep 18 18:30:02 2021"
-  RTWModifiedTimeStamp	  553890595
-  ModelVersionFormat	  "1.%<AutoIncrement:271>"
+  LastModifiedDate	  "Sun Sep 19 14:18:30 2021"
+  RTWModifiedTimeStamp	  553961908
+  ModelVersionFormat	  "1.%<AutoIncrement:272>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -867,7 +867,7 @@ Library {
       Variant		      off
       System {
 	Name			"Word_Multiplexers_Lib"
-	Location		[54, 0, 1928, 1096]
+	Location		[54, -8, 1928, 1088]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -879,7 +879,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Word_Multiplexer_16_to_1"
@@ -22906,8 +22906,6 @@ Library {
 	  Ports			  [6, 1]
 	  Position		  [50, 276, 205, 369]
 	  ZOrder		  1855
-	  ForegroundColor	  "red"
-	  BackgroundColor	  "yellow"
 	  LibraryVersion	  "*1.270"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -27214,8 +27212,6 @@ Library {
 	  Ports			  [11, 1]
 	  Position		  [50, 399, 205, 571]
 	  ZOrder		  1346
-	  ForegroundColor	  "red"
-	  BackgroundColor	  "yellow"
 	  LibraryVersion	  "*1.263"
 	  RequestExecContextInheritance	off
 	  Variant		  off

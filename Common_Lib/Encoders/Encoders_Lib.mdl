@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jul 04 21:13:57 2021"
-  RTWModifiedTimeStamp	  547334026
-  ModelVersionFormat	  "1.%<AutoIncrement:43>"
+  LastModifiedDate	  "Sun Sep 19 12:59:39 2021"
+  RTWModifiedTimeStamp	  553957174
+  ModelVersionFormat	  "1.%<AutoIncrement:45>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -750,6 +750,12 @@ Library {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      BusCreator
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -789,14 +795,6 @@ Library {
       AllPortsSameDT	      on
       OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
       SampleTime	      "-1"
-    }
-    Block {
-      BlockType		      Mux
-      Inputs		      "4"
-      DisplayOption	      "none"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      NonVirtualBus	      off
     }
     Block {
       BlockType		      Outport
@@ -868,7 +866,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "390"
+    SIDHighWatermark	    "392"
     Block {
       BlockType		      SubSystem
       Name		      "Encoders_Lib"
@@ -1474,13 +1472,13 @@ Library {
 	  SID			  "268"
 	  Ports			  [32, 1]
 	  Position		  [85, 725, 245, 1210]
-	  ZOrder		  379
-	  LibraryVersion	  "*1.24"
+	  ZOrder		  2154
+	  LibraryVersion	  "*1.43"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Encoder_32_to_5"
-	    Location		    [58, 0, 932, 1092]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1781,21 +1779,16 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit to Integer\nConverter1"
-	      SID		      "312"
-	      Ports		      [1, 1]
-	      Position		      [865, -467, 945, -423]
-	      ZOrder		      1975
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator3"
+	      SID		      "391"
+	      Ports		      [8, 1]
+	      Position		      [810, -503, 820, -392]
+	      ZOrder		      2172
 	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
-	      SourceType	      "Bit to Integer Converter"
-	      nbits		      "8"
-	      bitOrder		      "MSB first"
-	      signedOutputValues      "Unsigned"
-	      outDtype		      "uint8"
-	      outDtypeSigned	      "Inherit via internal rule"
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -1868,17 +1861,6 @@ Library {
 	      OutDataTypeStr	      "boolean"
 	    }
 	    Block {
-	      BlockType		      Mux
-	      Name		      "Mux1"
-	      SID		      "313"
-	      Ports		      [8, 1]
-	      Position		      [810, -512, 820, -383]
-	      ZOrder		      1974
-	      ShowName		      off
-	      Inputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
 	      BlockType		      Constant
 	      Name		      "Set1"
 	      SID		      "314"
@@ -1899,13 +1881,13 @@ Library {
 	      BlockType		      Outport
 	      Name		      "Address_Out(1B)"
 	      SID		      "293"
-	      Position		      [1000, -452, 1030, -438]
+	      Position		      [865, -452, 895, -438]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Bit to Integer\nConverter1"
+	      SrcBlock		      "Bus\nCreator3"
 	      SrcPort		      1
 	      DstBlock		      "Address_Out(1B)"
 	      DstPort		      1
@@ -1917,66 +1899,59 @@ Library {
 	      Points		      [20, 0]
 	      Branch {
 		ZOrder			3
-		DstBlock		"Mux1"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			4
 		Points			[0, 15]
 		Branch {
-		  ZOrder		  5
-		  DstBlock		  "Mux1"
+		  ZOrder		  4
+		  DstBlock		  "Bus\nCreator3"
 		  DstPort		  2
 		}
 		Branch {
-		  ZOrder		  6
+		  ZOrder		  5
 		  Points		  [0, 15]
-		  DstBlock		  "Mux1"
+		  DstBlock		  "Bus\nCreator3"
 		  DstPort		  3
 		}
+	      }
+	      Branch {
+		ZOrder			6
+		DstBlock		"Bus\nCreator3"
+		DstPort			1
 	      }
 	    }
 	    Line {
 	      ZOrder		      7
-	      SrcBlock		      "Mux1"
-	      SrcPort		      1
-	      DstBlock		      "Bit to Integer\nConverter1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      8
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
 	      Points		      [115, 0; 0, -1000]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator3"
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      9
+	      ZOrder		      8
 	      SrcBlock		      "Logical\nOperator1"
 	      SrcPort		      1
 	      Points		      [101, 0; 0, -750]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator3"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      10
+	      ZOrder		      9
 	      SrcBlock		      "Logical\nOperator2"
 	      SrcPort		      1
 	      Points		      [86, 0; 0, -500]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator3"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      11
+	      ZOrder		      10
 	      SrcBlock		      "Logical\nOperator3"
 	      SrcPort		      1
 	      Points		      [73, 0; 0, -250]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator3"
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      12
+	      ZOrder		      11
 	      SrcBlock		      "Select_01(1b)\n"
 	      SrcPort		      1
 	      Points		      [672, 0; 0, 2085]
@@ -1984,7 +1959,7 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      13
+	      ZOrder		      12
 	      SrcBlock		      "Select_02(1b)"
 	      SrcPort		      1
 	      Points		      [655, 0; 0, 1780]
@@ -1992,24 +1967,24 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      14
+	      ZOrder		      13
 	      SrcBlock		      "Select_03(1b)"
 	      SrcPort		      1
 	      Points		      [639, 0; 0, 1755]
 	      Branch {
-		ZOrder			15
+		ZOrder			14
 		DstBlock		"Logical\nOperator1"
 		DstPort			2
 	      }
 	      Branch {
-		ZOrder			16
+		ZOrder			15
 		Points			[0, 265]
 		DstBlock		"Logical\nOperator"
 		DstPort			2
 	      }
 	    }
 	    Line {
-	      ZOrder		      17
+	      ZOrder		      16
 	      SrcBlock		      "Select_04(1b)"
 	      SrcPort		      1
 	      Points		      [621, 0; 0, 1435]
@@ -2017,59 +1992,59 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      18
+	      ZOrder		      17
 	      SrcBlock		      "Select_05(1b)"
 	      SrcPort		      1
 	      Points		      [603, 0; 0, 1410]
 	      Branch {
-		ZOrder			19
+		ZOrder			18
 		DstBlock		"Logical\nOperator2"
 		DstPort			2
 	      }
 	      Branch {
-		ZOrder			20
+		ZOrder			19
 		Points			[0, 545]
 		DstBlock		"Logical\nOperator"
 		DstPort			3
 	      }
 	    }
 	    Line {
-	      ZOrder		      21
+	      ZOrder		      20
 	      SrcBlock		      "Select_06(1b)"
 	      SrcPort		      1
 	      Points		      [584, 0; 0, 1385]
 	      Branch {
-		ZOrder			22
+		ZOrder			21
 		DstBlock		"Logical\nOperator2"
 		DstPort			3
 	      }
 	      Branch {
-		ZOrder			23
+		ZOrder			22
 		Points			[0, 265]
 		DstBlock		"Logical\nOperator1"
 		DstPort			3
 	      }
 	    }
 	    Line {
-	      ZOrder		      24
+	      ZOrder		      23
 	      SrcBlock		      "Select_07(1b)"
 	      SrcPort		      1
 	      Points		      [564, 0; 0, 1355]
 	      Branch {
-		ZOrder			25
+		ZOrder			24
 		DstBlock		"Logical\nOperator2"
 		DstPort			4
 	      }
 	      Branch {
-		ZOrder			26
+		ZOrder			25
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  27
+		  ZOrder		  26
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  4
 		}
 		Branch {
-		  ZOrder		  28
+		  ZOrder		  27
 		  Points		  [0, 265]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  4
@@ -2077,7 +2052,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      29
+	      ZOrder		      28
 	      SrcBlock		      "Select_08(1b)"
 	      SrcPort		      1
 	      Points		      [544, 0; 0, 1005]
@@ -2085,59 +2060,59 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      30
+	      ZOrder		      29
 	      SrcBlock		      "Select_09(1b)"
 	      SrcPort		      1
 	      Points		      [523, 0; 0, 980]
 	      Branch {
-		ZOrder			31
+		ZOrder			30
 		DstBlock		"Logical\nOperator3"
 		DstPort			2
 	      }
 	      Branch {
-		ZOrder			32
+		ZOrder			31
 		Points			[0, 840]
 		DstBlock		"Logical\nOperator"
 		DstPort			5
 	      }
 	    }
 	    Line {
-	      ZOrder		      33
+	      ZOrder		      32
 	      SrcBlock		      "Select_10(1b)"
 	      SrcPort		      1
 	      Points		      [503, 0; 0, 955]
 	      Branch {
-		ZOrder			34
+		ZOrder			33
 		DstBlock		"Logical\nOperator3"
 		DstPort			3
 	      }
 	      Branch {
-		ZOrder			35
+		ZOrder			34
 		Points			[0, 560]
 		DstBlock		"Logical\nOperator1"
 		DstPort			5
 	      }
 	    }
 	    Line {
-	      ZOrder		      36
+	      ZOrder		      35
 	      SrcBlock		      "Select_11(1b)"
 	      SrcPort		      1
 	      Points		      [483, 0; 0, 930]
 	      Branch {
-		ZOrder			37
+		ZOrder			36
 		DstBlock		"Logical\nOperator3"
 		DstPort			4
 	      }
 	      Branch {
-		ZOrder			38
+		ZOrder			37
 		Points			[0, 560]
 		Branch {
-		  ZOrder		  39
+		  ZOrder		  38
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  6
 		}
 		Branch {
-		  ZOrder		  40
+		  ZOrder		  39
 		  Points		  [0, 265]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  6
@@ -2145,42 +2120,42 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      41
+	      ZOrder		      40
 	      SrcBlock		      "Select_12(1b)"
 	      SrcPort		      1
 	      Points		      [463, 0; 0, 905]
 	      Branch {
-		ZOrder			42
+		ZOrder			41
 		DstBlock		"Logical\nOperator3"
 		DstPort			5
 	      }
 	      Branch {
-		ZOrder			43
+		ZOrder			42
 		Points			[0, 265]
 		DstBlock		"Logical\nOperator2"
 		DstPort			5
 	      }
 	    }
 	    Line {
-	      ZOrder		      44
+	      ZOrder		      43
 	      SrcBlock		      "Select_13(1b)"
 	      SrcPort		      1
 	      Points		      [444, 0; 0, 880]
 	      Branch {
-		ZOrder			45
+		ZOrder			44
 		DstBlock		"Logical\nOperator3"
 		DstPort			6
 	      }
 	      Branch {
-		ZOrder			46
+		ZOrder			45
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  47
+		  ZOrder		  46
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  6
 		}
 		Branch {
-		  ZOrder		  48
+		  ZOrder		  47
 		  Points		  [0, 545]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  7
@@ -2188,25 +2163,25 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      49
+	      ZOrder		      48
 	      SrcBlock		      "Select_14(1b)"
 	      SrcPort		      1
 	      Points		      [421, 0; 0, 855]
 	      Branch {
-		ZOrder			50
+		ZOrder			49
 		DstBlock		"Logical\nOperator3"
 		DstPort			7
 	      }
 	      Branch {
-		ZOrder			51
+		ZOrder			50
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  52
+		  ZOrder		  51
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  7
 		}
 		Branch {
-		  ZOrder		  53
+		  ZOrder		  52
 		  Points		  [0, 265]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  7
@@ -2214,33 +2189,33 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      54
+	      ZOrder		      53
 	      SrcBlock		      "Select_15(1b)"
 	      SrcPort		      1
 	      Points		      [406, 0; 0, 830]
 	      Branch {
-		ZOrder			55
+		ZOrder			54
 		DstBlock		"Logical\nOperator3"
 		DstPort			8
 	      }
 	      Branch {
-		ZOrder			56
+		ZOrder			55
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  57
+		  ZOrder		  56
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  8
 		}
 		Branch {
-		  ZOrder		  58
+		  ZOrder		  57
 		  Points		  [0, 265]
 		  Branch {
-		    ZOrder		    59
+		    ZOrder		    58
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    8
 		  }
 		  Branch {
-		    ZOrder		    60
+		    ZOrder		    59
 		    Points		    [0, 265]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    8
@@ -2249,21 +2224,21 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      61
+	      ZOrder		      60
 	      SrcBlock		      "Select_00(1b)"
 	      SrcPort		      1
 	      DstBlock		      "Terminator"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      62
+	      ZOrder		      61
 	      SrcBlock		      "Logical\nOperator4"
 	      SrcPort		      1
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator3"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      63
+	      ZOrder		      62
 	      SrcBlock		      "Select_16(1b)"
 	      SrcPort		      1
 	      Points		      [388, 0; 0, 415]
@@ -2271,59 +2246,59 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      64
+	      ZOrder		      63
 	      SrcBlock		      "Select_17(1b)"
 	      SrcPort		      1
 	      Points		      [370, 0; 0, 390]
 	      Branch {
-		ZOrder			65
+		ZOrder			64
 		DstBlock		"Logical\nOperator4"
 		DstPort			2
 	      }
 	      Branch {
-		ZOrder			66
+		ZOrder			65
 		Points			[0, 1165]
 		DstBlock		"Logical\nOperator"
 		DstPort			9
 	      }
 	    }
 	    Line {
-	      ZOrder		      67
+	      ZOrder		      66
 	      SrcBlock		      "Select_18(1b)"
 	      SrcPort		      1
 	      Points		      [351, 0; 0, 365]
 	      Branch {
-		ZOrder			68
+		ZOrder			67
 		DstBlock		"Logical\nOperator4"
 		DstPort			3
 	      }
 	      Branch {
-		ZOrder			69
+		ZOrder			68
 		Points			[0, 885]
 		DstBlock		"Logical\nOperator1"
 		DstPort			9
 	      }
 	    }
 	    Line {
-	      ZOrder		      70
+	      ZOrder		      69
 	      SrcBlock		      "Select_19(1b)"
 	      SrcPort		      1
 	      Points		      [333, 0; 0, 340]
 	      Branch {
-		ZOrder			71
+		ZOrder			70
 		DstBlock		"Logical\nOperator4"
 		DstPort			4
 	      }
 	      Branch {
-		ZOrder			72
+		ZOrder			71
 		Points			[0, 885]
 		Branch {
-		  ZOrder		  73
+		  ZOrder		  72
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  10
 		}
 		Branch {
-		  ZOrder		  74
+		  ZOrder		  73
 		  Points		  [0, 265]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  10
@@ -2331,42 +2306,42 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      75
+	      ZOrder		      74
 	      SrcBlock		      "Select_20(1b)"
 	      SrcPort		      1
 	      Points		      [314, 0; 0, 315]
 	      Branch {
-		ZOrder			76
+		ZOrder			75
 		DstBlock		"Logical\nOperator4"
 		DstPort			5
 	      }
 	      Branch {
-		ZOrder			77
+		ZOrder			76
 		Points			[0, 590]
 		DstBlock		"Logical\nOperator2"
 		DstPort			9
 	      }
 	    }
 	    Line {
-	      ZOrder		      78
+	      ZOrder		      77
 	      SrcBlock		      "Select_21(1b)"
 	      SrcPort		      1
 	      Points		      [294, 0; 0, 290]
 	      Branch {
-		ZOrder			79
+		ZOrder			78
 		DstBlock		"Logical\nOperator4"
 		DstPort			6
 	      }
 	      Branch {
-		ZOrder			80
+		ZOrder			79
 		Points			[0, 590]
 		Branch {
-		  ZOrder		  81
+		  ZOrder		  80
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  10
 		}
 		Branch {
-		  ZOrder		  82
+		  ZOrder		  81
 		  Points		  [0, 545]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  11
@@ -2374,25 +2349,25 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      83
+	      ZOrder		      82
 	      SrcBlock		      "Select_22(1b)"
 	      SrcPort		      1
 	      Points		      [275, 0; 0, 265]
 	      Branch {
-		ZOrder			84
+		ZOrder			83
 		DstBlock		"Logical\nOperator4"
 		DstPort			7
 	      }
 	      Branch {
-		ZOrder			85
+		ZOrder			84
 		Points			[0, 590]
 		Branch {
-		  ZOrder		  86
+		  ZOrder		  85
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  11
 		}
 		Branch {
-		  ZOrder		  87
+		  ZOrder		  86
 		  Points		  [0, 265]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  11
@@ -2400,33 +2375,33 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      88
+	      ZOrder		      87
 	      SrcBlock		      "Select_23(1b)"
 	      SrcPort		      1
 	      Points		      [256, 0; 0, 235]
 	      Branch {
-		ZOrder			89
+		ZOrder			88
 		DstBlock		"Logical\nOperator4"
 		DstPort			8
 	      }
 	      Branch {
-		ZOrder			90
+		ZOrder			89
 		Points			[0, 590]
 		Branch {
-		  ZOrder		  91
+		  ZOrder		  90
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  12
 		}
 		Branch {
-		  ZOrder		  92
+		  ZOrder		  91
 		  Points		  [0, 265]
 		  Branch {
-		    ZOrder		    93
+		    ZOrder		    92
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    12
 		  }
 		  Branch {
-		    ZOrder		    94
+		    ZOrder		    93
 		    Points		    [0, 265]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    12
@@ -2435,42 +2410,42 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      95
+	      ZOrder		      94
 	      SrcBlock		      "Select_24(1b)"
 	      SrcPort		      1
 	      Points		      [238, 0; 0, 210]
 	      Branch {
-		ZOrder			96
+		ZOrder			95
 		DstBlock		"Logical\nOperator4"
 		DstPort			9
 	      }
 	      Branch {
-		ZOrder			97
+		ZOrder			96
 		Points			[0, 265]
 		DstBlock		"Logical\nOperator3"
 		DstPort			9
 	      }
 	    }
 	    Line {
-	      ZOrder		      98
+	      ZOrder		      97
 	      SrcBlock		      "Select_25(1b)"
 	      SrcPort		      1
 	      Points		      [219, 0; 0, 185]
 	      Branch {
-		ZOrder			99
+		ZOrder			98
 		DstBlock		"Logical\nOperator4"
 		DstPort			10
 	      }
 	      Branch {
-		ZOrder			100
+		ZOrder			99
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  101
+		  ZOrder		  100
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  10
 		}
 		Branch {
-		  ZOrder		  102
+		  ZOrder		  101
 		  Points		  [0, 840]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  13
@@ -2478,25 +2453,25 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      103
+	      ZOrder		      102
 	      SrcBlock		      "Select_26(1b)"
 	      SrcPort		      1
 	      Points		      [201, 0; 0, 160]
 	      Branch {
-		ZOrder			104
+		ZOrder			103
 		DstBlock		"Logical\nOperator4"
 		DstPort			11
 	      }
 	      Branch {
-		ZOrder			105
+		ZOrder			104
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  106
+		  ZOrder		  105
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  11
 		}
 		Branch {
-		  ZOrder		  107
+		  ZOrder		  106
 		  Points		  [0, 560]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  13
@@ -2504,33 +2479,33 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      108
+	      ZOrder		      107
 	      SrcBlock		      "Select_27(1b)"
 	      SrcPort		      1
 	      Points		      [184, 0; 0, 135]
 	      Branch {
-		ZOrder			109
+		ZOrder			108
 		DstBlock		"Logical\nOperator4"
 		DstPort			12
 	      }
 	      Branch {
-		ZOrder			110
+		ZOrder			109
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  111
+		  ZOrder		  110
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  12
 		}
 		Branch {
-		  ZOrder		  112
+		  ZOrder		  111
 		  Points		  [0, 560]
 		  Branch {
-		    ZOrder		    113
+		    ZOrder		    112
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    14
 		  }
 		  Branch {
-		    ZOrder		    114
+		    ZOrder		    113
 		    Points		    [0, 265]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    14
@@ -2539,25 +2514,25 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      115
+	      ZOrder		      114
 	      SrcBlock		      "Select_28(1b)"
 	      SrcPort		      1
 	      Points		      [167, 0; 0, 110]
 	      Branch {
-		ZOrder			116
+		ZOrder			115
 		DstBlock		"Logical\nOperator4"
 		DstPort			13
 	      }
 	      Branch {
-		ZOrder			117
+		ZOrder			116
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  118
+		  ZOrder		  117
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  13
 		}
 		Branch {
-		  ZOrder		  119
+		  ZOrder		  118
 		  Points		  [0, 265]
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  13
@@ -2565,33 +2540,33 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      120
+	      ZOrder		      119
 	      SrcBlock		      "Select_29(1b)"
 	      SrcPort		      1
 	      Points		      [150, 0; 0, 85]
 	      Branch {
-		ZOrder			121
+		ZOrder			120
 		DstBlock		"Logical\nOperator4"
 		DstPort			14
 	      }
 	      Branch {
-		ZOrder			122
+		ZOrder			121
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  123
+		  ZOrder		  122
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  14
 		}
 		Branch {
-		  ZOrder		  124
+		  ZOrder		  123
 		  Points		  [0, 265]
 		  Branch {
-		    ZOrder		    125
+		    ZOrder		    124
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    14
 		  }
 		  Branch {
-		    ZOrder		    126
+		    ZOrder		    125
 		    Points		    [0, 545]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    15
@@ -2600,33 +2575,33 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      127
+	      ZOrder		      126
 	      SrcBlock		      "Select_30(1b)"
 	      SrcPort		      1
 	      Points		      [133, 0; 0, 60]
 	      Branch {
-		ZOrder			128
+		ZOrder			127
 		DstBlock		"Logical\nOperator4"
 		DstPort			15
 	      }
 	      Branch {
-		ZOrder			129
+		ZOrder			128
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  130
+		  ZOrder		  129
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  15
 		}
 		Branch {
-		  ZOrder		  131
+		  ZOrder		  130
 		  Points		  [0, 265]
 		  Branch {
-		    ZOrder		    132
+		    ZOrder		    131
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    15
 		  }
 		  Branch {
-		    ZOrder		    133
+		    ZOrder		    132
 		    Points		    [0, 265]
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    15
@@ -2635,41 +2610,41 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      134
+	      ZOrder		      133
 	      SrcBlock		      "Select_31(1b)"
 	      SrcPort		      1
 	      Points		      [115, 0; 0, 35]
 	      Branch {
-		ZOrder			135
+		ZOrder			134
 		DstBlock		"Logical\nOperator4"
 		DstPort			16
 	      }
 	      Branch {
-		ZOrder			136
+		ZOrder			135
 		Points			[0, 265]
 		Branch {
-		  ZOrder		  137
+		  ZOrder		  136
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  16
 		}
 		Branch {
-		  ZOrder		  138
+		  ZOrder		  137
 		  Points		  [0, 265]
 		  Branch {
-		    ZOrder		    139
+		    ZOrder		    138
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    16
 		  }
 		  Branch {
-		    ZOrder		    140
+		    ZOrder		    139
 		    Points		    [0, 265]
 		    Branch {
-		    ZOrder		    141
+		    ZOrder		    140
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    16
 		    }
 		    Branch {
-		    ZOrder		    142
+		    ZOrder		    141
 		    Points		    [0, 265]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    16
@@ -2852,12 +2827,13 @@ Library {
 	  SID			  "315"
 	  Ports			  [64, 1]
 	  Position		  [335, 244, 510, 1211]
-	  ZOrder		  380
+	  ZOrder		  2172
+	  LibraryVersion	  "*1.44"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Encoder_64_to_6"
-	    Location		    [416, 0, 1926, 1080]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2869,7 +2845,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "30"
+	    ZoomFactor		    "80"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_63(1b)"
@@ -3446,21 +3422,16 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit to Integer\nConverter1"
-	      SID		      "348"
-	      Ports		      [1, 1]
-	      Position		      [865, -97, 945, -53]
-	      ZOrder		      1975
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      SID		      "392"
+	      Ports		      [8, 1]
+	      Position		      [810, -135, 820, -20]
+	      ZOrder		      2009
 	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
-	      SourceType	      "Bit to Integer Converter"
-	      nbits		      "8"
-	      bitOrder		      "MSB first"
-	      signedOutputValues      "Unsigned"
-	      outDtype		      "uint8"
-	      outDtypeSigned	      "Inherit via internal rule"
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -3547,17 +3518,6 @@ Library {
 	      OutDataTypeStr	      "boolean"
 	    }
 	    Block {
-	      BlockType		      Mux
-	      Name		      "Mux1"
-	      SID		      "354"
-	      Ports		      [8, 1]
-	      Position		      [810, -142, 820, -13]
-	      ZOrder		      1974
-	      ShowName		      off
-	      Inputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
 	      BlockType		      Constant
 	      Name		      "Set1"
 	      SID		      "355"
@@ -3578,13 +3538,13 @@ Library {
 	      BlockType		      Outport
 	      Name		      "Address_Out(1B)"
 	      SID		      "357"
-	      Position		      [1000, -82, 1030, -68]
+	      Position		      [865, -82, 895, -68]
 	      ZOrder		      -2
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Bit to Integer\nConverter1"
+	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
 	      DstBlock		      "Address_Out(1B)"
 	      DstPort		      1
@@ -3596,57 +3556,50 @@ Library {
 	      Points		      [35, 0]
 	      Branch {
 		ZOrder			3
-		DstBlock		"Mux1"
-		DstPort			1
+		Points			[0, 15]
+		DstBlock		"Bus\nCreator"
+		DstPort			2
 	      }
 	      Branch {
 		ZOrder			4
-		Points			[0, 15]
-		DstBlock		"Mux1"
-		DstPort			2
+		DstBlock		"Bus\nCreator"
+		DstPort			1
 	      }
 	    }
 	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "Mux1"
-	      SrcPort		      1
-	      DstBlock		      "Bit to Integer\nConverter1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      8
+	      ZOrder		      5
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
 	      Points		      [108, 0; 0, -1740]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      9
+	      ZOrder		      6
 	      SrcBlock		      "Logical\nOperator1"
 	      SrcPort		      1
 	      Points		      [99, 0; 0, -1405]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      10
+	      ZOrder		      7
 	      SrcBlock		      "Logical\nOperator2"
 	      SrcPort		      1
 	      Points		      [84, 0; 0, -1070]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      11
+	      ZOrder		      8
 	      SrcBlock		      "Logical\nOperator3"
 	      SrcPort		      1
 	      Points		      [70, 0; 0, -700]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      12
+	      ZOrder		      9
 	      SrcBlock		      "Select_01(1b)\n"
 	      SrcPort		      1
 	      Points		      [1362, 0; 0, 4435]
@@ -3654,7 +3607,7 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      13
+	      ZOrder		      10
 	      SrcBlock		      "Select_02(1b)"
 	      SrcPort		      1
 	      Points		      [1345, 0; 0, 4045]
@@ -3662,24 +3615,24 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      14
+	      ZOrder		      11
 	      SrcBlock		      "Select_03(1b)"
 	      SrcPort		      1
 	      Points		      [1329, 0; 0, 4015]
 	      Branch {
-		ZOrder			157
+		ZOrder			12
 		Points			[0, 350]
 		DstBlock		"Logical\nOperator"
 		DstPort			2
 	      }
 	      Branch {
-		ZOrder			15
+		ZOrder			13
 		DstBlock		"Logical\nOperator1"
 		DstPort			2
 	      }
 	    }
 	    Line {
-	      ZOrder		      17
+	      ZOrder		      14
 	      SrcBlock		      "Select_04(1b)"
 	      SrcPort		      1
 	      Points		      [1311, 0; 0, 3615]
@@ -3687,55 +3640,55 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      18
+	      ZOrder		      15
 	      SrcBlock		      "Select_05(1b)"
 	      SrcPort		      1
 	      Points		      [1293, 0; 0, 3585]
 	      Branch {
-		ZOrder			156
+		ZOrder			16
 		Points			[0, 710]
 		DstBlock		"Logical\nOperator"
 		DstPort			3
 	      }
 	      Branch {
-		ZOrder			19
+		ZOrder			17
 		DstBlock		"Logical\nOperator2"
 		DstPort			2
 	      }
 	    }
 	    Line {
-	      ZOrder		      21
+	      ZOrder		      18
 	      SrcBlock		      "Select_06(1b)"
 	      SrcPort		      1
 	      Points		      [1274, 0; 0, 3555]
 	      Branch {
-		ZOrder			298
+		ZOrder			19
 		Points			[0, 350]
 		DstBlock		"Logical\nOperator1"
 		DstPort			3
 	      }
 	      Branch {
-		ZOrder			22
+		ZOrder			20
 		DstBlock		"Logical\nOperator2"
 		DstPort			3
 	      }
 	    }
 	    Line {
-	      ZOrder		      24
+	      ZOrder		      21
 	      SrcBlock		      "Select_07(1b)"
 	      SrcPort		      1
 	      Points		      [1254, 0; 0, 3520]
 	      Branch {
-		ZOrder			155
+		ZOrder			22
 		Points			[0, 350]
 		Branch {
-		  ZOrder		  154
+		  ZOrder		  23
 		  Points		  [0, 350]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  4
 		}
 		Branch {
-		  ZOrder		  27
+		  ZOrder		  24
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  4
 		}
@@ -3747,7 +3700,7 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      29
+	      ZOrder		      26
 	      SrcBlock		      "Select_08(1b)"
 	      SrcPort		      1
 	      Points		      [1234, 0; 0, 3065]
@@ -3755,55 +3708,55 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      30
+	      ZOrder		      27
 	      SrcBlock		      "Select_09(1b)"
 	      SrcPort		      1
 	      Points		      [1213, 0; 0, 3035]
 	      Branch {
-		ZOrder			153
+		ZOrder			28
 		Points			[0, 1115]
 		DstBlock		"Logical\nOperator"
 		DstPort			5
 	      }
 	      Branch {
-		ZOrder			31
+		ZOrder			29
 		DstBlock		"Logical\nOperator3"
 		DstPort			2
 	      }
 	    }
 	    Line {
-	      ZOrder		      33
+	      ZOrder		      30
 	      SrcBlock		      "Select_10(1b)"
 	      SrcPort		      1
 	      Points		      [1193, 0; 0, 3005]
 	      Branch {
-		ZOrder			152
+		ZOrder			31
 		Points			[0, 755]
 		DstBlock		"Logical\nOperator1"
 		DstPort			5
 	      }
 	      Branch {
-		ZOrder			34
+		ZOrder			32
 		DstBlock		"Logical\nOperator3"
 		DstPort			3
 	      }
 	    }
 	    Line {
-	      ZOrder		      36
+	      ZOrder		      33
 	      SrcBlock		      "Select_11(1b)"
 	      SrcPort		      1
 	      Points		      [1173, 0; 0, 2975]
 	      Branch {
-		ZOrder			148
+		ZOrder			34
 		Points			[0, 755]
 		Branch {
-		  ZOrder		  183
+		  ZOrder		  35
 		  Points		  [0, 350]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  6
 		}
 		Branch {
-		  ZOrder		  39
+		  ZOrder		  36
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  6
 		}
@@ -3815,38 +3768,38 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      41
+	      ZOrder		      38
 	      SrcBlock		      "Select_12(1b)"
 	      SrcPort		      1
 	      Points		      [1153, 0; 0, 2945]
 	      Branch {
-		ZOrder			170
+		ZOrder			39
 		Points			[0, 385]
 		DstBlock		"Logical\nOperator2"
 		DstPort			5
 	      }
 	      Branch {
-		ZOrder			42
+		ZOrder			40
 		DstBlock		"Logical\nOperator3"
 		DstPort			5
 	      }
 	    }
 	    Line {
-	      ZOrder		      44
+	      ZOrder		      41
 	      SrcBlock		      "Select_13(1b)"
 	      SrcPort		      1
 	      Points		      [1134, 0; 0, 2915]
 	      Branch {
-		ZOrder			171
+		ZOrder			42
 		Points			[0, 385]
 		Branch {
-		  ZOrder		  190
+		  ZOrder		  43
 		  Points		  [0, 710]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  7
 		}
 		Branch {
-		  ZOrder		  47
+		  ZOrder		  44
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  6
 		}
@@ -3858,83 +3811,83 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      49
+	      ZOrder		      46
 	      SrcBlock		      "Select_14(1b)"
 	      SrcPort		      1
 	      Points		      [1116, 0; 0, 2885]
 	      Branch {
-		ZOrder			300
+		ZOrder			47
 		DstBlock		"Logical\nOperator3"
 		DstPort			7
 	      }
 	      Branch {
-		ZOrder			299
+		ZOrder			48
 		Points			[0, 385]
 		Branch {
-		  ZOrder		  301
+		  ZOrder		  49
 		  Points		  [0, 350]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  7
 		}
 		Branch {
-		  ZOrder		  52
+		  ZOrder		  50
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  7
 		}
 	      }
 	    }
 	    Line {
-	      ZOrder		      54
+	      ZOrder		      51
 	      SrcBlock		      "Select_15(1b)"
 	      SrcPort		      1
 	      Points		      [1096, 0; 0, 2855]
 	      Branch {
-		ZOrder			173
+		ZOrder			52
 		Points			[0, 385]
 		Branch {
-		  ZOrder		  192
+		  ZOrder		  53
 		  Points		  [0, 350]
 		  Branch {
-		    ZOrder		    185
+		    ZOrder		    54
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    8
 		  }
 		  Branch {
-		    ZOrder		    59
+		    ZOrder		    55
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    8
 		  }
 		}
 		Branch {
-		  ZOrder		  57
+		  ZOrder		  56
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  8
 		}
 	      }
 	      Branch {
-		ZOrder			55
+		ZOrder			57
 		DstBlock		"Logical\nOperator3"
 		DstPort			8
 	      }
 	    }
 	    Line {
-	      ZOrder		      61
+	      ZOrder		      58
 	      SrcBlock		      "Select_00(1b)"
 	      SrcPort		      1
 	      DstBlock		      "Terminator"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      62
+	      ZOrder		      59
 	      SrcBlock		      "Logical\nOperator4"
 	      SrcPort		      1
 	      Points		      [54, 0; 0, -340]
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      63
+	      ZOrder		      60
 	      SrcBlock		      "Select_16(1b)"
 	      SrcPort		      1
 	      Points		      [1078, 0; 0, 2365]
@@ -3942,55 +3895,55 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      64
+	      ZOrder		      61
 	      SrcBlock		      "Select_17(1b)"
 	      SrcPort		      1
 	      Points		      [1060, 0; 0, 2335]
 	      Branch {
-		ZOrder			151
+		ZOrder			62
 		Points			[0, 1530]
 		DstBlock		"Logical\nOperator"
 		DstPort			9
 	      }
 	      Branch {
-		ZOrder			65
+		ZOrder			63
 		DstBlock		"Logical\nOperator4"
 		DstPort			2
 	      }
 	    }
 	    Line {
-	      ZOrder		      67
+	      ZOrder		      64
 	      SrcBlock		      "Select_18(1b)"
 	      SrcPort		      1
 	      Points		      [1041, 0; 0, 2305]
 	      Branch {
-		ZOrder			149
+		ZOrder			65
 		Points			[0, 1170]
 		DstBlock		"Logical\nOperator1"
 		DstPort			9
 	      }
 	      Branch {
-		ZOrder			68
+		ZOrder			66
 		DstBlock		"Logical\nOperator4"
 		DstPort			3
 	      }
 	    }
 	    Line {
-	      ZOrder		      70
+	      ZOrder		      67
 	      SrcBlock		      "Select_19(1b)"
 	      SrcPort		      1
 	      Points		      [1023, 0; 0, 2275]
 	      Branch {
-		ZOrder			150
+		ZOrder			68
 		Points			[0, 1170]
 		Branch {
-		  ZOrder		  186
+		  ZOrder		  69
 		  Points		  [0, 350]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  10
 		}
 		Branch {
-		  ZOrder		  73
+		  ZOrder		  70
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  10
 		}
@@ -4002,38 +3955,38 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      75
+	      ZOrder		      72
 	      SrcBlock		      "Select_20(1b)"
 	      SrcPort		      1
 	      Points		      [1004, 0; 0, 2245]
 	      Branch {
-		ZOrder			158
+		ZOrder			73
 		Points			[0, 800]
 		DstBlock		"Logical\nOperator2"
 		DstPort			9
 	      }
 	      Branch {
-		ZOrder			76
+		ZOrder			74
 		DstBlock		"Logical\nOperator4"
 		DstPort			5
 	      }
 	    }
 	    Line {
-	      ZOrder		      78
+	      ZOrder		      75
 	      SrcBlock		      "Select_21(1b)"
 	      SrcPort		      1
 	      Points		      [984, 0; 0, 2215]
 	      Branch {
-		ZOrder			159
+		ZOrder			76
 		Points			[0, 800]
 		Branch {
-		  ZOrder		  194
+		  ZOrder		  77
 		  Points		  [0, 710]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  11
 		}
 		Branch {
-		  ZOrder		  81
+		  ZOrder		  78
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  10
 		}
@@ -4045,21 +3998,21 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      83
+	      ZOrder		      80
 	      SrcBlock		      "Select_22(1b)"
 	      SrcPort		      1
 	      Points		      [965, 0; 0, 2185]
 	      Branch {
-		ZOrder			160
+		ZOrder			81
 		Points			[0, 800]
 		Branch {
-		  ZOrder		  195
+		  ZOrder		  82
 		  Points		  [0, 350]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  11
 		}
 		Branch {
-		  ZOrder		  86
+		  ZOrder		  83
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  11
 		}
@@ -4071,73 +4024,73 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      88
+	      ZOrder		      85
 	      SrcBlock		      "Select_23(1b)"
 	      SrcPort		      1
 	      Points		      [946, 0; 0, 2150]
 	      Branch {
-		ZOrder			161
+		ZOrder			86
 		Points			[0, 800]
 		Branch {
-		  ZOrder		  193
+		  ZOrder		  87
 		  Points		  [0, 350]
 		  Branch {
-		    ZOrder		    187
+		    ZOrder		    88
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    12
 		  }
 		  Branch {
-		    ZOrder		    93
+		    ZOrder		    89
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    12
 		  }
 		}
 		Branch {
-		  ZOrder		  91
+		  ZOrder		  90
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  12
 		}
 	      }
 	      Branch {
-		ZOrder			89
+		ZOrder			91
 		DstBlock		"Logical\nOperator4"
 		DstPort			8
 	      }
 	    }
 	    Line {
-	      ZOrder		      95
+	      ZOrder		      92
 	      SrcBlock		      "Select_24(1b)"
 	      SrcPort		      1
 	      Points		      [926, 0; 0, 2120]
 	      Branch {
-		ZOrder			162
+		ZOrder			93
 		Points			[0, 375]
 		DstBlock		"Logical\nOperator3"
 		DstPort			9
 	      }
 	      Branch {
-		ZOrder			96
+		ZOrder			94
 		DstBlock		"Logical\nOperator4"
 		DstPort			9
 	      }
 	    }
 	    Line {
-	      ZOrder		      98
+	      ZOrder		      95
 	      SrcBlock		      "Select_25(1b)"
 	      SrcPort		      1
 	      Points		      [909, 0; 0, 2090]
 	      Branch {
-		ZOrder			163
+		ZOrder			96
 		Points			[0, 375]
 		Branch {
-		  ZOrder		  175
+		  ZOrder		  97
 		  Points		  [0, 1115]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  13
 		}
 		Branch {
-		  ZOrder		  101
+		  ZOrder		  98
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  10
 		}
@@ -4149,21 +4102,21 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      103
+	      ZOrder		      100
 	      SrcBlock		      "Select_26(1b)"
 	      SrcPort		      1
 	      Points		      [891, 0; 0, 2060]
 	      Branch {
-		ZOrder			164
+		ZOrder			101
 		Points			[0, 375]
 		Branch {
-		  ZOrder		  176
+		  ZOrder		  102
 		  Points		  [0, 755]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  13
 		}
 		Branch {
-		  ZOrder		  106
+		  ZOrder		  103
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  11
 		}
@@ -4175,56 +4128,56 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      108
+	      ZOrder		      105
 	      SrcBlock		      "Select_27(1b)"
 	      SrcPort		      1
 	      Points		      [874, 0; 0, 2030]
 	      Branch {
-		ZOrder			166
+		ZOrder			106
 		Points			[0, 375]
 		Branch {
-		  ZOrder		  178
+		  ZOrder		  107
 		  Points		  [0, 755]
 		  Branch {
-		    ZOrder		    188
+		    ZOrder		    108
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    14
 		  }
 		  Branch {
-		    ZOrder		    113
+		    ZOrder		    109
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    14
 		  }
 		}
 		Branch {
-		  ZOrder		  111
+		  ZOrder		  110
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  12
 		}
 	      }
 	      Branch {
-		ZOrder			109
+		ZOrder			111
 		DstBlock		"Logical\nOperator4"
 		DstPort			12
 	      }
 	    }
 	    Line {
-	      ZOrder		      115
+	      ZOrder		      112
 	      SrcBlock		      "Select_28(1b)"
 	      SrcPort		      1
 	      Points		      [855, 0; 0, 2000]
 	      Branch {
-		ZOrder			165
+		ZOrder			113
 		Points			[0, 375]
 		Branch {
-		  ZOrder		  177
+		  ZOrder		  114
 		  Points		  [0, 385]
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  13
 		}
 		Branch {
-		  ZOrder		  118
+		  ZOrder		  115
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  13
 		}
@@ -4236,128 +4189,128 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      120
+	      ZOrder		      117
 	      SrcBlock		      "Select_29(1b)"
 	      SrcPort		      1
 	      Points		      [840, 0; 0, 1970]
 	      Branch {
-		ZOrder			167
+		ZOrder			118
 		Points			[0, 375]
 		Branch {
-		  ZOrder		  179
+		  ZOrder		  119
 		  Points		  [0, 385]
 		  Branch {
-		    ZOrder		    196
+		    ZOrder		    120
 		    Points		    [0, 710]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    15
 		  }
 		  Branch {
-		    ZOrder		    125
+		    ZOrder		    121
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    14
 		  }
 		}
 		Branch {
-		  ZOrder		  123
+		  ZOrder		  122
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  14
 		}
 	      }
 	      Branch {
-		ZOrder			121
+		ZOrder			123
 		DstBlock		"Logical\nOperator4"
 		DstPort			14
 	      }
 	    }
 	    Line {
-	      ZOrder		      127
+	      ZOrder		      124
 	      SrcBlock		      "Select_30(1b)"
 	      SrcPort		      1
 	      Points		      [823, 0; 0, 1940]
 	      Branch {
-		ZOrder			168
+		ZOrder			125
 		Points			[0, 375]
 		Branch {
-		  ZOrder		  180
+		  ZOrder		  126
 		  Points		  [0, 385]
 		  Branch {
-		    ZOrder		    197
+		    ZOrder		    127
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    15
 		  }
 		  Branch {
-		    ZOrder		    132
+		    ZOrder		    128
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    15
 		  }
 		}
 		Branch {
-		  ZOrder		  130
+		  ZOrder		  129
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  15
 		}
 	      }
 	      Branch {
-		ZOrder			128
+		ZOrder			130
 		DstBlock		"Logical\nOperator4"
 		DstPort			15
 	      }
 	    }
 	    Line {
-	      ZOrder		      134
+	      ZOrder		      131
 	      SrcBlock		      "Select_31(1b)"
 	      SrcPort		      1
 	      Points		      [805, 0; 0, 1910]
 	      Branch {
-		ZOrder			169
+		ZOrder			132
 		Points			[0, 375]
 		Branch {
-		  ZOrder		  181
+		  ZOrder		  133
 		  Points		  [0, 385]
 		  Branch {
-		    ZOrder		    198
+		    ZOrder		    134
 		    Points		    [0, 350]
 		    Branch {
-		    ZOrder		    189
+		    ZOrder		    135
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    16
 		    }
 		    Branch {
-		    ZOrder		    141
+		    ZOrder		    136
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    16
 		    }
 		  }
 		  Branch {
-		    ZOrder		    139
+		    ZOrder		    137
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    16
 		  }
 		}
 		Branch {
-		  ZOrder		  137
+		  ZOrder		  138
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  16
 		}
 	      }
 	      Branch {
-		ZOrder			135
+		ZOrder			139
 		DstBlock		"Logical\nOperator4"
 		DstPort			16
 	      }
 	    }
 	    Line {
-	      ZOrder		      143
+	      ZOrder		      140
 	      SrcBlock		      "Logical\nOperator5"
 	      SrcPort		      1
-	      DstBlock		      "Mux1"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      145
+	      ZOrder		      141
 	      SrcBlock		      "Select_32(1b)"
 	      SrcPort		      1
 	      Points		      [785, 0; 0, 1360]
@@ -4365,296 +4318,296 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      147
+	      ZOrder		      142
 	      SrcBlock		      "Select_33(1b)"
 	      SrcPort		      1
 	      Points		      [765, 0; 0, 1330]
 	      Branch {
-		ZOrder			200
+		ZOrder			143
 		Points			[0, 1965]
 		DstBlock		"Logical\nOperator"
 		DstPort			17
 	      }
 	      Branch {
-		ZOrder			199
+		ZOrder			144
 		DstBlock		"Logical\nOperator5"
 		DstPort			2
 	      }
 	    }
 	    Line {
-	      ZOrder		      202
+	      ZOrder		      145
 	      SrcBlock		      "Select_34(1b)"
 	      SrcPort		      1
 	      Points		      [744, 0; 0, 1300]
 	      Branch {
-		ZOrder			204
+		ZOrder			146
 		Points			[0, 1605]
 		DstBlock		"Logical\nOperator1"
 		DstPort			17
 	      }
 	      Branch {
-		ZOrder			203
+		ZOrder			147
 		DstBlock		"Logical\nOperator5"
 		DstPort			3
 	      }
 	    }
 	    Line {
-	      ZOrder		      206
+	      ZOrder		      148
 	      SrcBlock		      "Select_35(1b)"
 	      SrcPort		      1
 	      Points		      [723, 0; 0, 1270]
 	      Branch {
-		ZOrder			208
+		ZOrder			149
 		Points			[0, 1605]
 		Branch {
-		  ZOrder		  212
+		  ZOrder		  150
 		  Points		  [0, 350]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  18
 		}
 		Branch {
-		  ZOrder		  211
+		  ZOrder		  151
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  18
 		}
 	      }
 	      Branch {
-		ZOrder			207
+		ZOrder			152
 		DstBlock		"Logical\nOperator5"
 		DstPort			4
 	      }
 	    }
 	    Line {
-	      ZOrder		      213
+	      ZOrder		      153
 	      SrcBlock		      "Select_36(1b)"
 	      SrcPort		      1
 	      Points		      [702, 0; 0, 1240]
 	      Branch {
-		ZOrder			215
+		ZOrder			154
 		Points			[0, 1235]
 		DstBlock		"Logical\nOperator2"
 		DstPort			17
 	      }
 	      Branch {
-		ZOrder			214
+		ZOrder			155
 		DstBlock		"Logical\nOperator5"
 		DstPort			5
 	      }
 	    }
 	    Line {
-	      ZOrder		      217
+	      ZOrder		      156
 	      SrcBlock		      "Select_37(1b)"
 	      SrcPort		      1
 	      Points		      [679, 0; 0, 1210]
 	      Branch {
-		ZOrder			220
+		ZOrder			157
 		Points			[0, 1235]
 		Branch {
-		  ZOrder		  223
+		  ZOrder		  158
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  18
 		}
 		Branch {
-		  ZOrder		  222
+		  ZOrder		  159
 		  Points		  [0, 710]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  19
 		}
 	      }
 	      Branch {
-		ZOrder			219
+		ZOrder			160
 		DstBlock		"Logical\nOperator5"
 		DstPort			6
 	      }
 	    }
 	    Line {
-	      ZOrder		      231
+	      ZOrder		      161
 	      SrcBlock		      "Select_39(1b)"
 	      SrcPort		      1
 	      Points		      [634, 0; 0, 1145]
 	      Branch {
-		ZOrder			258
+		ZOrder			162
 		Points			[0, 1235]
 		Branch {
-		  ZOrder		  306
+		  ZOrder		  163
 		  Points		  [0, 350]
 		  Branch {
-		    ZOrder		    303
+		    ZOrder		    164
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    20
 		  }
 		  Branch {
-		    ZOrder		    302
+		    ZOrder		    165
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    20
 		  }
 		}
 		Branch {
-		  ZOrder		  305
+		  ZOrder		  166
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  20
 		}
 	      }
 	      Branch {
-		ZOrder			257
+		ZOrder			167
 		DstBlock		"Logical\nOperator5"
 		DstPort			8
 	      }
 	    }
 	    Line {
-	      ZOrder		      224
+	      ZOrder		      168
 	      SrcBlock		      "Select_38(1b)"
 	      SrcPort		      1
 	      Points		      [657, 0; 0, 1180]
 	      Branch {
-		ZOrder			226
+		ZOrder			169
 		Points			[0, 1235]
 		Branch {
-		  ZOrder		  229
+		  ZOrder		  170
 		  Points		  [0, 350]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  19
 		}
 		Branch {
-		  ZOrder		  228
+		  ZOrder		  171
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  19
 		}
 	      }
 	      Branch {
-		ZOrder			225
+		ZOrder			172
 		DstBlock		"Logical\nOperator5"
 		DstPort			7
 	      }
 	    }
 	    Line {
-	      ZOrder		      232
+	      ZOrder		      173
 	      SrcBlock		      "Select_40(1b)"
 	      SrcPort		      1
 	      Points		      [613, 0; 0, 1115]
 	      Branch {
-		ZOrder			308
+		ZOrder			174
 		Points			[0, 810]
 		DstBlock		"Logical\nOperator3"
 		DstPort			17
 	      }
 	      Branch {
-		ZOrder			307
+		ZOrder			175
 		DstBlock		"Logical\nOperator5"
 		DstPort			9
 	      }
 	    }
 	    Line {
-	      ZOrder		      234
+	      ZOrder		      176
 	      SrcBlock		      "Select_41(1b)"
 	      SrcPort		      1
 	      Points		      [593, 0; 0, 1085]
 	      Branch {
-		ZOrder			261
+		ZOrder			177
 		Points			[0, 810]
 		Branch {
-		  ZOrder		  313
+		  ZOrder		  178
 		  Points		  [0, 1115]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  21
 		}
 		Branch {
-		  ZOrder		  312
+		  ZOrder		  179
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  18
 		}
 	      }
 	      Branch {
-		ZOrder			260
+		ZOrder			180
 		DstBlock		"Logical\nOperator5"
 		DstPort			10
 	      }
 	    }
 	    Line {
-	      ZOrder		      236
+	      ZOrder		      181
 	      SrcBlock		      "Select_43(1b)"
 	      SrcPort		      1
 	      Points		      [550, 0; 0, 1025]
 	      Branch {
-		ZOrder			264
+		ZOrder			182
 		Points			[0, 810]
 		Branch {
-		  ZOrder		  318
+		  ZOrder		  183
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  20
 		}
 		Branch {
-		  ZOrder		  317
+		  ZOrder		  184
 		  Points		  [0, 755]
 		  Branch {
-		    ZOrder		    338
+		    ZOrder		    185
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    22
 		  }
 		  Branch {
-		    ZOrder		    337
+		    ZOrder		    186
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    22
 		  }
 		}
 	      }
 	      Branch {
-		ZOrder			263
+		ZOrder			187
 		DstBlock		"Logical\nOperator5"
 		DstPort			12
 	      }
 	    }
 	    Line {
-	      ZOrder		      237
+	      ZOrder		      188
 	      SrcBlock		      "Select_44(1b)"
 	      SrcPort		      1
 	      Points		      [529, 0; 0, 995]
 	      Branch {
-		ZOrder			321
+		ZOrder			189
 		Points			[0, 810]
 		Branch {
-		  ZOrder		  340
+		  ZOrder		  190
 		  Points		  [0, 385]
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  21
 		}
 		Branch {
-		  ZOrder		  339
+		  ZOrder		  191
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  21
 		}
 	      }
 	      Branch {
-		ZOrder			320
+		ZOrder			192
 		DstBlock		"Logical\nOperator5"
 		DstPort			13
 	      }
 	    }
 	    Line {
-	      ZOrder		      238
+	      ZOrder		      193
 	      SrcBlock		      "Select_45(1b)"
 	      SrcPort		      1
 	      Points		      [508, 0; 0, 965]
 	      Branch {
-		ZOrder			269
+		ZOrder			194
 		Points			[0, 810]
 		Branch {
-		  ZOrder		  324
+		  ZOrder		  195
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  22
 		}
 		Branch {
-		  ZOrder		  323
+		  ZOrder		  196
 		  Points		  [0, 385]
 		  Branch {
-		    ZOrder		    343
+		    ZOrder		    197
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    22
 		  }
 		  Branch {
-		    ZOrder		    342
+		    ZOrder		    198
 		    Points		    [0, 710]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    23
@@ -4662,243 +4615,243 @@ Library {
 		}
 	      }
 	      Branch {
-		ZOrder			268
+		ZOrder			199
 		DstBlock		"Logical\nOperator5"
 		DstPort			14
 	      }
 	    }
 	    Line {
-	      ZOrder		      239
+	      ZOrder		      200
 	      SrcBlock		      "Select_46(1b)"
 	      SrcPort		      1
 	      Points		      [488, 0; 0, 935]
 	      Branch {
-		ZOrder			327
+		ZOrder			201
 		Points			[0, 810]
 		Branch {
-		  ZOrder		  345
+		  ZOrder		  202
 		  Points		  [0, 385]
 		  Branch {
-		    ZOrder		    351
+		    ZOrder		    203
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    23
 		  }
 		  Branch {
-		    ZOrder		    350
+		    ZOrder		    204
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    23
 		  }
 		}
 		Branch {
-		  ZOrder		  344
+		  ZOrder		  205
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  23
 		}
 	      }
 	      Branch {
-		ZOrder			326
+		ZOrder			206
 		DstBlock		"Logical\nOperator5"
 		DstPort			15
 	      }
 	    }
 	    Line {
-	      ZOrder		      240
+	      ZOrder		      207
 	      SrcBlock		      "Select_47(1b)"
 	      SrcPort		      1
 	      Points		      [467, 0; 0, 905]
 	      Branch {
-		ZOrder			272
+		ZOrder			208
 		Points			[0, 810]
 		Branch {
-		  ZOrder		  330
+		  ZOrder		  209
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  24
 		}
 		Branch {
-		  ZOrder		  329
+		  ZOrder		  210
 		  Points		  [0, 385]
 		  Branch {
-		    ZOrder		    349
+		    ZOrder		    211
 		    Points		    [0, 350]
 		    Branch {
-		    ZOrder		    354
+		    ZOrder		    212
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    24
 		    }
 		    Branch {
-		    ZOrder		    353
+		    ZOrder		    213
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    24
 		    }
 		  }
 		  Branch {
-		    ZOrder		    348
+		    ZOrder		    214
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    24
 		  }
 		}
 	      }
 	      Branch {
-		ZOrder			271
+		ZOrder			215
 		DstBlock		"Logical\nOperator5"
 		DstPort			16
 	      }
 	    }
 	    Line {
-	      ZOrder		      241
+	      ZOrder		      216
 	      SrcBlock		      "Select_48(1b)"
 	      SrcPort		      1
 	      Points		      [446, 0; 0, 870]
 	      Branch {
-		ZOrder			356
+		ZOrder			217
 		Points			[0, 355]
 		DstBlock		"Logical\nOperator4"
 		DstPort			17
 	      }
 	      Branch {
-		ZOrder			355
+		ZOrder			218
 		DstBlock		"Logical\nOperator5"
 		DstPort			17
 	      }
 	    }
 	    Line {
-	      ZOrder		      242
+	      ZOrder		      219
 	      SrcBlock		      "Select_49(1b)"
 	      SrcPort		      1
 	      Points		      [425, 0; 0, 840]
 	      Branch {
-		ZOrder			275
+		ZOrder			220
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  359
+		  ZOrder		  221
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  18
 		}
 		Branch {
-		  ZOrder		  358
+		  ZOrder		  222
 		  Points		  [0, 1530]
 		  DstBlock		  "Logical\nOperator"
 		  DstPort		  25
 		}
 	      }
 	      Branch {
-		ZOrder			274
+		ZOrder			223
 		DstBlock		"Logical\nOperator5"
 		DstPort			18
 	      }
 	    }
 	    Line {
-	      ZOrder		      243
+	      ZOrder		      224
 	      SrcBlock		      "Select_50(1b)"
 	      SrcPort		      1
 	      Points		      [406, 0; 0, 810]
 	      Branch {
-		ZOrder			362
+		ZOrder			225
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  449
+		  ZOrder		  226
 		  Points		  [0, 1170]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  25
 		}
 		Branch {
-		  ZOrder		  448
+		  ZOrder		  227
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  19
 		}
 	      }
 	      Branch {
-		ZOrder			361
+		ZOrder			228
 		DstBlock		"Logical\nOperator5"
 		DstPort			19
 	      }
 	    }
 	    Line {
-	      ZOrder		      244
+	      ZOrder		      229
 	      SrcBlock		      "Select_51(1b)"
 	      SrcPort		      1
 	      Points		      [386, 0; 0, 780]
 	      Branch {
-		ZOrder			278
+		ZOrder			230
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  366
+		  ZOrder		  231
 		  Points		  [0, 1170]
 		  Branch {
-		    ZOrder		    452
+		    ZOrder		    232
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    26
 		  }
 		  Branch {
-		    ZOrder		    451
+		    ZOrder		    233
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    26
 		  }
 		}
 		Branch {
-		  ZOrder		  365
+		  ZOrder		  234
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  20
 		}
 	      }
 	      Branch {
-		ZOrder			277
+		ZOrder			235
 		DstBlock		"Logical\nOperator5"
 		DstPort			20
 	      }
 	    }
 	    Line {
-	      ZOrder		      245
+	      ZOrder		      236
 	      SrcBlock		      "Select_52(1b)"
 	      SrcPort		      1
 	      Points		      [368, 0; 0, 750]
 	      Branch {
-		ZOrder			368
+		ZOrder			237
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  427
+		  ZOrder		  238
 		  Points		  [0, 800]
 		  DstBlock		  "Logical\nOperator2"
 		  DstPort		  25
 		}
 		Branch {
-		  ZOrder		  426
+		  ZOrder		  239
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  21
 		}
 	      }
 	      Branch {
-		ZOrder			367
+		ZOrder			240
 		DstBlock		"Logical\nOperator5"
 		DstPort			21
 	      }
 	    }
 	    Line {
-	      ZOrder		      246
+	      ZOrder		      241
 	      SrcBlock		      "Select_53(1b)"
 	      SrcPort		      1
 	      Points		      [348, 0; 0, 720]
 	      Branch {
-		ZOrder			281
+		ZOrder			242
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  372
+		  ZOrder		  243
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  22
 		}
 		Branch {
-		  ZOrder		  371
+		  ZOrder		  244
 		  Points		  [0, 800]
 		  Branch {
-		    ZOrder		    430
+		    ZOrder		    245
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    26
 		  }
 		  Branch {
-		    ZOrder		    429
+		    ZOrder		    246
 		    Points		    [0, 710]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    27
@@ -4906,7 +4859,7 @@ Library {
 		}
 	      }
 	      Branch {
-		ZOrder			280
+		ZOrder			247
 		DstBlock		"Logical\nOperator5"
 		DstPort			22
 	      }
@@ -4917,31 +4870,31 @@ Library {
 	      SrcPort		      1
 	      Points		      [308, 0; 0, 655]
 	      Branch {
-		ZOrder			284
+		ZOrder			249
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  377
+		  ZOrder		  250
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  24
 		}
 		Branch {
-		  ZOrder		  376
+		  ZOrder		  251
 		  Points		  [0, 800]
 		  Branch {
-		    ZOrder		    435
+		    ZOrder		    252
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    28
 		  }
 		  Branch {
-		    ZOrder		    434
+		    ZOrder		    253
 		    Points		    [0, 350]
 		    Branch {
-		    ZOrder		    457
+		    ZOrder		    254
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    28
 		    }
 		    Branch {
-		    ZOrder		    456
+		    ZOrder		    255
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    28
@@ -4950,60 +4903,60 @@ Library {
 		}
 	      }
 	      Branch {
-		ZOrder			283
+		ZOrder			256
 		DstBlock		"Logical\nOperator5"
 		DstPort			24
 	      }
 	    }
 	    Line {
-	      ZOrder		      249
+	      ZOrder		      257
 	      SrcBlock		      "Select_56(1b)"
 	      SrcPort		      1
 	      Points		      [288, 0; 0, 625]
 	      Branch {
-		ZOrder			379
+		ZOrder			258
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  424
+		  ZOrder		  259
 		  Points		  [0, 375]
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  25
 		}
 		Branch {
-		  ZOrder		  423
+		  ZOrder		  260
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  25
 		}
 	      }
 	      Branch {
-		ZOrder			378
+		ZOrder			261
 		DstBlock		"Logical\nOperator5"
 		DstPort			25
 	      }
 	    }
 	    Line {
-	      ZOrder		      250
+	      ZOrder		      262
 	      SrcBlock		      "Select_57(1b)"
 	      SrcPort		      1
 	      Points		      [269, 0; 0, 595]
 	      Branch {
-		ZOrder			287
+		ZOrder			263
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  382
+		  ZOrder		  264
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  26
 		}
 		Branch {
-		  ZOrder		  381
+		  ZOrder		  265
 		  Points		  [0, 375]
 		  Branch {
-		    ZOrder		    421
+		    ZOrder		    266
 		    DstBlock		    "Logical\nOperator3"
 		    DstPort		    26
 		  }
 		  Branch {
-		    ZOrder		    420
+		    ZOrder		    267
 		    Points		    [0, 1115]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    29
@@ -5011,122 +4964,122 @@ Library {
 		}
 	      }
 	      Branch {
-		ZOrder			286
+		ZOrder			268
 		DstBlock		"Logical\nOperator5"
 		DstPort			26
 	      }
 	    }
 	    Line {
-	      ZOrder		      251
+	      ZOrder		      269
 	      SrcBlock		      "Select_58(1b)"
 	      SrcPort		      1
 	      Points		      [250, 0; 0, 565]
 	      Branch {
-		ZOrder			384
+		ZOrder			270
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  418
+		  ZOrder		  271
 		  Points		  [0, 375]
 		  Branch {
-		    ZOrder		    459
+		    ZOrder		    272
 		    Points		    [0, 755]
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    29
 		  }
 		  Branch {
-		    ZOrder		    458
+		    ZOrder		    273
 		    DstBlock		    "Logical\nOperator3"
 		    DstPort		    27
 		  }
 		}
 		Branch {
-		  ZOrder		  417
+		  ZOrder		  274
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  27
 		}
 	      }
 	      Branch {
-		ZOrder			383
+		ZOrder			275
 		DstBlock		"Logical\nOperator5"
 		DstPort			27
 	      }
 	    }
 	    Line {
-	      ZOrder		      252
+	      ZOrder		      276
 	      SrcBlock		      "Select_59(1b)"
 	      SrcPort		      1
 	      Points		      [232, 0; 0, 535]
 	      Branch {
-		ZOrder			290
+		ZOrder			277
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  388
+		  ZOrder		  278
 		  Points		  [0, 375]
 		  Branch {
-		    ZOrder		    415
+		    ZOrder		    279
 		    DstBlock		    "Logical\nOperator3"
 		    DstPort		    28
 		  }
 		  Branch {
-		    ZOrder		    414
+		    ZOrder		    280
 		    Points		    [0, 755]
 		    Branch {
-		    ZOrder		    463
+		    ZOrder		    281
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    30
 		    }
 		    Branch {
-		    ZOrder		    462
+		    ZOrder		    282
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    30
 		    }
 		  }
 		}
 		Branch {
-		  ZOrder		  387
+		  ZOrder		  283
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  28
 		}
 	      }
 	      Branch {
-		ZOrder			289
+		ZOrder			284
 		DstBlock		"Logical\nOperator5"
 		DstPort			28
 	      }
 	    }
 	    Line {
-	      ZOrder		      254
+	      ZOrder		      285
 	      SrcBlock		      "Select_61(1b)"
 	      SrcPort		      1
 	      Points		      [198, 0; 0, 475]
 	      Branch {
-		ZOrder			293
+		ZOrder			286
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  393
+		  ZOrder		  287
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  30
 		}
 		Branch {
-		  ZOrder		  392
+		  ZOrder		  288
 		  Points		  [0, 375]
 		  Branch {
-		    ZOrder		    408
+		    ZOrder		    289
 		    DstBlock		    "Logical\nOperator3"
 		    DstPort		    30
 		  }
 		  Branch {
-		    ZOrder		    407
+		    ZOrder		    290
 		    Points		    [0, 385]
 		    Branch {
-		    ZOrder		    441
+		    ZOrder		    291
 		    Points		    [0, 710]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    31
 		    }
 		    Branch {
-		    ZOrder		    440
+		    ZOrder		    292
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    30
 		    }
@@ -5134,110 +5087,110 @@ Library {
 		}
 	      }
 	      Branch {
-		ZOrder			292
+		ZOrder			293
 		DstBlock		"Logical\nOperator5"
 		DstPort			30
 	      }
 	    }
 	    Line {
-	      ZOrder		      255
+	      ZOrder		      294
 	      SrcBlock		      "Select_62(1b)"
 	      SrcPort		      1
 	      Points		      [180, 0; 0, 445]
 	      Branch {
-		ZOrder			396
+		ZOrder			295
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  405
+		  ZOrder		  296
 		  Points		  [0, 375]
 		  Branch {
-		    ZOrder		    443
+		    ZOrder		    297
 		    Points		    [0, 385]
 		    Branch {
-		    ZOrder		    465
+		    ZOrder		    298
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    31
 		    }
 		    Branch {
-		    ZOrder		    464
+		    ZOrder		    299
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    31
 		    }
 		  }
 		  Branch {
-		    ZOrder		    442
+		    ZOrder		    300
 		    DstBlock		    "Logical\nOperator3"
 		    DstPort		    31
 		  }
 		}
 		Branch {
-		  ZOrder		  404
+		  ZOrder		  301
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  31
 		}
 	      }
 	      Branch {
-		ZOrder			395
+		ZOrder			302
 		DstBlock		"Logical\nOperator5"
 		DstPort			31
 	      }
 	    }
 	    Line {
-	      ZOrder		      256
+	      ZOrder		      303
 	      SrcBlock		      "Select_63(1b)"
 	      SrcPort		      1
 	      Points		      [163, 0; 0, 415]
 	      Branch {
-		ZOrder			296
+		ZOrder			304
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  400
+		  ZOrder		  305
 		  Points		  [0, 375]
 		  Branch {
-		    ZOrder		    402
+		    ZOrder		    306
 		    DstBlock		    "Logical\nOperator3"
 		    DstPort		    32
 		  }
 		  Branch {
-		    ZOrder		    401
+		    ZOrder		    307
 		    Points		    [0, 385]
 		    Branch {
-		    ZOrder		    447
+		    ZOrder		    308
 		    Points		    [0, 350]
 		    Branch {
-		    ZOrder		    468
+		    ZOrder		    309
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    32
 		    }
 		    Branch {
-		    ZOrder		    467
+		    ZOrder		    310
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator"
 		    DstPort		    32
 		    }
 		    }
 		    Branch {
-		    ZOrder		    446
+		    ZOrder		    311
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    32
 		    }
 		  }
 		}
 		Branch {
-		  ZOrder		  399
+		  ZOrder		  312
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  32
 		}
 	      }
 	      Branch {
-		ZOrder			295
+		ZOrder			313
 		DstBlock		"Logical\nOperator5"
 		DstPort			32
 	      }
 	    }
 	    Line {
-	      ZOrder		      235
+	      ZOrder		      314
 	      SrcBlock		      "Select_42(1b)"
 	      SrcPort		      1
 	      Points		      [572, 0; 0, 1055]
@@ -5245,89 +5198,89 @@ Library {
 		ZOrder			315
 		Points			[0, 810]
 		Branch {
-		  ZOrder		  334
+		  ZOrder		  316
 		  Points		  [0, 755]
 		  DstBlock		  "Logical\nOperator1"
 		  DstPort		  21
 		}
 		Branch {
-		  ZOrder		  333
+		  ZOrder		  317
 		  DstBlock		  "Logical\nOperator3"
 		  DstPort		  19
 		}
 	      }
 	      Branch {
-		ZOrder			314
+		ZOrder			318
 		DstBlock		"Logical\nOperator5"
 		DstPort			11
 	      }
 	    }
 	    Line {
-	      ZOrder		      247
+	      ZOrder		      319
 	      SrcBlock		      "Select_54(1b)"
 	      SrcPort		      1
 	      Points		      [328, 0; 0, 690]
 	      Branch {
-		ZOrder			374
+		ZOrder			320
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  432
+		  ZOrder		  321
 		  Points		  [0, 800]
 		  Branch {
-		    ZOrder		    454
+		    ZOrder		    322
 		    Points		    [0, 350]
 		    DstBlock		    "Logical\nOperator1"
 		    DstPort		    27
 		  }
 		  Branch {
-		    ZOrder		    453
+		    ZOrder		    323
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    27
 		  }
 		}
 		Branch {
-		  ZOrder		  431
+		  ZOrder		  324
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  23
 		}
 	      }
 	      Branch {
-		ZOrder			373
+		ZOrder			325
 		DstBlock		"Logical\nOperator5"
 		DstPort			23
 	      }
 	    }
 	    Line {
-	      ZOrder		      253
+	      ZOrder		      326
 	      SrcBlock		      "Select_60(1b)"
 	      SrcPort		      1
 	      Points		      [215, 0; 0, 505]
 	      Branch {
-		ZOrder			390
+		ZOrder			327
 		Points			[0, 355]
 		Branch {
-		  ZOrder		  412
+		  ZOrder		  328
 		  Points		  [0, 375]
 		  Branch {
-		    ZOrder		    437
+		    ZOrder		    329
 		    Points		    [0, 385]
 		    DstBlock		    "Logical\nOperator2"
 		    DstPort		    29
 		  }
 		  Branch {
-		    ZOrder		    436
+		    ZOrder		    330
 		    DstBlock		    "Logical\nOperator3"
 		    DstPort		    29
 		  }
 		}
 		Branch {
-		  ZOrder		  411
+		  ZOrder		  331
 		  DstBlock		  "Logical\nOperator4"
 		  DstPort		  29
 		}
 	      }
 	      Branch {
-		ZOrder			389
+		ZOrder			332
 		DstBlock		"Logical\nOperator5"
 		DstPort			29
 	      }
