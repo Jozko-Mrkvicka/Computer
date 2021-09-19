@@ -44,8 +44,8 @@ Library {
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"3128"
 	Extents			[893.0, 920.0]
-	ZoomFactor		[1.3494704992435704]
-	Offset			[21.262892376681634, 262.66143497757844]
+	ZoomFactor		[1.35]
+	Offset			[0.0, 0.0]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jul 10 04:10:59 2021"
-  RTWModifiedTimeStamp	  547791059
-  ModelVersionFormat	  "1.%<AutoIncrement:157>"
+  LastModifiedDate	  "Sat Sep 18 18:30:09 2021"
+  RTWModifiedTimeStamp	  553890567
+  ModelVersionFormat	  "1.%<AutoIncrement:161>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -750,6 +750,17 @@ Library {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      BusCreator
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputSignals	      "signal1,signal2,signal3"
+      OutputAsBus	      off
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -886,7 +897,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3325"
+    SIDHighWatermark	    "3356"
     Block {
       BlockType		      SubSystem
       Name		      "Arithmetic_Operations_Lib"
@@ -4672,12 +4683,12 @@ Library {
 	  Ports			  [2, 2]
 	  Position		  [265, 438, 420, 482]
 	  ZOrder		  1858
-	  LibraryVersion	  "*1.152"
+	  LibraryVersion	  "*1.160"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Word_Adder"
-	    Location		    [155, 0, 1827, 1087]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4689,49 +4700,32 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "44"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Data_In_A(2B)"
-	      SID		      "3260"
-	      Position		      [-205, -532, -175, -518]
+	      SID		      "3331"
+	      Position		      [0, -532, 30, -518]
 	      ZOrder		      467
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Data_In_B(2B)"
-	      SID		      "3261"
-	      Position		      [-205, 1228, -175, 1242]
+	      SID		      "3332"
+	      Position		      [0, 1228, 30, 1242]
 	      ZOrder		      471
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Bit to Integer\nConverter"
-	      SID		      "3270"
-	      Ports		      [1, 1]
-	      Position		      [1440, -542, 1520, -498]
-	      ZOrder		      474
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
-	      SourceType	      "Bit to Integer Converter"
-	      nbits		      "16"
-	      bitOrder		      "MSB first"
-	      signedOutputValues      "Unsigned"
-	      outDtype		      "uint16"
-	      outDtypeSigned	      "Inherit via internal rule"
-	    }
-	    Block {
-	      BlockType		      Reference
 	      Name		      "Bit_Adder_(0)"
-	      SID		      "3262"
+	      SID		      "3333"
 	      Ports		      [3, 2]
 	      Position		      [860, 1011, 995, 1059]
 	      ZOrder		      371
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4739,11 +4733,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(1)"
-	      SID		      "3263"
+	      SID		      "3334"
 	      Ports		      [3, 2]
 	      Position		      [860, 901, 995, 949]
 	      ZOrder		      370
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4751,11 +4745,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(10)"
-	      SID		      "3289"
+	      SID		      "3335"
 	      Ports		      [3, 2]
 	      Position		      [860, -99, 995, -51]
 	      ZOrder		      488
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4763,11 +4757,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(11)"
-	      SID		      "3290"
+	      SID		      "3336"
 	      Ports		      [3, 2]
 	      Position		      [860, -209, 995, -161]
 	      ZOrder		      487
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4775,11 +4769,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(12)"
-	      SID		      "3291"
+	      SID		      "3337"
 	      Ports		      [3, 2]
 	      Position		      [860, -319, 995, -271]
 	      ZOrder		      486
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4787,11 +4781,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(13)"
-	      SID		      "3292"
+	      SID		      "3338"
 	      Ports		      [3, 2]
 	      Position		      [860, -429, 995, -381]
 	      ZOrder		      485
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4799,11 +4793,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(14)"
-	      SID		      "3293"
+	      SID		      "3339"
 	      Ports		      [3, 2]
 	      Position		      [860, -539, 995, -491]
 	      ZOrder		      484
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4811,11 +4805,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(15)"
-	      SID		      "3294"
+	      SID		      "3340"
 	      Ports		      [3, 2]
 	      Position		      [860, -649, 995, -601]
 	      ZOrder		      483
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4823,11 +4817,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(2)"
-	      SID		      "3264"
+	      SID		      "3341"
 	      Ports		      [3, 2]
 	      Position		      [860, 791, 995, 839]
 	      ZOrder		      369
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4835,11 +4829,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(3)"
-	      SID		      "3265"
+	      SID		      "3342"
 	      Ports		      [3, 2]
 	      Position		      [860, 681, 995, 729]
 	      ZOrder		      368
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4847,11 +4841,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(4)"
-	      SID		      "3266"
+	      SID		      "3343"
 	      Ports		      [3, 2]
 	      Position		      [860, 571, 995, 619]
 	      ZOrder		      366
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4859,11 +4853,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(5)"
-	      SID		      "3267"
+	      SID		      "3344"
 	      Ports		      [3, 2]
 	      Position		      [860, 461, 995, 509]
 	      ZOrder		      365
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4871,11 +4865,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(6)"
-	      SID		      "3268"
+	      SID		      "3345"
 	      Ports		      [3, 2]
 	      Position		      [860, 351, 995, 399]
 	      ZOrder		      364
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4883,11 +4877,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(7)"
-	      SID		      "3269"
+	      SID		      "3346"
 	      Ports		      [3, 2]
 	      Position		      [860, 241, 995, 289]
 	      ZOrder		      363
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4895,11 +4889,11 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(8)"
-	      SID		      "3287"
+	      SID		      "3347"
 	      Ports		      [3, 2]
 	      Position		      [860, 121, 995, 169]
 	      ZOrder		      490
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -4907,19 +4901,245 @@ Library {
 	    Block {
 	      BlockType		      Reference
 	      Name		      "Bit_Adder_(9)"
-	      SID		      "3288"
+	      SID		      "3348"
 	      Ports		      [3, 2]
 	      Position		      [860, 11, 995, 59]
 	      ZOrder		      489
-	      LibraryVersion	      "1.152"
+	      LibraryVersion	      "1.160"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Adder"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }
 	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      SID		      "3349"
+	      Ports		      [16, 1]
+	      Position		      [1340, -640, 1350, -405]
+	      ZOrder		      491
+	      ShowName		      off
+	      Inputs		      "16"
+	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "3350"
+	      Ports		      [1, 16]
+	      Position		      [80, -648, 90, -407]
+	      ZOrder		      2060
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,"
+	      "signal12,signal13,signal14,signal15,signal16"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"<signal9>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		10
+		Name			"<signal10>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"<signal11>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"<signal12>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		13
+		Name			"<signal13>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		14
+		Name			"<signal14>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		15
+		Name			"<signal15>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		16
+		Name			"<signal16>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector1"
+	      SID		      "3356"
+	      Ports		      [1, 16]
+	      Position		      [80, 1112, 90, 1353]
+	      ZOrder		      2061
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,"
+	      "signal12,signal13,signal14,signal15,signal16"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"<signal9>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		10
+		Name			"<signal10>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"<signal11>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"<signal12>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		13
+		Name			"<signal13>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		14
+		Name			"<signal14>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		15
+		Name			"<signal15>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		16
+		Name			"<signal16>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
 	      BlockType		      Constant
 	      Name		      "Constant"
-	      SID		      "3271"
+	      SID		      "3351"
 	      Position		      [780, 1080, 810, 1110]
 	      ZOrder		      367
 	      BlockRotation	      270
@@ -4927,83 +5147,18 @@ Library {
 	      Value		      "0"
 	    }
 	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "3272"
-	      Ports		      [1, 16]
-	      Position		      [75, -648, 95, -407]
-	      ZOrder		      469
-	      ShowName		      off
-	      Outputs		      "16"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux1"
-	      SID		      "3273"
-	      Ports		      [1, 16]
-	      Position		      [75, 1110, 95, 1355]
-	      ZOrder		      470
-	      ShowName		      off
-	      Outputs		      "16"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter"
-	      SID		      "3274"
-	      Ports		      [1, 1]
-	      Position		      [-85, -547, -5, -503]
-	      ZOrder		      472
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "16"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter1"
-	      SID		      "3275"
-	      Ports		      [1, 1]
-	      Position		      [-85, 1213, -5, 1257]
-	      ZOrder		      473
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "16"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
-	    }
-	    Block {
-	      BlockType		      Mux
-	      Name		      "Mux"
-	      SID		      "3276"
-	      Ports		      [16, 1]
-	      Position		      [1340, -644, 1355, -401]
-	      ZOrder		      468
-	      ShowName		      off
-	      Inputs		      "16"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
 	      BlockType		      Outport
 	      Name		      "Data_Out(2B)"
-	      SID		      "3277"
-	      Position		      [1605, -527, 1635, -513]
+	      SID		      "3354"
+	      Position		      [1405, -527, 1435, -513]
 	      ZOrder		      466
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
 	      Name		      "Carry_Out(1b)"
-	      SID		      "3278"
-	      Position		      [1605, -667, 1635, -653]
+	      SID		      "3355"
+	      Position		      [1405, -667, 1435, -653]
 	      ZOrder		      374
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -5081,130 +5236,162 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
+	      Name		      "<signal16>"
 	      ZOrder		      10
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      16
-	      Points		      [628, 0; 0, -310]
+	      Points		      [633, 0; 0, -310]
 	      DstBlock		      "Bit_Adder_(0)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal15>"
 	      ZOrder		      11
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      15
-	      Points		      [609, 0; 0, -405]
+	      Points		      [614, 0; 0, -405]
 	      DstBlock		      "Bit_Adder_(1)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal14>"
 	      ZOrder		      12
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      14
-	      Points		      [591, 0; 0, -500]
+	      Points		      [596, 0; 0, -500]
 	      DstBlock		      "Bit_Adder_(2)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal13>"
 	      ZOrder		      13
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      13
-	      Points		      [571, 0; 0, -595]
+	      Points		      [576, 0; 0, -595]
 	      DstBlock		      "Bit_Adder_(3)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal12>"
 	      ZOrder		      14
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      12
-	      Points		      [552, 0; 0, -690]
+	      Points		      [557, 0; 0, -690]
 	      DstBlock		      "Bit_Adder_(4)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal11>"
 	      ZOrder		      15
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      11
-	      Points		      [534, 0; 0, -785]
+	      Points		      [539, 0; 0, -785]
 	      DstBlock		      "Bit_Adder_(5)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal10>"
 	      ZOrder		      16
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      10
-	      Points		      [515, 0; 0, -880]
+	      Points		      [520, 0; 0, -880]
 	      DstBlock		      "Bit_Adder_(6)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal9>"
 	      ZOrder		      17
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      9
-	      Points		      [498, 0; 0, -975]
+	      Points		      [503, 0; 0, -975]
 	      DstBlock		      "Bit_Adder_(7)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal16>"
 	      ZOrder		      18
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      16
-	      Points		      [50, 0; 0, 1435]
+	      Points		      [55, 0; 0, 1435]
 	      DstBlock		      "Bit_Adder_(0)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal15>"
 	      ZOrder		      19
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      15
-	      Points		      [67, 0; 0, 1340]
+	      Points		      [72, 0; 0, 1340]
 	      DstBlock		      "Bit_Adder_(1)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal14>"
 	      ZOrder		      20
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      14
-	      Points		      [85, 0; 0, 1245]
+	      Points		      [90, 0; 0, 1245]
 	      DstBlock		      "Bit_Adder_(2)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal13>"
 	      ZOrder		      21
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      13
-	      Points		      [102, 0; 0, 1150]
+	      Points		      [107, 0; 0, 1150]
 	      DstBlock		      "Bit_Adder_(3)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal12>"
 	      ZOrder		      22
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      12
-	      Points		      [119, 0; 0, 1055]
+	      Points		      [124, 0; 0, 1055]
 	      DstBlock		      "Bit_Adder_(4)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal11>"
 	      ZOrder		      23
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      11
-	      Points		      [135, 0; 0, 960]
+	      Points		      [140, 0; 0, 960]
 	      DstBlock		      "Bit_Adder_(5)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal10>"
 	      ZOrder		      24
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      10
-	      Points		      [152, 0; 0, 865]
+	      Points		      [157, 0; 0, 865]
 	      DstBlock		      "Bit_Adder_(6)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal9>"
 	      ZOrder		      25
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      9
-	      Points		      [169, 0; 0, 770]
+	      Points		      [174, 0; 0, 770]
 	      DstBlock		      "Bit_Adder_(7)"
 	      DstPort		      1
 	    }
@@ -5213,7 +5400,7 @@ Library {
 	      SrcBlock		      "Bit_Adder_(3)"
 	      SrcPort		      1
 	      Points		      [276, 0; 0, -1150]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      13
 	    }
 	    Line {
@@ -5221,7 +5408,7 @@ Library {
 	      SrcBlock		      "Bit_Adder_(4)"
 	      SrcPort		      1
 	      Points		      [262, 0; 0, -1055]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      12
 	    }
 	    Line {
@@ -5229,7 +5416,7 @@ Library {
 	      SrcBlock		      "Bit_Adder_(5)"
 	      SrcPort		      1
 	      Points		      [248, 0; 0, -960]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      11
 	    }
 	    Line {
@@ -5237,7 +5424,7 @@ Library {
 	      SrcBlock		      "Bit_Adder_(2)"
 	      SrcPort		      1
 	      Points		      [288, 0; 0, -1245]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      14
 	    }
 	    Line {
@@ -5245,7 +5432,7 @@ Library {
 	      SrcBlock		      "Bit_Adder_(1)"
 	      SrcPort		      1
 	      Points		      [300, 0; 0, -1340]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      15
 	    }
 	    Line {
@@ -5253,7 +5440,7 @@ Library {
 	      SrcBlock		      "Bit_Adder_(0)"
 	      SrcPort		      1
 	      Points		      [313, 0; 0, -1435]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      16
 	    }
 	    Line {
@@ -5261,7 +5448,7 @@ Library {
 	      SrcBlock		      "Bit_Adder_(6)"
 	      SrcPort		      1
 	      Points		      [234, 0; 0, -865]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      10
 	    }
 	    Line {
@@ -5269,53 +5456,32 @@ Library {
 	      SrcBlock		      "Bit_Adder_(7)"
 	      SrcPort		      1
 	      Points		      [219, 0; 0, -770]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      9
 	    }
 	    Line {
 	      ZOrder		      34
-	      SrcBlock		      "Bit to Integer\nConverter"
+	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
 	      DstBlock		      "Data_Out(2B)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      35
-	      SrcBlock		      "Mux"
+	      SrcBlock		      "Data_In_B(2B)"
 	      SrcPort		      1
-	      DstBlock		      "Bit to Integer\nConverter"
+	      DstBlock		      "Bus\nSelector1"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      36
-	      SrcBlock		      "Integer to Bit\nConverter1"
+	      SrcBlock		      "Data_In_A(2B)"
 	      SrcPort		      1
-	      DstBlock		      "Demux1"
+	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      37
-	      SrcBlock		      "Data_In_B(2B)"
-	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      38
-	      SrcBlock		      "Integer to Bit\nConverter"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      39
-	      SrcBlock		      "Data_In_A(2B)"
-	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      40
 	      SrcBlock		      "Bit_Adder_(14)"
 	      SrcPort		      2
 	      Points		      [22, 0; 0, -67; -192, 0; 0, -43]
@@ -5323,7 +5489,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      41
+	      ZOrder		      38
 	      SrcBlock		      "Bit_Adder_(13)"
 	      SrcPort		      2
 	      Points		      [22, 0; 0, -65; -193, 0; 0, -45]
@@ -5331,7 +5497,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      42
+	      ZOrder		      39
 	      SrcBlock		      "Bit_Adder_(12)"
 	      SrcPort		      2
 	      Points		      [22, 0; 0, -66; -192, 0; 0, -44]
@@ -5339,7 +5505,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      43
+	      ZOrder		      40
 	      SrcBlock		      "Bit_Adder_(11)"
 	      SrcPort		      2
 	      Points		      [24, 0; 0, -67; -194, 0; 0, -43]
@@ -5347,7 +5513,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      44
+	      ZOrder		      41
 	      SrcBlock		      "Bit_Adder_(10)"
 	      SrcPort		      2
 	      Points		      [25, 0; 0, -66; -195, 0; 0, -44]
@@ -5355,7 +5521,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      45
+	      ZOrder		      42
 	      SrcBlock		      "Bit_Adder_(9)"
 	      SrcPort		      2
 	      Points		      [24, 0; 0, -65; -194, 0; 0, -45]
@@ -5363,7 +5529,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      46
+	      ZOrder		      43
 	      SrcBlock		      "Bit_Adder_(8)"
 	      SrcPort		      2
 	      Points		      [23, 0; 0, -63; -191, 0; 0, -47]
@@ -5371,7 +5537,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      47
+	      ZOrder		      44
 	      SrcBlock		      "Bit_Adder_(15)"
 	      SrcPort		      2
 	      Points		      [21, 0; 0, -50]
@@ -5379,192 +5545,224 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      48
+	      ZOrder		      45
 	      SrcBlock		      "Bit_Adder_(15)"
 	      SrcPort		      1
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      49
+	      ZOrder		      46
 	      SrcBlock		      "Bit_Adder_(14)"
 	      SrcPort		      1
 	      Points		      [128, 0; 0, -95]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      50
+	      ZOrder		      47
 	      SrcBlock		      "Bit_Adder_(13)"
 	      SrcPort		      1
 	      Points		      [140, 0; 0, -190]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      51
+	      ZOrder		      48
 	      SrcBlock		      "Bit_Adder_(12)"
 	      SrcPort		      1
 	      Points		      [152, 0; 0, -285]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      52
+	      ZOrder		      49
 	      SrcBlock		      "Bit_Adder_(11)"
 	      SrcPort		      1
 	      Points		      [164, 0; 0, -380]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      53
+	      ZOrder		      50
 	      SrcBlock		      "Bit_Adder_(10)"
 	      SrcPort		      1
 	      Points		      [178, 0; 0, -475]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      54
+	      ZOrder		      51
 	      SrcBlock		      "Bit_Adder_(9)"
 	      SrcPort		      1
 	      Points		      [191, 0; 0, -570]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      55
+	      ZOrder		      52
 	      SrcBlock		      "Bit_Adder_(8)"
 	      SrcPort		      1
 	      Points		      [205, 0; 0, -665]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      56
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal8>"
+	      ZOrder		      53
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      8
-	      Points		      [481, 0; 0, -1080]
+	      Points		      [486, 0; 0, -1080]
 	      DstBlock		      "Bit_Adder_(8)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      54
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      7
+	      Points		      [468, 0; 0, -1175]
+	      DstBlock		      "Bit_Adder_(9)"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      55
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      6
+	      Points		      [451, 0; 0, -1270]
+	      DstBlock		      "Bit_Adder_(10)"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal5>"
+	      ZOrder		      56
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      5
+	      Points		      [433, 0; 0, -1365]
+	      DstBlock		      "Bit_Adder_(11)"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal4>"
 	      ZOrder		      57
-	      SrcBlock		      "Demux1"
-	      SrcPort		      7
-	      Points		      [463, 0; 0, -1175]
-	      DstBlock		      "Bit_Adder_(9)"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      4
+	      Points		      [417, 0; 0, -1460]
+	      DstBlock		      "Bit_Adder_(12)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal3>"
 	      ZOrder		      58
-	      SrcBlock		      "Demux1"
-	      SrcPort		      6
-	      Points		      [446, 0; 0, -1270]
-	      DstBlock		      "Bit_Adder_(10)"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      3
+	      Points		      [400, 0; 0, -1555]
+	      DstBlock		      "Bit_Adder_(13)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal2>"
 	      ZOrder		      59
-	      SrcBlock		      "Demux1"
-	      SrcPort		      5
-	      Points		      [428, 0; 0, -1365]
-	      DstBlock		      "Bit_Adder_(11)"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      2
+	      Points		      [382, 0; 0, -1650]
+	      DstBlock		      "Bit_Adder_(14)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal1>"
 	      ZOrder		      60
-	      SrcBlock		      "Demux1"
-	      SrcPort		      4
-	      Points		      [412, 0; 0, -1460]
-	      DstBlock		      "Bit_Adder_(12)"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      1
+	      Points		      [364, 0; 0, -1745]
+	      DstBlock		      "Bit_Adder_(15)"
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "<signal1>"
 	      ZOrder		      61
-	      SrcBlock		      "Demux1"
-	      SrcPort		      3
-	      Points		      [395, 0; 0, -1555]
-	      DstBlock		      "Bit_Adder_(13)"
-	      DstPort		      2
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      1
+	      DstBlock		      "Bit_Adder_(15)"
+	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal2>"
 	      ZOrder		      62
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
-	      Points		      [377, 0; 0, -1650]
+	      Points		      [288, 0; 0, 95]
 	      DstBlock		      "Bit_Adder_(14)"
-	      DstPort		      2
+	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal3>"
 	      ZOrder		      63
-	      SrcBlock		      "Demux1"
-	      SrcPort		      1
-	      Points		      [359, 0; 0, -1745]
-	      DstBlock		      "Bit_Adder_(15)"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      64
-	      SrcBlock		      "Demux"
-	      SrcPort		      1
-	      DstBlock		      "Bit_Adder_(15)"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      65
-	      SrcBlock		      "Demux"
-	      SrcPort		      2
-	      Points		      [283, 0; 0, 95]
-	      DstBlock		      "Bit_Adder_(14)"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      66
-	      SrcBlock		      "Demux"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
-	      Points		      [269, 0; 0, 190]
+	      Points		      [274, 0; 0, 190]
 	      DstBlock		      "Bit_Adder_(13)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      67
-	      SrcBlock		      "Demux"
+	      Name		      "<signal4>"
+	      ZOrder		      64
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
-	      Points		      [254, 0; 0, 285]
+	      Points		      [259, 0; 0, 285]
 	      DstBlock		      "Bit_Adder_(12)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      68
-	      SrcBlock		      "Demux"
+	      Name		      "<signal5>"
+	      ZOrder		      65
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
-	      Points		      [237, 0; 0, 380]
+	      Points		      [242, 0; 0, 380]
 	      DstBlock		      "Bit_Adder_(11)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      69
-	      SrcBlock		      "Demux"
+	      Name		      "<signal6>"
+	      ZOrder		      66
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
-	      Points		      [220, 0; 0, 475]
+	      Points		      [225, 0; 0, 475]
 	      DstBlock		      "Bit_Adder_(10)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      70
-	      SrcBlock		      "Demux"
+	      Name		      "<signal7>"
+	      ZOrder		      67
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
-	      Points		      [203, 0; 0, 570]
+	      Points		      [208, 0; 0, 570]
 	      DstBlock		      "Bit_Adder_(9)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      71
-	      SrcBlock		      "Demux"
+	      Name		      "<signal8>"
+	      ZOrder		      68
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
-	      Points		      [186, 0; 0, 665]
+	      Points		      [191, 0; 0, 665]
 	      DstBlock		      "Bit_Adder_(8)"
 	      DstPort		      1
 	    }
@@ -5577,12 +5775,12 @@ Library {
 	  Ports			  [2, 3]
 	  Position		  [270, 870, 420, 920]
 	  ZOrder		  2038
-	  LibraryVersion	  "*1.155"
+	  LibraryVersion	  "*1.158"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Word_Comparator"
-	    Location		    [155, 0, 1827, 1087]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5594,12 +5792,12 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "40"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Data_In_A(2B)"
 	      SID		      "3296"
-	      Position		      [-230, -657, -200, -643]
+	      Position		      [-85, -657, -55, -643]
 	      ZOrder		      454
 	      IconDisplay	      "Port number"
 	    }
@@ -5607,7 +5805,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_In_B(2B)"
 	      SID		      "3297"
-	      Position		      [-230, -377, -200, -363]
+	      Position		      [-85, -377, -55, -363]
 	      ZOrder		      456
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -5619,7 +5817,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [685, 453, 835, 527]
 	      ZOrder		      428
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5631,7 +5829,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [905, 413, 1055, 487]
 	      ZOrder		      429
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5643,7 +5841,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2940, 53, 3090, 127]
 	      ZOrder		      472
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5655,7 +5853,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3165, 13, 3315, 87]
 	      ZOrder		      473
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5667,7 +5865,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3395, -27, 3545, 47]
 	      ZOrder		      474
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5679,7 +5877,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3620, -67, 3770, 7]
 	      ZOrder		      475
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5691,7 +5889,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3855, -107, 4005, -33]
 	      ZOrder		      476
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5703,7 +5901,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [4085, -147, 4235, -73]
 	      ZOrder		      477
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5715,7 +5913,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1125, 373, 1275, 447]
 	      ZOrder		      430
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5727,7 +5925,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1350, 333, 1500, 407]
 	      ZOrder		      431
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5739,7 +5937,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1580, 293, 1730, 367]
 	      ZOrder		      432
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5751,7 +5949,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1805, 253, 1955, 327]
 	      ZOrder		      433
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5763,7 +5961,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2040, 213, 2190, 287]
 	      ZOrder		      434
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5775,7 +5973,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2270, 173, 2420, 247]
 	      ZOrder		      435
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5787,7 +5985,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2500, 133, 2650, 207]
 	      ZOrder		      470
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5799,10 +5997,224 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2720, 93, 2870, 167]
 	      ZOrder		      471
-	      LibraryVersion	      "1.155"
+	      LibraryVersion	      "1.158"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "3327"
+	      Ports		      [1, 16]
+	      Position		      [5, -768, 15, -537]
+	      ZOrder		      484
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,"
+	      "signal12,signal13,signal14,signal15,signal16"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"<signal9>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		10
+		Name			"<signal10>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"<signal11>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"<signal12>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		13
+		Name			"<signal13>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		14
+		Name			"<signal14>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		15
+		Name			"<signal15>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		16
+		Name			"<signal16>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector1"
+	      SID		      "3328"
+	      Ports		      [1, 16]
+	      Position		      [5, -488, 15, -257]
+	      ZOrder		      485
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,"
+	      "signal12,signal13,signal14,signal15,signal16"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"<signal9>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		10
+		Name			"<signal10>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"<signal11>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"<signal12>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		13
+		Name			"<signal13>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		14
+		Name			"<signal14>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		15
+		Name			"<signal15>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		16
+		Name			"<signal16>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Constant
@@ -5832,60 +6244,6 @@ Library {
 	      ShowName		      off
 	      Value		      "0"
 	      OutDataTypeStr	      "int16"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux1"
-	      SID		      "3309"
-	      Ports		      [1, 16]
-	      Position		      [5, -771, 20, -534]
-	      ZOrder		      482
-	      ShowName		      off
-	      Outputs		      "16"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux2"
-	      SID		      "3310"
-	      Ports		      [1, 16]
-	      Position		      [5, -489, 20, -256]
-	      ZOrder		      483
-	      ShowName		      off
-	      Outputs		      "16"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter1"
-	      SID		      "3311"
-	      Ports		      [1, 1]
-	      Position		      [-135, -672, -55, -628]
-	      ZOrder		      445
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "16"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter2"
-	      SID		      "3312"
-	      Ports		      [1, 1]
-	      Position		      [-135, -392, -55, -348]
-	      ZOrder		      437
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "16"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -5938,58 +6296,72 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
+	      Name		      "<signal9>"
 	      ZOrder		      4
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      9
-	      Points		      [652, 0; 0, 825]
+	      Points		      [657, 0; 0, 825]
 	      DstBlock		      "Bit_Comparator_(7)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal10>"
 	      ZOrder		      5
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      10
-	      Points		      [636, 0; 0, 850]
+	      Points		      [641, 0; 0, 850]
 	      DstBlock		      "Bit_Comparator_(6)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal11>"
 	      ZOrder		      6
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      11
-	      Points		      [621, 0; 0, 875]
+	      Points		      [626, 0; 0, 875]
 	      DstBlock		      "Bit_Comparator_(5)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal12>"
 	      ZOrder		      7
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      12
-	      Points		      [605, 0; 0, 900]
+	      Points		      [610, 0; 0, 900]
 	      DstBlock		      "Bit_Comparator_(4)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal13>"
 	      ZOrder		      8
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      13
-	      Points		      [588, 0; 0, 925]
+	      Points		      [593, 0; 0, 925]
 	      DstBlock		      "Bit_Comparator_(3)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal14>"
 	      ZOrder		      9
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      14
-	      Points		      [570, 0; 0, 950]
+	      Points		      [575, 0; 0, 950]
 	      DstBlock		      "Bit_Comparator_(2)"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal15>"
 	      ZOrder		      10
-	      SrcBlock		      "Demux1"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      15
-	      Points		      [552, 0; 0, 975]
+	      Points		      [557, 0; 0, 975]
 	      DstBlock		      "Bit_Comparator_(1)"
 	      DstPort		      1
 	    }
@@ -5997,88 +6369,88 @@ Library {
 	      ZOrder		      11
 	      SrcBlock		      "Data_In_A(2B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter1"
+	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "<signal9>"
 	      ZOrder		      12
-	      SrcBlock		      "Integer to Bit\nConverter1"
-	      SrcPort		      1
-	      DstBlock		      "Demux1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      13
-	      SrcBlock		      "Demux2"
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      9
-	      Points		      [348, 0; 0, 560]
+	      Points		      [353, 0; 0, 560]
 	      DstBlock		      "Bit_Comparator_(7)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      14
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal10>"
+	      ZOrder		      13
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      10
-	      Points		      [336, 0; 0, 585]
+	      Points		      [341, 0; 0, 585]
 	      DstBlock		      "Bit_Comparator_(6)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      15
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal11>"
+	      ZOrder		      14
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      11
-	      Points		      [324, 0; 0, 610]
+	      Points		      [329, 0; 0, 610]
 	      DstBlock		      "Bit_Comparator_(5)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      16
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal12>"
+	      ZOrder		      15
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      12
-	      Points		      [312, 0; 0, 635]
+	      Points		      [317, 0; 0, 635]
 	      DstBlock		      "Bit_Comparator_(4)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      17
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal13>"
+	      ZOrder		      16
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      13
-	      Points		      [300, 0; 0, 660]
+	      Points		      [305, 0; 0, 660]
 	      DstBlock		      "Bit_Comparator_(3)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      18
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal14>"
+	      ZOrder		      17
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      14
-	      Points		      [288, 0; 0, 685]
+	      Points		      [293, 0; 0, 685]
 	      DstBlock		      "Bit_Comparator_(2)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      19
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal15>"
+	      ZOrder		      18
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      15
-	      Points		      [276, 0; 0, 710]
+	      Points		      [281, 0; 0, 710]
 	      DstBlock		      "Bit_Comparator_(1)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      20
+	      ZOrder		      19
 	      SrcBlock		      "Data_In_B(2B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter2"
+	      DstBlock		      "Bus\nSelector1"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      21
-	      SrcBlock		      "Integer to Bit\nConverter2"
-	      SrcPort		      1
-	      DstBlock		      "Demux2"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      22
+	      ZOrder		      20
 	      SrcBlock		      "Bit_Comparator_(6)"
 	      SrcPort		      3
 	      Points		      [46, 0; 0, -35]
@@ -6086,7 +6458,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      23
+	      ZOrder		      21
 	      SrcBlock		      "Bit_Comparator_(6)"
 	      SrcPort		      2
 	      Points		      [29, 0; 0, -25]
@@ -6094,7 +6466,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      24
+	      ZOrder		      22
 	      SrcBlock		      "Bit_Comparator_(6)"
 	      SrcPort		      1
 	      Points		      [13, 0; 0, -15]
@@ -6102,7 +6474,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      25
+	      ZOrder		      23
 	      SrcBlock		      "Bit_Comparator_(5)"
 	      SrcPort		      3
 	      Points		      [48, 0; 0, -35]
@@ -6110,7 +6482,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      26
+	      ZOrder		      24
 	      SrcBlock		      "Bit_Comparator_(5)"
 	      SrcPort		      2
 	      Points		      [31, 0; 0, -25]
@@ -6118,7 +6490,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      27
+	      ZOrder		      25
 	      SrcBlock		      "Bit_Comparator_(5)"
 	      SrcPort		      1
 	      Points		      [14, 0; 0, -15]
@@ -6126,7 +6498,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      28
+	      ZOrder		      26
 	      SrcBlock		      "Bit_Comparator_(4)"
 	      SrcPort		      3
 	      Points		      [42, 0; 0, -35]
@@ -6134,7 +6506,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      29
+	      ZOrder		      27
 	      SrcBlock		      "Bit_Comparator_(4)"
 	      SrcPort		      2
 	      Points		      [27, 0; 0, -25]
@@ -6142,7 +6514,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      30
+	      ZOrder		      28
 	      SrcBlock		      "Bit_Comparator_(4)"
 	      SrcPort		      1
 	      Points		      [13, 0; 0, -15]
@@ -6150,7 +6522,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      31
+	      ZOrder		      29
 	      SrcBlock		      "Bit_Comparator_(3)"
 	      SrcPort		      3
 	      Points		      [43, 0; 0, -35]
@@ -6158,7 +6530,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      32
+	      ZOrder		      30
 	      SrcBlock		      "Bit_Comparator_(3)"
 	      SrcPort		      2
 	      Points		      [27, 0; 0, -25]
@@ -6166,7 +6538,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      33
+	      ZOrder		      31
 	      SrcBlock		      "Bit_Comparator_(3)"
 	      SrcPort		      1
 	      Points		      [13, 0; 0, -15]
@@ -6174,7 +6546,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      34
+	      ZOrder		      32
 	      SrcBlock		      "Bit_Comparator_(2)"
 	      SrcPort		      3
 	      Points		      [43, 0; 0, -35]
@@ -6182,7 +6554,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      35
+	      ZOrder		      33
 	      SrcBlock		      "Bit_Comparator_(2)"
 	      SrcPort		      2
 	      Points		      [28, 0; 0, -25]
@@ -6190,7 +6562,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      36
+	      ZOrder		      34
 	      SrcBlock		      "Bit_Comparator_(2)"
 	      SrcPort		      1
 	      Points		      [12, 0; 0, -15]
@@ -6198,7 +6570,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      37
+	      ZOrder		      35
 	      SrcBlock		      "Bit_Comparator_(1)"
 	      SrcPort		      3
 	      Points		      [37, 0; 0, -35]
@@ -6206,7 +6578,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      38
+	      ZOrder		      36
 	      SrcBlock		      "Bit_Comparator_(1)"
 	      SrcPort		      1
 	      Points		      [11, 0; 0, -15]
@@ -6214,7 +6586,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      39
+	      ZOrder		      37
 	      SrcBlock		      "Bit_Comparator_(1)"
 	      SrcPort		      2
 	      Points		      [23, 0; 0, -25]
@@ -6222,15 +6594,17 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      40
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal16>"
+	      ZOrder		      38
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      16
-	      Points		      [535, 0; 0, 1000]
+	      Points		      [540, 0; 0, 1000]
 	      DstBlock		      "Bit_Comparator_(0)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      41
+	      ZOrder		      39
 	      SrcBlock		      "Bit_Comparator_(0)"
 	      SrcPort		      3
 	      Points		      [39, 0; 0, -35]
@@ -6238,15 +6612,17 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      42
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal16>"
+	      ZOrder		      40
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      16
-	      Points		      [264, 0; 0, 735]
+	      Points		      [269, 0; 0, 735]
 	      DstBlock		      "Bit_Comparator_(0)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      43
+	      ZOrder		      41
 	      SrcBlock		      "Constant3"
 	      SrcPort		      1
 	      Points		      [40, 0; 0, -30]
@@ -6254,7 +6630,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      44
+	      ZOrder		      42
 	      SrcBlock		      "Bit_Comparator_(0)"
 	      SrcPort		      1
 	      Points		      [10, 0; 0, -15]
@@ -6262,7 +6638,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      45
+	      ZOrder		      43
 	      SrcBlock		      "Bit_Comparator_(0)"
 	      SrcPort		      2
 	      Points		      [23, 0; 0, -25]
@@ -6270,7 +6646,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      46
+	      ZOrder		      44
 	      SrcBlock		      "Constant5"
 	      SrcPort		      1
 	      Points		      [67, 0; 0, -80]
@@ -6278,7 +6654,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      47
+	      ZOrder		      45
 	      SrcBlock		      "Constant4"
 	      SrcPort		      1
 	      Points		      [54, 0; 0, -55]
@@ -6286,7 +6662,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      48
+	      ZOrder		      46
 	      SrcBlock		      "Bit_Comparator_(15)"
 	      SrcPort		      3
 	      Points		      [47, 0; 0, 25]
@@ -6294,7 +6670,7 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      49
+	      ZOrder		      47
 	      SrcBlock		      "Bit_Comparator_(15)"
 	      SrcPort		      1
 	      Points		      [44, 0; 0, -25]
@@ -6302,126 +6678,154 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      50
+	      ZOrder		      48
 	      SrcBlock		      "Bit_Comparator_(15)"
 	      SrcPort		      2
 	      DstBlock		      "A=B(1b)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      51
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal1>"
+	      ZOrder		      49
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
-	      Points		      [772, 0; 0, 625]
+	      Points		      [777, 0; 0, 625]
 	      DstBlock		      "Bit_Comparator_(15)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      52
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal2>"
+	      ZOrder		      50
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
-	      Points		      [757, 0; 0, 650]
+	      Points		      [762, 0; 0, 650]
 	      DstBlock		      "Bit_Comparator_(14)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      53
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal3>"
+	      ZOrder		      51
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
-	      Points		      [743, 0; 0, 675]
+	      Points		      [748, 0; 0, 675]
 	      DstBlock		      "Bit_Comparator_(13)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      54
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal4>"
+	      ZOrder		      52
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
-	      Points		      [728, 0; 0, 700]
+	      Points		      [733, 0; 0, 700]
 	      DstBlock		      "Bit_Comparator_(12)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      55
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal5>"
+	      ZOrder		      53
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
-	      Points		      [713, 0; 0, 725]
+	      Points		      [718, 0; 0, 725]
 	      DstBlock		      "Bit_Comparator_(11)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      56
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal6>"
+	      ZOrder		      54
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
-	      Points		      [699, 0; 0, 750]
+	      Points		      [704, 0; 0, 750]
 	      DstBlock		      "Bit_Comparator_(10)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      57
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal7>"
+	      ZOrder		      55
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
-	      Points		      [684, 0; 0, 775]
+	      Points		      [689, 0; 0, 775]
 	      DstBlock		      "Bit_Comparator_(9)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      58
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal1>"
+	      ZOrder		      56
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      1
-	      Points		      [449, 0; 0, 360]
+	      Points		      [454, 0; 0, 360]
 	      DstBlock		      "Bit_Comparator_(15)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      59
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal2>"
+	      ZOrder		      57
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      2
-	      Points		      [436, 0; 0, 385]
+	      Points		      [441, 0; 0, 385]
 	      DstBlock		      "Bit_Comparator_(14)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      60
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal3>"
+	      ZOrder		      58
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      3
-	      Points		      [423, 0; 0, 410]
+	      Points		      [428, 0; 0, 410]
 	      DstBlock		      "Bit_Comparator_(13)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      61
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal4>"
+	      ZOrder		      59
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      4
-	      Points		      [410, 0; 0, 435]
+	      Points		      [415, 0; 0, 435]
 	      DstBlock		      "Bit_Comparator_(12)"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      62
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal5>"
+	      ZOrder		      60
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      5
-	      Points		      [397, 0; 0, 460]
+	      Points		      [402, 0; 0, 460]
 	      DstBlock		      "Bit_Comparator_(11)"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      61
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      6
+	      Points		      [390, 0; 0, 485]
+	      DstBlock		      "Bit_Comparator_(10)"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      62
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      7
+	      Points		      [377, 0; 0, 510]
+	      DstBlock		      "Bit_Comparator_(9)"
 	      DstPort		      2
 	    }
 	    Line {
 	      ZOrder		      63
-	      SrcBlock		      "Demux2"
-	      SrcPort		      6
-	      Points		      [385, 0; 0, 485]
-	      DstBlock		      "Bit_Comparator_(10)"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      64
-	      SrcBlock		      "Demux2"
-	      SrcPort		      7
-	      Points		      [372, 0; 0, 510]
-	      DstBlock		      "Bit_Comparator_(9)"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      65
 	      SrcBlock		      "Bit_Comparator_(14)"
 	      SrcPort		      3
 	      Points		      [46, 0; 0, -35]
@@ -6429,7 +6833,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      66
+	      ZOrder		      64
 	      SrcBlock		      "Bit_Comparator_(14)"
 	      SrcPort		      2
 	      Points		      [29, 0; 0, -25]
@@ -6437,7 +6841,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      67
+	      ZOrder		      65
 	      SrcBlock		      "Bit_Comparator_(14)"
 	      SrcPort		      1
 	      Points		      [13, 0; 0, -15]
@@ -6445,7 +6849,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      68
+	      ZOrder		      66
 	      SrcBlock		      "Bit_Comparator_(13)"
 	      SrcPort		      3
 	      Points		      [48, 0; 0, -35]
@@ -6453,7 +6857,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      69
+	      ZOrder		      67
 	      SrcBlock		      "Bit_Comparator_(13)"
 	      SrcPort		      2
 	      Points		      [31, 0; 0, -25]
@@ -6461,7 +6865,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      70
+	      ZOrder		      68
 	      SrcBlock		      "Bit_Comparator_(13)"
 	      SrcPort		      1
 	      Points		      [14, 0; 0, -15]
@@ -6469,7 +6873,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      71
+	      ZOrder		      69
 	      SrcBlock		      "Bit_Comparator_(12)"
 	      SrcPort		      3
 	      Points		      [42, 0; 0, -35]
@@ -6477,7 +6881,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      72
+	      ZOrder		      70
 	      SrcBlock		      "Bit_Comparator_(12)"
 	      SrcPort		      2
 	      Points		      [27, 0; 0, -25]
@@ -6485,7 +6889,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      73
+	      ZOrder		      71
 	      SrcBlock		      "Bit_Comparator_(12)"
 	      SrcPort		      1
 	      Points		      [13, 0; 0, -15]
@@ -6493,7 +6897,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      74
+	      ZOrder		      72
 	      SrcBlock		      "Bit_Comparator_(11)"
 	      SrcPort		      3
 	      Points		      [43, 0; 0, -35]
@@ -6501,7 +6905,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      75
+	      ZOrder		      73
 	      SrcBlock		      "Bit_Comparator_(11)"
 	      SrcPort		      2
 	      Points		      [27, 0; 0, -25]
@@ -6509,7 +6913,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      76
+	      ZOrder		      74
 	      SrcBlock		      "Bit_Comparator_(11)"
 	      SrcPort		      1
 	      Points		      [13, 0; 0, -15]
@@ -6517,7 +6921,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      77
+	      ZOrder		      75
 	      SrcBlock		      "Bit_Comparator_(10)"
 	      SrcPort		      3
 	      Points		      [43, 0; 0, -35]
@@ -6525,7 +6929,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      78
+	      ZOrder		      76
 	      SrcBlock		      "Bit_Comparator_(10)"
 	      SrcPort		      2
 	      Points		      [28, 0; 0, -25]
@@ -6533,7 +6937,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      79
+	      ZOrder		      77
 	      SrcBlock		      "Bit_Comparator_(10)"
 	      SrcPort		      1
 	      Points		      [12, 0; 0, -15]
@@ -6541,7 +6945,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      80
+	      ZOrder		      78
 	      SrcBlock		      "Bit_Comparator_(9)"
 	      SrcPort		      3
 	      Points		      [37, 0; 0, -35]
@@ -6549,7 +6953,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      81
+	      ZOrder		      79
 	      SrcBlock		      "Bit_Comparator_(9)"
 	      SrcPort		      1
 	      Points		      [11, 0; 0, -15]
@@ -6557,7 +6961,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      82
+	      ZOrder		      80
 	      SrcBlock		      "Bit_Comparator_(9)"
 	      SrcPort		      2
 	      Points		      [23, 0; 0, -25]
@@ -6565,7 +6969,7 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      83
+	      ZOrder		      81
 	      SrcBlock		      "Bit_Comparator_(8)"
 	      SrcPort		      3
 	      Points		      [39, 0; 0, -35]
@@ -6573,7 +6977,7 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      84
+	      ZOrder		      82
 	      SrcBlock		      "Bit_Comparator_(8)"
 	      SrcPort		      1
 	      Points		      [10, 0; 0, -15]
@@ -6581,7 +6985,7 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      85
+	      ZOrder		      83
 	      SrcBlock		      "Bit_Comparator_(8)"
 	      SrcPort		      2
 	      Points		      [23, 0; 0, -25]
@@ -6589,18 +6993,22 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      86
-	      SrcBlock		      "Demux1"
+	      Name		      "<signal8>"
+	      ZOrder		      84
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
-	      Points		      [668, 0; 0, 800]
+	      Points		      [673, 0; 0, 800]
 	      DstBlock		      "Bit_Comparator_(8)"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      87
-	      SrcBlock		      "Demux2"
+	      Name		      "<signal8>"
+	      ZOrder		      85
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      8
-	      Points		      [360, 0; 0, 535]
+	      Points		      [365, 0; 0, 535]
 	      DstBlock		      "Bit_Comparator_(8)"
 	      DstPort		      2
 	    }

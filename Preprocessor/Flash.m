@@ -2,6 +2,7 @@ function Flash(file)
 	clc
 	clear SourceCode
 	clear RomCode
+	clear ZERO
 
 	% Load constants and definitions (instructions, registers, ...).
 	Instructions
