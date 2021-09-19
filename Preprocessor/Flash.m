@@ -2,7 +2,7 @@ function Flash(file)
 	clc
 	clear SourceCode
 	clear RomCode
-	clear ZERO
+	clear BUS_UINT16_T
 
 	% Load constants and definitions (instructions, registers, ...).
 	Instructions

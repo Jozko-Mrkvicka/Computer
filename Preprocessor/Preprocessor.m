@@ -72,6 +72,8 @@ function compiledCode = Preprocessor(program, c)
     end
 
     fprintf('+---------+-------------+------+------+------------------------------+\n');
+
+    compiledCode = convert_uint16_to_struct(compiledCode);
 end
 
 
@@ -398,3 +400,31 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
     fprintf('\n')
 end
 
+
+% Convert ROM code represented by uint16 numbers to the structure type which can be consumed
+% by simulink data bus.
+function [RomCode_struct] = convert_uint16_to_struct(RomCode_uint16)
+    for (i = 1 : size(RomCode_uint16, 2))
+        temp = uint16(RomCode_uint16(i));
+
+        % signal1 is MSB, signal16 is LSB
+        temp_struct.signal1  = bitshift(bitand(temp, bin2dec('1000 0000  0000 0000')), -15);
+        temp_struct.signal2  = bitshift(bitand(temp, bin2dec('0100 0000  0000 0000')), -14);
+        temp_struct.signal3  = bitshift(bitand(temp, bin2dec('0010 0000  0000 0000')), -13);
+        temp_struct.signal4  = bitshift(bitand(temp, bin2dec('0001 0000  0000 0000')), -12);
+        temp_struct.signal5  = bitshift(bitand(temp, bin2dec('0000 1000  0000 0000')), -11);
+        temp_struct.signal6  = bitshift(bitand(temp, bin2dec('0000 0100  0000 0000')), -10);
+        temp_struct.signal7  = bitshift(bitand(temp, bin2dec('0000 0010  0000 0000')), -9);
+        temp_struct.signal8  = bitshift(bitand(temp, bin2dec('0000 0001  0000 0000')), -8);
+        temp_struct.signal9  = bitshift(bitand(temp, bin2dec('0000 0000  1000 0000')), -7);
+        temp_struct.signal10 = bitshift(bitand(temp, bin2dec('0000 0000  0100 0000')), -6);
+        temp_struct.signal11 = bitshift(bitand(temp, bin2dec('0000 0000  0010 0000')), -5);
+        temp_struct.signal12 = bitshift(bitand(temp, bin2dec('0000 0000  0001 0000')), -4);
+        temp_struct.signal13 = bitshift(bitand(temp, bin2dec('0000 0000  0000 1000')), -3);
+        temp_struct.signal14 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0100')), -2);
+        temp_struct.signal15 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0010')), -1);
+        temp_struct.signal16 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0001')),  0);
+
+        RomCode_struct(i) = temp_struct;
+    end
+end
