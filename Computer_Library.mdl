@@ -44,8 +44,8 @@ Library {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1534.0, 920.0]
-	ZoomFactor		[1.0]
-	Offset			[806.39062144513321, -150.16323379523556]
+	ZoomFactor		[2.0]
+	Offset			[956.22395477846658, 29.979623347621555]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Sep 19 18:58:15 2021"
-  RTWModifiedTimeStamp	  553978683
-  ModelVersionFormat	  "1.%<AutoIncrement:625>"
+  LastModifiedDate	  "Sat Sep 25 13:59:34 2021"
+  RTWModifiedTimeStamp	  554479172
+  ModelVersionFormat	  "1.%<AutoIncrement:628>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -763,6 +763,17 @@ Library {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      BusCreator
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputSignals	      "signal1,signal2,signal3"
+      OutputAsBus	      off
+    }
+    Block {
       BlockType		      Constant
       Value		      "1"
       VectorParams1D	      on
@@ -885,9 +896,648 @@ Library {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "200"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6254"
+    SIDHighWatermark	    "6275"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Bitwise_NOT"
+      SID		      "6255"
+      Ports		      [1, 1]
+      Position		      [1165, 173, 1320, 217]
+      ZOrder		      2149
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Bitwise_NOT"
+	Location		[57, 0, 1641, 1087]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"360"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Data_In(2B)"
+	  SID			  "6256"
+	  Position		  [805, 708, 835, 722]
+	  ZOrder		  473
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  "6257"
+	  Ports			  [16, 1]
+	  Position		  [1060, 594, 1070, 831]
+	  ZOrder		  1362
+	  ShowName		  off
+	  Inputs		  "16"
+	  DisplayOption		  "bar"
+	  InheritFromInputs	  on
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  SID			  "6258"
+	  Ports			  [1, 16]
+	  Position		  [885, 597, 895, 828]
+	  ZOrder		  1363
+	  ShowName		  off
+	  OutputSignals		  "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,signal1"
+	  "2,signal13,signal14,signal15,signal16"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<signal1>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<signal2>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<signal3>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<signal4>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<signal5>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "<signal6>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    7
+	    Name		    "<signal7>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    8
+	    Name		    "<signal8>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    9
+	    Name		    "<signal9>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    10
+	    Name		    "<signal10>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    11
+	    Name		    "<signal11>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    12
+	    Name		    "<signal12>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    13
+	    Name		    "<signal13>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    14
+	    Name		    "<signal14>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    15
+	    Name		    "<signal15>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    16
+	    Name		    "<signal16>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  SID			  "6259"
+	  Ports			  [1, 1]
+	  Position		  [978, 593, 993, 607]
+	  ZOrder		  217
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator1"
+	  SID			  "6260"
+	  Ports			  [1, 1]
+	  Position		  [978, 608, 993, 622]
+	  ZOrder		  218
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator10"
+	  SID			  "6261"
+	  Ports			  [1, 1]
+	  Position		  [978, 743, 993, 757]
+	  ZOrder		  575
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator11"
+	  SID			  "6262"
+	  Ports			  [1, 1]
+	  Position		  [978, 758, 993, 772]
+	  ZOrder		  576
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator12"
+	  SID			  "6263"
+	  Ports			  [1, 1]
+	  Position		  [978, 773, 993, 787]
+	  ZOrder		  577
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator13"
+	  SID			  "6264"
+	  Ports			  [1, 1]
+	  Position		  [978, 788, 993, 802]
+	  ZOrder		  578
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator14"
+	  SID			  "6265"
+	  Ports			  [1, 1]
+	  Position		  [978, 803, 993, 817]
+	  ZOrder		  579
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator15"
+	  SID			  "6266"
+	  Ports			  [1, 1]
+	  Position		  [978, 818, 993, 832]
+	  ZOrder		  580
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator2"
+	  SID			  "6267"
+	  Ports			  [1, 1]
+	  Position		  [978, 623, 993, 637]
+	  ZOrder		  219
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator3"
+	  SID			  "6268"
+	  Ports			  [1, 1]
+	  Position		  [978, 638, 993, 652]
+	  ZOrder		  220
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator4"
+	  SID			  "6269"
+	  Ports			  [1, 1]
+	  Position		  [978, 653, 993, 667]
+	  ZOrder		  221
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator5"
+	  SID			  "6270"
+	  Ports			  [1, 1]
+	  Position		  [978, 668, 993, 682]
+	  ZOrder		  222
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator6"
+	  SID			  "6271"
+	  Ports			  [1, 1]
+	  Position		  [978, 683, 993, 697]
+	  ZOrder		  223
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator7"
+	  SID			  "6272"
+	  Ports			  [1, 1]
+	  Position		  [978, 698, 993, 712]
+	  ZOrder		  224
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator8"
+	  SID			  "6273"
+	  Ports			  [1, 1]
+	  Position		  [978, 713, 993, 727]
+	  ZOrder		  573
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator9"
+	  SID			  "6274"
+	  Ports			  [1, 1]
+	  Position		  [978, 728, 993, 742]
+	  ZOrder		  574
+	  ShowName		  off
+	  Operator		  "NOT"
+	  IconShape		  "distinctive"
+	  AllPortsSameDT	  off
+	  OutDataTypeStr	  "boolean"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Data_Out(2B)"
+	  SID			  "6275"
+	  Position		  [1115, 708, 1145, 722]
+	  ZOrder		  563
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "Data_Out(2B)"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Data_In(2B)"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Logical\nOperator1"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "Logical\nOperator2"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  6
+	  SrcBlock		  "Logical\nOperator7"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  8
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "Logical\nOperator6"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  8
+	  SrcBlock		  "Logical\nOperator5"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  ZOrder		  9
+	  SrcBlock		  "Logical\nOperator3"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "Logical\nOperator4"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "<signal8>"
+	  ZOrder		  11
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  8
+	  DstBlock		  "Logical\nOperator7"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal7>"
+	  ZOrder		  12
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  7
+	  DstBlock		  "Logical\nOperator6"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal6>"
+	  ZOrder		  13
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  6
+	  DstBlock		  "Logical\nOperator5"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal5>"
+	  ZOrder		  14
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  5
+	  DstBlock		  "Logical\nOperator4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal4>"
+	  ZOrder		  15
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  4
+	  DstBlock		  "Logical\nOperator3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal3>"
+	  ZOrder		  16
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  3
+	  DstBlock		  "Logical\nOperator2"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal2>"
+	  ZOrder		  17
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  2
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal1>"
+	  ZOrder		  18
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal16>"
+	  ZOrder		  19
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  16
+	  DstBlock		  "Logical\nOperator15"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal15>"
+	  ZOrder		  20
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  15
+	  DstBlock		  "Logical\nOperator14"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal14>"
+	  ZOrder		  21
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  14
+	  DstBlock		  "Logical\nOperator13"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal13>"
+	  ZOrder		  22
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  13
+	  DstBlock		  "Logical\nOperator12"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal12>"
+	  ZOrder		  23
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  12
+	  DstBlock		  "Logical\nOperator11"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal11>"
+	  ZOrder		  24
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  11
+	  DstBlock		  "Logical\nOperator10"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal10>"
+	  ZOrder		  25
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  10
+	  DstBlock		  "Logical\nOperator9"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal9>"
+	  ZOrder		  26
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  9
+	  DstBlock		  "Logical\nOperator8"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  27
+	  SrcBlock		  "Logical\nOperator8"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  9
+	}
+	Line {
+	  ZOrder		  28
+	  SrcBlock		  "Logical\nOperator9"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  10
+	}
+	Line {
+	  ZOrder		  29
+	  SrcBlock		  "Logical\nOperator10"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  11
+	}
+	Line {
+	  ZOrder		  30
+	  SrcBlock		  "Logical\nOperator11"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  12
+	}
+	Line {
+	  ZOrder		  31
+	  SrcBlock		  "Logical\nOperator12"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  13
+	}
+	Line {
+	  ZOrder		  32
+	  SrcBlock		  "Logical\nOperator13"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  14
+	}
+	Line {
+	  ZOrder		  33
+	  SrcBlock		  "Logical\nOperator14"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  15
+	}
+	Line {
+	  ZOrder		  34
+	  SrcBlock		  "Logical\nOperator15"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  16
+	}
+      }
+    }
     Block {
       BlockType		      SubSystem
       Name		      "Character_Table"
