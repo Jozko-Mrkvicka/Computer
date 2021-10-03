@@ -14,11 +14,18 @@ r9  = bin2dec('0000 1001');
 r10 = bin2dec('0000 1010');
 r11 = bin2dec('0000 1011');
 r12 = bin2dec('0000 1100');
+
+% General purpose register 13 is used as a column selector (for video controller).
+% It can be also used like normal general purpose register.
 r13 = bin2dec('0000 1101');
+col = r13;
+
+% General purpose register 14 is used as a raw selector (for video controller).
+% It can be also used like normal general purpose register.
 r14 = bin2dec('0000 1110');
+row = r14;
 
 % General purpose register 15 is used as a base register.
-% It contains upper byte of a word (usually address) used by some other instructions.
 % It can be also used like normal general purpose register.
 r15 = bin2dec('0000 1111');
 base = r15;
@@ -133,8 +140,15 @@ c.RAM_SIZE     = 32;
 % Start address of stack. The stack grows towards lower addresses - it decreases.
 c.STACK_START  = 543;
 
+% Start address of video RAM memory in physical address space and it`s size in words.
+c.VRAM_START   = 544;
+c.VRAM_SIZE    = 24;
+
+% Address of video controller.
+c.VIDEO_CTRL   = 735;
+
 % Address of keyboard.
-c.KEYBOARD     = 1022;
+c.KEYBOARD     = 751;
 
 % Address of random number generator.
 c.RAND_NUM_GEN = 1023;

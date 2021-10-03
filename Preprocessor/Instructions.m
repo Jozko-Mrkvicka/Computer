@@ -126,8 +126,8 @@ c.AND = AND;
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SPX0 = bin2dec('11 01101 0');
-c.SPX0 = SPX0;
+NOT_USED = bin2dec('11 01101 0');
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -147,8 +147,8 @@ c.SPX0 = SPX0;
 % Type of operands:        Example:
 %     SPX REG REG IMM      SPX r0 r1 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SPX1 = bin2dec('11 01100 0');
-c.SPX1 = SPX1;
+NOT_USED = bin2dec('11 01100 0');
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -264,22 +264,21 @@ c.ADD = ADD;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Get PiXel instruction (GPX)
+%      NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
-% First operand: 
-%     In: Horizontal position (X) in range 0..15.
-%     Out: Read pixel value is stored here. 
+% First operand:
+%     NOT_USED
 %
 % Second operand:
-%     Vertical position (Y) in range 0..23.
+%     NOT_USED
 %
 % Type of operands:        Example:
-%     GPX REG REG          GPX r0 r1
+%     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-GPX = bin2dec('11 00101 0');
-c.GPX = GPX;
+NOT_USED = bin2dec('11 00101 0');
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
