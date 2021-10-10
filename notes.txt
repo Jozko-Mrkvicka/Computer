@@ -129,19 +129,15 @@ X X X X . . . X | X . . . . . . .
 # Co treba urobit
 #############################################
 - Computer:
-	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
+	- Zaviest symbolicke konstanty pre video commandy.
 
-	- Spojit textovu pamat s RAM pamatou:
-		- Vytvorit obvod, multiplexer, ktory bude s vlastnou obnovovacou frequenciou vykreslovat znaky na display.
-		- Vykresleny znak bude vzdy iba jeden, ostatne budu vypnute.
+	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
+
+	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
 
 	- Pridat SHIFT/SHIFTI instrukcie.
 
 	- Pridat instrukcie MOV byte/nibble(?)
-
-	- Zaviest symbolicke konstanty pre video commandy.
-
-	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
 
 	- Detekovat stack overflow/underflow.
 
@@ -185,14 +181,10 @@ Preprocessor:
 	- Video_Controller:
 		- Vkladat preddefinovane "sprity" do video pamate (operacia OR).
 		- Nadefinovat tabulku spritov - kocky tetrisu.
+	- Text Display - pridat dalsie riadky (spolu 4x16 znakov).
 
 
 GIT:
-	- Graphic subsystem deleted. Now the graphic memory is mapped directly to address bus. It can be used in both ways - as a normal RAM and also as a dedicated video memory.
-	- Instructions GPX, SPX0 and SPX1 deleted.
-	- New block Video Cotroller added:
-		- It can control standalone bits (pixels) of the video memory.
-		- It can set or erase entire video memory with one command.
-	- All devices previously placed in the Memory subsystem are now expanded in main system.
-	
-
+	- Text subsystem deleted. Now the text memory is mapped directly to address bus. It can be used in both ways, as a normal RAM and also as a dedicated text memory.
+    - Instructions TRR, TMR and TIR deleted.
+    - Text display updated. It contains 1x16 characters.

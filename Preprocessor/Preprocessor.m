@@ -380,11 +380,11 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 % case c.NOT_USED
                 %     fprintf('   NOT_USED     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.TRR
-                    fprintf('   TRR     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                % case c.NOT_USED
+                %     fprintf('   NOT_USED     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.TMR
-                    fprintf('   TMR     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                % case c.NOT_USED
+                %     fprintf('   NOT_USED     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.STORE
                     fprintf('   STORE   m(r%d)   r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))

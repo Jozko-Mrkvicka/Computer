@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 0.0, 943.0, 1087.0]
+      Location		      [54.0, -8.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"240"
-	Extents			[893.0, 920.0]
-	ZoomFactor		[1.215258855585831]
-	Offset			[-59.911434977578494, 180.00000000000006]
+	LoadSaveID		"243"
+	Extents			[1824.0, 929.0]
+	ZoomFactor		[0.5]
+	Offset			[3601.3261904761912, 1753.0119047619041]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Sep 19 12:33:16 2021"
-  RTWModifiedTimeStamp	  553955591
-  ModelVersionFormat	  "1.%<AutoIncrement:41>"
+  LastModifiedDate	  "Sat Oct 09 22:07:31 2021"
+  RTWModifiedTimeStamp	  555718034
+  ModelVersionFormat	  "1.%<AutoIncrement:42>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -860,7 +860,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "509"
+    SIDHighWatermark	    "510"
     Block {
       BlockType		      SubSystem
       Name		      "Byte_Multiplexers_Lib"
@@ -872,8 +872,8 @@ Library {
       Variant		      off
       System {
 	Name			"Byte_Multiplexers_Lib"
-	Location		[55, 0, 998, 1087]
-	Open			on
+	Location		[54, -8, 1928, 1088]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -896,8 +896,8 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Byte_Multiplexer_16_to_1"
-	    Location		    [54, 0, 1928, 1096]
-	    Open		    off
+	    Location		    [54, -8, 1928, 1088]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -908,7 +908,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "14"
+	    ZoomFactor		    "50"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Address_3(1b)"
@@ -1094,29 +1094,12 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Reference
-	      Name		      "Bit to Integer\nConverter1"
-	      SID		      "272"
-	      Ports		      [1, 1]
-	      Position		      [5180, 2393, 5260, 2437]
-	      ZOrder		      561
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
-	      SourceType	      "Bit to Integer Converter"
-	      nbits		      "8"
-	      bitOrder		      "MSB first"
-	      signedOutputValues      "Unsigned"
-	      outDtype		      "uint8"
-	      outDtypeSigned	      "Inherit via internal rule"
-	    }
-	    Block {
-	      BlockType		      Reference
 	      Name		      "Bit_Multiplexer_16_to_1(Bit_0)"
 	      SID		      "264"
 	      Ports		      [20, 1]
 	      Position		      [4600, 4784, 4765, 5091]
 	      ZOrder		      323
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1128,7 +1111,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 4409, 4765, 4716]
 	      ZOrder		      324
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1140,7 +1123,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 4039, 4765, 4346]
 	      ZOrder		      326
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1152,7 +1135,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 3669, 4765, 3976]
 	      ZOrder		      327
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1164,7 +1147,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 3299, 4765, 3606]
 	      ZOrder		      328
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1176,7 +1159,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 2929, 4765, 3236]
 	      ZOrder		      329
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1188,7 +1171,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 2559, 4765, 2866]
 	      ZOrder		      330
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1200,10 +1183,22 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 2189, 4765, 2496]
 	      ZOrder		      331
-	      LibraryVersion	      "1.5"
+	      LibraryVersion	      "1.18"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator"
+	      SID		      "510"
+	      Ports		      [8, 1]
+	      Position		      [5070, 2337, 5080, 2493]
+	      ZOrder		      598
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
 	    }
 	    Block {
 	      BlockType		      Demux
@@ -1622,21 +1617,10 @@ Library {
 	      outDtype		      "boolean"
 	    }
 	    Block {
-	      BlockType		      Mux
-	      Name		      "Mux"
-	      SID		      "321"
-	      Ports		      [8, 1]
-	      Position		      [5070, 2340, 5080, 2490]
-	      ZOrder		      358
-	      ShowName		      off
-	      Inputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
 	      BlockType		      Outport
 	      Name		      "Data_Out(1B)"
 	      SID		      "322"
-	      Position		      [5360, 2408, 5390, 2422]
+	      Position		      [5130, 2408, 5160, 2422]
 	      ZOrder		      342
 	      IconDisplay	      "Port number"
 	    }
@@ -1655,15 +1639,8 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Mux"
-	      SrcPort		      1
-	      DstBlock		      "Bit to Integer\nConverter1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Bit to Integer\nConverter1"
+	      ZOrder		      710
+	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
 	      DstBlock		      "Data_Out(1B)"
 	      DstPort		      1
@@ -1953,66 +1930,66 @@ Library {
 	      }
 	    }
 	    Line {
-	      ZOrder		      82
+	      ZOrder		      707
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_4)"
 	      SrcPort		      1
 	      Points		      [180, 0; 0, -1050]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      83
+	      ZOrder		      706
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_5)"
 	      SrcPort		      1
 	      Points		      [157, 0; 0, -700]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      84
+	      ZOrder		      704
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_6)"
 	      SrcPort		      1
 	      Points		      [135, 0; 0, -350]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      2
 	    }
 	    Line {
-	      ZOrder		      85
+	      ZOrder		      705
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_7)"
 	      SrcPort		      1
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      86
+	      ZOrder		      708
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_3)"
 	      SrcPort		      1
 	      Points		      [201, 0; 0, -1400]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      87
+	      ZOrder		      709
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_2)"
 	      SrcPort		      1
 	      Points		      [224, 0; 0, -1750]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      88
+	      ZOrder		      702
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_1)"
 	      SrcPort		      1
 	      Points		      [246, 0; 0, -2100]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      89
+	      ZOrder		      703
 	      SrcBlock		      "Bit_Multiplexer_16_to_1(Bit_0)"
 	      SrcPort		      1
 	      Points		      [268, 0; 0, -2455]
-	      DstBlock		      "Mux"
+	      DstBlock		      "Bus\nCreator"
 	      DstPort		      8
 	    }
 	    Line {

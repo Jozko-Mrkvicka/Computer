@@ -282,24 +282,23 @@ c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%     TXT (print TeXT character) instructions (TRR, TMR) TODO: Update and split to two separate descriptions.
+%      NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
-% First operand: 
-%     Character to print.
+% First operand:
+%     NOT_USED
 %
 % Second operand:
-%     Position on display.
+%     NOT_USED
 %
 % Type of operands:        Example:
-%     TRR  REG  REG          TRR  r0     r1
-%     TMR  REG  REG          TMR  a(r0)  r1
+%     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TRR = bin2dec('11 00100 0');
-TMR = bin2dec('11 00011 0');
-c.TRR = TRR;
-c.TMR = TMR;
+NOT_USED = bin2dec('11 00100 0');
+NOT_USED = bin2dec('11 00011 0');
+c.NOT_USED = NOT_USED;
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -482,18 +481,21 @@ c.SHIFT = SHIFT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                               TODO: Add description.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Doplnit maximalny rozsah operandu.
-% Format 1: FF|OO|SSSS IIIIIIII
+%      NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % First operand:
+%     NOT_USED
 %
 % Second operand:
+%     NOT_USED
 %
 % Type of operands:        Example:
+%     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-TIR = bin2dec('01 10 0000');
-c.TIR = TIR;
+NOT_USED = bin2dec('01 10 0000');
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
