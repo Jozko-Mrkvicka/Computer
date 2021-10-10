@@ -110,42 +110,36 @@ c.AND = AND;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Set Pixel to Zero instruction (SPX0)     TODO: Fix description.
+%      NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
-% First operand: 
-%     Horizontal position (X) in range 0..15.
+% First operand:
+%     NOT_USED
 %
 % Second operand:
-%     Vertical position (Y) in range 0..23.
-%
-% Third operand:
-%     Pixel to set (switch off = 0 / switch on = 1)
+%     NOT_USED
 %
 % Type of operands:        Example:
-%     SPX REG REG IMM      SPX r0 r1 1
+%     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 NOT_USED = bin2dec('11 01101 0');
 c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Set Pixel to One instruction (SPX1)      TODO: Fix description.
+%      NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
-% First operand: 
-%     Horizontal position (X) in range 0..15.
+% First operand:
+%     NOT_USED
 %
 % Second operand:
-%     Vertical position (Y) in range 0..23.
-%
-% Third operand:
-%     Pixel to set (switch off = 0 / switch on = 1).
+%     NOT_USED
 %
 % Type of operands:        Example:
-%     SPX REG REG IMM      SPX r0 r1 1
+%     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 NOT_USED = bin2dec('11 01100 0');
 c.NOT_USED = NOT_USED;
