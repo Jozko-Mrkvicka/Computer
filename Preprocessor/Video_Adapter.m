@@ -155,7 +155,7 @@ c.starting_column_index = [1  9 17 25 33 41 49 57 65 73 81 89  97 105 113 121];
 c.ending_column_index =   [8 16 24 32 40 48 56 64 72 80 88 96 104 112 120 128];
 
 
-c.POS_X = 1600
-c.POS_Y = 1150
-c.WIDTH = 300
-c.HEIGHT = 20
+c.POS_X = 1600;
+c.POS_Y = 1150;
+c.WIDTH = 300;
+c.HEIGHT = 20;

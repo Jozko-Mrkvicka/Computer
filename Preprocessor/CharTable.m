@@ -5,7 +5,7 @@
 
 
 % 1..9 reserved for digits 1..9
-ZERO =               0;
+ZERO =                0;
 c.A =                 10;
 c.B =                 11;
 c.C =                 12;
@@ -1262,7 +1262,7 @@ c.char(:, c.RIGHT_PARENTHESES) = ...
     bin2dec('0 0 0 1 0 0 0 0') ...
     bin2dec('0 0 1 0 0 0 0 0') ...
     bin2dec('0 1 0 0 0 0 0 0') ...
-]
+];
 
 
 % char(:, :, LEFT_BRACKET) = ...
