@@ -38,72 +38,92 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                TODO: Fix description.
+%      NOT instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This instruction performs bitwise negation
+%     of all bits in register.
+% 
 % First operand: 
-%     
+%     In: Value to be negated.
+%     Out: Destination of result.
 %
 % Second operand:
-%
+%     Not used.
 %
 % Type of operands:        Example:
-%     
+%     NOT  REG               NOT  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 NOT = bin2dec('11 10001 0');
 c.NOT = NOT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                TODO: Fix description.
+%      XOR instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This instruction performs exclusive OR
+%     operation of all bits in registers.
+% 
 % First operand: 
-%     
+%     In: Value to be XORed.
+%     Out: Destination of result.
 %
 % Second operand:
-%
+%     Value to be XORed.
 %
 % Type of operands:        Example:
-%     
+%     XOR  REG  REG          XOR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 XOR = bin2dec('11 10000 0');
 c.XOR = XOR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                TODO: Fix description.
+%      OR instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This instruction performs bitwise OR operation
+%     of all bits in registers.
+% 
 % First operand: 
-%     
+%     In: Value to be ORed.
+%     Out: Destination of result.
 %
 % Second operand:
-%
+%     Value to be ORed.
 %
 % Type of operands:        Example:
-%     
+%     OR  REG  REG           OR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 OR = bin2dec('11 01111 0');
 c.OR = OR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                                                TODO: Fix description.
+%      AND instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This instruction performs bitwise AND operation
+%     of all bits in registers.
+% 
 % First operand: 
-%     
+%     In: Value to be ANDed.
+%     Out: Destination of result.
 %
 % Second operand:
-%
+%     Value to be ANDed.
 %
 % Type of operands:        Example:
-%     
+%     AND  REG  REG           AND  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 AND = bin2dec('11 01110 0');
 c.AND = AND;
@@ -146,18 +166,20 @@ c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      RET instruction                          TODO: Doplnit kde sa uklada vysledok.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TODO: Fix the title.
+%      CMP instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This function compares two 16-bit numbers. Result
+%     of the comparation can be "greater then", "less then"
+%     or "equal". The result is stored in status register.
+% 
 % First operand:
 %     First value to compare.
 %
 % Second operand:
 %     Second value to compare.
-%
-% Note: 
-%   The result is stored in status register.
 %
 % Type of operands:        Example:
 %     CMP  REG  REG          CMP  r0  r1
@@ -167,10 +189,14 @@ c.CMP = CMP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      RET instruction                          TODO: Add description.
+%      RET instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This instruction exits currently executed function
+%     and returns program counter back to caller.
+% 
 % First operand:
 %     Not used.
 %
@@ -185,12 +211,17 @@ c.RET = RET;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      POP instruction                          TODO: Add description.
+%      POP instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This instruction restores register with its
+%     original value taken from stack. Stack pointer 
+%     is automatically decreased.
+% 
 % First operand:
-%     Destination register to pop from stack. 
+%     Destination register to be poped from stack. 
 %
 % Second operand:
 %     Not used.
@@ -203,18 +234,22 @@ c.POP = POP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      PUSH instruction                         TODO: Add description.
+%      PUSH instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     This instruction saves value stored in register
+%     to stack. Stack pointer is automatically increased.
+% 
 % First operand:
 %     Not used.
 %
 % Second operand:
-%     Source register to push on stack.
+%     Source register to be pushed on stack.
 %
 % Type of operands:        Example:
-%     PUSH  REG  REG         PUSH  r0
+%     PUSH  REG              PUSH  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 PUSH = bin2dec('11 01000 0');
 c.PUSH = PUSH;

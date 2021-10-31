@@ -130,10 +130,10 @@ X X X X . . . X | X . . . . . . .
 #############################################
 - Computer:
 	- Zaviest symbolicke konstanty pre video commandy.
-
-	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
-
 	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
+	- Rozdelit pamat na dva bloky - pamat instrukcii a pamat datovu.
+	- Poskladat jednotlive casti pocitaca zasebou, tak ako v knizke (fetch, decode, execute, memory, write back).
+	- Potom by malo byt mozne vykonat kazdu instrukciu v jedno hodinovom cykle. To znamena ze nepotrebujem instruction register.
 
 
 - Preprocessor:
@@ -141,13 +141,8 @@ X X X X . . . X | X . . . . . . .
 
 
 - Clean-up:
-	- Instructions.m - Pridat do definicie instrukcii informaciu o tom ci je immediate hodnota interpretovana ako singed alebo unsigned.
-
-	- Presunut bloky co su napravo smerom hore nad "zbernicu".
-
-	- Fix all TODOs.
-
-	- Ucesat nazvy, zmenit typ pisma na povodne (pozri memory blocks library).
+	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
+	- Nahradit nevyuzite multiplexory 16_to_1/8_to_1 za 4_to_1.
 		
 
 - System testy
@@ -160,39 +155,26 @@ X X X X . . . X | X . . . . . . .
 
 - Firmware:
 	- Tetris
-
 	- Snake
-
 	- Kalkulacku
-
 	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register). Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
-
 	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 
 
 - Backlog:
 	- Rozsirit ALU (nasobicka, delicka).
-
 	- Pridat floating point unit.
-
 	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL. Jedna instrukcia na ulozenie vsetkych registrov (viz ARM)??
-
 	- Video_Controller:
 		- Vkladat preddefinovane "sprity" do video pamate (operacia OR).
 		- Nadefinovat tabulku spritov - kocky tetrisu.
-
 	- Text Display - pridat dalsie riadky (spolu 4x16 znakov).
-
 	- Pridat SHIFT/SHIFTI instrukcie.
-
 	- Pridat instrukcie MOV byte/nibble(?)
-
 	- Detekovat stack overflow/underflow.
-
 	- Pridat delic frequencie.
-
 	- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
 
 
 GIT:
-	- Debug output created. Now all registers and memory cells are displayed in one place for easier debugging.
+	- Instruction description updated.
