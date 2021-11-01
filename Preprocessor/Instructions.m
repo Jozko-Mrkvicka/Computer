@@ -432,10 +432,6 @@ c.MOVU = MOVU;
 %     The LOADI instruction moves value from 
 %     memory (pointed by immediate) to register.
 %     Immediate value is unsigned. Range is <0, 255>.
-%     The final address of memory is composed from MSB byte
-%     of Base Register and LSB byte of the immediate.
-%     The Base Register must be updated before LOADI
-%     instruction is executed.
 % 
 % First operand:
 %     Destination register.
@@ -535,10 +531,7 @@ c.NOT_USED = NOT_USED;
 % Description:
 %     The STOREI instruction moves value from register
 %     to memory (pointed by immediate). Immediate value 
-%     is unsigned. Range is <0, 255>. The final address
-%     of memory is composed from MSB byte of Base Register
-%     and LSB byte of the immediate. The Base Register 
-%     must be updated before STOREI instruction is executed.
+%     is unsigned. Range is <0, 255>.
 % 
 % First operand:
 %     Assembly code: Destination memory address.

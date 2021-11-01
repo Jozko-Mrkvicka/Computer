@@ -137,7 +137,6 @@ X X X X . . . X | X . . . . . . .
 	- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
 	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
 	- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
-	- Zrusit base register, adresovat sa bude od 0 do 255.
 	- Vymazat pomocny adder. Pri navrate z funkcie (instrukcia RET) pripocitat +1 ku navratovej adrese pomocu normalnej ALU.
 
 
@@ -174,6 +173,7 @@ X X X X . . . X | X . . . . . . .
 
 
 GIT:
+	- Base register not used any more. Data memory address range is now only 8 bits.
 	- 
 
 

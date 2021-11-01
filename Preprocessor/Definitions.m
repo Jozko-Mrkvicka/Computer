@@ -14,21 +14,17 @@ r9  = bin2dec('0000 1001');
 r10 = bin2dec('0000 1010');
 r11 = bin2dec('0000 1011');
 r12 = bin2dec('0000 1100');
-
-% General purpose register 13 is used as a column selector (for video controller).
-% It can be also used like normal general purpose register.
 r13 = bin2dec('0000 1101');
-col = r13;
 
-% General purpose register 14 is used as a raw selector (for video controller).
+% General purpose register 14 is used as a column selector (for video controller).
 % It can be also used like normal general purpose register.
 r14 = bin2dec('0000 1110');
-row = r14;
+col = r14;
 
-% General purpose register 15 is used as a base register.
+% General purpose register 15 is used as a raw selector (for video controller).
 % It can be also used like normal general purpose register.
 r15 = bin2dec('0000 1111');
-base = r15;
+row = r15;
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -140,24 +136,24 @@ c.ROM_START    = 256;
 c.ROM_SIZE     = 256;
 
 % Start address of RAM memory in physical address space and it`s size in words.
-c.RAM_START    = 512;
+c.RAM_START    = 0;
 c.RAM_SIZE     = 32;
 
 % Start address of stack. The stack grows towards lower addresses - it decreases.
-c.STACK_START  = 543;
+c.STACK_START  = 31;
 
 % Start address of video RAM memory in physical address space and it`s size in words.
-c.VRAM_START   = 544;
+c.VRAM_START   = 32;
 c.VRAM_SIZE    = 24;
 
 % Address of video controller.
-c.VIDEO_CTRL   = 735;
+c.VIDEO_CTRL   = 223;
 
 % Address of keyboard.
-c.KEYBOARD     = 751;
+c.KEYBOARD     = 239;
 
 % Address of random number generator.
-c.RAND_NUM_GEN = 1023;
+c.RAND_NUM_GEN = 255;
 
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".
