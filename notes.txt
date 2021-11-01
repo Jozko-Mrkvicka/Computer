@@ -131,9 +131,14 @@ X X X X . . . X | X . . . . . . .
 - Computer:
 	- Zaviest symbolicke konstanty pre video commandy.
 	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
-	- Rozdelit pamat na dva bloky - pamat instrukcii a pamat datovu.
-	- Poskladat jednotlive casti pocitaca zasebou, tak ako v knizke (fetch, decode, execute, memory, write back).
-	- Potom by malo byt mozne vykonat kazdu instrukciu v jedno hodinovom cykle. To znamena ze nepotrebujem instruction register.
+	- Pridat SHIFT/SHIFTI instrukcie.
+	- Pridat instrukcie MOV byte/nibble(?)
+	- Detekovat stack overflow/underflow.
+	- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
+	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
+	- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
+	- Zrusit base register, adresovat sa bude od 0 do 255.
+	- Vymazat pomocny adder. Pri navrate z funkcie (instrukcia RET) pripocitat +1 ku navratovej adrese pomocu normalnej ALU.
 
 
 - Preprocessor:
@@ -141,9 +146,8 @@ X X X X . . . X | X . . . . . . .
 
 
 - Clean-up:
-	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
 	- Nahradit nevyuzite multiplexory 16_to_1/8_to_1 za 4_to_1.
-		
+
 
 - System testy
 	- Pridat systemove testy - kazdu instrukciu otestovat samostatne.
@@ -163,18 +167,14 @@ X X X X . . . X | X . . . . . . .
 
 - Backlog:
 	- Rozsirit ALU (nasobicka, delicka).
-	- Pridat floating point unit.
-	- Automaticky ukladat argument registre a0 .. a3 na zasobnik pri vykonani instrukcie CALL. Jedna instrukcia na ulozenie vsetkych registrov (viz ARM)??
 	- Video_Controller:
 		- Vkladat preddefinovane "sprity" do video pamate (operacia OR).
 		- Nadefinovat tabulku spritov - kocky tetrisu.
 	- Text Display - pridat dalsie riadky (spolu 4x16 znakov).
-	- Pridat SHIFT/SHIFTI instrukcie.
-	- Pridat instrukcie MOV byte/nibble(?)
-	- Detekovat stack overflow/underflow.
-	- Pridat delic frequencie.
-	- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
 
 
 GIT:
-	- Instruction description updated.
+	- 
+
+
+
