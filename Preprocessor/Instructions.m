@@ -481,12 +481,12 @@ c.MOVL = MOVL;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Bitwise Shift instruction (SHIFT)
+%      Bitwise Shift Immediate instruction (SHIFTI)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
 % Description:
-%     The SHIFT instruction shifts bits in register.
+%     The SHIFTI instruction shifts bits in register.
 %     If the immediate is positive then the shift is
 %     to left side. If the immediate is negative then
 %     the shift is to right side.
@@ -499,10 +499,10 @@ c.MOVL = MOVL;
 %     Amount of bits to shift. Signed. Range is <-15, +15>.
 %
 % Type of operands:        Example:
-%     SHIFT  REG  IMM        SHIFT  r0  -3
+%     SHIFTI  REG  IMM       SHIFTI  r0  -3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SHIFT = bin2dec('01 11 0000');
-c.SHIFT = SHIFT;
+SHIFTI = bin2dec('01 11 0000');
+c.SHIFTI = SHIFTI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

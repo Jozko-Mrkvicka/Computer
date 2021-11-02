@@ -213,7 +213,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
         instr_lsb = op1;
     else
         % Check that second operand is in appropriate range.
-        if (c.SHIFT == opcode)
+        if (c.SHIFTI == opcode)
             if ((op2 < -15) || (op2 > 15))
                 error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-15, +15>. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
             end
@@ -320,8 +320,8 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 case c.STOREI
                     fprintf('   STOREI  m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
 
-                case c.SHIFT
-                    fprintf('   SHIFT   r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+                case c.SHIFTI
+                    fprintf('   SHIFTI  r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
             end
 
         case c.INSTR_FORMAT_2

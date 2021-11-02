@@ -129,15 +129,17 @@ X X X X . . . X | X . . . . . . .
 # Co treba urobit
 #############################################
 - Computer:
-	- Zaviest symbolicke konstanty pre video commandy.
-	- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
-	- Pridat SHIFT/SHIFTI instrukcie.
-	- Pridat instrukcie MOV byte/nibble(?)
-	- Detekovat stack overflow/underflow.
-	- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
+	- Nove instrukcie:
+		- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
+		- Pridat SHIFT/SHIFTI instrukcie.
+		- Pridat instrukcie MOV byte/nibble(?) + dajak to napasovat na uz existujuce MOVU/MOVL.
+
+	- Ochrana pamati:
+		- Detekovat stack overflow/underflow.
+		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
+
 	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
 	- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
-	- Vymazat pomocny adder. Pri navrate z funkcie (instrukcia RET) pripocitat +1 ku navratovej adrese pomocu normalnej ALU.
 
 
 - Preprocessor:
@@ -173,8 +175,7 @@ X X X X . . . X | X . . . . . . .
 
 
 GIT:
-	- Base register not used any more. Data memory address range is now only 8 bits.
-	- 
+	- Auxiliary adder for the return address computation deleted. Now the ALU is used.
 
 
 
