@@ -256,21 +256,28 @@ c.PUSH = PUSH;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      NOT_USED
+%      SHIFT instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
-% First operand:
-%     NOT_USED
+% Description:
+%     The SHIFT instruction shifts bits in register.
+%     If second operand is positive then the shift is
+%     to left side. If second operand is negative then
+%     the shift is to right side.
+% 
+% First operand: 
+%     In: Data to shift.
+%     Out: Result of the shift operation.
 %
 % Second operand:
-%     NOT_USED
+%     Amount of bits to shift. Signed. Range is <-15, +15>.
 %
 % Type of operands:        Example:
-%     NOT_USED               NOT_USED
+%     SHIFT  REG  REG        SHIFT r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('11 00111 0');
-c.NOT_USED = NOT_USED;
+SHIFT = bin2dec('11 00111 0');
+c.SHIFT = SHIFT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

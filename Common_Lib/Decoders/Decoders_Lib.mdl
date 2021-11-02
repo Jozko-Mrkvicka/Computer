@@ -45,7 +45,7 @@ Library {
 	LoadSaveID		"117"
 	Extents			[1824.0, 929.0]
 	ZoomFactor		[1.5]
-	Offset			[-551.29568861198, -84.957077308833249]
+	Offset			[-486.03998630889646, 878.24523653909137]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 23 19:59:53 2021"
-  RTWModifiedTimeStamp	  554327964
-  ModelVersionFormat	  "1.%<AutoIncrement:29>"
+  LastModifiedDate	  "Tue Nov 02 12:44:45 2021"
+  RTWModifiedTimeStamp	  557757883
+  ModelVersionFormat	  "1.%<AutoIncrement:33>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -755,12 +755,6 @@ Library {
       OutputAsBus	      off
     }
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
-    }
-    Block {
       BlockType		      Inport
       Port		      "1"
       OutputFunctionCall      off
@@ -855,7 +849,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "665"
+    SIDHighWatermark	    "670"
     Block {
       BlockType		      SubSystem
       Name		      "Decoders_Lib"
@@ -6185,7 +6179,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_00"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6563,7 +6557,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_01"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6919,7 +6913,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_02"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7275,7 +7269,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_03"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7609,7 +7603,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_04"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -7965,7 +7959,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_05"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -8293,11 +8287,12 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [-125, 234, 5, 256]
 	  ZOrder		  414
+	  ForegroundColor	  "blue"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Selector_06"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -8314,36 +8309,67 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Address(1B)"
 	      SID		      "515"
-	      Position		      [15, 183, 45, 197]
+	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "516"
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "667"
 	      Ports		      [1, 8]
-	      Position		      [220, 125, 230, 250]
-	      ZOrder		      599
+	      Position		      [215, 130, 225, 245]
+	      ZOrder		      2111
 	      ShowName		      off
-	      Outputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter9"
-	      SID		      "517"
-	      Ports		      [1, 1]
-	      Position		      [90, 168, 170, 212]
-	      ZOrder		      600
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "8"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -8458,8 +8484,10 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Demux"
+	      Name		      "<signal8>"
+	      ZOrder		      20
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
 	      DstBlock		      "Logical\nOperator7"
 	      DstPort		      1
@@ -8472,22 +8500,28 @@ Library {
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Demux"
+	      Name		      "<signal7>"
+	      ZOrder		      24
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Demux"
+	      Name		      "<signal6>"
+	      ZOrder		      25
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Demux"
+	      Name		      "<signal5>"
+	      ZOrder		      18
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
 	      DstBlock		      "Logical\nOperator4"
 	      DstPort		      1
@@ -8500,8 +8534,10 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "Demux"
+	      Name		      "<signal4>"
+	      ZOrder		      19
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
 	      DstBlock		      "Logical\nOperator3"
 	      DstPort		      1
@@ -8514,8 +8550,10 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      9
-	      SrcBlock		      "Demux"
+	      Name		      "<signal3>"
+	      ZOrder		      23
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
 	      DstBlock		      "Logical\nOperator2"
 	      DstPort		      1
@@ -8528,8 +8566,10 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      11
-	      SrcBlock		      "Demux"
+	      Name		      "<signal2>"
+	      ZOrder		      22
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
 	      DstBlock		      "Logical\nOperator1"
 	      DstPort		      1
@@ -8549,8 +8589,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      14
-	      SrcBlock		      "Demux"
+	      Name		      "<signal1>"
+	      ZOrder		      21
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
 	      DstBlock		      "Logical\nOperator26"
 	      DstPort		      1
@@ -8563,17 +8605,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      16
+	      ZOrder		      26
 	      SrcBlock		      "Address(1B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter9"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      17
-	      SrcBlock		      "Integer to Bit\nConverter9"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
+	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	  }
@@ -8591,7 +8626,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_07"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -8903,7 +8938,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_08"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -9259,7 +9294,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_09"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -9593,7 +9628,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_10"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -9927,7 +9962,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_11"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -10239,7 +10274,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_12"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -10573,7 +10608,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_13"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -10885,7 +10920,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_14"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -11197,7 +11232,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_15"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -11481,11 +11516,12 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [-125, 684, 5, 706]
 	  ZOrder		  424
+	  ForegroundColor	  "blue"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Selector_16"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -11502,36 +11538,67 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Address(1B)"
 	      SID		      "289"
-	      Position		      [15, 183, 45, 197]
+	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "290"
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "668"
 	      Ports		      [1, 8]
-	      Position		      [220, 125, 230, 250]
-	      ZOrder		      599
+	      Position		      [215, 130, 225, 245]
+	      ZOrder		      2111
 	      ShowName		      off
-	      Outputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter9"
-	      SID		      "291"
-	      Ports		      [1, 1]
-	      Position		      [90, 168, 170, 212]
-	      ZOrder		      600
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "8"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -11661,8 +11728,10 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Demux"
+	      Name		      "<signal8>"
+	      ZOrder		      22
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
 	      DstBlock		      "Logical\nOperator7"
 	      DstPort		      1
@@ -11675,8 +11744,10 @@ Library {
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Demux"
+	      Name		      "<signal7>"
+	      ZOrder		      24
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
 	      DstBlock		      "Logical\nOperator6"
 	      DstPort		      1
@@ -11689,8 +11760,10 @@ Library {
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Demux"
+	      Name		      "<signal6>"
+	      ZOrder		      25
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
 	      DstBlock		      "Logical\nOperator5"
 	      DstPort		      1
@@ -11703,8 +11776,10 @@ Library {
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "Demux"
+	      Name		      "<signal5>"
+	      ZOrder		      21
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
 	      DstBlock		      "Logical\nOperator4"
 	      DstPort		      1
@@ -11717,15 +11792,19 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      9
-	      SrcBlock		      "Demux"
+	      Name		      "<signal4>"
+	      ZOrder		      20
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      10
-	      SrcBlock		      "Demux"
+	      Name		      "<signal3>"
+	      ZOrder		      19
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
 	      DstBlock		      "Logical\nOperator2"
 	      DstPort		      1
@@ -11738,8 +11817,10 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      12
-	      SrcBlock		      "Demux"
+	      Name		      "<signal2>"
+	      ZOrder		      23
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
 	      DstBlock		      "Logical\nOperator1"
 	      DstPort		      1
@@ -11759,8 +11840,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      15
-	      SrcBlock		      "Demux"
+	      Name		      "<signal1>"
+	      ZOrder		      26
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
 	      DstBlock		      "Logical\nOperator26"
 	      DstPort		      1
@@ -11773,17 +11856,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      17
+	      ZOrder		      27
 	      SrcBlock		      "Address(1B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter9"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      18
-	      SrcBlock		      "Integer to Bit\nConverter9"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
+	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	  }
@@ -11801,7 +11877,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_17"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -12135,7 +12211,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_18"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -12463,11 +12539,12 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [-125, 819, 5, 841]
 	  ZOrder		  427
+	  ForegroundColor	  "blue"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Selector_19"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -12484,36 +12561,67 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Address(1B)"
 	      SID		      "326"
-	      Position		      [15, 183, 45, 197]
+	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "327"
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "666"
 	      Ports		      [1, 8]
-	      Position		      [220, 125, 230, 250]
-	      ZOrder		      599
+	      Position		      [215, 130, 225, 245]
+	      ZOrder		      2111
 	      ShowName		      off
-	      Outputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter9"
-	      SID		      "328"
-	      Ports		      [1, 1]
-	      Position		      [90, 168, 170, 212]
-	      ZOrder		      600
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "8"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -12613,22 +12721,28 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Demux"
+	      Name		      "<signal8>"
+	      ZOrder		      22
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Demux"
+	      Name		      "<signal7>"
+	      ZOrder		      24
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Demux"
+	      Name		      "<signal6>"
+	      ZOrder		      23
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
 	      DstBlock		      "Logical\nOperator5"
 	      DstPort		      1
@@ -12641,8 +12755,10 @@ Library {
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Demux"
+	      Name		      "<signal5>"
+	      ZOrder		      21
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
 	      DstBlock		      "Logical\nOperator4"
 	      DstPort		      1
@@ -12655,15 +12771,19 @@ Library {
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "Demux"
+	      Name		      "<signal4>"
+	      ZOrder		      20
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      8
-	      SrcBlock		      "Demux"
+	      Name		      "<signal3>"
+	      ZOrder		      18
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
 	      DstBlock		      "Logical\nOperator2"
 	      DstPort		      1
@@ -12676,8 +12796,10 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      10
-	      SrcBlock		      "Demux"
+	      Name		      "<signal2>"
+	      ZOrder		      19
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
 	      DstBlock		      "Logical\nOperator1"
 	      DstPort		      1
@@ -12697,8 +12819,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      13
-	      SrcBlock		      "Demux"
+	      Name		      "<signal1>"
+	      ZOrder		      17
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
 	      DstBlock		      "Logical\nOperator26"
 	      DstPort		      1
@@ -12711,17 +12835,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      15
+	      ZOrder		      25
 	      SrcBlock		      "Address(1B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter9"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      16
-	      SrcBlock		      "Integer to Bit\nConverter9"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
+	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	  }
@@ -12739,7 +12856,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_20"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13073,7 +13190,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_21"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13385,7 +13502,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_22"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13697,7 +13814,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_23"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13987,7 +14104,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_24"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -14321,7 +14438,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_25"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -14633,7 +14750,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_26"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -14945,7 +15062,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_27"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -15235,7 +15352,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_28"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -15547,7 +15664,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Selector_29"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -15831,11 +15948,12 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [-125, 1314, 5, 1336]
 	  ZOrder		  438
+	  ForegroundColor	  "blue"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Selector_30"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -15852,36 +15970,67 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Address(1B)"
 	      SID		      "471"
-	      Position		      [15, 183, 45, 197]
+	      Position		      [130, 183, 160, 197]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "472"
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "669"
 	      Ports		      [1, 8]
-	      Position		      [220, 125, 230, 250]
-	      ZOrder		      599
+	      Position		      [215, 130, 225, 245]
+	      ZOrder		      2111
 	      ShowName		      off
-	      Outputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter9"
-	      SID		      "473"
-	      Ports		      [1, 1]
-	      Position		      [90, 168, 170, 212]
-	      ZOrder		      600
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "8"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -15966,8 +16115,10 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Demux"
+	      Name		      "<signal8>"
+	      ZOrder		      23
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
 	      DstBlock		      "Logical\nOperator7"
 	      DstPort		      1
@@ -15980,36 +16131,46 @@ Library {
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Demux"
+	      Name		      "<signal7>"
+	      ZOrder		      19
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Demux"
+	      Name		      "<signal6>"
+	      ZOrder		      18
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Demux"
+	      Name		      "<signal5>"
+	      ZOrder		      20
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "Demux"
+	      Name		      "<signal4>"
+	      ZOrder		      21
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "Demux"
+	      Name		      "<signal3>"
+	      ZOrder		      22
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
 	      DstBlock		      "Logical\nOperator2"
 	      DstPort		      1
@@ -16022,8 +16183,10 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      9
-	      SrcBlock		      "Demux"
+	      Name		      "<signal2>"
+	      ZOrder		      17
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
 	      DstBlock		      "Logical\nOperator1"
 	      DstPort		      1
@@ -16043,8 +16206,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      12
-	      SrcBlock		      "Demux"
+	      Name		      "<signal1>"
+	      ZOrder		      16
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
 	      DstBlock		      "Logical\nOperator26"
 	      DstPort		      1
@@ -16057,17 +16222,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      14
+	      ZOrder		      25
 	      SrcBlock		      "Address(1B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter9"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      15
-	      SrcBlock		      "Integer to Bit\nConverter9"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
+	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	  }
@@ -16079,11 +16237,12 @@ Library {
 	  Ports			  [1, 1]
 	  Position		  [-125, 1359, 5, 1381]
 	  ZOrder		  439
+	  ForegroundColor	  "blue"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Selector_31"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -16100,36 +16259,67 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Address(1B)"
 	      SID		      "481"
-	      Position		      [15, 183, 45, 197]
+	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
-	      BlockType		      Demux
-	      Name		      "Demux"
-	      SID		      "482"
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "670"
 	      Ports		      [1, 8]
-	      Position		      [220, 125, 230, 250]
-	      ZOrder		      599
+	      Position		      [215, 130, 225, 245]
+	      ZOrder		      2111
 	      ShowName		      off
-	      Outputs		      "8"
-	      DisplayOption	      "bar"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Integer to Bit\nConverter9"
-	      SID		      "483"
-	      Ports		      [1, 1]
-	      Position		      [90, 168, 170, 212]
-	      ZOrder		      600
-	      ShowName		      off
-	      LibraryVersion	      "1.278"
-	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
-	      SourceType	      "Integer to Bit Converter"
-	      nbits		      "8"
-	      signedInputValues	      "Unsigned"
-	      bitOrder		      "MSB first"
-	      outDtype		      "boolean"
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -16199,43 +16389,55 @@ Library {
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Demux"
+	      Name		      "<signal8>"
+	      ZOrder		      20
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      8
 	    }
 	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Demux"
+	      Name		      "<signal7>"
+	      ZOrder		      22
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      7
 	    }
 	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Demux"
+	      Name		      "<signal6>"
+	      ZOrder		      21
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      6
 	    }
 	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Demux"
+	      Name		      "<signal5>"
+	      ZOrder		      16
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      5
 	    }
 	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Demux"
+	      Name		      "<signal4>"
+	      ZOrder		      15
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
 	      DstBlock		      "Logical\nOperator9"
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "Demux"
+	      Name		      "<signal3>"
+	      ZOrder		      19
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
 	      DstBlock		      "Logical\nOperator2"
 	      DstPort		      1
@@ -16248,8 +16450,10 @@ Library {
 	      DstPort		      3
 	    }
 	    Line {
-	      ZOrder		      8
-	      SrcBlock		      "Demux"
+	      Name		      "<signal2>"
+	      ZOrder		      18
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
 	      DstBlock		      "Logical\nOperator1"
 	      DstPort		      1
@@ -16269,8 +16473,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      11
-	      SrcBlock		      "Demux"
+	      Name		      "<signal1>"
+	      ZOrder		      17
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
 	      DstBlock		      "Logical\nOperator26"
 	      DstPort		      1
@@ -16283,17 +16489,10 @@ Library {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      13
+	      ZOrder		      23
 	      SrcBlock		      "Address(1B)"
 	      SrcPort		      1
-	      DstBlock		      "Integer to Bit\nConverter9"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      14
-	      SrcBlock		      "Integer to Bit\nConverter9"
-	      SrcPort		      1
-	      DstBlock		      "Demux"
+	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	  }

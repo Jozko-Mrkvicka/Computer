@@ -371,8 +371,8 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 case c.PUSH
                     fprintf('   PUSH    r%d                 |', bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                % case c.NOT_USED
-                %     fprintf('   NOT_USED     r%d                 |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4))
+                case c.SHIFT
+                    fprintf('   SHIFT   r%d      r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.ADD
                     fprintf('   ADD     r%d      r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
