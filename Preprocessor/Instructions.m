@@ -318,23 +318,49 @@ c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      NOT_USED
+%      Store byte (lower) instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
+% Description:
+%     The STBU instruction stores lower byte of a register
+%     to lower byte of a word in memory. The other byte
+%     of the word remains unchanged.
+%
 % First operand:
-%     NOT_USED
+%     Destination address.
 %
 % Second operand:
-%     NOT_USED
+%     Byte to store.
 %
 % Type of operands:        Example:
-%     NOT_USED               NOT_USED
+%     STBL  REG  REG         STBL  a(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('11 00100 0');
-NOT_USED = bin2dec('11 00011 0');
-c.NOT_USED = NOT_USED;
-c.NOT_USED = NOT_USED;
+STBL = bin2dec('11 00100 0');
+c.STBL = STBL;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%      Store byte (upper) instruction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R DDDD|SSSS
+%
+% Description:
+%     The STBU instruction stores lower byte of a register
+%     to upper byte of a word in memory. The other byte
+%     of the word remains unchanged.
+%
+% First operand:
+%     Destination address.
+%
+% Second operand:
+%     Byte to store.
+%
+% Type of operands:        Example:
+%     STBU  REG  REG         STBU  a(r0)  r1
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+STBU = bin2dec('11 00011 0');
+c.STBU = STBU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

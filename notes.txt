@@ -124,6 +124,21 @@ X X X X . . . X | X . . . . . . .
 . . . . . . . . | . . . . . . . .
 . . . . . . . . | . . . . . . . .
 
+Immediate				Register			Register				Memory
+		 	MOVU  ->			 <-	MOV ->			 <-	LDW
+		 	MOVLS ->								 <-	LDWI
+		 	MOVLU ->								 <-	LDBU
+		 											 <-	LDBL
+		 											 <-	LDBUI
+		 											 <-	LDBLI
+		 												STW   ->
+		 												STWI  ->
+		 												STBU  ->
+		 												STBL  ->
+		 												STBUI ->
+		 												STBLI ->
+
+
 
 #############################################
 # Co treba urobit
@@ -131,15 +146,15 @@ X X X X . . . X | X . . . . . . .
 - Computer:
 	- Nove instrukcie:
 		- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
-		- Pridat SHIFT/SHIFTI instrukcie.
-		- Pridat instrukcie MOV byte/nibble(?) + dajak to napasovat na uz existujuce MOVU/MOVL.
+		- Pridat nove instrukcie na manipulaciu s bajtami: LDBU, LDBL.
 
 	- Ochrana pamati:
 		- Detekovat stack overflow/underflow.
 		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
 
-	- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
-	- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
+	- Zjednotit selectory:
+		- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
+		- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
 
 
 - Preprocessor:
@@ -175,7 +190,7 @@ X X X X . . . X | X . . . . . . .
 
 
 GIT:
-	- Auxiliary adder for the return address computation deleted. Now the ALU is used.
+	- 
 
 
 
