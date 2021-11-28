@@ -353,11 +353,11 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 case c.AND
                     fprintf('   AND     r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                % case c.NOT_USED
-                %     fprintf('   NOT_USED    r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                case c.LOADL
+                    fprintf('   LOADL   r%d      m(r%d)      |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                % case c.NOT_USED
-                %     fprintf('   NOT_USED    r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                case c.LOADU
+                    fprintf('   LOADU   r%d      m(r%d)      |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.CMP
                     fprintf('   CMP     r%d      r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
@@ -380,11 +380,11 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 % case c.NOT_USED
                 %     fprintf('   NOT_USED     r%d      r%d        |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.STBL
-                    fprintf('   STBL    m(r%d)   r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                case c.STOREL
+                    fprintf('   STOREL  m(r%d)   r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
-                case c.STBU
-                    fprintf('   STBU    m(r%d)   r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
+                case c.STOREU
+                    fprintf('   STOREU  m(r%d)   r%d         |',  bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
 
                 case c.STORE
                     fprintf('   STORE   m(r%d)   r%d         |', bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4), bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK))
