@@ -144,9 +144,6 @@ Immediate				Register			Register				Memory
 # Co treba urobit
 #############################################
 - Computer:
-	- Nove instrukcie:
-		- Ako vykonat skok pri porovnani na nerovnost? Asi mi chybaju instrukcie Jump Greater Than, Jump Less Than. MIPS pouziva instrukcie SLT/SLTI (set less then). Potom by stacili uz existujuce jumpy (JPE, JNE).
-
 	- Ochrana pamati:
 		- Detekovat stack overflow/underflow.
 		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
