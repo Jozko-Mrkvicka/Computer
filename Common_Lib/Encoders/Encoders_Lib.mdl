@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [416.0, 0.0, 1510.0, 1080.0]
+      Location		      [54.0, -8.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,9 +43,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"163"
-	Extents			[1460.0, 913.0]
-	ZoomFactor		[0.6]
-	Offset			[-469.19974015459832, 73.437767873253961]
+	Extents			[1824.0, 929.0]
+	ZoomFactor		[1.0]
+	Offset			[-568.09809007987133, 155.48240746413671]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Sep 19 12:59:39 2021"
-  RTWModifiedTimeStamp	  553957174
-  ModelVersionFormat	  "1.%<AutoIncrement:45>"
+  LastModifiedDate	  "Sun Dec 05 00:09:03 2021"
+  RTWModifiedTimeStamp	  560563737
+  ModelVersionFormat	  "1.%<AutoIncrement:49>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -878,7 +878,7 @@ Library {
       Variant		      off
       System {
 	Name			"Encoders_Lib"
-	Location		[416, 0, 1926, 1080]
+	Location		[54, -8, 1928, 1088]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -890,7 +890,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"60"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Encoder_16_to_4"
@@ -914,7 +914,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_15(1b)"
@@ -1123,7 +1123,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_3(1b)"
+	      Name		      "Addr_3(1b)"
 	      SID		      "215"
 	      Position		      [710, 1003, 740, 1017]
 	      ZOrder		      3
@@ -1131,7 +1131,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_2(1b)"
+	      Name		      "Addr_2(1b)"
 	      SID		      "214"
 	      Position		      [710, 858, 740, 872]
 	      ZOrder		      2
@@ -1140,7 +1140,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "213"
 	      Position		      [710, 718, 740, 732]
 	      ZOrder		      1
@@ -1149,7 +1149,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "212"
 	      Position		      [710, 578, 740, 592]
 	      ZOrder		      -2
@@ -1160,28 +1160,28 @@ Library {
 	      ZOrder		      1
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_0(1b)"
+	      DstBlock		      "Addr_0(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      2
 	      SrcBlock		      "Logical\nOperator1"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_1(1b)"
+	      DstBlock		      "Addr_1(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      3
 	      SrcBlock		      "Logical\nOperator2"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_2(1b)"
+	      DstBlock		      "Addr_2(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      4
 	      SrcBlock		      "Logical\nOperator3"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_3(1b)"
+	      DstBlock		      "Addr_3(1b)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1490,7 +1490,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "200"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_31(1b)"
@@ -1879,7 +1879,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "293"
 	      Position		      [865, -452, 895, -438]
 	      ZOrder		      -2
@@ -1889,7 +1889,7 @@ Library {
 	      ZOrder		      1
 	      SrcBlock		      "Bus\nCreator3"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out(1B)"
+	      DstBlock		      "Addr(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -2666,7 +2666,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Encoder_4_to_2"
-	    Location		    [58, -4, 1924, 1084]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2750,7 +2750,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "174"
 	      Position		      [360, 138, 390, 152]
 	      ZOrder		      -2
@@ -2758,7 +2758,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "175"
 	      Position		      [360, 173, 390, 187]
 	      ZOrder		      1
@@ -2769,14 +2769,14 @@ Library {
 	      ZOrder		      1
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_1(1b)"
+	      DstBlock		      "Addr_1(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      2
 	      SrcBlock		      "Logical\nOperator1"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_0(1b)"
+	      DstBlock		      "Addr_0(1b)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -2845,7 +2845,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Select_63(1b)"
@@ -3536,7 +3536,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "357"
 	      Position		      [865, -82, 895, -68]
 	      ZOrder		      -2
@@ -3546,7 +3546,7 @@ Library {
 	      ZOrder		      1
 	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out(1B)"
+	      DstBlock		      "Addr(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5298,7 +5298,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Encoder_8_to_3"
-	    Location		    [58, -4, 1924, 1084]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5434,7 +5434,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_2(1b)"
+	      Name		      "Addr_2(1b)"
 	      SID		      "188"
 	      Position		      [475, 293, 505, 307]
 	      ZOrder		      -2
@@ -5442,7 +5442,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "189"
 	      Position		      [475, 358, 505, 372]
 	      ZOrder		      1
@@ -5451,7 +5451,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Address_Out_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "190"
 	      Position		      [475, 423, 505, 437]
 	      ZOrder		      2
@@ -5462,21 +5462,21 @@ Library {
 	      ZOrder		      1
 	      SrcBlock		      "Logical\nOperator"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_2(1b)"
+	      DstBlock		      "Addr_2(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      2
 	      SrcBlock		      "Logical\nOperator1"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_1(1b)"
+	      DstBlock		      "Addr_1(1b)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      3
 	      SrcBlock		      "Logical\nOperator2"
 	      SrcPort		      1
-	      DstBlock		      "Address_Out_0(1b)"
+	      DstBlock		      "Addr_0(1b)"
 	      DstPort		      1
 	    }
 	    Line {

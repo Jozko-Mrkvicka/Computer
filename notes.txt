@@ -148,17 +148,9 @@ Immediate				Register			Register				Memory
 		- Detekovat stack overflow/underflow.
 		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
 
-	- Zjednotit selectory:
-		- Pred vsetky writtable zariadenia na address buse pridat address selector blocky (nastavitelne pomocou manual switchov).
-		- Command Bus Selectory nahradit jednym typom. Bude manualne konfigurovatelny pomocou switchov.
-
-
-- Preprocessor:
-	- Zarovnat pravy okraj vygenerovaneho kodu.
-
 
 - Clean-up:
-	- Nahradit nevyuzite multiplexory 16_to_1/8_to_1 za 4_to_1.
+	- 
 
 
 - System testy
@@ -167,6 +159,10 @@ Immediate				Register			Register				Memory
 
 - Unit testy
 	-
+
+
+- Preprocessor:
+	- Zarovnat pravy okraj vygenerovaneho kodu.
 
 
 - Firmware:
@@ -186,7 +182,7 @@ Immediate				Register			Register				Memory
 
 
 GIT:
-	- 
-
-
+	- The Computer_Library renamed to Miscellaneous and moved to the Common_Lib.
+	- Command bus selectors replaced with single one which can be manually configured.
+	- Manually configured address selectors added to all writtable devices on address bus.
 

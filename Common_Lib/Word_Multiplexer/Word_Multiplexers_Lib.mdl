@@ -44,8 +44,8 @@ Library {
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"240"
 	Extents			[1824.0, 929.0]
-	ZoomFactor		[1.0]
-	Offset			[-517.75, 111.29302476118329]
+	ZoomFactor		[1.75]
+	Offset			[-363.78383297638192, 482.24670252395356]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Sep 25 15:27:09 2021"
-  RTWModifiedTimeStamp	  554484427
-  ModelVersionFormat	  "1.%<AutoIncrement:273>"
+  LastModifiedDate	  "Sun Dec 05 00:04:33 2021"
+  RTWModifiedTimeStamp	  560563451
+  ModelVersionFormat	  "1.%<AutoIncrement:275>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -879,7 +879,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"175"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Word_Multiplexer_16_to_1"
@@ -892,7 +892,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Word_Multiplexer_16_to_1"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -904,10 +904,10 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "250"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_3(1b)"
+	      Name		      "Addr_3(1b)"
 	      SID		      "244"
 	      Position		      [-1990, -12502, -1960, -12488]
 	      ZOrder		      649
@@ -916,7 +916,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_2(1b)"
+	      Name		      "Addr_2(1b)"
 	      SID		      "245"
 	      Position		      [-1990, -12457, -1960, -12443]
 	      ZOrder		      650
@@ -926,7 +926,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "246"
 	      Position		      [-1990, -12412, -1960, -12398]
 	      ZOrder		      651
@@ -936,7 +936,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "247"
 	      Position		      [-1990, -12367, -1960, -12353]
 	      ZOrder		      652
@@ -946,7 +946,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_15(2B)"
+	      Name		      "Data_15(2B)"
 	      SID		      "248"
 	      Position		      [-1990, 2713, -1960, 2727]
 	      ZOrder		      341
@@ -955,7 +955,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_14(2B)"
+	      Name		      "Data_14(2B)"
 	      SID		      "249"
 	      Position		      [-1990, 2898, -1960, 2912]
 	      ZOrder		      565
@@ -964,7 +964,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_13(2B)"
+	      Name		      "Data_13(2B)"
 	      SID		      "250"
 	      Position		      [-1990, 3088, -1960, 3102]
 	      ZOrder		      567
@@ -973,7 +973,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_12(2B)"
+	      Name		      "Data_12(2B)"
 	      SID		      "251"
 	      Position		      [-1990, 3283, -1960, 3297]
 	      ZOrder		      569
@@ -982,7 +982,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_11(2B)"
+	      Name		      "Data_11(2B)"
 	      SID		      "252"
 	      Position		      [-1990, 3483, -1960, 3497]
 	      ZOrder		      571
@@ -991,7 +991,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_10(2B)"
+	      Name		      "Data_10(2B)"
 	      SID		      "253"
 	      Position		      [-1990, 3683, -1960, 3697]
 	      ZOrder		      573
@@ -1000,7 +1000,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_09(2B)"
+	      Name		      "Data_09(2B)"
 	      SID		      "254"
 	      Position		      [-1990, 3888, -1960, 3902]
 	      ZOrder		      575
@@ -1009,7 +1009,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_08(2B)"
+	      Name		      "Data_08(2B)"
 	      SID		      "255"
 	      Position		      [-1990, 4093, -1960, 4107]
 	      ZOrder		      577
@@ -1018,7 +1018,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_07(2B)"
+	      Name		      "Data_07(2B)"
 	      SID		      "256"
 	      Position		      [-1990, 4293, -1960, 4307]
 	      ZOrder		      579
@@ -1027,7 +1027,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_06(2B)"
+	      Name		      "Data_06(2B)"
 	      SID		      "257"
 	      Position		      [-1990, 4493, -1960, 4507]
 	      ZOrder		      581
@@ -1036,7 +1036,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_05(2B)"
+	      Name		      "Data_05(2B)"
 	      SID		      "258"
 	      Position		      [-1990, 4693, -1960, 4707]
 	      ZOrder		      583
@@ -1045,7 +1045,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_04(2B)"
+	      Name		      "Data_04(2B)"
 	      SID		      "259"
 	      Position		      [-1990, 4898, -1960, 4912]
 	      ZOrder		      585
@@ -1054,7 +1054,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_03(2B)"
+	      Name		      "Data_03(2B)"
 	      SID		      "260"
 	      Position		      [-1990, 5103, -1960, 5117]
 	      ZOrder		      587
@@ -1063,7 +1063,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_02(2B)"
+	      Name		      "Data_02(2B)"
 	      SID		      "261"
 	      Position		      [-1995, 5308, -1965, 5322]
 	      ZOrder		      589
@@ -1072,7 +1072,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_01(2B)"
+	      Name		      "Data_01(2B)"
 	      SID		      "262"
 	      Position		      [-1995, 5513, -1965, 5527]
 	      ZOrder		      591
@@ -1081,7 +1081,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_00(2B)"
+	      Name		      "Data_00(2B)"
 	      SID		      "263"
 	      Position		      [-1995, 5718, -1965, 5732]
 	      ZOrder		      593
@@ -6410,7 +6410,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out(2B)"
+	      Name		      "Data(2B)"
 	      SID		      "550"
 	      Position		      [5455, -12092, 5485, -12078]
 	      ZOrder		      614
@@ -6418,7 +6418,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Data_In_15(2B)"
+	      SrcBlock		      "Data_15(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector15"
 	      DstPort		      1
@@ -6489,105 +6489,105 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      10
-	      SrcBlock		      "Data_In_14(2B)"
+	      SrcBlock		      "Data_14(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector14"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      11
-	      SrcBlock		      "Data_In_13(2B)"
+	      SrcBlock		      "Data_13(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector13"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      12
-	      SrcBlock		      "Data_In_12(2B)"
+	      SrcBlock		      "Data_12(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector12"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      13
-	      SrcBlock		      "Data_In_11(2B)"
+	      SrcBlock		      "Data_11(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector11"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      14
-	      SrcBlock		      "Data_In_10(2B)"
+	      SrcBlock		      "Data_10(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector10"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Data_In_09(2B)"
+	      SrcBlock		      "Data_09(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector9"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Data_In_08(2B)"
+	      SrcBlock		      "Data_08(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector8"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      17
-	      SrcBlock		      "Data_In_07(2B)"
+	      SrcBlock		      "Data_07(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector7"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      18
-	      SrcBlock		      "Data_In_06(2B)"
+	      SrcBlock		      "Data_06(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector6"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      19
-	      SrcBlock		      "Data_In_05(2B)"
+	      SrcBlock		      "Data_05(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector5"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      20
-	      SrcBlock		      "Data_In_04(2B)"
+	      SrcBlock		      "Data_04(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector4"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      21
-	      SrcBlock		      "Data_In_03(2B)"
+	      SrcBlock		      "Data_03(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector3"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      22
-	      SrcBlock		      "Data_In_02(2B)"
+	      SrcBlock		      "Data_02(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector2"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      23
-	      SrcBlock		      "Data_In_01(2B)"
+	      SrcBlock		      "Data_01(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector1"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      24
-	      SrcBlock		      "Data_In_00(2B)"
+	      SrcBlock		      "Data_00(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -6596,7 +6596,7 @@ Library {
 	      ZOrder		      25
 	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out(2B)"
+	      DstBlock		      "Data(2B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -15573,7 +15573,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1534
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [6501, 0]
 	      Branch {
@@ -16734,7 +16734,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1791
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [6500, 0]
 	      Branch {
@@ -17895,7 +17895,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      2048
-	      SrcBlock		      "Address_2(1b)"
+	      SrcBlock		      "Addr_2(1b)"
 	      SrcPort		      1
 	      Points		      [6499, 0]
 	      Branch {
@@ -19056,7 +19056,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      2305
-	      SrcBlock		      "Address_3(1b)"
+	      SrcBlock		      "Addr_3(1b)"
 	      SrcPort		      1
 	      Points		      [6498, 0]
 	      Branch {
@@ -20772,7 +20772,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Word_Multiplexer_4_to_1"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -20784,10 +20784,10 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "26"
+	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "359"
 	      Position		      [2015, -97, 2045, -83]
 	      ZOrder		      648
@@ -20796,7 +20796,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "360"
 	      Position		      [2015, -47, 2045, -33]
 	      ZOrder		      649
@@ -20806,7 +20806,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_3(2B)"
+	      Name		      "Data_3(2B)"
 	      SID		      "361"
 	      Position		      [1965, 2643, 1995, 2657]
 	      ZOrder		      587
@@ -20815,7 +20815,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_2(2B)"
+	      Name		      "Data_2(2B)"
 	      SID		      "362"
 	      Position		      [1960, 2828, 1990, 2842]
 	      ZOrder		      589
@@ -20824,7 +20824,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_1(2B)"
+	      Name		      "Data_1(2B)"
 	      SID		      "363"
 	      Position		      [1960, 3018, 1990, 3032]
 	      ZOrder		      591
@@ -20833,7 +20833,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_0(2B)"
+	      Name		      "Data_0(2B)"
 	      SID		      "364"
 	      Position		      [1960, 3208, 1990, 3222]
 	      ZOrder		      593
@@ -22352,7 +22352,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out(2B)"
+	      Name		      "Data(2B)"
 	      SID		      "2055"
 	      Position		      [5145, 98, 5175, 112]
 	      ZOrder		      2064
@@ -22362,7 +22362,7 @@ Library {
 	      ZOrder		      1
 	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out(2B)"
+	      DstBlock		      "Data(2B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -22431,28 +22431,28 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      10
-	      SrcBlock		      "Data_In_3(2B)"
+	      SrcBlock		      "Data_3(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      11
-	      SrcBlock		      "Data_In_2(2B)"
+	      SrcBlock		      "Data_2(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector1"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      12
-	      SrcBlock		      "Data_In_1(2B)"
+	      SrcBlock		      "Data_1(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector2"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      13
-	      SrcBlock		      "Data_In_0(2B)"
+	      SrcBlock		      "Data_0(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector3"
 	      DstPort		      1
@@ -24161,7 +24161,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      268
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [2238, 0]
 	      Branch {
@@ -24458,7 +24458,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      333
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [2236, 0]
 	      Branch {
@@ -25073,6 +25073,7 @@ Library {
 	  Ports			  [3, 1]
 	  Position		  [50, 203, 205, 247]
 	  ZOrder		  1329
+	  Commented		  "on"
 	  LibraryVersion	  "*1.267"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -27212,6 +27213,7 @@ Library {
 	  Ports			  [11, 1]
 	  Position		  [50, 399, 205, 571]
 	  ZOrder		  1346
+	  Commented		  "on"
 	  LibraryVersion	  "*1.263"
 	  RequestExecContextInheritance	off
 	  Variant		  off

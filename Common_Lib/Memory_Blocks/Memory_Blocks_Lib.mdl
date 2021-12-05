@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, -8.0, 1874.0, 1096.0]
+      Location		      [54.0, 0.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -45,7 +45,7 @@ Library {
 	LoadSaveID		"1"
 	Extents			[1824.0, 929.0]
 	ZoomFactor		[1.75]
-	Offset			[142.44272583954356, 120.08724296632732]
+	Offset			[26.726211328405498, 35.627113355642109]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Oct 16 20:08:25 2021"
-  RTWModifiedTimeStamp	  556315693
-  ModelVersionFormat	  "1.%<AutoIncrement:78>"
+  LastModifiedDate	  "Sun Dec 05 00:25:30 2021"
+  RTWModifiedTimeStamp	  560564709
+  ModelVersionFormat	  "1.%<AutoIncrement:83>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -903,7 +903,7 @@ Library {
       Variant		      off
       System {
 	Name			"Memory_Blocks_Lib"
-	Location		[54, -8, 1928, 1088]
+	Location		[54, 0, 1928, 1096]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -918,1060 +918,6 @@ Library {
 	ZoomFactor		"175"
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "16B_RAM_Memory"
-	  SID			  "4"
-	  Ports			  [7, 1]
-	  Position		  [410, 602, 570, 708]
-	  ZOrder		  466
-	  RequestExecContextInheritance	off
-	  Variant		  off
-	  System {
-	    Name		    "16B_RAM_Memory"
-	    Location		    [57, -8, 1928, 1088]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "60"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Addr_3(1b)"
-	      SID		      "5"
-	      Position		      [20, 133, 50, 147]
-	      ZOrder		      202
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Addr_2(1b)"
-	      SID		      "6"
-	      Position		      [20, 193, 50, 207]
-	      ZOrder		      471
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Addr_1(1b)"
-	      SID		      "7"
-	      Position		      [20, 253, 50, 267]
-	      ZOrder		      472
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Addr_0(1b)"
-	      SID		      "8"
-	      Position		      [20, 313, 50, 327]
-	      ZOrder		      473
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Write(1b)"
-	      SID		      "9"
-	      Position		      [255, 1628, 285, 1642]
-	      ZOrder		      185
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Data_In(1B)"
-	      SID		      "10"
-	      Position		      [255, 1568, 285, 1582]
-	      ZOrder		      184
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "CLK"
-	      SID		      "11"
-	      Position		      [255, 1508, 285, 1522]
-	      ZOrder		      470
-	      Port		      "7"
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "double"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "16_to_1_Byte_Multiplexer"
-	      SID		      "12"
-	      Ports		      [20, 1]
-	      Position		      [1810, 20, 1980, 420]
-	      ZOrder		      474
-	      LibraryVersion	      "1.8"
-	      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "4_to_16_Decoder"
-	      SID		      "13"
-	      Ports		      [4, 16]
-	      Position		      [340, 104, 495, 351]
-	      ZOrder		      358
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_4_to_16"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte0"
-	      SID		      "14"
-	      Ports		      [4, 1]
-	      Position		      [1100, 1381, 1260, 1444]
-	      ZOrder		      454
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte1"
-	      SID		      "15"
-	      Ports		      [4, 1]
-	      Position		      [1100, 1296, 1260, 1359]
-	      ZOrder		      455
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte10"
-	      SID		      "16"
-	      Ports		      [4, 1]
-	      Position		      [1100, 531, 1260, 594]
-	      ZOrder		      464
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte11"
-	      SID		      "17"
-	      Ports		      [4, 1]
-	      Position		      [1100, 446, 1260, 509]
-	      ZOrder		      465
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte12"
-	      SID		      "18"
-	      Ports		      [4, 1]
-	      Position		      [1100, 361, 1260, 424]
-	      ZOrder		      466
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte13"
-	      SID		      "19"
-	      Ports		      [4, 1]
-	      Position		      [1100, 276, 1260, 339]
-	      ZOrder		      467
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte14"
-	      SID		      "20"
-	      Ports		      [4, 1]
-	      Position		      [1100, 191, 1260, 254]
-	      ZOrder		      468
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte15"
-	      SID		      "21"
-	      Ports		      [4, 1]
-	      Position		      [1100, 106, 1260, 169]
-	      ZOrder		      469
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte2"
-	      SID		      "22"
-	      Ports		      [4, 1]
-	      Position		      [1100, 1211, 1260, 1274]
-	      ZOrder		      456
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte3"
-	      SID		      "23"
-	      Ports		      [4, 1]
-	      Position		      [1100, 1126, 1260, 1189]
-	      ZOrder		      457
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte4"
-	      SID		      "24"
-	      Ports		      [4, 1]
-	      Position		      [1100, 1041, 1260, 1104]
-	      ZOrder		      458
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte5"
-	      SID		      "25"
-	      Ports		      [4, 1]
-	      Position		      [1100, 956, 1260, 1019]
-	      ZOrder		      459
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte6"
-	      SID		      "26"
-	      Ports		      [4, 1]
-	      Position		      [1100, 871, 1260, 934]
-	      ZOrder		      460
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte7"
-	      SID		      "27"
-	      Ports		      [4, 1]
-	      Position		      [1100, 786, 1260, 849]
-	      ZOrder		      461
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte8"
-	      SID		      "28"
-	      Ports		      [4, 1]
-	      Position		      [1100, 701, 1260, 764]
-	      ZOrder		      462
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Byte9"
-	      SID		      "29"
-	      Ports		      [4, 1]
-	      Position		      [1100, 616, 1260, 679]
-	      ZOrder		      463
-	      LibraryVersion	      "1.6"
-	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
-	      SourceType	      "SubSystem"
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Data_Out(1B)"
-	      SID		      "30"
-	      Position		      [2070, 213, 2100, 227]
-	      ZOrder		      248
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "16_to_1_Byte_Multiplexer"
-	      SrcPort		      1
-	      DstBlock		      "Data_Out(1B)"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Byte0"
-	      SrcPort		      1
-	      Points		      [497, 0; 0, -1005]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      20
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Byte1"
-	      SrcPort		      1
-	      Points		      [450, 0; 0, -940]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      19
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Byte2"
-	      SrcPort		      1
-	      Points		      [425, 0; 0, -875]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      18
-	    }
-	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Byte3"
-	      SrcPort		      1
-	      Points		      [400, 0; 0, -810]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      17
-	    }
-	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "Byte4"
-	      SrcPort		      1
-	      Points		      [375, 0; 0, -745]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      16
-	    }
-	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "Byte5"
-	      SrcPort		      1
-	      Points		      [350, 0; 0, -680]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      15
-	    }
-	    Line {
-	      ZOrder		      8
-	      SrcBlock		      "Byte6"
-	      SrcPort		      1
-	      Points		      [325, 0; 0, -615]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      14
-	    }
-	    Line {
-	      ZOrder		      9
-	      SrcBlock		      "Byte7"
-	      SrcPort		      1
-	      Points		      [301, 0; 0, -550]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      13
-	    }
-	    Line {
-	      ZOrder		      10
-	      SrcBlock		      "Byte8"
-	      SrcPort		      1
-	      Points		      [276, 0; 0, -485]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      12
-	    }
-	    Line {
-	      ZOrder		      11
-	      SrcBlock		      "Byte9"
-	      SrcPort		      1
-	      Points		      [251, 0; 0, -420]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      11
-	    }
-	    Line {
-	      ZOrder		      12
-	      SrcBlock		      "Byte10"
-	      SrcPort		      1
-	      Points		      [225, 0; 0, -355]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      10
-	    }
-	    Line {
-	      ZOrder		      13
-	      SrcBlock		      "Byte11"
-	      SrcPort		      1
-	      Points		      [197, 0; 0, -290]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      9
-	    }
-	    Line {
-	      ZOrder		      14
-	      SrcBlock		      "Byte12"
-	      SrcPort		      1
-	      Points		      [166, 0; 0, -225]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      8
-	    }
-	    Line {
-	      ZOrder		      15
-	      SrcBlock		      "Byte13"
-	      SrcPort		      1
-	      Points		      [138, 0; 0, -160]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      7
-	    }
-	    Line {
-	      ZOrder		      16
-	      SrcBlock		      "Byte14"
-	      SrcPort		      1
-	      Points		      [112, 0; 0, -95]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      6
-	    }
-	    Line {
-	      ZOrder		      17
-	      SrcBlock		      "Byte15"
-	      SrcPort		      1
-	      Points		      [89, 0; 0, -30]
-	      DstBlock		      "16_to_1_Byte_Multiplexer"
-	      DstPort		      5
-	    }
-	    Line {
-	      ZOrder		      18
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      16
-	      Points		      [32, 0; 0, 1050]
-	      DstBlock		      "Byte0"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      19
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      15
-	      Points		      [59, 0; 0, 980]
-	      DstBlock		      "Byte1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      20
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      14
-	      Points		      [84, 0; 0, 910]
-	      DstBlock		      "Byte2"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      21
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      13
-	      Points		      [109, 0; 0, 840]
-	      DstBlock		      "Byte3"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      22
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      12
-	      Points		      [131, 0; 0, 770]
-	      DstBlock		      "Byte4"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      23
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      11
-	      Points		      [153, 0; 0, 700]
-	      DstBlock		      "Byte5"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      24
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      10
-	      Points		      [176, 0; 0, 630]
-	      DstBlock		      "Byte6"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      25
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      9
-	      Points		      [198, 0; 0, 560]
-	      DstBlock		      "Byte7"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      26
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      8
-	      Points		      [220, 0; 0, 490]
-	      DstBlock		      "Byte8"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      27
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      7
-	      Points		      [243, 0; 0, 420]
-	      DstBlock		      "Byte9"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      28
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      6
-	      Points		      [265, 0; 0, 350]
-	      DstBlock		      "Byte10"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      29
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      5
-	      Points		      [287, 0; 0, 280]
-	      DstBlock		      "Byte11"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      30
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      4
-	      Points		      [309, 0; 0, 210]
-	      DstBlock		      "Byte12"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      31
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      3
-	      Points		      [334, 0; 0, 140]
-	      DstBlock		      "Byte13"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      32
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      2
-	      Points		      [359, 0; 0, 70]
-	      DstBlock		      "Byte14"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      33
-	      SrcBlock		      "Addr_3(1b)"
-	      SrcPort		      1
-	      Points		      [104, 0]
-	      Branch {
-		ZOrder			34
-		DstBlock		"4_to_16_Decoder"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			35
-		Points			[0, -110]
-		DstBlock		"16_to_1_Byte_Multiplexer"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      36
-	      SrcBlock		      "4_to_16_Decoder"
-	      SrcPort		      1
-	      DstBlock		      "Byte15"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      37
-	      SrcBlock		      "Write(1b)"
-	      SrcPort		      1
-	      Points		      [637, 0; 0, -230]
-	      Branch {
-		ZOrder			38
-		Points			[0, -85]
-		Branch {
-		  ZOrder		  39
-		  Points		  [0, -85]
-		  Branch {
-		    ZOrder		    40
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    41
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    42
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    43
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    44
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    45
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    46
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    47
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    48
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    49
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    50
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    51
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    52
-		    Points		    [0, -85]
-		    DstBlock		    "Byte15"
-		    DstPort		    2
-		    }
-		    Branch {
-		    ZOrder		    53
-		    DstBlock		    "Byte14"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    54
-		    DstBlock		    "Byte13"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    55
-		    DstBlock		    "Byte12"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    56
-		    DstBlock		    "Byte11"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    57
-		    DstBlock		    "Byte10"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    58
-		    DstBlock		    "Byte9"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    59
-		    DstBlock		    "Byte8"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    60
-		    DstBlock		    "Byte7"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    61
-		    DstBlock		    "Byte6"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    62
-		    DstBlock		    "Byte5"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    63
-		    DstBlock		    "Byte4"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    64
-		    DstBlock		    "Byte3"
-		    DstPort		    2
-		    }
-		  }
-		  Branch {
-		    ZOrder		    65
-		    DstBlock		    "Byte2"
-		    DstPort		    2
-		  }
-		}
-		Branch {
-		  ZOrder		  66
-		  DstBlock		  "Byte1"
-		  DstPort		  2
-		}
-	      }
-	      Branch {
-		ZOrder			67
-		DstBlock		"Byte0"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      ZOrder		      68
-	      SrcBlock		      "Data_In(1B)"
-	      SrcPort		      1
-	      Points		      [617, 0; 0, -155]
-	      Branch {
-		ZOrder			69
-		Points			[0, -85]
-		Branch {
-		  ZOrder		  70
-		  Points		  [0, -85]
-		  Branch {
-		    ZOrder		    71
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    72
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    73
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    74
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    75
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    76
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    77
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    78
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    79
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    80
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    81
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    82
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    83
-		    Points		    [0, -85]
-		    DstBlock		    "Byte15"
-		    DstPort		    3
-		    }
-		    Branch {
-		    ZOrder		    84
-		    DstBlock		    "Byte14"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    85
-		    DstBlock		    "Byte13"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    86
-		    DstBlock		    "Byte12"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    87
-		    DstBlock		    "Byte11"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    88
-		    DstBlock		    "Byte10"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    89
-		    DstBlock		    "Byte9"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    90
-		    DstBlock		    "Byte8"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    91
-		    DstBlock		    "Byte7"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    92
-		    DstBlock		    "Byte6"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    93
-		    DstBlock		    "Byte5"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    94
-		    DstBlock		    "Byte4"
-		    DstPort		    3
-		    }
-		    }
-		    Branch {
-		    ZOrder		    95
-		    DstBlock		    "Byte3"
-		    DstPort		    3
-		    }
-		  }
-		  Branch {
-		    ZOrder		    96
-		    DstBlock		    "Byte2"
-		    DstPort		    3
-		  }
-		}
-		Branch {
-		  ZOrder		  97
-		  DstBlock		  "Byte1"
-		  DstPort		  3
-		}
-	      }
-	      Branch {
-		ZOrder			98
-		DstBlock		"Byte0"
-		DstPort			3
-	      }
-	    }
-	    Line {
-	      ZOrder		      99
-	      SrcBlock		      "CLK"
-	      SrcPort		      1
-	      Points		      [597, 0; 0, -80]
-	      Branch {
-		ZOrder			100
-		Points			[0, -85]
-		Branch {
-		  ZOrder		  101
-		  Points		  [0, -85]
-		  Branch {
-		    ZOrder		    102
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    103
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    104
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    105
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    106
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    107
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    108
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    109
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    110
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    111
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    112
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    113
-		    Points		    [0, -85]
-		    Branch {
-		    ZOrder		    114
-		    Points		    [0, -85]
-		    DstBlock		    "Byte15"
-		    DstPort		    4
-		    }
-		    Branch {
-		    ZOrder		    115
-		    DstBlock		    "Byte14"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    116
-		    DstBlock		    "Byte13"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    117
-		    DstBlock		    "Byte12"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    118
-		    DstBlock		    "Byte11"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    119
-		    DstBlock		    "Byte10"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    120
-		    DstBlock		    "Byte9"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    121
-		    DstBlock		    "Byte8"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    122
-		    DstBlock		    "Byte7"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    123
-		    DstBlock		    "Byte6"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    124
-		    DstBlock		    "Byte5"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    125
-		    DstBlock		    "Byte4"
-		    DstPort		    4
-		    }
-		    }
-		    Branch {
-		    ZOrder		    126
-		    DstBlock		    "Byte3"
-		    DstPort		    4
-		    }
-		  }
-		  Branch {
-		    ZOrder		    127
-		    DstBlock		    "Byte2"
-		    DstPort		    4
-		  }
-		}
-		Branch {
-		  ZOrder		  128
-		  DstBlock		  "Byte1"
-		  DstPort		  4
-		}
-	      }
-	      Branch {
-		ZOrder			129
-		DstBlock		"Byte0"
-		DstPort			4
-	      }
-	    }
-	    Line {
-	      ZOrder		      130
-	      SrcBlock		      "Addr_2(1b)"
-	      SrcPort		      1
-	      Points		      [120, 0]
-	      Branch {
-		ZOrder			131
-		DstBlock		"4_to_16_Decoder"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			132
-		Points			[0, -150]
-		DstBlock		"16_to_1_Byte_Multiplexer"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      ZOrder		      133
-	      SrcBlock		      "Addr_1(1b)"
-	      SrcPort		      1
-	      Points		      [137, 0]
-	      Branch {
-		ZOrder			134
-		DstBlock		"4_to_16_Decoder"
-		DstPort			3
-	      }
-	      Branch {
-		ZOrder			135
-		Points			[0, -190]
-		DstBlock		"16_to_1_Byte_Multiplexer"
-		DstPort			3
-	      }
-	    }
-	    Line {
-	      ZOrder		      136
-	      SrcBlock		      "Addr_0(1b)"
-	      SrcPort		      1
-	      Points		      [153, 0]
-	      Branch {
-		ZOrder			137
-		Points			[0, -230]
-		DstBlock		"16_to_1_Byte_Multiplexer"
-		DstPort			4
-	      }
-	      Branch {
-		ZOrder			138
-		DstBlock		"4_to_16_Decoder"
-		DstPort			4
-	      }
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
 	  Name			  "2B_VRAM+"
 	  SID			  "724"
 	  Ports			  [6, 2]
@@ -1982,7 +928,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "2B_VRAM+"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1994,7 +940,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "100"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Sel_Raw(1b)"
@@ -2032,7 +978,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In(2B)"
+	      Name		      "Data(2B)"
 	      SID		      "784"
 	      Position		      [375, 688, 405, 702]
 	      ZOrder		      2066
@@ -2220,7 +1166,7 @@ Library {
 	      Ports		      [4, 16]
 	      Position		      [635, 857, 775, 1098]
 	      ZOrder		      2065
-	      LibraryVersion	      "1.29"
+	      LibraryVersion	      "1.36"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_4_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2232,7 +1178,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 2262, 1540, 2338]
 	      ZOrder		      1443
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2245,7 +1191,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 2167, 1540, 2243]
 	      ZOrder		      1441
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2258,7 +1204,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 2072, 1540, 2148]
 	      ZOrder		      1439
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2271,7 +1217,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1977, 1540, 2053]
 	      ZOrder		      1437
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2284,7 +1230,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1882, 1540, 1958]
 	      ZOrder		      1442
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2297,7 +1243,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1787, 1540, 1863]
 	      ZOrder		      1440
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2310,7 +1256,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1692, 1540, 1768]
 	      ZOrder		      1438
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2323,7 +1269,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1597, 1540, 1673]
 	      ZOrder		      1436
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2336,7 +1282,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1502, 1540, 1578]
 	      ZOrder		      1023
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2349,7 +1295,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1407, 1540, 1483]
 	      ZOrder		      1019
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2362,7 +1308,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1312, 1540, 1388]
 	      ZOrder		      1015
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2375,7 +1321,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1217, 1540, 1293]
 	      ZOrder		      1011
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2388,7 +1334,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1122, 1540, 1198]
 	      ZOrder		      1022
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2401,7 +1347,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 1027, 1540, 1103]
 	      ZOrder		      1018
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2414,7 +1360,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 932, 1540, 1008]
 	      ZOrder		      1014
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -2427,7 +1373,7 @@ Library {
 	      Ports		      [5, 1]
 	      Position		      [1380, 837, 1540, 913]
 	      ZOrder		      1010
-	      LibraryVersion	      "1.76"
+	      LibraryVersion	      "1.82"
 	      FontName		      "Courier"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/G_Bit"
 	      SourceType	      "SubSystem"
@@ -3859,7 +2805,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      221
-	      SrcBlock		      "Data_In(2B)"
+	      SrcBlock		      "Data(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector1"
 	      DstPort		      1
@@ -4031,14 +2977,14 @@ Library {
 	  Name			  "32B_MPROM_Memory"
 	  SID			  "361"
 	  Ports			  [1, 1]
-	  Position		  [410, 1018, 570, 1042]
+	  Position		  [410, 978, 570, 1002]
 	  ZOrder		  2042
 	  LibraryVersion	  "*1.71"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "32B_MPROM_Memory"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4050,7 +2996,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "50"
+	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr(2B)"
@@ -6612,14 +5558,14 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [2175, 149, 2340, 551]
 	      ZOrder		      516
-	      LibraryVersion	      "1.273"
+	      LibraryVersion	      "1.275"
 	      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/Word_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out(2B)"
+	      Name		      "Data(2B)"
 	      SID		      "657"
 	      Position		      [2445, 343, 2475, 357]
 	      ZOrder		      923
@@ -10982,7 +9928,7 @@ Library {
 	      ZOrder		      736
 	      SrcBlock		      "Word_Multiplexer_16_to_1"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out(2B)"
+	      DstBlock		      "Data(2B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -15074,7 +14020,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "32B_VRAM_Memory"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -15086,7 +14032,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "150"
+	    ZoomFactor		    "80"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr_3(1b)"
@@ -15133,7 +14079,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In(2B)"
+	      Name		      "Data(2B)"
 	      SID		      "701"
 	      Position		      [365, 1463, 395, 1477]
 	      ZOrder		      184
@@ -15157,7 +14103,7 @@ Library {
 	      Ports		      [4, 16]
 	      Position		      [530, 104, 685, 351]
 	      ZOrder		      358
-	      LibraryVersion	      "1.29"
+	      LibraryVersion	      "1.36"
 	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_4_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15181,7 +14127,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 1380, 1320, 1445]
 	      ZOrder		      1461
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15193,7 +14139,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 1295, 1320, 1360]
 	      ZOrder		      1462
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15205,7 +14151,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 530, 1320, 595]
 	      ZOrder		      1471
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15217,7 +14163,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 445, 1320, 510]
 	      ZOrder		      1472
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15229,7 +14175,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 360, 1320, 425]
 	      ZOrder		      1473
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15241,7 +14187,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 275, 1320, 340]
 	      ZOrder		      1474
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15253,7 +14199,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 190, 1320, 255]
 	      ZOrder		      1475
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15265,7 +14211,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 105, 1320, 170]
 	      ZOrder		      1476
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15277,7 +14223,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 1210, 1320, 1275]
 	      ZOrder		      1463
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15289,7 +14235,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 1125, 1320, 1190]
 	      ZOrder		      1464
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15301,7 +14247,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 1040, 1320, 1105]
 	      ZOrder		      1465
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15313,7 +14259,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 955, 1320, 1020]
 	      ZOrder		      1466
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15325,7 +14271,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 870, 1320, 935]
 	      ZOrder		      1467
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15337,7 +14283,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 785, 1320, 850]
 	      ZOrder		      1468
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15349,7 +14295,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 700, 1320, 765]
 	      ZOrder		      1469
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15361,7 +14307,7 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [1160, 615, 1320, 680]
 	      ZOrder		      1470
-	      LibraryVersion	      "1.57"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Word"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -15373,14 +14319,14 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [1815, 18, 1980, 422]
 	      ZOrder		      1478
-	      LibraryVersion	      "1.273"
+	      LibraryVersion	      "1.275"
 	      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/Word_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out(2B)"
+	      Name		      "DataOut(2B)"
 	      SID		      "722"
 	      Position		      [2070, 213, 2100, 227]
 	      ZOrder		      248
@@ -15388,7 +14334,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Video_Out(16x2B)"
+	      Name		      "VideoOut(16x2B)"
 	      SID		      "723"
 	      Position		      [2070, -172, 2100, -158]
 	      ZOrder		      1987
@@ -15591,7 +14537,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      41
-	      SrcBlock		      "Data_In(2B)"
+	      SrcBlock		      "Data(2B)"
 	      SrcPort		      1
 	      Points		      [697, 0; 0, -50]
 	      Branch {
@@ -16295,29 +15241,1537 @@ Library {
 	      ZOrder		      170
 	      SrcBlock		      "Word_Multiplexer_16_to_1"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out(2B)"
+	      DstBlock		      "DataOut(2B)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      171
 	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
-	      DstBlock		      "Video_Out(16x2B)"
+	      DstBlock		      "VideoOut(16x2B)"
 	      DstPort		      1
 	    }
 	  }
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "8B_RAM_Memory"
+	  Name			  "Bit"
+	  SID			  "76"
+	  Ports			  [3, 1]
+	  Position		  [410, 211, 570, 259]
+	  ZOrder		  464
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "Bit"
+	    Location		    [54, 0, 1928, 1096]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Select_And_Write(1b)"
+	      SID		      "77"
+	      Position		      [20, 28, 50, 42]
+	      ZOrder		      474
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data(1b)"
+	      SID		      "78"
+	      Position		      [20, 103, 50, 117]
+	      ZOrder		      9
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CLK"
+	      SID		      "79"
+	      Position		      [20, 193, 50, 207]
+	      ZOrder		      473
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "J-K\nFlip-Flop"
+	      SID		      "80"
+	      Ports		      [3, 2]
+	      Position		      [345, 92, 390, 168]
+	      ZOrder		      472
+	      LibraryVersion	      "1.58"
+	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	      SourceType	      "JKFlipFlop"
+	      ContentPreviewEnabled   off
+	      initial_condition	      "0"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      SID		      "81"
+	      Ports		      [1, 1]
+	      Position		      [158, 151, 173, 169]
+	      ZOrder		      493
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator1"
+	      SID		      "82"
+	      Ports		      [2, 1]
+	      Position		      [278, 94, 303, 116]
+	      ZOrder		      491
+	      ShowName		      off
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator2"
+	      SID		      "83"
+	      Ports		      [2, 1]
+	      Position		      [278, 144, 303, 166]
+	      ZOrder		      492
+	      ShowName		      off
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "84"
+	      Position		      [475, 140, 495, 160]
+	      ZOrder		      4
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DataOut(1b)"
+	      SID		      "85"
+	      Position		      [470, 103, 500, 117]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Data(1b)"
+	      SrcPort		      1
+	      Points		      [52, 0]
+	      Branch {
+		ZOrder			2
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			3
+		DstBlock		"Logical\nOperator1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "J-K\nFlip-Flop"
+	      SrcPort		      2
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "J-K\nFlip-Flop"
+	      SrcPort		      1
+	      DstBlock		      "DataOut(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "CLK"
+	      SrcPort		      1
+	      Points		      [260, 0; 0, -70]
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "Select_And_Write(1b)"
+	      SrcPort		      1
+	      Points		      [167, 0; 0, 65]
+	      Branch {
+		ZOrder			8
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator2"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			9
+		DstBlock		"Logical\nOperator1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator2"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Logical\nOperator1"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "Logical\nOperator2"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "G_Bit"
+	  SID			  "156"
+	  Ports			  [5, 1]
+	  Position		  [410, 101, 570, 179]
+	  ZOrder		  1008
+	  FontName		  "Arial"
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "G_Bit"
+	    Location		    [54, 0, 1928, 1096]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Sel_Raw(1b)"
+	      SID		      "157"
+	      Position		      [20, 58, 50, 72]
+	      ZOrder		      494
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Sel_Column(1b)"
+	      SID		      "158"
+	      Position		      [20, 98, 50, 112]
+	      ZOrder		      474
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data(1b)"
+	      SID		      "159"
+	      Position		      [20, 178, 50, 192]
+	      ZOrder		      9
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Write(1b)"
+	      SID		      "209"
+	      Position		      [20, 18, 50, 32]
+	      ZOrder		      495
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CLK"
+	      SID		      "160"
+	      Position		      [20, 263, 50, 277]
+	      ZOrder		      473
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "J-K\nFlip-Flop"
+	      SID		      "161"
+	      Ports		      [3, 2]
+	      Position		      [345, 167, 390, 243]
+	      ZOrder		      472
+	      LibraryVersion	      "1.58"
+	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
+	      SourceType	      "JKFlipFlop"
+	      ContentPreviewEnabled   off
+	      initial_condition	      "0"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator"
+	      SID		      "162"
+	      Ports		      [1, 1]
+	      Position		      [158, 226, 173, 244]
+	      ZOrder		      493
+	      ShowName		      off
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator1"
+	      SID		      "163"
+	      Ports		      [4, 1]
+	      Position		      [278, 163, 303, 197]
+	      ZOrder		      491
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator2"
+	      SID		      "164"
+	      Ports		      [4, 1]
+	      Position		      [278, 213, 303, 247]
+	      ZOrder		      492
+	      ShowName		      off
+	      Inputs		      "4"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Terminator
+	      Name		      "Terminator"
+	      SID		      "165"
+	      Position		      [420, 215, 440, 235]
+	      ZOrder		      4
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "DataOut(1b)"
+	      SID		      "166"
+	      Position		      [470, 178, 500, 192]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Logical\nOperator2"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Logical\nOperator1"
+	      SrcPort		      1
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "Logical\nOperator"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator2"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "Sel_Column(1b)"
+	      SrcPort		      1
+	      Points		      [167, 0; 0, 70]
+	      Branch {
+		ZOrder			5
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator2"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			6
+		DstBlock		"Logical\nOperator1"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "CLK"
+	      SrcPort		      1
+	      Points		      [268, 0; 0, -65]
+	      DstBlock		      "J-K\nFlip-Flop"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "J-K\nFlip-Flop"
+	      SrcPort		      1
+	      DstBlock		      "DataOut(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      9
+	      SrcBlock		      "J-K\nFlip-Flop"
+	      SrcPort		      2
+	      DstBlock		      "Terminator"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "Data(1b)"
+	      SrcPort		      1
+	      Points		      [52, 0]
+	      Branch {
+		ZOrder			11
+		DstBlock		"Logical\nOperator1"
+		DstPort			3
+	      }
+	      Branch {
+		ZOrder			12
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      13
+	      SrcBlock		      "Sel_Raw(1b)"
+	      SrcPort		      1
+	      Points		      [176, 0; 0, 100]
+	      Branch {
+		ZOrder			14
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator2"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			15
+		DstBlock		"Logical\nOperator1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      16
+	      SrcBlock		      "Write(1b)"
+	      SrcPort		      1
+	      Points		      [201, 0; 0, 170]
+	      Branch {
+		ZOrder			17
+		DstBlock		"Logical\nOperator1"
+		DstPort			4
+	      }
+	      Branch {
+		ZOrder			18
+		Points			[0, 50]
+		DstBlock		"Logical\nOperator2"
+		DstPort			4
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "NOT_USED_16B_RAM_Memory"
+	  SID			  "4"
+	  Ports			  [7, 1]
+	  Position		  [410, 602, 570, 708]
+	  ZOrder		  466
+	  Commented		  "on"
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "NOT_USED_16B_RAM_Memory"
+	    Location		    [57, -8, 1928, 1088]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "60"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_3(1b)"
+	      SID		      "5"
+	      Position		      [20, 133, 50, 147]
+	      ZOrder		      202
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_2(1b)"
+	      SID		      "6"
+	      Position		      [20, 193, 50, 207]
+	      ZOrder		      471
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_1(1b)"
+	      SID		      "7"
+	      Position		      [20, 253, 50, 267]
+	      ZOrder		      472
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_0(1b)"
+	      SID		      "8"
+	      Position		      [20, 313, 50, 327]
+	      ZOrder		      473
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Write(1b)"
+	      SID		      "9"
+	      Position		      [255, 1628, 285, 1642]
+	      ZOrder		      185
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_In(1B)"
+	      SID		      "10"
+	      Position		      [255, 1568, 285, 1582]
+	      ZOrder		      184
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "CLK"
+	      SID		      "11"
+	      Position		      [255, 1508, 285, 1522]
+	      ZOrder		      470
+	      Port		      "7"
+	      IconDisplay	      "Port number"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "16_to_1_Byte_Multiplexer"
+	      SID		      "12"
+	      Ports		      [20, 1]
+	      Position		      [1810, 20, 1980, 420]
+	      ZOrder		      474
+	      LibraryVersion	      "1.8"
+	      SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "4_to_16_Decoder"
+	      SID		      "13"
+	      Ports		      [4, 16]
+	      Position		      [340, 104, 495, 351]
+	      ZOrder		      358
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Decoders_Lib/Decoders_Lib/Decoder_4_to_16"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte0"
+	      SID		      "14"
+	      Ports		      [4, 1]
+	      Position		      [1100, 1381, 1260, 1444]
+	      ZOrder		      454
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte1"
+	      SID		      "15"
+	      Ports		      [4, 1]
+	      Position		      [1100, 1296, 1260, 1359]
+	      ZOrder		      455
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte10"
+	      SID		      "16"
+	      Ports		      [4, 1]
+	      Position		      [1100, 531, 1260, 594]
+	      ZOrder		      464
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte11"
+	      SID		      "17"
+	      Ports		      [4, 1]
+	      Position		      [1100, 446, 1260, 509]
+	      ZOrder		      465
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte12"
+	      SID		      "18"
+	      Ports		      [4, 1]
+	      Position		      [1100, 361, 1260, 424]
+	      ZOrder		      466
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte13"
+	      SID		      "19"
+	      Ports		      [4, 1]
+	      Position		      [1100, 276, 1260, 339]
+	      ZOrder		      467
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte14"
+	      SID		      "20"
+	      Ports		      [4, 1]
+	      Position		      [1100, 191, 1260, 254]
+	      ZOrder		      468
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte15"
+	      SID		      "21"
+	      Ports		      [4, 1]
+	      Position		      [1100, 106, 1260, 169]
+	      ZOrder		      469
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte2"
+	      SID		      "22"
+	      Ports		      [4, 1]
+	      Position		      [1100, 1211, 1260, 1274]
+	      ZOrder		      456
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte3"
+	      SID		      "23"
+	      Ports		      [4, 1]
+	      Position		      [1100, 1126, 1260, 1189]
+	      ZOrder		      457
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte4"
+	      SID		      "24"
+	      Ports		      [4, 1]
+	      Position		      [1100, 1041, 1260, 1104]
+	      ZOrder		      458
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte5"
+	      SID		      "25"
+	      Ports		      [4, 1]
+	      Position		      [1100, 956, 1260, 1019]
+	      ZOrder		      459
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte6"
+	      SID		      "26"
+	      Ports		      [4, 1]
+	      Position		      [1100, 871, 1260, 934]
+	      ZOrder		      460
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte7"
+	      SID		      "27"
+	      Ports		      [4, 1]
+	      Position		      [1100, 786, 1260, 849]
+	      ZOrder		      461
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte8"
+	      SID		      "28"
+	      Ports		      [4, 1]
+	      Position		      [1100, 701, 1260, 764]
+	      ZOrder		      462
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Byte9"
+	      SID		      "29"
+	      Ports		      [4, 1]
+	      Position		      [1100, 616, 1260, 679]
+	      ZOrder		      463
+	      LibraryVersion	      "1.6"
+	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
+	      SourceType	      "SubSystem"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data_Out(1B)"
+	      SID		      "30"
+	      Position		      [2070, 213, 2100, 227]
+	      ZOrder		      248
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "16_to_1_Byte_Multiplexer"
+	      SrcPort		      1
+	      DstBlock		      "Data_Out(1B)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Byte0"
+	      SrcPort		      1
+	      Points		      [497, 0; 0, -1005]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      20
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "Byte1"
+	      SrcPort		      1
+	      Points		      [450, 0; 0, -940]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      19
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "Byte2"
+	      SrcPort		      1
+	      Points		      [425, 0; 0, -875]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      18
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "Byte3"
+	      SrcPort		      1
+	      Points		      [400, 0; 0, -810]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      17
+	    }
+	    Line {
+	      ZOrder		      6
+	      SrcBlock		      "Byte4"
+	      SrcPort		      1
+	      Points		      [375, 0; 0, -745]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      16
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "Byte5"
+	      SrcPort		      1
+	      Points		      [350, 0; 0, -680]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      15
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Byte6"
+	      SrcPort		      1
+	      Points		      [325, 0; 0, -615]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      14
+	    }
+	    Line {
+	      ZOrder		      9
+	      SrcBlock		      "Byte7"
+	      SrcPort		      1
+	      Points		      [301, 0; 0, -550]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      13
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "Byte8"
+	      SrcPort		      1
+	      Points		      [276, 0; 0, -485]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      12
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Byte9"
+	      SrcPort		      1
+	      Points		      [251, 0; 0, -420]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      11
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "Byte10"
+	      SrcPort		      1
+	      Points		      [225, 0; 0, -355]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      10
+	    }
+	    Line {
+	      ZOrder		      13
+	      SrcBlock		      "Byte11"
+	      SrcPort		      1
+	      Points		      [197, 0; 0, -290]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      9
+	    }
+	    Line {
+	      ZOrder		      14
+	      SrcBlock		      "Byte12"
+	      SrcPort		      1
+	      Points		      [166, 0; 0, -225]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      8
+	    }
+	    Line {
+	      ZOrder		      15
+	      SrcBlock		      "Byte13"
+	      SrcPort		      1
+	      Points		      [138, 0; 0, -160]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      7
+	    }
+	    Line {
+	      ZOrder		      16
+	      SrcBlock		      "Byte14"
+	      SrcPort		      1
+	      Points		      [112, 0; 0, -95]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      6
+	    }
+	    Line {
+	      ZOrder		      17
+	      SrcBlock		      "Byte15"
+	      SrcPort		      1
+	      Points		      [89, 0; 0, -30]
+	      DstBlock		      "16_to_1_Byte_Multiplexer"
+	      DstPort		      5
+	    }
+	    Line {
+	      ZOrder		      18
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      16
+	      Points		      [32, 0; 0, 1050]
+	      DstBlock		      "Byte0"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      19
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      15
+	      Points		      [59, 0; 0, 980]
+	      DstBlock		      "Byte1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      20
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      14
+	      Points		      [84, 0; 0, 910]
+	      DstBlock		      "Byte2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      21
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      13
+	      Points		      [109, 0; 0, 840]
+	      DstBlock		      "Byte3"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      22
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      12
+	      Points		      [131, 0; 0, 770]
+	      DstBlock		      "Byte4"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      23
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      11
+	      Points		      [153, 0; 0, 700]
+	      DstBlock		      "Byte5"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      24
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      10
+	      Points		      [176, 0; 0, 630]
+	      DstBlock		      "Byte6"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      25
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      9
+	      Points		      [198, 0; 0, 560]
+	      DstBlock		      "Byte7"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      26
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      8
+	      Points		      [220, 0; 0, 490]
+	      DstBlock		      "Byte8"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      27
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      7
+	      Points		      [243, 0; 0, 420]
+	      DstBlock		      "Byte9"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      28
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      6
+	      Points		      [265, 0; 0, 350]
+	      DstBlock		      "Byte10"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      29
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      5
+	      Points		      [287, 0; 0, 280]
+	      DstBlock		      "Byte11"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      30
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      4
+	      Points		      [309, 0; 0, 210]
+	      DstBlock		      "Byte12"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      31
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      3
+	      Points		      [334, 0; 0, 140]
+	      DstBlock		      "Byte13"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      32
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      2
+	      Points		      [359, 0; 0, 70]
+	      DstBlock		      "Byte14"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      33
+	      SrcBlock		      "Addr_3(1b)"
+	      SrcPort		      1
+	      Points		      [104, 0]
+	      Branch {
+		ZOrder			34
+		DstBlock		"4_to_16_Decoder"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			35
+		Points			[0, -110]
+		DstBlock		"16_to_1_Byte_Multiplexer"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      36
+	      SrcBlock		      "4_to_16_Decoder"
+	      SrcPort		      1
+	      DstBlock		      "Byte15"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      37
+	      SrcBlock		      "Write(1b)"
+	      SrcPort		      1
+	      Points		      [637, 0; 0, -230]
+	      Branch {
+		ZOrder			38
+		Points			[0, -85]
+		Branch {
+		  ZOrder		  39
+		  Points		  [0, -85]
+		  Branch {
+		    ZOrder		    40
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    41
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    42
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    43
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    44
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    45
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    46
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    47
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    48
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    49
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    50
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    51
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    52
+		    Points		    [0, -85]
+		    DstBlock		    "Byte15"
+		    DstPort		    2
+		    }
+		    Branch {
+		    ZOrder		    53
+		    DstBlock		    "Byte14"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    54
+		    DstBlock		    "Byte13"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    55
+		    DstBlock		    "Byte12"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    56
+		    DstBlock		    "Byte11"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    57
+		    DstBlock		    "Byte10"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    58
+		    DstBlock		    "Byte9"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    59
+		    DstBlock		    "Byte8"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    60
+		    DstBlock		    "Byte7"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    61
+		    DstBlock		    "Byte6"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    62
+		    DstBlock		    "Byte5"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    63
+		    DstBlock		    "Byte4"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    64
+		    DstBlock		    "Byte3"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    ZOrder		    65
+		    DstBlock		    "Byte2"
+		    DstPort		    2
+		  }
+		}
+		Branch {
+		  ZOrder		  66
+		  DstBlock		  "Byte1"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		ZOrder			67
+		DstBlock		"Byte0"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      68
+	      SrcBlock		      "Data_In(1B)"
+	      SrcPort		      1
+	      Points		      [617, 0; 0, -155]
+	      Branch {
+		ZOrder			69
+		Points			[0, -85]
+		Branch {
+		  ZOrder		  70
+		  Points		  [0, -85]
+		  Branch {
+		    ZOrder		    71
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    72
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    73
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    74
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    75
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    76
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    77
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    78
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    79
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    80
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    81
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    82
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    83
+		    Points		    [0, -85]
+		    DstBlock		    "Byte15"
+		    DstPort		    3
+		    }
+		    Branch {
+		    ZOrder		    84
+		    DstBlock		    "Byte14"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    85
+		    DstBlock		    "Byte13"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    86
+		    DstBlock		    "Byte12"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    87
+		    DstBlock		    "Byte11"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    88
+		    DstBlock		    "Byte10"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    89
+		    DstBlock		    "Byte9"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    90
+		    DstBlock		    "Byte8"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    91
+		    DstBlock		    "Byte7"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    92
+		    DstBlock		    "Byte6"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    93
+		    DstBlock		    "Byte5"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    94
+		    DstBlock		    "Byte4"
+		    DstPort		    3
+		    }
+		    }
+		    Branch {
+		    ZOrder		    95
+		    DstBlock		    "Byte3"
+		    DstPort		    3
+		    }
+		  }
+		  Branch {
+		    ZOrder		    96
+		    DstBlock		    "Byte2"
+		    DstPort		    3
+		  }
+		}
+		Branch {
+		  ZOrder		  97
+		  DstBlock		  "Byte1"
+		  DstPort		  3
+		}
+	      }
+	      Branch {
+		ZOrder			98
+		DstBlock		"Byte0"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      ZOrder		      99
+	      SrcBlock		      "CLK"
+	      SrcPort		      1
+	      Points		      [597, 0; 0, -80]
+	      Branch {
+		ZOrder			100
+		Points			[0, -85]
+		Branch {
+		  ZOrder		  101
+		  Points		  [0, -85]
+		  Branch {
+		    ZOrder		    102
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    103
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    104
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    105
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    106
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    107
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    108
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    109
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    110
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    111
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    112
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    113
+		    Points		    [0, -85]
+		    Branch {
+		    ZOrder		    114
+		    Points		    [0, -85]
+		    DstBlock		    "Byte15"
+		    DstPort		    4
+		    }
+		    Branch {
+		    ZOrder		    115
+		    DstBlock		    "Byte14"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    116
+		    DstBlock		    "Byte13"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    117
+		    DstBlock		    "Byte12"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    118
+		    DstBlock		    "Byte11"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    119
+		    DstBlock		    "Byte10"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    120
+		    DstBlock		    "Byte9"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    121
+		    DstBlock		    "Byte8"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    122
+		    DstBlock		    "Byte7"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    123
+		    DstBlock		    "Byte6"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    124
+		    DstBlock		    "Byte5"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    125
+		    DstBlock		    "Byte4"
+		    DstPort		    4
+		    }
+		    }
+		    Branch {
+		    ZOrder		    126
+		    DstBlock		    "Byte3"
+		    DstPort		    4
+		    }
+		  }
+		  Branch {
+		    ZOrder		    127
+		    DstBlock		    "Byte2"
+		    DstPort		    4
+		  }
+		}
+		Branch {
+		  ZOrder		  128
+		  DstBlock		  "Byte1"
+		  DstPort		  4
+		}
+	      }
+	      Branch {
+		ZOrder			129
+		DstBlock		"Byte0"
+		DstPort			4
+	      }
+	    }
+	    Line {
+	      ZOrder		      130
+	      SrcBlock		      "Addr_2(1b)"
+	      SrcPort		      1
+	      Points		      [120, 0]
+	      Branch {
+		ZOrder			131
+		DstBlock		"4_to_16_Decoder"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			132
+		Points			[0, -150]
+		DstBlock		"16_to_1_Byte_Multiplexer"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      133
+	      SrcBlock		      "Addr_1(1b)"
+	      SrcPort		      1
+	      Points		      [137, 0]
+	      Branch {
+		ZOrder			134
+		DstBlock		"4_to_16_Decoder"
+		DstPort			3
+	      }
+	      Branch {
+		ZOrder			135
+		Points			[0, -190]
+		DstBlock		"16_to_1_Byte_Multiplexer"
+		DstPort			3
+	      }
+	    }
+	    Line {
+	      ZOrder		      136
+	      SrcBlock		      "Addr_0(1b)"
+	      SrcPort		      1
+	      Points		      [153, 0]
+	      Branch {
+		ZOrder			137
+		Points			[0, -230]
+		DstBlock		"16_to_1_Byte_Multiplexer"
+		DstPort			4
+	      }
+	      Branch {
+		ZOrder			138
+		DstBlock		"4_to_16_Decoder"
+		DstPort			4
+	      }
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "NOT_USED_8B_RAM_Memory"
 	  SID			  "31"
 	  Ports			  [6, 1]
 	  Position		  [410, 481, 570, 574]
 	  ZOrder		  467
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "8B_RAM_Memory"
+	    Name		    "NOT_USED_8B_RAM_Memory"
 	    Location		    [358, 2, 1148, 1082]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -16914,16 +17368,17 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "8B_Video_Memory"
+	  Name			  "NOT_USED_8B_Video_Memory"
 	  SID			  "137"
 	  Ports			  [5, 1]
 	  Position		  [410, 873, 570, 947]
 	  ZOrder		  1007
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "8B_Video_Memory"
-	    Location		    [57, -8, 1928, 1088]
+	    Name		    "NOT_USED_8B_Video_Memory"
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -16987,9 +17442,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 726, 595, 789]
 	      ZOrder		      1010
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -16998,9 +17454,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 641, 595, 704]
 	      ZOrder		      1011
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -17009,9 +17466,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 556, 595, 619]
 	      ZOrder		      1012
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -17020,9 +17478,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 471, 595, 534]
 	      ZOrder		      1013
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -17031,9 +17490,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 386, 595, 449]
 	      ZOrder		      1014
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -17042,9 +17502,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 301, 595, 364]
 	      ZOrder		      1015
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -17053,9 +17514,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 216, 595, 279]
 	      ZOrder		      1016
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Reference
@@ -17064,9 +17526,10 @@ Library {
 	      Ports		      [4, 1]
 	      Position		      [435, 131, 595, 194]
 	      ZOrder		      1017
-	      LibraryVersion	      "1.14"
+	      LibraryVersion	      "1.78"
 	      SourceBlock	      "Memory_Blocks_Lib/Memory_Blocks_Lib/Byte"
 	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
 	    }
 	    Block {
 	      BlockType		      Demux
@@ -17492,211 +17955,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Bit"
-	  SID			  "76"
-	  Ports			  [3, 1]
-	  Position		  [410, 211, 570, 259]
-	  ZOrder		  464
-	  RequestExecContextInheritance	off
-	  Variant		  off
-	  System {
-	    Name		    "Bit"
-	    Location		    [236, 118, 1104, 1036]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Select_And_Write(1b)"
-	      SID		      "77"
-	      Position		      [20, 28, 50, 42]
-	      ZOrder		      474
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Data_In(1b)"
-	      SID		      "78"
-	      Position		      [20, 103, 50, 117]
-	      ZOrder		      9
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "CLK"
-	      SID		      "79"
-	      Position		      [20, 193, 50, 207]
-	      ZOrder		      473
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "double"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "J-K\nFlip-Flop"
-	      SID		      "80"
-	      Ports		      [3, 2]
-	      Position		      [345, 92, 390, 168]
-	      ZOrder		      472
-	      LibraryVersion	      "1.44"
-	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
-	      SourceType	      "JKFlipFlop"
-	      initial_condition	      "0"
-	    }
-	    Block {
-	      BlockType		      Logic
-	      Name		      "Logical\nOperator"
-	      SID		      "81"
-	      Ports		      [1, 1]
-	      Position		      [158, 151, 173, 169]
-	      ZOrder		      493
-	      ShowName		      off
-	      Operator		      "NOT"
-	      IconShape		      "distinctive"
-	      AllPortsSameDT	      off
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Logic
-	      Name		      "Logical\nOperator1"
-	      SID		      "82"
-	      Ports		      [2, 1]
-	      Position		      [278, 94, 303, 116]
-	      ZOrder		      491
-	      ShowName		      off
-	      IconShape		      "distinctive"
-	      AllPortsSameDT	      off
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Logic
-	      Name		      "Logical\nOperator2"
-	      SID		      "83"
-	      Ports		      [2, 1]
-	      Position		      [278, 144, 303, 166]
-	      ZOrder		      492
-	      ShowName		      off
-	      IconShape		      "distinctive"
-	      AllPortsSameDT	      off
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "Terminator"
-	      SID		      "84"
-	      Position		      [475, 140, 495, 160]
-	      ZOrder		      4
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Data_Out(1b)"
-	      SID		      "85"
-	      Position		      [470, 103, 500, 117]
-	      ZOrder		      -2
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Data_In(1b)"
-	      SrcPort		      1
-	      Points		      [52, 0]
-	      Branch {
-		ZOrder			2
-		Points			[0, 50]
-		DstBlock		"Logical\nOperator"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			3
-		DstBlock		"Logical\nOperator1"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "J-K\nFlip-Flop"
-	      SrcPort		      2
-	      DstBlock		      "Terminator"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "J-K\nFlip-Flop"
-	      SrcPort		      1
-	      DstBlock		      "Data_Out(1b)"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      6
-	      SrcBlock		      "CLK"
-	      SrcPort		      1
-	      Points		      [260, 0; 0, -70]
-	      DstBlock		      "J-K\nFlip-Flop"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "Select_And_Write(1b)"
-	      SrcPort		      1
-	      Points		      [167, 0; 0, 65]
-	      Branch {
-		ZOrder			8
-		Points			[0, 50]
-		DstBlock		"Logical\nOperator2"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			9
-		DstBlock		"Logical\nOperator1"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      10
-	      SrcBlock		      "Logical\nOperator"
-	      SrcPort		      1
-	      DstBlock		      "Logical\nOperator2"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      11
-	      SrcBlock		      "Logical\nOperator1"
-	      SrcPort		      1
-	      DstBlock		      "J-K\nFlip-Flop"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      12
-	      SrcBlock		      "Logical\nOperator2"
-	      SrcPort		      1
-	      DstBlock		      "J-K\nFlip-Flop"
-	      DstPort		      3
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Byte"
+	  Name			  "NOT_USED_Byte"
 	  SID			  "86"
 	  Ports			  [4, 1]
 	  Position		  [410, 290, 570, 355]
 	  ZOrder		  465
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte"
+	    Name		    "NOT_USED_Byte"
 	    Location		    [236, 118, 1104, 1036]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -18977,271 +19245,17 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "G_Bit"
-	  SID			  "156"
-	  Ports			  [5, 1]
-	  Position		  [410, 101, 570, 179]
-	  ZOrder		  1008
-	  FontName		  "Arial"
-	  RequestExecContextInheritance	off
-	  Variant		  off
-	  System {
-	    Name		    "G_Bit"
-	    Location		    [54, -8, 1928, 1088]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "usletter"
-	    PaperUnits		    "inches"
-	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "150"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Sel_Raw(1b)"
-	      SID		      "157"
-	      Position		      [20, 58, 50, 72]
-	      ZOrder		      494
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Sel_Column(1b)"
-	      SID		      "158"
-	      Position		      [20, 98, 50, 112]
-	      ZOrder		      474
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Data_In(1b)"
-	      SID		      "159"
-	      Position		      [20, 178, 50, 192]
-	      ZOrder		      9
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Write(1b)"
-	      SID		      "209"
-	      Position		      [20, 18, 50, 32]
-	      ZOrder		      495
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "CLK"
-	      SID		      "160"
-	      Position		      [20, 263, 50, 277]
-	      ZOrder		      473
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	      OutDataTypeStr	      "double"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "J-K\nFlip-Flop"
-	      SID		      "161"
-	      Ports		      [3, 2]
-	      Position		      [345, 167, 390, 243]
-	      ZOrder		      472
-	      LibraryVersion	      "1.58"
-	      SourceBlock	      "simulink_extras/Flip Flops/J-K\nFlip-Flop"
-	      SourceType	      "JKFlipFlop"
-	      ContentPreviewEnabled   off
-	      initial_condition	      "0"
-	    }
-	    Block {
-	      BlockType		      Logic
-	      Name		      "Logical\nOperator"
-	      SID		      "162"
-	      Ports		      [1, 1]
-	      Position		      [158, 226, 173, 244]
-	      ZOrder		      493
-	      ShowName		      off
-	      Operator		      "NOT"
-	      IconShape		      "distinctive"
-	      AllPortsSameDT	      off
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Logic
-	      Name		      "Logical\nOperator1"
-	      SID		      "163"
-	      Ports		      [4, 1]
-	      Position		      [278, 163, 303, 197]
-	      ZOrder		      491
-	      ShowName		      off
-	      Inputs		      "4"
-	      IconShape		      "distinctive"
-	      AllPortsSameDT	      off
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Logic
-	      Name		      "Logical\nOperator2"
-	      SID		      "164"
-	      Ports		      [4, 1]
-	      Position		      [278, 213, 303, 247]
-	      ZOrder		      492
-	      ShowName		      off
-	      Inputs		      "4"
-	      IconShape		      "distinctive"
-	      AllPortsSameDT	      off
-	      OutDataTypeStr	      "boolean"
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "Terminator"
-	      SID		      "165"
-	      Position		      [420, 215, 440, 235]
-	      ZOrder		      4
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Data_Out(1b)"
-	      SID		      "166"
-	      Position		      [470, 178, 500, 192]
-	      ZOrder		      -2
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Logical\nOperator2"
-	      SrcPort		      1
-	      DstBlock		      "J-K\nFlip-Flop"
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Logical\nOperator1"
-	      SrcPort		      1
-	      DstBlock		      "J-K\nFlip-Flop"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      3
-	      SrcBlock		      "Logical\nOperator"
-	      SrcPort		      1
-	      DstBlock		      "Logical\nOperator2"
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "Sel_Column(1b)"
-	      SrcPort		      1
-	      Points		      [167, 0; 0, 70]
-	      Branch {
-		ZOrder			5
-		Points			[0, 50]
-		DstBlock		"Logical\nOperator2"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			6
-		DstBlock		"Logical\nOperator1"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      ZOrder		      7
-	      SrcBlock		      "CLK"
-	      SrcPort		      1
-	      Points		      [268, 0; 0, -65]
-	      DstBlock		      "J-K\nFlip-Flop"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      8
-	      SrcBlock		      "J-K\nFlip-Flop"
-	      SrcPort		      1
-	      DstBlock		      "Data_Out(1b)"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      9
-	      SrcBlock		      "J-K\nFlip-Flop"
-	      SrcPort		      2
-	      DstBlock		      "Terminator"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      10
-	      SrcBlock		      "Data_In(1b)"
-	      SrcPort		      1
-	      Points		      [52, 0]
-	      Branch {
-		ZOrder			11
-		DstBlock		"Logical\nOperator1"
-		DstPort			3
-	      }
-	      Branch {
-		ZOrder			12
-		Points			[0, 50]
-		DstBlock		"Logical\nOperator"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      13
-	      SrcBlock		      "Sel_Raw(1b)"
-	      SrcPort		      1
-	      Points		      [176, 0; 0, 100]
-	      Branch {
-		ZOrder			14
-		Points			[0, 50]
-		DstBlock		"Logical\nOperator2"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			15
-		DstBlock		"Logical\nOperator1"
-		DstPort			1
-	      }
-	    }
-	    Line {
-	      ZOrder		      16
-	      SrcBlock		      "Write(1b)"
-	      SrcPort		      1
-	      Points		      [201, 0; 0, 170]
-	      Branch {
-		ZOrder			17
-		DstBlock		"Logical\nOperator1"
-		DstPort			4
-	      }
-	      Branch {
-		ZOrder			18
-		Points			[0, 50]
-		DstBlock		"Logical\nOperator2"
-		DstPort			4
-	      }
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Graphic_memory_24bit"
+	  Name			  "NOT_USED_Graphic_memory_24bit"
 	  SID			  "167"
 	  Ports			  [5, 2]
 	  Position		  [410, -15, 565, 65]
 	  ZOrder		  1600
+	  Commented		  "on"
 	  LibraryVersion	  "*1.47"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Graphic_memory_24bit"
+	    Name		    "NOT_USED_Graphic_memory_24bit"
 	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -21856,7 +21870,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Word"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -21888,7 +21902,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In(2B)"
+	      Name		      "Data(2B)"
 	      SID		      "247"
 	      Position		      [445, 438, 475, 452]
 	      ZOrder		      -1
@@ -22982,7 +22996,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out(2B)"
+	      Name		      "DataOut(2B)"
 	      SID		      "294"
 	      Position		      [1640, 438, 1670, 452]
 	      ZOrder		      -2
@@ -23006,7 +23020,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      3
-	      SrcBlock		      "Data_In(2B)"
+	      SrcBlock		      "Data(2B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -23078,7 +23092,7 @@ Library {
 	      ZOrder		      230
 	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out(2B)"
+	      DstBlock		      "DataOut(2B)"
 	      DstPort		      1
 	    }
 	    Line {

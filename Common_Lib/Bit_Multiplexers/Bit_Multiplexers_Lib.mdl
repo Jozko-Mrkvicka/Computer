@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, -8.0, 1874.0, 1096.0]
+      Location		      [54.0, 0.0, 1148.0, 1087.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"47"
-	Extents			[1824.0, 929.0]
-	ZoomFactor		[1.25]
-	Offset			[-396.40726004556257, 148.30482886957293]
+	LoadSaveID		"1"
+	Extents			[1098.0, 920.0]
+	ZoomFactor		[1.0]
+	Offset			[48.531913699645159, 91.23606169893]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Jul 10 15:40:27 2021"
-  RTWModifiedTimeStamp	  547832424
-  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  LastModifiedDate	  "Sun Dec 05 05:51:15 2021"
+  RTWModifiedTimeStamp	  560584273
+  ModelVersionFormat	  "1.%<AutoIncrement:20>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -856,8 +856,8 @@ Library {
       Variant		      off
       System {
 	Name			"Bit_Multiplexers_Lib"
-	Location		[54, -8, 1928, 1088]
-	Open			off
+	Location		[54, 0, 1202, 1087]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -880,7 +880,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Bit_Multiplexer_16_to_1"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2224,8 +2224,8 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Bit_Multiplexer_2_to_1"
-	    Location		    [54, -8, 1928, 1088]
-	    Open		    on
+	    Location		    [54, 0, 1928, 1096]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2721,15 +2721,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Bit_Multiplexer_8_to_1"
+	  Name			  "NOT_USED_Bit_Multiplexer_8_to_1"
 	  SID			  "71"
 	  Ports			  [11, 1]
 	  Position		  [270, 397, 425, 563]
 	  ZOrder		  381
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Bit_Multiplexer_8_to_1"
+	    Name		    "NOT_USED_Bit_Multiplexer_8_to_1"
 	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off

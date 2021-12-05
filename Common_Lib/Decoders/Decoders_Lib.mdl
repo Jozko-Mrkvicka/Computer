@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, 0.0, 1874.0, 1096.0]
+      Location		      [372.0, 0.0, 1239.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"117"
-	Extents			[1824.0, 929.0]
-	ZoomFactor		[1.5]
-	Offset			[-486.03998630889646, 878.24523653909137]
+	LoadSaveID		"692"
+	Extents			[1189.0, 913.0]
+	ZoomFactor		[1.75]
+	Offset			[22.05450226226894, -158.76676822279347]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Nov 02 14:56:35 2021"
-  RTWModifiedTimeStamp	  557765782
-  ModelVersionFormat	  "1.%<AutoIncrement:34>"
+  LastModifiedDate	  "Sun Dec 05 14:59:42 2021"
+  RTWModifiedTimeStamp	  560617151
+  ModelVersionFormat	  "1.%<AutoIncrement:40>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -783,6 +783,12 @@ Library {
       SampleTime	      "-1"
     }
     Block {
+      BlockType		      ManualSwitch
+      CurrentSetting	      "1"
+      varsize		      off
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      Outport
       Port		      "1"
       OutMin		      "[]"
@@ -849,7 +855,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "670"
+    SIDHighWatermark	    "729"
     Block {
       BlockType		      SubSystem
       Name		      "Decoders_Lib"
@@ -861,8 +867,8 @@ Library {
       Variant		      off
       System {
 	Name			"Decoders_Lib"
-	Location		[54, 0, 1928, 1096]
-	Open			on
+	Location		[372, 0, 1611, 1080]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -886,7 +892,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Decoder_1_to_2"
-	    Location		    [275, 69, 1487, 1055]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -898,10 +904,10 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "711"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "183"
 	      Position		      [255, 1103, 285, 1117]
 	      ZOrder		      28
@@ -946,7 +952,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [41, 0]
 	      Branch {
@@ -975,7 +981,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Decoder_2_to_4"
-	    Location		    [784, 174, 1698, 996]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -987,10 +993,10 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "250"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "2"
 	      Position		      [255, 1053, 285, 1067]
 	      ZOrder		      27
@@ -998,7 +1004,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "3"
 	      Position		      [255, 1103, 285, 1117]
 	      ZOrder		      28
@@ -1116,7 +1122,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [41, 0]
 	      Branch {
@@ -1177,7 +1183,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      12
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0]
 	      Branch {
@@ -1244,7 +1250,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Decoder_3_to_8"
-	    Location		    [683, 0, 1920, 1080]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1256,10 +1262,10 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "171"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_2(1b)\n"
+	      Name		      "Addr_2(1b)\n"
 	      SID		      "15"
 	      Position		      [50, 773, 80, 787]
 	      ZOrder		      1
@@ -1267,7 +1273,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "16"
 	      Position		      [50, 833, 80, 847]
 	      ZOrder		      27
@@ -1276,7 +1282,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "17"
 	      Position		      [50, 893, 80, 907]
 	      ZOrder		      28
@@ -1499,7 +1505,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [35, 0]
 	      Branch {
@@ -1649,7 +1655,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      31
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0; 0, 1]
 	      Branch {
@@ -1694,7 +1700,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      40
-	      SrcBlock		      "Address_2(1b)\n"
+	      SrcBlock		      "Addr_2(1b)\n"
 	      SrcPort		      1
 	      Points		      [36, 0; 0, 1]
 	      Branch {
@@ -1807,7 +1813,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Decoder_3_to_8_Enable"
-	    Location		    [275, 69, 1487, 1055]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1819,7 +1825,7 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "154"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Enable(1b)"
@@ -1830,7 +1836,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_2(1b)\n"
+	      Name		      "Addr_2(1b)\n"
 	      SID		      "158"
 	      Position		      [50, 773, 80, 787]
 	      ZOrder		      1
@@ -1839,7 +1845,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "159"
 	      Position		      [50, 833, 80, 847]
 	      ZOrder		      27
@@ -1848,7 +1854,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "160"
 	      Position		      [50, 893, 80, 907]
 	      ZOrder		      28
@@ -2071,7 +2077,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [35, 0]
 	      Branch {
@@ -2221,7 +2227,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      31
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0; 0, 1]
 	      Branch {
@@ -2266,7 +2272,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      40
-	      SrcBlock		      "Address_2(1b)\n"
+	      SrcBlock		      "Addr_2(1b)\n"
 	      SrcPort		      1
 	      Points		      [36, 0; 0, 1]
 	      Branch {
@@ -2450,7 +2456,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Decoder_4_to_16"
-	    Location		    [275, 69, 1487, 1055]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2462,10 +2468,10 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "50"
+	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_3(1b)"
+	      Name		      "Addr_3(1b)"
 	      SID		      "38"
 	      Position		      [20, 258, 50, 272]
 	      ZOrder		      -1
@@ -2473,7 +2479,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_2(1b)\n"
+	      Name		      "Addr_2(1b)\n"
 	      SID		      "39"
 	      Position		      [20, 323, 50, 337]
 	      ZOrder		      1
@@ -2482,7 +2488,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "40"
 	      Position		      [20, 393, 50, 407]
 	      ZOrder		      27
@@ -2491,7 +2497,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "41"
 	      Position		      [20, 458, 50, 472]
 	      ZOrder		      28
@@ -2974,7 +2980,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [35, 0]
 	      Branch {
@@ -3197,7 +3203,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      63
-	      SrcBlock		      "Address_3(1b)"
+	      SrcBlock		      "Addr_3(1b)"
 	      SrcPort		      1
 	      Points		      [36, 0]
 	      Branch {
@@ -3278,7 +3284,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      80
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0]
 	      Branch {
@@ -3359,7 +3365,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      97
-	      SrcBlock		      "Address_2(1b)\n"
+	      SrcBlock		      "Addr_2(1b)\n"
 	      SrcPort		      1
 	      Points		      [36, 0]
 	      Branch {
@@ -3635,7 +3641,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Decoder_5_to_32"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3647,10 +3653,10 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "80"
+	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_4(1b)"
+	      Name		      "Addr_4(1b)"
 	      SID		      "605"
 	      Position		      [20, 188, 50, 202]
 	      ZOrder		      61
@@ -3658,7 +3664,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_3(1b)"
+	      Name		      "Addr_3(1b)"
 	      SID		      "563"
 	      Position		      [20, 258, 50, 272]
 	      ZOrder		      -1
@@ -3667,7 +3673,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_2(1b)\n"
+	      Name		      "Addr_2(1b)\n"
 	      SID		      "564"
 	      Position		      [20, 323, 50, 337]
 	      ZOrder		      1
@@ -3676,7 +3682,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "565"
 	      Position		      [20, 393, 50, 407]
 	      ZOrder		      27
@@ -3685,7 +3691,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "566"
 	      Position		      [20, 463, 50, 477]
 	      ZOrder		      28
@@ -4717,7 +4723,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [35, 0]
 	      Branch {
@@ -5156,7 +5162,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      63
-	      SrcBlock		      "Address_3(1b)"
+	      SrcBlock		      "Addr_3(1b)"
 	      SrcPort		      1
 	      Points		      [36, 0]
 	      Branch {
@@ -5309,7 +5315,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      80
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [34, 0]
 	      Branch {
@@ -5462,7 +5468,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      97
-	      SrcBlock		      "Address_2(1b)\n"
+	      SrcBlock		      "Addr_2(1b)\n"
 	      SrcPort		      1
 	      Points		      [36, 0]
 	      Branch {
@@ -6013,7 +6019,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      178
-	      SrcBlock		      "Address_4(1b)"
+	      SrcBlock		      "Addr_4(1b)"
 	      SrcPort		      1
 	      Points		      [26, 0]
 	      Branch {
@@ -6174,12 +6180,13 @@ Library {
 	  Position		  [-125, -36, 5, -14]
 	  ZOrder		  2234
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.23"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Selector_00"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -6194,7 +6201,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "195"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -6402,7 +6409,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      1
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -6552,6 +6559,7 @@ Library {
 	  Position		  [-125, 9, 5, 31]
 	  ZOrder		  2233
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.22"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -6572,7 +6580,7 @@ Library {
 	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "209"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -6893,7 +6901,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      17
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -6908,6 +6916,7 @@ Library {
 	  Position		  [-125, 54, 5, 76]
 	  ZOrder		  2235
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.22"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -6928,7 +6937,7 @@ Library {
 	    ZoomFactor		    "250"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "337"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -7249,7 +7258,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      17
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -7264,6 +7273,7 @@ Library {
 	  Position		  [-125, 99, 5, 121]
 	  ZOrder		  2236
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.22"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -7284,7 +7294,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "459"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -7583,7 +7593,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -7598,6 +7608,7 @@ Library {
 	  Position		  [-125, 144, 5, 166]
 	  ZOrder		  2245
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.25"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -7618,7 +7629,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "490"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -7939,7 +7950,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      17
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -7954,6 +7965,7 @@ Library {
 	  Position		  [-125, 189, 5, 211]
 	  ZOrder		  2237
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.22"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -7974,7 +7986,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "503"
 	      Position		      [150, 183, 180, 197]
 	      ZOrder		      -1
@@ -8273,7 +8285,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -8288,6 +8300,7 @@ Library {
 	  Position		  [-125, 234, 5, 256]
 	  ZOrder		  414
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
@@ -8307,7 +8320,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "515"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -8606,7 +8619,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      26
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -8621,6 +8634,7 @@ Library {
 	  Position		  [-125, 279, 5, 301]
 	  ZOrder		  2242
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -8641,7 +8655,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "527"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -8918,7 +8932,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -8933,6 +8947,7 @@ Library {
 	  Position		  [-125, 324, 5, 346]
 	  ZOrder		  2241
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -8953,7 +8968,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "538"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -9274,7 +9289,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      17
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -9289,6 +9304,7 @@ Library {
 	  Position		  [-125, 369, 5, 391]
 	  ZOrder		  2238
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.22"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -9309,7 +9325,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "551"
 	      Position		      [135, 183, 165, 197]
 	      ZOrder		      -1
@@ -9608,7 +9624,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -9623,6 +9639,7 @@ Library {
 	  Position		  [-125, 414, 5, 436]
 	  ZOrder		  2186
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -9643,7 +9660,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "222"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -9942,7 +9959,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -9957,6 +9974,7 @@ Library {
 	  Position		  [-125, 459, 5, 481]
 	  ZOrder		  2185
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -9977,7 +9995,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "234"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -10254,7 +10272,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -10269,6 +10287,7 @@ Library {
 	  Position		  [-125, 504, 5, 526]
 	  ZOrder		  2196
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -10289,7 +10308,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "245"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -10588,7 +10607,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -10603,6 +10622,7 @@ Library {
 	  Position		  [-125, 549, 5, 571]
 	  ZOrder		  2167
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.22"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -10623,7 +10643,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "257"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -10900,7 +10920,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -10915,6 +10935,7 @@ Library {
 	  Position		  [-125, 594, 5, 616]
 	  ZOrder		  2171
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "1.23"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -10935,7 +10956,7 @@ Library {
 	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "268"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -11212,7 +11233,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -11227,6 +11248,7 @@ Library {
 	  Position		  [-125, 639, 5, 661]
 	  ZOrder		  2170
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.22"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -11247,7 +11269,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "279"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -11502,7 +11524,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      14
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -11517,6 +11539,7 @@ Library {
 	  Position		  [-125, 684, 5, 706]
 	  ZOrder		  424
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
@@ -11536,7 +11559,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "289"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -11857,10 +11880,1084 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      27
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Selector_16bit"
+	  SID			  "692"
+	  Ports			  [1, 1]
+	  Position		  [-125, -126, 5, -104]
+	  ZOrder		  6817
+	  ForegroundColor	  "blue"
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "Selector_16bit"
+	    Location		    [372, 0, 1611, 1080]
+	    Open		    on
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "175"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr(1B)"
+	      SID		      "693"
+	      Position		      [130, 103, 160, 117]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator1"
+	      SID		      "708"
+	      Ports		      [1, 1]
+	      Position		      [325, 74, 335, 86]
+	      ZOrder		      9306
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator10"
+	      SID		      "711"
+	      Ports		      [1, 1]
+	      Position		      [325, 149, 335, 161]
+	      ZOrder		      9309
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator11"
+	      SID		      "712"
+	      Ports		      [1, 1]
+	      Position		      [325, 174, 335, 186]
+	      ZOrder		      9310
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator12"
+	      SID		      "718"
+	      Ports		      [1, 1]
+	      Position		      [325, -51, 335, -39]
+	      ZOrder		      9316
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator13"
+	      SID		      "719"
+	      Ports		      [1, 1]
+	      Position		      [325, -26, 335, -14]
+	      ZOrder		      9317
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator14"
+	      SID		      "720"
+	      Ports		      [1, 1]
+	      Position		      [325, -1, 335, 11]
+	      ZOrder		      9318
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator15"
+	      SID		      "721"
+	      Ports		      [1, 1]
+	      Position		      [325, 24, 335, 36]
+	      ZOrder		      9319
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator16"
+	      SID		      "722"
+	      Ports		      [1, 1]
+	      Position		      [325, 49, 335, 61]
+	      ZOrder		      9320
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator17"
+	      SID		      "728"
+	      Ports		      [1, 1]
+	      Position		      [325, -76, 335, -64]
+	      ZOrder		      9326
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator2"
+	      SID		      "709"
+	      Ports		      [1, 1]
+	      Position		      [325, 99, 335, 111]
+	      ZOrder		      9307
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator3"
+	      SID		      "695"
+	      Ports		      [1, 1]
+	      Position		      [325, 199, 335, 211]
+	      ZOrder		      2105
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator4"
+	      SID		      "696"
+	      Ports		      [1, 1]
+	      Position		      [325, 224, 335, 236]
+	      ZOrder		      2106
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator5"
+	      SID		      "697"
+	      Ports		      [1, 1]
+	      Position		      [325, 249, 335, 261]
+	      ZOrder		      2107
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator6"
+	      SID		      "698"
+	      Ports		      [1, 1]
+	      Position		      [325, 274, 335, 286]
+	      ZOrder		      2108
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator7"
+	      SID		      "699"
+	      Ports		      [1, 1]
+	      Position		      [325, 299, 335, 311]
+	      ZOrder		      2109
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator8"
+	      SID		      "710"
+	      Ports		      [1, 1]
+	      Position		      [325, 124, 335, 136]
+	      ZOrder		      9308
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator9"
+	      SID		      "700"
+	      Ports		      [16, 1]
+	      Position		      [435, -93, 465, 323]
+	      ZOrder		      9305
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Inputs		      "16"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch1"
+	      SID		      "713"
+	      Position		      [355, 64, 375, 86]
+	      ZOrder		      9311
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch10"
+	      SID		      "717"
+	      Position		      [355, 164, 375, 186]
+	      ZOrder		      9315
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch11"
+	      SID		      "723"
+	      Position		      [355, -61, 375, -39]
+	      ZOrder		      9321
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch12"
+	      SID		      "724"
+	      Position		      [355, -36, 375, -14]
+	      ZOrder		      9322
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch13"
+	      SID		      "725"
+	      Position		      [355, -11, 375, 11]
+	      ZOrder		      9323
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch14"
+	      SID		      "726"
+	      Position		      [355, 14, 375, 36]
+	      ZOrder		      9324
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch15"
+	      SID		      "727"
+	      Position		      [355, 39, 375, 61]
+	      ZOrder		      9325
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch16"
+	      SID		      "729"
+	      Position		      [355, -86, 375, -64]
+	      ZOrder		      9327
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch2"
+	      SID		      "714"
+	      Position		      [355, 89, 375, 111]
+	      ZOrder		      9312
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch3"
+	      SID		      "701"
+	      Position		      [355, 189, 375, 211]
+	      ZOrder		      2114
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch4"
+	      SID		      "702"
+	      Position		      [355, 214, 375, 236]
+	      ZOrder		      2115
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch5"
+	      SID		      "703"
+	      Position		      [355, 239, 375, 261]
+	      ZOrder		      2116
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch6"
+	      SID		      "704"
+	      Position		      [355, 264, 375, 286]
+	      ZOrder		      2117
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch7"
+	      SID		      "705"
+	      Position		      [355, 289, 375, 311]
+	      ZOrder		      2118
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch8"
+	      SID		      "715"
+	      Position		      [355, 114, 375, 136]
+	      ZOrder		      9313
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch9"
+	      SID		      "716"
+	      Position		      [355, 139, 375, 161]
+	      ZOrder		      9314
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "xyz1"
+	      SID		      "707"
+	      Ports		      [1, 16]
+	      Position		      [205, -84, 215, 299]
+	      ZOrder		      9304
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,"
+	      "signal12,signal13,signal14,signal15,signal16"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		9
+		Name			"<signal9>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		10
+		Name			"<signal10>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		11
+		Name			"<signal11>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		12
+		Name			"<signal12>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		13
+		Name			"<signal13>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		14
+		Name			"<signal14>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		15
+		Name			"<signal15>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		16
+		Name			"<signal16>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select(1b)"
+	      SID		      "706"
+	      Position		      [510, 108, 540, 122]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      36
+	      SrcBlock		      "Addr(1B)"
+	      SrcPort		      1
+	      DstBlock		      "xyz1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      35
+	      SrcBlock		      "Logical\nOperator9"
+	      SrcPort		      1
+	      DstBlock		      "Select(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      39
+	      SrcBlock		      "Manual Switch3"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      12
+	    }
+	    Line {
+	      Name		      "<signal12>"
+	      ZOrder		      30
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      12
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			5
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator3"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			6
+		DstBlock		"Manual Switch3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      38
+	      SrcBlock		      "Manual Switch4"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      13
+	    }
+	    Line {
+	      Name		      "<signal13>"
+	      ZOrder		      32
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      13
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			9
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator4"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			10
+		DstBlock		"Manual Switch4"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      37
+	      SrcBlock		      "Manual Switch5"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      14
+	    }
+	    Line {
+	      Name		      "<signal14>"
+	      ZOrder		      29
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      14
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			13
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator5"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			14
+		DstBlock		"Manual Switch5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      34
+	      SrcBlock		      "Manual Switch6"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      15
+	    }
+	    Line {
+	      Name		      "<signal15>"
+	      ZOrder		      31
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      15
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			17
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator6"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			18
+		DstBlock		"Manual Switch6"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      33
+	      SrcBlock		      "Manual Switch7"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      16
+	    }
+	    Line {
+	      Name		      "<signal16>"
+	      ZOrder		      28
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      16
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			21
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator7"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			22
+		DstBlock		"Manual Switch7"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      23
+	      SrcBlock		      "Logical\nOperator3"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch3"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      24
+	      SrcBlock		      "Logical\nOperator7"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch7"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      25
+	      SrcBlock		      "Logical\nOperator6"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch6"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      26
+	      SrcBlock		      "Logical\nOperator5"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch5"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      27
+	      SrcBlock		      "Logical\nOperator4"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch4"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      69
+	      SrcBlock		      "Manual Switch1"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      7
+	    }
+	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      70
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      7
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			42
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			41
+		DstBlock		"Manual Switch1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      68
+	      SrcBlock		      "Manual Switch2"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      8
+	    }
+	    Line {
+	      Name		      "<signal8>"
+	      ZOrder		      71
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      8
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			46
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator2"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			45
+		DstBlock		"Manual Switch2"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      66
+	      SrcBlock		      "Manual Switch8"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      9
+	    }
+	    Line {
+	      Name		      "<signal9>"
+	      ZOrder		      72
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      9
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			50
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator8"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			49
+		DstBlock		"Manual Switch8"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      65
+	      SrcBlock		      "Manual Switch9"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      10
+	    }
+	    Line {
+	      Name		      "<signal10>"
+	      ZOrder		      73
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      10
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			54
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator10"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			53
+		DstBlock		"Manual Switch9"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      67
+	      SrcBlock		      "Manual Switch10"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      11
+	    }
+	    Line {
+	      Name		      "<signal11>"
+	      ZOrder		      74
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      11
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			58
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator11"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			57
+		DstBlock		"Manual Switch10"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      60
+	      SrcBlock		      "Logical\nOperator1"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch1"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      61
+	      SrcBlock		      "Logical\nOperator11"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch10"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      62
+	      SrcBlock		      "Logical\nOperator10"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch9"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      63
+	      SrcBlock		      "Logical\nOperator8"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch8"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      64
+	      SrcBlock		      "Logical\nOperator2"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch2"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      100
+	      SrcBlock		      "Manual Switch11"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal2>"
+	      ZOrder		      105
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      2
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			77
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator12"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			76
+		DstBlock		"Manual Switch11"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      103
+	      SrcBlock		      "Manual Switch12"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal3>"
+	      ZOrder		      106
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      3
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			81
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator13"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			80
+		DstBlock		"Manual Switch12"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      104
+	      SrcBlock		      "Manual Switch13"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal4>"
+	      ZOrder		      109
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      4
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			85
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator14"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			84
+		DstBlock		"Manual Switch13"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      102
+	      SrcBlock		      "Manual Switch14"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal5>"
+	      ZOrder		      107
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      5
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			89
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator15"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			88
+		DstBlock		"Manual Switch14"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      101
+	      SrcBlock		      "Manual Switch15"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      108
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      6
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			93
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator16"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			92
+		DstBlock		"Manual Switch15"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      95
+	      SrcBlock		      "Logical\nOperator12"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch11"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      96
+	      SrcBlock		      "Logical\nOperator16"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch15"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      97
+	      SrcBlock		      "Logical\nOperator15"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch14"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      98
+	      SrcBlock		      "Logical\nOperator14"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch13"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      99
+	      SrcBlock		      "Logical\nOperator13"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch12"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      115
+	      SrcBlock		      "Manual Switch16"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<signal1>"
+	      ZOrder		      116
+	      Labels		      [0, 0]
+	      SrcBlock		      "xyz1"
+	      SrcPort		      1
+	      Points		      [84, 0]
+	      Branch {
+		ZOrder			112
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator17"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			111
+		DstBlock		"Manual Switch16"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      114
+	      SrcBlock		      "Logical\nOperator17"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch16"
+	      DstPort		      2
 	    }
 	  }
 	}
@@ -11872,6 +12969,7 @@ Library {
 	  Position		  [-125, 729, 5, 751]
 	  ZOrder		  2190
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -11892,7 +12990,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "302"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -12191,7 +13289,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -12206,6 +13304,7 @@ Library {
 	  Position		  [-125, 774, 5, 796]
 	  ZOrder		  2184
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -12226,7 +13325,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "314"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -12525,7 +13624,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -12540,6 +13639,7 @@ Library {
 	  Position		  [-125, 819, 5, 841]
 	  ZOrder		  427
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
@@ -12559,7 +13659,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "326"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -12836,7 +13936,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      25
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -12851,6 +13951,7 @@ Library {
 	  Position		  [-125, 864, 5, 886]
 	  ZOrder		  2205
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -12871,7 +13972,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "350"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -13170,7 +14271,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -13185,12 +14286,13 @@ Library {
 	  Position		  [-125, 909, 5, 931]
 	  ZOrder		  6815
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Selector_21"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -13205,7 +14307,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "362"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -13482,7 +14584,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -13497,6 +14599,7 @@ Library {
 	  Position		  [-125, 954, 5, 976]
 	  ZOrder		  2164
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.23"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -13514,10 +14617,10 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "200"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "373"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -13794,7 +14897,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -13809,6 +14912,7 @@ Library {
 	  Position		  [-125, 999, 5, 1021]
 	  ZOrder		  2212
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.25"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -13826,10 +14930,10 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "150"
+	    ZoomFactor		    "200"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "384"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -14084,7 +15188,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      14
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -14099,6 +15203,7 @@ Library {
 	  Position		  [-125, 1044, 5, 1066]
 	  ZOrder		  2213
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.26"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -14119,7 +15224,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "394"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -14418,7 +15523,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      16
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -14433,6 +15538,7 @@ Library {
 	  Position		  [-125, 1089, 5, 1111]
 	  ZOrder		  2217
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.26"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -14453,7 +15559,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "406"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -14730,7 +15836,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -14745,6 +15851,7 @@ Library {
 	  Position		  [-125, 1134, 5, 1156]
 	  ZOrder		  2220
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -14765,7 +15872,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "417"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -15042,7 +16149,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -15057,6 +16164,7 @@ Library {
 	  Position		  [-125, 1179, 5, 1201]
 	  ZOrder		  2221
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -15077,7 +16185,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "428"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -15332,7 +16440,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      14
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -15347,6 +16455,7 @@ Library {
 	  Position		  [-125, 1224, 5, 1246]
 	  ZOrder		  2222
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -15367,7 +16476,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "438"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -15644,7 +16753,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      15
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -15659,6 +16768,7 @@ Library {
 	  Position		  [-125, 1269, 5, 1291]
 	  ZOrder		  2223
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  LibraryVersion	  "*1.24"
 	  RequestExecContextInheritance	off
 	  Variant		  off
@@ -15679,7 +16789,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "449"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -15934,7 +17044,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      14
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -15949,6 +17059,7 @@ Library {
 	  Position		  [-125, 1314, 5, 1336]
 	  ZOrder		  438
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
@@ -15968,7 +17079,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "471"
 	      Position		      [130, 183, 160, 197]
 	      ZOrder		      -1
@@ -16223,7 +17334,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      25
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -16238,6 +17349,7 @@ Library {
 	  Position		  [-125, 1359, 5, 1381]
 	  ZOrder		  439
 	  ForegroundColor	  "blue"
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
@@ -16257,7 +17369,7 @@ Library {
 	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1B)"
+	      Name		      "Addr(1B)"
 	      SID		      "481"
 	      Position		      [140, 183, 170, 197]
 	      ZOrder		      -1
@@ -16490,10 +17602,401 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      23
-	      SrcBlock		      "Address(1B)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Selector_5bit"
+	  SID			  "671"
+	  Ports			  [1, 1]
+	  Position		  [-125, -81, 5, -59]
+	  ZOrder		  6816
+	  ForegroundColor	  "blue"
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "Selector_5bit"
+	    Location		    [54, -8, 1928, 1088]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "200"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr(1B)"
+	      SID		      "672"
+	      Position		      [130, 238, 160, 252]
+	      ZOrder		      -1
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "673"
+	      Ports		      [1, 5]
+	      Position		      [205, 184, 215, 306]
+	      ZOrder		      2110
+	      ShowName		      off
+	      OutputSignals	      "signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator3"
+	      SID		      "677"
+	      Ports		      [1, 1]
+	      Position		      [305, 199, 315, 211]
+	      ZOrder		      2105
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator4"
+	      SID		      "678"
+	      Ports		      [1, 1]
+	      Position		      [305, 224, 315, 236]
+	      ZOrder		      2106
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator5"
+	      SID		      "679"
+	      Ports		      [1, 1]
+	      Position		      [305, 249, 315, 261]
+	      ZOrder		      2107
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator6"
+	      SID		      "680"
+	      Ports		      [1, 1]
+	      Position		      [305, 274, 315, 286]
+	      ZOrder		      2108
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator7"
+	      SID		      "681"
+	      Ports		      [1, 1]
+	      Position		      [305, 299, 315, 311]
+	      ZOrder		      2109
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Operator		      "NOT"
+	      Inputs		      "1"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator9"
+	      SID		      "682"
+	      Ports		      [5, 1]
+	      Position		      [400, 183, 430, 317]
+	      ZOrder		      2068
+	      ForegroundColor	      "blue"
+	      ShowName		      off
+	      Inputs		      "5"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch3"
+	      SID		      "687"
+	      Position		      [335, 189, 355, 211]
+	      ZOrder		      2114
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch4"
+	      SID		      "688"
+	      Position		      [335, 214, 355, 236]
+	      ZOrder		      2115
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch5"
+	      SID		      "689"
+	      Position		      [335, 239, 355, 261]
+	      ZOrder		      2116
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch6"
+	      SID		      "690"
+	      Position		      [335, 264, 355, 286]
+	      ZOrder		      2117
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      ManualSwitch
+	      Name		      "Manual Switch7"
+	      SID		      "691"
+	      Position		      [335, 289, 355, 311]
+	      ZOrder		      2118
+	      ShowName		      off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Select(1b)"
+	      SID		      "683"
+	      Position		      [465, 243, 495, 257]
+	      ZOrder		      -2
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Addr(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      4
+	      SrcBlock		      "Logical\nOperator9"
+	      SrcPort		      1
+	      DstBlock		      "Select(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      111
+	      SrcBlock		      "Manual Switch3"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<signal4>"
+	      ZOrder		      10
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      1
+	      Points		      [64, 0]
+	      Branch {
+		ZOrder			99
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator3"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			92
+		DstBlock		"Manual Switch3"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      112
+	      SrcBlock		      "Manual Switch4"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      2
+	    }
+	    Line {
+	      Name		      "<signal5>"
+	      ZOrder		      12
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      2
+	      Points		      [64, 0]
+	      Branch {
+		ZOrder			98
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator4"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			91
+		DstBlock		"Manual Switch4"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      114
+	      SrcBlock		      "Manual Switch5"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      14
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      3
+	      Points		      [64, 0]
+	      Branch {
+		ZOrder			97
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator5"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			90
+		DstBlock		"Manual Switch5"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      115
+	      SrcBlock		      "Manual Switch6"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      16
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      4
+	      Points		      [64, 0]
+	      Branch {
+		ZOrder			96
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator6"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			89
+		DstBlock		"Manual Switch6"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      113
+	      SrcBlock		      "Manual Switch7"
+	      SrcPort		      1
+	      DstBlock		      "Logical\nOperator9"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal8>"
+	      ZOrder		      18
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      5
+	      Points		      [64, 0]
+	      Branch {
+		ZOrder			95
+		Points			[0, 10]
+		DstBlock		"Logical\nOperator7"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			88
+		DstBlock		"Manual Switch7"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      41
+	      SrcBlock		      "Logical\nOperator3"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch3"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      44
+	      SrcBlock		      "Logical\nOperator7"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch7"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      45
+	      SrcBlock		      "Logical\nOperator6"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch6"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      46
+	      SrcBlock		      "Logical\nOperator5"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch5"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      47
+	      SrcBlock		      "Logical\nOperator4"
+	      SrcPort		      1
+	      DstBlock		      "Manual Switch4"
+	      DstPort		      2
 	    }
 	  }
 	}

@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, -8.0, 1874.0, 1096.0]
+      Location		      [54.0, 0.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"243"
+	LoadSaveID		"240"
 	Extents			[1824.0, 929.0]
-	ZoomFactor		[0.5]
-	Offset			[3601.3261904761912, 1753.0119047619041]
+	ZoomFactor		[1.22]
+	Offset			[-339.56093051621343, 94.946721311475187]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Oct 09 22:07:31 2021"
-  RTWModifiedTimeStamp	  555718034
-  ModelVersionFormat	  "1.%<AutoIncrement:42>"
+  LastModifiedDate	  "Sun Dec 05 06:00:40 2021"
+  RTWModifiedTimeStamp	  560584806
+  ModelVersionFormat	  "1.%<AutoIncrement:45>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -872,8 +872,8 @@ Library {
       Variant		      off
       System {
 	Name			"Byte_Multiplexers_Lib"
-	Location		[54, -8, 1928, 1088]
-	Open			off
+	Location		[54, 0, 1928, 1096]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -896,8 +896,8 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Byte_Multiplexer_16_to_1"
-	    Location		    [54, -8, 1928, 1088]
-	    Open		    on
+	    Location		    [54, 0, 1928, 1096]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -908,10 +908,10 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "50"
+	    ZoomFactor		    "30"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_3(1b)"
+	      Name		      "Addr_3(1b)"
 	      SID		      "244"
 	      Position		      [760, 1998, 790, 2012]
 	      ZOrder		      340
@@ -920,7 +920,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_2(1b)"
+	      Name		      "Addr_2(1b)"
 	      SID		      "245"
 	      Position		      [760, 2048, 790, 2062]
 	      ZOrder		      595
@@ -930,7 +930,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "246"
 	      Position		      [760, 2098, 790, 2112]
 	      ZOrder		      596
@@ -940,7 +940,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "247"
 	      Position		      [760, 2148, 790, 2162]
 	      ZOrder		      597
@@ -950,7 +950,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_15(1B)"
+	      Name		      "Data_15(1B)"
 	      SID		      "248"
 	      Position		      [760, 5373, 790, 5387]
 	      ZOrder		      341
@@ -959,7 +959,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_14(1B)"
+	      Name		      "Data_14(1B)"
 	      SID		      "249"
 	      Position		      [760, 5558, 790, 5572]
 	      ZOrder		      565
@@ -968,7 +968,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_13(1B)"
+	      Name		      "Data_13(1B)"
 	      SID		      "250"
 	      Position		      [760, 5748, 790, 5762]
 	      ZOrder		      567
@@ -977,7 +977,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_12(1B)"
+	      Name		      "Data_12(1B)"
 	      SID		      "251"
 	      Position		      [760, 5943, 790, 5957]
 	      ZOrder		      569
@@ -986,7 +986,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_11(1B)"
+	      Name		      "Data_11(1B)"
 	      SID		      "252"
 	      Position		      [760, 6143, 790, 6157]
 	      ZOrder		      571
@@ -995,7 +995,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_10(1B)"
+	      Name		      "Data_10(1B)"
 	      SID		      "253"
 	      Position		      [760, 6343, 790, 6357]
 	      ZOrder		      573
@@ -1004,7 +1004,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_09(1B)"
+	      Name		      "Data_09(1B)"
 	      SID		      "254"
 	      Position		      [760, 6548, 790, 6562]
 	      ZOrder		      575
@@ -1013,7 +1013,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_08(1B)"
+	      Name		      "Data_08(1B)"
 	      SID		      "255"
 	      Position		      [760, 6753, 790, 6767]
 	      ZOrder		      577
@@ -1022,7 +1022,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_07(1B)"
+	      Name		      "Data_07(1B)"
 	      SID		      "256"
 	      Position		      [760, 6953, 790, 6967]
 	      ZOrder		      579
@@ -1031,7 +1031,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_06(1B)"
+	      Name		      "Data_06(1B)"
 	      SID		      "257"
 	      Position		      [760, 7153, 790, 7167]
 	      ZOrder		      581
@@ -1040,7 +1040,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_05(1B)"
+	      Name		      "Data_05(1B)"
 	      SID		      "258"
 	      Position		      [760, 7353, 790, 7367]
 	      ZOrder		      583
@@ -1049,7 +1049,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_04(1B)"
+	      Name		      "Data_04(1B)"
 	      SID		      "259"
 	      Position		      [760, 7558, 790, 7572]
 	      ZOrder		      585
@@ -1058,7 +1058,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_03(1B)"
+	      Name		      "Data_03(1B)"
 	      SID		      "260"
 	      Position		      [765, 7763, 795, 7777]
 	      ZOrder		      587
@@ -1067,7 +1067,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_02(1B)"
+	      Name		      "Data_02(1B)"
 	      SID		      "261"
 	      Position		      [760, 7968, 790, 7982]
 	      ZOrder		      589
@@ -1076,7 +1076,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_01(1B)"
+	      Name		      "Data_01(1B)"
 	      SID		      "262"
 	      Position		      [760, 8173, 790, 8187]
 	      ZOrder		      591
@@ -1085,7 +1085,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In_00(1B)"
+	      Name		      "Data_00(1B)"
 	      SID		      "263"
 	      Position		      [760, 8378, 790, 8392]
 	      ZOrder		      593
@@ -1099,7 +1099,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 4784, 4765, 5091]
 	      ZOrder		      323
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1111,7 +1111,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 4409, 4765, 4716]
 	      ZOrder		      324
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1123,7 +1123,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 4039, 4765, 4346]
 	      ZOrder		      326
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1135,7 +1135,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 3669, 4765, 3976]
 	      ZOrder		      327
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1147,7 +1147,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 3299, 4765, 3606]
 	      ZOrder		      328
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1159,7 +1159,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 2929, 4765, 3236]
 	      ZOrder		      329
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1171,7 +1171,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 2559, 4765, 2866]
 	      ZOrder		      330
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1183,7 +1183,7 @@ Library {
 	      Ports		      [20, 1]
 	      Position		      [4600, 2189, 4765, 2496]
 	      ZOrder		      331
-	      LibraryVersion	      "1.18"
+	      LibraryVersion	      "1.20"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_16_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1618,7 +1618,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out(1B)"
+	      Name		      "Data(1B)"
 	      SID		      "322"
 	      Position		      [5130, 2408, 5160, 2422]
 	      ZOrder		      342
@@ -1633,7 +1633,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      2
-	      SrcBlock		      "Data_In_15(1B)"
+	      SrcBlock		      "Data_15(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter7"
 	      DstPort		      1
@@ -1642,12 +1642,12 @@ Library {
 	      ZOrder		      710
 	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out(1B)"
+	      DstBlock		      "Data(1B)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      22
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [3724, 0; 0, 90]
 	      Branch {
@@ -1718,7 +1718,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      37
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [3739, 0; 0, 125]
 	      Branch {
@@ -1789,7 +1789,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      52
-	      SrcBlock		      "Address_2(1b)"
+	      SrcBlock		      "Addr_2(1b)"
 	      SrcPort		      1
 	      Points		      [3753, 0; 0, 160]
 	      Branch {
@@ -1860,7 +1860,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      67
-	      SrcBlock		      "Address_3(1b)"
+	      SrcBlock		      "Addr_3(1b)"
 	      SrcPort		      1
 	      Points		      [3767, 0; 0, 195]
 	      Branch {
@@ -2001,7 +2001,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      210
-	      SrcBlock		      "Data_In_14(1B)"
+	      SrcBlock		      "Data_14(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter1"
 	      DstPort		      1
@@ -2015,7 +2015,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      212
-	      SrcBlock		      "Data_In_13(1B)"
+	      SrcBlock		      "Data_13(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter2"
 	      DstPort		      1
@@ -2029,7 +2029,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      214
-	      SrcBlock		      "Data_In_12(1B)"
+	      SrcBlock		      "Data_12(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter3"
 	      DstPort		      1
@@ -2043,7 +2043,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      216
-	      SrcBlock		      "Data_In_11(1B)"
+	      SrcBlock		      "Data_11(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter4"
 	      DstPort		      1
@@ -2057,7 +2057,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      218
-	      SrcBlock		      "Data_In_10(1B)"
+	      SrcBlock		      "Data_10(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter5"
 	      DstPort		      1
@@ -2071,7 +2071,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      220
-	      SrcBlock		      "Data_In_09(1B)"
+	      SrcBlock		      "Data_09(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter6"
 	      DstPort		      1
@@ -2085,7 +2085,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      222
-	      SrcBlock		      "Data_In_08(1B)"
+	      SrcBlock		      "Data_08(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter8"
 	      DstPort		      1
@@ -2099,7 +2099,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      224
-	      SrcBlock		      "Data_In_07(1B)"
+	      SrcBlock		      "Data_07(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter9"
 	      DstPort		      1
@@ -2113,7 +2113,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      226
-	      SrcBlock		      "Data_In_06(1B)"
+	      SrcBlock		      "Data_06(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter10"
 	      DstPort		      1
@@ -2127,7 +2127,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      228
-	      SrcBlock		      "Data_In_05(1B)"
+	      SrcBlock		      "Data_05(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter11"
 	      DstPort		      1
@@ -2141,7 +2141,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      230
-	      SrcBlock		      "Data_In_04(1B)"
+	      SrcBlock		      "Data_04(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter12"
 	      DstPort		      1
@@ -2155,7 +2155,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      232
-	      SrcBlock		      "Data_In_03(1B)"
+	      SrcBlock		      "Data_03(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter13"
 	      DstPort		      1
@@ -2169,7 +2169,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      234
-	      SrcBlock		      "Data_In_02(1B)"
+	      SrcBlock		      "Data_02(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter14"
 	      DstPort		      1
@@ -2183,7 +2183,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      236
-	      SrcBlock		      "Data_In_01(1B)"
+	      SrcBlock		      "Data_01(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter15"
 	      DstPort		      1
@@ -2197,7 +2197,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      238
-	      SrcBlock		      "Data_In_00(1B)"
+	      SrcBlock		      "Data_00(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter16"
 	      DstPort		      1
@@ -3230,16 +3230,1008 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Multiplexer_2_to_1"
+	  Name			  "Byte_Multiplexer_4_to_1"
+	  SID			  "358"
+	  Ports			  [6, 1]
+	  Position		  [50, 272, 205, 363]
+	  ZOrder		  2115
+	  ForegroundColor	  "blue"
+	  LibraryVersion	  "*1.40"
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "Byte_Multiplexer_4_to_1"
+	    Location		    [54, 0, 1928, 1096]
+	    Open		    off
+	    ModelBrowserVisibility  off
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "125"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_1(1b)"
+	      SID		      "359"
+	      Position		      [3435, 3918, 3465, 3932]
+	      ZOrder		      596
+	      ForegroundColor	      "blue"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_0(1b)"
+	      SID		      "360"
+	      Position		      [3435, 3968, 3465, 3982]
+	      ZOrder		      597
+	      ForegroundColor	      "blue"
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_3(1B)"
+	      SID		      "361"
+	      Position		      [3435, 4883, 3465, 4897]
+	      ZOrder		      587
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_2(1B)"
+	      SID		      "362"
+	      Position		      [3430, 5048, 3460, 5062]
+	      ZOrder		      589
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_1(1B)"
+	      SID		      "363"
+	      Position		      [3430, 5213, 3460, 5227]
+	      ZOrder		      591
+	      Port		      "5"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Data_0(1B)"
+	      SID		      "364"
+	      Position		      [3430, 5378, 3460, 5392]
+	      ZOrder		      593
+	      Port		      "6"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_0)"
+	      SID		      "365"
+	      Ports		      [6, 1]
+	      Position		      [4705, 4827, 4860, 4918]
+	      ZOrder		      598
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_1)"
+	      SID		      "366"
+	      Ports		      [6, 1]
+	      Position		      [4705, 4707, 4860, 4798]
+	      ZOrder		      600
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_2)"
+	      SID		      "367"
+	      Ports		      [6, 1]
+	      Position		      [4705, 4587, 4860, 4678]
+	      ZOrder		      602
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_3)"
+	      SID		      "368"
+	      Ports		      [6, 1]
+	      Position		      [4705, 4467, 4860, 4558]
+	      ZOrder		      604
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_4)"
+	      SID		      "369"
+	      Ports		      [6, 1]
+	      Position		      [4705, 4347, 4860, 4438]
+	      ZOrder		      606
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_5)"
+	      SID		      "370"
+	      Ports		      [6, 1]
+	      Position		      [4705, 4227, 4860, 4318]
+	      ZOrder		      608
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_6)"
+	      SID		      "371"
+	      Ports		      [6, 1]
+	      Position		      [4705, 4107, 4860, 4198]
+	      ZOrder		      610
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      Reference
+	      Name		      "Bit_Multiplexer_4_to_1(Bit_7)"
+	      SID		      "372"
+	      Ports		      [6, 1]
+	      Position		      [4705, 3987, 4860, 4078]
+	      ZOrder		      612
+	      LibraryVersion	      "1.20"
+	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
+	      SourceType	      "SubSystem"
+	      ContentPreviewEnabled   off
+	    }
+	    Block {
+	      BlockType		      BusCreator
+	      Name		      "Bus\nCreator3"
+	      SID		      "509"
+	      Ports		      [8, 1]
+	      Position		      [5070, 4032, 5080, 4178]
+	      ZOrder		      2172
+	      ShowName		      off
+	      Inputs		      "8"
+	      DisplayOption	      "bar"
+	      InheritFromInputs	      on
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector"
+	      SID		      "505"
+	      Ports		      [1, 8]
+	      Position		      [3500, 4816, 3510, 4964]
+	      ZOrder		      613
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector1"
+	      SID		      "506"
+	      Ports		      [1, 8]
+	      Position		      [3500, 4981, 3510, 5129]
+	      ZOrder		      614
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector2"
+	      SID		      "507"
+	      Ports		      [1, 8]
+	      Position		      [3500, 5146, 3510, 5294]
+	      ZOrder		      615
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      BusSelector
+	      Name		      "Bus\nSelector3"
+	      SID		      "508"
+	      Ports		      [1, 8]
+	      Position		      [3500, 5311, 3510, 5459]
+	      ZOrder		      616
+	      ShowName		      off
+	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	      Port {
+		PortNumber		1
+		Name			"<signal1>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		2
+		Name			"<signal2>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		3
+		Name			"<signal3>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		4
+		Name			"<signal4>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		5
+		Name			"<signal5>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		6
+		Name			"<signal6>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		7
+		Name			"<signal7>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	      Port {
+		PortNumber		8
+		Name			"<signal8>"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Data(1B)"
+	      SID		      "399"
+	      Position		      [5120, 4098, 5150, 4112]
+	      ZOrder		      342
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      1
+	      SrcBlock		      "Bus\nCreator3"
+	      SrcPort		      1
+	      DstBlock		      "Data(1B)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "Addr_0(1b)"
+	      SrcPort		      1
+	      Points		      [1175, 0; 0, 35]
+	      Branch {
+		ZOrder			3
+		Points			[0, 120]
+		Branch {
+		  ZOrder		  4
+		  Points		  [0, 120]
+		  Branch {
+		    ZOrder		    5
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    6
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    7
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    8
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    9
+		    Points		    [0, 120]
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_0)"
+		    DstPort		    2
+		    }
+		    Branch {
+		    ZOrder		    10
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_1)"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    11
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_2)"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    12
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_3)"
+		    DstPort		    2
+		    }
+		    }
+		    Branch {
+		    ZOrder		    13
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_4)"
+		    DstPort		    2
+		    }
+		  }
+		  Branch {
+		    ZOrder		    14
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_5)"
+		    DstPort		    2
+		  }
+		}
+		Branch {
+		  ZOrder		  15
+		  DstBlock		  "Bit_Multiplexer_4_to_1(Bit_6)"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
+		ZOrder			16
+		DstBlock		"Bit_Multiplexer_4_to_1(Bit_7)"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      17
+	      SrcBlock		      "Addr_1(1b)"
+	      SrcPort		      1
+	      Points		      [1189, 0; 0, 70]
+	      Branch {
+		ZOrder			18
+		DstBlock		"Bit_Multiplexer_4_to_1(Bit_7)"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			19
+		Points			[0, 120]
+		Branch {
+		  ZOrder		  20
+		  Points		  [0, 120]
+		  Branch {
+		    ZOrder		    21
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    22
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    23
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    24
+		    Points		    [0, 120]
+		    Branch {
+		    ZOrder		    25
+		    Points		    [0, 120]
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_0)"
+		    DstPort		    1
+		    }
+		    Branch {
+		    ZOrder		    26
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_1)"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    ZOrder		    27
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_2)"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    ZOrder		    28
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_3)"
+		    DstPort		    1
+		    }
+		    }
+		    Branch {
+		    ZOrder		    29
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_4)"
+		    DstPort		    1
+		    }
+		  }
+		  Branch {
+		    ZOrder		    30
+		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_5)"
+		    DstPort		    1
+		  }
+		}
+		Branch {
+		  ZOrder		  31
+		  DstBlock		  "Bit_Multiplexer_4_to_1(Bit_6)"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Line {
+	      ZOrder		      32
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
+	      SrcPort		      1
+	      Points		      [87, 0; 0, -300]
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      4
+	    }
+	    Line {
+	      ZOrder		      33
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
+	      SrcPort		      1
+	      Points		      [67, 0; 0, -200]
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      3
+	    }
+	    Line {
+	      ZOrder		      34
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
+	      SrcPort		      1
+	      Points		      [45, 0; 0, -100]
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      35
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      36
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
+	      SrcPort		      1
+	      Points		      [107, 0; 0, -400]
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      5
+	    }
+	    Line {
+	      ZOrder		      37
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
+	      SrcPort		      1
+	      Points		      [127, 0; 0, -500]
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      6
+	    }
+	    Line {
+	      ZOrder		      38
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
+	      SrcPort		      1
+	      Points		      [148, 0; 0, -600]
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      7
+	    }
+	    Line {
+	      ZOrder		      39
+	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
+	      SrcPort		      1
+	      Points		      [169, 0; 0, -700]
+	      DstBlock		      "Bus\nCreator3"
+	      DstPort		      8
+	    }
+	    Line {
+	      ZOrder		      40
+	      SrcBlock		      "Data_3(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      41
+	      SrcBlock		      "Data_2(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      42
+	      SrcBlock		      "Data_1(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      43
+	      SrcBlock		      "Data_0(1B)"
+	      SrcPort		      1
+	      DstBlock		      "Bus\nSelector3"
+	      DstPort		      1
+	    }
+	    Line {
+	      Name		      "<signal8>"
+	      ZOrder		      44
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      8
+	      Points		      [990, 0; 0, -95]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal8>"
+	      ZOrder		      45
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      8
+	      Points		      [1010, 0; 0, -245]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal8>"
+	      ZOrder		      46
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      8
+	      Points		      [1030, 0; 0, -395]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal8>"
+	      ZOrder		      47
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      8
+	      Points		      [1050, 0; 0, -545]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      48
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      7
+	      Points		      [865, 0; 0, -195]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      49
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      7
+	      Points		      [885, 0; 0, -345]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      50
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      7
+	      Points		      [905, 0; 0, -495]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal7>"
+	      ZOrder		      51
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      7
+	      Points		      [925, 0; 0, -645]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      52
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      6
+	      Points		      [735, 0; 0, -295]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      53
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      6
+	      Points		      [755, 0; 0, -445]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      54
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      6
+	      Points		      [775, 0; 0, -595]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal6>"
+	      ZOrder		      55
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      6
+	      Points		      [795, 0; 0, -745]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal5>"
+	      ZOrder		      56
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      5
+	      Points		      [605, 0; 0, -395]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal5>"
+	      ZOrder		      57
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      5
+	      Points		      [625, 0; 0, -545]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal5>"
+	      ZOrder		      58
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      5
+	      Points		      [645, 0; 0, -695]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal5>"
+	      ZOrder		      59
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      5
+	      Points		      [665, 0; 0, -845]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal4>"
+	      ZOrder		      60
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      4
+	      Points		      [475, 0; 0, -495]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal4>"
+	      ZOrder		      61
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      4
+	      Points		      [495, 0; 0, -645]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal4>"
+	      ZOrder		      62
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      4
+	      Points		      [515, 0; 0, -795]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal4>"
+	      ZOrder		      63
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      4
+	      Points		      [535, 0; 0, -945]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal3>"
+	      ZOrder		      64
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      3
+	      Points		      [345, 0; 0, -595]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal3>"
+	      ZOrder		      65
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      3
+	      Points		      [365, 0; 0, -745]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal3>"
+	      ZOrder		      66
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      3
+	      Points		      [385, 0; 0, -895]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal3>"
+	      ZOrder		      67
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      3
+	      Points		      [405, 0; 0, -1045]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal2>"
+	      ZOrder		      68
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      2
+	      Points		      [215, 0; 0, -695]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal2>"
+	      ZOrder		      69
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      2
+	      Points		      [235, 0; 0, -845]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal2>"
+	      ZOrder		      70
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      2
+	      Points		      [255, 0; 0, -995]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal2>"
+	      ZOrder		      71
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      2
+	      Points		      [275, 0; 0, -1145]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
+	      DstPort		      6
+	    }
+	    Line {
+	      Name		      "<signal1>"
+	      ZOrder		      72
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector"
+	      SrcPort		      1
+	      Points		      [85, 0; 0, -795]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
+	      DstPort		      3
+	    }
+	    Line {
+	      Name		      "<signal1>"
+	      ZOrder		      73
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector1"
+	      SrcPort		      1
+	      Points		      [105, 0; 0, -945]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
+	      DstPort		      4
+	    }
+	    Line {
+	      Name		      "<signal1>"
+	      ZOrder		      74
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector2"
+	      SrcPort		      1
+	      Points		      [125, 0; 0, -1095]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
+	      DstPort		      5
+	    }
+	    Line {
+	      Name		      "<signal1>"
+	      ZOrder		      75
+	      Labels		      [0, 0]
+	      SrcBlock		      "Bus\nSelector3"
+	      SrcPort		      1
+	      Points		      [145, 0; 0, -1245]
+	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
+	      DstPort		      6
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "NOT_USED_Byte_Multiplexer_2_to_1"
 	  SID			  "323"
 	  Ports			  [3, 1]
 	  Position		  [50, 192, 205, 238]
 	  ZOrder		  2119
+	  Commented		  "on"
 	  LibraryVersion	  "*1.39"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Multiplexer_2_to_1"
+	    Name		    "NOT_USED_Byte_Multiplexer_2_to_1"
 	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -3831,1006 +4823,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Multiplexer_4_to_1"
-	  SID			  "358"
-	  Ports			  [6, 1]
-	  Position		  [50, 272, 205, 363]
-	  ZOrder		  2115
-	  ForegroundColor	  "blue"
-	  LibraryVersion	  "*1.40"
-	  RequestExecContextInheritance	off
-	  Variant		  off
-	  System {
-	    Name		    "Byte_Multiplexer_4_to_1"
-	    Location		    [54, -8, 1928, 1088]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "57"
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
-	      SID		      "359"
-	      Position		      [3435, 3918, 3465, 3932]
-	      ZOrder		      596
-	      ForegroundColor	      "blue"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
-	      SID		      "360"
-	      Position		      [3435, 3968, 3465, 3982]
-	      ZOrder		      597
-	      ForegroundColor	      "blue"
-	      Port		      "2"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Data_In_3(1B)"
-	      SID		      "361"
-	      Position		      [3435, 4883, 3465, 4897]
-	      ZOrder		      587
-	      Port		      "3"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Data_In_2(1B)"
-	      SID		      "362"
-	      Position		      [3430, 5048, 3460, 5062]
-	      ZOrder		      589
-	      Port		      "4"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Data_In_1(1B)"
-	      SID		      "363"
-	      Position		      [3430, 5213, 3460, 5227]
-	      ZOrder		      591
-	      Port		      "5"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Inport
-	      Name		      "Data_In_0(1B)"
-	      SID		      "364"
-	      Position		      [3430, 5378, 3460, 5392]
-	      ZOrder		      593
-	      Port		      "6"
-	      IconDisplay	      "Port number"
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_0)"
-	      SID		      "365"
-	      Ports		      [6, 1]
-	      Position		      [4705, 4827, 4860, 4918]
-	      ZOrder		      598
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_1)"
-	      SID		      "366"
-	      Ports		      [6, 1]
-	      Position		      [4705, 4707, 4860, 4798]
-	      ZOrder		      600
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_2)"
-	      SID		      "367"
-	      Ports		      [6, 1]
-	      Position		      [4705, 4587, 4860, 4678]
-	      ZOrder		      602
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_3)"
-	      SID		      "368"
-	      Ports		      [6, 1]
-	      Position		      [4705, 4467, 4860, 4558]
-	      ZOrder		      604
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_4)"
-	      SID		      "369"
-	      Ports		      [6, 1]
-	      Position		      [4705, 4347, 4860, 4438]
-	      ZOrder		      606
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_5)"
-	      SID		      "370"
-	      Ports		      [6, 1]
-	      Position		      [4705, 4227, 4860, 4318]
-	      ZOrder		      608
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_6)"
-	      SID		      "371"
-	      Ports		      [6, 1]
-	      Position		      [4705, 4107, 4860, 4198]
-	      ZOrder		      610
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      Reference
-	      Name		      "Bit_Multiplexer_4_to_1(Bit_7)"
-	      SID		      "372"
-	      Ports		      [6, 1]
-	      Position		      [4705, 3987, 4860, 4078]
-	      ZOrder		      612
-	      LibraryVersion	      "1.18"
-	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_4_to_1"
-	      SourceType	      "SubSystem"
-	      ContentPreviewEnabled   off
-	    }
-	    Block {
-	      BlockType		      BusCreator
-	      Name		      "Bus\nCreator3"
-	      SID		      "509"
-	      Ports		      [8, 1]
-	      Position		      [5070, 4032, 5080, 4178]
-	      ZOrder		      2172
-	      ShowName		      off
-	      Inputs		      "8"
-	      DisplayOption	      "bar"
-	      InheritFromInputs	      on
-	    }
-	    Block {
-	      BlockType		      BusSelector
-	      Name		      "Bus\nSelector"
-	      SID		      "505"
-	      Ports		      [1, 8]
-	      Position		      [3500, 4816, 3510, 4964]
-	      ZOrder		      613
-	      ShowName		      off
-	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
-	      Port {
-		PortNumber		1
-		Name			"<signal1>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"<signal2>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"<signal3>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"<signal4>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"<signal5>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"<signal6>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"<signal7>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"<signal8>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      BusSelector
-	      Name		      "Bus\nSelector1"
-	      SID		      "506"
-	      Ports		      [1, 8]
-	      Position		      [3500, 4981, 3510, 5129]
-	      ZOrder		      614
-	      ShowName		      off
-	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
-	      Port {
-		PortNumber		1
-		Name			"<signal1>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"<signal2>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"<signal3>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"<signal4>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"<signal5>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"<signal6>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"<signal7>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"<signal8>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      BusSelector
-	      Name		      "Bus\nSelector2"
-	      SID		      "507"
-	      Ports		      [1, 8]
-	      Position		      [3500, 5146, 3510, 5294]
-	      ZOrder		      615
-	      ShowName		      off
-	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
-	      Port {
-		PortNumber		1
-		Name			"<signal1>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"<signal2>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"<signal3>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"<signal4>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"<signal5>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"<signal6>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"<signal7>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"<signal8>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      BusSelector
-	      Name		      "Bus\nSelector3"
-	      SID		      "508"
-	      Ports		      [1, 8]
-	      Position		      [3500, 5311, 3510, 5459]
-	      ZOrder		      616
-	      ShowName		      off
-	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
-	      Port {
-		PortNumber		1
-		Name			"<signal1>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"<signal2>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"<signal3>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"<signal4>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"<signal5>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"<signal6>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"<signal7>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"<signal8>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
-	      BlockType		      Outport
-	      Name		      "Data_Out(1B)"
-	      SID		      "399"
-	      Position		      [5120, 4098, 5150, 4112]
-	      ZOrder		      342
-	      IconDisplay	      "Port number"
-	    }
-	    Line {
-	      ZOrder		      1
-	      SrcBlock		      "Bus\nCreator3"
-	      SrcPort		      1
-	      DstBlock		      "Data_Out(1B)"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      2
-	      SrcBlock		      "Address_0(1b)"
-	      SrcPort		      1
-	      Points		      [1175, 0; 0, 35]
-	      Branch {
-		ZOrder			3
-		Points			[0, 120]
-		Branch {
-		  ZOrder		  4
-		  Points		  [0, 120]
-		  Branch {
-		    ZOrder		    5
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    6
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    7
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    8
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    9
-		    Points		    [0, 120]
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_0)"
-		    DstPort		    2
-		    }
-		    Branch {
-		    ZOrder		    10
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_1)"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    11
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_2)"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    12
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_3)"
-		    DstPort		    2
-		    }
-		    }
-		    Branch {
-		    ZOrder		    13
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_4)"
-		    DstPort		    2
-		    }
-		  }
-		  Branch {
-		    ZOrder		    14
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_5)"
-		    DstPort		    2
-		  }
-		}
-		Branch {
-		  ZOrder		  15
-		  DstBlock		  "Bit_Multiplexer_4_to_1(Bit_6)"
-		  DstPort		  2
-		}
-	      }
-	      Branch {
-		ZOrder			16
-		DstBlock		"Bit_Multiplexer_4_to_1(Bit_7)"
-		DstPort			2
-	      }
-	    }
-	    Line {
-	      ZOrder		      17
-	      SrcBlock		      "Address_1(1b)"
-	      SrcPort		      1
-	      Points		      [1189, 0; 0, 70]
-	      Branch {
-		ZOrder			18
-		DstBlock		"Bit_Multiplexer_4_to_1(Bit_7)"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			19
-		Points			[0, 120]
-		Branch {
-		  ZOrder		  20
-		  Points		  [0, 120]
-		  Branch {
-		    ZOrder		    21
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    22
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    23
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    24
-		    Points		    [0, 120]
-		    Branch {
-		    ZOrder		    25
-		    Points		    [0, 120]
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_0)"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    26
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_1)"
-		    DstPort		    1
-		    }
-		    }
-		    Branch {
-		    ZOrder		    27
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_2)"
-		    DstPort		    1
-		    }
-		    }
-		    Branch {
-		    ZOrder		    28
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_3)"
-		    DstPort		    1
-		    }
-		    }
-		    Branch {
-		    ZOrder		    29
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_4)"
-		    DstPort		    1
-		    }
-		  }
-		  Branch {
-		    ZOrder		    30
-		    DstBlock		    "Bit_Multiplexer_4_to_1(Bit_5)"
-		    DstPort		    1
-		  }
-		}
-		Branch {
-		  ZOrder		  31
-		  DstBlock		  "Bit_Multiplexer_4_to_1(Bit_6)"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      ZOrder		      32
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
-	      SrcPort		      1
-	      Points		      [87, 0; 0, -300]
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      4
-	    }
-	    Line {
-	      ZOrder		      33
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
-	      SrcPort		      1
-	      Points		      [67, 0; 0, -200]
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      3
-	    }
-	    Line {
-	      ZOrder		      34
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
-	      SrcPort		      1
-	      Points		      [45, 0; 0, -100]
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      2
-	    }
-	    Line {
-	      ZOrder		      35
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
-	      SrcPort		      1
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      36
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
-	      SrcPort		      1
-	      Points		      [107, 0; 0, -400]
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      5
-	    }
-	    Line {
-	      ZOrder		      37
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
-	      SrcPort		      1
-	      Points		      [127, 0; 0, -500]
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      6
-	    }
-	    Line {
-	      ZOrder		      38
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
-	      SrcPort		      1
-	      Points		      [148, 0; 0, -600]
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      7
-	    }
-	    Line {
-	      ZOrder		      39
-	      SrcBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
-	      SrcPort		      1
-	      Points		      [169, 0; 0, -700]
-	      DstBlock		      "Bus\nCreator3"
-	      DstPort		      8
-	    }
-	    Line {
-	      ZOrder		      40
-	      SrcBlock		      "Data_In_3(1B)"
-	      SrcPort		      1
-	      DstBlock		      "Bus\nSelector"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      41
-	      SrcBlock		      "Data_In_2(1B)"
-	      SrcPort		      1
-	      DstBlock		      "Bus\nSelector1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      42
-	      SrcBlock		      "Data_In_1(1B)"
-	      SrcPort		      1
-	      DstBlock		      "Bus\nSelector2"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      43
-	      SrcBlock		      "Data_In_0(1B)"
-	      SrcPort		      1
-	      DstBlock		      "Bus\nSelector3"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "<signal8>"
-	      ZOrder		      44
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      8
-	      Points		      [990, 0; 0, -95]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal8>"
-	      ZOrder		      45
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      8
-	      Points		      [1010, 0; 0, -245]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal8>"
-	      ZOrder		      46
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      8
-	      Points		      [1030, 0; 0, -395]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal8>"
-	      ZOrder		      47
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      8
-	      Points		      [1050, 0; 0, -545]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
-	      DstPort		      6
-	    }
-	    Line {
-	      Name		      "<signal7>"
-	      ZOrder		      48
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      7
-	      Points		      [865, 0; 0, -195]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal7>"
-	      ZOrder		      49
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      7
-	      Points		      [885, 0; 0, -345]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal7>"
-	      ZOrder		      50
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      7
-	      Points		      [905, 0; 0, -495]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal7>"
-	      ZOrder		      51
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      7
-	      Points		      [925, 0; 0, -645]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
-	      DstPort		      6
-	    }
-	    Line {
-	      Name		      "<signal6>"
-	      ZOrder		      52
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      6
-	      Points		      [735, 0; 0, -295]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal6>"
-	      ZOrder		      53
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      6
-	      Points		      [755, 0; 0, -445]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal6>"
-	      ZOrder		      54
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      6
-	      Points		      [775, 0; 0, -595]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal6>"
-	      ZOrder		      55
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      6
-	      Points		      [795, 0; 0, -745]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
-	      DstPort		      6
-	    }
-	    Line {
-	      Name		      "<signal5>"
-	      ZOrder		      56
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      5
-	      Points		      [605, 0; 0, -395]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal5>"
-	      ZOrder		      57
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      5
-	      Points		      [625, 0; 0, -545]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal5>"
-	      ZOrder		      58
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      5
-	      Points		      [645, 0; 0, -695]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal5>"
-	      ZOrder		      59
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      5
-	      Points		      [665, 0; 0, -845]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
-	      DstPort		      6
-	    }
-	    Line {
-	      Name		      "<signal4>"
-	      ZOrder		      60
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      4
-	      Points		      [475, 0; 0, -495]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal4>"
-	      ZOrder		      61
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      4
-	      Points		      [495, 0; 0, -645]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal4>"
-	      ZOrder		      62
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      4
-	      Points		      [515, 0; 0, -795]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal4>"
-	      ZOrder		      63
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      4
-	      Points		      [535, 0; 0, -945]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_4)"
-	      DstPort		      6
-	    }
-	    Line {
-	      Name		      "<signal3>"
-	      ZOrder		      64
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      3
-	      Points		      [345, 0; 0, -595]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal3>"
-	      ZOrder		      65
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      3
-	      Points		      [365, 0; 0, -745]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal3>"
-	      ZOrder		      66
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      3
-	      Points		      [385, 0; 0, -895]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal3>"
-	      ZOrder		      67
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      3
-	      Points		      [405, 0; 0, -1045]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_5)"
-	      DstPort		      6
-	    }
-	    Line {
-	      Name		      "<signal2>"
-	      ZOrder		      68
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      2
-	      Points		      [215, 0; 0, -695]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal2>"
-	      ZOrder		      69
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      2
-	      Points		      [235, 0; 0, -845]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal2>"
-	      ZOrder		      70
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      2
-	      Points		      [255, 0; 0, -995]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal2>"
-	      ZOrder		      71
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      2
-	      Points		      [275, 0; 0, -1145]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_6)"
-	      DstPort		      6
-	    }
-	    Line {
-	      Name		      "<signal1>"
-	      ZOrder		      72
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector"
-	      SrcPort		      1
-	      Points		      [85, 0; 0, -795]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
-	      DstPort		      3
-	    }
-	    Line {
-	      Name		      "<signal1>"
-	      ZOrder		      73
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector1"
-	      SrcPort		      1
-	      Points		      [105, 0; 0, -945]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
-	      DstPort		      4
-	    }
-	    Line {
-	      Name		      "<signal1>"
-	      ZOrder		      74
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector2"
-	      SrcPort		      1
-	      Points		      [125, 0; 0, -1095]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
-	      DstPort		      5
-	    }
-	    Line {
-	      Name		      "<signal1>"
-	      ZOrder		      75
-	      Labels		      [0, 0]
-	      SrcBlock		      "Bus\nSelector3"
-	      SrcPort		      1
-	      Points		      [145, 0; 0, -1245]
-	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_7)"
-	      DstPort		      6
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "Byte_Multiplexer_8_to_1"
+	  Name			  "NOT_USED_Byte_Multiplexer_8_to_1"
 	  SID			  "400"
 	  Ports			  [11, 1]
 	  Position		  [50, 401, 205, 569]
 	  ZOrder		  385
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Multiplexer_8_to_1"
+	    Name		    "NOT_USED_Byte_Multiplexer_8_to_1"
 	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -6203,15 +6205,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Multiplexor"
+	  Name			  "NOT_USED_Byte_Multiplexor"
 	  SID			  "491"
 	  Ports			  [8, 1]
 	  Position		  [265, 194, 455, 321]
 	  ZOrder		  1325
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Multiplexor"
+	    Name		    "NOT_USED_Byte_Multiplexor"
 	    Location		    [55, 0, 998, 1087]
 	    Open		    off
 	    ModelBrowserVisibility  off
