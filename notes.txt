@@ -144,10 +144,8 @@ Immediate				Register			Register				Memory
 # Co treba urobit
 #############################################
 - Computer:
-	- Ochrana pamati:
-		- Detekovat stack overflow/underflow.
-		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
-
+	-
+	
 
 - Clean-up:
 	- 
@@ -174,6 +172,9 @@ Immediate				Register			Register				Memory
 
 
 - Backlog:
+	- Ochrana pamati:
+		- Detekovat stack overflow/underflow.
+		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
 	- Rozsirit ALU (nasobicka, delicka).
 	- Video_Controller:
 		- Vkladat preddefinovane "sprity" do video pamate (operacia OR).
@@ -182,7 +183,4 @@ Immediate				Register			Register				Memory
 
 
 GIT:
-	- The Computer_Library renamed to Miscellaneous and moved to the Common_Lib.
-	- Command bus selectors replaced with single one which can be manually configured.
-	- Manually configured address selectors added to all writtable devices on address bus.
-
+	-

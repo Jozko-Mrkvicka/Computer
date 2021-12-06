@@ -122,32 +122,34 @@ c.INSTR_FORMAT_3 = bin2dec('1100 0000');
 c.BYTE_MASK = bin2dec('1111 1111');
 
 
-% Start address of MPROM memory in physical address space and it`s size in words.
+% Start address of MPROM memory on instruction address bus and it`s size in words.
 c.MPROM_START  = 0;
 c.MPROM_SIZE   = 256;
 
-% Start address of ROM memory in physical address space and it`s size in words.
+% Start address of ROM memory on instruction address bus and it`s size in words.
 c.ROM_START    = 256;
 c.ROM_SIZE     = 256;
 
-% Start address of RAM memory in physical address space and it`s size in words.
+% Start address of RAM memory on data address bus and it`s size in words.
 c.RAM_START    = 0;
 c.RAM_SIZE     = 32;
 
-% Start address of stack. The stack grows towards lower addresses - it decreases.
+% Start address of stack on data address bus and it`s size in words.
+% The stack grows towards lower addresses (it decreases).
 c.STACK_START  = 31;
+c.STACK_SIZE   = 8;
 
-% Start address of video RAM memory in physical address space and it`s size in words.
+% Start address of video RAM memory on data address bus and it`s size in words.
 c.VRAM_START   = 32;
 c.VRAM_SIZE    = 24;
 
-% Address of video controller.
+% Address of video controller on data address bus.
 c.VIDEO_CTRL   = 223;
 
-% Address of keyboard.
+% Address of keyboard on data address bus.
 c.KEYBOARD     = 239;
 
-% Address of random number generator.
+% Address of random number generator on data address bus.
 c.RAND_NUM_GEN = 255;
 
 

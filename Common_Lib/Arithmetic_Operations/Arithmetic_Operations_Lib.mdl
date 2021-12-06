@@ -44,8 +44,8 @@ Library {
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"3128"
 	Extents			[893.0, 920.0]
-	ZoomFactor		[1.35]
-	Offset			[0.0, 0.0]
+	ZoomFactor		[1.25]
+	Offset			[-36.33506730043257, 235.6501178847526]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Sep 18 18:30:09 2021"
-  RTWModifiedTimeStamp	  553890567
-  ModelVersionFormat	  "1.%<AutoIncrement:161>"
+  LastModifiedDate	  "Mon Dec 06 21:15:32 2021"
+  RTWModifiedTimeStamp	  560726127
+  ModelVersionFormat	  "1.%<AutoIncrement:162>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -921,7 +921,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"135"
+	ZoomFactor		"125"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Bit_Adder"
@@ -2456,15 +2456,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Bit_Subtractor_NOT_USED"
+	  Name			  "NOT_USED_Bit_Subtractor"
 	  SID			  "3133"
 	  Ports			  [3, 2]
 	  Position		  [265, 516, 420, 564]
 	  ZOrder		  467
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Bit_Subtractor_NOT_USED"
+	    Name		    "NOT_USED_Bit_Subtractor"
 	    Location		    [129, 3, 1615, 1086]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -2935,15 +2936,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Adder_NOT_USED"
+	  Name			  "NOT_USED_Byte_Adder"
 	  SID			  "3134"
 	  Ports			  [2, 2]
 	  Position		  [265, 358, 420, 402]
 	  ZOrder		  466
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Adder_NOT_USED"
+	    Name		    "NOT_USED_Byte_Adder"
 	    Location		    [129, 3, 1615, 1086]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -3479,15 +3481,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Comparator_NOT_USED"
+	  Name			  "NOT_USED_Byte_Comparator"
 	  SID			  "3135"
 	  Ports			  [2, 3]
 	  Position		  [270, 786, 420, 834]
 	  ZOrder		  470
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Comparator_NOT_USED"
+	    Name		    "NOT_USED_Byte_Comparator"
 	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
@@ -4134,15 +4137,16 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Subtractor_NOT_USED"
+	  Name			  "NOT_USED_Byte_Subtractor"
 	  SID			  "3136"
 	  Ports			  [2, 2]
 	  Position		  [265, 598, 420, 642]
 	  ZOrder		  468
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Subtractor_NOT_USED"
+	    Name		    "NOT_USED_Byte_Subtractor"
 	    Location		    [129, 3, 1615, 1086]
 	    Open		    off
 	    ModelBrowserVisibility  off

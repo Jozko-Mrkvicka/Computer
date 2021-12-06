@@ -7,7 +7,7 @@ function Flash(file)
 	% Load constants and definitions (instructions, registers, ...).
 	Instructions
 	Definitions
-	Video_Adapter
+	VideoAdapter
 	CharTable;
 
 	% Load a program to be executed (load variable SourceCode from source file).
