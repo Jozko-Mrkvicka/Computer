@@ -1,49 +1,59 @@
 function Test_Arithmetic_Operations()
 
 	% Test Bit Adder.
-	V1_DataIn_2 =   [0 0 1 1 0 0 1 1];                                               % Data A in.
-	V1_DataIn_1 =   [0 1 0 1 0 1 0 1];                                               % Data B in.
-	V1_DataIn_0 =   [0 0 0 0 1 1 1 1];                                               % Carry in.
-	V1_Input    =   [0:7; V1_DataIn_2; V1_DataIn_1; V1_DataIn_0];                    % First vector is a time vector.
+	DataIn_2 =   [0 0 1 1 0 0 1 1];                                            % Data A in.
+	DataIn_1 =   [0 1 0 1 0 1 0 1];                                            % Data B in.
+	DataIn_0 =   [0 0 0 0 1 1 1 1];                                            % Carry in.
+	Input    =   [0:7; DataIn_2; DataIn_1; DataIn_0];                          % First vector is a time vector.
 
-	V1_Expected_1 = [0 1 1 0 1 0 0 1];                                               % Expected Data out.
-	V1_Expected_0 = [0 0 0 1 0 1 1 1];                                               % Expected Carry out.
+	Expected_1 = [0 1 1 0 1 0 0 1];                                            % Expected Data output.
+	Expected_0 = [0 0 0 1 0 1 1 1];                                            % Expected Carry output.
 
-	test('Test_Arithmetic_Operation_Bit_Adder_Data_Out',  V1_Input, V1_Expected_1);  % Test Data output.
-	test('Test_Arithmetic_Operation_Bit_Adder_Carry_Out', V1_Input, V1_Expected_0);  % Test Carry bit output.
+	test('Test_Arithmetic_Operation_Bit_Adder_Data_Out',  Input, Expected_1);  % Test Data outputput.
+	test('Test_Arithmetic_Operation_Bit_Adder_Carry_Out', Input, Expected_0);  % Test Carry bit outputput.
 
 
 	% Test Word Adder.
-	V1_DataIn_1 =   [0 25 54 65534 65535 65535 65535];                                % Data A in.
-	V1_DataIn_0 =   [0  1 36     1     1 65534 65535];                                % Data B in.
-	V1_Input    =   [0:6; V1_DataIn_1; V1_DataIn_0];                                  % First vector is a time vector.
+	DataIn_1 =   [0 25 54 65534 65535 65535 65535];                             % Data A in.
+	DataIn_0 =   [0  1 36     1     1 65534 65535];                             % Data B in.
+	Input    =   [0:6; DataIn_1; DataIn_0];                                     % First vector is a time vector.
 
-	V1_Expected_1 = [0 26 90 65535     0 65533 65534];                                % Expected Data out.
-	V1_Expected_0 = [0  0  0     0     1     1     1];                                % Expected Carry out.
+	Expected_1 = [0 26 90 65535     0 65533 65534];                             % Expected Data output.
+	Expected_0 = [0  0  0     0     1     1     1];                             % Expected Carry output.
 
-	test('Test_Arithmetic_Operation_Word_Adder_Data_Out',  V1_Input, V1_Expected_1);  % Test Data output.
-	test('Test_Arithmetic_Operation_Word_Adder_Carry_Out', V1_Input, V1_Expected_0);  % Test Carry bit output.
-
-
-
-	% V2_Data1 =    [bin2dec('0 0 0 0 0 1 1 1')];
-	% V2_Data0 =    [bin2dec('1 1 1 0 0 0 0 0')];
-	% V2_Input =    [0; V2_Data1; V2_Data0];
-	% V2_Expected = [bin2dec('1 1 1 0 0 1 1 1')];
-
-	% V3_Data1 =    [bin2dec('0 0 0 0 0 1 1 1')];
-	% V3_Data0 =    [bin2dec('1 0 1 0 0 1 1 0')];
-	% V3_Input =    [0; V3_Data1; V3_Data0];
-	% V3_Expected = [bin2dec('1 0 1 0 0 0 0 1')];
-
-	% V4_Data =     [bin2dec('1 0 1 0 0 1 1 0')];
-	% V4_Input =    [0; V4_Data];
-	% V4_Expected = [bin2dec('0 1 0 1 1 0 0 1')];
+	test('Test_Arithmetic_Operation_Word_Adder_Data_Out',  Input, Expected_1);  % Test Data outputput.
+	test('Test_Arithmetic_Operation_Word_Adder_Carry_Out', Input, Expected_0);  % Test Carry bit outputput.
 
 
-	% test('Test_Logic_Operation_Bitwise_AND', V1_Input, V1_Expected);
-	% test('Test_Logic_Operation_Bitwise_OR',  V2_Input, V2_Expected);
-	% test('Test_Logic_Operation_Bitwise_XOR', V3_Input, V3_Expected);
-	% test('Test_Logic_Operation_Bitwise_NOT', V4_Input, V4_Expected);
+	% Test Bit Comparator.
+	DataIn_4 =   [0 1 0 1 0 1 0 1 0 1 0 1];                                            % Data A in.
+	DataIn_3 =   [0 0 1 1 0 0 1 1 0 0 1 1];                                            % Data B in.
+	DataIn_2 =   [1 1 1 1 0 0 0 0 0 0 0 0];                                            % A>B in.
+	DataIn_1 =   [0 0 0 0 1 1 1 1 0 0 0 0];                                            % A=B in.
+	DataIn_0 =   [0 0 0 0 0 0 0 0 1 1 1 1];                                            % A<B in.
+	Input    =   [0:11; DataIn_4; DataIn_3; DataIn_2; DataIn_1; DataIn_0];             % First vector is a time vector.
+
+	Expected_2 = [1 1 0 1 0 1 0 0 0 1 0 0];                                            % Expected A>B output.
+	Expected_1 = [0 0 0 0 1 0 0 1 0 0 0 0];                                            % Expected A=B output.
+	Expected_0 = [0 0 1 0 0 0 1 0 1 0 1 1];                                            % Expected A<B output.
+
+	test('Test_Arithmetic_Operation_Bit_Comparator_Greater_Than', Input, Expected_2);  % Test A>B output.
+	test('Test_Arithmetic_Operation_Bit_Comparator_Equal',        Input, Expected_1);  % Test A=B output.
+	test('Test_Arithmetic_Operation_Bit_Comparator_Less_Than',    Input, Expected_0);  % Test A<B output.
+
+
+	% Test Word Comparator.
+	DataIn_1 =   [0 1 0 1 65535 65535     0 65535 65534];                               % Data A in.
+	DataIn_0 =   [0 0 1 1     0 65535 65535 65534 65535];                               % Data B in.
+	Input    =   [0:8; DataIn_1; DataIn_0];                                             % First vector is a time vector.
+
+	Expected_2 = [0 1 0 0     1     0     0     1     0];                               % Expected A>B output.
+	Expected_1 = [1 0 0 1     0     1     0     0     0];                               % Expected A=B output.
+	Expected_0 = [0 0 1 0     0     0     1     0     1];                               % Expected A<B output.
+
+	test('Test_Arithmetic_Operation_Word_Comparator_Greater_Than', Input, Expected_2);  % Test A>B output.
+	test('Test_Arithmetic_Operation_Word_Comparator_Equal',        Input, Expected_1);  % Test A=B output.
+	test('Test_Arithmetic_Operation_Word_Comparator_Less_Than',    Input, Expected_0);  % Test A<B output.
+
 end
 
