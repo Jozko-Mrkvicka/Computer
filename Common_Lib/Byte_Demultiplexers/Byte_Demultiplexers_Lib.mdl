@@ -45,7 +45,7 @@ Library {
 	LoadSaveID		"156"
 	Extents			[1824.0, 929.0]
 	ZoomFactor		[1.25]
-	Offset			[0.0, 0.0]
+	Offset			[66.399999999999977, 230.43773463522791]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat Oct 09 22:35:00 2021"
-  RTWModifiedTimeStamp	  555719693
-  ModelVersionFormat	  "1.%<AutoIncrement:21>"
+  LastModifiedDate	  "Tue Dec 07 16:20:00 2021"
+  RTWModifiedTimeStamp	  560794797
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -905,14 +905,12 @@ Library {
 	  Ports			  [5, 16]
 	  Position		  [380, 585, 525, 830]
 	  ZOrder		  9249
-	  ForegroundColor	  "red"
-	  BackgroundColor	  "yellow"
 	  LibraryVersion	  "1.20"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
 	    Name		    "Byte_Demultiplexer_1_to_16"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -924,7 +922,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "150"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr3(1b)"
@@ -962,7 +960,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In(1B)"
+	      Name		      "Data(1B)"
 	      SID		      "247"
 	      Position		      [1410, 7063, 1440, 7077]
 	      ZOrder		      341
@@ -976,7 +974,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 8663, 1885, 8912]
 	      ZOrder		      572
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -988,7 +986,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 8393, 1885, 8642]
 	      ZOrder		      571
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1000,7 +998,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 8123, 1885, 8372]
 	      ZOrder		      570
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1012,7 +1010,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 7853, 1885, 8102]
 	      ZOrder		      569
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1024,7 +1022,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 7583, 1885, 7832]
 	      ZOrder		      568
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1036,7 +1034,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 7313, 1885, 7562]
 	      ZOrder		      567
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1048,7 +1046,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 7043, 1885, 7292]
 	      ZOrder		      566
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1060,7 +1058,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1730, 6773, 1885, 7022]
 	      ZOrder		      565
-	      LibraryVersion	      "1.22"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -1333,7 +1331,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_15(1B)"
+	      Name		      "Data_15(1B)"
 	      SID		      "328"
 	      Position		      [3850, 6168, 3880, 6182]
 	      ZOrder		      616
@@ -1341,7 +1339,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_14(1B)"
+	      Name		      "Data_14(1B)"
 	      SID		      "327"
 	      Position		      [3850, 6203, 3880, 6217]
 	      ZOrder		      615
@@ -1350,7 +1348,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_13(1B)"
+	      Name		      "Data_13(1B)"
 	      SID		      "326"
 	      Position		      [3850, 6238, 3880, 6252]
 	      ZOrder		      614
@@ -1359,7 +1357,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_12(1B)"
+	      Name		      "Data_12(1B)"
 	      SID		      "325"
 	      Position		      [3850, 6273, 3880, 6287]
 	      ZOrder		      613
@@ -1368,7 +1366,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_11(1B)"
+	      Name		      "Data_11(1B)"
 	      SID		      "324"
 	      Position		      [3850, 6308, 3880, 6322]
 	      ZOrder		      612
@@ -1377,7 +1375,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_10(1B)"
+	      Name		      "Data_10(1B)"
 	      SID		      "323"
 	      Position		      [3850, 6343, 3880, 6357]
 	      ZOrder		      611
@@ -1386,7 +1384,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_09(1B)"
+	      Name		      "Data_09(1B)"
 	      SID		      "322"
 	      Position		      [3850, 6378, 3880, 6392]
 	      ZOrder		      610
@@ -1395,7 +1393,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_08(1B)"
+	      Name		      "Data_08(1B)"
 	      SID		      "321"
 	      Position		      [3850, 6413, 3880, 6427]
 	      ZOrder		      609
@@ -1404,7 +1402,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_07(1B)"
+	      Name		      "Data_07(1B)"
 	      SID		      "320"
 	      Position		      [3850, 6448, 3880, 6462]
 	      ZOrder		      608
@@ -1413,7 +1411,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_06(1B)"
+	      Name		      "Data_06(1B)"
 	      SID		      "319"
 	      Position		      [3850, 6483, 3880, 6497]
 	      ZOrder		      607
@@ -1422,7 +1420,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_05(1B)"
+	      Name		      "Data_05(1B)"
 	      SID		      "318"
 	      Position		      [3850, 6518, 3880, 6532]
 	      ZOrder		      606
@@ -1431,7 +1429,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_04(1B)"
+	      Name		      "Data_04(1B)"
 	      SID		      "317"
 	      Position		      [3850, 6553, 3880, 6567]
 	      ZOrder		      605
@@ -1440,7 +1438,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_03(1B)"
+	      Name		      "Data_03(1B)"
 	      SID		      "316"
 	      Position		      [3850, 6588, 3880, 6602]
 	      ZOrder		      604
@@ -1449,7 +1447,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_02(1B)"
+	      Name		      "Data_02(1B)"
 	      SID		      "315"
 	      Position		      [3850, 6623, 3880, 6637]
 	      ZOrder		      603
@@ -1458,7 +1456,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_01(1B)"
+	      Name		      "Data_01(1B)"
 	      SID		      "314"
 	      Position		      [3850, 6658, 3880, 6672]
 	      ZOrder		      602
@@ -1467,7 +1465,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_00(1B)"
+	      Name		      "Data_00(1B)"
 	      SID		      "286"
 	      Position		      [3850, 6693, 3880, 6707]
 	      ZOrder		      342
@@ -1558,7 +1556,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator15"
 	      SrcPort		      1
 	      Points		      [0, -555]
-	      DstBlock		      "Data_Out_15(1B)"
+	      DstBlock		      "Data_15(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1566,7 +1564,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator14"
 	      SrcPort		      1
 	      Points		      [0, -520]
-	      DstBlock		      "Data_Out_14(1B)"
+	      DstBlock		      "Data_14(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1574,7 +1572,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator13"
 	      SrcPort		      1
 	      Points		      [0, -485]
-	      DstBlock		      "Data_Out_13(1B)"
+	      DstBlock		      "Data_13(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1582,7 +1580,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator12"
 	      SrcPort		      1
 	      Points		      [0, -450]
-	      DstBlock		      "Data_Out_12(1B)"
+	      DstBlock		      "Data_12(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1590,7 +1588,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator11"
 	      SrcPort		      1
 	      Points		      [0, -415]
-	      DstBlock		      "Data_Out_11(1B)"
+	      DstBlock		      "Data_11(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1598,7 +1596,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator10"
 	      SrcPort		      1
 	      Points		      [0, -380]
-	      DstBlock		      "Data_Out_10(1B)"
+	      DstBlock		      "Data_10(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1606,7 +1604,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator9"
 	      SrcPort		      1
 	      Points		      [0, -345]
-	      DstBlock		      "Data_Out_09(1B)"
+	      DstBlock		      "Data_09(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1614,7 +1612,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator8"
 	      SrcPort		      1
 	      Points		      [0, -310]
-	      DstBlock		      "Data_Out_08(1B)"
+	      DstBlock		      "Data_08(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1622,7 +1620,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator7"
 	      SrcPort		      1
 	      Points		      [0, -275]
-	      DstBlock		      "Data_Out_07(1B)"
+	      DstBlock		      "Data_07(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1630,7 +1628,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator6"
 	      SrcPort		      1
 	      Points		      [0, -240]
-	      DstBlock		      "Data_Out_06(1B)"
+	      DstBlock		      "Data_06(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1638,7 +1636,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator5"
 	      SrcPort		      1
 	      Points		      [0, -205]
-	      DstBlock		      "Data_Out_05(1B)"
+	      DstBlock		      "Data_05(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1646,7 +1644,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator4"
 	      SrcPort		      1
 	      Points		      [0, -170]
-	      DstBlock		      "Data_Out_04(1B)"
+	      DstBlock		      "Data_04(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1654,7 +1652,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator3"
 	      SrcPort		      1
 	      Points		      [0, -135]
-	      DstBlock		      "Data_Out_03(1B)"
+	      DstBlock		      "Data_03(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1662,7 +1660,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator2"
 	      SrcPort		      1
 	      Points		      [0, -100]
-	      DstBlock		      "Data_Out_02(1B)"
+	      DstBlock		      "Data_02(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1670,7 +1668,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator1"
 	      SrcPort		      1
 	      Points		      [0, -65]
-	      DstBlock		      "Data_Out_01(1B)"
+	      DstBlock		      "Data_01(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -1678,7 +1676,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator"
 	      SrcPort		      1
 	      Points		      [0, -30]
-	      DstBlock		      "Data_Out_00(1B)"
+	      DstBlock		      "Data_00(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -2707,7 +2705,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      153
-	      SrcBlock		      "Data_In(1B)"
+	      SrcBlock		      "Data(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Bus\nSelector"
 	      DstPort		      1
@@ -3000,16 +2998,17 @@ Library {
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Demultiplexer_1_to_2"
+	  Name			  "NOT_USED_Byte_Demultiplexer_1_to_2"
 	  SID			  "159"
 	  Ports			  [2, 2]
-	  Position		  [380, 261, 525, 294]
+	  Position		  [380, 281, 525, 314]
 	  ZOrder		  384
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Demultiplexer_1_to_2"
-	    Location		    [57, -8, 1928, 1088]
+	    Name		    "NOT_USED_Byte_Demultiplexer_1_to_2"
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3021,10 +3020,10 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "127"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(1b)"
+	      Name		      "Addr(1b)"
 	      SID		      "164"
 	      Position		      [4260, 6743, 4290, 6757]
 	      ZOrder		      604
@@ -3032,7 +3031,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In(1B)"
+	      Name		      "Data(1B)"
 	      SID		      "165"
 	      Position		      [4260, 6828, 4290, 6842]
 	      ZOrder		      341
@@ -3135,7 +3134,7 @@ Library {
 	      Position		      [5365, 6538, 5445, 6582]
 	      ZOrder		      615
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
 	      SourceType	      "Bit to Integer Converter"
 	      nbits		      "8"
@@ -3152,7 +3151,7 @@ Library {
 	      Position		      [5365, 6603, 5445, 6647]
 	      ZOrder		      617
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
 	      SourceType	      "Bit to Integer Converter"
 	      nbits		      "8"
@@ -3202,7 +3201,7 @@ Library {
 	      Position		      [4345, 6813, 4425, 6857]
 	      ZOrder		      564
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
 	      SourceType	      "Integer to Bit Converter"
 	      nbits		      "8"
@@ -3212,7 +3211,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_1(1B)"
+	      Name		      "Data_1(1B)"
 	      SID		      "180"
 	      Position		      [5500, 6553, 5530, 6567]
 	      ZOrder		      614
@@ -3220,7 +3219,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_0(1B)"
+	      Name		      "Data_0(1B)"
 	      SID		      "181"
 	      Position		      [5500, 6618, 5530, 6632]
 	      ZOrder		      616
@@ -3443,14 +3442,14 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      28
-	      SrcBlock		      "Data_In(1B)"
+	      SrcBlock		      "Data(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter7"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      29
-	      SrcBlock		      "Address(1b)"
+	      SrcBlock		      "Addr(1b)"
 	      SrcPort		      1
 	      Points		      [441, 0]
 	      Branch {
@@ -3523,30 +3522,31 @@ Library {
 	      ZOrder		      44
 	      SrcBlock		      "Bit to Integer\nConverter2"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out_1(1B)"
+	      DstBlock		      "Data_1(1B)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      45
 	      SrcBlock		      "Bit to Integer\nConverter3"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out_0(1B)"
+	      DstBlock		      "Data_0(1B)"
 	      DstPort		      1
 	    }
 	  }
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Demultiplexer_1_to_4"
+	  Name			  "NOT_USED_Byte_Demultiplexer_1_to_4"
 	  SID			  "160"
 	  Ports			  [3, 4]
-	  Position		  [380, 332, 525, 393]
+	  Position		  [380, 342, 525, 403]
 	  ZOrder		  383
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Demultiplexer_1_to_4"
-	    Location		    [57, -8, 1928, 1088]
+	    Name		    "NOT_USED_Byte_Demultiplexer_1_to_4"
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3558,10 +3558,10 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "182"
 	      Position		      [3735, 6743, 3765, 6757]
 	      ZOrder		      340
@@ -3569,7 +3569,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "183"
 	      Position		      [3735, 6793, 3765, 6807]
 	      ZOrder		      604
@@ -3578,7 +3578,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In(1B)"
+	      Name		      "Data(1B)"
 	      SID		      "184"
 	      Position		      [3735, 6883, 3765, 6897]
 	      ZOrder		      341
@@ -3681,7 +3681,7 @@ Library {
 	      Position		      [5370, 6408, 5450, 6452]
 	      ZOrder		      601
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
 	      SourceType	      "Bit to Integer Converter"
 	      nbits		      "8"
@@ -3698,7 +3698,7 @@ Library {
 	      Position		      [5370, 6473, 5450, 6517]
 	      ZOrder		      613
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
 	      SourceType	      "Bit to Integer Converter"
 	      nbits		      "8"
@@ -3715,7 +3715,7 @@ Library {
 	      Position		      [5370, 6538, 5450, 6582]
 	      ZOrder		      615
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
 	      SourceType	      "Bit to Integer Converter"
 	      nbits		      "8"
@@ -3732,7 +3732,7 @@ Library {
 	      Position		      [5370, 6603, 5450, 6647]
 	      ZOrder		      617
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
 	      SourceType	      "Bit to Integer Converter"
 	      nbits		      "8"
@@ -3804,7 +3804,7 @@ Library {
 	      Position		      [3820, 6868, 3900, 6912]
 	      ZOrder		      564
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
 	      SourceType	      "Integer to Bit Converter"
 	      nbits		      "8"
@@ -3814,7 +3814,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_3(1B)"
+	      Name		      "Data_3(1B)"
 	      SID		      "203"
 	      Position		      [5505, 6423, 5535, 6437]
 	      ZOrder		      342
@@ -3822,7 +3822,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_2(1B)"
+	      Name		      "Data_2(1B)"
 	      SID		      "204"
 	      Position		      [5505, 6488, 5535, 6502]
 	      ZOrder		      612
@@ -3831,7 +3831,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_1(1B)"
+	      Name		      "Data_1(1B)"
 	      SID		      "205"
 	      Position		      [5505, 6553, 5535, 6567]
 	      ZOrder		      614
@@ -3840,7 +3840,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_0(1B)"
+	      Name		      "Data_0(1B)"
 	      SID		      "206"
 	      Position		      [5505, 6618, 5535, 6632]
 	      ZOrder		      616
@@ -3851,7 +3851,7 @@ Library {
 	      ZOrder		      1
 	      SrcBlock		      "Bit to Integer\nConverter"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out_3(1B)"
+	      DstBlock		      "Data_3(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -4214,14 +4214,14 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      47
-	      SrcBlock		      "Data_In(1B)"
+	      SrcBlock		      "Data(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter7"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      48
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [441, 0]
 	      Branch {
@@ -4292,7 +4292,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      63
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [463, 0; 0, 30]
 	      Branch {
@@ -4365,37 +4365,38 @@ Library {
 	      ZOrder		      78
 	      SrcBlock		      "Bit to Integer\nConverter1"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out_2(1B)"
+	      DstBlock		      "Data_2(1B)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      79
 	      SrcBlock		      "Bit to Integer\nConverter2"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out_1(1B)"
+	      DstBlock		      "Data_1(1B)"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      80
 	      SrcBlock		      "Bit to Integer\nConverter3"
 	      SrcPort		      1
-	      DstBlock		      "Data_Out_0(1B)"
+	      DstBlock		      "Data_0(1B)"
 	      DstPort		      1
 	    }
 	  }
 	}
 	Block {
 	  BlockType		  SubSystem
-	  Name			  "Byte_Demultiplexer_1_to_8"
+	  Name			  "NOT_USED_Byte_Demultiplexer_1_to_8"
 	  SID			  "161"
 	  Ports			  [4, 8]
 	  Position		  [380, 431, 525, 554]
 	  ZOrder		  382
+	  Commented		  "on"
 	  RequestExecContextInheritance	off
 	  Variant		  off
 	  System {
-	    Name		    "Byte_Demultiplexer_1_to_8"
-	    Location		    [54, -8, 1928, 1088]
+	    Name		    "NOT_USED_Byte_Demultiplexer_1_to_8"
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4407,10 +4408,10 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_2(1b)"
+	      Name		      "Addr_2(1b)"
 	      SID		      "207"
 	      Position		      [2910, 6703, 2940, 6717]
 	      ZOrder		      611
@@ -4418,7 +4419,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_1(1b)"
+	      Name		      "Addr_1(1b)"
 	      SID		      "208"
 	      Position		      [2910, 6753, 2940, 6767]
 	      ZOrder		      610
@@ -4427,7 +4428,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address_0(1b)"
+	      Name		      "Addr_0(1b)"
 	      SID		      "209"
 	      Position		      [2910, 6803, 2940, 6817]
 	      ZOrder		      340
@@ -4436,7 +4437,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Data_In(1B)"
+	      Name		      "Data(1B)"
 	      SID		      "210"
 	      Position		      [2910, 6933, 2940, 6947]
 	      ZOrder		      341
@@ -4656,7 +4657,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_7(1B)"
+	      Name		      "Data_7(1B)"
 	      SID		      "237"
 	      Position		      [4600, 6443, 4630, 6457]
 	      ZOrder		      342
@@ -4664,7 +4665,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_6(1B)"
+	      Name		      "Data_6(1B)"
 	      SID		      "238"
 	      Position		      [4600, 6478, 4630, 6492]
 	      ZOrder		      612
@@ -4673,7 +4674,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_5(1B)"
+	      Name		      "Data_5(1B)"
 	      SID		      "239"
 	      Position		      [4600, 6513, 4630, 6527]
 	      ZOrder		      613
@@ -4682,7 +4683,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_4(1B)"
+	      Name		      "Data_4(1B)"
 	      SID		      "240"
 	      Position		      [4600, 6548, 4630, 6562]
 	      ZOrder		      614
@@ -4691,7 +4692,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_3(1B)"
+	      Name		      "Data_3(1B)"
 	      SID		      "241"
 	      Position		      [4600, 6583, 4630, 6597]
 	      ZOrder		      615
@@ -4700,7 +4701,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_2(1B)"
+	      Name		      "Data_2(1B)"
 	      SID		      "242"
 	      Position		      [4600, 6618, 4630, 6632]
 	      ZOrder		      616
@@ -4709,7 +4710,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_1(1B)"
+	      Name		      "Data_1(1B)"
 	      SID		      "243"
 	      Position		      [4600, 6653, 4630, 6667]
 	      ZOrder		      617
@@ -4718,7 +4719,7 @@ Library {
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "Data_Out_0(1B)"
+	      Name		      "Data_0(1B)"
 	      SID		      "244"
 	      Position		      [4600, 6688, 4630, 6702]
 	      ZOrder		      618
@@ -5302,14 +5303,14 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      136
-	      SrcBlock		      "Data_In(1B)"
+	      SrcBlock		      "Data(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Demux1"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      83
-	      SrcBlock		      "Address_0(1b)"
+	      SrcBlock		      "Addr_0(1b)"
 	      SrcPort		      1
 	      Points		      [354, 0; 0, 30]
 	      Branch {
@@ -5380,7 +5381,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      98
-	      SrcBlock		      "Address_1(1b)"
+	      SrcBlock		      "Addr_1(1b)"
 	      SrcPort		      1
 	      Points		      [376, 0; 0, 50]
 	      Branch {
@@ -5451,7 +5452,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      113
-	      SrcBlock		      "Address_2(1b)"
+	      SrcBlock		      "Addr_2(1b)"
 	      SrcPort		      1
 	      Points		      [398, 0; 0, 70]
 	      Branch {
@@ -5525,7 +5526,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator7"
 	      SrcPort		      1
 	      Points		      [0, -30]
-	      DstBlock		      "Data_Out_0(1B)"
+	      DstBlock		      "Data_0(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5533,7 +5534,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator6"
 	      SrcPort		      1
 	      Points		      [0, -65]
-	      DstBlock		      "Data_Out_1(1B)"
+	      DstBlock		      "Data_1(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5541,7 +5542,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator5"
 	      SrcPort		      1
 	      Points		      [0, -100]
-	      DstBlock		      "Data_Out_2(1B)"
+	      DstBlock		      "Data_2(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5549,7 +5550,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator4"
 	      SrcPort		      1
 	      Points		      [0, -135]
-	      DstBlock		      "Data_Out_3(1B)"
+	      DstBlock		      "Data_3(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5557,7 +5558,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator3"
 	      SrcPort		      1
 	      Points		      [0, -170]
-	      DstBlock		      "Data_Out_4(1B)"
+	      DstBlock		      "Data_4(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5565,7 +5566,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator2"
 	      SrcPort		      1
 	      Points		      [0, -205]
-	      DstBlock		      "Data_Out_5(1B)"
+	      DstBlock		      "Data_5(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5573,7 +5574,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator1"
 	      SrcPort		      1
 	      Points		      [0, -240]
-	      DstBlock		      "Data_Out_6(1B)"
+	      DstBlock		      "Data_6(1B)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -5581,7 +5582,7 @@ Library {
 	      SrcBlock		      "Bus\nCreator15"
 	      SrcPort		      1
 	      Points		      [0, -275]
-	      DstBlock		      "Data_Out_7(1B)"
+	      DstBlock		      "Data_7(1B)"
 	      DstPort		      1
 	    }
 	  }
@@ -5591,7 +5592,7 @@ Library {
 	  Name			  "__1_to_256_Byte_Demultiplexer__"
 	  SID			  "163"
 	  Ports			  [2, 1]
-	  Position		  [205, 829, 350, 871]
+	  Position		  [380, 859, 525, 901]
 	  ZOrder		  381
 	  Commented		  "on"
 	  RequestExecContextInheritance	off

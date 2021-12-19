@@ -124,20 +124,6 @@ X X X X . . . X | X . . . . . . .
 . . . . . . . . | . . . . . . . .
 . . . . . . . . | . . . . . . . .
 
-Immediate				Register			Register				Memory
-		 	MOVU  ->			 <-	MOV ->			 <-	LDW
-		 	MOVLS ->								 <-	LDWI
-		 	MOVLU ->								 <-	LDBU
-		 											 <-	LDBL
-		 											 <-	LDBUI
-		 											 <-	LDBLI
-		 												STW   ->
-		 												STWI  ->
-		 												STBU  ->
-		 												STBL  ->
-		 												STBUI ->
-		 												STBLI ->
-
 
 
 #############################################
@@ -156,7 +142,6 @@ Immediate				Register			Register				Memory
 
 
 - Unit testy
-	-
 
 
 - Preprocessor:
@@ -175,6 +160,7 @@ Immediate				Register			Register				Memory
 	- Ochrana pamati:
 		- Detekovat stack overflow/underflow.
 		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
+	- Vybrat memory selectory pred blok pamate, aby som pamat mohol videopamat pridat do kniznice a pouzivat iba odkazy.
 	- Rozsirit ALU (nasobicka, delicka).
 	- Video_Controller:
 		- Vkladat preddefinovane "sprity" do video pamate (operacia OR).

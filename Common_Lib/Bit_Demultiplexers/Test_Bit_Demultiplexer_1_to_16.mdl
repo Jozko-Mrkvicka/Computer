@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.69"
+    ComputedModelVersion    "1.71"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -43,7 +43,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [232.0, 0.0, 1098.0, 1080.0]
+      Location		      [54.0, -8.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -67,9 +67,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1048.0, 905.0]
-	ZoomFactor		[1.25]
-	Offset			[96.426714087056254, 309.53138212517064]
+	Extents			[1824.0, 921.0]
+	ZoomFactor		[1.0]
+	Offset			[-205.56742740889081, 274.73138212517063]
       }
     }
   }
@@ -79,9 +79,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun May 02 15:14:23 2021"
-  RTWModifiedTimeStamp	  541869246
-  ModelVersionFormat	  "1.%<AutoIncrement:69>"
+  LastModifiedDate	  "Tue Dec 07 15:51:59 2021"
+  RTWModifiedTimeStamp	  560793099
+  ModelVersionFormat	  "1.%<AutoIncrement:71>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -850,6 +850,14 @@ Model {
       OutputAfterFinalValue   "Extrapolation"
     }
     Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
       BlockType		      Selector
       NumberOfDimensions      "1"
       IndexMode		      "One-based"
@@ -870,7 +878,7 @@ Model {
   }
   System {
     Name		    "Test_Bit_Demultiplexer_1_to_16"
-    Location		    [232, 0, 1330, 1080]
+    Location		    [54, -8, 1928, 1088]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -882,15 +890,15 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "125"
+    ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "116"
+    SIDHighWatermark	    "117"
     Block {
       BlockType		      Reference
       Name		      "Bit to Integer\nConverter3"
       SID		      "91"
       Ports		      [1, 1]
-      Position		      [725, 593, 805, 637]
+      Position		      [800, 663, 880, 707]
       ZOrder		      529
       ShowName		      off
       LibraryVersion	      "1.278"
@@ -906,10 +914,10 @@ Model {
       BlockType		      Reference
       Name		      "Bit_Demultiplexer_1_to_16"
       SID		      "116"
-      Ports		      [5, 1]
-      Position		      [545, 575, 690, 655]
+      Ports		      [5, 16]
+      Position		      [575, 559, 720, 806]
       ZOrder		      554
-      LibraryVersion	      "1.6"
+      LibraryVersion	      "1.26"
       SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
       SourceType	      "SubSystem"
       ContentPreviewEnabled   off
@@ -918,7 +926,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion1"
       SID		      "114"
-      Position		      [315, 658, 355, 682]
+      Position		      [315, 773, 355, 797]
       ZOrder		      553
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -978,7 +986,7 @@ Model {
       Name		      "Integer to Bit\nConverter3"
       SID		      "115"
       Ports		      [1, 1]
-      Position		      [380, 648, 460, 692]
+      Position		      [380, 763, 460, 807]
       ZOrder		      552
       ShowName		      off
       LibraryVersion	      "1.278"
@@ -988,6 +996,17 @@ Model {
       signedInputValues	      "Unsigned"
       bitOrder		      "MSB first"
       outDtype		      "uint8"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      "117"
+      Ports		      [16, 1]
+      Position		      [745, 562, 765, 803]
+      ZOrder		      555
+      ShowName		      off
+      Inputs		      "16"
+      DisplayOption	      "bar"
     }
     Block {
       BlockType		      Selector
@@ -1009,7 +1028,7 @@ Model {
       Name		      "Selector5"
       SID		      "113"
       Ports		      [1, 1]
-      Position		      [245, 651, 285, 689]
+      Position		      [245, 766, 285, 804]
       ZOrder		      551
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1023,7 +1042,7 @@ Model {
       Name		      "To Workspace"
       SID		      "92"
       Ports		      [1]
-      Position		      [840, 600, 910, 630]
+      Position		      [915, 670, 985, 700]
       ZOrder		      530
       VariableName	      "Output_Vect"
       MaxDataPoints	      "inf"
@@ -1050,7 +1069,7 @@ Model {
       Points		      [19, 0]
       Branch {
 	ZOrder			15
-	Points			[0, 60]
+	Points			[0, 175]
 	DstBlock		"Selector5"
 	DstPort			1
       }
@@ -1061,8 +1080,8 @@ Model {
       }
     }
     Line {
-      ZOrder		      28
-      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      ZOrder		      38
+      SrcBlock		      "Mux1"
       SrcPort		      1
       DstBlock		      "Bit to Integer\nConverter3"
       DstPort		      1
@@ -1106,6 +1125,7 @@ Model {
       ZOrder		      24
       SrcBlock		      "Demux2"
       SrcPort		      2
+      Points		      [44, 0; 0, 35]
       DstBlock		      "Bit_Demultiplexer_1_to_16"
       DstPort		      2
     }
@@ -1113,6 +1133,7 @@ Model {
       ZOrder		      25
       SrcBlock		      "Demux2"
       SrcPort		      3
+      Points		      [32, 0; 0, 70]
       DstBlock		      "Bit_Demultiplexer_1_to_16"
       DstPort		      3
     }
@@ -1120,6 +1141,7 @@ Model {
       ZOrder		      26
       SrcBlock		      "Demux2"
       SrcPort		      4
+      Points		      [21, 0; 0, 105]
       DstBlock		      "Bit_Demultiplexer_1_to_16"
       DstPort		      4
     }
@@ -1127,9 +1149,120 @@ Model {
       ZOrder		      27
       SrcBlock		      "Integer to Bit\nConverter3"
       SrcPort		      1
-      Points		      [38, 0; 0, -25]
       DstBlock		      "Bit_Demultiplexer_1_to_16"
       DstPort		      5
+    }
+    Line {
+      ZOrder		      39
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      1
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      40
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      2
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      41
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      3
+      DstBlock		      "Mux1"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      42
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      4
+      DstBlock		      "Mux1"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      43
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      5
+      DstBlock		      "Mux1"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      44
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      6
+      DstBlock		      "Mux1"
+      DstPort		      6
+    }
+    Line {
+      ZOrder		      45
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      7
+      DstBlock		      "Mux1"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      46
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      8
+      DstBlock		      "Mux1"
+      DstPort		      8
+    }
+    Line {
+      ZOrder		      47
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      9
+      DstBlock		      "Mux1"
+      DstPort		      9
+    }
+    Line {
+      ZOrder		      48
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      10
+      DstBlock		      "Mux1"
+      DstPort		      10
+    }
+    Line {
+      ZOrder		      49
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      11
+      DstBlock		      "Mux1"
+      DstPort		      11
+    }
+    Line {
+      ZOrder		      50
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      12
+      DstBlock		      "Mux1"
+      DstPort		      12
+    }
+    Line {
+      ZOrder		      51
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      13
+      DstBlock		      "Mux1"
+      DstPort		      13
+    }
+    Line {
+      ZOrder		      52
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      14
+      DstBlock		      "Mux1"
+      DstPort		      14
+    }
+    Line {
+      ZOrder		      53
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      15
+      DstBlock		      "Mux1"
+      DstPort		      15
+    }
+    Line {
+      ZOrder		      54
+      SrcBlock		      "Bit_Demultiplexer_1_to_16"
+      SrcPort		      16
+      DstBlock		      "Mux1"
+      DstPort		      16
     }
   }
 }

@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Dec 06 23:15:52 2021"
-  RTWModifiedTimeStamp	  560733342
-  ModelVersionFormat	  "1.%<AutoIncrement:640>"
+  LastModifiedDate	  "Tue Dec 07 19:54:24 2021"
+  RTWModifiedTimeStamp	  560807654
+  ModelVersionFormat	  "1.%<AutoIncrement:643>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -924,13 +924,13 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "6484"
+    SIDHighWatermark	    "6496"
     Block {
       BlockType		      SubSystem
       Name		      "Bitwise_NOT"
       SID		      "6255"
       Ports		      [1, 1]
-      Position		      [1445, -2, 1600, 42]
+      Position		      [1725, -92, 1880, -48]
       ZOrder		      2149
       RequestExecContextInheritance off
       Variant		      off
@@ -14357,7 +14357,7 @@ Library {
       Name		      "bus_to_uint"
       SID		      "6479"
       Ports		      [1, 1]
-      Position		      [1575, 122, 1650, 138]
+      Position		      [1480, 42, 1555, 58]
       ZOrder		      6610
       RequestExecContextInheritance off
       Variant		      off
@@ -14696,10 +14696,231 @@ Library {
     }
     Block {
       BlockType		      SubSystem
+      Name		      "bus_to_uint(byte)"
+      SID		      "6485"
+      Ports		      [1, 1]
+      Position		      [1480, -48, 1555, -32]
+      ZOrder		      6612
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"bus_to_uint(byte)"
+	Location		[57, 0, 1641, 1087]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In(1B)"
+	  SID			  "6492"
+	  Position		  [85, 283, 115, 297]
+	  ZOrder		  1861
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Bit to Integer\nConverter3"
+	  SID			  "6493"
+	  Ports			  [1, 1]
+	  Position		  [265, 268, 345, 312]
+	  ZOrder		  1865
+	  ShowName		  off
+	  LibraryVersion	  "1.278"
+	  SourceBlock		  "commutil2/Bit to Integer\nConverter"
+	  SourceType		  "Bit to Integer Converter"
+	  nbits			  "8"
+	  bitOrder		  "MSB first"
+	  signedOutputValues	  "Unsigned"
+	  outDtype		  "uint8"
+	  outDtypeSigned	  "Inherit via internal rule"
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector"
+	  SID			  "6494"
+	  Ports			  [1, 8]
+	  Position		  [140, 210, 150, 370]
+	  ZOrder		  1863
+	  ShowName		  off
+	  OutputSignals		  "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<signal1>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<signal2>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "<signal3>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "<signal4>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "<signal5>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "<signal6>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    7
+	    Name		    "<signal7>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    8
+	    Name		    "<signal8>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "6495"
+	  Ports			  [8, 1]
+	  Position		  [220, 210, 230, 370]
+	  ZOrder		  1864
+	  ShowName		  off
+	  Inputs		  "8"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out(1B)"
+	  SID			  "6496"
+	  Position		  [375, 283, 405, 297]
+	  ZOrder		  1862
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In(1B)"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Bit to Integer\nConverter3"
+	  SrcPort		  1
+	  DstBlock		  "Out(1B)"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  19
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Bit to Integer\nConverter3"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal1>"
+	  ZOrder		  20
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<signal2>"
+	  ZOrder		  21
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  2
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<signal3>"
+	  ZOrder		  22
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  3
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "<signal4>"
+	  ZOrder		  23
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  4
+	  DstBlock		  "Mux"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "<signal5>"
+	  ZOrder		  24
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  5
+	  DstBlock		  "Mux"
+	  DstPort		  5
+	}
+	Line {
+	  Name			  "<signal6>"
+	  ZOrder		  25
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  6
+	  DstBlock		  "Mux"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "<signal7>"
+	  ZOrder		  26
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  7
+	  DstBlock		  "Mux"
+	  DstPort		  7
+	}
+	Line {
+	  Name			  "<signal8>"
+	  ZOrder		  27
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector"
+	  SrcPort		  8
+	  DstBlock		  "Mux"
+	  DstPort		  8
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
       Name		      "uint_to_bus"
       SID		      "6473"
       Ports		      [1, 1]
-      Position		      [1575, 87, 1650, 103]
+      Position		      [1480, 2, 1555, 18]
       ZOrder		      6609
       RequestExecContextInheritance off
       Variant		      off
@@ -14905,6 +15126,164 @@ Library {
 	  SrcPort		  1
 	  DstBlock		  "Demux2"
 	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "uint_to_bus(byte)"
+      SID		      "6486"
+      Ports		      [1, 1]
+      Position		      [1480, -88, 1555, -72]
+      ZOrder		      6611
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"uint_to_bus(byte)"
+	Location		[57, 0, 1641, 1087]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"125"
+	Block {
+	  BlockType		  Inport
+	  Name			  "In(1B)"
+	  SID			  "6487"
+	  Position		  [20, 98, 50, 112]
+	  ZOrder		  1861
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  "6488"
+	  Ports			  [8, 1]
+	  Position		  [215, 24, 225, 186]
+	  ZOrder		  1860
+	  ShowName		  off
+	  Inputs		  "8"
+	  DisplayOption		  "bar"
+	  InheritFromInputs	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux2"
+	  SID			  "6489"
+	  Ports			  [1, 8]
+	  Position		  [180, 24, 190, 186]
+	  ZOrder		  694
+	  ShowName		  off
+	  Outputs		  "8"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Integer to Bit\nConverter2"
+	  SID			  "6490"
+	  Ports			  [1, 1]
+	  Position		  [70, 83, 150, 127]
+	  ZOrder		  695
+	  ShowName		  off
+	  LibraryVersion	  "1.278"
+	  SourceBlock		  "commutil2/Integer to Bit\nConverter"
+	  SourceType		  "Integer to Bit Converter"
+	  nbits			  "8"
+	  signedInputValues	  "Unsigned"
+	  bitOrder		  "MSB first"
+	  outDtype		  "boolean"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Out(1B)"
+	  SID			  "6491"
+	  Position		  [250, 98, 280, 112]
+	  ZOrder		  1862
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "In(1B)"
+	  SrcPort		  1
+	  DstBlock		  "Integer to Bit\nConverter2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "Out(1B)"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  19
+	  SrcBlock		  "Integer to Bit\nConverter2"
+	  SrcPort		  1
+	  DstBlock		  "Demux2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  20
+	  SrcBlock		  "Demux2"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  21
+	  SrcBlock		  "Demux2"
+	  SrcPort		  2
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  22
+	  SrcBlock		  "Demux2"
+	  SrcPort		  3
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  23
+	  SrcBlock		  "Demux2"
+	  SrcPort		  4
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  24
+	  SrcBlock		  "Demux2"
+	  SrcPort		  5
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "Demux2"
+	  SrcPort		  6
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  ZOrder		  26
+	  SrcBlock		  "Demux2"
+	  SrcPort		  7
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  7
+	}
+	Line {
+	  ZOrder		  27
+	  SrcBlock		  "Demux2"
+	  SrcPort		  8
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  8
 	}
       }
     }

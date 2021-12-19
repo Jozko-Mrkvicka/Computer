@@ -28,6 +28,19 @@
 %   I - Immediate value
 %   R - Reserved
 %
+%
+%
+% Immediate					Register				Register					Memory
+%				MOVU ->					<- MOV ->				 <- LOAD
+%				MOVL											 <- LOADI
+%																 <- LOADU
+%																 <- LOADL
+%																	STORE  ->
+%																	STOREI ->
+%																	STOREU ->
+%																	STOREL ->
+%
+%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 

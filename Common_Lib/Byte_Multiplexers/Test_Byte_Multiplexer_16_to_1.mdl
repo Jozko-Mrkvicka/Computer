@@ -1,16 +1,18 @@
 Model {
   Name			  "Test_Byte_Multiplexer_16_to_1"
-  Version		  8.1
-  MdlSubVersion		  0
+  Version		  8.7
+  MdlSubVersion		  1
+  SavedCharacterEncoding  "windows-1250"
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.105"
+    ComputedModelVersion    "1.108"
     NumModelReferences	    0
     NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
   }
-  SavedCharacterEncoding  "windows-1250"
   slprops.hdlmdlprops {
     $PropName		    "HDLParams"
     $ObjectID		    1
@@ -18,11 +20,10 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "Test_Multiplexer"
+      Cell		      "Test_Byte_Multiplexer_16_to_1"
       PropName		      "mdlProps"
     }
   }
-  SaveDefaultBlockParams  on
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
   DisableAllScopes	  off
@@ -32,6 +33,7 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "win64"
   Object {
     $PropName		    "BdWindowsInfo"
     $ObjectID		    2
@@ -41,7 +43,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [65.0, 0.0, 1030.0, 1080.0]
+      Location		      [656.0, 0.0, 1030.0, 1080.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -58,16 +60,28 @@ Model {
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
-      Object {
-	$PropName		"EditorsInfo"
-	$ObjectID		6
-	$ClassName		"Simulink.EditorInfo"
-	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[980.0, 906.0]
-	ZoomFactor		[1.0]
-	Offset			[915.04348345851622, 700.16704045260531]
+      Array {
+	Type			"Simulink.EditorInfo"
+	Dimension		2
+	Object {
+	  $ObjectID		  6
+	  IsActive		  [1]
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
+	  Extents		  [980.0, 902.0]
+	  ZoomFactor		  [0.6]
+	  Offset		  [673.67388485562981, 646.683713461206]
+	}
+	Object {
+	  $ObjectID		  7
+	  IsActive		  [0]
+	  ViewObjType		  "SimulinkSubsys"
+	  LoadSaveID		  "302"
+	  Extents		  [980.0, 902.0]
+	  ZoomFactor		  [1.25]
+	  Offset		  [582.98815236925532, 7814.2166666666662]
+	}
+	PropName		"EditorsInfo"
       }
     }
   }
@@ -75,11 +89,11 @@ Model {
   Creator		  "N"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "uzivatel"
+  LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Mar 03 14:55:27 2019"
-  RTWModifiedTimeStamp	  473525724
-  ModelVersionFormat	  "1.%<AutoIncrement:105>"
+  LastModifiedDate	  "Tue Dec 07 20:37:07 2021"
+  RTWModifiedTimeStamp	  560810225
+  ModelVersionFormat	  "1.%<AutoIncrement:108>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -87,6 +101,10 @@ Model {
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  off
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
@@ -95,16 +113,25 @@ Model {
   ShowSignalResolutionIcons on
   ShowViewerIcons	  on
   SortedOrder		  off
+  VariantCondition	  off
   ExecutionContextIcon	  off
   ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
   BlockNameDataTip	  off
   BlockParametersDataTip  off
   BlockDescriptionStringDataTip	off
   ToolBar		  on
   StatusBar		  on
   BrowserShowLibraryLinks off
+  FunctionConnectors	  off
   BrowserLookUnderMasks	  off
   SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
   LinearizationMsg	  "none"
   Profile		  off
   ParamWorkspaceSource	  "MATLABWorkspace"
@@ -114,7 +141,7 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    7
+    $ObjectID		    8
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "Test_16_to_1_Multiplexer"
     overrideMode_	    [0.0]
@@ -131,20 +158,6 @@ Model {
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
-  RecordCoverage	  off
-  CovPath		  "/"
-  CovSaveName		  "covdata"
-  CovMetricSettings	  "dw"
-  CovNameIncrementing	  off
-  CovHtmlReporting	  on
-  CovForceBlockReductionOff on
-  covSaveCumulativeToWorkspaceVar on
-  CovSaveSingleToWorkspaceVar on
-  CovCumulativeVarName	  "covCumulativeData"
-  CovCumulativeReport	  off
-  CovReportOnPause	  on
-  CovModelRefEnable	  "Off"
-  CovExternalEMLEnable	  off
   ExtModeBatchMode	  off
   ExtModeEnableFloating	  on
   ExtModeTrigType	  "manual"
@@ -166,21 +179,20 @@ Model {
   ExtModeSkipDownloadWhenConnect off
   ExtModeLogAll		  on
   ExtModeAutoUpdateStatusClock on
-  BufferReuse		  on
   ShowModelReferenceBlockVersion off
   ShowModelReferenceBlockIO off
   Array {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      8
-      Version		      "1.13.0"
+      $ObjectID		      9
+      Version		      "1.16.2"
       Array {
 	Type			"Handle"
-	Dimension		9
+	Dimension		10
 	Simulink.SolverCC {
-	  $ObjectID		  9
-	  Version		  "1.13.0"
+	  $ObjectID		  10
+	  Version		  "1.16.2"
 	  StartTime		  "0.0"
 	  StopTime		  "len"
 	  AbsTol		  "auto"
@@ -207,6 +219,8 @@ Model {
 	  ZeroCrossControl	  "UseLocalSettings"
 	  ZeroCrossAlgorithm	  "Nonadaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
 	  AutoInsertRateTranBlk	  off
@@ -214,8 +228,8 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  10
-	  Version		  "1.13.0"
+	  $ObjectID		  11
+	  Version		  "1.16.2"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -233,6 +247,9 @@ Model {
 	  SignalLogging		  on
 	  DSMLogging		  on
 	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
 	  SaveTime		  on
 	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
@@ -244,10 +261,13 @@ Model {
 	  OutputTimes		  "[]"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
+	  LoggingToFile		  off
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  11
-	  Version		  "1.13.0"
+	  $ObjectID		  12
+	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -264,14 +284,17 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  InlineParams		  off
-	  UseIntDivNetSlope	  off
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
 	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
 	  UseSpecifiedMinMax	  off
 	  InlineInvariantSignals  off
 	  OptimizeBlockIOStorage  on
 	  BufferReuse		  on
 	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
 	  StrengthReduction	  off
 	  ExpressionFolding	  on
 	  BooleansAsBitfields	  off
@@ -279,14 +302,13 @@ Model {
 	  EnableMemcpy		  on
 	  MemcpyThreshold	  64
 	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
 	  ExpressionDepthLimit	  128
-	  FoldNonRolledExpr	  on
 	  LocalBlockOutputs	  on
 	  RollThreshold		  5
-	  SystemCodeInlineAuto	  off
 	  StateBitsets		  off
 	  DataBitsets		  off
-	  UseTempVars		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
 	  ZeroExternalMemoryAtStartup on
 	  ZeroInternalMemoryAtStartup on
 	  InitFltsAndDblsToZero	  off
@@ -297,13 +319,12 @@ Model {
 	  LifeSpan		  "inf"
 	  MaxStackSize		  "Inherit from target"
 	  BufferReusableBoundary  on
-	  SimCompilerOptimization "Off"
+	  SimCompilerOptimization "off"
 	  AccelVerboseBuild	  off
-	  ParallelExecutionInRapidAccelerator on
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  12
-	  Version		  "1.13.0"
+	  $ObjectID		  13
+	  Version		  "1.16.2"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -330,7 +351,6 @@ Model {
 	  IgnoredZcDiagnostic	  "warning"
 	  SolverPrmCheckMsg	  "none"
 	  InheritedTsInSrcMsg	  "warning"
-	  DiscreteInheritContinuousMsg "warning"
 	  MultiTaskDSMMsg	  "error"
 	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
@@ -363,12 +383,11 @@ Model {
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
 	  AssertControl		  "UseLocalSettings"
-	  EnableOverflowDetection off
+	  AllowSymbolicDim	  on
 	  ModelReferenceIOMsg	  "none"
 	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
 	  ModelReferenceVersionMismatchMessage "none"
 	  ModelReferenceIOMismatchMessage "none"
-	  ModelReferenceCSMismatchMessage "none"
 	  UnknownTsInhSupMsg	  "warning"
 	  ModelReferenceDataLoggingMessage "warning"
 	  ModelReferenceSymbolNameMessage "warning"
@@ -380,7 +399,9 @@ Model {
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
-	  LoggingUnavailableSignals "error"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
 	  BlockIODiagnostic	  "none"
 	  SFUnusedDataAndEventsDiag "warning"
 	  SFUnexpectedBacktrackingDiag "warning"
@@ -390,10 +411,15 @@ Model {
 	  SFUnconditionalTransitionShadowingDiag "warning"
 	  SFUndirectedBroadcastEventsDiag "warning"
 	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  13
-	  Version		  "1.13.0"
+	  $ObjectID		  14
+	  Version		  "1.16.2"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -425,17 +451,19 @@ Model {
 	  TargetIntDivRoundTo	  "Undefined"
 	  TargetEndianess	  "Unspecified"
 	  TargetWordSize	  32
-	  TargetTypeEmulationWarnSuppressLevel 0
 	  TargetPreprocMaxBitsSint 32
 	  TargetPreprocMaxBitsUint 32
 	  TargetHWDeviceType	  "Specified"
 	  TargetUnknown		  off
 	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  14
-	  Version		  "1.13.0"
+	  $ObjectID		  15
+	  Version		  "1.16.2"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
 	  ParallelModelReferenceErrorOnInvalidPool on
@@ -448,23 +476,20 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  15
-	  Version		  "1.13.0"
-	  SFSimEnableDebug	  on
-	  SFSimOverflowDetection  on
+	  $ObjectID		  16
+	  Version		  "1.16.2"
 	  SFSimEcho		  on
-	  SimBlas		  on
 	  SimCtrlC		  on
-	  SimExtrinsic		  on
 	  SimIntegrity		  on
 	  SimUseLocalCustomCode	  off
 	  SimParseCustomCode	  on
 	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  16
-	  Version		  "1.13.0"
+	  $ObjectID		  17
+	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    15
@@ -486,11 +511,15 @@ Model {
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
+	  TLCOptions		  ""
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  PackageGeneratedCodeAndArtifacts off
 	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
 	  GenerateReport	  off
 	  SaveLog		  off
 	  RTWVerbose		  on
@@ -499,15 +528,13 @@ Model {
 	  TLCDebug		  off
 	  TLCCoverage		  off
 	  TLCAssert		  off
-	  ProcessScriptMode	  "Default"
-	  ConfigurationMode	  "Optimized"
-	  ConfigAtBuild		  off
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
 	  IncludeHyperlinkInReport off
 	  LaunchReport		  off
 	  PortableWordSizes	  off
-	  GenerateErtSFunction	  off
 	  CreateSILPILBlock	  "None"
 	  CodeExecutionProfiling  off
 	  CodeExecutionProfileVariable "executionProfile"
@@ -516,25 +543,25 @@ Model {
 	  SILDebugging		  off
 	  TargetLang		  "C"
 	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
-	  IncludeERTFirstTime	  off
 	  GenerateTraceInfo	  off
 	  GenerateTraceReport	  off
 	  GenerateTraceReportSl	  off
 	  GenerateTraceReportSf	  off
 	  GenerateTraceReportEml  off
-	  GenerateCodeInfo	  off
 	  GenerateWebview	  off
 	  GenerateCodeMetricsReport off
 	  GenerateCodeReplacementReport	off
-	  RTWCompilerOptimization "Off"
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  RTWCustomCompilerOptimizations ""
 	  CheckMdlBeforeBuild	  "Off"
-	  CustomRebuildMode	  "OnUpdate"
+	  SharedConstantsCachingThreshold 1024
 	  Array {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      17
-	      Version		      "1.13.0"
+	      $ObjectID		      18
+	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
 		Dimension		23
@@ -565,6 +592,7 @@ Model {
 	      }
 	      ForceParamTrailComments off
 	      GenerateComments	      on
+	      CommentStyle	      "Auto"
 	      IgnoreCustomStorageClasses on
 	      IgnoreTestpoints	      off
 	      IncHierarchyInIds	      off
@@ -587,6 +615,7 @@ Model {
 	      CustomSymbolStrBlkIO    "rtb_$N$M"
 	      CustomSymbolStrTmpVar   "$N$M"
 	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
 	      DefineNamingRule	      "None"
 	      ParamNamingRule	      "None"
 	      SignalNamingRule	      "None"
@@ -602,8 +631,8 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      18
-	      Version		      "1.13.0"
+	      $ObjectID		      19
+	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
 		Dimension		13
@@ -624,16 +653,17 @@ Model {
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
-	      TargetPreCompLibLocation ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
 	      CodeReplacementLibrary  "None"
 	      UtilityFuncGeneration   "Auto"
 	      ERTMultiwordTypeDef     "System defined"
 	      ERTMultiwordLength      256
 	      MultiwordLength	      2048
 	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
 	      GenerateSampleERTMain   off
 	      GenerateTestInterfaces  off
-	      IsPILTarget	      off
 	      ModelReferenceCompliant on
 	      ParMdlRefBuildCompliant on
 	      CompOptLevelCompliant   on
@@ -650,20 +680,23 @@ Model {
 	      LogVarNameModifier      "rt_"
 	      MatFileLogging	      on
 	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
 	      SupportNonFinite	      on
 	      SupportComplex	      on
 	      PurelyIntegerCode	      off
 	      SupportContinuousTime   on
 	      SupportNonInlinedSFcns  on
 	      SupportVariableSizeSignals off
-	      EnableShiftOperators    on
 	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
 	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
 	      ModelStepFunctionPrototypeControlCompliant off
 	      CPPClassGenCompliant    on
 	      AutosarCompliant	      off
 	      GRTInterface	      off
 	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
 	      UseMalloc		      off
 	      ExtMode		      off
 	      ExtModeStaticAlloc      off
@@ -677,13 +710,47 @@ Model {
 	      RTWCAPIStates	      off
 	      RTWCAPIRootIO	      off
 	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
 	    }
 	    PropName		    "Components"
 	  }
 	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  20
+	  Version		  "1.16.2"
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovMetricSettings	  "dw"
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "Off"
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  19
-	  Version		  "1.13.0"
+	  $ObjectID		  21
+	  Version		  "1.16.2"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
 	  Array {
@@ -704,11 +771,11 @@ Model {
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    8
+    $ObjectID		    9
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    20
+    $ObjectID		    22
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -751,7 +818,7 @@ Model {
   MaskDefaults {
     SelfModifiable	    "off"
     IconFrame		    "on"
-    IconOpaque		    "on"
+    IconOpaque		    "opaque"
     RunInitForIconRedraw    "off"
     IconRotate		    "none"
     PortRotate		    "default"
@@ -806,15 +873,16 @@ Model {
       VariableName	      "simulink_output"
       MaxDataPoints	      "1000"
       Decimation	      "1"
-      SampleTime	      "0"
       SaveFormat	      "Array"
+      Save2DSignal	      "Inherit from input (this choice will be removed - see release notes)"
       FixptAsFi		      off
       NumInputs		      "1"
+      SampleTime	      "0"
     }
   }
   System {
     Name		    "Test_Byte_Multiplexer_16_to_1"
-    Location		    [65, 0, 1095, 1080]
+    Location		    [656, 0, 1686, 1080]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -826,9 +894,9 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "60"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "471"
+    SIDHighWatermark	    "495"
     Block {
       BlockType		      Reference
       Name		      "Byte_Multiplexer_16_to_1"
@@ -836,15 +904,16 @@ Model {
       Ports		      [20, 1]
       Position		      [1495, 855, 1635, 1160]
       ZOrder		      583
-      LibraryVersion	      "1.8"
+      LibraryVersion	      "1.45"
       SourceBlock	      "Byte_Multiplexers_Lib/Byte_Multiplexers_Lib/Byte_Multiplexer_16_to_1"
       SourceType	      "SubSystem"
+      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion19"
       SID		      "441"
-      Position		      [1235, 1003, 1275, 1027]
+      Position		      [1225, 1003, 1265, 1027]
       ZOrder		      735
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -855,7 +924,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion20"
       SID		      "442"
-      Position		      [1235, 1043, 1275, 1067]
+      Position		      [1225, 1043, 1265, 1067]
       ZOrder		      737
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -866,7 +935,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion21"
       SID		      "443"
-      Position		      [1235, 1083, 1275, 1107]
+      Position		      [1225, 1083, 1265, 1107]
       ZOrder		      739
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -877,7 +946,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion22"
       SID		      "444"
-      Position		      [1235, 1123, 1275, 1147]
+      Position		      [1225, 1123, 1265, 1147]
       ZOrder		      741
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -888,7 +957,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion23"
       SID		      "445"
-      Position		      [1235, 1163, 1275, 1187]
+      Position		      [1225, 1163, 1265, 1187]
       ZOrder		      743
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -899,7 +968,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion24"
       SID		      "446"
-      Position		      [1235, 1203, 1275, 1227]
+      Position		      [1225, 1203, 1265, 1227]
       ZOrder		      745
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -910,7 +979,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion25"
       SID		      "447"
-      Position		      [1235, 923, 1275, 947]
+      Position		      [1225, 923, 1265, 947]
       ZOrder		      731
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -921,7 +990,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion26"
       SID		      "456"
-      Position		      [1235, 1323, 1275, 1347]
+      Position		      [1225, 1323, 1265, 1347]
       ZOrder		      751
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -932,7 +1001,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion27"
       SID		      "457"
-      Position		      [1235, 1363, 1275, 1387]
+      Position		      [1225, 1363, 1265, 1387]
       ZOrder		      753
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -943,7 +1012,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion28"
       SID		      "458"
-      Position		      [1235, 1403, 1275, 1427]
+      Position		      [1225, 1403, 1265, 1427]
       ZOrder		      755
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -954,7 +1023,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion29"
       SID		      "459"
-      Position		      [1235, 1443, 1275, 1467]
+      Position		      [1225, 1443, 1265, 1467]
       ZOrder		      757
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -965,7 +1034,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion30"
       SID		      "460"
-      Position		      [1235, 1483, 1275, 1507]
+      Position		      [1225, 1483, 1265, 1507]
       ZOrder		      759
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -976,7 +1045,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion31"
       SID		      "461"
-      Position		      [1235, 1523, 1275, 1547]
+      Position		      [1225, 1523, 1265, 1547]
       ZOrder		      761
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -987,7 +1056,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion32"
       SID		      "462"
-      Position		      [1235, 1243, 1275, 1267]
+      Position		      [1225, 1243, 1265, 1267]
       ZOrder		      747
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -998,7 +1067,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion33"
       SID		      "463"
-      Position		      [1235, 1283, 1275, 1307]
+      Position		      [1225, 1283, 1265, 1307]
       ZOrder		      749
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -1009,7 +1078,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion4"
       SID		      "402"
-      Position		      [1235, 878, 1275, 902]
+      Position		      [1225, 878, 1265, 902]
       ZOrder		      692
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -1020,7 +1089,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion5"
       SID		      "440"
-      Position		      [1235, 963, 1275, 987]
+      Position		      [1225, 963, 1265, 987]
       ZOrder		      733
       ShowName		      off
       OutDataTypeStr	      "uint8"
@@ -1041,7 +1110,7 @@ Model {
       BlockType		      FromWorkspace
       Name		      "From\nWorkspace"
       SID		      "404"
-      Position		      [1050, 877, 1125, 903]
+      Position		      [1040, 877, 1115, 903]
       ZOrder		      693
       VariableName	      "Input_Vect"
       SampleTime	      "1"
@@ -1056,7 +1125,7 @@ Model {
       Position		      [1300, 868, 1380, 912]
       ZOrder		      538
       ShowName		      off
-      LibraryVersion	      "1.271"
+      LibraryVersion	      "1.278"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
       nbits		      "4"
@@ -1069,7 +1138,7 @@ Model {
       Name		      "Selector19"
       SID		      "449"
       Ports		      [1, 1]
-      Position		      [1165, 996, 1205, 1034]
+      Position		      [1155, 996, 1195, 1034]
       ZOrder		      734
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1083,7 +1152,7 @@ Model {
       Name		      "Selector20"
       SID		      "450"
       Ports		      [1, 1]
-      Position		      [1165, 1036, 1205, 1074]
+      Position		      [1155, 1036, 1195, 1074]
       ZOrder		      736
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1097,7 +1166,7 @@ Model {
       Name		      "Selector21"
       SID		      "451"
       Ports		      [1, 1]
-      Position		      [1165, 1076, 1205, 1114]
+      Position		      [1155, 1076, 1195, 1114]
       ZOrder		      738
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1111,7 +1180,7 @@ Model {
       Name		      "Selector22"
       SID		      "452"
       Ports		      [1, 1]
-      Position		      [1165, 1116, 1205, 1154]
+      Position		      [1155, 1116, 1195, 1154]
       ZOrder		      740
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1125,7 +1194,7 @@ Model {
       Name		      "Selector23"
       SID		      "453"
       Ports		      [1, 1]
-      Position		      [1165, 1156, 1205, 1194]
+      Position		      [1155, 1156, 1195, 1194]
       ZOrder		      742
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1139,7 +1208,7 @@ Model {
       Name		      "Selector24"
       SID		      "454"
       Ports		      [1, 1]
-      Position		      [1165, 1196, 1205, 1234]
+      Position		      [1155, 1196, 1195, 1234]
       ZOrder		      744
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1153,7 +1222,7 @@ Model {
       Name		      "Selector25"
       SID		      "455"
       Ports		      [1, 1]
-      Position		      [1165, 916, 1205, 954]
+      Position		      [1155, 916, 1195, 954]
       ZOrder		      730
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1167,7 +1236,7 @@ Model {
       Name		      "Selector26"
       SID		      "464"
       Ports		      [1, 1]
-      Position		      [1165, 1316, 1205, 1354]
+      Position		      [1155, 1316, 1195, 1354]
       ZOrder		      750
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1181,7 +1250,7 @@ Model {
       Name		      "Selector27"
       SID		      "465"
       Ports		      [1, 1]
-      Position		      [1165, 1356, 1205, 1394]
+      Position		      [1155, 1356, 1195, 1394]
       ZOrder		      752
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1195,7 +1264,7 @@ Model {
       Name		      "Selector28"
       SID		      "466"
       Ports		      [1, 1]
-      Position		      [1165, 1396, 1205, 1434]
+      Position		      [1155, 1396, 1195, 1434]
       ZOrder		      754
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1209,7 +1278,7 @@ Model {
       Name		      "Selector29"
       SID		      "467"
       Ports		      [1, 1]
-      Position		      [1165, 1436, 1205, 1474]
+      Position		      [1155, 1436, 1195, 1474]
       ZOrder		      756
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1223,7 +1292,7 @@ Model {
       Name		      "Selector30"
       SID		      "468"
       Ports		      [1, 1]
-      Position		      [1165, 1476, 1205, 1514]
+      Position		      [1155, 1476, 1195, 1514]
       ZOrder		      758
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1237,7 +1306,7 @@ Model {
       Name		      "Selector31"
       SID		      "469"
       Ports		      [1, 1]
-      Position		      [1165, 1516, 1205, 1554]
+      Position		      [1155, 1516, 1195, 1554]
       ZOrder		      760
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1251,7 +1320,7 @@ Model {
       Name		      "Selector32"
       SID		      "470"
       Ports		      [1, 1]
-      Position		      [1165, 1236, 1205, 1274]
+      Position		      [1155, 1236, 1195, 1274]
       ZOrder		      746
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1265,7 +1334,7 @@ Model {
       Name		      "Selector33"
       SID		      "471"
       Ports		      [1, 1]
-      Position		      [1165, 1276, 1205, 1314]
+      Position		      [1155, 1276, 1195, 1314]
       ZOrder		      748
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1279,7 +1348,7 @@ Model {
       Name		      "Selector4"
       SID		      "406"
       Ports		      [1, 1]
-      Position		      [1165, 871, 1205, 909]
+      Position		      [1155, 871, 1195, 909]
       ZOrder		      695
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1294,7 +1363,7 @@ Model {
       Name		      "Selector5"
       SID		      "448"
       Ports		      [1, 1]
-      Position		      [1165, 956, 1205, 994]
+      Position		      [1155, 956, 1195, 994]
       ZOrder		      732
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1308,147 +1377,197 @@ Model {
       Name		      "To Workspace"
       SID		      "395"
       Ports		      [1]
-      Position		      [1665, 995, 1735, 1025]
+      Position		      [1775, 995, 1845, 1025]
       ZOrder		      685
       VariableName	      "Output_Vect"
       MaxDataPoints	      "inf"
       SampleTime	      "1"
     }
+    Block {
+      BlockType		      Reference
+      Name		      "bus_to_uint(byte)"
+      SID		      "473"
+      Ports		      [1, 1]
+      Position		      [1670, 1002, 1745, 1018]
+      ZOrder		      9274
+      LibraryVersion	      "1.643"
+      SourceBlock	      "Miscellaneous/bus_to_uint(byte)"
+      SourceType	      "SubSystem"
+      ContentPreviewEnabled   off
+    }
     Line {
+      ZOrder		      1
       SrcBlock		      "Integer to Bit\nConverter5"
       SrcPort		      1
       DstBlock		      "Demux8"
       DstPort		      1
     }
     Line {
+      ZOrder		      2
       SrcBlock		      "Byte_Multiplexer_16_to_1"
       SrcPort		      1
-      DstBlock		      "To Workspace"
+      DstBlock		      "bus_to_uint(byte)"
       DstPort		      1
     }
     Line {
+      ZOrder		      3
       SrcBlock		      "Demux8"
       SrcPort		      1
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      1
     }
     Line {
+      ZOrder		      4
       SrcBlock		      "Demux8"
       SrcPort		      3
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      3
     }
     Line {
+      ZOrder		      5
       SrcBlock		      "Demux8"
       SrcPort		      2
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      2
     }
     Line {
+      ZOrder		      6
       SrcBlock		      "Demux8"
       SrcPort		      4
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      4
     }
     Line {
+      ZOrder		      7
       SrcBlock		      "Selector4"
       SrcPort		      1
       DstBlock		      "Data Type Conversion4"
       DstPort		      1
     }
     Line {
+      ZOrder		      8
       SrcBlock		      "Data Type Conversion4"
       SrcPort		      1
       DstBlock		      "Integer to Bit\nConverter5"
       DstPort		      1
     }
     Line {
+      ZOrder		      9
       SrcBlock		      "From\nWorkspace"
       SrcPort		      1
       Points		      [12, 0]
       Branch {
+	ZOrder			10
 	Points			[0, 45]
 	Branch {
+	  ZOrder		  11
 	  Points		  [0, 40]
 	  Branch {
+	    ZOrder		    12
 	    DstBlock		    "Selector5"
 	    DstPort		    1
 	  }
 	  Branch {
+	    ZOrder		    13
 	    Points		    [0, 40]
 	    Branch {
+	      ZOrder		      14
 	      DstBlock		      "Selector19"
 	      DstPort		      1
 	    }
 	    Branch {
+	      ZOrder		      15
 	      Points		      [0, 40]
 	      Branch {
+		ZOrder			16
 		DstBlock		"Selector20"
 		DstPort			1
 	      }
 	      Branch {
+		ZOrder			17
 		Points			[0, 40]
 		Branch {
+		  ZOrder		  18
 		  DstBlock		  "Selector21"
 		  DstPort		  1
 		}
 		Branch {
+		  ZOrder		  19
 		  Points		  [0, 40]
 		  Branch {
+		    ZOrder		    20
 		    DstBlock		    "Selector22"
 		    DstPort		    1
 		  }
 		  Branch {
+		    ZOrder		    21
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    22
 		    DstBlock		    "Selector23"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    23
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    24
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    25
 		    DstBlock		    "Selector32"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    26
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    27
 		    DstBlock		    "Selector33"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    28
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    29
 		    DstBlock		    "Selector26"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    30
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    31
 		    DstBlock		    "Selector27"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    32
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    33
 		    DstBlock		    "Selector28"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    34
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    35
 		    DstBlock		    "Selector29"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    36
 		    Points		    [0, 40]
 		    Branch {
+		    ZOrder		    37
 		    DstBlock		    "Selector30"
 		    DstPort		    1
 		    }
 		    Branch {
+		    ZOrder		    38
 		    Points		    [0, 40]
 		    DstBlock		    "Selector31"
 		    DstPort		    1
@@ -1461,6 +1580,7 @@ Model {
 		    }
 		    }
 		    Branch {
+		    ZOrder		    39
 		    DstBlock		    "Selector24"
 		    DstPort		    1
 		    }
@@ -1472,222 +1592,263 @@ Model {
 	  }
 	}
 	Branch {
+	  ZOrder		  40
 	  DstBlock		  "Selector25"
 	  DstPort		  1
 	}
       }
       Branch {
+	ZOrder			41
 	DstBlock		"Selector4"
 	DstPort			1
       }
     }
     Line {
+      ZOrder		      42
       SrcBlock		      "Selector25"
       SrcPort		      1
       DstBlock		      "Data Type Conversion25"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Data Type Conversion25"
-      SrcPort		      1
-      Points		      [13, 0; 0, -10]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      5
-    }
-    Line {
+      ZOrder		      44
       SrcBlock		      "Selector5"
       SrcPort		      1
       DstBlock		      "Data Type Conversion5"
       DstPort		      1
     }
     Line {
+      ZOrder		      45
       SrcBlock		      "Selector19"
       SrcPort		      1
       DstBlock		      "Data Type Conversion19"
       DstPort		      1
     }
     Line {
+      ZOrder		      46
       SrcBlock		      "Selector20"
       SrcPort		      1
       DstBlock		      "Data Type Conversion20"
       DstPort		      1
     }
     Line {
+      ZOrder		      47
       SrcBlock		      "Selector21"
       SrcPort		      1
       DstBlock		      "Data Type Conversion21"
       DstPort		      1
     }
     Line {
+      ZOrder		      48
       SrcBlock		      "Selector22"
       SrcPort		      1
       DstBlock		      "Data Type Conversion22"
       DstPort		      1
     }
     Line {
+      ZOrder		      49
       SrcBlock		      "Selector23"
       SrcPort		      1
       DstBlock		      "Data Type Conversion23"
       DstPort		      1
     }
     Line {
+      ZOrder		      50
       SrcBlock		      "Selector24"
       SrcPort		      1
       DstBlock		      "Data Type Conversion24"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Data Type Conversion5"
-      SrcPort		      1
-      Points		      [22, 0; 0, -35]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      6
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion19"
-      SrcPort		      1
-      Points		      [32, 0; 0, -60]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion20"
-      SrcPort		      1
-      Points		      [44, 0; 0, -85]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      8
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion21"
-      SrcPort		      1
-      Points		      [56, 0; 0, -110]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      9
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion22"
-      SrcPort		      1
-      Points		      [68, 0; 0, -135]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      10
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion23"
-      SrcPort		      1
-      Points		      [80, 0; 0, -160]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      11
-    }
-    Line {
-      SrcBlock		      "Data Type Conversion24"
-      SrcPort		      1
-      Points		      [92, 0; 0, -185]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      12
-    }
-    Line {
+      ZOrder		      58
       SrcBlock		      "Selector32"
       SrcPort		      1
       DstBlock		      "Data Type Conversion32"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Data Type Conversion32"
-      SrcPort		      1
-      Points		      [104, 0; 0, -210]
-      DstBlock		      "Byte_Multiplexer_16_to_1"
-      DstPort		      13
-    }
-    Line {
+      ZOrder		      60
       SrcBlock		      "Selector33"
       SrcPort		      1
       DstBlock		      "Data Type Conversion33"
       DstPort		      1
     }
     Line {
+      ZOrder		      61
       SrcBlock		      "Selector26"
       SrcPort		      1
       DstBlock		      "Data Type Conversion26"
       DstPort		      1
     }
     Line {
+      ZOrder		      62
       SrcBlock		      "Selector27"
       SrcPort		      1
       DstBlock		      "Data Type Conversion27"
       DstPort		      1
     }
     Line {
+      ZOrder		      63
       SrcBlock		      "Selector28"
       SrcPort		      1
       DstBlock		      "Data Type Conversion28"
       DstPort		      1
     }
     Line {
+      ZOrder		      64
       SrcBlock		      "Selector29"
       SrcPort		      1
       DstBlock		      "Data Type Conversion29"
       DstPort		      1
     }
     Line {
+      ZOrder		      65
       SrcBlock		      "Selector30"
       SrcPort		      1
       DstBlock		      "Data Type Conversion30"
       DstPort		      1
     }
     Line {
+      ZOrder		      66
       SrcBlock		      "Selector31"
       SrcPort		      1
       DstBlock		      "Data Type Conversion31"
       DstPort		      1
     }
     Line {
+      ZOrder		      105
+      SrcBlock		      "Data Type Conversion25"
+      SrcPort		      1
+      Points		      [23, 0; 0, -10]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      106
+      SrcBlock		      "Data Type Conversion5"
+      SrcPort		      1
+      Points		      [32, 0; 0, -35]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      6
+    }
+    Line {
+      ZOrder		      107
+      SrcBlock		      "Data Type Conversion19"
+      SrcPort		      1
+      Points		      [42, 0; 0, -60]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      108
+      SrcBlock		      "Data Type Conversion20"
+      SrcPort		      1
+      Points		      [54, 0; 0, -85]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      8
+    }
+    Line {
+      ZOrder		      109
+      SrcBlock		      "Data Type Conversion21"
+      SrcPort		      1
+      Points		      [66, 0; 0, -110]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      9
+    }
+    Line {
+      ZOrder		      110
+      SrcBlock		      "Data Type Conversion22"
+      SrcPort		      1
+      Points		      [78, 0; 0, -135]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      10
+    }
+    Line {
+      ZOrder		      111
+      SrcBlock		      "Data Type Conversion23"
+      SrcPort		      1
+      Points		      [90, 0; 0, -160]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      11
+    }
+    Line {
+      ZOrder		      112
+      SrcBlock		      "Data Type Conversion24"
+      SrcPort		      1
+      Points		      [102, 0; 0, -185]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      12
+    }
+    Line {
+      ZOrder		      113
+      SrcBlock		      "Data Type Conversion32"
+      SrcPort		      1
+      Points		      [114, 0; 0, -210]
+      DstBlock		      "Byte_Multiplexer_16_to_1"
+      DstPort		      13
+    }
+    Line {
+      ZOrder		      114
       SrcBlock		      "Data Type Conversion33"
       SrcPort		      1
-      Points		      [115, 0; 0, -235]
+      Points		      [125, 0; 0, -235]
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      14
     }
     Line {
+      ZOrder		      115
       SrcBlock		      "Data Type Conversion26"
       SrcPort		      1
-      Points		      [128, 0; 0, -260]
+      Points		      [138, 0; 0, -260]
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      15
     }
     Line {
+      ZOrder		      116
       SrcBlock		      "Data Type Conversion27"
       SrcPort		      1
-      Points		      [141, 0; 0, -285]
+      Points		      [151, 0; 0, -285]
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      16
     }
     Line {
+      ZOrder		      117
       SrcBlock		      "Data Type Conversion28"
       SrcPort		      1
-      Points		      [154, 0; 0, -310]
+      Points		      [164, 0; 0, -310]
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      17
     }
     Line {
+      ZOrder		      118
       SrcBlock		      "Data Type Conversion29"
       SrcPort		      1
-      Points		      [166, 0; 0, -335]
+      Points		      [176, 0; 0, -335]
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      18
     }
     Line {
+      ZOrder		      119
       SrcBlock		      "Data Type Conversion30"
       SrcPort		      1
-      Points		      [178, 0; 0, -360]
+      Points		      [188, 0; 0, -360]
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      19
     }
     Line {
+      ZOrder		      120
       SrcBlock		      "Data Type Conversion31"
       SrcPort		      1
-      Points		      [191, 0; 0, -385]
+      Points		      [201, 0; 0, -385]
       DstBlock		      "Byte_Multiplexer_16_to_1"
       DstPort		      20
+    }
+    Line {
+      ZOrder		      104
+      SrcBlock		      "bus_to_uint(byte)"
+      SrcPort		      1
+      DstBlock		      "To Workspace"
+      DstPort		      1
     }
   }
 }

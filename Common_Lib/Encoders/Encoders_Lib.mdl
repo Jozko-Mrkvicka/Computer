@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, -8.0, 1874.0, 1096.0]
+      Location		      [54.0, 0.0, 862.0, 1087.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,9 +43,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"163"
-	Extents			[1824.0, 929.0]
-	ZoomFactor		[1.0]
-	Offset			[-568.09809007987133, 155.48240746413671]
+	Extents			[812.0, 920.0]
+	ZoomFactor		[0.8]
+	Offset			[-210.09809007987133, 145.48240746413671]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Dec 05 00:09:03 2021"
-  RTWModifiedTimeStamp	  560563737
-  ModelVersionFormat	  "1.%<AutoIncrement:49>"
+  LastModifiedDate	  "Sat Dec 18 20:22:37 2021"
+  RTWModifiedTimeStamp	  561759754
+  ModelVersionFormat	  "1.%<AutoIncrement:51>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -878,7 +878,7 @@ Library {
       Variant		      off
       System {
 	Name			"Encoders_Lib"
-	Location		[54, -8, 1928, 1088]
+	Location		[54, 0, 916, 1087]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -890,7 +890,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Encoder_16_to_4"
