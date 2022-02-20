@@ -32,7 +32,7 @@ function compiledCode = Preprocessor(program, c)
         end
         i = i + 1;
 
-        % Compile an instruction accoring to its format.
+        % Compile an instruction according to its format.
         switch (bitand(value, c.INSTR_FORMAT_MASK))
             case c.INSTR_FORMAT_0
                 [instr_msb, instr_lsb, i] = compile_instr_format_0(program, value, label_address_array, i, j, c);
@@ -122,10 +122,15 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
                 i = i + 2;
 
             case c.INSTR_FORMAT_3
-                if ((c.PUSH == value) || (c.POP == value)) %|| (c.NOT_USED == value))
+                % Add here all instructions with single operand.
+                if ((c.PUSH == value) || (c.POP == value) || (c.NOT == value))
                     i = i + 1;
+
+                % Add here all instructions with no operands.
                 elseif (c.RET == value)
                     % Do nothing.
+
+                % Add here all instructions with two operands.
                 else
                     i = i + 2;
                 end
