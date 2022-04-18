@@ -1,9 +1,13 @@
 function compiledCode = Preprocessor(program, c)
+global gDebug
+
+if (true == gDebug)
     fprintf('+--------------------------------------------------------------------+\n');
     fprintf('|                       Assembler Preprocessor                       |\n');
     fprintf('+---------+-------------+------+------+------------------------------+\n');
     fprintf('| ADDRESS | INSTRUCTION | MSB  | LSB  |             CODE             |\n');
     fprintf('+---------+-------------+------+------+------------------------------+\n');
+end
 
     % Initialize whole ROM memory with zeros. Zeros will be interpreted as JMP m(0x0000).
     compiledCode(1:c.ROM_SIZE) = uint16(0);
@@ -61,7 +65,9 @@ function compiledCode = Preprocessor(program, c)
         uint8_instr_lsb = temp(1);
 
         compiledCode(1, j) = bitor(bitshift(uint16(uint8_instr_msb), 8), uint16(uint8_instr_lsb));
-        print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c);
+        if (true == gDebug)
+        	print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c);
+        end
 
         j = j + 1;
     end
@@ -71,7 +77,9 @@ function compiledCode = Preprocessor(program, c)
       error('###\nPREPROCESSOR ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d\nActual image size:    %d\n###', c.ROM_SIZE_MAX, c.WORD_SIZE*size(compiledCode, 2))
     end
 
-    fprintf('+---------+-------------+------+------+------------------------------+\n');
+	if (true == gDebug)
+    	fprintf('+---------+-------------+------+------+------------------------------+\n');
+    end
 
     compiledCode = convert_uint16_to_struct(compiledCode);
 end
@@ -210,6 +218,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
 
     if (c.STOREI == opcode)
         % Check that first operand is in appropriate range.
+        % TODO: This check will probably not work correctly because op2 is uint16.
         if ((op1 < -128) || (op1 > 255))
             error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op1, j - 1)
         end
@@ -219,10 +228,13 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
     else
         % Check that second operand is in appropriate range.
         if (c.SHIFTI == opcode)
-            if ((op2 < -15) || (op2 > 15))
+        	% op2 is unsigned (uint16) and I just haven`t found a way how to convert it to signed (int8), therefore I check range in unsigned arithmetic.
+        	% Check that op2 is in range <-15, +15>.
+            if not(((op2 >= 0) && (op2 <= 15)) || ((op2 >= 241) || (op2 <= 255)))
                 error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-15, +15>. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
             end
         else
+        	% TODO: This check will probably not work correctly because op2 is uint16.
             if ((op2 < -128) || (op2 > 255))
                 error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
             end
@@ -251,6 +263,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i,
     i = i + 1;
 
     % Check that second operand is in appropriate range.
+    % TODO: This check will probably not work correctly because op2 is uint16.
     if ((op2 < -128) || (op2 > 255))
         error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
     end

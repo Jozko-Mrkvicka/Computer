@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 0.0, 943.0, 1087.0]
+      Location		      [54.0, -8.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,9 +43,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"3128"
-	Extents			[893.0, 920.0]
-	ZoomFactor		[1.25]
-	Offset			[-36.33506730043257, 235.6501178847526]
+	Extents			[1824.0, 929.0]
+	ZoomFactor		[2.5]
+	Offset			[84.893504128138716, 678.265091630363]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Dec 06 21:15:32 2021"
-  RTWModifiedTimeStamp	  560726127
-  ModelVersionFormat	  "1.%<AutoIncrement:162>"
+  LastModifiedDate	  "Sun Apr 17 22:56:41 2022"
+  RTWModifiedTimeStamp	  572136959
+  ModelVersionFormat	  "1.%<AutoIncrement:179>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -883,7 +883,7 @@ Library {
   }
   System {
     Name		    "Arithmetic_Operations_Lib"
-    Location		    [590, 0, 1373, 1083]
+    Location		    [54, -8, 1928, 1088]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -897,7 +897,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "3356"
+    SIDHighWatermark	    "3403"
     Block {
       BlockType		      SubSystem
       Name		      "Arithmetic_Operations_Lib"
@@ -909,7 +909,7 @@ Library {
       Variant		      off
       System {
 	Name			"Arithmetic_Operations_Lib"
-	Location		[55, 0, 998, 1087]
+	Location		[54, -8, 1928, 1088]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -921,7 +921,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"125"
+	ZoomFactor		"250"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Bit_Adder"
@@ -5776,8 +5776,8 @@ Library {
 	  BlockType		  SubSystem
 	  Name			  "Word_Comparator"
 	  SID			  "3295"
-	  Ports			  [2, 3]
-	  Position		  [270, 870, 420, 920]
+	  Ports			  [2, 5]
+	  Position		  [270, 872, 420, 928]
 	  ZOrder		  2038
 	  LibraryVersion	  "*1.158"
 	  RequestExecContextInheritance	off
@@ -5796,12 +5796,12 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Data_In_A(2B)"
 	      SID		      "3296"
-	      Position		      [-85, -657, -55, -643]
+	      Position		      [125, -377, 155, -363]
 	      ZOrder		      454
 	      IconDisplay	      "Port number"
 	    }
@@ -5809,7 +5809,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_In_B(2B)"
 	      SID		      "3297"
-	      Position		      [-85, -377, -55, -363]
+	      Position		      [125, -97, 155, -83]
 	      ZOrder		      456
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -5821,7 +5821,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [685, 453, 835, 527]
 	      ZOrder		      428
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5833,7 +5833,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [905, 413, 1055, 487]
 	      ZOrder		      429
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5845,7 +5845,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2940, 53, 3090, 127]
 	      ZOrder		      472
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5857,7 +5857,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3165, 13, 3315, 87]
 	      ZOrder		      473
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5869,7 +5869,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3395, -27, 3545, 47]
 	      ZOrder		      474
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5881,7 +5881,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3620, -67, 3770, 7]
 	      ZOrder		      475
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5893,7 +5893,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [3855, -107, 4005, -33]
 	      ZOrder		      476
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5905,7 +5905,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [4085, -147, 4235, -73]
 	      ZOrder		      477
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5917,7 +5917,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1125, 373, 1275, 447]
 	      ZOrder		      430
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5929,7 +5929,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1350, 333, 1500, 407]
 	      ZOrder		      431
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5941,7 +5941,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1580, 293, 1730, 367]
 	      ZOrder		      432
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5953,7 +5953,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [1805, 253, 1955, 327]
 	      ZOrder		      433
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5965,7 +5965,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2040, 213, 2190, 287]
 	      ZOrder		      434
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5977,7 +5977,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2270, 173, 2420, 247]
 	      ZOrder		      435
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -5989,7 +5989,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2500, 133, 2650, 207]
 	      ZOrder		      470
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -6001,7 +6001,7 @@ Library {
 	      Ports		      [5, 3]
 	      Position		      [2720, 93, 2870, 167]
 	      ZOrder		      471
-	      LibraryVersion	      "1.158"
+	      LibraryVersion	      "1.178"
 	      SourceBlock	      "Arithmetic_Operations_Lib/Arithmetic_Operations_Lib/Bit_Comparator"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -6011,7 +6011,7 @@ Library {
 	      Name		      "Bus\nSelector"
 	      SID		      "3327"
 	      Ports		      [1, 16]
-	      Position		      [5, -768, 15, -537]
+	      Position		      [215, -488, 225, -257]
 	      ZOrder		      484
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,"
@@ -6118,7 +6118,7 @@ Library {
 	      Name		      "Bus\nSelector1"
 	      SID		      "3328"
 	      Ports		      [1, 16]
-	      Position		      [5, -488, 15, -257]
+	      Position		      [215, -208, 225, 23]
 	      ZOrder		      485
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,"
@@ -6250,29 +6250,141 @@ Library {
 	      OutDataTypeStr	      "int16"
 	    }
 	    Block {
+	      BlockType		      Logic
+	      Name		      "Enable signed\n(A < B)"
+	      SID		      "3391"
+	      Ports		      [2, 1]
+	      Position		      [4305, -494, 4335, -456]
+	      ZOrder		      9426
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Enable signed (2)\n(A > B)"
+	      SID		      "3394"
+	      Ports		      [2, 1]
+	      Position		      [4305, -289, 4335, -251]
+	      ZOrder		      9429
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Enable unsigned\n(A < B)"
+	      SID		      "3400"
+	      Ports		      [2, 1]
+	      Position		      [4305, -425, 4335, -385]
+	      ZOrder		      9436
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Enable unsigned (2)\n(A > B)"
+	      SID		      "3401"
+	      Ports		      [2, 1]
+	      Position		      [4305, -215, 4335, -175]
+	      ZOrder		      9437
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator1"
+	      SID		      "3399"
+	      Ports		      [2, 1]
+	      Position		      [4380, -260, 4410, -220]
+	      ZOrder		      9434
+	      ShowName		      off
+	      Operator		      "OR"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "Logical\nOperator29"
+	      SID		      "3398"
+	      Ports		      [2, 1]
+	      Position		      [4380, -465, 4410, -425]
+	      ZOrder		      9433
+	      ShowName		      off
+	      Operator		      "OR"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "MSBs are equal"
+	      SID		      "3402"
+	      Ports		      [1, 1]
+	      Position		      [4188, -403, 4203, -387]
+	      ZOrder		      9438
+	      Operator		      "NOT"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
+	      BlockType		      Logic
+	      Name		      "MSBs are not equal"
+	      SID		      "3358"
+	      Ports		      [2, 1]
+	      Position		      [4060, -411, 4090, -379]
+	      ZOrder		      487
+	      Operator		      "XOR"
+	      IconShape		      "distinctive"
+	      AllPortsSameDT	      off
+	      OutDataTypeStr	      "boolean"
+	    }
+	    Block {
 	      BlockType		      Outport
-	      Name		      "A>B(1b)"
+	      Name		      "Unsigned A > B(1b)"
 	      SID		      "3315"
-	      Position		      [4335, -167, 4365, -153]
+	      Position		      [4425, -142, 4455, -128]
 	      ZOrder		      478
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "A=B(1b)"
-	      SID		      "3316"
-	      Position		      [4335, -117, 4365, -103]
-	      ZOrder		      479
+	      Name		      "Unsigned A < B(1b)"
+	      SID		      "3317"
+	      Position		      [4425, -62, 4455, -48]
+	      ZOrder		      480
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
 	      BlockType		      Outport
-	      Name		      "A<B(1b)"
-	      SID		      "3317"
-	      Position		      [4335, -67, 4365, -53]
-	      ZOrder		      480
+	      Name		      "Signed A > B(1b)"
+	      SID		      "3396"
+	      Position		      [4435, -247, 4465, -233]
+	      ZOrder		      9431
 	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Signed A < B(1b)"
+	      SID		      "3397"
+	      Position		      [4435, -452, 4465, -438]
+	      ZOrder		      9435
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "A = B(1b)"
+	      SID		      "3316"
+	      Position		      [4425, -102, 4455, -88]
+	      ZOrder		      479
+	      Port		      "5"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -6305,7 +6417,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      9
-	      Points		      [657, 0; 0, 825]
+	      Points		      [447, 0; 0, 545]
 	      DstBlock		      "Bit_Comparator_(7)"
 	      DstPort		      1
 	    }
@@ -6315,7 +6427,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      10
-	      Points		      [641, 0; 0, 850]
+	      Points		      [431, 0; 0, 570]
 	      DstBlock		      "Bit_Comparator_(6)"
 	      DstPort		      1
 	    }
@@ -6325,7 +6437,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      11
-	      Points		      [626, 0; 0, 875]
+	      Points		      [416, 0; 0, 595]
 	      DstBlock		      "Bit_Comparator_(5)"
 	      DstPort		      1
 	    }
@@ -6335,7 +6447,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      12
-	      Points		      [610, 0; 0, 900]
+	      Points		      [400, 0; 0, 620]
 	      DstBlock		      "Bit_Comparator_(4)"
 	      DstPort		      1
 	    }
@@ -6345,7 +6457,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      13
-	      Points		      [593, 0; 0, 925]
+	      Points		      [383, 0; 0, 645]
 	      DstBlock		      "Bit_Comparator_(3)"
 	      DstPort		      1
 	    }
@@ -6355,7 +6467,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      14
-	      Points		      [575, 0; 0, 950]
+	      Points		      [365, 0; 0, 670]
 	      DstBlock		      "Bit_Comparator_(2)"
 	      DstPort		      1
 	    }
@@ -6365,7 +6477,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      15
-	      Points		      [557, 0; 0, 975]
+	      Points		      [347, 0; 0, 695]
 	      DstBlock		      "Bit_Comparator_(1)"
 	      DstPort		      1
 	    }
@@ -6382,7 +6494,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      9
-	      Points		      [353, 0; 0, 560]
+	      Points		      [143, 0; 0, 280]
 	      DstBlock		      "Bit_Comparator_(7)"
 	      DstPort		      2
 	    }
@@ -6392,7 +6504,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      10
-	      Points		      [341, 0; 0, 585]
+	      Points		      [131, 0; 0, 305]
 	      DstBlock		      "Bit_Comparator_(6)"
 	      DstPort		      2
 	    }
@@ -6402,7 +6514,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      11
-	      Points		      [329, 0; 0, 610]
+	      Points		      [119, 0; 0, 330]
 	      DstBlock		      "Bit_Comparator_(5)"
 	      DstPort		      2
 	    }
@@ -6412,7 +6524,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      12
-	      Points		      [317, 0; 0, 635]
+	      Points		      [107, 0; 0, 355]
 	      DstBlock		      "Bit_Comparator_(4)"
 	      DstPort		      2
 	    }
@@ -6422,7 +6534,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      13
-	      Points		      [305, 0; 0, 660]
+	      Points		      [95, 0; 0, 380]
 	      DstBlock		      "Bit_Comparator_(3)"
 	      DstPort		      2
 	    }
@@ -6432,7 +6544,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      14
-	      Points		      [293, 0; 0, 685]
+	      Points		      [83, 0; 0, 405]
 	      DstBlock		      "Bit_Comparator_(2)"
 	      DstPort		      2
 	    }
@@ -6442,7 +6554,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      15
-	      Points		      [281, 0; 0, 710]
+	      Points		      [71, 0; 0, 430]
 	      DstBlock		      "Bit_Comparator_(1)"
 	      DstPort		      2
 	    }
@@ -6603,7 +6715,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      16
-	      Points		      [540, 0; 0, 1000]
+	      Points		      [330, 0; 0, 720]
 	      DstBlock		      "Bit_Comparator_(0)"
 	      DstPort		      1
 	    }
@@ -6621,7 +6733,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      16
-	      Points		      [269, 0; 0, 735]
+	      Points		      [59, 0; 0, 455]
 	      DstBlock		      "Bit_Comparator_(0)"
 	      DstPort		      2
 	    }
@@ -6666,26 +6778,11 @@ Library {
 	      DstPort		      4
 	    }
 	    Line {
-	      ZOrder		      46
-	      SrcBlock		      "Bit_Comparator_(15)"
-	      SrcPort		      3
-	      Points		      [47, 0; 0, 25]
-	      DstBlock		      "A<B(1b)"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      47
-	      SrcBlock		      "Bit_Comparator_(15)"
-	      SrcPort		      1
-	      Points		      [44, 0; 0, -25]
-	      DstBlock		      "A>B(1b)"
-	      DstPort		      1
-	    }
-	    Line {
 	      ZOrder		      48
 	      SrcBlock		      "Bit_Comparator_(15)"
 	      SrcPort		      2
-	      DstBlock		      "A=B(1b)"
+	      Points		      [30, 0; 0, 15]
+	      DstBlock		      "A = B(1b)"
 	      DstPort		      1
 	    }
 	    Line {
@@ -6694,9 +6791,28 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
-	      Points		      [777, 0; 0, 625]
-	      DstBlock		      "Bit_Comparator_(15)"
-	      DstPort		      1
+	      Points		      [567, 0]
+	      Branch {
+		ZOrder			213
+		Points			[0, 345]
+		DstBlock		"Bit_Comparator_(15)"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			88
+		Points			[3218, 0]
+		Branch {
+		  ZOrder		  214
+		  Points		  [0, 85]
+		  DstBlock		  "MSBs are not equal"
+		  DstPort		  1
+		}
+		Branch {
+		  ZOrder		  146
+		  DstBlock		  "Enable signed\n(A < B)"
+		  DstPort		  1
+		}
+	      }
 	    }
 	    Line {
 	      Name		      "<signal2>"
@@ -6704,7 +6820,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
-	      Points		      [762, 0; 0, 650]
+	      Points		      [552, 0; 0, 370]
 	      DstBlock		      "Bit_Comparator_(14)"
 	      DstPort		      1
 	    }
@@ -6714,7 +6830,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
-	      Points		      [748, 0; 0, 675]
+	      Points		      [538, 0; 0, 395]
 	      DstBlock		      "Bit_Comparator_(13)"
 	      DstPort		      1
 	    }
@@ -6724,7 +6840,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
-	      Points		      [733, 0; 0, 700]
+	      Points		      [523, 0; 0, 420]
 	      DstBlock		      "Bit_Comparator_(12)"
 	      DstPort		      1
 	    }
@@ -6734,7 +6850,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      5
-	      Points		      [718, 0; 0, 725]
+	      Points		      [508, 0; 0, 445]
 	      DstBlock		      "Bit_Comparator_(11)"
 	      DstPort		      1
 	    }
@@ -6744,7 +6860,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      6
-	      Points		      [704, 0; 0, 750]
+	      Points		      [494, 0; 0, 470]
 	      DstBlock		      "Bit_Comparator_(10)"
 	      DstPort		      1
 	    }
@@ -6754,7 +6870,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      7
-	      Points		      [689, 0; 0, 775]
+	      Points		      [479, 0; 0, 495]
 	      DstBlock		      "Bit_Comparator_(9)"
 	      DstPort		      1
 	    }
@@ -6764,9 +6880,29 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      1
-	      Points		      [454, 0; 0, 360]
-	      DstBlock		      "Bit_Comparator_(15)"
-	      DstPort		      2
+	      Points		      [244, 0]
+	      Branch {
+		ZOrder			92
+		Points			[0, 80]
+		DstBlock		"Bit_Comparator_(15)"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			91
+		Points			[3541, 0]
+		Branch {
+		  ZOrder		  200
+		  Points		  [0, -185]
+		  DstBlock		  "MSBs are not equal"
+		  DstPort		  2
+		}
+		Branch {
+		  ZOrder		  148
+		  Points		  [116, 0; 0, -55]
+		  DstBlock		  "Enable signed (2)\n(A > B)"
+		  DstPort		  2
+		}
+	      }
 	    }
 	    Line {
 	      Name		      "<signal2>"
@@ -6774,7 +6910,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      2
-	      Points		      [441, 0; 0, 385]
+	      Points		      [231, 0; 0, 105]
 	      DstBlock		      "Bit_Comparator_(14)"
 	      DstPort		      2
 	    }
@@ -6784,7 +6920,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      3
-	      Points		      [428, 0; 0, 410]
+	      Points		      [218, 0; 0, 130]
 	      DstBlock		      "Bit_Comparator_(13)"
 	      DstPort		      2
 	    }
@@ -6794,7 +6930,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      4
-	      Points		      [415, 0; 0, 435]
+	      Points		      [205, 0; 0, 155]
 	      DstBlock		      "Bit_Comparator_(12)"
 	      DstPort		      2
 	    }
@@ -6804,7 +6940,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      5
-	      Points		      [402, 0; 0, 460]
+	      Points		      [192, 0; 0, 180]
 	      DstBlock		      "Bit_Comparator_(11)"
 	      DstPort		      2
 	    }
@@ -6814,7 +6950,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      6
-	      Points		      [390, 0; 0, 485]
+	      Points		      [180, 0; 0, 205]
 	      DstBlock		      "Bit_Comparator_(10)"
 	      DstPort		      2
 	    }
@@ -6824,7 +6960,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      7
-	      Points		      [377, 0; 0, 510]
+	      Points		      [167, 0; 0, 230]
 	      DstBlock		      "Bit_Comparator_(9)"
 	      DstPort		      2
 	    }
@@ -7002,7 +7138,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      8
-	      Points		      [673, 0; 0, 800]
+	      Points		      [463, 0; 0, 520]
 	      DstBlock		      "Bit_Comparator_(8)"
 	      DstPort		      1
 	    }
@@ -7012,9 +7148,163 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      8
-	      Points		      [365, 0; 0, 535]
+	      Points		      [155, 0; 0, 255]
 	      DstBlock		      "Bit_Comparator_(8)"
 	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      157
+	      SrcBlock		      "Enable signed\n(A < B)"
+	      SrcPort		      1
+	      Points		      [17, 0; 0, 20]
+	      DstBlock		      "Logical\nOperator29"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      153
+	      SrcBlock		      "Bit_Comparator_(15)"
+	      SrcPort		      3
+	      Points		      [15, 0]
+	      Branch {
+		ZOrder			192
+		Points			[0, -330]
+		DstBlock		"Enable unsigned\n(A < B)"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			168
+		Points			[0, 30]
+		DstBlock		"Unsigned A < B(1b)"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      162
+	      SrcBlock		      "Enable signed (2)\n(A > B)"
+	      SrcPort		      1
+	      Points		      [13, 0; 0, 20]
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      149
+	      SrcBlock		      "Bit_Comparator_(15)"
+	      SrcPort		      1
+	      Points		      [27, 0]
+	      Branch {
+		ZOrder			184
+		DstBlock		"Unsigned A > B(1b)"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			177
+		Points			[0, -50]
+		DstBlock		"Enable unsigned (2)\n(A > B)"
+		DstPort			2
+	      }
+	    }
+	    Line {
+	      ZOrder		      158
+	      SrcBlock		      "Logical\nOperator29"
+	      SrcPort		      1
+	      DstBlock		      "Signed A < B(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      163
+	      SrcBlock		      "Logical\nOperator1"
+	      SrcPort		      1
+	      DstBlock		      "Signed A > B(1b)"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      176
+	      SrcBlock		      "Enable unsigned\n(A < B)"
+	      SrcPort		      1
+	      Points		      [18, 0; 0, -30]
+	      DstBlock		      "Logical\nOperator29"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      178
+	      SrcBlock		      "Enable unsigned (2)\n(A > B)"
+	      SrcPort		      1
+	      Points		      [14, 0; 0, -35]
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      179
+	      SrcBlock		      "MSBs are equal"
+	      SrcPort		      1
+	      Points		      [60, 0]
+	      Branch {
+		ZOrder			217
+		DstBlock		"Enable unsigned\n(A < B)"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			210
+		Points			[0, 190]
+		DstBlock		"Enable unsigned (2)\n(A > B)"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      97
+	      SrcBlock		      "MSBs are not equal"
+	      SrcPort		      1
+	      Points		      [36, 0]
+	      Branch {
+		ZOrder			216
+		Points			[0, 115]
+		DstBlock		"Enable signed (2)\n(A > B)"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			215
+		Points			[0, -70]
+		DstBlock		"Enable signed\n(A < B)"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			188
+		DstBlock		"MSBs are equal"
+		DstPort			1
+	      }
+	    }
+	    Annotation {
+	      SID		      "3403"
+	      Name		      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">"
+	      "\n<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\np, li { white-space: pre-wrap"
+	      "; }\n</style></head><body style=\" font-family:'Helvetica'; font-size:10px; font-weight:400; font-style:normal;"
+	      "\">\n<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text"
+	      "-indent:0px;\"><span style=\" font-family:'Courier New'; font-size:10px;\">This comparator has no input signal "
+	      "to distinguish between signed and unsigned data. It is up to programmer to use correct output. Result is comput"
+	      "ed for both options.</span></p>\n<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-righ"
+	      "t: 0px; -qt-list-indent: 1; -qt-list-number-suffix: ')';\"><li style=\" font-family:'Courier New';\" style=\" m"
+	      "argin-top:0px; margin-bottom:0px; margin-left:12px; margin-right:0px; -qt-block-indent:0; text-indent:0px; -qt-"
+	      "user-state:239;\"><span style=\" font-size:10px;\">If numbers are equal then it doesn`t matter if they are sign"
+	      "ed or unsigned.</span></li>\n<li style=\" font-family:'Courier New';\" style=\" margin-top:0px; margin-bottom:0"
+	      "px; margin-left:12px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10px;\""
+	      ">If numbers are unsigned then just use unsigned outputs.</span></li>\n<li style=\" font-family:'Courier New';\""
+	      " style=\" margin-top:0px; margin-bottom:0px; margin-left:12px; margin-right:0px; -qt-block-indent:0; text-inden"
+	      "t:0px;\"><span style=\" font-size:10px;\">If numbers are signed then check their MSBs.</span></li></ol>\n<ol ty"
+	      "pe=\"a\" style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1; "
+	      "-qt-list-number-suffix: ')';\"><li style=\" font-family:'Courier New';\" style=\" margin-top:0px; margin-bottom"
+	      ":0px; margin-left:12px; margin-right:0px; -qt-block-indent:1; text-indent:0px;\"><span style=\" font-size:10px;"
+	      "\">If MSBs are same then compare the numbers as they were unsigned.</span></li>\n<li style=\" font-family:'Cour"
+	      "ier New';\" style=\" margin-top:0px; margin-bottom:0px; margin-left:12px; margin-right:0px; -qt-block-indent:1;"
+	      " text-indent:0px;\"><span style=\" font-size:10px;\">If MSBs are different then one of the numbers is positive "
+	      "and the other one is negative. So we can immediatelly say which one is greater.</span></li></ol></body></html>"
+	      Position		      [3506, -424, 3988, -289]
+	      InternalMargins	      [0, 0, 0, 0]
+	      FixedHeight	      on
+	      FixedWidth	      on
+	      HorizontalAlignment     "left"
+	      VerticalAlignment	      "top"
+	      DropShadow	      on
+	      Interpreter	      "rich"
 	    }
 	  }
 	}

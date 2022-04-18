@@ -1,0 +1,29 @@
+label = ...
+{
+	'LABEL'
+};
+for (idx = 1:size(label))
+	eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
+	eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
+end
+c.LBL_CNT = idx;
+
+
+
+SourceCode = ...
+[
+				MOVL		r0			hAA			... % Assign data to store/load.
+				MOVU		r0			hBB			...
+				MOVL		r1			h00			... % Assign memory address.
+				MOVU		r1			h00			...
+				MOVL		r2			h00			... % Clear register.
+				MOVU		r2			h00			...
+				MOVL		r3			hFF			... % Set register to some value.
+				MOVU		r3			hFF			...
+				STORE		m(r1)		r0			...
+				LOADL		r2			m(r1)		... % Expected value: r2 == 0x00AA
+				LOADL		r3			m(r1)		... % Expected value: r3 == 0xFFAA
+													...
+	LABEL_		JMP			LABEL					...
+];
+

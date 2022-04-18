@@ -32,7 +32,7 @@
 %
 % Immediate					Register				Register					Memory
 %				MOVU ->					<- MOV ->				 <- LOAD
-%				MOVL											 <- LOADI
+%				MOVL ->											 <- LOADI
 %																 <- LOADU
 %																 <- LOADL
 %																	STORE  ->
@@ -194,9 +194,13 @@ c.LOADU = LOADU;
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % Description:
-%     This function compares two 16-bit numbers. Result
-%     of the comparation can be "greater then", "less then"
-%     or "equal". The result is stored in status register.
+%     This instruction compares two 16-bit numbers.
+%     Numbers can be either signed or unsigned,
+%     the CMP instruction does not distinguish between them.
+%     The instruction computes result for both possibilities.
+%     It is up to programmer to use proper result.
+%     Result of the comparison can be "greater than",
+%     "less than" or "equal". It is stored in status register.
 % 
 % First operand:
 %     First value to compare.
@@ -512,6 +516,8 @@ c.LOADI = LOADI;
 %     into LSB byte of a register. Immediate value
 %     is signed and it is in range <-128, +127>.
 %     The sign bit is copied to MSB byte of the register.
+%
+% Note:
 %     If higher value than 127 needs to be stored
 %     to LSB byte of a register (in range <128, 255>)
 %     then the MSB byte of the register must be set
@@ -616,9 +622,13 @@ c.STOREI = STOREI;
 % Format 1: FF|OO|SSSS IIIIIIII
 %
 % Description:
-%     This instruction compares two values for equality.
-%     The result is stored in the Equality bit of Status
-%     Register.
+%     This instruction compares two 16-bit numbers.
+%     Numbers can be either signed or unsigned,
+%     the CMP instruction does not distinguish between them.
+%     The instruction computes result for both possibilities.
+%     It is up to programmer to use proper result.
+%     Result of the comparison can be "greater than",
+%     "less than" or "equal". It is stored in status register.
 % 
 % First operand:
 %     Data to compare. 

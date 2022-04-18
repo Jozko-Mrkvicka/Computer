@@ -1,5 +1,4 @@
 function Flash(file)
-	clc
 	clear SourceCode
 	clear RomCode
 	clear BUS_UINT16_T
