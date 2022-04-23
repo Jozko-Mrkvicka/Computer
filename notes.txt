@@ -130,23 +130,14 @@ X X X X . . . X | X . . . . . . .
 # Co treba urobit
 #############################################
 - Computer:
-	-
-	
-
 - Clean-up:
-	- 
-
-
-- System testy
-	- Pridat systemove testy - kazdu instrukciu otestovat samostatne.
-
-
-- Unit testy
-
+- System testy:
+- Unit testy:
 
 - Preprocessor:
 	- Zarovnat pravy okraj vygenerovaneho kodu.
 	- Data zacinaju na adrese 256. Myslim ze to je chyba.
+	- Fixnut TODOs - range checky pre zaporne cisla velmi nefunguju.
 
 - Firmware:
 	- Tetris
@@ -182,7 +173,7 @@ X X X X . . . X | X . . . . . . .
 		- Detekovat stack overflow/underflow.
 		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
 
-	- Vybrat memory selectory pred blok pamate, aby som pamat mohol videopamat pridat do kniznice a pouzivat iba odkazy.
+	- Vybrat memory selectory pred blok pamate, aby som pamat mohol pridat do kniznice a pouzivat iba odkazy.
 
 	- Pridat timer?
 
@@ -196,6 +187,5 @@ X X X X . . . X | X . . . . . . .
 
 
 GIT:
-	- The CMP instruction updated to compare signed and unsigned data.
-	- Fixed bug in decoding of instruction format 1 (Instruction SHIFTI always assigned result to GP_REG_0).
-	- Fixed bug in preprocessor. A range check for data in uint16 format was not working correctly.
+	- Bug fixed. Registers were not poped from stack correctly.
+	- System tests added.
