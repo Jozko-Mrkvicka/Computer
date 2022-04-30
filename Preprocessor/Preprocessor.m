@@ -1,6 +1,8 @@
 function compiledCode = Preprocessor(program, c)
 global gDebug
 
+gDebug = true;
+
 if (true == gDebug)
     fprintf('+--------------------------------------------------------------------+\n');
     fprintf('|                       Assembler Preprocessor                       |\n');
@@ -218,7 +220,6 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
 
     if (c.STOREI == opcode)
         % Check that first operand is in appropriate range.
-        % TODO: This check will probably not work correctly because op2 is uint16.
         if ((op1 < -128) || (op1 > 255))
             error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op1, j - 1)
         end
@@ -234,7 +235,6 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
                 error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-15, +15>. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
             end
         else
-        	% TODO: This check will probably not work correctly because op2 is uint16.
             if ((op2 < -128) || (op2 > 255))
                 error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
             end
@@ -263,7 +263,6 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i,
     i = i + 1;
 
     % Check that second operand is in appropriate range.
-    % TODO: This check will probably not work correctly because op2 is uint16.
     if ((op2 < -128) || (op2 > 255))
         error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
     end
