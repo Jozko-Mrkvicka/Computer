@@ -1,0 +1,51 @@
+{
+    "variables":
+    {
+        // "yellow": "hsl(54, 100%, 50%)",
+    },
+
+    "globals":
+    {
+        // "background": "blue",
+    },
+
+    "rules":
+    [
+        {
+            "scope": "computer.comment",
+            "foreground": "grey"
+        },
+
+        {
+            "scope": "computer.string",
+            "foreground": "gold"
+        },
+
+        {
+            "scope": "computer.constant",
+            "foreground": "magenta"
+        },
+
+        {
+            "scope": "computer.instruction",
+            "foreground": "lightskyblue"
+        },
+
+        {
+            "scope": "computer.lable",
+            "foreground": "yellow"
+        },
+
+        {
+            "scope": "computer.register",
+            "foreground": "limegreen"
+        },
+
+        {
+            "scope": "computer.section",
+            "foreground": "tomato"
+        },
+
+    ]
+}
+

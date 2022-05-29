@@ -1,0 +1,32 @@
+%YAML 1.2
+---
+# See http://www.sublimetext.com/docs/syntax.html
+name: Computer
+file_extensions: asm
+scope: computer
+contexts:
+  main:
+    - match: ';.*$'
+      scope: computer.comment
+
+    - match: '".*"'
+      scope: computer.string
+
+    - match: '\b(-)?[0-9.]+\b|\b0x[\h.]+\b'
+      scope: computer.constant
+
+    - match: '\b(STR|UINT8|INT8|UINT16|INT16|NOT|XOR|OR|AND|LOADL|LOADU|CMP|RET|POP|PUSH|SHIFT|ADD|NOT_USED|STOREL|STOREU|STORE|LOAD|MOV|ADDI|MOVU|LOADI|MOVL|SHIFTI|NOT_USED|STOREI|CMPI|JLT|JPE|CALL|JMP)\b'
+      scope: computer.instruction
+
+    - match: '\[|\]'
+      scope: computer.instruction
+
+    - match: '.*:'
+      scope: computer.lable
+
+    - match: '\br0|r1|r2|r3|r4|r5|r6|r7|r8|r9|r10|r11|r12|r13|r14|r15\b'
+      scope: computer.register
+
+    - match: '\.\S*'
+      scope: computer.section
+
