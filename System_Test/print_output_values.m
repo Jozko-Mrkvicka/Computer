@@ -73,3 +73,45 @@ fprintf('|      RAM_29       |  0x%04X  |', ram_29);                            
 fprintf('|      RAM_30       |  0x%04X  |', ram_30);                            fprintf('      VRAM_30      |  0x%04X  |\n', vram_30)
 fprintf('|      RAM_31       |  0x%04X  |', ram_31);                            fprintf('      VRAM_31      |  0x%04X  |\n', vram_31)
 fprintf('+-------------------+----------+');                                    fprintf('-------------------+----------+\n')
+
+fprintf('\n')
+
+fprintf('+------------------------------+\n')
+fprintf('|         Constant Data        |\n')
+fprintf('+-------------------+----------+\n');        
+fprintf('|    Memory Cell    |  Value   |\n');        
+fprintf('+-------------------+----------+\n');        
+fprintf('|      Const_00     |  0x%04X  |\n', const_00);
+fprintf('|      Const_01     |  0x%04X  |\n', const_01);
+fprintf('|      Const_02     |  0x%04X  |\n', const_02);
+fprintf('|      Const_03     |  0x%04X  |\n', const_03);
+fprintf('|      Const_04     |  0x%04X  |\n', const_04);
+fprintf('|      Const_05     |  0x%04X  |\n', const_05);
+fprintf('|      Const_06     |  0x%04X  |\n', const_06);
+fprintf('|      Const_07     |  0x%04X  |\n', const_07);
+fprintf('|      Const_08     |  0x%04X  |\n', const_08);
+fprintf('|      Const_09     |  0x%04X  |\n', const_09);
+fprintf('|      Const_10     |  0x%04X  |\n', const_10);
+fprintf('|      Const_11     |  0x%04X  |\n', const_11);
+fprintf('|      Const_12     |  0x%04X  |\n', const_12);
+fprintf('|      Const_13     |  0x%04X  |\n', const_13);
+fprintf('|      Const_14     |  0x%04X  |\n', const_14);
+fprintf('|      Const_15     |  0x%04X  |\n', const_15);
+fprintf('|      Const_16     |  0x%04X  |\n', const_16);
+fprintf('|      Const_17     |  0x%04X  |\n', const_17);
+fprintf('|      Const_18     |  0x%04X  |\n', const_18);
+fprintf('|      Const_19     |  0x%04X  |\n', const_19);
+fprintf('|      Const_20     |  0x%04X  |\n', const_20);
+fprintf('|      Const_21     |  0x%04X  |\n', const_21);
+fprintf('|      Const_22     |  0x%04X  |\n', const_22);
+fprintf('|      Const_23     |  0x%04X  |\n', const_23);
+fprintf('|      Const_24     |  0x%04X  |\n', const_24);
+fprintf('|      Const_25     |  0x%04X  |\n', const_25);
+fprintf('|      Const_26     |  0x%04X  |\n', const_26);
+fprintf('|      Const_27     |  0x%04X  |\n', const_27);
+fprintf('|      Const_28     |  0x%04X  |\n', const_28);
+fprintf('|      Const_29     |  0x%04X  |\n', const_29);
+fprintf('|      Const_30     |  0x%04X  |\n', const_30);
+fprintf('|      Const_31     |  0x%04X  |\n', const_31);
+fprintf('+-------------------+----------+\n');
+
