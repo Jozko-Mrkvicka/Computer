@@ -22,36 +22,99 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 	source = removeComments(char(fread(fileID)));
 	fclose(fileID);
 
-	checkSections(source);
+	checkIfSectionsExist(source);
 	[section_const, section_data, section_text] = parseSectionsToLines(source);
 	checkDataSection(section_data);
 
-	fprintf(source);
- 	fprintf('\n');
+
+	% getWord(section_data, 1, 1)
+	% fprintf(source);
+	% printSection(section_const);
+ 	% fprintf('\n');
+	% printSection(section_data);
+	% fprintf('\n');
+	% printSection(section_text);
 end
 
 
+function [word] = getWord(section, codeline, word)
+	word = section{codeline}{word};
+end
+
+
+% Input parameter: Array of lines (stored in cells). Each line contains array of words (stored in cells).
 function checkDataSection(codeline)
 	global valid_datatypes;
 
+	% Loop through all lines in the data section.
 	for (i = 1 : size(codeline, 2))
-		word = strsplit(codeline{i});
+		word = codeline{i};
 
 		if (2 ~= size(word, 2))
-			fprintf('Currently processed line: "%s"\n', codeline{i})
+			fprintf('Currently processed line: "%s"\n', char(word))
 			error('### COMPILATION ERROR: Every line in section .DATA must contain only two words: data type and data identifier!! ###')
 		end
 
-		% regexp(word(1), '[|]')
-		if (0 == ismember(word(1), valid_datatypes))
-			fprintf('Currently processed line: "%s"\n', codeline{i})
-			error('### COMPILATION ERROR: Missing data type!! ###')
+		checkDatatype(char(word(1)));
+		checkIdentifier(char(word(2)));
+	end
+end
+
+
+% Note: Input parameter is plain string.
+function [arrayLen] = checkIdentifier(str)
+	% Example: 'some_name', 'some_name[5]' or 'some_name[0x2F]'.
+	foundStr = regexp(str, '^(\w+)((\[\d+\]|\[0x[0-9a-fA-F]+\])?)$', 'tokens');
+	if (0 < size(foundStr))
+		identifier = char(foundStr{1}(1));
+		array      = char(foundStr{1}(2));
+	else
+		fprintf('Currently processed line: "%s"\n', str);
+		error('### COMPILATION ERROR: Incorrect data identifier!! ###');
+	end
+
+	identifier = char(regexp(identifier, '^\d'));
+	if (0 < identifier)
+		fprintf('Currently processed line: "%s"\n', str);
+		error('### COMPILATION ERROR: Name of identifier must not begin with a digit!! ###');
+	end
+
+	% Check if identifier represents array.
+	if (0 < size(array))
+		array = regexp(array, '^\[(0x)?([0-9a-fA-F]+)\]$', 'tokens');
+		isHex =    char(array{1}(1));
+		arrayLen = char(array{1}(2));
+
+		if (0 < size(isHex))
+			arrayLen = hex2dec(arrayLen);
+		else
+			arrayLen = str2num(arrayLen);
 		end
+	else
+		arrayLen = 0;
+	end
+end
+
+
+% Note: Input parameter is plain string.
+function checkDatatype(str)
+	global valid_datatypes;
+	if (0 == ismember(str, valid_datatypes))
+		fprintf('Currently processed line: "%s"\n', str);
+		error('### COMPILATION ERROR: Incorrect datatype!! ###');
+	end
+end
+
+
+function printSection(section)
+	for (i = 1 : size(section, 2))
+		fprintf('%s\n', section{i});
 	end
 end
 
 
 % Parse source code to particular standalone sections. Then parse sections to list of lines.
+% Finally parse lines to list of words.
 % Source -> .CONST + .DATA + .TEXT
 function [section_const, section_data, section_text] = parseSectionsToLines(source)
 	global g_section_const_exists;
@@ -63,6 +126,7 @@ function [section_const, section_data, section_text] = parseSectionsToLines(sour
 		section_const = regexp(source, '\.CONST.*?((?=\.DATA)|(?=\.TEXT)|$)', 'match');
 		section_const = section_const{1};
 		section_const = parseLines(section_const);
+		section_const = parseWords(section_const);
 	end
 
 	% Parse the .DATA section.
@@ -70,6 +134,7 @@ function [section_const, section_data, section_text] = parseSectionsToLines(sour
 		section_data = regexp(source, '\.DATA.*?((?=\.CONST)|(?=\.TEXT)|$)', 'match');
 		section_data = section_data{1};
 		section_data = parseLines(section_data);
+		section_data = parseWords(section_data);
 	end
 
 	% Parse the .TEXT section.
@@ -77,6 +142,14 @@ function [section_const, section_data, section_text] = parseSectionsToLines(sour
 		section_text = regexp(source, '\.TEXT.*?((?=\.DATA)|(?=\.CONST)|$)', 'match');
 		section_text = section_text{1};
 		section_text = parseLines(section_text);
+		section_text = parseWords(section_text);
+	end
+end
+
+
+function [word] = parseWords(codeline)
+	for (i = 1 : size(codeline, 2))
+		word{i} = strsplit(codeline{i});
 	end
 end
 
@@ -100,7 +173,7 @@ end
 
 
 % Check existence of code sections. Only the .TEXT section is mandatory.
-function checkSections(source)
+function checkIfSectionsExist(source)
 	global g_section_const_exists;
 	global g_section_data_exists;
 	global g_section_text_exists;
@@ -140,5 +213,4 @@ function [source] = removeComments(source)
 	% Delete all white space characters at the end of a line.
 	source = regexprep(source, '(\s*(?=\r))', '');
 end
-
 

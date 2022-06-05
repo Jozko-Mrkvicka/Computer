@@ -3,20 +3,20 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 .CONST
-	UINT8		CONST0	255
-	UINT16		CONST1	768						; Some constant of UINT16 type.
-	STR			BEEF	"DEADBEEF"				; Some string constant.
-	UINT8		CONST2	12
-	INT16[4]	CONST3	0xF26F, 22, 58, -17
-	STR			CONST1 	"123456789ABCDEF"
+	UINT8		CONST0		255
+	UINT16		CONST1		768					; Some constant of UINT16 type.
+	STR			BEEF		"DEADBEEF"			; Some string constant.
+	UINT8		CONST2		12
+	INT16		CONST3[4]	0xF26F, 22, 58, -17
+	STR			CONST1 		"123456789ABCDEF"
 
 
 .DATA											; Addresses will be assigned to specified variables.
-	UINT16		VAR1							; Variables can`t be initialized in the .DATA section, only in .TEXT.
+	UINT16		VAR1[2]							; Variables can`t be initialized in the .DATA section, only in .TEXT.
 	STR			VAR2
-	UINT16[5]	VAR3
+	UINT16		VAR3[0x0A]
 	STR			VAR4
-	UINT8		VAR
+	UINT8		VAR[0x00]
 	UINT8		INDEX
 
 
