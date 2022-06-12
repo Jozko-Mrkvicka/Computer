@@ -1,9 +1,11 @@
 function [compiledData, compiledCode] = Assembler(fileAsm)
 	clc
 
-	global STACK_SIZE;         STACK_SIZE = 8;
-	global RAM_SIZE;           RAM_SIZE = 32;
+	global ADDRESS_ROM_START;  ADDRESS_ROM_START = 0;
+	global ROM_SIZE;           ROM_SIZE = 32;
 	global ADDRESS_RAM_START;  ADDRESS_RAM_START = 32;
+	global RAM_SIZE;           RAM_SIZE = 32;
+	global STACK_SIZE;         STACK_SIZE = 8;
 
 	global g_section_const_exists; 	g_section_const_exists = false;
 	global g_section_data_exists; 	g_section_data_exists = false;
@@ -23,20 +25,19 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 	checkIfSectionsExist(source);
 	[section_const, section_data, section_text] = parseSectionsToLines(source);
 
-	% if (true == g_section_const_exists)
-	% 	checkConstSection(section_const);
-	% end
+	if (true == g_section_const_exists)
+		checkConstSection(section_const);
+		% code.const = parseConstSection(section_const);
+	end
 
 	if (true == g_section_data_exists)
 		checkDataSection(section_data);
 		code.data = parseDataSection(section_data);
-		% code.data(1)
-		% code.data(2)
-		% code.data(3)
-		% code.data(4)
-		% code.data(5)
-		% code.data(6)
 	end
+
+	% No need to check if the section .TEXT exists. It must always exist.
+	% checkTextSection(section_text);
+	% code.text = parseTextSection(section_text);
 
 
 	% getWord(section_data, 1, 1)
@@ -46,6 +47,78 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 	% printSection(section_data);
 	fprintf('\n');
 	% printSection(section_text);
+end
+
+
+function checkConstSection(codeline)
+	global ROM_SIZE;
+	total = 0;
+
+	% Loop through all lines in the .CONST section.
+	for (i = 1 : size(codeline, 2))
+		word = codeline{i};
+		datatype = char(codeline{i}(1));
+
+		dataLen = checkDatatype(char(word(1)));
+		checkIdentifier(char(word(2)));
+		arrayLen = getArrayLen(char(word(2)));
+
+		% Length of data in the (data) ROM.
+		total = total + dataLen*arrayLen;
+
+		% The array length must be equal to the number of constants on a particular line.
+		% Example: UINT8 ARRAY[4] 0x1 0x2 0x3 0x4
+		if (arrayLen ~= (size(word, 2) - 2))
+			fprintf('Currently processed line: '); printLine(word);
+			error('### COMPILATION ERROR: Incorrect array length!! ###')
+		end
+
+		% Loop through all constants in a particular line.
+		for (j = 3 : size(word, 2))
+			value = checkValue(char(word(j)))
+			checkDatatypeRange(value, datatype);
+		end
+	end
+	
+	if (0 > (ROM_SIZE - total))
+		fprintf('Currently processed line: '); printLine(word);
+		error('### COMPILATION ERROR: Not enough ROM memory for data!! ###')
+	end
+end
+
+
+function checkDatatypeRange(value, datatype)
+	switch (datatype)
+		case 'UINT8'
+			if ((value < 0) || (value > 255))
+				fprintf('Currently processed line: '); printLine(word);
+				error('### COMPILATION ERROR: A constant out of range of UINT8 type!! Range of UINT8 type is <0, +255>. ###')
+			end
+
+		case 'INT8'
+			if ((value < -128) || (value > 127))
+				fprintf('Currently processed line: '); printLine(word);
+				error('### COMPILATION ERROR: A constant out of range of INT8 type!! Range of INT8 type is <-128, +127>. ###')
+			end
+
+		case 'UINT16'
+			if ((value < 0) || (value > 65535))
+				fprintf('Currently processed line: '); printLine(word);
+				error('### COMPILATION ERROR: A constant out of range of UINT16 type!! Range of UINT16 type is <0, +65535>. ###')
+			end
+
+		case 'INT16'
+			if ((value < -32768) || (value > 32767))
+				fprintf('Currently processed line: '); printLine(word);
+				error('### COMPILATION ERROR: A constant out of range of INT16 type!! Range of INT16 type is <-32768, +32767>. ###')
+			end
+
+		% case 'STR'
+			% if (value < 0) || (value > 65535)
+			% 	fprintf('Currently processed line: '); printLine(word);
+			% 	error('### COMPILATION ERROR: A constant out of range of UINT8 type!! Range of UINT8 type is <0, +255>. ###')
+			% end
+	end
 end
 
 
@@ -73,7 +146,6 @@ end
 function checkDataSection(codeline)
 	global RAM_SIZE;
 	global STACK_SIZE;
-	global valid_datatypes;
 	total = 0;
 
 	% Loop through all lines in the .DATA section.
@@ -104,8 +176,8 @@ end
 function [arrayLen] = getArrayLen(identifier)
 	% Example: 'some_name', 'some_name[5]' or 'some_name[0x2F]'.
 	foundStr = regexp(identifier, '^\w+((\[\d+\]|\[0x[0-9a-fA-F]+\])?)$', 'tokens');
-	
 	foundStr = char(foundStr{1});
+	
 	% Check if identifier represents an array.
 	if (0 < size(foundStr))
 		array = regexp(foundStr, '^\[(0x)?([0-9a-fA-F]+)\]$', 'tokens');
@@ -119,9 +191,8 @@ function [arrayLen] = getArrayLen(identifier)
 			arrayLen = str2num(arrayLen);
 		end
 
-		% The statement "UINT8 var[0]" is valid.
 		if (0 == arrayLen)
-			arrayLen = 1;
+			error('### COMPILATION ERROR: Array length must be greater than zero!! ###')
 		end
 	else
 		arrayLen = 1;
@@ -130,53 +201,81 @@ end
 
 
 % Note: Input parameter is plain string.
-function checkIdentifier(str)
-	global valid_datatypes;
-	global valid_registers;
-	global valid_instructions;
+% function [dataLen] = checkDatatype(str)
+% 	global valid_datatypes;
+% 	dataLen = 1;
 
-	% Example: 'some_name', 'some_name[5]' or 'some_name[0x2F]'.
-	foundStr = regexp(str, '^(\w+)(\[\d+\]|\[0x[0-9a-fA-F]+\])?$', 'tokens');
-	if (0 < size(foundStr))
-		identifier = char(foundStr{1}(1));
-	else
-		fprintf('Currently processed identifier: "%s"\n', str);
-		error('### COMPILATION ERROR: Incorrect data identifier!! ###');
-	end
+% 	if (0 == ismember(str, valid_datatypes))
+% 		fprintf('Currently processed line: "%s"\n', str);
+% 		error('### COMPILATION ERROR: Incorrect datatype!! ###');
+% 	end
 
-	if ((0 < ismember(identifier, valid_datatypes)) || ...
-	    (0 < ismember(identifier, valid_registers)) || ...
-	    (0 < ismember(identifier, valid_instructions)))
-		fprintf('Currently processed identifier: "%s"\n', str);
-		error('### COMPILATION ERROR: A keyword must not be used as a data identifier!! ###');
-	end
+% 	if (strcmp(str, 'UINT16') || strcmp(str, 'INT16'))
+% 		dataLen = 2;
+% 	end
 
-	identifier = char(regexp(identifier, '^\d'));
-	if (0 < identifier)
-		fprintf('Currently processed identifier: "%s"\n', str);
-		error('### COMPILATION ERROR: Name of identifier must not begin with a digit!! ###');
-	end
-end
+% 	if (strcmp(str, 'UINT8') || strcmp(str, 'INT8') || strcmp(str, 'STR'))
+% 		dataLen = 1;
+% 	end
+% end
 
 
 % Note: Input parameter is plain string.
-function [dataLen] = checkDatatype(str)
-	global valid_datatypes;
-	dataLen = 1;
+% function checkIdentifier(str)
+% 	global valid_datatypes;
+% 	global valid_registers;
+% 	global valid_instructions;
 
-	if (0 == ismember(str, valid_datatypes))
-		fprintf('Currently processed line: "%s"\n', str);
-		error('### COMPILATION ERROR: Incorrect datatype!! ###');
-	end
+% 	% Example: 'some_name', 'some_name[5]' or 'some_name[0x2F]'.
+% 	foundStr = regexp(str, '^(\w+)(\[\d+\]|\[0x[0-9a-fA-F]+\])?$', 'tokens');
+% 	if (0 < size(foundStr))
+% 		identifier = char(foundStr{1}(1));
+% 	else
+% 		fprintf('Currently processed identifier: "%s"\n', str);
+% 		error('### COMPILATION ERROR: Incorrect data identifier!! ###');
+% 	end
 
-	if (strcmp(str, 'UINT16') || strcmp(str, 'INT16'))
-		dataLen = 2;
-	end
+% 	if ((0 < ismember(identifier, valid_datatypes)) || ...
+% 	    (0 < ismember(identifier, valid_registers)) || ...
+% 	    (0 < ismember(identifier, valid_instructions)))
+% 		fprintf('Currently processed identifier: "%s"\n', str);
+% 		error('### COMPILATION ERROR: A keyword must not be used as a data identifier!! ###');
+% 	end
 
-	if (strcmp(str, 'UINT8') || strcmp(str, 'INT8') || strcmp(str, 'STR'))
-		dataLen = 1;
-	end
-end
+% 	identifier = char(regexp(identifier, '^\d'));
+% 	if (0 < identifier)
+% 		fprintf('Currently processed identifier: "%s"\n', str);
+% 		error('### COMPILATION ERROR: Name of identifier must not begin with a digit!! ###');
+% 	end
+% end
+
+
+% Note: Input parameter is plain string.
+% function [value] = checkValue(str)
+% 	isHex = regexp(str, '^(0x).*$', 'tokens');
+
+% 	if (0 < size(isHex))
+% 		foundStr = regexp(str, '^0x([0-9a-fA-F]+)$', 'tokens');
+% 		value = char(foundStr{1}(1));
+
+% 		if (0 < size(value))
+% 			value = hex2dec(value);
+% 		else
+% 			fprintf('Currently processed value: "%s"\n', str);
+% 			error('### COMPILATION ERROR: Incorrect value!! ###');
+% 		end
+% 	else
+% 		foundStr = regexp(str, '^([0-9]+)$', 'tokens');
+% 		value = char(foundStr{1}(1));
+
+% 		if (0 < size(value))
+% 			value = str2num(value);
+% 		else
+% 			fprintf('Currently processed value: "%s"\n', str);
+% 			error('### COMPILATION ERROR: Incorrect value!! ###');
+% 		end
+% 	end
+% end
 
 
 function [word] = getWord(section, codeline, word)
@@ -187,25 +286,6 @@ end
 function [word] = getLine(section, codeline)
 	word = section{codeline};
 end
-
-
-% function checkConstSection(codeline)
-% 	global valid_datatypes;
-
-% 	% Loop through all lines in the .CONST section.
-% 	for (i = 1 : size(codeline, 2))
-% 		word = codeline{i};
-
-% 		if (3 ~= size(word, 2))
-% 			fprintf('Currently processed line: '); printLine(word);
-% 			error('### COMPILATION ERROR: Every line in section .CONST must contain three words: type, identifier and value!! ###')
-% 		end
-
-% 		checkDatatype(char(word(1)));
-% 		checkIdentifier(char(word(2)));
-% 		% checkValue(char(word(3)));
-% 	end
-% end
 
 
 function printSection(section)
@@ -263,7 +343,7 @@ end
 
 function [word] = parseWords(codeline)
 	for (i = 1 : size(codeline, 2))
-		word{i} = strsplit(codeline{i});
+		word{i} = strsplit(codeline{i}, '[,\s]', 'DelimiterType','RegularExpression');
 	end
 end
 

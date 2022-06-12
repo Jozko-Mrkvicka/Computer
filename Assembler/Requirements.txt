@@ -1,0 +1,102 @@
+====================
+General requirements
+====================
+- All comments are deleted from source code. (!!!)
+- Source code contains the following sections: (!!!)
+	- .CONST (optional)
+	- .DATA  (optional)
+	- .TEXT  (mandatory)
+- Labels, constants and variables can be declared only once. (!!!)
+- Source labels always match destination labels. (!!!)
+- The following points are checked in source code:
+	- Valid datatypes. (DONE)
+	- Valid registers. (DONE)
+	- Valid instructions. (DONE)
+	- Valid identifiers. (DONE)
+	- Valid decimal/hexadecimal constants. (DONE)
+	- Valid string constants. (!!!)
+	- Valid labels. (!!!)
+
+
+==============================
+Requirements for an identifier
+==============================
+- It must not be a keyword (register, instruction or datatype). (DONE)
+- It must not begin with a digit. (DONE)
+- It can contain only alphanumerical characters and the underscore character. (DONE)
+- If it is an array then it contains:
+	- A length value encapsulated in a pair of square brackets. (DONE)
+	- A length value can be hex number (prefixed with "0x") or decimal number. (DONE)
+	- A length value must be greater than zero. (DONE)
+
+
+=====================================
+Requirements for a numerical constant
+=====================================
+- Decimal number can begin with a sign character. (DONE)
+- Hexadecimal number must not have a sign character. (DONE)
+
+
+==================================
+Requirements for a string constant (!!!)
+==================================
+- Encaptulated in double quotes. (!!!)
+- A valid string can contain only characters which are available in the character table in ROM. (!!!)
+
+
+==============================
+Requirements for a valid label (!!!)
+==============================
+
+
+==============================
+Requirements for .DATA section
+==============================
+- Check: Every line contains exactly two words in the following order: datatype, identifier. (!!!)
+
+
+- Check: Sum of all variables fits into the RAM (sum <= RAM - STACK_SIZE). (DONE)
+ 	- Parse: An identifier/variable is stored in a list of structures. Every structure contains name, datatype, length and address of a variable. (DONE)
+; - Parse: Every section is parsed into lines and words. (DONE)
+;
+
+===============================
+Requirements for .CONST section
+===============================
+; 		- Check: Every line contains at least three words in the following order: datatype, identifier, value. (DONE)
+; 		- Check: Sum of all constants fit into the constant data ROM.
+;   	- Check: The value can be either single constant, array of constants or a string.
+;		- Check: If datatype is UINT8 then there is only one value in range <0..255>.
+;		- Check: If datatype is INT8 then there is only one value in range <-128..+127>.
+;		- Check: If datatype is array of UINT8, INT8, UINT16 or INT16 then:
+;			- Number of constants matches array length. (DONE)
+;			- All values are delimited by comma or by space. (DONE)
+;			- All values are in allowed range of specified datatype.
+;			- Values can be hex, dec or char.
+;		- Check: If datatype is UINT16 then there is only one value in range <0..65535>.
+;		- Check: If datatype is INT16 then there is only one value in range <-32768..+32767>.
+;   	- Parse: An identifier/variable is stored in a list of structures. Every structure contains name, datatype, length and address of a variable.
+;		- Constrain: Array constants can be written only on single line. Splitting to multiple lines is not allowed. This rule is there to keep the Assembler as simple as possible.
+;
+; 
+==============================
+Requirements for .TEXT section
+==============================
+;   	- Check: If data is an array (it contains square brackets) then there must be both (opening and closing) brackets.
+;		- zacina s instrukciou
+;		- dalej treba parsovat podla formatu instrukcie
+; 		- Check: Index range in an array.
+; 		- Check: Usage of uninitialized variable.
+; 		- Check: ROM can`t be written.
+; 		- Check: Section .TEXT contains only defined symbols (register, instruction, constants, labels).
+;
+; Memory manipulation and alignment:
+; - INT16/UINT16
+;   - Always aligned.
+;   - Can be manipulated with LOAD/STORE/LOADI/STOREI.
+;
+; - INT8/UINT8:
+;   - Variable name must contain also information about position of the variable in a memory word.
+;   - Based on position correct LOADL/LOADU/STOREL/STOREU (+ new LOADIL/LOADIU/STOREIL/STOREIU) instruction 
+;     will be automatically selected by assembler. Number of GP registers must be decreased to 8.
+
