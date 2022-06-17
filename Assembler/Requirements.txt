@@ -1,21 +1,20 @@
 ====================
 General requirements
 ====================
-- All comments are deleted from source code. (!!!)
-- Source code contains the following sections: (!!!)
+- Label, constant and variable identifiers can be declared only once. (!!!)
+- All comments are deleted from source code. (DONE)
+- Source code contains the following sections: (DONE)
 	- .CONST (optional)
-	- .DATA  (optional)
-	- .TEXT  (mandatory)
-- Labels, constants and variables can be declared only once. (!!!)
-- Source labels always match destination labels. (!!!)
-- The following points are checked in source code:
+	- .DATA (optional)
+	- .TEXT (mandatory)
+- The following checks are done in source code:
 	- Valid datatypes. (DONE)
 	- Valid registers. (DONE)
 	- Valid instructions. (DONE)
 	- Valid identifiers. (DONE)
 	- Valid decimal/hexadecimal constants. (DONE)
-	- Valid string constants. (!!!)
-	- Valid labels. (!!!)
+	- Valid string constants. (DONE)
+	- Valid labels. (DONE)
 
 
 ==============================
@@ -38,27 +37,41 @@ Requirements for a numerical constant
 
 
 ==================================
-Requirements for a string constant (!!!)
+Requirements for a string constant
 ==================================
-- Encaptulated in double quotes. (!!!)
-- A valid string can contain only characters which are available in the character table in ROM. (!!!)
+- Encaptulated in double quotes. (DONE)
+- A valid string can contain only characters which are available in the character table in ROM. (DONE)
 
 
 ==============================
-Requirements for a valid label (!!!)
+Requirements for a valid label
 ==============================
+- It must not be a keyword (register, instruction or datatype). (DONE)
+- It must not begin with a digit. (DONE)
+- It can contain only alphanumerical characters and the underscore character. (DONE)
+- It must end with the colon character. (DONE)
+
+
+===============================
+Requirements for datatype range
+===============================
+- A value of UINT8  type is in range <0      ..    255>. (DONE)
+- A value of INT8   type is in range <-128   ..   +127>. (DONE)
+- A value of UINT16 type is in range <0      ..  65535>. (DONE)
+- A value of INT16  type is in range <-32768 .. +32767>. (DONE)
 
 
 ==============================
 Requirements for .DATA section
 ==============================
-- Check: Every line contains exactly two words in the following order: datatype, identifier. (!!!)
+- Every line must contain exactly two words in the following order: datatype, identifier. (DONE)
+- Sum of all variables must fit into the RAM (sum <= RAM_SIZE - STACK_SIZE). (DONE)
+- An identifier/variable is stored in a list of structures with the following members:
+	- Name (DONE)
+	- Datatype (DONE)
+	- Length (DONE)
+	- Address (DONE)
 
-
-- Check: Sum of all variables fits into the RAM (sum <= RAM - STACK_SIZE). (DONE)
- 	- Parse: An identifier/variable is stored in a list of structures. Every structure contains name, datatype, length and address of a variable. (DONE)
-; - Parse: Every section is parsed into lines and words. (DONE)
-;
 
 ===============================
 Requirements for .CONST section
@@ -66,15 +79,11 @@ Requirements for .CONST section
 ; 		- Check: Every line contains at least three words in the following order: datatype, identifier, value. (DONE)
 ; 		- Check: Sum of all constants fit into the constant data ROM.
 ;   	- Check: The value can be either single constant, array of constants or a string.
-;		- Check: If datatype is UINT8 then there is only one value in range <0..255>.
-;		- Check: If datatype is INT8 then there is only one value in range <-128..+127>.
 ;		- Check: If datatype is array of UINT8, INT8, UINT16 or INT16 then:
 ;			- Number of constants matches array length. (DONE)
 ;			- All values are delimited by comma or by space. (DONE)
 ;			- All values are in allowed range of specified datatype.
 ;			- Values can be hex, dec or char.
-;		- Check: If datatype is UINT16 then there is only one value in range <0..65535>.
-;		- Check: If datatype is INT16 then there is only one value in range <-32768..+32767>.
 ;   	- Parse: An identifier/variable is stored in a list of structures. Every structure contains name, datatype, length and address of a variable.
 ;		- Constrain: Array constants can be written only on single line. Splitting to multiple lines is not allowed. This rule is there to keep the Assembler as simple as possible.
 ;
@@ -82,6 +91,7 @@ Requirements for .CONST section
 ==============================
 Requirements for .TEXT section
 ==============================
+- Source labels always match destination labels. (!!!)
 ;   	- Check: If data is an array (it contains square brackets) then there must be both (opening and closing) brackets.
 ;		- zacina s instrukciou
 ;		- dalej treba parsovat podla formatu instrukcie
