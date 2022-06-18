@@ -10,6 +10,7 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 	global section_const;
 	global section_data;
 	global section_text;
+	global code;
 
 	global valid_datatypes;     valid_datatypes =    {'STR', 'UINT8', 'INT8', 'UINT16', 'INT16'};
 	global valid_registers;     valid_registers =    {'r0', 'r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7'};
@@ -32,22 +33,63 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 
 	source = getSourceCodeFromFile(fileAsm);
 	[section_const, section_data, section_text] = parseSourceCodeToSections(source);
-	
-	% if (true == isSectionInSourceCode(source, '\.CONST'))
-	% 	code.const = parseConstSection(section_const);
-	% end
+
+	if (true == isSectionInSourceCode(source, '\.CONST'))
+		code.const = parseConstSection(section_const);
+		for (i = 1 : size(code.const, 2))
+			% code.const(i)
+		end
+	end
 
 	if (true == isSectionInSourceCode(source, '\.DATA'))
 		code.data = parseDataSection(section_data);
-
-		% Debug
-		for (i = 1 : 6)
-			code.data(i)
+		for (i = 1 : size(code.data, 2))
+			% code.data(i)
 		end
+	end
+
+	if (false == isIdentifierUnique())
+		error('### COMPILATION ERROR: The constant and variable identifiers must be unique!! ###');
 	end
 
 	% No need to check if the section .TEXT exists. It must always exist.
 	% code.text = parseTextSection(section_text);
+end
+
+
+function [uniqueID] = isIdentifierUnique()
+	global code;
+	uniqueID = true;
+
+	% Compare identifiers in .CONST section against identifiers in .CONST section.
+	for (i = 1 : size(code.const, 2) - 1)
+		for (j = i + 1 : size(code.const, 2))
+			if (true == strcmp(code.const(i).name, code.const(j).name))
+				uniqueID = false;
+				return;
+			end
+		end
+	end
+
+	% Compare identifiers in .CONST section against identifiers in .DATA section.
+	for (i = 1 : size(code.const, 2))
+		for (j = 1 : size(code.data, 2))
+			if (true == strcmp(code.const(i).name, code.data(j).name))
+				uniqueID = false;
+				return;
+			end
+		end
+	end
+
+	% Compare identifiers in .DATA section against identifiers in .DATA section.
+	for (i = 1 : size(code.data, 2) - 1)
+		for (j = i + 1 : size(code.data, 2))
+			if (true == strcmp(code.data(i).name, code.data(j).name))
+				uniqueID = false;
+				return;
+			end
+		end
+	end	
 end
 
 
@@ -80,12 +122,74 @@ function [section_const, section_data, section_text] = parseSourceCodeToSections
 end
 
 
+function [const] = parseConstSection(section_const)
+	global ADDRESS_ROM_START;
+	global ROM_SIZE;
+	address = 0;
+
+	codeline = parseSectionToLines(section_const);
+
+	% Loop through all lines in the .CONST section.
+	for (i = 1 : size(codeline, 2))
+		word = strsplit(codeline{i}, '[,\s]', 'DelimiterType', 'RegularExpression');
+		if (false == isLineInConstSectionValid(word))
+			error('### COMPILATION ERROR: Invalid .CONST section!! ###');
+		end
+
+		datatype = word{1};
+
+		% Whole name including square bracket and array size. For example "name[5]".
+	 	wholeName = word{2};
+
+	 	% Only name of variable without array size. For example "name".
+	 	name = regexp(char(word{2}), '^(\w+)(\[\d+\]|\[0x[0-9A-F]+\]|\[[01]+b\])?$', 'tokens');
+
+	 	datatypeSize = getDatatypeSize(char(datatype));
+		arrayLen = getArrayLen(char(wholeName));
+
+		const(i).name =    name{1}{1};                   % Variable name (data identifier).
+		const(i).dtype =   datatype;                     % Datatype.
+	 	const(i).address = ADDRESS_ROM_START + address;  % Address of a variable in RAM counted from absolute address 0x00.
+
+		% If constant is a string ...
+		if (strcmp('STR', datatype))
+			string = regexp(word{3}, '^"(.+)"$', 'tokens');
+			string = char(string{1});
+			
+			for (j = 1 : size(string, 2))
+				const(i).value(j) = string(j);
+			end
+
+			% A string must be terminated by the NULL character.
+			const(i).value(j + 1) = 0;
+			const(i).len = size(string, 2) + 1;
+			address = address + size(string, 2) + 1;
+
+		% If constant is a number ...
+		else
+			% Loop through all constants on particular line.
+			for (j = 1 : arrayLen)
+				const(i).value(j) = convertStrToNum(word{j + 2});
+			end
+
+			% Length of data in bytes.
+			const(i).len = datatypeSize*arrayLen;
+
+		 	address = address + datatypeSize*arrayLen;
+		end
+	end
+	
+	if (0 > (ROM_SIZE - address))
+		error('### COMPILATION ERROR: Not enough ROM memory for data!! ###')
+	end
+end
+
+
 function [data] = parseDataSection(section_data)
 	global ADDRESS_RAM_START;
 	global RAM_SIZE;
 	global STACK_SIZE;
 	address = 0;
-	total = 0;
 
 	codeline = parseSectionToLines(section_data);
 
@@ -102,13 +206,10 @@ function [data] = parseDataSection(section_data)
 	 	wholeName = temp{2};
 
 	 	% Only name of variable without array size. For example "name".
-	 	name = regexp(char(temp{2}), '^(\w+)(\[\d+\]|\[0x[0-9a-fA-F]+\])?$', 'tokens');
+	 	name = regexp(char(temp{2}), '^(\w+)(\[\d+\]|\[0x[0-9A-F]+\]|\[[01]+b\])?$', 'tokens');
 
 	 	datatypeSize = getDatatypeSize(char(datatype));
 		arrayLen = getArrayLen(char(wholeName));
-
-		% Length of data in RAM.
-		total = total + datatypeSize*arrayLen;
 
 		data(i).name =    name{1}{1};                   % Variable name (data identifier).
 		data(i).dtype =   datatype;                     % Datatype.
@@ -118,7 +219,7 @@ function [data] = parseDataSection(section_data)
 	 	address = address + datatypeSize*arrayLen;
 	end
 
-	if (0 > (RAM_SIZE - (STACK_SIZE + total)))
+	if (0 > (RAM_SIZE - (STACK_SIZE + address)))
 		error('### COMPILATION ERROR: Not enough RAM memory for data!! ###')
 	end
 end
@@ -152,6 +253,55 @@ end
 
 
 % Type of input param is a list.
+function [valid] = isLineInConstSectionValid(codeline)
+	valid = true;
+
+	if (3 > size(codeline, 2))
+		valid = false;
+	end
+
+	if (true == valid)
+		valid = isValidDatatype(char(codeline{1}));
+	end
+
+	if (true == valid)
+		valid = isValidIdentifier(char(codeline{2}));
+	end
+
+	% The array length must be equal to the number of constants on a particular line.
+	% Example: UINT8 ARRAY[4] 0x1 0x2 0x3 0x4
+	if (getArrayLen(char(codeline{2})) ~= (size(codeline, 2) - 2))
+		valid = false;
+	end
+
+	% If constant is a string ...
+	if (strcmp('STR', char(codeline{1})))
+		if (3 ~= size(char(codeline)))
+			valid = false;
+		end
+
+		if (true == valid) 
+			valid = isValidStrConst(char(codeline{3}));
+		end
+
+	% If constant is a number ...
+	else
+		% Loop through all constants on particular line.
+		if (true == valid)
+			for (i = 3 : size(codeline, 2))
+				valid = isValidNumConst(char(codeline{i}));
+				if (false == valid) break; end
+
+				value = convertStrToNum(char(codeline{i}));
+				valid = isValueInValidRange(char(codeline{1}), value);
+				if (false == valid) break; end
+			end
+		end
+	end
+end
+
+
+% Type of input param is a list.
 function [valid] = isLineInDataSectionValid(codeline)
 	valid = true;
 
@@ -177,7 +327,7 @@ function [valid] = isValidIdentifier(str)
 
 	% A data identifier can contain only alphanumerical characters and the underscore character!
 	% Example: 'some_string', 'some_string[5]' or 'some_string[0x2F]'.
-	foundStr = regexp(str, '^(\w+)(\[\d+\]|\[0x[0-9a-fA-F]+\])?$', 'tokens');
+	foundStr = regexp(str, '^(\w+)(\[\d+\]|\[0x[0-9A-F]+\]|\[[01]+b\])?$', 'tokens');
 
 	if (0 == size(foundStr))
 		valid = false;
@@ -268,22 +418,51 @@ end
 % Is string a valid numerical constant?
 function [valid] = isValidNumConst(str)
 	valid = true;
-	foundStr = regexp(str, '^(0x)?(.+)$', 'tokens');
+	foundStr = regexp(str, '^(0x)?([-+]?[0-9A-F]+)(b)?$', 'tokens');
 
 	if (0 == size(foundStr))
 		valid = false;
 	else
 		isHex =  char(foundStr{1}(1));
 		number = char(foundStr{1}(2));
+		isBin =  char(foundStr{1}(3));
 
 		if ((0 < size(isHex, 2)))
-			foundStr = regexp(number, '^([0-9A-Fa-f]+)$', 'tokens');
+
+			% Hex constant must not have 'b' at the end.
+			if ((0 ~= size(isBin, 2)))
+				valid = false;
+			end
+			foundStr = regexp(number, '^([0-9A-F]+)$', 'tokens');
+
+		elseif ((0 < size(isBin, 2)))
+			foundStr = regexp(number, '^([01]+)$', 'tokens');
+
 		else
 			foundStr = regexp(number, '^([-+]?\d+)$', 'tokens');
 		end
 
 		if (0 == size(foundStr))
 			valid = false;
+		end
+	end
+end
+
+
+function [valid] = isValidStrConst(str)
+	global valid_characters;
+	valid = true;
+
+	foundStr = regexp(str, '^"(.+)"$', 'tokens');
+
+	if (0 == size(foundStr))
+		valid = false;
+	else
+		character = char(foundStr{1}(1));
+		for (i = 1 : size(character, 2))
+			if (0 == ismember(character(i), valid_characters))
+				valid = false;
+			end
 		end
 	end
 end
@@ -320,25 +499,6 @@ function [valid] = isValidLabel(str)
 end
 
 
-function [valid] = isValidStrConst(str)
-	global valid_characters;
-	valid = true;
-
-	foundStr = regexp(str, '^"(.+)"$', 'tokens');
-
-	if (0 == size(foundStr))
-		valid = false;
-	else
-		character = char(foundStr{1}(1));
-		for (i = 1 : size(character, 2))
-			if (0 == ismember(character(i), valid_characters))
-				valid = false;
-			end
-		end
-	end
-end
-
-
 function [source] = getSourceCodeFromFile(file)
 	fileID = fopen(file, 'r');
 	source = char(fread(fileID));
@@ -366,23 +526,16 @@ end
 
 % Function will check if a data identifier represents an array. If yes then the length of the array
 % will be returned, otherwise zero.
-function [arrayLen] = getArrayLen(identifier)
-	% Example: 'some_name', 'some_name[5]' or 'some_name[0x2F]'.
-	foundStr = regexp(identifier, '^\w+((\[\d+\]|\[0x[0-9a-fA-F]+\])?)$', 'tokens');
+function [arrayLen] = getArrayLen(str)
+	% Example: 'some_name', 'some_name[5]', 'some_name[10b]' or 'some_name[0x2F]'.
+	foundStr = regexp(str, '^\w+((\[\d+\]|\[0x[0-9A-F]+\]|\[[01]+b\])?)$', 'tokens');
 	foundStr = char(foundStr{1});
-	
+
 	% Check if identifier represents an array.
 	if (0 < size(foundStr))
-		array = regexp(foundStr, '^\[(0x)?([0-9a-fA-F]+)\]$', 'tokens');
-
-		isHex =    char(array{1}(1));
-		arrayLen = char(array{1}(2));
-
-		if (0 < size(isHex))
-			arrayLen = hex2dec(arrayLen);
-		else
-			arrayLen = str2num(arrayLen);
-		end
+		foundStr = regexp(foundStr, '\[(.+)\]', 'tokens');
+		foundStr = char(foundStr{1});
+		arrayLen = convertStrToNum(foundStr);
 
 		if (0 == arrayLen)
 			error('### COMPILATION ERROR: Array length must be greater than zero!! ###')
@@ -396,13 +549,18 @@ end
 % Convert a string input to a numerical constant.
 % Note: This function assumes that the syntax of the input string has been already checked.
 function [value] = convertStrToNum(str)
-	foundStr = regexp(str, '^(0x)?([-+]?[0-9a-fA-F]+)$', 'tokens');
+	foundStr = regexp(str, '^(0x)?([-+]?[0-9A-F]+)(b)?$', 'tokens');
 
 	isHex = char(foundStr{1}(1));
 	value = char(foundStr{1}(2));
+	isBin = char(foundStr{1}(3));
 
 	if (0 < size(isHex))
 		value = hex2dec(value);
+
+	elseif (0 < size(isBin))
+		value = bin2dec(value);
+
 	else
 		value = str2num(value);
 	end

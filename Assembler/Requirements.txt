@@ -1,18 +1,20 @@
 ====================
 General requirements
 ====================
-- Label, constant and variable identifiers can be declared only once. (!!!)
+- Constant and variable identifiers must be unique. (DONE)
+- Labels can be declared only once. (!!!)
 - All comments are deleted from source code. (DONE)
-- Source code contains the following sections: (DONE)
-	- .CONST (optional)
-	- .DATA (optional)
-	- .TEXT (mandatory)
+- Source code contains the following sections:
+	- .CONST (optional) (DONE)
+	- .DATA (optional) (DONE)
+	- .TEXT (mandatory) (DONE)
+- Section must not be empty. (DONE)
 - The following checks are done in source code:
 	- Valid datatypes. (DONE)
 	- Valid registers. (DONE)
 	- Valid instructions. (DONE)
 	- Valid identifiers. (DONE)
-	- Valid decimal/hexadecimal constants. (DONE)
+	- Valid binary/decimal/hexadecimal constants. (DONE)
 	- Valid string constants. (DONE)
 	- Valid labels. (DONE)
 
@@ -25,7 +27,10 @@ Requirements for an identifier
 - It can contain only alphanumerical characters and the underscore character. (DONE)
 - If it is an array then it contains:
 	- A length value encapsulated in a pair of square brackets. (DONE)
-	- A length value can be hex number (prefixed with "0x") or decimal number. (DONE)
+	- A length value can be:
+		- Binary number (suffixed with "b"). (DONE)
+		- Hexadecimal number (prefixed with "0x"). (DONE)
+		- Decimal number. (DONE)
 	- A length value must be greater than zero. (DONE)
 
 
@@ -34,6 +39,7 @@ Requirements for a numerical constant
 =====================================
 - Decimal number can begin with a sign character. (DONE)
 - Hexadecimal number must not have a sign character. (DONE)
+- Binary number must not have a sign character. (DONE)
 
 
 ==================================
@@ -41,6 +47,7 @@ Requirements for a string constant
 ==================================
 - Encaptulated in double quotes. (DONE)
 - A valid string can contain only characters which are available in the character table in ROM. (DONE)
+- The NULL character is automatically added at the end of a string (in the .CONST section). (DONE)
 
 
 ==============================
@@ -66,7 +73,7 @@ Requirements for .DATA section
 ==============================
 - Every line must contain exactly two words in the following order: datatype, identifier. (DONE)
 - Sum of all variables must fit into the RAM (sum <= RAM_SIZE - STACK_SIZE). (DONE)
-- An identifier/variable is stored in a list of structures with the following members:
+- A variable is stored in a list of structures with the following members:
 	- Name (DONE)
 	- Datatype (DONE)
 	- Length (DONE)
@@ -76,18 +83,23 @@ Requirements for .DATA section
 ===============================
 Requirements for .CONST section
 ===============================
-; 		- Check: Every line contains at least three words in the following order: datatype, identifier, value. (DONE)
-; 		- Check: Sum of all constants fit into the constant data ROM.
-;   	- Check: The value can be either single constant, array of constants or a string.
-;		- Check: If datatype is array of UINT8, INT8, UINT16 or INT16 then:
-;			- Number of constants matches array length. (DONE)
-;			- All values are delimited by comma or by space. (DONE)
-;			- All values are in allowed range of specified datatype.
-;			- Values can be hex, dec or char.
-;   	- Parse: An identifier/variable is stored in a list of structures. Every structure contains name, datatype, length and address of a variable.
-;		- Constrain: Array constants can be written only on single line. Splitting to multiple lines is not allowed. This rule is there to keep the Assembler as simple as possible.
-;
-; 
+- Every line must contain at least three words in the following order: datatype, identifier, value. (DONE)
+- Sum of all constants must fit into the constant data ROM. (DONE)
+- A constant is stored in a list of structures with the following members:
+	- Name (DONE)
+	- Datatype (DONE)
+	- Length (DONE)
+	- Address (DONE)
+	- Value(s) (DONE)
+- Constant value can be either single constant, array of constants or a string. (DONE)
+- If datatype is array of UINT8, INT8, UINT16 or INT16 then:
+	- Number of constants matches array length. (DONE)
+	- All values are delimited by comma or by a white character. (DONE)
+	- All values are in allowed range of specified datatype. (DONE)
+	- Values can be bin, hex, dec or char. (DONE)
+- Constrain: Array constants can be written only on single line. Splitting to multiple lines is not allowed. This rule is there to keep the Assembler as simple as possible.
+
+
 ==============================
 Requirements for .TEXT section
 ==============================

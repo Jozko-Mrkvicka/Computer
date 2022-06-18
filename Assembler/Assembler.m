@@ -50,41 +50,41 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 end
 
 
-function checkConstSection(codeline)
-	global ROM_SIZE;
-	total = 0;
+% function checkConstSection(codeline)
+% 	global ROM_SIZE;
+% 	total = 0;
 
-	% Loop through all lines in the .CONST section.
-	for (i = 1 : size(codeline, 2))
-		word = codeline{i};
-		datatype = char(codeline{i}(1));
+% 	% Loop through all lines in the .CONST section.
+% 	for (i = 1 : size(codeline, 2))
+% 		word = codeline{i};
+% 		datatype = char(codeline{i}(1));
 
-		dataLen = checkDatatype(char(word(1)));
-		checkIdentifier(char(word(2)));
-		arrayLen = getArrayLen(char(word(2)));
+% 		dataLen = checkDatatype(char(word(1)));
+% 		checkIdentifier(char(word(2)));
+% 		arrayLen = getArrayLen(char(word(2)));
 
-		% Length of data in the (data) ROM.
-		total = total + dataLen*arrayLen;
+% 		% Length of data in the (data) ROM.
+% 		total = total + dataLen*arrayLen;
 
-		% The array length must be equal to the number of constants on a particular line.
-		% Example: UINT8 ARRAY[4] 0x1 0x2 0x3 0x4
-		if (arrayLen ~= (size(word, 2) - 2))
-			fprintf('Currently processed line: '); printLine(word);
-			error('### COMPILATION ERROR: Incorrect array length!! ###')
-		end
+% 		% The array length must be equal to the number of constants on a particular line.
+% 		% Example: UINT8 ARRAY[4] 0x1 0x2 0x3 0x4
+% 		if (arrayLen ~= (size(word, 2) - 2))
+% 			fprintf('Currently processed line: '); printLine(word);
+% 			error('### COMPILATION ERROR: Incorrect array length!! ###')
+% 		end
 
-		% Loop through all constants in a particular line.
-		for (j = 3 : size(word, 2))
-			value = checkValue(char(word(j)))
-			checkDatatypeRange(value, datatype);
-		end
-	end
+% 		% Loop through all constants in a particular line.
+% 		for (j = 3 : size(word, 2))
+% 			value = checkValue(char(word(j)))
+% 			checkDatatypeRange(value, datatype);
+% 		end
+% 	end
 	
-	if (0 > (ROM_SIZE - total))
-		fprintf('Currently processed line: '); printLine(word);
-		error('### COMPILATION ERROR: Not enough ROM memory for data!! ###')
-	end
-end
+% 	if (0 > (ROM_SIZE - total))
+% 		fprintf('Currently processed line: '); printLine(word);
+% 		error('### COMPILATION ERROR: Not enough ROM memory for data!! ###')
+% 	end
+% end
 
 
 % function checkDatatypeRange(value, datatype)
