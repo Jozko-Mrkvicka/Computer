@@ -30,6 +30,11 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 		'?', '!', '(', ')', '<', '>', '#', '%', '"', '/', '\', '*', '=', '-',  ':', ';', '.', ',', ' ', '+', '-',  ...
 	};
 
+	global format_3;  format_3 = {'NOT', 'XOR', 'OR', 'AND', 'LOADL', 'LOADU', 'CMP', 'RET', 'POP', 'PUSH', 'SHIFT', 'ADD', 'NOT_USED', 'STOREL', 'STOREU', 'STORE', 'LOAD', 'MOV'};
+	global format_2;  format_2 = {'ADDI', 'MOVU', 'LOADI', 'MOVL'};
+	global format_1;  format_1 = {'SHIFTI', 'NOT_USED', 'STOREI', 'CMPI'};
+	global format_0;  format_0 = {'JLT', 'JPE', 'CALL', 'JMP'};
+
 
 	source = getSourceCodeFromFile(fileAsm);
 	[section_const, section_data, section_text] = parseSourceCodeToSections(source);
@@ -53,43 +58,15 @@ function [compiledData, compiledCode] = Assembler(fileAsm)
 	end
 
 	% No need to check if the section .TEXT exists. It must always exist.
-	% code.text = parseTextSection(section_text);
-end
-
-
-function [uniqueID] = isIdentifierUnique()
-	global code;
-	uniqueID = true;
-
-	% Compare identifiers in .CONST section against identifiers in .CONST section.
-	for (i = 1 : size(code.const, 2) - 1)
-		for (j = i + 1 : size(code.const, 2))
-			if (true == strcmp(code.const(i).name, code.const(j).name))
-				uniqueID = false;
-				return;
-			end
-		end
+	code.text = parseTextSection(section_text);
+	for (i = 1 : size(code.text, 2))
+		code.text(i);
 	end
 
-	% Compare identifiers in .CONST section against identifiers in .DATA section.
-	for (i = 1 : size(code.const, 2))
-		for (j = 1 : size(code.data, 2))
-			if (true == strcmp(code.const(i).name, code.data(j).name))
-				uniqueID = false;
-				return;
-			end
-		end
+	if (false == isSrcLabelMatchingDestLable())
+		error('### COMPILATION ERROR: Mismatch between source and destination labels!! ###');
 	end
 
-	% Compare identifiers in .DATA section against identifiers in .DATA section.
-	for (i = 1 : size(code.data, 2) - 1)
-		for (j = i + 1 : size(code.data, 2))
-			if (true == strcmp(code.data(i).name, code.data(j).name))
-				uniqueID = false;
-				return;
-			end
-		end
-	end	
 end
 
 
@@ -225,8 +202,37 @@ function [data] = parseDataSection(section_data)
 end
 
 
+function [textSection] = parseTextSection(section_text)
+	codeline = parseSectionToLines(section_text);
+
+	% Loop through all lines in the .TEXT section.
+	for (i = 1 : size(codeline, 2))
+		word = strsplit(codeline{i}, '[,\s]', 'DelimiterType', 'RegularExpression');
+
+		fprintf('%s\n', codeline{i});
+		% numOfWords = size(word, 2);
+		% for (j = 1 : numOfWords)
+		% 	if (4 > numOfWords)
+		% 		fprintf('\t\t');
+		% 	end
+		% 	fprintf('%10s', word{j});
+		% end
+		% fprintf('\n');
+
+		if (false == isLineInTextSectionValid(word))
+			error('### COMPILATION ERROR: Invalid .TEXT section!! ###');
+		end
+
+		% isTextSectionValid()
+
+	end
+
+	textSection = codeline;
+end
+
+
 function [codeline] = parseSectionToLines(str)
-	% Remove the section keyword.
+	% Remove a section keyword.
 	str = regexprep(str, '(\.CONST\r)|(\.DATA\r)|(\.TEXT\r)', '');
 
 	% Remove empty characters at the end of a string.
@@ -315,6 +321,265 @@ function [valid] = isLineInDataSectionValid(codeline)
 
 	if (true == valid)
 		valid = isValidIdentifier(char(codeline{2}));
+	end
+end
+
+
+% Type of input param is a list.
+function [valid] = isLineInTextSectionValid(codeline)
+	global format_0;
+	global format_1;
+	global format_2;
+	global format_3;
+	valid = true;
+
+	% If there is only one word on a line then it must be either the RET instruction or a destination label.
+	if (1 == size(codeline, 2))
+		if ((false == isValidInstruction(char(codeline{1}))) && (false == isValidDestLabel(char(codeline{1}))))
+			error('### COMPILATION ERROR: Invalid destination label!! ###');
+		end
+
+	% Otherwise it must be an instruction.
+	else
+		% If first word on a line is a label then skip it.
+		if (true == isValidDestLabel(char(codeline{1})))
+			codelineWithoutLable = codeline(2 : size(codeline, 2));
+		else
+			codelineWithoutLable = codeline;
+		end
+
+		valid = isValidInstruction(codelineWithoutLable{1});
+		if (true == valid)
+			if (0 ~= ismember(codelineWithoutLable{1}, format_0))
+				valid = isValidInstructionFormat0(codelineWithoutLable);
+			end
+
+			if (0 ~= ismember(codelineWithoutLable{1}, format_1))
+				valid = isValidInstructionFormat1(codelineWithoutLable);
+			end
+
+			if (0 ~= ismember(codelineWithoutLable{1}, format_2))
+				valid = isValidInstructionFormat2(codelineWithoutLable);
+			end
+
+			if (0 ~= ismember(codelineWithoutLable{1}, format_3))
+				valid = isValidInstructionFormat3(codelineWithoutLable);
+			end
+		else
+			error('### COMPILATION ERROR: Invalid instruction!! ###');
+		end
+	end
+end
+
+
+function [matching] = isSrcLabelMatchingDestLable()
+	matching = true;
+end
+
+
+function [uniqueID] = isIdentifierUnique()
+	global code;
+	uniqueID = true;
+
+	% Compare identifiers in .CONST section against identifiers in .CONST section.
+	for (i = 1 : size(code.const, 2) - 1)
+		for (j = i + 1 : size(code.const, 2))
+			if (true == strcmp(code.const(i).name, code.const(j).name))
+				uniqueID = false;
+				return;
+			end
+		end
+	end
+
+	% Compare identifiers in .CONST section against identifiers in .DATA section.
+	for (i = 1 : size(code.const, 2))
+		for (j = 1 : size(code.data, 2))
+			if (true == strcmp(code.const(i).name, code.data(j).name))
+				uniqueID = false;
+				return;
+			end
+		end
+	end
+
+	% Compare identifiers in .DATA section against identifiers in .DATA section.
+	for (i = 1 : size(code.data, 2) - 1)
+		for (j = i + 1 : size(code.data, 2))
+			if (true == strcmp(code.data(i).name, code.data(j).name))
+				uniqueID = false;
+				return;
+			end
+		end
+	end	
+end
+
+
+% Type of input param is a list.
+function [valid] = isValidInstructionFormat0(codeline)
+	valid = true;
+
+	if (2 ~= size(codeline, 2))
+		valid = false;
+		error('### COMPILATION ERROR: Instruction must contain one operand!! ###');
+	end
+
+	if (false == isValidSrcLabel(char(codeline{2})))
+		valid = false;
+		error('### COMPILATION ERROR: Invalid source label!! ###');
+	end
+end
+
+
+% Type of input param is a list.
+function [valid] = isValidInstructionFormat1(codeline)
+	global valid_registers;
+	valid = true;
+
+	if ('NOT_USED' == char(codeline{1}))
+		valid = false;
+	elseif (3 ~= size(codeline, 2))
+		valid = false;
+	else
+		instruction = codeline{1};
+		operand_1 =   codeline{2};
+		operand_2 =   codeline{3};
+	end
+
+	if ((true == valid) && ('SHIFTI' == char(instruction)))
+		if (0 == ismember(operand_1, valid_registers))
+			valid = false;
+		end
+
+		if (false == isValidNumConst(char(operand_2)))
+			valid = false;
+		else
+			operand_2_val = convertStrToNum(char(operand_2))
+			if ((operand_2_val < -15) || (operand_2_val > 15))
+				valid = false;
+			end
+		end
+
+	% Order of operands in assembly source code and in compiled
+	% binary code is vice versa. The reason is to unify all data
+	% transfer instructions so they have destination operand
+	% on left side.
+	elseif ((true == valid) && ('STOREI' == char(instruction)))
+		if (false == isValidNumConst(char(operand_1)))
+			valid = false;
+		end
+
+		if (false == isValueInValidRange('UINT8', char(operand_1)))
+			valid = false;
+		end
+
+		if (0 == ismember(operand_2, valid_registers))
+			valid = false;
+		end
+
+	elseif ((true == valid) && ('CMPI' == char(instruction)))
+		if (0 == ismember(operand_1, valid_registers))
+			valid = false;
+		end
+	
+		if (false == isValidNumConst(char(operand_2)))
+			valid = false;
+		else
+			operand_2_val = convertStrToNum(char(operand_2))
+			if (false == isValueInValidRange('UINT8', operand_2_val))
+				valid = false;
+			end
+		end
+	end
+end
+
+
+% Type of input param is a list.
+function [valid] = isValidInstructionFormat2(codeline)
+	global valid_registers;
+	valid = true;
+
+	% Instructions have two operands.
+	if (3 ~= size(codeline, 2))
+		valid = false;
+	else
+		instruction = codeline{1};
+		operand_1 =   codeline{2};
+		operand_2 =   codeline{3};
+	end
+
+	if ((true == valid) && (0 == ismember(operand_1, valid_registers)))
+		valid = false;
+	end
+
+	if ((true == valid) && (('ADDI' == char(instruction)) || ('MOVL' == char(instruction))))
+		if (false == isValidNumConst(char(operand_2)))
+			valid = false;
+		else
+			operand_2_val = convertStrToNum(char(operand_2));
+			if (false == isValueInValidRange('INT8', operand_2_val))
+				valid = false;
+			end
+		end
+
+	% All other instructions.
+	elseif (true == valid)
+		if (false == isValidNumConst(char(operand_2)))
+			valid = false;
+		else	
+			operand_2_val = convertStrToNum(char(operand_2));
+			if (false == isValueInValidRange('UINT8', operand_2_val))
+				valid = false;
+			end
+		end
+	end
+end
+
+
+% Type of input param is a list.
+function [valid] = isValidInstructionFormat3(codeline)
+	global valid_registers;
+	valid = true;
+
+	instruction = codeline{1};
+
+	if (strcmp(char(instruction), 'RET'))
+		% Instruction RET does not have any operands.
+		if (1 ~= size(codeline, 2))
+			valid = false;
+			error('### COMPILATION ERROR: Instruction must not have any operands!! ###');
+		end
+
+	elseif (strcmp(char(instruction), 'NOT') || strcmp(char(instruction), 'POP') || strcmp(char(instruction), 'PUSH'))
+		% Instructions have only one operand.
+		if (2 ~= size(codeline, 2))
+			valid = false;
+			error('### COMPILATION ERROR: Instruction must contain one operand!! ###');
+		end
+
+		% Operand must be a register.
+		if ((true == valid) && (0 == ismember(codeline{2}, valid_registers)))
+			valid = false;
+			error('### COMPILATION ERROR: Operand must be a register!! ###');
+		end
+
+	% All other instructions.
+	else
+		% Instructions have two operands.
+		if (3 ~= size(codeline, 2))
+			valid = false;
+			error('### COMPILATION ERROR: Instruction must contain two operands!! ###');
+		end
+
+		% First operand must be a register.
+		if ((true == valid) && (0 == ismember(codeline{2}, valid_registers)))
+			valid = false;
+			error('### COMPILATION ERROR: First operand must be a register!! ###');
+		end
+
+		% Second operand must be a register.
+		if ((true == valid) && (0 == ismember(codeline{3}, valid_registers)))
+			valid = false;
+			error('### COMPILATION ERROR: Second operand must be a register!! ###');
+		end
 	end
 end
 
@@ -468,15 +733,49 @@ function [valid] = isValidStrConst(str)
 end
 
 
-function [valid] = isValidLabel(str)
+function [valid] = isValidSrcLabel(str)
 	global valid_datatypes;
 	global valid_registers;
 	global valid_instructions;
 	valid = true;
 
-	% A data identifier can contain only alphanumerical characters, the underscore character
+	% A source label identifier can contain only alphanumerical characters, the underscore character.
+	foundStr = regexp(str, '^(\w+)$', 'tokens');
+
+	if (0 == size(foundStr))
+		valid = false;
+	else
+		identifier =         foundStr{1}(1);
+		identifierStr = char(foundStr{1}(1));
+
+		% A keyword must not be used as a data identifier!
+		if ((0 < ismember(identifier, valid_datatypes)) || ...
+		    (0 < ismember(identifier, valid_registers)) || ...
+		    (0 < ismember(identifier, valid_instructions)))
+			valid = false;
+		end
+
+		% Name of identifier must not begin with a digit!
+		if (0 < char(regexp(identifierStr, '^\d')))
+			valid = false;
+		end
+	end
+
+	if (false == valid)
+		error('### COMPILATION ERROR: Invalid source label!! ###');
+	end
+end
+
+
+function [valid] = isValidDestLabel(str)
+	global valid_datatypes;
+	global valid_registers;
+	global valid_instructions;
+	valid = true;
+
+	% A destination label identifier can contain only alphanumerical characters, the underscore character
 	% and it must end with the colon character!
-	foundStr = regexp(str, '^(\w+:)$', 'tokens');
+	foundStr = regexp(str, '^(\w+):$', 'tokens');
 
 	if (0 == size(foundStr))
 		valid = false;

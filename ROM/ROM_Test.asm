@@ -3,91 +3,72 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 .CONST
-	UINT8		CONST0		255
-	UINT16		CONST1		768					; Some constant of UINT16 type.
-	STR			BEEF		"DEADBEEF"			; Some string constant.
-	UINT8		CONST2		12
-	INT16		CONST3[4]	0xF26F, 22, 58, -17
-	STR			CONST1 		"123456789ABCDEF"
+	UINT8		CONST0[11b]		255 0xFF 100110b
+	UINT16		CONST1			0xFBBA				; Some constant of UINT16 type.
+	STR			CONST2			"DEADBEEF"			; Some string constant.
+	INT8		CONST3[0x04]	12, 15, 20, 4
+	INT16		CONST4[4]		0x026F, 22, -58, 17
+	STR			CONST5 			"12345"
 
 
 .DATA											; Addresses will be assigned to specified variables.
-	UINT16		VAR1[2]							; Variables can`t be initialized in the .DATA section, only in .TEXT.
-	STR			VAR2
-	UINT16		VAR3[0x0A]
+	UINT8		VAR0							; Variables can`t be initialized in the .DATA section, only in .TEXT.
+	UINT8		VAR2[5]
+	STR			VAR3[4]
 	STR			VAR4
-	UINT8		VAR[0x00]
-	UINT8		INDEX
+	UINT8		VAR5[0x07]
+	UINT16		VAR6[10b]
 
 
 .TEXT
 	START:
-		LOADI	r2		VAR1
-		LOADI	r1		VAR5
-		STOREI	VAR3[4]	r2
-		LOADI	r3		BEEF[INDEX]
-		CALL	FUNC
+		;LOADI		r2			var1
+		;LOADI		r1			VAR5
+		;STOREI		VAR3[4]		r2
+		;LOADI		r3			BEEF[INDEX]
+		;CALL		FUNC
+		;NOT			r0
 
-	LABEL:
-		JMP		LABEL
+	;LABEL:
+		;JMP			LABEL
 
-	FUNC:
-		PUSH	r1
-		PUSH	r2
-		PUSH	r3
-		MOV		r2		r1
-		MOV		r1		r3
-		POP		r3
-		POP		r2
-		POP		r1
+	FUNC1:
+		; Instruction format 3
+		NOT			r1
+		XOR			r0			r7
+		OR			r0			r7
+		AND			r0			r7
+		LOADL		r0			r7
+LABEL:	LOADU		r0			r7
+		CMP			r0			r7
 		RET
+		POP			r2
+		PUSH		r2
+		SHIFT		r0			r7
+		ADD			r0			r7
+		;NOT_USED
+		STOREL		r0			r7
+		STOREU		r0			r7
+		STORE		r0			r7
+		LOAD		r0			r7
+		MOV			r0			r7
 
+		; Instruction format 2
+		;ADDI		r0			-128
+		;MOVU		r0			255
+		;LOADI		r0			BEEF[INDEX]
+		;MOVL		r0			-128
 
-; (done)
-; Source text is parsed to sections (".CONST", ".DATA", ".TEXT").
-;
-; (done)
-; Every section is parsed into lines.
-;
-; Rozdelit sekcie na riadky
-; 	- Kazdy riadok v sekcii .CONST:
-;  		- zacina datatypom
-;   	- dalej nasleduje identifikator
-;   	- konstanta alebo text string
-; 		- CHECK - .CONST nesmie obsahovat instrukcie
-; 
-; Check the .DATA section.
-; 	- Check: Every line in the .DATA section contains exactly two words (datatype and identifier). (done)
-;  	- Check: A datatype is always at first position.
-;   - Check: If datatype is an array (it contains square brackets) then there must be both (opening and closing) brackets.
-; 	- Check: The .DATA section must not contain any instructions.
-;	- Check: Sum of all variables fits into the RAM (sum <= RAM - STACK_SIZE).
-;   - Identifier is stored to the identifier list.
-;
-; 	- Kazdy riadok v sekcii .TEXT:
-;		- zacina s instrukciou
-;		- dalej treba parsovat podla formatu instrukcie
-;
-; Check - If .CONST exists then all constants fit into the constant data ROM.
-; Check - Datatype range.
-; Check - Index range in an array.
-; Check - Usage of uninitialized variable.
-; Check - ROM can`t be written.
-; Check - Constant and variable name can be declared only once.
-; Check - Only defined symbols:
-;         - Register.
-;         - Instruction.
-;         - Constants.
-; Check - Matching quotes.
+		; Instruction format 1
+		;SHIFTI		r0			-15
+		;;NOT_USED
+		;STOREI		BEEF[INDEX]	r0
+		;CMPI		r0			255
 
-; Memory manipulation and alignment:
-; - INT16/UINT16
-;   - Always aligned.
-;   - Can be manipulated with LOAD/STORE/LOADI/STOREI.
-;   - 
-;
-; - INT8/UINT8:
-;   - Variable name must contain also information about position of the variable in a memory word.
-;   - Based on position correct LOADL/LOADU/STOREL/STOREU (+ new LOADIL/LOADIU/STOREIL/STOREIU) instruction 
-;     will be automatically selected by assembler. Number of GP registers must be decreased to 8.
+		; Instruction format 0
+FUNC2:	JLT			LABEL
+		JPE			FUNC
+		CALL		START
+		JMP			FUNC
+
 

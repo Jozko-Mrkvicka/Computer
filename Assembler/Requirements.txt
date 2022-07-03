@@ -1,8 +1,9 @@
 ====================
 General requirements
 ====================
-- Constant and variable identifiers must be unique. (DONE)
 - Labels can be declared only once. (!!!)
+- Every source label must match at least one destination label. (!!!)
+- Constant and variable identifiers must be unique. (DONE)
 - All comments are deleted from source code. (DONE)
 - Source code contains the following sections:
 	- .CONST (optional) (DONE)
@@ -68,9 +69,9 @@ Requirements for datatype range
 - A value of INT16  type is in range <-32768 .. +32767>. (DONE)
 
 
-==============================
-Requirements for .DATA section
-==============================
+=======================================================
+Requirements for the .DATA section checking and parsing
+=======================================================
 - Every line must contain exactly two words in the following order: datatype, identifier. (DONE)
 - Sum of all variables must fit into the RAM (sum <= RAM_SIZE - STACK_SIZE). (DONE)
 - A variable is stored in a list of structures with the following members:
@@ -80,9 +81,9 @@ Requirements for .DATA section
 	- Address (DONE)
 
 
-===============================
-Requirements for .CONST section
-===============================
+========================================================
+Requirements for the .CONST section checking and parsing
+========================================================
 - Every line must contain at least three words in the following order: datatype, identifier, value. (DONE)
 - Sum of all constants must fit into the constant data ROM. (DONE)
 - A constant is stored in a list of structures with the following members:
@@ -100,18 +101,53 @@ Requirements for .CONST section
 - Constrain: Array constants can be written only on single line. Splitting to multiple lines is not allowed. This rule is there to keep the Assembler as simple as possible.
 
 
-==============================
-Requirements for .TEXT section
-==============================
-- Source labels always match destination labels. (!!!)
-;   	- Check: If data is an array (it contains square brackets) then there must be both (opening and closing) brackets.
-;		- zacina s instrukciou
-;		- dalej treba parsovat podla formatu instrukcie
-; 		- Check: Index range in an array.
-; 		- Check: Usage of uninitialized variable.
-; 		- Check: ROM can`t be written.
-; 		- Check: Section .TEXT contains only defined symbols (register, instruction, constants, labels).
-;
+=======================================================
+Requirements for the .TEXT section checking and parsing
+=======================================================
+- Every line begins either with a label or with an instruction. (DONE)
+- A destination label can be standalone on separate line or it can be placed at the begining of a line before an instruction identifier. (DONE)
+- All labels and their addresses will be stored in a list. (!!!)
+- Section .TEXT contains only defined symbols:
+	- Instructions (!!!)
+	- Registers (!!!)
+	- Constants (!!!)
+	- Variables (!!!)
+	- Labels (!!!)
+- The rest of a line is parsed based on the instruction format. (!!!)
+- An instruction is stored in a list of structures with the following members:
+	- 
+	-
+	-
+- An array index must be inside of range of declared constant or variable array. (!!!)
+- The data ROM memory can`t be written. (!!!)
+- An immediate operand must be checked if it fits to an instructin format. (!!!)
+
+
+=========================================
+Requirements for the instruction format 0
+=========================================
+- A source lable must be a symbolic constant. No immediate values are allowed. (DONE)
+- A value (address) of a lable must fit into allowable address range (12 bits). (!!!)
+
+
+=========================================
+Requirements for the instruction format 1
+=========================================
+
+
+=========================================
+Requirements for the instruction format 2
+=========================================
+
+
+=========================================
+Requirements for the instruction format 3
+=========================================
+
+
+============================
+Requirements for compilation
+============================
 ; Memory manipulation and alignment:
 ; - INT16/UINT16
 ;   - Always aligned.
