@@ -12,7 +12,7 @@
 
 
 .DATA											; Addresses will be assigned to specified variables.
-	UINT8		VAR0							; Variables can`t be initialized in the .DATA section, only in .TEXT.
+	UINT8		INDEX							; Variables can`t be initialized in the .DATA section, only in .TEXT.
 	UINT8		VAR2[5]
 	STR			VAR3[4]
 	STR			VAR4
@@ -22,24 +22,13 @@
 
 .TEXT
 	START:
-		;LOADI		r2			var1
-		;LOADI		r1			VAR5
-		;STOREI		VAR3[4]		r2
-		;LOADI		r3			BEEF[INDEX]
-		;CALL		FUNC
-		;NOT			r0
-
-	;LABEL:
-		;JMP			LABEL
-
-	FUNC1:
 		; Instruction format 3
 		NOT			r1
 		XOR			r0			r7
 		OR			r0			r7
 		AND			r0			r7
-		LOADL		r0			r7
-LABEL:	LOADU		r0			r7
+		LOADL		r0			r7				;
+LABEL:	LOADU		r0			r7				;
 		CMP			r0			r7
 		RET
 		POP			r2
@@ -50,23 +39,25 @@ LABEL:	LOADU		r0			r7
 		STOREL		r0			r7
 		STOREU		r0			r7
 		STORE		r0			r7
-		LOAD		r0			r7
+		LOAD		r0			r7				; 
 		MOV			r0			r7
 
 		; Instruction format 2
-		;ADDI		r0			-128
-		;MOVU		r0			255
-		;LOADI		r0			BEEF[INDEX]
-		;MOVL		r0			-128
+		ADDI		r0			-128			; Immediate value only.
+		MOVU		r0			127				; Immediate value only.
+		LOADI		r0			255				; Load a value from an absolute memory address.
+		LOADI		r0			VAR2			; Load a value from the memory at address VAR2.
+		MOVL		r0			-128			; Immediate value only.
 
 		; Instruction format 1
-		;SHIFTI		r0			-15
-		;;NOT_USED
-		;STOREI		BEEF[INDEX]	r0
-		;CMPI		r0			255
+		SHIFTI		r0			-15
+		;NOT_USED
+		STOREI		255			r0
+		STOREI		VAR2		r0
+		CMPI		r0			-128
 
 		; Instruction format 0
-FUNC2:	JLT			LABEL
+FUNC:	JLT			LABEL
 		JPE			FUNC
 		CALL		START
 		JMP			FUNC

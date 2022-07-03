@@ -46,7 +46,7 @@ Requirements for a numerical constant
 ==================================
 Requirements for a string constant
 ==================================
-- Encaptulated in double quotes. (DONE)
+- Encapsulated in double quotes. (DONE)
 - A valid string can contain only characters which are available in the character table in ROM. (DONE)
 - The NULL character is automatically added at the end of a string (in the .CONST section). (DONE)
 
@@ -105,7 +105,8 @@ Requirements for the .CONST section checking and parsing
 Requirements for the .TEXT section checking and parsing
 =======================================================
 - Every line begins either with a label or with an instruction. (DONE)
-- A destination label can be standalone on separate line or it can be placed at the begining of a line before an instruction identifier. (DONE)
+- A destination label can be standalone on separate line or it can be placed at the beginning of a line before an instruction identifier. (DONE)
+
 - All labels and their addresses will be stored in a list. (!!!)
 - Section .TEXT contains only defined symbols:
 	- Instructions (!!!)
@@ -120,14 +121,14 @@ Requirements for the .TEXT section checking and parsing
 	-
 - An array index must be inside of range of declared constant or variable array. (!!!)
 - The data ROM memory can`t be written. (!!!)
-- An immediate operand must be checked if it fits to an instructin format. (!!!)
+- An immediate operand must be checked if it fits to an instruction format. (!!!)
 
 
 =========================================
 Requirements for the instruction format 0
 =========================================
-- A source lable must be a symbolic constant. No immediate values are allowed. (DONE)
-- A value (address) of a lable must fit into allowable address range (12 bits). (!!!)
+- A source label must be a symbolic constant. No immediate values are allowed. (DONE)
+- A value (address) of a label must fit into allowable address range (12 bits). (!!!)
 
 
 =========================================
@@ -138,11 +139,14 @@ Requirements for the instruction format 1
 =========================================
 Requirements for the instruction format 2
 =========================================
+- First operand is always a register.
+- Second operand is either numeric constant or a data/const identifier.
 
 
 =========================================
 Requirements for the instruction format 3
 =========================================
+- Each instruction has exactly two register operands. (DONE)
 
 
 ============================

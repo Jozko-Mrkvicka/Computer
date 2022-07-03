@@ -434,27 +434,31 @@ function [valid] = isValidInstructionFormat1(codeline)
 	global valid_registers;
 	valid = true;
 
-	if ('NOT_USED' == char(codeline{1}))
+	if strcmp('NOT_USED', char(codeline{1}))
 		valid = false;
 	elseif (3 ~= size(codeline, 2))
 		valid = false;
+		error('### COMPILATION ERROR: Instruction must have two operands!! ###');
 	else
 		instruction = codeline{1};
 		operand_1 =   codeline{2};
 		operand_2 =   codeline{3};
 	end
 
-	if ((true == valid) && ('SHIFTI' == char(instruction)))
+	if ((true == valid) && strcmp('SHIFTI', char(instruction)))
 		if (0 == ismember(operand_1, valid_registers))
 			valid = false;
+			error('### COMPILATION ERROR: First operand must be a register!! ###');
 		end
 
 		if (false == isValidNumConst(char(operand_2)))
 			valid = false;
+			error('### COMPILATION ERROR: Second operand must be a numeric constant!! ###');
 		else
-			operand_2_val = convertStrToNum(char(operand_2))
+			operand_2_val = convertStrToNum(char(operand_2));
 			if ((operand_2_val < -15) || (operand_2_val > 15))
 				valid = false;
+				error('### COMPILATION ERROR: A value of the second operand must be in range <-15, +15>!! ###');
 			end
 		end
 
@@ -462,29 +466,38 @@ function [valid] = isValidInstructionFormat1(codeline)
 	% binary code is vice versa. The reason is to unify all data
 	% transfer instructions so they have destination operand
 	% on left side.
-	elseif ((true == valid) && ('STOREI' == char(instruction)))
-		if (false == isValidNumConst(char(operand_1)))
+	elseif ((true == valid) && strcmp('STOREI', char(instruction)))
+		% First operand can be either numeric constant or a data/const identifier.
+		if ((false == isValidNumConst(char(operand_1))) && (false == isValidIdentifier_NoArray(char(operand_1))))
 			valid = false;
-		end
-
-		if (false == isValueInValidRange('UINT8', char(operand_1)))
-			valid = false;
+			error('### COMPILATION ERROR: Incorrect first operand!! ###');
+		else
+			if (true == isValidNumConst(char(operand_1)))
+				operand_1_val = convertStrToNum(char(operand_1));
+				if (false == isValueInValidRange('UINT8', operand_1_val))
+					valid = false;
+					error('### COMPILATION ERROR: First operand is not a UINT8 value!! ###');
+				end
+			end
 		end
 
 		if (0 == ismember(operand_2, valid_registers))
 			valid = false;
+			error('### COMPILATION ERROR: Second operand must be a register!! ###');
 		end
 
-	elseif ((true == valid) && ('CMPI' == char(instruction)))
+	elseif ((true == valid) && strcmp('CMPI', char(instruction)))
 		if (0 == ismember(operand_1, valid_registers))
 			valid = false;
+			error('### COMPILATION ERROR: First operand must be a register!! ###');
 		end
 	
 		if (false == isValidNumConst(char(operand_2)))
 			valid = false;
+			error('### COMPILATION ERROR: Second operand must be a numeric constant!! ###');
 		else
-			operand_2_val = convertStrToNum(char(operand_2))
-			if (false == isValueInValidRange('UINT8', operand_2_val))
+			operand_2_val = convertStrToNum(char(operand_2));
+			if (false == isValueInValidRange('INT8', operand_2_val))
 				valid = false;
 			end
 		end
@@ -500,6 +513,7 @@ function [valid] = isValidInstructionFormat2(codeline)
 	% Instructions have two operands.
 	if (3 ~= size(codeline, 2))
 		valid = false;
+		error('### COMPILATION ERROR: Instruction must have two operands!! ###');
 	else
 		instruction = codeline{1};
 		operand_1 =   codeline{2};
@@ -508,26 +522,34 @@ function [valid] = isValidInstructionFormat2(codeline)
 
 	if ((true == valid) && (0 == ismember(operand_1, valid_registers)))
 		valid = false;
+		error('### COMPILATION ERROR: First operand must be a register!! ###');
 	end
 
-	if ((true == valid) && (('ADDI' == char(instruction)) || ('MOVL' == char(instruction))))
+	if ((true == valid) && (strcmp('ADDI', char(instruction)) || strcmp('MOVL', char(instruction))))
 		if (false == isValidNumConst(char(operand_2)))
 			valid = false;
+			error('### COMPILATION ERROR: Second operand must be a numeric constant!! ###');
 		else
 			operand_2_val = convertStrToNum(char(operand_2));
 			if (false == isValueInValidRange('INT8', operand_2_val))
 				valid = false;
+				error('### COMPILATION ERROR: Second operand is not an INT8 value!! ###');
 			end
 		end
 
 	% All other instructions.
 	elseif (true == valid)
-		if (false == isValidNumConst(char(operand_2)))
+		% Second operand can be either numeric constant or a data/const identifier.
+		if ((false == isValidNumConst(char(operand_2))) && (false == isValidIdentifier_NoArray(char(operand_2))))
 			valid = false;
+			error('### COMPILATION ERROR: Incorrect second operand!! ###');
 		else	
-			operand_2_val = convertStrToNum(char(operand_2));
-			if (false == isValueInValidRange('UINT8', operand_2_val))
-				valid = false;
+			if (true == isValidNumConst(char(operand_2)))
+				operand_2_val = convertStrToNum(char(operand_2));
+				if (false == isValueInValidRange('UINT8', operand_2_val))
+					valid = false;
+					error('### COMPILATION ERROR: Second operand is not a UINT8 value!! ###');
+				end
 			end
 		end
 	end
@@ -638,6 +660,12 @@ function [valid] = isValidIdentifier(str)
 end
 
 
+% Requirements for a source label and for a data/const identifier are the same.
+function [valid] = isValidIdentifier_NoArray(str)
+	valid = isValidSrcLabel(str);
+end
+
+
 function [valid] = isValidDatatype(str)
 	global valid_datatypes;
 
@@ -739,7 +767,7 @@ function [valid] = isValidSrcLabel(str)
 	global valid_instructions;
 	valid = true;
 
-	% A source label identifier can contain only alphanumerical characters, the underscore character.
+	% A source label identifier can contain only alphanumerical characters and the underscore character.
 	foundStr = regexp(str, '^(\w+)$', 'tokens');
 
 	if (0 == size(foundStr))
@@ -759,10 +787,6 @@ function [valid] = isValidSrcLabel(str)
 		if (0 < char(regexp(identifierStr, '^\d')))
 			valid = false;
 		end
-	end
-
-	if (false == valid)
-		error('### COMPILATION ERROR: Invalid source label!! ###');
 	end
 end
 
