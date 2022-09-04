@@ -45,7 +45,7 @@ Library {
 	LoadSaveID		"2917"
 	Extents			[1824.0, 929.0]
 	ZoomFactor		[1.15]
-	Offset			[-567.25618940420441, -48.710697408102618]
+	Offset			[-314.52458469646263, 194.26507327107885]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Sep 04 14:57:30 2022"
-  RTWModifiedTimeStamp	  584204242
-  ModelVersionFormat	  "1.%<AutoIncrement:160>"
+  LastModifiedDate	  "Sun Sep 04 16:31:54 2022"
+  RTWModifiedTimeStamp	  584209910
+  ModelVersionFormat	  "1.%<AutoIncrement:163>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -755,6 +755,12 @@ Library {
       OutputAsBus	      off
     }
     Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
       BlockType		      Inport
       Port		      "1"
       OutputFunctionCall      off
@@ -858,7 +864,7 @@ Library {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "4807"
+    SIDHighWatermark	    "4812"
     Block {
       BlockType		      SubSystem
       Name		      "Decoders_Lib"
@@ -882,7 +888,7 @@ Library {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "Decoder_2_to_4"
@@ -1156,7 +1162,7 @@ Library {
 	  BlockType		  SubSystem
 	  Name			  "Decoder_4_to_16"
 	  SID			  "2917"
-	  Ports			  [1, 16]
+	  Ports			  [4, 16]
 	  Position		  [70, 177, 210, 418]
 	  ZOrder		  6826
 	  TreatAsAtomicUnit	  on
@@ -1179,10 +1185,37 @@ Library {
 	    ZoomFactor		    "115"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Addr(1B)"
+	      Name		      "Addr_3(1b)"
 	      SID		      "4802"
-	      Position		      [-95, 233, -65, 247]
+	      Position		      [0, 263, 30, 277]
 	      ZOrder		      9330
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_2(1b)"
+	      SID		      "4810"
+	      Position		      [0, 328, 30, 342]
+	      ZOrder		      9337
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_1(1b)"
+	      SID		      "4811"
+	      Position		      [0, 393, 30, 407]
+	      ZOrder		      9338
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Addr_0(1b)"
+	      SID		      "4812"
+	      Position		      [0, 458, 30, 472]
+	      ZOrder		      9339
+	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -1446,96 +1479,6 @@ Library {
 	      OutDataTypeStr	      "boolean"
 	    }
 	    Block {
-	      BlockType		      Terminator
-	      Name		      "Terminator"
-	      SID		      "4803"
-	      Position		      [165, 0, 185, 20]
-	      ZOrder		      9331
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "Terminator1"
-	      SID		      "4804"
-	      Position		      [165, 65, 185, 85]
-	      ZOrder		      9333
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "Terminator2"
-	      SID		      "4805"
-	      Position		      [165, 130, 185, 150]
-	      ZOrder		      9334
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      Terminator
-	      Name		      "Terminator3"
-	      SID		      "4806"
-	      Position		      [165, 195, 185, 215]
-	      ZOrder		      9335
-	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      BusSelector
-	      Name		      "xyz1"
-	      SID		      "4807"
-	      Ports		      [1, 8]
-	      Position		      [10, -15, 30, 490]
-	      ZOrder		      9332
-	      ShowName		      off
-	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
-	      Port {
-		PortNumber		1
-		Name			"<signal1>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"<signal2>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"<signal3>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"<signal4>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"<signal5>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"<signal6>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"<signal7>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"<signal8>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	    }
-	    Block {
 	      BlockType		      Outport
 	      Name		      "Select_15(1b)"
 	      SID		      "2943"
@@ -1750,14 +1693,18 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal8>"
-	      ZOrder		      374
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      8
+	      ZOrder		      396
+	      SrcBlock		      "Addr_0(1b)"
+	      SrcPort		      1
 	      Points		      [55, 0]
 	      Branch {
-		ZOrder			17
+		ZOrder			403
+		Points			[0, 30]
+		DstBlock		"Logical\nOperator23"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			399
 		Points			[376, 0]
 		Branch {
 		  ZOrder		  179
@@ -1824,12 +1771,6 @@ Library {
 		    }
 		  }
 		}
-	      }
-	      Branch {
-		ZOrder			32
-		Points			[0, 30]
-		DstBlock		"Logical\nOperator23"
-		DstPort			1
 	      }
 	    }
 	    Line {
@@ -1975,20 +1916,18 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal5>"
-	      ZOrder		      377
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      5
+	      ZOrder		      392
+	      SrcBlock		      "Addr_3(1b)"
+	      SrcPort		      1
 	      Points		      [56, 0]
 	      Branch {
-		ZOrder			378
+		ZOrder			405
 		Points			[0, 25]
 		DstBlock		"Lo`gical\nOperator4"
 		DstPort			1
 	      }
 	      Branch {
-		ZOrder			65
+		ZOrder			398
 		Points			[423, 0; 0, 165]
 		Branch {
 		  ZOrder		  176
@@ -2058,11 +1997,9 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal7>"
-	      ZOrder		      375
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      7
+	      ZOrder		      400
+	      SrcBlock		      "Addr_1(1b)"
+	      SrcPort		      1
 	      Points		      [54, 0]
 	      Branch {
 		ZOrder			81
@@ -2141,14 +2078,18 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal6>"
-	      ZOrder		      376
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      6
+	      ZOrder		      393
+	      SrcBlock		      "Addr_2(1b)"
+	      SrcPort		      1
 	      Points		      [56, 0]
 	      Branch {
-		ZOrder			98
+		ZOrder			404
+		Points			[0, 30]
+		DstBlock		"Logical\nOperator5"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			397
 		Points			[406, 0; 0, 110]
 		Branch {
 		  ZOrder		  177
@@ -2215,12 +2156,6 @@ Library {
 		    }
 		  }
 		}
-	      }
-	      Branch {
-		ZOrder			113
-		Points			[0, 30]
-		DstBlock		"Logical\nOperator5"
-		DstPort			1
 	      }
 	    }
 	    Line {
@@ -2406,53 +2341,6 @@ Library {
 	      DstBlock		      "Select_15(1b)"
 	      DstPort		      1
 	    }
-	    Line {
-	      FontName		      "Helvetica"
-	      FontSize		      9
-	      FontWeight	      "normal"
-	      FontAngle		      "normal"
-	      ZOrder		      369
-	      SrcBlock		      "Addr(1B)"
-	      SrcPort		      1
-	      DstBlock		      "xyz1"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "<signal1>"
-	      ZOrder		      370
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      1
-	      DstBlock		      "Terminator"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "<signal2>"
-	      ZOrder		      371
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      2
-	      DstBlock		      "Terminator1"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "<signal3>"
-	      ZOrder		      372
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      3
-	      DstBlock		      "Terminator2"
-	      DstPort		      1
-	    }
-	    Line {
-	      Name		      "<signal4>"
-	      ZOrder		      373
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
-	      SrcPort		      4
-	      DstBlock		      "Terminator3"
-	      DstPort		      1
-	    }
 	  }
 	}
 	Block {
@@ -2487,6 +2375,17 @@ Library {
 	      Position		      [-95, 238, -65, 252]
 	      ZOrder		      9324
 	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Demux
+	      Name		      "Demux"
+	      SID		      "4809"
+	      Ports		      [1, 8]
+	      Position		      [20, -10, 40, 495]
+	      ZOrder		      9330
+	      ShowName		      off
+	      Outputs		      "8"
+	      DisplayOption	      "bar"
 	    }
 	    Block {
 	      BlockType		      Logic
@@ -2992,64 +2891,6 @@ Library {
 	      Position		      [165, 135, 185, 155]
 	      ZOrder		      9328
 	      ShowName		      off
-	    }
-	    Block {
-	      BlockType		      BusSelector
-	      Name		      "xyz1"
-	      SID		      "4795"
-	      Ports		      [1, 8]
-	      Position		      [20, -10, 40, 495]
-	      ZOrder		      9326
-	      ShowName		      off
-	      OutputSignals	      "signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8"
-	      Port {
-		PortNumber		1
-		Name			"<signal1>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		2
-		Name			"<signal2>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		3
-		Name			"<signal3>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		4
-		Name			"<signal4>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		5
-		Name			"<signal5>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		6
-		Name			"<signal6>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		7
-		Name			"<signal7>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
-	      Port {
-		PortNumber		8
-		Name			"<signal8>"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -3594,10 +3435,8 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal8>"
-	      ZOrder		      963
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      978
+	      SrcBlock		      "Demux"
 	      SrcPort		      8
 	      Points		      [45, 0]
 	      Branch {
@@ -4035,10 +3874,8 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal5>"
-	      ZOrder		      967
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      979
+	      SrcBlock		      "Demux"
 	      SrcPort		      5
 	      Points		      [46, 0]
 	      Branch {
@@ -4190,10 +4027,8 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal7>"
-	      ZOrder		      964
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      977
+	      SrcBlock		      "Demux"
 	      SrcPort		      7
 	      Points		      [44, 0]
 	      Branch {
@@ -4345,10 +4180,8 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal6>"
-	      ZOrder		      965
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      975
+	      SrcBlock		      "Demux"
 	      SrcPort		      6
 	      Points		      [46, 0]
 	      Branch {
@@ -4898,10 +4731,8 @@ Library {
 	      }
 	    }
 	    Line {
-	      Name		      "<signal4>"
-	      ZOrder		      968
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      976
+	      SrcBlock		      "Demux"
 	      SrcPort		      4
 	      Points		      [48, 0]
 	      Branch {
@@ -5057,35 +4888,29 @@ Library {
 	      FontSize		      9
 	      FontWeight	      "normal"
 	      FontAngle		      "normal"
-	      ZOrder		      959
+	      ZOrder		      971
 	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
-	      DstBlock		      "xyz1"
+	      DstBlock		      "Demux"
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "<signal1>"
-	      ZOrder		      960
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      972
+	      SrcBlock		      "Demux"
 	      SrcPort		      1
 	      DstBlock		      "Terminator"
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "<signal2>"
-	      ZOrder		      961
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      973
+	      SrcBlock		      "Demux"
 	      SrcPort		      2
 	      DstBlock		      "Terminator1"
 	      DstPort		      1
 	    }
 	    Line {
-	      Name		      "<signal3>"
-	      ZOrder		      962
-	      Labels		      [0, 0]
-	      SrcBlock		      "xyz1"
+	      ZOrder		      974
+	      SrcBlock		      "Demux"
 	      SrcPort		      3
 	      DstBlock		      "Terminator2"
 	      DstPort		      1
