@@ -1,5 +1,5 @@
 Model {
-  Name			  "Test_Word_Multiplexer_16_to_1"
+  Name			  "Test_Word_Multiplexer_16_to_1_DirSel"
   Version		  8.7
   MdlSubVersion		  1
   SavedCharacterEncoding  "windows-1250"
@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.113"
+    ComputedModelVersion    "1.115"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -20,7 +20,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "Test_Word_Multiplexer_16_to_1"
+      Cell		      "Test_Word_Multiplexer_16_to_1_DirSel"
       PropName		      "mdlProps"
     }
   }
@@ -68,8 +68,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1185.0, 905.0]
-	ZoomFactor		[1.0]
-	Offset			[886.34295890235194, 725.13560753317483]
+	ZoomFactor		[1.004581901489118]
+	Offset			[812.70239452679584, 663.06385404789057]
       }
     }
   }
@@ -79,9 +79,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 06 21:07:17 2023"
-  RTWModifiedTimeStamp	  605308020
-  ModelVersionFormat	  "1.%<AutoIncrement:113>"
+  LastModifiedDate	  "Sat May 06 21:08:28 2023"
+  RTWModifiedTimeStamp	  605308105
+  ModelVersionFormat	  "1.%<AutoIncrement:115>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -869,7 +869,7 @@ Model {
     }
   }
   System {
-    Name		    "Test_Word_Multiplexer_16_to_1"
+    Name		    "Test_Word_Multiplexer_16_to_1_DirSel"
     Location		    [451, 0, 1686, 1080]
     Open		    on
     ModelBrowserVisibility  off
@@ -884,12 +884,12 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "542"
+    SIDHighWatermark	    "543"
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion1"
       SID		      "500"
-      Position		      [1130, 1483, 1170, 1507]
+      Position		      [1130, 1473, 1170, 1497]
       ZOrder		      9283
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -900,7 +900,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion10"
       SID		      "508"
-      Position		      [1130, 1163, 1170, 1187]
+      Position		      [1130, 1153, 1170, 1177]
       ZOrder		      9291
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -911,7 +911,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion11"
       SID		      "499"
-      Position		      [1130, 1523, 1170, 1547]
+      Position		      [1130, 1513, 1170, 1537]
       ZOrder		      9282
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -922,7 +922,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion12"
       SID		      "509"
-      Position		      [1130, 1123, 1170, 1147]
+      Position		      [1130, 1113, 1170, 1137]
       ZOrder		      9292
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -933,7 +933,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion13"
       SID		      "510"
-      Position		      [1130, 1083, 1170, 1107]
+      Position		      [1130, 1073, 1170, 1097]
       ZOrder		      9293
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -944,7 +944,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion14"
       SID		      "511"
-      Position		      [1130, 1043, 1170, 1067]
+      Position		      [1130, 1033, 1170, 1057]
       ZOrder		      9294
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -955,7 +955,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion15"
       SID		      "512"
-      Position		      [1130, 1003, 1170, 1027]
+      Position		      [1130, 993, 1170, 1017]
       ZOrder		      9295
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -966,7 +966,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion16"
       SID		      "513"
-      Position		      [1130, 963, 1170, 987]
+      Position		      [1130, 953, 1170, 977]
       ZOrder		      9296
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -977,7 +977,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion17"
       SID		      "514"
-      Position		      [1130, 923, 1170, 947]
+      Position		      [1130, 913, 1170, 937]
       ZOrder		      9297
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -988,7 +988,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion2"
       SID		      "501"
-      Position		      [1130, 1443, 1170, 1467]
+      Position		      [1130, 1433, 1170, 1457]
       ZOrder		      9284
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -999,7 +999,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion3"
       SID		      "502"
-      Position		      [1130, 1403, 1170, 1427]
+      Position		      [1130, 1393, 1170, 1417]
       ZOrder		      9285
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -1010,10 +1010,10 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion4"
       SID		      "402"
-      Position		      [1130, 878, 1170, 902]
+      Position		      [1130, 788, 1170, 812]
       ZOrder		      692
       ShowName		      off
-      OutDataTypeStr	      "uint8"
+      OutDataTypeStr	      "uint16"
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	off
     }
@@ -1021,7 +1021,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion5"
       SID		      "503"
-      Position		      [1130, 1363, 1170, 1387]
+      Position		      [1130, 1353, 1170, 1377]
       ZOrder		      9286
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -1032,7 +1032,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion6"
       SID		      "504"
-      Position		      [1130, 1323, 1170, 1347]
+      Position		      [1130, 1313, 1170, 1337]
       ZOrder		      9287
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -1043,7 +1043,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion7"
       SID		      "505"
-      Position		      [1130, 1283, 1170, 1307]
+      Position		      [1130, 1273, 1170, 1297]
       ZOrder		      9288
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -1054,7 +1054,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion8"
       SID		      "506"
-      Position		      [1130, 1243, 1170, 1267]
+      Position		      [1130, 1233, 1170, 1257]
       ZOrder		      9289
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -1065,7 +1065,7 @@ Model {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion9"
       SID		      "507"
-      Position		      [1130, 1203, 1170, 1227]
+      Position		      [1130, 1193, 1170, 1217]
       ZOrder		      9290
       ShowName		      off
       OutDataTypeStr	      "uint16"
@@ -1076,17 +1076,18 @@ Model {
       BlockType		      Demux
       Name		      "Demux8"
       SID		      "353"
-      Ports		      [1, 4]
-      Position		      [1410, 860, 1425, 915]
+      Ports		      [1, 16]
+      Position		      [1430, 677, 1445, 918]
       ZOrder		      634
       ShowName		      off
+      Outputs		      "16"
       DisplayOption	      "bar"
     }
     Block {
       BlockType		      FromWorkspace
       Name		      "From\nWorkspace"
       SID		      "404"
-      Position		      [945, 877, 1020, 903]
+      Position		      [945, 787, 1020, 813]
       ZOrder		      693
       VariableName	      "Input_Vect"
       SampleTime	      "1"
@@ -1098,23 +1099,35 @@ Model {
       Name		      "Integer to Bit\nConverter5"
       SID		      "249"
       Ports		      [1, 1]
-      Position		      [1300, 868, 1380, 912]
+      Position		      [1195, 778, 1275, 822]
       ZOrder		      538
       ShowName		      off
       LibraryVersion	      "1.278"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
       SourceType	      "Integer to Bit Converter"
-      nbits		      "4"
+      nbits		      "16"
       signedInputValues	      "Unsigned"
       bitOrder		      "MSB first"
       outDtype		      "boolean"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      SID		      "543"
+      Ports		      [32, 1]
+      Position		      [1505, 678, 1655, 1157]
+      ZOrder		      9325
+      LibraryVersion	      "1.336"
+      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      SourceType	      "SubSystem"
+      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Selector
       Name		      "Selector19"
       SID		      "449"
       Ports		      [1, 1]
-      Position		      [1060, 996, 1100, 1034]
+      Position		      [1060, 986, 1100, 1024]
       ZOrder		      734
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1128,7 +1141,7 @@ Model {
       Name		      "Selector20"
       SID		      "450"
       Ports		      [1, 1]
-      Position		      [1060, 1036, 1100, 1074]
+      Position		      [1060, 1026, 1100, 1064]
       ZOrder		      736
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1142,7 +1155,7 @@ Model {
       Name		      "Selector21"
       SID		      "451"
       Ports		      [1, 1]
-      Position		      [1060, 1076, 1100, 1114]
+      Position		      [1060, 1066, 1100, 1104]
       ZOrder		      738
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1156,7 +1169,7 @@ Model {
       Name		      "Selector22"
       SID		      "452"
       Ports		      [1, 1]
-      Position		      [1060, 1116, 1100, 1154]
+      Position		      [1060, 1106, 1100, 1144]
       ZOrder		      740
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1170,7 +1183,7 @@ Model {
       Name		      "Selector23"
       SID		      "453"
       Ports		      [1, 1]
-      Position		      [1060, 1156, 1100, 1194]
+      Position		      [1060, 1146, 1100, 1184]
       ZOrder		      742
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1184,7 +1197,7 @@ Model {
       Name		      "Selector24"
       SID		      "454"
       Ports		      [1, 1]
-      Position		      [1060, 1196, 1100, 1234]
+      Position		      [1060, 1186, 1100, 1224]
       ZOrder		      744
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1198,7 +1211,7 @@ Model {
       Name		      "Selector25"
       SID		      "455"
       Ports		      [1, 1]
-      Position		      [1060, 916, 1100, 954]
+      Position		      [1060, 906, 1100, 944]
       ZOrder		      730
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1212,7 +1225,7 @@ Model {
       Name		      "Selector26"
       SID		      "464"
       Ports		      [1, 1]
-      Position		      [1060, 1316, 1100, 1354]
+      Position		      [1060, 1306, 1100, 1344]
       ZOrder		      750
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1226,7 +1239,7 @@ Model {
       Name		      "Selector27"
       SID		      "465"
       Ports		      [1, 1]
-      Position		      [1060, 1356, 1100, 1394]
+      Position		      [1060, 1346, 1100, 1384]
       ZOrder		      752
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1240,7 +1253,7 @@ Model {
       Name		      "Selector28"
       SID		      "466"
       Ports		      [1, 1]
-      Position		      [1060, 1396, 1100, 1434]
+      Position		      [1060, 1386, 1100, 1424]
       ZOrder		      754
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1254,7 +1267,7 @@ Model {
       Name		      "Selector29"
       SID		      "467"
       Ports		      [1, 1]
-      Position		      [1060, 1436, 1100, 1474]
+      Position		      [1060, 1426, 1100, 1464]
       ZOrder		      756
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1268,7 +1281,7 @@ Model {
       Name		      "Selector30"
       SID		      "468"
       Ports		      [1, 1]
-      Position		      [1060, 1476, 1100, 1514]
+      Position		      [1060, 1466, 1100, 1504]
       ZOrder		      758
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1282,7 +1295,7 @@ Model {
       Name		      "Selector31"
       SID		      "469"
       Ports		      [1, 1]
-      Position		      [1060, 1516, 1100, 1554]
+      Position		      [1060, 1506, 1100, 1544]
       ZOrder		      760
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1296,7 +1309,7 @@ Model {
       Name		      "Selector32"
       SID		      "470"
       Ports		      [1, 1]
-      Position		      [1060, 1236, 1100, 1274]
+      Position		      [1060, 1226, 1100, 1264]
       ZOrder		      746
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1310,7 +1323,7 @@ Model {
       Name		      "Selector33"
       SID		      "471"
       Ports		      [1, 1]
-      Position		      [1060, 1276, 1100, 1314]
+      Position		      [1060, 1266, 1100, 1304]
       ZOrder		      748
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1324,7 +1337,7 @@ Model {
       Name		      "Selector4"
       SID		      "406"
       Ports		      [1, 1]
-      Position		      [1060, 871, 1100, 909]
+      Position		      [1060, 781, 1100, 819]
       ZOrder		      695
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1339,7 +1352,7 @@ Model {
       Name		      "Selector5"
       SID		      "448"
       Ports		      [1, 1]
-      Position		      [1060, 956, 1100, 994]
+      Position		      [1060, 946, 1100, 984]
       ZOrder		      732
       ShowName		      off
       IndexMode		      "Zero-based"
@@ -1353,7 +1366,7 @@ Model {
       Name		      "To Workspace"
       SID		      "395"
       Ports		      [1]
-      Position		      [1785, 995, 1855, 1025]
+      Position		      [1795, 905, 1865, 935]
       ZOrder		      685
       VariableName	      "Output_Vect"
       MaxDataPoints	      "inf"
@@ -1361,22 +1374,10 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Word_Multiplexer_16_to_1"
-      SID		      "496"
-      Ports		      [20, 1]
-      Position		      [1495, 854, 1650, 1161]
-      ZOrder		      9275
-      LibraryVersion	      "1.336"
-      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/Word_Multiplexer_16_to_1"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
       Name		      "bus_to_uint"
       SID		      "497"
       Ports		      [1, 1]
-      Position		      [1680, 1002, 1755, 1018]
+      Position		      [1690, 912, 1765, 928]
       ZOrder		      9276
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/bus_to_uint"
@@ -1388,7 +1389,7 @@ Model {
       Name		      "uint_to_bus00"
       SID		      "498"
       Ports		      [1, 1]
-      Position		      [1195, 1527, 1270, 1543]
+      Position		      [1195, 1517, 1270, 1533]
       ZOrder		      9281
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1400,7 +1401,7 @@ Model {
       Name		      "uint_to_bus01"
       SID		      "527"
       Ports		      [1, 1]
-      Position		      [1195, 1487, 1270, 1503]
+      Position		      [1195, 1477, 1270, 1493]
       ZOrder		      9310
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1412,7 +1413,7 @@ Model {
       Name		      "uint_to_bus02"
       SID		      "528"
       Ports		      [1, 1]
-      Position		      [1195, 1447, 1270, 1463]
+      Position		      [1195, 1437, 1270, 1453]
       ZOrder		      9311
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1424,7 +1425,7 @@ Model {
       Name		      "uint_to_bus03"
       SID		      "529"
       Ports		      [1, 1]
-      Position		      [1195, 1407, 1270, 1423]
+      Position		      [1195, 1397, 1270, 1413]
       ZOrder		      9312
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1436,7 +1437,7 @@ Model {
       Name		      "uint_to_bus04"
       SID		      "530"
       Ports		      [1, 1]
-      Position		      [1195, 1367, 1270, 1383]
+      Position		      [1195, 1357, 1270, 1373]
       ZOrder		      9313
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1448,7 +1449,7 @@ Model {
       Name		      "uint_to_bus05"
       SID		      "531"
       Ports		      [1, 1]
-      Position		      [1195, 1327, 1270, 1343]
+      Position		      [1195, 1317, 1270, 1333]
       ZOrder		      9314
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1460,7 +1461,7 @@ Model {
       Name		      "uint_to_bus06"
       SID		      "532"
       Ports		      [1, 1]
-      Position		      [1195, 1287, 1270, 1303]
+      Position		      [1195, 1277, 1270, 1293]
       ZOrder		      9315
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1472,7 +1473,7 @@ Model {
       Name		      "uint_to_bus07"
       SID		      "533"
       Ports		      [1, 1]
-      Position		      [1195, 1247, 1270, 1263]
+      Position		      [1195, 1237, 1270, 1253]
       ZOrder		      9316
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1484,7 +1485,7 @@ Model {
       Name		      "uint_to_bus08"
       SID		      "534"
       Ports		      [1, 1]
-      Position		      [1195, 1207, 1270, 1223]
+      Position		      [1195, 1197, 1270, 1213]
       ZOrder		      9317
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1496,7 +1497,7 @@ Model {
       Name		      "uint_to_bus09"
       SID		      "535"
       Ports		      [1, 1]
-      Position		      [1195, 1167, 1270, 1183]
+      Position		      [1195, 1157, 1270, 1173]
       ZOrder		      9318
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1508,7 +1509,7 @@ Model {
       Name		      "uint_to_bus10"
       SID		      "536"
       Ports		      [1, 1]
-      Position		      [1195, 1127, 1270, 1143]
+      Position		      [1195, 1117, 1270, 1133]
       ZOrder		      9319
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1520,7 +1521,7 @@ Model {
       Name		      "uint_to_bus11"
       SID		      "537"
       Ports		      [1, 1]
-      Position		      [1195, 1087, 1270, 1103]
+      Position		      [1195, 1077, 1270, 1093]
       ZOrder		      9320
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1532,7 +1533,7 @@ Model {
       Name		      "uint_to_bus12"
       SID		      "538"
       Ports		      [1, 1]
-      Position		      [1195, 1047, 1270, 1063]
+      Position		      [1195, 1037, 1270, 1053]
       ZOrder		      9321
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1544,7 +1545,7 @@ Model {
       Name		      "uint_to_bus13"
       SID		      "539"
       Ports		      [1, 1]
-      Position		      [1195, 1007, 1270, 1023]
+      Position		      [1195, 997, 1270, 1013]
       ZOrder		      9322
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1556,7 +1557,7 @@ Model {
       Name		      "uint_to_bus14"
       SID		      "540"
       Ports		      [1, 1]
-      Position		      [1195, 967, 1270, 983]
+      Position		      [1195, 957, 1270, 973]
       ZOrder		      9323
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1568,7 +1569,7 @@ Model {
       Name		      "uint_to_bus15"
       SID		      "541"
       Ports		      [1, 1]
-      Position		      [1195, 927, 1270, 943]
+      Position		      [1195, 917, 1270, 933]
       ZOrder		      9324
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1583,39 +1584,11 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      143
-      SrcBlock		      "Word_Multiplexer_16_to_1"
+      ZOrder		      248
+      SrcBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
       SrcPort		      1
       DstBlock		      "bus_to_uint"
       DstPort		      1
-    }
-    Line {
-      ZOrder		      133
-      SrcBlock		      "Demux8"
-      SrcPort		      1
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      125
-      SrcBlock		      "Demux8"
-      SrcPort		      3
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      3
-    }
-    Line {
-      ZOrder		      123
-      SrcBlock		      "Demux8"
-      SrcPort		      2
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      131
-      SrcBlock		      "Demux8"
-      SrcPort		      4
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      4
     }
     Line {
       ZOrder		      7
@@ -1637,8 +1610,8 @@ Model {
       SrcPort		      1
       Points		      [12, 0]
       Branch {
-	ZOrder			10
-	Points			[0, 45]
+	ZOrder			265
+	Points			[0, 125]
 	Branch {
 	  ZOrder		  11
 	  Points		  [0, 40]
@@ -2015,132 +1988,243 @@ Model {
       DstPort		      1
     }
     Line {
-      ZOrder		      177
+      ZOrder		      239
       SrcBlock		      "uint_to_bus00"
       SrcPort		      1
-      Points		      [196, 0; 0, -385]
-      DstBlock		      "Word_Multiplexer_16_to_1"
+      Points		      [196, 0; 0, -375]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      32
+    }
+    Line {
+      ZOrder		      238
+      SrcBlock		      "uint_to_bus01"
+      SrcPort		      1
+      Points		      [183, 0; 0, -350]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      31
+    }
+    Line {
+      ZOrder		      247
+      SrcBlock		      "uint_to_bus02"
+      SrcPort		      1
+      Points		      [171, 0; 0, -325]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      30
+    }
+    Line {
+      ZOrder		      243
+      SrcBlock		      "uint_to_bus03"
+      SrcPort		      1
+      Points		      [159, 0; 0, -300]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      29
+    }
+    Line {
+      ZOrder		      244
+      SrcBlock		      "uint_to_bus04"
+      SrcPort		      1
+      Points		      [146, 0; 0, -275]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      28
+    }
+    Line {
+      ZOrder		      241
+      SrcBlock		      "uint_to_bus05"
+      SrcPort		      1
+      Points		      [133, 0; 0, -250]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      27
+    }
+    Line {
+      ZOrder		      246
+      SrcBlock		      "uint_to_bus06"
+      SrcPort		      1
+      Points		      [120, 0; 0, -225]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      26
+    }
+    Line {
+      ZOrder		      240
+      SrcBlock		      "uint_to_bus07"
+      SrcPort		      1
+      Points		      [109, 0; 0, -200]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      25
+    }
+    Line {
+      ZOrder		      242
+      SrcBlock		      "uint_to_bus08"
+      SrcPort		      1
+      Points		      [97, 0; 0, -175]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      24
+    }
+    Line {
+      ZOrder		      245
+      SrcBlock		      "uint_to_bus09"
+      SrcPort		      1
+      Points		      [85, 0; 0, -150]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      23
+    }
+    Line {
+      ZOrder		      232
+      SrcBlock		      "uint_to_bus10"
+      SrcPort		      1
+      Points		      [73, 0; 0, -125]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      22
+    }
+    Line {
+      ZOrder		      236
+      SrcBlock		      "uint_to_bus11"
+      SrcPort		      1
+      Points		      [61, 0; 0, -100]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      21
+    }
+    Line {
+      ZOrder		      235
+      SrcBlock		      "uint_to_bus12"
+      SrcPort		      1
+      Points		      [49, 0; 0, -75]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
       DstPort		      20
     }
     Line {
-      ZOrder		      178
-      SrcBlock		      "uint_to_bus01"
+      ZOrder		      233
+      SrcBlock		      "uint_to_bus13"
       SrcPort		      1
-      Points		      [183, 0; 0, -360]
-      DstBlock		      "Word_Multiplexer_16_to_1"
+      Points		      [37, 0; 0, -50]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
       DstPort		      19
     }
     Line {
-      ZOrder		      179
-      SrcBlock		      "uint_to_bus02"
+      ZOrder		      237
+      SrcBlock		      "uint_to_bus14"
       SrcPort		      1
-      Points		      [171, 0; 0, -335]
-      DstBlock		      "Word_Multiplexer_16_to_1"
+      Points		      [27, 0; 0, -25]
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
       DstPort		      18
     }
     Line {
-      ZOrder		      180
-      SrcBlock		      "uint_to_bus03"
+      ZOrder		      234
+      SrcBlock		      "uint_to_bus15"
       SrcPort		      1
-      Points		      [159, 0; 0, -310]
-      DstBlock		      "Word_Multiplexer_16_to_1"
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
       DstPort		      17
     }
     Line {
-      ZOrder		      181
-      SrcBlock		      "uint_to_bus04"
+      ZOrder		      249
+      SrcBlock		      "Demux8"
       SrcPort		      1
-      Points		      [146, 0; 0, -285]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      16
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      1
     }
     Line {
-      ZOrder		      182
-      SrcBlock		      "uint_to_bus05"
-      SrcPort		      1
-      Points		      [133, 0; 0, -260]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      15
+      ZOrder		      250
+      SrcBlock		      "Demux8"
+      SrcPort		      2
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      2
     }
     Line {
-      ZOrder		      183
-      SrcBlock		      "uint_to_bus06"
-      SrcPort		      1
-      Points		      [120, 0; 0, -235]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      14
+      ZOrder		      251
+      SrcBlock		      "Demux8"
+      SrcPort		      4
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      4
     }
     Line {
-      ZOrder		      184
-      SrcBlock		      "uint_to_bus07"
-      SrcPort		      1
-      Points		      [109, 0; 0, -210]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      13
+      ZOrder		      252
+      SrcBlock		      "Demux8"
+      SrcPort		      3
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      3
     }
     Line {
-      ZOrder		      185
-      SrcBlock		      "uint_to_bus08"
-      SrcPort		      1
-      Points		      [97, 0; 0, -185]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      12
+      ZOrder		      253
+      SrcBlock		      "Demux8"
+      SrcPort		      5
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      5
     }
     Line {
-      ZOrder		      186
-      SrcBlock		      "uint_to_bus09"
-      SrcPort		      1
-      Points		      [85, 0; 0, -160]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      11
-    }
-    Line {
-      ZOrder		      187
-      SrcBlock		      "uint_to_bus10"
-      SrcPort		      1
-      Points		      [73, 0; 0, -135]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      10
-    }
-    Line {
-      ZOrder		      188
-      SrcBlock		      "uint_to_bus11"
-      SrcPort		      1
-      Points		      [61, 0; 0, -110]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      9
-    }
-    Line {
-      ZOrder		      189
-      SrcBlock		      "uint_to_bus12"
-      SrcPort		      1
-      Points		      [49, 0; 0, -85]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      8
-    }
-    Line {
-      ZOrder		      190
-      SrcBlock		      "uint_to_bus13"
-      SrcPort		      1
-      Points		      [37, 0; 0, -60]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      7
-    }
-    Line {
-      ZOrder		      191
-      SrcBlock		      "uint_to_bus14"
-      SrcPort		      1
-      Points		      [27, 0; 0, -35]
-      DstBlock		      "Word_Multiplexer_16_to_1"
+      ZOrder		      254
+      SrcBlock		      "Demux8"
+      SrcPort		      6
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
       DstPort		      6
     }
     Line {
-      ZOrder		      192
-      SrcBlock		      "uint_to_bus15"
-      SrcPort		      1
-      Points		      [18, 0; 0, -10]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      5
+      ZOrder		      255
+      SrcBlock		      "Demux8"
+      SrcPort		      7
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      256
+      SrcBlock		      "Demux8"
+      SrcPort		      8
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      8
+    }
+    Line {
+      ZOrder		      257
+      SrcBlock		      "Demux8"
+      SrcPort		      9
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      9
+    }
+    Line {
+      ZOrder		      258
+      SrcBlock		      "Demux8"
+      SrcPort		      10
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      10
+    }
+    Line {
+      ZOrder		      259
+      SrcBlock		      "Demux8"
+      SrcPort		      11
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      11
+    }
+    Line {
+      ZOrder		      260
+      SrcBlock		      "Demux8"
+      SrcPort		      12
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      12
+    }
+    Line {
+      ZOrder		      261
+      SrcBlock		      "Demux8"
+      SrcPort		      13
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      13
+    }
+    Line {
+      ZOrder		      262
+      SrcBlock		      "Demux8"
+      SrcPort		      14
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      14
+    }
+    Line {
+      ZOrder		      263
+      SrcBlock		      "Demux8"
+      SrcPort		      15
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      15
+    }
+    Line {
+      ZOrder		      264
+      SrcBlock		      "Demux8"
+      SrcPort		      16
+      DstBlock		      "NOT_USED_Word_Multiplexer_16_to_1_DirSel"
+      DstPort		      16
     }
   }
 }

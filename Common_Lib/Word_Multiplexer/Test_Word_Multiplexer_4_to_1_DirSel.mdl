@@ -1,5 +1,5 @@
 Model {
-  Name			  "Test_Word_Multiplexer_16_to_1"
+  Name			  "Test_Word_Multiplexer_4_to_1_DirSel"
   Version		  8.7
   MdlSubVersion		  1
   SavedCharacterEncoding  "windows-1250"
@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.113"
+    ComputedModelVersion    "1.111"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -20,7 +20,7 @@ Model {
       Type		      "Cell"
       Dimension		      2
       Cell		      "HDLSubsystem"
-      Cell		      "Test_Word_Multiplexer_16_to_1"
+      Cell		      "Test_Word_Multiplexer_4_to_1_DirSel"
       PropName		      "mdlProps"
     }
   }
@@ -43,7 +43,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [451.0, 0.0, 1235.0, 1080.0]
+      Location		      [407.0, 70.0, 1223.0, 839.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -67,9 +67,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1185.0, 905.0]
-	ZoomFactor		[1.0]
-	Offset			[886.34295890235194, 725.13560753317483]
+	Extents			[1173.0, 664.0]
+	ZoomFactor		[1.25]
+	Offset			[1000.2082000123336, -8.532133424873912]
       }
     }
   }
@@ -79,9 +79,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sat May 06 21:07:17 2023"
-  RTWModifiedTimeStamp	  605308020
-  ModelVersionFormat	  "1.%<AutoIncrement:113>"
+  LastModifiedDate	  "Sat May 06 20:33:39 2023"
+  RTWModifiedTimeStamp	  605306016
+  ModelVersionFormat	  "1.%<AutoIncrement:111>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -869,8 +869,8 @@ Model {
     }
   }
   System {
-    Name		    "Test_Word_Multiplexer_16_to_1"
-    Location		    [451, 0, 1686, 1080]
+    Name		    "Test_Word_Multiplexer_4_to_1_DirSel"
+    Location		    [407, 70, 1630, 909]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -882,26 +882,26 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "542"
+    SIDHighWatermark	    "483"
     Block {
       BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion1"
-      SID		      "500"
-      Position		      [1130, 1483, 1170, 1507]
-      ZOrder		      9283
+      Name		      "Data Type Conversion"
+      SID		      "383"
+      Position		      [1235, 178, 1275, 202]
+      ZOrder		      673
       ShowName		      off
-      OutDataTypeStr	      "uint16"
+      OutDataTypeStr	      "uint8"
       RndMeth		      "Floor"
       SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion10"
-      SID		      "508"
-      Position		      [1130, 1163, 1170, 1187]
-      ZOrder		      9291
+      SID		      "421"
+      Position		      [1235, 298, 1275, 322]
+      ZOrder		      713
       ShowName		      off
       OutDataTypeStr	      "uint16"
       RndMeth		      "Floor"
@@ -910,86 +910,9 @@ Model {
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion11"
-      SID		      "499"
-      Position		      [1130, 1523, 1170, 1547]
-      ZOrder		      9282
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion12"
-      SID		      "509"
-      Position		      [1130, 1123, 1170, 1147]
-      ZOrder		      9292
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion13"
-      SID		      "510"
-      Position		      [1130, 1083, 1170, 1107]
-      ZOrder		      9293
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion14"
-      SID		      "511"
-      Position		      [1130, 1043, 1170, 1067]
-      ZOrder		      9294
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion15"
-      SID		      "512"
-      Position		      [1130, 1003, 1170, 1027]
-      ZOrder		      9295
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion16"
-      SID		      "513"
-      Position		      [1130, 963, 1170, 987]
-      ZOrder		      9296
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion17"
-      SID		      "514"
-      Position		      [1130, 923, 1170, 947]
-      ZOrder		      9297
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion2"
-      SID		      "501"
-      Position		      [1130, 1443, 1170, 1467]
-      ZOrder		      9284
+      SID		      "424"
+      Position		      [1235, 338, 1275, 362]
+      ZOrder		      715
       ShowName		      off
       OutDataTypeStr	      "uint16"
       RndMeth		      "Floor"
@@ -998,64 +921,9 @@ Model {
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion3"
-      SID		      "502"
-      Position		      [1130, 1403, 1170, 1427]
-      ZOrder		      9285
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion4"
-      SID		      "402"
-      Position		      [1130, 878, 1170, 902]
-      ZOrder		      692
-      ShowName		      off
-      OutDataTypeStr	      "uint8"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion5"
-      SID		      "503"
-      Position		      [1130, 1363, 1170, 1387]
-      ZOrder		      9286
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion6"
-      SID		      "504"
-      Position		      [1130, 1323, 1170, 1347]
-      ZOrder		      9287
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion7"
-      SID		      "505"
-      Position		      [1130, 1283, 1170, 1307]
-      ZOrder		      9288
-      ShowName		      off
-      OutDataTypeStr	      "uint16"
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      DataTypeConversion
-      Name		      "Data Type Conversion8"
-      SID		      "506"
-      Position		      [1130, 1243, 1170, 1267]
-      ZOrder		      9289
+      SID		      "384"
+      Position		      [1235, 218, 1275, 242]
+      ZOrder		      679
       ShowName		      off
       OutDataTypeStr	      "uint16"
       RndMeth		      "Floor"
@@ -1064,9 +932,9 @@ Model {
     Block {
       BlockType		      DataTypeConversion
       Name		      "Data Type Conversion9"
-      SID		      "507"
-      Position		      [1130, 1203, 1170, 1227]
-      ZOrder		      9290
+      SID		      "418"
+      Position		      [1235, 258, 1275, 282]
+      ZOrder		      710
       ShowName		      off
       OutDataTypeStr	      "uint16"
       RndMeth		      "Floor"
@@ -1074,20 +942,20 @@ Model {
     }
     Block {
       BlockType		      Demux
-      Name		      "Demux8"
-      SID		      "353"
+      Name		      "Demux11"
+      SID		      "368"
       Ports		      [1, 4]
-      Position		      [1410, 860, 1425, 915]
-      ZOrder		      634
+      Position		      [1425, 155, 1435, 220]
+      ZOrder		      651
       ShowName		      off
       DisplayOption	      "bar"
     }
     Block {
       BlockType		      FromWorkspace
       Name		      "From\nWorkspace"
-      SID		      "404"
-      Position		      [945, 877, 1020, 903]
-      ZOrder		      693
+      SID		      "385"
+      Position		      [1050, 177, 1125, 203]
+      ZOrder		      674
       VariableName	      "Input_Vect"
       SampleTime	      "1"
       Interpolate	      off
@@ -1095,11 +963,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Integer to Bit\nConverter5"
-      SID		      "249"
+      Name		      "Integer to Bit\nConverter7"
+      SID		      "371"
       Ports		      [1, 1]
-      Position		      [1300, 868, 1380, 912]
-      ZOrder		      538
+      Position		      [1300, 168, 1380, 212]
+      ZOrder		      652
       ShowName		      off
       LibraryVersion	      "1.278"
       SourceBlock	      "commutil2/Integer to Bit\nConverter"
@@ -1110,225 +978,27 @@ Model {
       outDtype		      "boolean"
     }
     Block {
-      BlockType		      Selector
-      Name		      "Selector19"
-      SID		      "449"
-      Ports		      [1, 1]
-      Position		      [1060, 996, 1100, 1034]
-      ZOrder		      734
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "3"
-      OutputSizes	      "1"
+      BlockType		      Reference
+      Name		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      SID		      "483"
+      Ports		      [8, 1]
+      Position		      [1470, 156, 1620, 279]
+      ZOrder		      9283
+      LibraryVersion	      "1.336"
+      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      SourceType	      "SubSystem"
+      ContentPreviewEnabled   off
     }
     Block {
       BlockType		      Selector
-      Name		      "Selector20"
-      SID		      "450"
+      Name		      "Selector"
+      SID		      "388"
       Ports		      [1, 1]
-      Position		      [1060, 1036, 1100, 1074]
-      ZOrder		      736
+      Position		      [1165, 171, 1205, 209]
+      ZOrder		      677
       ShowName		      off
       IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "4"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector21"
-      SID		      "451"
-      Ports		      [1, 1]
-      Position		      [1060, 1076, 1100, 1114]
-      ZOrder		      738
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "5"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector22"
-      SID		      "452"
-      Ports		      [1, 1]
-      Position		      [1060, 1116, 1100, 1154]
-      ZOrder		      740
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "6"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector23"
-      SID		      "453"
-      Ports		      [1, 1]
-      Position		      [1060, 1156, 1100, 1194]
-      ZOrder		      742
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "7"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector24"
-      SID		      "454"
-      Ports		      [1, 1]
-      Position		      [1060, 1196, 1100, 1234]
-      ZOrder		      744
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "8"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector25"
-      SID		      "455"
-      Ports		      [1, 1]
-      Position		      [1060, 916, 1100, 954]
-      ZOrder		      730
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "1"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector26"
-      SID		      "464"
-      Ports		      [1, 1]
-      Position		      [1060, 1316, 1100, 1354]
-      ZOrder		      750
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "11"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector27"
-      SID		      "465"
-      Ports		      [1, 1]
-      Position		      [1060, 1356, 1100, 1394]
-      ZOrder		      752
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "12"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector28"
-      SID		      "466"
-      Ports		      [1, 1]
-      Position		      [1060, 1396, 1100, 1434]
-      ZOrder		      754
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "13"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector29"
-      SID		      "467"
-      Ports		      [1, 1]
-      Position		      [1060, 1436, 1100, 1474]
-      ZOrder		      756
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "14"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector30"
-      SID		      "468"
-      Ports		      [1, 1]
-      Position		      [1060, 1476, 1100, 1514]
-      ZOrder		      758
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "15"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector31"
-      SID		      "469"
-      Ports		      [1, 1]
-      Position		      [1060, 1516, 1100, 1554]
-      ZOrder		      760
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "16"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector32"
-      SID		      "470"
-      Ports		      [1, 1]
-      Position		      [1060, 1236, 1100, 1274]
-      ZOrder		      746
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "9"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector33"
-      SID		      "471"
-      Ports		      [1, 1]
-      Position		      [1060, 1276, 1100, 1314]
-      ZOrder		      748
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
-      IndexOptions	      "Index vector (dialog)"
-      Indices		      "10"
-      OutputSizes	      "1"
-    }
-    Block {
-      BlockType		      Selector
-      Name		      "Selector4"
-      SID		      "406"
-      Ports		      [1, 1]
-      Position		      [1060, 871, 1100, 909]
-      ZOrder		      695
-      ShowName		      off
-      IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
+      InputPortWidth	      "5"
       SampleTime	      "1"
       IndexOptions	      "Index vector (dialog)"
       Indices		      "0"
@@ -1336,14 +1006,56 @@ Model {
     }
     Block {
       BlockType		      Selector
-      Name		      "Selector5"
-      SID		      "448"
+      Name		      "Selector1"
+      SID		      "389"
       Ports		      [1, 1]
-      Position		      [1060, 956, 1100, 994]
-      ZOrder		      732
+      Position		      [1165, 211, 1205, 249]
+      ZOrder		      678
       ShowName		      off
       IndexMode		      "Zero-based"
-      InputPortWidth	      "17"
+      InputPortWidth	      "5"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "1"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector10"
+      SID		      "423"
+      Ports		      [1, 1]
+      Position		      [1165, 291, 1205, 329]
+      ZOrder		      712
+      ShowName		      off
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "3"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector11"
+      SID		      "425"
+      Ports		      [1, 1]
+      Position		      [1165, 331, 1205, 369]
+      ZOrder		      714
+      ShowName		      off
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
+      IndexOptions	      "Index vector (dialog)"
+      Indices		      "4"
+      OutputSizes	      "1"
+    }
+    Block {
+      BlockType		      Selector
+      Name		      "Selector9"
+      SID		      "420"
+      Ports		      [1, 1]
+      Position		      [1165, 251, 1205, 289]
+      ZOrder		      709
+      ShowName		      off
+      IndexMode		      "Zero-based"
+      InputPortWidth	      "5"
       IndexOptions	      "Index vector (dialog)"
       Indices		      "2"
       OutputSizes	      "1"
@@ -1351,33 +1063,21 @@ Model {
     Block {
       BlockType		      ToWorkspace
       Name		      "To Workspace"
-      SID		      "395"
+      SID		      "393"
       Ports		      [1]
-      Position		      [1785, 995, 1855, 1025]
-      ZOrder		      685
+      Position		      [1760, 205, 1830, 235]
+      ZOrder		      683
       VariableName	      "Output_Vect"
       MaxDataPoints	      "inf"
       SampleTime	      "1"
     }
     Block {
       BlockType		      Reference
-      Name		      "Word_Multiplexer_16_to_1"
-      SID		      "496"
-      Ports		      [20, 1]
-      Position		      [1495, 854, 1650, 1161]
-      ZOrder		      9275
-      LibraryVersion	      "1.336"
-      SourceBlock	      "Word_Multiplexers_Lib/Word_Multiplexers_Lib/Word_Multiplexer_16_to_1"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
       Name		      "bus_to_uint"
-      SID		      "497"
+      SID		      "478"
       Ports		      [1, 1]
-      Position		      [1680, 1002, 1755, 1018]
-      ZOrder		      9276
+      Position		      [1655, 212, 1730, 228]
+      ZOrder		      9275
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/bus_to_uint"
       SourceType	      "SubSystem"
@@ -1385,10 +1085,22 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "uint_to_bus00"
-      SID		      "498"
+      Name		      "uint_to_bus"
+      SID		      "479"
       Ports		      [1, 1]
-      Position		      [1195, 1527, 1270, 1543]
+      Position		      [1305, 342, 1380, 358]
+      ZOrder		      9280
+      LibraryVersion	      "1.643"
+      SourceBlock	      "Miscellaneous/uint_to_bus"
+      SourceType	      "SubSystem"
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "uint_to_bus1"
+      SID		      "480"
+      Ports		      [1, 1]
+      Position		      [1305, 302, 1380, 318]
       ZOrder		      9281
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
@@ -1397,11 +1109,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "uint_to_bus01"
-      SID		      "527"
+      Name		      "uint_to_bus2"
+      SID		      "481"
       Ports		      [1, 1]
-      Position		      [1195, 1487, 1270, 1503]
-      ZOrder		      9310
+      Position		      [1305, 262, 1380, 278]
+      ZOrder		      9282
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
       SourceType	      "SubSystem"
@@ -1409,738 +1121,210 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "uint_to_bus02"
-      SID		      "528"
+      Name		      "uint_to_bus3"
+      SID		      "482"
       Ports		      [1, 1]
-      Position		      [1195, 1447, 1270, 1463]
-      ZOrder		      9311
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus03"
-      SID		      "529"
-      Ports		      [1, 1]
-      Position		      [1195, 1407, 1270, 1423]
-      ZOrder		      9312
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus04"
-      SID		      "530"
-      Ports		      [1, 1]
-      Position		      [1195, 1367, 1270, 1383]
-      ZOrder		      9313
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus05"
-      SID		      "531"
-      Ports		      [1, 1]
-      Position		      [1195, 1327, 1270, 1343]
-      ZOrder		      9314
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus06"
-      SID		      "532"
-      Ports		      [1, 1]
-      Position		      [1195, 1287, 1270, 1303]
-      ZOrder		      9315
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus07"
-      SID		      "533"
-      Ports		      [1, 1]
-      Position		      [1195, 1247, 1270, 1263]
-      ZOrder		      9316
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus08"
-      SID		      "534"
-      Ports		      [1, 1]
-      Position		      [1195, 1207, 1270, 1223]
-      ZOrder		      9317
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus09"
-      SID		      "535"
-      Ports		      [1, 1]
-      Position		      [1195, 1167, 1270, 1183]
-      ZOrder		      9318
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus10"
-      SID		      "536"
-      Ports		      [1, 1]
-      Position		      [1195, 1127, 1270, 1143]
-      ZOrder		      9319
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus11"
-      SID		      "537"
-      Ports		      [1, 1]
-      Position		      [1195, 1087, 1270, 1103]
-      ZOrder		      9320
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus12"
-      SID		      "538"
-      Ports		      [1, 1]
-      Position		      [1195, 1047, 1270, 1063]
-      ZOrder		      9321
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus13"
-      SID		      "539"
-      Ports		      [1, 1]
-      Position		      [1195, 1007, 1270, 1023]
-      ZOrder		      9322
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus14"
-      SID		      "540"
-      Ports		      [1, 1]
-      Position		      [1195, 967, 1270, 983]
-      ZOrder		      9323
-      LibraryVersion	      "1.643"
-      SourceBlock	      "Miscellaneous/uint_to_bus"
-      SourceType	      "SubSystem"
-      ContentPreviewEnabled   off
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "uint_to_bus15"
-      SID		      "541"
-      Ports		      [1, 1]
-      Position		      [1195, 927, 1270, 943]
-      ZOrder		      9324
+      Position		      [1305, 222, 1380, 238]
+      ZOrder		      9279
       LibraryVersion	      "1.643"
       SourceBlock	      "Miscellaneous/uint_to_bus"
       SourceType	      "SubSystem"
       ContentPreviewEnabled   off
     }
     Line {
-      ZOrder		      1
-      SrcBlock		      "Integer to Bit\nConverter5"
-      SrcPort		      1
-      DstBlock		      "Demux8"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      143
-      SrcBlock		      "Word_Multiplexer_16_to_1"
+      ZOrder		      71
+      SrcBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
       SrcPort		      1
       DstBlock		      "bus_to_uint"
       DstPort		      1
     }
     Line {
-      ZOrder		      133
-      SrcBlock		      "Demux8"
+      ZOrder		      3
+      SrcBlock		      "Integer to Bit\nConverter7"
       SrcPort		      1
-      DstBlock		      "Word_Multiplexer_16_to_1"
+      DstBlock		      "Demux11"
       DstPort		      1
     }
     Line {
-      ZOrder		      125
-      SrcBlock		      "Demux8"
-      SrcPort		      3
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      3
-    }
-    Line {
-      ZOrder		      123
-      SrcBlock		      "Demux8"
-      SrcPort		      2
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      131
-      SrcBlock		      "Demux8"
-      SrcPort		      4
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      4
-    }
-    Line {
-      ZOrder		      7
-      SrcBlock		      "Selector4"
+      ZOrder		      5
+      SrcBlock		      "Selector"
       SrcPort		      1
-      DstBlock		      "Data Type Conversion4"
+      DstBlock		      "Data Type Conversion"
       DstPort		      1
     }
     Line {
-      ZOrder		      8
-      SrcBlock		      "Data Type Conversion4"
-      SrcPort		      1
-      DstBlock		      "Integer to Bit\nConverter5"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      9
-      SrcBlock		      "From\nWorkspace"
-      SrcPort		      1
-      Points		      [12, 0]
-      Branch {
-	ZOrder			10
-	Points			[0, 45]
-	Branch {
-	  ZOrder		  11
-	  Points		  [0, 40]
-	  Branch {
-	    ZOrder		    12
-	    DstBlock		    "Selector5"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    13
-	    Points		    [0, 40]
-	    Branch {
-	      ZOrder		      14
-	      DstBlock		      "Selector19"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      15
-	      Points		      [0, 40]
-	      Branch {
-		ZOrder			16
-		DstBlock		"Selector20"
-		DstPort			1
-	      }
-	      Branch {
-		ZOrder			17
-		Points			[0, 40]
-		Branch {
-		  ZOrder		  18
-		  DstBlock		  "Selector21"
-		  DstPort		  1
-		}
-		Branch {
-		  ZOrder		  19
-		  Points		  [0, 40]
-		  Branch {
-		    ZOrder		    20
-		    DstBlock		    "Selector22"
-		    DstPort		    1
-		  }
-		  Branch {
-		    ZOrder		    21
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    22
-		    DstBlock		    "Selector23"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    23
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    24
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    25
-		    DstBlock		    "Selector32"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    26
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    27
-		    DstBlock		    "Selector33"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    28
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    29
-		    DstBlock		    "Selector26"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    30
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    31
-		    DstBlock		    "Selector27"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    32
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    33
-		    DstBlock		    "Selector28"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    34
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    35
-		    DstBlock		    "Selector29"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    36
-		    Points		    [0, 40]
-		    Branch {
-		    ZOrder		    37
-		    DstBlock		    "Selector30"
-		    DstPort		    1
-		    }
-		    Branch {
-		    ZOrder		    38
-		    Points		    [0, 40]
-		    DstBlock		    "Selector31"
-		    DstPort		    1
-		    }
-		    }
-		    }
-		    }
-		    }
-		    }
-		    }
-		    }
-		    Branch {
-		    ZOrder		    39
-		    DstBlock		    "Selector24"
-		    DstPort		    1
-		    }
-		    }
-		  }
-		}
-	      }
-	    }
-	  }
-	}
-	Branch {
-	  ZOrder		  40
-	  DstBlock		  "Selector25"
-	  DstPort		  1
-	}
-      }
-      Branch {
-	ZOrder			41
-	DstBlock		"Selector4"
-	DstPort			1
-      }
-    }
-    Line {
-      ZOrder		      175
-      SrcBlock		      "Selector25"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion17"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      174
-      SrcBlock		      "Selector5"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion16"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      172
-      SrcBlock		      "Selector19"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion15"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      169
-      SrcBlock		      "Selector20"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion14"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      167
-      SrcBlock		      "Selector21"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion13"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      165
-      SrcBlock		      "Selector22"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion12"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      163
-      SrcBlock		      "Selector23"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion10"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      162
-      SrcBlock		      "Selector24"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion9"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      159
-      SrcBlock		      "Selector32"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion8"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      157
-      SrcBlock		      "Selector33"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion7"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      156
-      SrcBlock		      "Selector26"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion6"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      153
-      SrcBlock		      "Selector27"
-      SrcPort		      1
-      DstBlock		      "Data Type Conversion5"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      152
-      SrcBlock		      "Selector28"
+      ZOrder		      6
+      SrcBlock		      "Selector1"
       SrcPort		      1
       DstBlock		      "Data Type Conversion3"
       DstPort		      1
     }
     Line {
-      ZOrder		      149
-      SrcBlock		      "Selector29"
+      ZOrder		      45
+      SrcBlock		      "Data Type Conversion3"
       SrcPort		      1
-      DstBlock		      "Data Type Conversion2"
+      DstBlock		      "uint_to_bus3"
       DstPort		      1
     }
     Line {
-      ZOrder		      147
-      SrcBlock		      "Selector30"
+      ZOrder		      8
+      SrcBlock		      "Data Type Conversion"
       SrcPort		      1
-      DstBlock		      "Data Type Conversion1"
+      DstBlock		      "Integer to Bit\nConverter7"
       DstPort		      1
     }
     Line {
-      ZOrder		      145
-      SrcBlock		      "Selector31"
+      ZOrder		      9
+      SrcBlock		      "Selector9"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion9"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      10
+      SrcBlock		      "From\nWorkspace"
+      SrcPort		      1
+      Points		      [12, 0]
+      Branch {
+	ZOrder			11
+	Points			[0, 40]
+	Branch {
+	  ZOrder		  12
+	  Points		  [0, 40]
+	  Branch {
+	    ZOrder		    13
+	    Points		    [0, 40]
+	    Branch {
+	      ZOrder		      14
+	      Points		      [0, 40]
+	      DstBlock		      "Selector11"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      15
+	      DstBlock		      "Selector10"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    ZOrder		    16
+	    DstBlock		    "Selector9"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  ZOrder		  17
+	  DstBlock		  "Selector1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	ZOrder			18
+	DstBlock		"Selector"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      19
+      SrcBlock		      "Selector10"
+      SrcPort		      1
+      DstBlock		      "Data Type Conversion10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      20
+      SrcBlock		      "Selector11"
       SrcPort		      1
       DstBlock		      "Data Type Conversion11"
       DstPort		      1
     }
     Line {
-      ZOrder		      176
-      SrcBlock		      "Data Type Conversion17"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus15"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      173
-      SrcBlock		      "Data Type Conversion16"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus14"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      171
-      SrcBlock		      "Data Type Conversion15"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus13"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      170
-      SrcBlock		      "Data Type Conversion14"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus12"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      168
-      SrcBlock		      "Data Type Conversion13"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus11"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      166
-      SrcBlock		      "Data Type Conversion12"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus10"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      164
-      SrcBlock		      "Data Type Conversion10"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus09"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      161
+      ZOrder		      51
       SrcBlock		      "Data Type Conversion9"
       SrcPort		      1
-      DstBlock		      "uint_to_bus08"
+      DstBlock		      "uint_to_bus2"
       DstPort		      1
     }
     Line {
-      ZOrder		      160
-      SrcBlock		      "Data Type Conversion8"
+      ZOrder		      48
+      SrcBlock		      "Data Type Conversion10"
       SrcPort		      1
-      DstBlock		      "uint_to_bus07"
+      DstBlock		      "uint_to_bus1"
       DstPort		      1
     }
     Line {
-      ZOrder		      158
-      SrcBlock		      "Data Type Conversion7"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus06"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      155
-      SrcBlock		      "Data Type Conversion6"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus05"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      154
-      SrcBlock		      "Data Type Conversion5"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus04"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      151
-      SrcBlock		      "Data Type Conversion3"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus03"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      150
-      SrcBlock		      "Data Type Conversion2"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus02"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      148
-      SrcBlock		      "Data Type Conversion1"
-      SrcPort		      1
-      DstBlock		      "uint_to_bus01"
-      DstPort		      1
-    }
-    Line {
-      ZOrder		      146
+      ZOrder		      49
       SrcBlock		      "Data Type Conversion11"
       SrcPort		      1
-      DstBlock		      "uint_to_bus00"
+      DstBlock		      "uint_to_bus"
       DstPort		      1
     }
     Line {
-      ZOrder		      144
+      ZOrder		      67
+      SrcBlock		      "uint_to_bus3"
+      SrcPort		      1
+      Points		      [12, 0; 0, -5]
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      5
+    }
+    Line {
+      ZOrder		      69
+      SrcBlock		      "uint_to_bus2"
+      SrcPort		      1
+      Points		      [23, 0; 0, -30]
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      6
+    }
+    Line {
+      ZOrder		      68
+      SrcBlock		      "uint_to_bus1"
+      SrcPort		      1
+      Points		      [35, 0; 0, -55]
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      70
+      SrcBlock		      "uint_to_bus"
+      SrcPort		      1
+      Points		      [46, 0; 0, -80]
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      8
+    }
+    Line {
+      ZOrder		      37
       SrcBlock		      "bus_to_uint"
       SrcPort		      1
       DstBlock		      "To Workspace"
       DstPort		      1
     }
     Line {
-      ZOrder		      177
-      SrcBlock		      "uint_to_bus00"
+      ZOrder		      72
+      SrcBlock		      "Demux11"
       SrcPort		      1
-      Points		      [196, 0; 0, -385]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      20
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      1
     }
     Line {
-      ZOrder		      178
-      SrcBlock		      "uint_to_bus01"
-      SrcPort		      1
-      Points		      [183, 0; 0, -360]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      19
+      ZOrder		      73
+      SrcBlock		      "Demux11"
+      SrcPort		      2
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      2
     }
     Line {
-      ZOrder		      179
-      SrcBlock		      "uint_to_bus02"
-      SrcPort		      1
-      Points		      [171, 0; 0, -335]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      18
+      ZOrder		      74
+      SrcBlock		      "Demux11"
+      SrcPort		      3
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      3
     }
     Line {
-      ZOrder		      180
-      SrcBlock		      "uint_to_bus03"
-      SrcPort		      1
-      Points		      [159, 0; 0, -310]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      17
-    }
-    Line {
-      ZOrder		      181
-      SrcBlock		      "uint_to_bus04"
-      SrcPort		      1
-      Points		      [146, 0; 0, -285]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      16
-    }
-    Line {
-      ZOrder		      182
-      SrcBlock		      "uint_to_bus05"
-      SrcPort		      1
-      Points		      [133, 0; 0, -260]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      15
-    }
-    Line {
-      ZOrder		      183
-      SrcBlock		      "uint_to_bus06"
-      SrcPort		      1
-      Points		      [120, 0; 0, -235]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      14
-    }
-    Line {
-      ZOrder		      184
-      SrcBlock		      "uint_to_bus07"
-      SrcPort		      1
-      Points		      [109, 0; 0, -210]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      13
-    }
-    Line {
-      ZOrder		      185
-      SrcBlock		      "uint_to_bus08"
-      SrcPort		      1
-      Points		      [97, 0; 0, -185]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      12
-    }
-    Line {
-      ZOrder		      186
-      SrcBlock		      "uint_to_bus09"
-      SrcPort		      1
-      Points		      [85, 0; 0, -160]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      11
-    }
-    Line {
-      ZOrder		      187
-      SrcBlock		      "uint_to_bus10"
-      SrcPort		      1
-      Points		      [73, 0; 0, -135]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      10
-    }
-    Line {
-      ZOrder		      188
-      SrcBlock		      "uint_to_bus11"
-      SrcPort		      1
-      Points		      [61, 0; 0, -110]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      9
-    }
-    Line {
-      ZOrder		      189
-      SrcBlock		      "uint_to_bus12"
-      SrcPort		      1
-      Points		      [49, 0; 0, -85]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      8
-    }
-    Line {
-      ZOrder		      190
-      SrcBlock		      "uint_to_bus13"
-      SrcPort		      1
-      Points		      [37, 0; 0, -60]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      7
-    }
-    Line {
-      ZOrder		      191
-      SrcBlock		      "uint_to_bus14"
-      SrcPort		      1
-      Points		      [27, 0; 0, -35]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      6
-    }
-    Line {
-      ZOrder		      192
-      SrcBlock		      "uint_to_bus15"
-      SrcPort		      1
-      Points		      [18, 0; 0, -10]
-      DstBlock		      "Word_Multiplexer_16_to_1"
-      DstPort		      5
+      ZOrder		      75
+      SrcBlock		      "Demux11"
+      SrcPort		      4
+      DstBlock		      "NOT_USED_Word_Multiplexer_4_to_1_DirSel"
+      DstPort		      4
     }
   }
 }

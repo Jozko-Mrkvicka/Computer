@@ -1,10 +1,19 @@
 function Test_Word_Multiplexers()
-	% V1_Address =  [  0   1];
-	% V1_Data1 =    [ 57  57];
-	% V1_Data0 =    [206 206];
-	% V1_Input =    [0:1; V1_Address; V1_Data1; V1_Data0];
-	% V1_Expected = [206  57];
-	% test('Test_Byte_Multiplexer_2_to_1',  V1_Input, V1_Expected);
+	Address =  [  0   1];
+	Data1 =    [ 57  57];
+	Data0 =    [206 206];
+	Input =    [0:1; Address; Data1; Data0];
+	Expected = [206  57];
+	test('Test_Word_Multiplexer_2_to_1', Input, Expected);
+
+
+	Select =   [  1   2];
+	Data1 =    [ 57  57];
+	Data0 =    [206 206];
+	Input =    [0:1; Select; Data1; Data0];
+	Expected = [206  57];
+	test('Test_Word_Multiplexer_2_to_1_DirSel', Input, Expected);
+
 
 	Address =  [    0     1     2     3];
 	Data3 =    [   57    57    57    57];
@@ -15,18 +24,44 @@ function Test_Word_Multiplexers()
 	Expected = [65535   128 32768    57];
 	test('Test_Word_Multiplexer_4_to_1', Input, Expected);
 
-	% V3_Address =  [  0   1   2   3   4   5   6   7];
-	% V3_Data7 =    [153 153 153 153 153 153 153 153];
-	% V3_Data6 =    [232 232 232 232 232 232 232 232];
-	% V3_Data5 =    [ 44  44  44  44  44  44  44  44];
-	% V3_Data4 =    [105 105 105 105 105 105 105 105];
-	% V3_Data3 =    [ 57  57  57  57  57  57  57  57];
-	% V3_Data2 =    [206 206 206 206 206 206 206 206];
-	% V3_Data1 =    [128 128 128 128 128 128 128 128];
-	% V3_Data0 =    [ 10  10  10  10  10  10  10  10];
-	% V3_Input =    [0:7; V3_Address; V3_Data7; V3_Data6; V3_Data5; V3_Data4; V3_Data3; V3_Data2; V3_Data1; V3_Data0];
-	% V3_Expected = [ 10 128 206  57 105  44 232 153];
-	% test('Test_Byte_Multiplexer_8_to_1',  V3_Input, V3_Expected);
+
+	Select =   [    1     2     4     8];
+	Data3 =    [   57    57    57    57];
+	Data2 =    [32768 32768 32768 32768];
+	Data1 =    [  128   128   128   128];
+	Data0 =    [65535 65535 65535 65535];
+	Input =    [0:3; Select; Data3; Data2; Data1; Data0];
+	Expected = [65535   128 32768    57];
+	test('Test_Word_Multiplexer_4_to_1_DirSel', Input, Expected);
+
+
+	Address =  [  0   1   2   3   4   5   6   7];
+	Data7 =    [153 153 153 153 153 153 153 153];
+	Data6 =    [232 232 232 232 232 232 232 232];
+	Data5 =    [ 44  44  44  44  44  44  44  44];
+	Data4 =    [105 105 105 105 105 105 105 105];
+	Data3 =    [ 57  57  57  57  57  57  57  57];
+	Data2 =    [206 206 206 206 206 206 206 206];
+	Data1 =    [128 128 128 128 128 128 128 128];
+	Data0 =    [ 10  10  10  10  10  10  10  10];
+	Input =    [0:7; Address; Data7; Data6; Data5; Data4; Data3; Data2; Data1; Data0];
+	Expected = [ 10 128 206  57 105  44 232 153];
+	test('Test_Word_Multiplexer_8_to_1', Input, Expected);
+
+
+	Select =   [  1   2   4   8  16  32  64 128];
+	Data7 =    [153 153 153 153 153 153 153 153];
+	Data6 =    [232 232 232 232 232 232 232 232];
+	Data5 =    [ 44  44  44  44  44  44  44  44];
+	Data4 =    [105 105 105 105 105 105 105 105];
+	Data3 =    [ 57  57  57  57  57  57  57  57];
+	Data2 =    [206 206 206 206 206 206 206 206];
+	Data1 =    [128 128 128 128 128 128 128 128];
+	Data0 =    [ 10  10  10  10  10  10  10  10];
+	Input =    [0:7; Select; Data7; Data6; Data5; Data4; Data3; Data2; Data1; Data0];
+	Expected = [ 10 128 206  57 105  44 232 153];
+	test('Test_Word_Multiplexer_8_to_1_DirSel', Input, Expected);
+
 
 	Address =  [    0     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15];
 	Data15 =   [  255   255   255   255   255   255   255   255   255   255   255   255   255   255   255   255];
@@ -48,5 +83,28 @@ function Test_Word_Multiplexers()
 	Input =    [0:15; Address; Data15; Data14; Data13; Data12; Data11; Data10; Data09; Data08; Data07; Data06; Data05; Data04; Data03; Data02; Data01; Data00];
 	Expected = [65535   128   206 11029   105    44   232 32768   110   111  1005    68 15469    44   201   255];
 	test('Test_Word_Multiplexer_16_to_1', Input, Expected);
+
+
+	Select =   [    1     2     4     8    16    32    64   128   256   512  1024  2048  4096  8192 16384 32768];
+	Data15 =   [  255   255   255   255   255   255   255   255   255   255   255   255   255   255   255   255];
+	Data14 =   [  201   201   201   201   201   201   201   201   201   201   201   201   201   201   201   201];
+	Data13 =   [   44    44    44    44    44    44    44    44    44    44    44    44    44    44    44    44];
+	Data12 =   [15469 15469 15469 15469 15469 15469 15469 15469 15469 15469 15469 15469 15469 15469 15469 15469];
+	Data11 =   [   68    68    68    68    68    68    68    68    68    68    68    68    68    68    68    68];
+	Data10 =   [ 1005  1005  1005  1005  1005  1005  1005  1005  1005  1005  1005  1005  1005  1005  1005  1005];
+	Data09 =   [  111   111   111   111   111   111   111   111   111   111   111   111   111   111   111   111];
+	Data08 =   [  110   110   110   110   110   110   110   110   110   110   110   110   110   110   110   110];
+	Data07 =   [32768 32768 32768 32768 32768 32768 32768 32768 32768 32768 32768 32768 32768 32768 32768 32768];
+	Data06 =   [  232   232   232   232   232   232   232   232   232   232   232   232   232   232   232   232];
+	Data05 =   [   44    44    44    44    44    44    44    44    44    44    44    44    44    44    44    44];
+	Data04 =   [  105   105   105   105   105   105   105   105   105   105   105   105   105   105   105   105];
+	Data03 =   [11029 11029 11029 11029 11029 11029 11029 11029 11029 11029 11029 11029 11029 11029 11029 11029];
+	Data02 =   [  206   206   206   206   206   206   206   206   206   206   206   206   206   206   206   206];
+	Data01 =   [  128   128   128   128   128   128   128   128   128   128   128   128   128   128   128   128];
+	Data00 =   [65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535 65535];
+	Input =    [0:15; Select; Data15; Data14; Data13; Data12; Data11; Data10; Data09; Data08; Data07; Data06; Data05; Data04; Data03; Data02; Data01; Data00];
+	Expected = [65535   128   206 11029   105    44   232 32768   110   111  1005    68 15469    44   201   255];
+	test('Test_Word_Multiplexer_16_to_1_DirSel', Input, Expected);
+
 end
 
