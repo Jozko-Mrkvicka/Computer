@@ -7,6 +7,8 @@ fprintf('Test_MOVU ')
 
 result = false;
 Flash ROM_Test_MOVU
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 

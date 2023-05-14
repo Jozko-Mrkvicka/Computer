@@ -7,6 +7,8 @@ fprintf('Test_XOR ')
 
 result = false;
 Flash ROM_Test_XOR
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 

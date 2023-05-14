@@ -7,6 +7,8 @@ fprintf('Test_LOADL ')
 
 result = false;
 Flash ROM_Test_LOADL
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
