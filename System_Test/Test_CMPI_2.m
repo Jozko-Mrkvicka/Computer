@@ -7,6 +7,8 @@ fprintf('Test_CMPI_2 ')
 
 result = false;
 Flash ROM_Test_CMPI_2
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 

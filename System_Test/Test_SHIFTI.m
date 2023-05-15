@@ -7,6 +7,8 @@ fprintf('Test_SHIFTI ')
 
 result = false;
 Flash ROM_Test_SHIFTI
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 

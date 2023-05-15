@@ -7,6 +7,8 @@ fprintf('Test_JMP ')
 
 result = false;
 Flash ROM_Test_JMP
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 

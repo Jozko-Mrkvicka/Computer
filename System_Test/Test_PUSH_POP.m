@@ -7,6 +7,8 @@ fprintf('Test_PUSH_POP ')
 
 result = false;
 Flash ROM_Test_PUSH_POP
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 

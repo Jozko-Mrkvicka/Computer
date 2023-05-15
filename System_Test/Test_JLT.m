@@ -7,6 +7,8 @@ fprintf('Test_JLT ')
 
 result = false;
 Flash ROM_Test_JLT
+
+fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
