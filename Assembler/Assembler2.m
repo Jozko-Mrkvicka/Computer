@@ -223,6 +223,8 @@ function [textSection] = parseTextSection(section_text)
 			error('### COMPILATION ERROR: Invalid .TEXT section!! ###');
 		end
 
+		% - check if identifier exist
+		% - check if source and destination labels matches
 		% isTextSectionValid()
 
 	end
