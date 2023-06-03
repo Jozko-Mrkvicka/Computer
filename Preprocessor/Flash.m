@@ -10,7 +10,6 @@ function Flash(file)
 	% evalin('base', 'Instructions')
 	Definitions
 	% evalin('base', 'Definitions')
-	VideoAdapter
 	CharTable;
 
 	% Load a program to be executed (load variables SourceCode and ConstData from source file).

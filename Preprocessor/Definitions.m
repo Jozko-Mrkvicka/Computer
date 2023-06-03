@@ -38,25 +38,8 @@ r10 = bin2dec('0000 1010');
 r11 = bin2dec('0000 1011');
 r12 = bin2dec('0000 1100');
 r13 = bin2dec('0000 1101');
-
-% General purpose register 14 is used as a column selector (for video controller).
-% It can be also used like normal general purpose register.
 r14 = bin2dec('0000 1110');
-col = r14;
-
-% General purpose register 15 is used as a raw selector (for video controller).
-% It can be also used like normal general purpose register.
 r15 = bin2dec('0000 1111');
-row = r15;
-
-
-%%%%%%%%%%%%%%%%%%%
-% Screen resolution
-%%%%%%%%%%%%%%%%%%%
-MIN_X = 0;
-MIN_Y = 0;
-MAX_X = 15;
-MAX_Y = 23;
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -72,14 +55,6 @@ BTN_6 = 6;
 BTN_7 = 7;
 BTN_8 = 8;
 BTN_9 = 9;
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Video controller commands
-%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CLR_SCR = 4;
-PIX_ON  = 3;
-PIX_OFF = 2;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -190,9 +165,6 @@ c.STACK_SIZE       = 8;
 % Start address of video RAM memory on data address bus and it`s size in words.
 c.VRAM_START       = 64;
 c.VRAM_SIZE        = 24;
-
-% Address of video controller on data address bus.
-c.VIDEO_CTRL       = 223;
 
 % Address of keyboard on data address bus.
 c.KEYBOARD         = 239;
