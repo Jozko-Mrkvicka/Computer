@@ -1,3 +1,5 @@
+c.CHAR_SIZE = 64;
+
 % Positions 1..9 are reserved for digits.
 c.ZERO =              10;
 c.A =                 11;

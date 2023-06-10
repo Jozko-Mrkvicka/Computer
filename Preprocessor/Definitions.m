@@ -163,8 +163,8 @@ c.STACK_START      = 63;
 c.STACK_SIZE       = 8;
 
 % Start address of video RAM memory on data address bus and it`s size in words.
-c.VRAM_START       = 64;
-c.VRAM_SIZE        = 24;
+c.VRAM_START       = 768;
+c.VRAM_SIZE        = 1000;
 
 % Address of keyboard on data address bus.
 c.KEYBOARD         = 239;
