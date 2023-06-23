@@ -3,7 +3,7 @@ function [...%compiledData,
 	program, c)
 	global gDebug
 
-	% gDebug = true;
+	gDebug = true;
 
 	if (true == gDebug)
 		fprintf('\n');
@@ -450,6 +450,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_3(src_code, opcode, i,
 
 	elseif (c.RET == opcode)
 		% Do nothing
+
 	else
 		op1 = src_code(1, i);
 		instr_lsb = bitshift(op1, 4);
@@ -467,115 +468,54 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
 
 	switch (bitand(instr_msb, c.INSTR_FORMAT_MASK))
 		case c.INSTR_FORMAT_0
-
 			string1 = bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb);
-
 			switch (bitor(bitand(instr_msb, c.FORMAT_0_OPCODE_MASK), c.INSTR_FORMAT_0))
-				case c.CALL
-					fprintf('   CALL    m(%04d)            |', string1)
-
-				case c.JMP
-					fprintf('   JMP     m(%04d)            |', string1)
-
-				case c.JPE
-					fprintf('   JPE     m(%04d)            |', string1)
-
-				case c.JLT
-					fprintf('   JLT     m(%04d)            |', string1)
+				case c.CALL,  fprintf('   CALL    m(%04d)            |', string1)
+				case c.JMP,	  fprintf('   JMP     m(%04d)            |', string1)
+				case c.JPE,   fprintf('   JPE     m(%04d)            |', string1)
+				case c.JLT,   fprintf('   JLT     m(%04d)            |', string1)
 			end
 
 		case c.INSTR_FORMAT_1
 			switch (bitor(bitand(instr_msb, c.FORMAT_1_OPCODE_MASK), c.INSTR_FORMAT_1))
-				case c.CMPI
-					fprintf('   CMPI    r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
-
+				case c.CMPI,   fprintf('   CMPI    r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 				% Case not used.
-
-				case c.STOREI
-					fprintf('   STOREI  m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
-
-				case c.SHIFTI
-					fprintf('   SHIFTI  r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+				case c.STOREI, fprintf('   STOREI  m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
+				case c.SHIFTI, fprintf('   SHIFTI  r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
 			end
 
 		case c.INSTR_FORMAT_2
-
 			string1 = bitand(instr_msb, c.FORMAT_2_OPERAND_1_MASK);
 			string2 = instr_lsb;
-
 			switch (bitor(bitand(instr_msb, c.FORMAT_2_OPCODE_MASK), c.INSTR_FORMAT_2))
-				case c.ADDI
-					fprintf('   ADDI    r%d      %-4d       |',  string1, string2)
-
-				case c.LOADI
-					fprintf('   LOADI   r%d      m(%03d)     |', string1, string2)
-
-				case c.MOVU
-					fprintf('   MOVU    r%d      %-4d       |',  bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), string2)
-
-				case c.MOVL
-					fprintf('   MOVL    r%d      %-4d       |',  string1, string2)
+				case c.ADDI,  fprintf('   ADDI    r%d      %-4d       |',  string1, string2)
+				case c.LOADI, fprintf('   LOADI   r%d      m(%03d)     |', string1, string2)
+				case c.MOVU,  fprintf('   MOVU    r%d      %-4d       |',  bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), string2)
+				case c.MOVL,  fprintf('   MOVL    r%d      %-4d       |',  string1, string2)
 			end
 
 		case c.INSTR_FORMAT_3
-
 			string1 = bitshift(bitand(instr_lsb, c.FORMAT_3_OPERAND_1_MASK), -4);
 			string2 = bitand(instr_lsb, c.FORMAT_3_OPERAND_2_MASK);
-
 			switch (bitor(bitand(instr_msb, c.FORMAT_3_OPCODE_MASK), c.INSTR_FORMAT_3))
-				case c.NOT
-					fprintf('   NOT     r%d                 |',  string1)
-
-				case c.XOR
-					fprintf('   XOR     r%d      r%d         |', string1, string2)
-
-				case c.OR
-					fprintf('   OR      r%d      r%d         |', string1, string2)
-
-				case c.AND
-					fprintf('   AND     r%d      r%d         |', string1, string2)
-
-				case c.LOADL
-					fprintf('   LOADL   r%d      m(r%d)      |', string1, string2)
-
-				case c.LOADU
-					fprintf('   LOADU   r%d      m(r%d)      |', string1, string2)
-
-				case c.CMP
-					fprintf('   CMP     r%d      r%d         |', string1, string2)
-
-				case c.RET
-					fprintf('   RET                        |\n')
-
-				case c.POP
-					fprintf('   POP     r%d                 |',  string1)
-
-				case c.PUSH
-					fprintf('   PUSH    r%d                 |',  string2)
-
-				case c.SHIFT
-					fprintf('   SHIFT   r%d      r%d         |', string1, string2)
-
-				case c.ADD
-					fprintf('   ADD     r%d      r%d         |', string1, string2)
-
-				% case c.NOT_USED
-				%     fprintf('   NOT_USED     r%d      r%d        |',  string1, string2)
-
-				case c.STOREL
-					fprintf('   STOREL  m(r%d)   r%d         |', string1, string2)
-
-				case c.STOREU
-					fprintf('   STOREU  m(r%d)   r%d         |', string1, string2)
-
-				case c.STORE
-					fprintf('   STORE   m(r%d)   r%d         |', string1, string2)
-
-				case c.LOAD
-					fprintf('   LOAD    r%d      m(r%d)      |', string1, string2)
-
-				case c.MOV
-					fprintf('   MOV     r%d      r%d        |',  string1, string2)
+				case c.NOT,    fprintf('   NOT     r%d                 |',  string1)
+				case c.XOR,    fprintf('   XOR     r%d      r%d         |', string1, string2)
+				case c.OR,     fprintf('   OR      r%d      r%d         |', string1, string2)
+				case c.AND,    fprintf('   AND     r%d      r%d         |', string1, string2)
+				case c.LOADL,  fprintf('   LOADL   r%d      m(r%d)      |', string1, string2)
+				case c.LOADU,  fprintf('   LOADU   r%d      m(r%d)      |', string1, string2)
+				case c.CMP,    fprintf('   CMP     r%d      r%d         |', string1, string2)
+				case c.RET,    fprintf('   RET                        |\n')
+				case c.POP,    fprintf('   POP     r%d                 |',  string1)
+				case c.PUSH,   fprintf('   PUSH    r%d                 |',  string2)
+				case c.SHIFT,  fprintf('   SHIFT   r%d      r%d         |', string1, string2)
+				case c.ADD,    fprintf('   ADD     r%d      r%d         |', string1, string2)
+				% case c.NOT_USED,  fprintf('   NOT_USED     r%d      r%d        |',  string1, string2)
+				case c.STOREL, fprintf('   STOREL  m(r%d)   r%d         |', string1, string2)
+				case c.STOREU, fprintf('   STOREU  m(r%d)   r%d         |', string1, string2)
+				case c.STORE,  fprintf('   STORE   m(r%d)   r%d         |', string1, string2)
+				case c.LOAD,   fprintf('   LOAD    r%d      m(r%d)      |', string1, string2)
+				case c.MOV,    fprintf('   MOV     r%d      r%d        |',  string1, string2)
 			end
 	end
 
