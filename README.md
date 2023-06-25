@@ -1,15 +1,25 @@
 Computer
 ========
-This is a simulation of very simple 8-bit computer based on logic gates implemented in matlab/simulink.
+This is a simulation of very simple 16-bit computer based on logic gates implemented in matlab/simulink.
 Computer has CPU with 20 instructions, 32B (bytes, not kilobytes!!) of RAM memory, 512B ROM memory,
 input unit (simple numeric keyboard) and output display (8x16 pixel resolution). To demonstrate
 its capabilities there is Snake game hardcoded in ROM.
 
-Please note that this is not the final version, project is still under development.
+!!!Please note that this is not the final version, project is still under development!!!
 
 
 How to run 
 ----------
+- Switch Matlab path to the Computer folder.
+- From Matlab command line run the following commands:
+	- "Computer"        - to open computer model.
+	- "Flash ROM_Pokus" - to initialize (flash) instruction memory.
+- In the Computer simulink window click on "play" button to run (or step) simulation.
+- From Matlab command line run the following commands:
+	- "FrontPanel" - to open front panel debugging/control window.
+	- "DataMemory" - to open data memory debugging/control window.
+
+
 	In file ROM.m there is placed assembly ROM code (firmware) which will be executed after "power on"
 (after pressing Run button in simulink window). This assembly code must be "compiled" to binary
 before execution. The assembly code is placed in matlab array in the double format (default matlab format

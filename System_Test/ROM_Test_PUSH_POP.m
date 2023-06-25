@@ -9,7 +9,7 @@ end
 c.LBL_CNT = idx;
 
 
-% This test checks instruction PUSH, POP, CALL and RET.
+% This test checks instructions PUSH and POP.
 SourceCode = ...
 [
 				MOVL		r0			hAA			... % Init registers r0 .. r3 to test values.
