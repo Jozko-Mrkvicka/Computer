@@ -154,13 +154,13 @@ c.CONST_DATA_START = 0;
 c.CONST_DATA_SIZE  = 32;
 
 % Start address of RAM memory on data address bus and it`s size in words.
-c.RAM_START        = 32;
-c.RAM_SIZE         = 32;
+c.RAM_START        = 256;
+c.RAM_SIZE         = 512;
 
-% Start address of stack on data address bus and it`s size in words.
+				% Start address of stack on data address bus and it`s size in words.
 % The stack grows towards lower addresses (it decreases).
-c.STACK_START      = 63;
-c.STACK_SIZE       = 8;
+c.STACK_START      = 15;
+c.STACK_SIZE       = 16;
 
 % Start address of video RAM memory on data address bus and it`s size in words.
 c.VRAM_START       = 768;

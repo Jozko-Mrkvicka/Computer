@@ -2,12 +2,12 @@
 % Instruction formats:
 %
 % Format 0
-% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
+% ┏━━━━━━┳━━━━━━┳━━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
 % ┃ F F ┃ O O ┃ I I I I ┃ ┃ I I I I I I I I ┃
-% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
+% ┗━━━━━━┻━━━━━━┻━━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
 %
 % Format 1
-% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
+% ┏━━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
 % ┃ F F ┃ O O ┃ S S S S ┃ ┃ I I I I I I I I ┃
 % ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
 %
@@ -30,19 +30,20 @@
 %
 %
 %
-% Immediate					Register				Register					Memory
-%				MOVU ->					<- MOV ->				 <- LOAD
-%				MOVL ->											 <- LOADI
-%																 <- LOADU
-%																 <- LOADL
-%																	STORE  ->
-%																	STOREI ->
-%																	STOREU ->
-%																	STOREL ->
+% Immediate					Register					Register					Memory
+%				MOVU  ->				<-  MOV  ->					 <- LOAD
+%				MOVL  ->				<-  NOT  ->					 <- LOADI
+%				ADDI  ->				<-  XOR  ->					 <- LOADU
+%			   SHIFTI ->				<-  OR   ->					 <- LOADL
+%				CMPI  ->				<-  AND  ->						STORE  ->
+%										<-  CMP  ->						STOREI ->
+%										<- SHIFT ->						STOREU ->
+%										<-  ADD  ->						STOREL ->
 %
+%																	<-   POP 		Stack
+%																		 PUSH  ->
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 
 
@@ -159,7 +160,7 @@ c.AND = AND;
 %     Address of a word in memory to load.
 %
 % Type of operands:        Example:
-%     LOADL  REG  REG        LOADL  r0  a(r1)
+%     LOADL  REG  REG        LOADL  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 LOADL = bin2dec('11 01101 0');
 c.LOADL = LOADL;
@@ -182,7 +183,7 @@ c.LOADL = LOADL;
 %     Address of a word in memory to load.
 %
 % Type of operands:        Example:
-%     LOADU  REG  REG        LOADU  r0  a(r1)
+%     LOADU  REG  REG        LOADU  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 LOADU = bin2dec('11 01100 0');
 c.LOADU = LOADU;
@@ -351,8 +352,7 @@ c.NOT_USED = NOT_USED;
 %
 % Description:
 %     The STOREL instruction stores lower byte of a register
-%     to lower byte of a word in memory. The other byte
-%     of the word remains unchanged.
+%     to memory.
 %
 % First operand:
 %     Destination address.
@@ -361,7 +361,7 @@ c.NOT_USED = NOT_USED;
 %     Byte to store.
 %
 % Type of operands:        Example:
-%     STOREL  REG  REG       STOREL  a(r0)  r1
+%     STOREL  REG  REG       STOREL  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 STOREL = bin2dec('11 00100 0');
 c.STOREL = STOREL;
@@ -373,9 +373,8 @@ c.STOREL = STOREL;
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % Description:
-%     The STOREU instruction stores lower byte of a register
-%     to upper byte of a word in memory. The other byte
-%     of the word remains unchanged.
+%     The STOREU instruction stores upper byte of a register
+%     to memory.
 %
 % First operand:
 %     Destination address.
@@ -384,7 +383,7 @@ c.STOREL = STOREL;
 %     Byte to store.
 %
 % Type of operands:        Example:
-%     STOREU  REG  REG       STOREU  a(r0)  r1
+%     STOREU  REG  REG       STOREU  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 STOREU = bin2dec('11 00011 0');
 c.STOREU = STOREU;
@@ -395,9 +394,6 @@ c.STOREU = STOREU;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
-% The STORE instruction moves data from source
-% register to memory (pointed by destination register).
-% 
 % The LOAD instruction moves data from memory
 % (pointed by source register) to destination register.
 % 
@@ -410,16 +406,15 @@ c.STOREU = STOREU;
 %     Source of data.
 %
 % Type of operands:        Example:
-%     STORE  REG  REG        STORE  a(r1)  r3
 %     LOAD   REG  REG        LOAD   r2     a(r1)
 %     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STORE =  bin2dec('11 00010 0');
-LOAD  =  bin2dec('11 00001 0');
-MOV   =  bin2dec('11 00000 0');
-c.STORE = STORE;
-c.LOAD  = LOAD;
-c.MOV   = MOV;
+NOT_USED =  bin2dec('11 00010 0');
+LOAD     =  bin2dec('11 00001 0');
+MOV      =  bin2dec('11 00000 0');
+c.NOT_USED = NOT_USED;
+c.LOAD     = LOAD;
+c.MOV      = MOV;
 
 
 
@@ -570,7 +565,7 @@ c.SHIFTI = SHIFTI;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 1: FF|OO|SSSS IIIIIIII
 %
 % First operand:
 %     NOT_USED
@@ -610,12 +605,13 @@ c.NOT_USED = NOT_USED;
 %     on left side.
 % 
 % Type of operands:                 Example:
-%     (assembly) STOREI  IMM  REG      STOREI  a(11)  r3
+%     (assembly) STOREI  IMM  REG      STOREI  m(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 STOREI = bin2dec('01 01 0000');
 c.STOREI = STOREI;
 
 
+% TODO: Description seems to be contradicting.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %      Compare Immediate instruction
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -706,11 +702,11 @@ c.JPE = JPE;
 % Description:
 %     This instruction calls a subroutine by performing
 %     the following actions:
-%       - Decrements SP register.
 %       - Stores old value of RA register on stack.
+%       - Increments SP register.  
 %       - Stores actual value of PC register to RA register.
 %       - Sets the PC register to new value specified
-%         by the instruction immediate (new address).
+%         by the immediate (new address).
 % 
 % First operand:
 %     Not used.
