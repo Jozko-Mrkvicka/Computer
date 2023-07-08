@@ -416,9 +416,9 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i,
 	i = i + 1;
 
 	% Check that second operand is in appropriate range.
-	if ((op2 < -128) || (op2 > 255))
-		error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
-	end
+	% if ((op2 < -128) || (op2 > 255))
+	% 	error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
+	% end
 end
 
 
@@ -513,8 +513,7 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
 				% case c.NOT_USED,  fprintf('   NOT_USED     r%d      r%d        |',  string1, string2)
 				case c.STOREL, fprintf('   STOREL  m(r%d)   r%d         |', string1, string2)
 				case c.STOREU, fprintf('   STOREU  m(r%d)   r%d         |', string1, string2)
-				case c.STORE,  fprintf('   STORE   m(r%d)   r%d         |', string1, string2)
-				case c.LOAD,   fprintf('   LOAD    r%d      m(r%d)      |', string1, string2)
+				% case c.NOT_USED,   fprintf('   NOT_USED    r%d      m(r%d)      |', string1, string2)
 				case c.MOV,    fprintf('   MOV     r%d      r%d        |',  string1, string2)
 			end
 	end

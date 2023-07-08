@@ -2,19 +2,19 @@
 % Instruction formats:
 %
 % Format 0
-% ┏━━━━━━┳━━━━━━┳━━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
-% ┃ F F ┃ O O ┃ I I I I ┃ ┃ I I I I I I I I ┃
-% ┗━━━━━━┻━━━━━━┻━━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ I I I I ┃ ┃  I I I I I I I I  ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
 %
 % Format 1
-% ┏━━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
-% ┃ F F ┃ O O ┃ S S S S ┃ ┃ I I I I I I I I ┃
-% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ S S S S ┃ ┃  I I I I I I I I  ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
 %
 % Format 2
-% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━┓
-% ┃ F F ┃ O O ┃ D D D D ┃ ┃ I I I I I I I I ┃
-% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━┛
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ D D D D ┃ ┃  I I I I I I I I  ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
 %
 % Format 3
 % ┏━━━━━┳━━━━━━━━━━━┳━━━┓ ┏━━━━━━━━━┳━━━━━━━━━┓
@@ -31,17 +31,15 @@
 %
 %
 % Immediate					Register					Register					Memory
-%				MOVU  ->				<-  MOV  ->					 <- LOAD
-%				MOVL  ->				<-  NOT  ->					 <- LOADI
-%				ADDI  ->				<-  XOR  ->					 <- LOADU
-%			   SHIFTI ->				<-  OR   ->					 <- LOADL
-%				CMPI  ->				<-  AND  ->						STORE  ->
-%										<-  CMP  ->						STOREI ->
-%										<- SHIFT ->						STOREU ->
-%										<-  ADD  ->						STOREL ->
-%
-%																	<-   POP 		Stack
-%																		 PUSH  ->
+%				MOVU  ->				<-  MOV  ->					 <- LOADI
+%				MOVL  ->				<-  NOT  ->					 <- LOADU
+%				ADDI  ->				<-  XOR  ->					 <- LOADL
+%			   SHIFTI ->				<-  OR   ->					 	STOREI ->
+%				CMPI  ->				<-  AND  ->						STOREU ->
+%										<-  CMP  ->						STOREL ->
+%										<- SHIFT ->						
+%										<-  ADD  ->					<-   POP 		Stack
+%																		PUSH  ->
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -406,14 +404,13 @@ c.STOREU = STOREU;
 %     Source of data.
 %
 % Type of operands:        Example:
-%     LOAD   REG  REG        LOAD   r2     a(r1)
 %     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 NOT_USED =  bin2dec('11 00010 0');
-LOAD     =  bin2dec('11 00001 0');
+NOT_USED =  bin2dec('11 00001 0');
 MOV      =  bin2dec('11 00000 0');
 c.NOT_USED = NOT_USED;
-c.LOAD     = LOAD;
+c.NOT_USED = NOT_USED;
 c.MOV      = MOV;
 
 
