@@ -1,25 +1,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Instruction formats:
 %
-% Format 0
-% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
-% ┃ F F ┃ O O ┃ I I I I ┃ ┃  I I I I I I I I  ┃
-% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
-%
-% Format 1
-% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
-% ┃ F F ┃ O O ┃ S S S S ┃ ┃  I I I I I I I I  ┃
-% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
+% Format 3
+% ┏━━━━━┳━━━━━━━━━━━┳━━━┓ ┏━━━━━━━━━┳━━━━━━━━━┓
+% ┃ F F ┃ O O O O O ┃ R ┃ ┃ D D D D ┃ S S S S ┃
+% ┗━━━━━┻━━━━━━━━━━━┻━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┛
+%  (NOT, XOR, OR, AND, LOADL, LOADU, CMP, RET, POP, PUSH, SHIFT, ADD, NOT_USED, STOREL, STOREU, NOT_USED, NOT_USED, MOV)
 %
 % Format 2
 % ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
 % ┃ F F ┃ O O ┃ D D D D ┃ ┃  I I I I I I I I  ┃
 % ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
+%  (ADDI, MOVU, LOADI, MOVL)
 %
-% Format 3
-% ┏━━━━━┳━━━━━━━━━━━┳━━━┓ ┏━━━━━━━━━┳━━━━━━━━━┓
-% ┃ F F ┃ O O O O O ┃ R ┃ ┃ D D D D ┃ S S S S ┃
-% ┗━━━━━┻━━━━━━━━━━━┻━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┛
+% Format 1
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ S S S S ┃ ┃  I I I I I I I I  ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
+%  (SHIFTI, NOT_USED, STOREI, CMPI)
+%
+% Format 0
+% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O ┃ I I I I ┃ ┃  I I I I I I I I  ┃
+% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
+%  (JLT, JPE, CALL, JMP)
 %
 %   F - Format
 %   O - Operation code
@@ -50,7 +54,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Not instruction
+%                    NOT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -73,7 +77,7 @@ c.NOT = NOT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Exclusive Or instruction
+%                     XOR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -96,7 +100,7 @@ c.XOR = XOR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Or instruction
+%                      OR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -119,7 +123,7 @@ c.OR = OR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      And instruction
+%                     AND
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -142,20 +146,20 @@ c.AND = AND;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Load Lower Byte instruction
+%               Load Lower Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % Description:
-%     The LOADL instruction loads lower byte of a word
-%     in memory to lower byte of a register. The other
+%     The LOADL instruction loads byte from memory
+%     to the lower byte of a register. The other
 %     byte of the register remains unchanged.
 %
 % First operand:
 %     Destination register.
 %
 % Second operand:
-%     Address of a word in memory to load.
+%     Address of a byte in memory to load.
 %
 % Type of operands:        Example:
 %     LOADL  REG  REG        LOADL  r0  m(r1)
@@ -165,20 +169,20 @@ c.LOADL = LOADL;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Load Upper Byte instruction
+%               Load Upper Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
 % Description:
-%     The LOADU instruction loads upper byte of a word
-%     in memory to lower byte of a register. The other
+%     The LOADU instruction loads byte from memory
+%     to the upper byte of a register. The other
 %     byte of the register remains unchanged.
 %
 % First operand:
 %     Destination register.
 %
 % Second operand:
-%     Address of a word in memory to load.
+%     Address of a byte in memory to load.
 %
 % Type of operands:        Example:
 %     LOADU  REG  REG        LOADU  r0  m(r1)
@@ -188,7 +192,7 @@ c.LOADU = LOADU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Compare instruction
+%                  Compare
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -215,7 +219,7 @@ c.CMP = CMP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Return instruction
+%                   Return
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -237,7 +241,7 @@ c.RET = RET;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Pop instruction
+%                    POP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -260,7 +264,7 @@ c.POP = POP;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Push instruction
+%                     PUSH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -282,7 +286,7 @@ c.PUSH = PUSH;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Shift instruction
+%                    SHIFT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -307,7 +311,7 @@ c.SHIFT = SHIFT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Add instruction
+%                     ADD
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -326,7 +330,7 @@ c.ADD = ADD;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      NOT_USED
+%                   NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -344,7 +348,7 @@ c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Store Lower Byte instruction
+%              Store Lower Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -366,7 +370,7 @@ c.STOREL = STOREL;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Store Upper Byte instruction
+%              Store Upper Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -388,7 +392,7 @@ c.STOREU = STOREU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Data transfer instructions
+%                     MOV
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R DDDD|SSSS
 %
@@ -421,7 +425,7 @@ c.MOV      = MOV;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Add Immediate instruction
+%                Add Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 % 
@@ -446,7 +450,7 @@ c.ADDI = ADDI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Move Upper Byte instruction
+%               Move Upper Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
@@ -476,7 +480,7 @@ c.MOVU = MOVU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Load Immediate instruction
+%               Load Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
@@ -499,7 +503,7 @@ c.LOADI = LOADI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Move Lower Byte instruction
+%               Move Lower Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OO|DDDD IIIIIIII
 %
@@ -535,7 +539,7 @@ c.MOVL = MOVL;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Bitwise Shift Immediate instruction
+%          Bitwise Shift Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
@@ -560,7 +564,7 @@ c.SHIFTI = SHIFTI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      NOT_USED
+%                  NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
@@ -578,7 +582,7 @@ c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Store Immediate instruction
+%               Store Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
@@ -610,7 +614,7 @@ c.STOREI = STOREI;
 
 % TODO: Description seems to be contradicting.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Compare Immediate instruction
+%             Compare Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OO|SSSS IIIIIIII
 %
@@ -644,7 +648,7 @@ c.CMPI = CMPI;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Jump If Less Then instruction
+%            Jump If Less Then
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
@@ -668,7 +672,7 @@ c.JLT = JLT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Jump If Equal instruction
+%                Jump If Equal
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
@@ -692,7 +696,7 @@ c.JPE = JPE;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Call instruction
+%                    CALL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %
@@ -720,7 +724,7 @@ c.CALL = CALL;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Jump instruction
+%                    Jump
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 0: FF|OO|IIII IIIIIIII
 %

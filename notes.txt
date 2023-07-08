@@ -1,247 +1,97 @@
 #############################################
-# Znaky
+# Commit Message
 #############################################
-8b x 40 x 25 = 8b x 1000 = 8000b = 1000B = 1kB
-........................................
-........................................
-........................................
-........................................
-Toto je 40 znakov v jednom riadku a 25..
-riadkov na obrazovku. Tu by sa uz dali 
-pisat aj dlhsie texty...................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-........................................
-
-
-8b x 24 x 16 = 8b x 384 = 3072b = 384B
-..X.....................
-..X.....................
-..XX....................
-........................
-........................
-........................
-Toto je 24 znakov.......
-........................
-........................
-........................
-........................
-........................
-........................
-.......X....XX..........
-......XX....XX..........
-XXXX..X.................
-
-
-8b x 16 x 16 = 8b x 256 = 2048b = 256B
-..X.............
-..X.............
-..XX............
-................
-................
-................
-Toto je 16 znako
-................
-................
-................
-................
-................
-................
-.......X....XX..
-......XX....XX..
-XXXX..X.........
-
-
-8b x 8 x 8 = 8b x 64 = 512b = 64B
-........
-Toto je.
-osem....
-znakov..
-........
-........
-........
-........
-
-
-8b x 32 = 256b = 32B
-Tu je 32 znakov.................
-
-
-8b x 16 = 128b = 16B
-Tu je 16 znakov.
-
-
-#############################################
-# Pixely
-#############################################
-16x16[p] = 2[B]x16 = 32[B]
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . X . . | . . . . . . . .
-. . . . . X . . | . . . . . . . .
-. . . . . X X . | . . . . . . . .
-----------------+----------------
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . X . .
-. . . . . . . . | . . . X X X X .
-. . . . . . . . | . . . X X . . .
-. . . . . . . . | X X X X X . . .
-. . . . . . . X | X . . . . . . .
-X X X X . . . X | X . . . . . . .
-
-
-16x24[p] = 2[B]x24 = 48[B]
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-----------------+----------------
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . X . . | . . . . . . . .
-. . . . . X . . | . . . . . . . .
-. . . . . X X . | . . . . . . . .
-----------------+----------------
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . X . .
-. . . . . . . . | . . . X X X X .
-. . . . . . . . | . . . X X . . .
-. . . . . . . . | X X X X X . . .
-. . . . . . . X | X . . . . . . .
-X X X X . . . X | X . . . . . . .
-
-
-16x32[p] = 2[B]x32 = 64[B]
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-----------------+----------------
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-----------------+----------------
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-----------------+----------------
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
-. . . . . . . . | . . . . . . . .
 
 
 
 #############################################
-# Co treba urobit
+# Mrkvicka 9000
 #############################################
-- Computer:
-	- Znizit pocet GP registrov na 8.
-	- Pridat nove instrukcie LOADIL/LOADIU/STOREIL/STOREIU.
-	- Pridat nove vystupy z bloku Word_VRAM (Data_Out_UpperByte, Data_Out_LowerByte).
-	- Pridat vystup Video(32x1B) z bloku 32B_VRAM.
-	- Prisposobit Text_Display_1x16.
-
-- Clean-up:
-- System testy:
-- Unit testy:
-
-- Preprocessor:
-	- Naprogramovat Assembler.
-	- Zarovnat pravy okraj vygenerovaneho kodu.
-
-- Firmware:
-	- Tetris
-
-	- Snake
-
-	- Kalkulacka
-
-	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register). Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
-
-	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
-
-	- "Textovy editor". :D :D :D
-
-
-- Backlog:
+- Dokumentacia
 	- Dokoncit README.
+	- Vylestit instrukcie.
+
+	- Mrkvicka 9000 Programmer`s Manual
+		- PDF
+		- Readme
+		- Instructions
+		- Demo examples
+
+	- Mrkvicka 9000 Hardware Manual
+		- PDF
+		- Simulink model
+
+
+- Hardware:
+	- Pridat datovu zbernicu aby sa zjednodusila schema.
+
+	- Pridat datovu ROM (na ukladanie stringov).
+
+	- Pridat nove instrukcie LOADIL/LOADIU/STOREIL/STOREIU.
+
+	- Rozsirit klavesnicu na 128 znakov ASCII (aby sa dala kreslit textova grafika).
+	- Pridat na klavesnicu tlacitko SHIFT.
+
+	- Pridat timer.
 
 	- Ochrana pamati:
 		- Detekovat stack overflow/underflow.
 		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
 
-	- Presunut common library do samostatneho repozitara a pridat .gitsubmodule(s).
-
 	- Zjednodusit architekturu:
 		- Zmenit sirku RAM na 1 bajt, prisposobit instrukcie LOAD/STORE. Registre zostanu dvojbajtove.
-		- Pouzit iba jeden register (accumulator).
-			-> Usetrim bity v instrukcii.
-			-> Moznost zvacsit adresovy priestor alebo pridat viac immediate instrukcii.
-			-> Mensi pocet suciastok.
 		- Nahradit vsetky typy enkoderov pomocou jedneho 16_to_4.
-			-> Mensi pocet subsystemov (menej roboty s PCB navrhom).
-			-> Mensi pocet suciastok (kaskada enkoderov BY MALA MAT menej spinacich prvkov nez jeden velky enkoder).
+			- Mensi pocet subsystemov (menej roboty s PCB navrhom).
+			- Mensi pocet suciastok (kaskada enkoderov BY MALA MAT menej spinacich prvkov nez jeden velky enkoder).
 		- Zistit ci by pomohlo keby som nahradil vsetky multiplexory iba pomocou jedneho typu.
-		- Trochu vylestit VRAM tak, aby ROM bola jej podmnozinou, aby som mohol pouzit vsade iba VRAM a nepotrebne video obvody by som iba deaktivoval.
 
-	- Pridat timer?
+
+- GUI
+	- FrontPanel
+		- Pridat tlacitka RESET, STEP.
+	- Pridat Instruction Memory Panel
+	- Pridat Terminal
+		- Obrazovka
+		- Klavesnica
+
+
+- Preprocessor:
+	- Naprogramovat Assembler.
+	- Zarovnat pravy okraj vygenerovaneho kodu.
+
+
+- Testy
+	- System testy:
+	- Unit testy:
+
+
+- Firmware:
+	- memcpy()
+	- Tetris
+	- Snake
+	- Kalkulacka
+	- Textovy editor
+
+	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register). Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
+
+	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
+
+
+- Ostatne
+	- Presunut common library do samostatneho repozitara a pridat .gitsubmodule(s).
+	- Skontrolovat v celom projekte ci sa niekde nenachadza string "TODO".
+
+
+#############################################
+# Mrkvicka 9001
+#############################################
+- Hardware:
+	- Pouzit iba jeden register (accumulator).
+		- Usetrim bity v instrukcii.
+		- Moznost zvacsit adresovy priestor alebo pridat viac immediate instrukcii.
+		- Mensi pocet suciastok.
 
 	- Rozsirit ALU (nasobicka, delicka).
-
-	- Video_Controller:
-		- Vkladat preddefinovane "sprity" do video pamate (operacia OR).
-		- Nadefinovat tabulku spritov - kocky tetrisu.
-
-	- Text Display - pridat dalsie riadky (spolu 4x16 znakov).
-
 	- Pridat dva specialne 32-bitove registre na aritmeticke operacie.
+	- Pridat FPU.
 
-
-GIT:
-	- Added dedicated constant data ROM memory attached to data bus.
