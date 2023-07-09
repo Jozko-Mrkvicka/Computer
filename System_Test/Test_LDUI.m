@@ -1,19 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction STOREL system test.
+% Instruction LOADI system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
 
-fprintf('Test_STOREL ')
+fprintf('Test_LOADI ')
 
 result = false;
-Flash ROM_Test_STOREL
+Flash ROM_Test_LOADI
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
-if ((hex2dec('00AA') == ram_00) && ...
-	(hex2dec('FFAA') == ram_01))
+if (hex2dec('BBAA') == gp_reg_02)
    result = true;
 end
 

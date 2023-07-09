@@ -11,12 +11,14 @@ gDebug = false;
 % Test_OR
 % Test_AND
 
-% Test_LOADI
-% Test_LOADL
-% Test_LOADU
-% Test_STOREI
-% Test_STOREL
-% Test_STOREU
+% Test_LDLI
+% Test_LDUI
+% Test_LDL
+% Test_LDU
+% Test_STLI
+% Test_STUI
+% Test_STL
+% Test_STU
 % Test_MOV
 % Test_MOVL
 % Test_MOVU
