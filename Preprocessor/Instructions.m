@@ -2,22 +2,22 @@
 % Instruction formats:
 %
 % Format 3
-% ┏━━━━━┳━━━━━━━━━━━┳━━━┓ ┏━━━━━━━━━┳━━━━━━━━━┓
-% ┃ F F ┃ O O O O O ┃ R ┃ ┃ D D D D ┃ S S S S ┃
-% ┗━━━━━┻━━━━━━━━━━━┻━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┛
+% ┏━━━━━┳━━━━━━━━━━━┳━━━┓ ┏━━━┳━━━━━━━┳━━━┳━━━━━━━┓
+% ┃ F F ┃ O O O O O ┃ R ┃ ┃ R ┃ D D D ┃ R ┃ S S S ┃
+% ┗━━━━━┻━━━━━━━━━━━┻━━━┛ ┗━━━┻━━━━━━━┻━━━┻━━━━━━━┛
 %  (NOT, XOR, OR, AND, LOADL, LOADU, CMP, RET, POP, PUSH, SHIFT, ADD, NOT_USED, STOREL, STOREU, NOT_USED, NOT_USED, MOV)
 %
 % Format 2
-% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
-% ┃ F F ┃ O O ┃ D D D D ┃ ┃  I I I I I I I I  ┃
-% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
-%  (ADDI, MOVU, LOADI, MOVL)
+% ┏━━━━━┳━━━━━━━┳━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O O ┃ D D D ┃ ┃  I I I I I I I I  ┃
+% ┗━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
+%  (ADDI, MOVU, LOADI, MOVL, NOT_USED, NOT_USED, NOT_USED, NOT_USED)
 %
 % Format 1
-% ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
-% ┃ F F ┃ O O ┃ S S S S ┃ ┃  I I I I I I I I  ┃
-% ┗━━━━━┻━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
-%  (SHIFTI, NOT_USED, STOREI, CMPI)
+% ┏━━━━━┳━━━━━━━┳━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
+% ┃ F F ┃ O O O ┃ S S S ┃ ┃  I I I I I I I I  ┃
+% ┗━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
+%  (SHIFTI, NOT_USED, STOREI, CMPI, NOT_USED, NOT_USED, NOT_USED, NOT_USED)
 %
 % Format 0
 % ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
@@ -56,7 +56,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                    NOT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction performs bitwise negation
@@ -79,7 +79,7 @@ c.NOT = NOT;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                     XOR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction performs exclusive OR
@@ -102,7 +102,7 @@ c.XOR = XOR;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                      OR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction performs bitwise OR operation
@@ -125,7 +125,7 @@ c.OR = OR;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                     AND
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction performs bitwise AND operation
@@ -148,7 +148,7 @@ c.AND = AND;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               Load Lower Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     The LOADL instruction loads byte from memory
@@ -171,7 +171,7 @@ c.LOADL = LOADL;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               Load Upper Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     The LOADU instruction loads byte from memory
@@ -194,7 +194,7 @@ c.LOADU = LOADU;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                  Compare
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction compares two 16-bit numbers.
@@ -221,7 +221,7 @@ c.CMP = CMP;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                   Return
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction exits currently executed function
@@ -243,7 +243,7 @@ c.RET = RET;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                    POP
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction restores register with its
@@ -266,7 +266,7 @@ c.POP = POP;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                     PUSH
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     This instruction saves value stored in register
@@ -288,7 +288,7 @@ c.PUSH = PUSH;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                    SHIFT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     The SHIFT instruction shifts bits in register.
@@ -313,7 +313,7 @@ c.SHIFT = SHIFT;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                     ADD
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % First operand:
 %     In: First value to add.
@@ -332,7 +332,7 @@ c.ADD = ADD;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                   NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % First operand:
 %     NOT_USED
@@ -350,7 +350,7 @@ c.NOT_USED = NOT_USED;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %              Store Lower Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     The STOREL instruction stores lower byte of a register
@@ -372,7 +372,7 @@ c.STOREL = STOREL;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %              Store Upper Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
 %     The STOREU instruction stores upper byte of a register
@@ -394,7 +394,7 @@ c.STOREU = STOREU;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                     MOV
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R DDDD|SSSS
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % The LOAD instruction moves data from memory
 % (pointed by source register) to destination register.
@@ -427,7 +427,7 @@ c.MOV      = MOV;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                Add Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
+% Format 2: FF|OOO|DDD IIIIIIII
 % 
 % Description:
 %     The ADDI instruction adds an immediate value
@@ -445,14 +445,14 @@ c.MOV      = MOV;
 % Type of operands:        Example:
 %     ADDI  REG  IMM          ADDI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADDI = bin2dec('10 11 0000');
+ADDI = bin2dec('10 011 000');
 c.ADDI = ADDI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               Move Upper Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
+% Format 2: FF|OOO|DDD IIIIIIII
 %
 % Description:
 %     The MOVU instruction moves an immediate value
@@ -475,14 +475,14 @@ c.ADDI = ADDI;
 % Type of operands:        Example:
 %     MOVU  REG  IMM         MOVU  r0  255
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVU =  bin2dec('10 10 0000');
+MOVU =  bin2dec('10 010 000');
 c.MOVU = MOVU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               Load Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
+% Format 2: FF|OOO|DDD IIIIIIII
 %
 % Description:
 %     The LOADI instruction moves value from 
@@ -498,14 +498,14 @@ c.MOVU = MOVU;
 % Type of operands:        Example:
 %     LOADI  REG  IMM         LOADI  r2  a(10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LOADI = bin2dec('10 01 0000');
+LOADI = bin2dec('10 001 000');
 c.LOADI = LOADI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               Move Lower Byte
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD IIIIIIII
+% Format 2: FF|OOO|DDD IIIIIIII
 %
 % Description:
 %     The MOVL instruction moves an immediate value
@@ -528,7 +528,7 @@ c.LOADI = LOADI;
 % Type of operands:        Example:
 %     MOVL  REG  IMM         MOVL  r0  10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVL =  bin2dec('10 00 0000');
+MOVL =  bin2dec('10 000 000');
 c.MOVL = MOVL;
 
 
@@ -541,7 +541,7 @@ c.MOVL = MOVL;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          Bitwise Shift Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|SSSS IIIIIIII
+% Format 1: FF|OOO|SSS IIIIIIII
 %
 % Description:
 %     The SHIFTI instruction shifts bits in register.
@@ -559,14 +559,14 @@ c.MOVL = MOVL;
 % Type of operands:        Example:
 %     SHIFTI  REG  IMM       SHIFTI  r0  -3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SHIFTI = bin2dec('01 11 0000');
+SHIFTI = bin2dec('01 011 000');
 c.SHIFTI = SHIFTI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                  NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|SSSS IIIIIIII
+% Format 1: FF|OOO|SSS IIIIIIII
 %
 % First operand:
 %     NOT_USED
@@ -577,14 +577,14 @@ c.SHIFTI = SHIFTI;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('01 10 0000');
+NOT_USED = bin2dec('01 010 000');
 c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %               Store Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|SSSS IIIIIIII
+% Format 1: FF|OOO|SSS IIIIIIII
 %
 % Description:
 %     The STOREI instruction moves value from register
@@ -608,7 +608,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:                 Example:
 %     (assembly) STOREI  IMM  REG      STOREI  m(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STOREI = bin2dec('01 01 0000');
+STOREI = bin2dec('01 001 000');
 c.STOREI = STOREI;
 
 
@@ -616,7 +616,7 @@ c.STOREI = STOREI;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %             Compare Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|SSSS IIIIIIII
+% Format 1: FF|OOO|SSS IIIIIIII
 %
 % Description:
 %     This instruction compares two 16-bit numbers.
@@ -637,7 +637,7 @@ c.STOREI = STOREI;
 % Type of operands:        Example:
 %     CMPI  REG  IMM         CMPI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CMPI = bin2dec('01 00 0000');
+CMPI = bin2dec('01 000 000');
 c.CMPI = CMPI;
 
 
@@ -667,7 +667,7 @@ c.CMPI = CMPI;
 % Type of operands:        Example:
 %     JLT  IMM               JLT  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JLT = bin2dec('00 11 000 0');
+JLT = bin2dec('00 11 0000');
 c.JLT = JLT;
 
 

@@ -32,14 +32,6 @@ r4  = bin2dec('0000 0100');
 r5  = bin2dec('0000 0101');
 r6  = bin2dec('0000 0110');
 r7  = bin2dec('0000 0111');
-r8  = bin2dec('0000 1000');
-r9  = bin2dec('0000 1001');
-r10 = bin2dec('0000 1010');
-r11 = bin2dec('0000 1011');
-r12 = bin2dec('0000 1100');
-r13 = bin2dec('0000 1101');
-r14 = bin2dec('0000 1110');
-r15 = bin2dec('0000 1111');
 
 
 %%%%%%%%%%%%%%%%%%%
@@ -114,14 +106,14 @@ c.LABEL_VALUE_MASK  = bin2dec('00001111 11111111');
 
 % Constant definition
 c.FORMAT_0_OPERAND_1_MASK = bin2dec('0000 1111');
-c.FORMAT_1_OPERAND_1_MASK = bin2dec('0000 1111');
-c.FORMAT_2_OPERAND_1_MASK = bin2dec('0000 1111');
-c.FORMAT_3_OPERAND_1_MASK = bin2dec('1111 0000');
-c.FORMAT_3_OPERAND_2_MASK = bin2dec('0000 1111');
+c.FORMAT_1_OPERAND_1_MASK = bin2dec('0000 0111');
+c.FORMAT_2_OPERAND_1_MASK = bin2dec('0000 0111');
+c.FORMAT_3_OPERAND_1_MASK = bin2dec('0111 0000');
+c.FORMAT_3_OPERAND_2_MASK = bin2dec('0000 0111');
 
 c.FORMAT_0_OPCODE_MASK = bin2dec('0011 0000');
-c.FORMAT_1_OPCODE_MASK = bin2dec('0011 0000');
-c.FORMAT_2_OPCODE_MASK = bin2dec('0011 0000');
+c.FORMAT_1_OPCODE_MASK = bin2dec('0011 1000');
+c.FORMAT_2_OPCODE_MASK = bin2dec('0011 1000');
 c.FORMAT_3_OPCODE_MASK = bin2dec('0011 1110');
 
 c.INSTR_FORMAT_MASK = bin2dec('1100 0000');
