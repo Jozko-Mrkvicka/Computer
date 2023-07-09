@@ -5,19 +5,19 @@
 % ┏━━━━━┳━━━━━━━━━━━┳━━━┓ ┏━━━┳━━━━━━━┳━━━┳━━━━━━━┓
 % ┃ F F ┃ O O O O O ┃ R ┃ ┃ R ┃ D D D ┃ R ┃ S S S ┃
 % ┗━━━━━┻━━━━━━━━━━━┻━━━┛ ┗━━━┻━━━━━━━┻━━━┻━━━━━━━┛
-%  (NOT, XOR, OR, AND, LOADL, LOADU, CMP, RET, POP, PUSH, SHIFT, ADD, NOT_USED, STOREL, STOREU, NOT_USED, NOT_USED, MOV)
+%  (NOT, XOR, OR, AND, LDL, LDU, CMP, RET, POP, PUSH, SHIFT, ADD, NOT_USED, STL, STU, NOT_USED, NOT_USED, MOV)
 %
 % Format 2
 % ┏━━━━━┳━━━━━━━┳━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
 % ┃ F F ┃ O O O ┃ D D D ┃ ┃  I I I I I I I I  ┃
 % ┗━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
-%  (ADDI, MOVU, LOADI, MOVL, NOT_USED, NOT_USED, NOT_USED, NOT_USED)
+%  (MOVL, LDLI, MOVU, ADDI, LDUI, NOT_USED, NOT_USED, NOT_USED)
 %
 % Format 1
 % ┏━━━━━┳━━━━━━━┳━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
 % ┃ F F ┃ O O O ┃ S S S ┃ ┃  I I I I I I I I  ┃
 % ┗━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
-%  (SHIFTI, NOT_USED, STOREI, CMPI, NOT_USED, NOT_USED, NOT_USED, NOT_USED)
+%  (CMPI, STLI, STUI, SHIFTI, OFST, NOT_USED, NOT_USED, NOT_USED)
 %
 % Format 0
 % ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
@@ -35,15 +35,17 @@
 %
 %
 % Immediate					Register					Register					Memory
-%				MOVU  ->				<-  MOV  ->					 <- LOADI
-%				MOVL  ->				<-  NOT  ->					 <- LOADU
-%				ADDI  ->				<-  XOR  ->					 <- LOADL
-%			   SHIFTI ->				<-  OR   ->					 	STOREI ->
-%				CMPI  ->				<-  AND  ->						STOREU ->
-%										<-  CMP  ->						STOREL ->
-%										<- SHIFT ->						
-%										<-  ADD  ->					<-   POP 		Stack
-%																		PUSH  ->
+%				MOVU  ->				<-  MOV  ->					 <- LDUI
+%				MOVL  ->				<-  NOT  ->					 <- LDLI
+%				ADDI  ->				<-  XOR  ->					 <- LDU
+%			   SHIFTI ->				<-  OR   ->					 <- LDL
+%				CMPI  ->				<-  AND  ->						STUI ->
+%										<-  CMP  ->						STLI ->
+%										<- SHIFT ->						STU ->
+%										<-  ADD  ->						STL ->
+% 
+%																	<-   POP 		Stack
+% 																		PUSH  ->
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -151,7 +153,7 @@ c.AND = AND;
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
-%     The LOADL instruction loads byte from memory
+%     The LDL instruction loads byte from memory
 %     to the lower byte of a register. The other
 %     byte of the register remains unchanged.
 %
@@ -162,10 +164,10 @@ c.AND = AND;
 %     Address of a byte in memory to load.
 %
 % Type of operands:        Example:
-%     LOADL  REG  REG        LOADL  r0  m(r1)
+%     LDL  REG  REG        LDL  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LOADL = bin2dec('11 01101 0');
-c.LOADL = LOADL;
+LDL = bin2dec('11 01101 0');
+c.LDL = LDL;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -174,7 +176,7 @@ c.LOADL = LOADL;
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
-%     The LOADU instruction loads byte from memory
+%     The LDU instruction loads byte from memory
 %     to the upper byte of a register. The other
 %     byte of the register remains unchanged.
 %
@@ -185,10 +187,10 @@ c.LOADL = LOADL;
 %     Address of a byte in memory to load.
 %
 % Type of operands:        Example:
-%     LOADU  REG  REG        LOADU  r0  m(r1)
+%     LDU  REG  REG        LDU  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LOADU = bin2dec('11 01100 0');
-c.LOADU = LOADU;
+LDU = bin2dec('11 01100 0');
+c.LDU = LDU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -353,7 +355,7 @@ c.NOT_USED = NOT_USED;
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
-%     The STOREL instruction stores lower byte of a register
+%     The STL instruction stores lower byte of a register
 %     to memory.
 %
 % First operand:
@@ -363,10 +365,10 @@ c.NOT_USED = NOT_USED;
 %     Byte to store.
 %
 % Type of operands:        Example:
-%     STOREL  REG  REG       STOREL  m(r0)  r1
+%     STL  REG  REG       STL  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STOREL = bin2dec('11 00100 0');
-c.STOREL = STOREL;
+STL = bin2dec('11 00100 0');
+c.STL = STL;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -375,7 +377,7 @@ c.STOREL = STOREL;
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
 % Description:
-%     The STOREU instruction stores upper byte of a register
+%     The STU instruction stores upper byte of a register
 %     to memory.
 %
 % First operand:
@@ -385,10 +387,46 @@ c.STOREL = STOREL;
 %     Byte to store.
 %
 % Type of operands:        Example:
-%     STOREU  REG  REG       STOREU  m(r0)  r1
+%     STU  REG  REG       STU  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STOREU = bin2dec('11 00011 0');
-c.STOREU = STOREU;
+STU = bin2dec('11 00011 0');
+c.STU = STU;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED =  bin2dec('11 00010 0');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 3: FF|OOOOO|R R|DDD|R|SSS
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED =  bin2dec('11 00001 0');
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -410,11 +448,7 @@ c.STOREU = STOREU;
 % Type of operands:        Example:
 %     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED =  bin2dec('11 00010 0');
-NOT_USED =  bin2dec('11 00001 0');
 MOV      =  bin2dec('11 00000 0');
-c.NOT_USED = NOT_USED;
-c.NOT_USED = NOT_USED;
 c.MOV      = MOV;
 
 
@@ -425,6 +459,86 @@ c.MOV      = MOV;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OOO|DDD IIIIIIII
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED = bin2dec('10 111 000');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OOO|DDD IIIIIIII
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED = bin2dec('10 110 000');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OOO|DDD IIIIIIII
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED = bin2dec('10 101 000');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         Load Upper Byte (Immediate)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 2: FF|OOO|DDD IIIIIIII
+%
+% Description:
+%     The LDUI instruction moves value from data memory
+%     (pointed by immediate) to the upper byte of a register.
+%     Immediate value is unsigned, range is <0, 255>, it addresses a memory cell
+%     inside of single memory segment (one memory segment has 256 cells).
+%     Physical address of the memory cell is automatically computed
+%     by adding the offset register to the immediate value (see OFST instruction).
+%
+% First operand:
+%     Destination register.
+%
+% Second operand:
+%     Source memory address.
+%
+% Type of operands:        Example:
+%     LDUI  REG  IMM         LDUI  r2  m(10)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+LDUI = bin2dec('10 100 000');
+c.LDUI = LDUI;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                Add Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OOO|DDD IIIIIIII
@@ -433,7 +547,7 @@ c.MOV      = MOV;
 %     The ADDI instruction adds an immediate value
 %     to a register. The result is stored in the
 %     same register. Immediate value is signed and 
-%     must be from range <-128, +127>.
+%     must be in range <-128, +127>.
 %
 % First operand:
 %     In: Value (stored in a register) to be added.
@@ -456,14 +570,14 @@ c.ADDI = ADDI;
 %
 % Description:
 %     The MOVU instruction moves an immediate value
-%     to MSB byte of a register. The value is from 
-%     range <0, 255>.
+%     to upper byte of a register. Immediate value
+%     is unsigned and it is in range <0, 255>.
 % 
 % Note:
-%     The LSB byte of a register must be set before
+%     The lower byte of a register must be set before
 %     instruction MOVU is executed. Otherwise whole
-%     MSB byte will be overwritten by most significant
-%     bit of LSB byte when the instruction MOVL
+%     upper byte will be overwritten by most significant
+%     bit of lower byte when the instruction MOVL
 %     is executed.
 % 
 % First operand:
@@ -480,44 +594,47 @@ c.MOVU = MOVU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%               Load Immediate
+%         Load Lower Byte (Immediate)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OOO|DDD IIIIIIII
 %
 % Description:
-%     The LOADI instruction moves value from 
-%     memory (pointed by immediate) to register.
-%     Immediate value is unsigned. Range is <0, 255>.
-% 
+%     The LDLI instruction moves value from data memory
+%     (pointed by immediate) to the lower byte of a register.
+%     Immediate value is unsigned, range is <0, 255>, it addresses a memory cell
+%     inside of single memory segment (one memory segment has 256 cells).
+%     Physical address of the memory cell is automatically computed
+%     by adding the offset register to the immediate value (see OFST instruction).
+%
 % First operand:
 %     Destination register.
 %
 % Second operand:
-%     Source memory address. 
+%     Source memory address.
 %
 % Type of operands:        Example:
-%     LOADI  REG  IMM         LOADI  r2  a(10)
+%     LDLI  REG  IMM         LDLI  r2  m(10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LOADI = bin2dec('10 001 000');
-c.LOADI = LOADI;
+LDLI = bin2dec('10 001 000');
+c.LDLI = LDLI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%               Move Lower Byte
+%         Move Lower Byte (Immediate)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 2: FF|OOO|DDD IIIIIIII
 %
 % Description:
 %     The MOVL instruction moves an immediate value
-%     into LSB byte of a register. Immediate value
+%     into lower byte of a register. Immediate value
 %     is signed and it is in range <-128, +127>.
-%     The sign bit is copied to MSB byte of the register.
+%     The sign bit is copied to upper byte of the register.
 %
 % Note:
 %     If higher value than 127 needs to be stored
-%     to LSB byte of a register (in range <128, 255>)
-%     then the MSB byte of the register must be set
-%     to zero with instruction MOVU.
+%     to lower byte of a register (in range <128, 255>)
+%     then the upper byte of the register must be overwritten
+%     with zero using instruction MOVU.
 % 
 % First operand:
 %     Destination register.
@@ -537,6 +654,86 @@ c.MOVL = MOVL;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                   Instruction Format 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OOO|SSS IIIIIIII
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED = bin2dec('01 111 000');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OOO|SSS IIIIIIII
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED = bin2dec('01 110 000');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OOO|SSS IIIIIIII
+%
+% First operand:
+%     NOT_USED
+%
+% Second operand:
+%     NOT_USED
+%
+% Type of operands:        Example:
+%     NOT_USED               NOT_USED
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+NOT_USED = bin2dec('01 101 000');
+c.NOT_USED = NOT_USED;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                   Offset
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OOO|SSS IIIIIIII
+%
+% Description:
+%     The OFST instruction sets the memory offset register which
+%     is used for computation of physical memory address. This gives us
+%     posibility to utilize (theoretically) whole 16-bit range
+%     of data memory. The physical address is then used by instructions
+%     STLI, STUI, LDLI and LDUI. The offset value is interpreted as
+%     unsigned in range <0, 255>.
+% 
+% First operand: 
+%     Not used.
+%
+% Second operand:
+%     Data memory offset address.
+%
+% Type of operands:        Example:
+%     OFST  IMM              OFST  4
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+OFST = bin2dec('01 100 000');
+c.OFST = OFST;
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          Bitwise Shift Immediate
@@ -564,32 +761,17 @@ c.SHIFTI = SHIFTI;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                  NOT_USED
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OOO|SSS IIIIIIII
-%
-% First operand:
-%     NOT_USED
-%
-% Second operand:
-%     NOT_USED
-%
-% Type of operands:        Example:
-%     NOT_USED               NOT_USED
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('01 010 000');
-c.NOT_USED = NOT_USED;
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%               Store Immediate
+%         Store Upper Byte (Immediate)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OOO|SSS IIIIIIII
 %
 % Description:
-%     The STOREI instruction moves value from register
-%     to memory (pointed by immediate). Immediate value 
-%     is unsigned. Range is <0, 255>.
+%     The STUI instruction moves the upper byte of a register
+%     to data memory (pointed by immediate). Immediate value 
+%     is unsigned, range is <0, 255>, it addresses a memory cell
+%     inside of single memory segment (one memory segment has 256 cells).
+%     Physical address of the memory cell is automatically computed
+%     by adding the offset register to the immediate value (see OFST instruction).
 % 
 % First operand:
 %     Assembly code: Destination memory address.
@@ -606,10 +788,44 @@ c.NOT_USED = NOT_USED;
 %     on left side.
 % 
 % Type of operands:                 Example:
-%     (assembly) STOREI  IMM  REG      STOREI  m(11)  r3
+%     (assembly) STUI  IMM  REG      STUI  m(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STOREI = bin2dec('01 001 000');
-c.STOREI = STOREI;
+STUI = bin2dec('01 010 000');
+c.STUI = STUI;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         Store Lower Byte (Immediate)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Format 1: FF|OOO|SSS IIIIIIII
+%
+% Description:
+%     The STLI instruction moves the lower byte of a register
+%     to data memory (pointed by immediate). Immediate value 
+%     is unsigned, range is <0, 255>, it addresses a memory cell
+%     inside of single memory segment (one memory segment has 256 cells).
+%     Physical address of the memory cell is automatically computed
+%     by adding the offset register to the immediate value (see OFST instruction).
+% 
+% First operand:
+%     Assembly code: Destination memory address.
+%     Compiled binary: Source register to be saved into memory.
+%
+% Second operand: 
+%     Assembly code: Source register to be saved into memory.
+%     Compiled binary: Destination memory address.
+%
+% Note:
+%     Order of operands in assembly source code and in compiled
+%     binary code is vice versa. The reason is to unify all data
+%     transfer instructions so they have destination operand
+%     on left side.
+% 
+% Type of operands:                 Example:
+%     (assembly) STLI  IMM  REG      STLI  m(11)  r3
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+STLI = bin2dec('01 001 000');
+c.STLI = STLI;
 
 
 % TODO: Description seems to be contradicting.
@@ -628,7 +844,7 @@ c.STOREI = STOREI;
 %     "less than" or "equal". It is stored in status register.
 % 
 % First operand:
-%     Data to compare. 
+%     Data to compare.
 %
 % Second operand:
 %     Data to compare. Immediate value is interpreted

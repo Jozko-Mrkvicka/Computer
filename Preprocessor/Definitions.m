@@ -149,7 +149,7 @@ c.CONST_DATA_SIZE  = 32;
 c.RAM_START        = 256;
 c.RAM_SIZE         = 512;
 
-				% Start address of stack on data address bus and it`s size in words.
+% Start address of the stack on dedicated (stack) address bus and it`s size in words.
 % The stack grows towards lower addresses (it decreases).
 c.STACK_START      = 15;
 c.STACK_SIZE       = 16;
