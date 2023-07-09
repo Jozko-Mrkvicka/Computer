@@ -286,7 +286,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
 
 			case c.INSTR_FORMAT_3
 				% Add here all instructions with single operand.
-				if ((c.PUSH == value) || (c.POP == value) || (c.NOT == value))
+				if ((c.PUSH == value) || (c.POP == value) || (c.NOT == value) || (c.OFST == value))
 					i = i + 1;
 
 				% Add here all instructions with no operands.
@@ -347,7 +347,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 1: FF|OO|SSSS   CCCCCCCC
+% Format 1: FF|OOO|SSS   CCCCCCCC
 %
 % Example 1:  opcode | op1  | op2
 %            --------+------+-----
@@ -362,16 +362,18 @@ end
 % 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, label_address_array, i, j, c)
-	% Read first operand.
-	op1 = src_code(1, i);
-	i = i + 1;
-
-	% Read second operand.
-	op2 = src_code(1, i);
-	i = i + 1;
-
+	op1 = 0;
+	op2 = 0;
 
 	if ((c.STLI == opcode) || (c.STUI == opcode))
+		% Read first operand.
+		op1 = src_code(1, i);
+		i = i + 1;
+
+		% Read second operand.
+		op2 = src_code(1, i);
+		i = i + 1;
+
 		% Check that first operand is in appropriate range.
 		if ((op1 < -128) || (op1 > 255))
 			error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op1, j - 1)
@@ -379,7 +381,23 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
 
 		instr_msb = bitor(opcode, op2);
 		instr_lsb = op1;
+
+	elseif (c.OFST == opcode)
+		% Read only second operand.
+		op2 = src_code(1, i);
+		i = i + 1;
+		instr_msb = opcode;
+		instr_lsb = op2;
+
 	else
+		% Read first operand.
+		op1 = src_code(1, i);
+		i = i + 1;
+
+		% Read second operand.
+		op2 = src_code(1, i);
+		i = i + 1;
+
 		% Check that second operand is in appropriate range.
 		if (c.SHIFTI == opcode)
 			% op2 is unsigned (uint16) and I just haven`t found a way how to convert it to signed (int8), therefore I check range in unsigned arithmetic.
@@ -400,7 +418,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 2: FF|OO|DDDD   CCCCCCCC
+% Format 2: FF|OOO|DDD   CCCCCCCC
 %
 % Example:  opcode | op1 | op2 
 %          --------+-----+-----
@@ -423,7 +441,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOO|RR   DDDD|SSSS
+% Format 3: FF|OOOO|RR   R|DDD|R|SSS
 %
 % Example:  opcode | op1 | op2 
 %           -------+-----+----
@@ -479,9 +497,10 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
 		case c.INSTR_FORMAT_1
 			switch (bitor(bitand(instr_msb, c.FORMAT_1_OPCODE_MASK), c.INSTR_FORMAT_1))
 				case c.CMPI,   fprintf('   CMPI    r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
-				% Case not used.
 				case c.STLI,   fprintf('   STLI    m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
+				case c.STUI,   fprintf('   STUI    m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
 				case c.SHIFTI, fprintf('   SHIFTI  r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
+				case c.OFST,   fprintf('   OFST    %03d                |', instr_lsb)
 			end
 
 		case c.INSTR_FORMAT_2
@@ -490,6 +509,7 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
 			switch (bitor(bitand(instr_msb, c.FORMAT_2_OPCODE_MASK), c.INSTR_FORMAT_2))
 				case c.ADDI,  fprintf('   ADDI    r%d      %-4d       |',  string1, string2)
 				case c.LDLI,  fprintf('   LDLI    r%d      m(%03d)     |', string1, string2)
+				case c.LDUI,  fprintf('   LDUI    r%d      m(%03d)     |', string1, string2)
 				case c.MOVU,  fprintf('   MOVU    r%d      %-4d       |',  bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), string2)
 				case c.MOVL,  fprintf('   MOVL    r%d      %-4d       |',  string1, string2)
 			end

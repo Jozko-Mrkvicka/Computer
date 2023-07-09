@@ -716,8 +716,9 @@ c.NOT_USED = NOT_USED;
 %
 % Description:
 %     The OFST instruction sets the memory offset register which
-%     is used for computation of physical memory address. This gives us
-%     posibility to utilize (theoretically) whole 16-bit range
+%     is used for computation of physical (data memory) address. The offset
+%     register is, in fact, used as upper byte (MSB) of a 16-bit address.
+%     This gives us posibility to utilize (theoretically) whole 16-bit range
 %     of data memory. The physical address is then used by instructions
 %     STLI, STUI, LDLI and LDUI. The offset value is interpreted as
 %     unsigned in range <0, 255>.
@@ -729,7 +730,7 @@ c.NOT_USED = NOT_USED;
 %     Data memory offset address.
 %
 % Type of operands:        Example:
-%     OFST  IMM              OFST  4
+%     OFST  IMM              OFST  msb(c.RAM_START + 0)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 OFST = bin2dec('01 100 000');
 c.OFST = OFST;

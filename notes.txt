@@ -27,19 +27,17 @@
 
 	- Pridat datovu ROM (na ukladanie stringov).
 
-	- Pridat nove instrukcie LOADIL/LOADIU/STOREIL/STOREIU.
-
 	- Rozsirit klavesnicu na 128 znakov ASCII (aby sa dala kreslit textova grafika).
 	- Pridat na klavesnicu tlacitko SHIFT.
 
 	- Pridat timer.
 
-	- Ochrana pamati:
+	- Ochrana pamati / error detection:
+		- Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
 		- Detekovat stack overflow/underflow.
 		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
 
 	- Zjednodusit architekturu:
-		- Zmenit sirku RAM na 1 bajt, prisposobit instrukcie LOAD/STORE. Registre zostanu dvojbajtove.
 		- Nahradit vsetky typy enkoderov pomocou jedneho 16_to_4.
 			- Mensi pocet subsystemov (menej roboty s PCB navrhom).
 			- Mensi pocet suciastok (kaskada enkoderov BY MALA MAT menej spinacich prvkov nez jeden velky enkoder).
@@ -48,7 +46,7 @@
 
 - GUI
 	- FrontPanel
-		- Pridat tlacitka RESET, STEP.
+		- Pridat tlacitka RESET, RUN, STOP, STEP.
 	- Pridat Instruction Memory Panel
 	- Pridat Terminal
 		- Obrazovka
