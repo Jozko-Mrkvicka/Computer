@@ -1,27 +1,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction LOADI system test.
+% Instruction LDLI system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
 
-fprintf('Test_LOADI ')
+fprintf('Test_LDLI ')
 
 result = false;
-Flash ROM_Test_LOADI
+Flash ROM_Test_LDLI
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
-if (hex2dec('BBAA') == gp_reg_02)
+if (hex2dec('00AA') == gp_reg_01)
    result = true;
 end
 
 if ((true == gDebug) || (false == result))
-	print_output_values();
+    print_output_values();
 end
 
 if (true == result)
-	fprintf('Passed\n', result)
+    fprintf('Passed\n', result)
 else
-	fprintf('Failed\n', result)
+    fprintf('Failed\n', result)
 end

@@ -17,12 +17,12 @@ if (hex2dec('1111') == gp_reg_00)
 end
 
 if ((true == gDebug) || (false == result))
-	print_output_values();
+    print_output_values();
 end
 
 if (true == result)
-	fprintf('Passed\n', result)
+    fprintf('Passed\n', result)
 else
-	fprintf('Failed\n', result)
+    fprintf('Failed\n', result)
 end
 

@@ -34,18 +34,18 @@
 %
 %
 %
-% Immediate					Register					Register					Memory
-%				MOVU  ->				<-  MOV  ->					 <- LDUI
-%				MOVL  ->				<-  NOT  ->					 <- LDLI
-%				ADDI  ->				<-  XOR  ->					 <- LDU
-%			   SHIFTI ->				<-  OR   ->					 <- LDL
-%				CMPI  ->				<-  AND  ->						STUI ->
-%										<-  CMP  ->						STLI ->
-%										<- SHIFT ->						STU ->
-%										<-  ADD  ->						STL ->
+% Immediate                 Register                    Register                    Memory
+%               MOVU  ->                <-  MOV  ->                  <- LDUI
+%               MOVL  ->                <-  NOT  ->                  <- LDLI
+%               ADDI  ->                <-  XOR  ->                  <- LDU
+%              SHIFTI ->                <-  OR   ->                  <- LDL
+%               CMPI  ->                <-  AND  ->                     STUI ->
+%                                       <-  CMP  ->                     STLI ->
+%                                       <- SHIFT ->                     STU ->
+%                                       <-  ADD  ->                     STL ->
 % 
-%																	<-   POP 		Stack
-% 																		PUSH  ->
+%                                                                   <-   POP        Stack
+%                                                                       PUSH  ->
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

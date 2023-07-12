@@ -12,15 +12,15 @@ How to run
 ----------
 - Switch Matlab path to the Computer folder.
 - From Matlab command line run the following commands:
-	- "Computer"        - to open computer model.
-	- "Flash ROM_Pokus" - to initialize (flash) instruction memory.
+    - "Computer"        - to open computer model.
+    - "Flash ROM_Pokus" - to initialize (flash) instruction memory.
 - In the Computer simulink window click on "play" button to run (or step) simulation.
 - From Matlab command line run the following commands:
-	- "FrontPanel" - to open front panel debugging/control window.
-	- "DataMemory" - to open data memory debugging/control window.
+    - "FrontPanel" - to open front panel debugging/control window.
+    - "DataMemory" - to open data memory debugging/control window.
 
 
-	In file ROM.m there is placed assembly ROM code (firmware) which will be executed after "power on"
+    In file ROM.m there is placed assembly ROM code (firmware) which will be executed after "power on"
 (after pressing Run button in simulink window). This assembly code must be "compiled" to binary
 before execution. The assembly code is placed in matlab array in the double format (default matlab format
 for storing numeric data). During "compilation" the assembly code is converted to uint16_t format
@@ -30,10 +30,10 @@ original assembly code (for your convenience, handy for debugging/crosschecking)
 
 NOTE: If you forget to "compile" and you try to run the simulation then you will see the following error
 message:
-	Invalid setting in 'Computer/Memory/32B_ROM_Memory(Addr 0..15)/Byte_00' for parameter 'Value'.
-	Caused by:
-	Error evaluating parameter 'Value' in 'Computer/Memory/32B_ROM_Memory(Addr 0..15)/Byte_00'
-	Undefined function 'RomCode' for input arguments of type 'double'.
+    Invalid setting in 'Computer/Memory/32B_ROM_Memory(Addr 0..15)/Byte_00' for parameter 'Value'.
+    Caused by:
+    Error evaluating parameter 'Value' in 'Computer/Memory/32B_ROM_Memory(Addr 0..15)/Byte_00'
+    Undefined function 'RomCode' for input arguments of type 'double'.
 
 After successful "compilation" open the file Computer.slx and press the Run button. Simulation will start.
 

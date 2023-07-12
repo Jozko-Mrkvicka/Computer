@@ -6,18 +6,18 @@ General requirements
 - Constant and variable identifiers must be unique. (DONE)
 - All comments are deleted from source code. (DONE)
 - Source code contains the following sections:
-	- .CONST (optional) (DONE)
-	- .DATA (optional) (DONE)
-	- .TEXT (mandatory) (DONE)
+    - .CONST (optional) (DONE)
+    - .DATA (optional) (DONE)
+    - .TEXT (mandatory) (DONE)
 - Section must not be empty. (DONE)
 - The following checks are done in source code:
-	- Valid datatypes. (DONE)
-	- Valid registers. (DONE)
-	- Valid instructions. (DONE)
-	- Valid identifiers. (DONE)
-	- Valid binary/decimal/hexadecimal constants. (DONE)
-	- Valid string constants. (DONE)
-	- Valid labels. (DONE)
+    - Valid datatypes. (DONE)
+    - Valid registers. (DONE)
+    - Valid instructions. (DONE)
+    - Valid identifiers. (DONE)
+    - Valid binary/decimal/hexadecimal constants. (DONE)
+    - Valid string constants. (DONE)
+    - Valid labels. (DONE)
 
 
 ==============================
@@ -27,12 +27,12 @@ Requirements for an identifier
 - It must not begin with a digit. (DONE)
 - It can contain only alphanumerical characters and the underscore character. (DONE)
 - If it is an array then it contains:
-	- A length value encapsulated in a pair of square brackets. (DONE)
-	- A length value can be:
-		- Binary number (suffixed with "b"). (DONE)
-		- Hexadecimal number (prefixed with "0x"). (DONE)
-		- Decimal number. (DONE)
-	- A length value must be greater than zero. (DONE)
+    - A length value encapsulated in a pair of square brackets. (DONE)
+    - A length value can be:
+        - Binary number (suffixed with "b"). (DONE)
+        - Hexadecimal number (prefixed with "0x"). (DONE)
+        - Decimal number. (DONE)
+    - A length value must be greater than zero. (DONE)
 
 
 =====================================
@@ -75,10 +75,10 @@ Requirements for the .DATA section checking and parsing
 - Every line must contain exactly two words in the following order: datatype, identifier. (DONE)
 - Sum of all variables must fit into the RAM (sum <= RAM_SIZE - STACK_SIZE). (DONE)
 - A variable is stored in a list of structures with the following members:
-	- Name (DONE)
-	- Datatype (DONE)
-	- Length (DONE)
-	- Address (DONE)
+    - Name (DONE)
+    - Datatype (DONE)
+    - Length (DONE)
+    - Address (DONE)
 
 
 ========================================================
@@ -87,17 +87,17 @@ Requirements for the .CONST section checking and parsing
 - Every line must contain at least three words in the following order: datatype, identifier, value. (DONE)
 - Sum of all constants must fit into the constant data ROM. (DONE)
 - A constant is stored in a list of structures with the following members:
-	- Name (DONE)
-	- Datatype (DONE)
-	- Length (DONE)
-	- Address (DONE)
-	- Value(s) (DONE)
+    - Name (DONE)
+    - Datatype (DONE)
+    - Length (DONE)
+    - Address (DONE)
+    - Value(s) (DONE)
 - Constant value can be either single constant, array of constants or a string. (DONE)
 - If datatype is array of UINT8, INT8, UINT16 or INT16 then:
-	- Number of constants matches array length. (DONE)
-	- All values are delimited by comma or by a white character. (DONE)
-	- All values are in allowed range of specified datatype. (DONE)
-	- Values can be bin, hex, dec or char. (DONE)
+    - Number of constants matches array length. (DONE)
+    - All values are delimited by comma or by a white character. (DONE)
+    - All values are in allowed range of specified datatype. (DONE)
+    - Values can be bin, hex, dec or char. (DONE)
 - Constrain: Array constants can be written only on single line. Splitting to multiple lines is not allowed. This rule is there to keep the Assembler as simple as possible.
 
 
@@ -109,16 +109,16 @@ Requirements for the .TEXT section checking and parsing
 
 - All labels and their addresses will be stored in a list. (!!!)
 - Section .TEXT contains only defined symbols:
-	- Instructions (!!!)
-	- Registers (!!!)
-	- Constants (!!!)
-	- Variables (!!!)
-	- Labels (!!!)
+    - Instructions (!!!)
+    - Registers (!!!)
+    - Constants (!!!)
+    - Variables (!!!)
+    - Labels (!!!)
 - The rest of a line is parsed based on the instruction format. (!!!)
 - An instruction is stored in a list of structures with the following members:
-	- 
-	-
-	-
+    - 
+    -
+    -
 - An array index must be inside of range of declared constant or variable array. (!!!)
 - The data ROM memory can`t be written. (!!!)
 - An immediate operand must be checked if it fits to an instruction format. (!!!)

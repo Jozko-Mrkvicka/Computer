@@ -1,10 +1,13 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Instruction CMP system test.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 label = ...
 {
-	'LABEL'
+    'LABEL'
 };
 for (idx = 1:size(label))
-	eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-	eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
+    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
+    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
 end
 c.LBL_CNT = idx;
 
@@ -12,14 +15,14 @@ c.LBL_CNT = idx;
 
 SourceCode = ...
 [
-				MOVL		r0			h00			... % r0 = 0
-				MOVU		r0			h00			...
-													...
-				MOVL		r1			hFF			... % r1 = -1
-				MOVU		r1			hFF			...
-													...
-				CMP			r0			r1			... % Expected result for signed data:   r0 > r1
-													... % Expected result for unsigned data: r0 < r1
-	LABEL_		JMP			LABEL					...
+                MOVL        r0          h00         ... % r0 = 0
+                MOVU        r0          h00         ...
+                                                    ...
+                MOVL        r1          hFF         ... % r1 = -1
+                MOVU        r1          hFF         ...
+                                                    ...
+                CMP         r0          r1          ... % Expected result for signed data:   r0 > r1
+                                                    ... % Expected result for unsigned data: r0 < r1
+    LABEL_      JMP         LABEL                   ...
 ];
 

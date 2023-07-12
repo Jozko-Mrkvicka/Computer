@@ -8,88 +8,84 @@
 # Mrkvicka 9000
 #############################################
 - Dokumentacia
-	- Dokoncit README.
-	- Vylestit instrukcie.
+    - Dokoncit README.
+    - Vylestit instrukcie.
 
-	- Mrkvicka 9000 Programmer`s Manual
-		- PDF
-		- Readme
-		- Instructions
-		- Demo examples
+    - Mrkvicka 9000 Programmer`s Manual
+        - PDF
+        - Readme
+        - Instructions
+        - Demo examples
 
-	- Mrkvicka 9000 Hardware Manual
-		- PDF
-		- Simulink model
+    - Mrkvicka 9000 Hardware Manual
+        - PDF
+        - Simulink model
 
 
 - Hardware:
-	- Pridat datovu zbernicu aby sa zjednodusila schema.
+    - Pridat datovu ROM (na ukladanie stringov).
 
-	- Pridat datovu ROM (na ukladanie stringov).
+    - Pridat datovu zbernicu aby sa zjednodusila schema.
 
-	- Rozsirit klavesnicu na 128 znakov ASCII (aby sa dala kreslit textova grafika).
-	- Pridat na klavesnicu tlacitko SHIFT.
+    - Dokoncit obrazovku/terminal.
+    - Rozsirit klavesnicu na 128 znakov ASCII (aby sa dala kreslit textova grafika).
+    - Pridat na klavesnicu tlacitko SHIFT.
 
-	- Pridat timer.
+    - Pridat timer.
 
-	- Ochrana pamati / error detection:
-		- Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
-		- Detekovat stack overflow/underflow.
-		- Dajak rozumne konfigurovat zaciatok a koniec stacku + chranit pred neopravnenym zapisom.
+    - Ochrana pamati / error detection:
+        - Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
+        - Detekovat stack overflow/underflow.
 
-	- Zjednodusit architekturu:
-		- Nahradit vsetky typy enkoderov pomocou jedneho 16_to_4.
-			- Mensi pocet subsystemov (menej roboty s PCB navrhom).
-			- Mensi pocet suciastok (kaskada enkoderov BY MALA MAT menej spinacich prvkov nez jeden velky enkoder).
-		- Zistit ci by pomohlo keby som nahradil vsetky multiplexory iba pomocou jedneho typu.
+    - Zjednodusit architekturu:
+        - Nahradit vsetky typy enkoderov pomocou jedneho 16_to_4.
+            - Mensi pocet subsystemov (menej roboty s PCB navrhom).
+            - Mensi pocet suciastok (kaskada enkoderov BY MALA MAT menej spinacich prvkov nez jeden velky enkoder).
+        - Zistit ci by pomohlo keby som nahradil vsetky multiplexory iba pomocou jedneho typu.
 
 
 - GUI
-	- FrontPanel
-		- Pridat tlacitka RESET, RUN, STOP, STEP.
-	- Pridat Instruction Memory Panel
-	- Pridat Terminal
-		- Obrazovka
-		- Klavesnica
+    - FrontPanel
+        - Pridat tlacitka RESET, RUN, STOP, STEP.
+    - Pridat Instruction Memory Panel.
+    - Pridat Terminal (obrazovka, klavesnica).
 
 
 - Preprocessor:
-	- Naprogramovat Assembler.
-	- Zarovnat pravy okraj vygenerovaneho kodu.
+    - Naprogramovat Assembler.
+    - Zarovnat pravy okraj vygenerovaneho kodu.
 
 
 - Testy
-	- System testy:
-	- Unit testy:
 
 
 - Firmware:
-	- memcpy()
-	- Tetris
-	- Snake
-	- Kalkulacka
-	- Textovy editor
+    - memcpy()
+    - Tetris
+    - Snake
+    - Kalkulacka
+    - Textovy editor
 
-	- Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register). Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
+    - Faktorial -> Budem musiet ukladat na zasobnik aj navratovu adresu (Return Address Register). Zatial este nemam ziaden return value register pomocou ktoreho by funkcia vracala navratovu hodnotu. Automaticky ukladat return value register.
 
-	- Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
+    - Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 
 
 - Ostatne
-	- Presunut common library do samostatneho repozitara a pridat .gitsubmodule(s).
-	- Skontrolovat v celom projekte ci sa niekde nenachadza string "TODO".
+    - Presunut common library do samostatneho repozitara a pridat .gitsubmodule(s).
+    - Skontrolovat v celom projekte ci sa niekde nenachadza string "TODO".
 
 
 #############################################
 # Mrkvicka 9001
 #############################################
 - Hardware:
-	- Pouzit iba jeden register (accumulator).
-		- Usetrim bity v instrukcii.
-		- Moznost zvacsit adresovy priestor alebo pridat viac immediate instrukcii.
-		- Mensi pocet suciastok.
+    - Pouzit iba jeden register (accumulator).
+        - Usetrim bity v instrukcii.
+        - Moznost zvacsit adresovy priestor alebo pridat viac immediate instrukcii.
+        - Mensi pocet suciastok.
 
-	- Rozsirit ALU (nasobicka, delicka).
-	- Pridat dva specialne 32-bitove registre na aritmeticke operacie.
-	- Pridat FPU.
+    - Rozsirit ALU (nasobicka, delicka).
+    - Pridat dva specialne 32-bitove registre na aritmeticke operacie.
+    - Pridat FPU.
 
