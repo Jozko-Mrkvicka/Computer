@@ -17,7 +17,7 @@
 % ┏━━━━━┳━━━━━━━┳━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
 % ┃ F F ┃ O O O ┃ S S S ┃ ┃  I I I I I I I I  ┃
 % ┗━━━━━┻━━━━━━━┻━━━━━━━┛ ┗━━━━━━━━━━━━━━━━━━━┛
-%  (CMPI, STLI, STUI, SHIFTI, OFST, NOT_USED, NOT_USED, NOT_USED)
+%  (CMPI, STLI, STUI, SHIFTI, SGMT, NOT_USED, NOT_USED, NOT_USED)
 %
 % Format 0
 % ┏━━━━━┳━━━━━┳━━━━━━━━━┓ ┏━━━━━━━━━━━━━━━━━━━┓
@@ -523,7 +523,7 @@ c.NOT_USED = NOT_USED;
 %     Immediate value is unsigned, range is <0, 255>, it addresses a memory cell
 %     inside of single memory segment (one memory segment has 256 cells).
 %     Physical address of the memory cell is automatically computed
-%     by adding the offset register to the immediate value (see OFST instruction).
+%     by adding the segment register to the immediate value (see SGMT instruction).
 %
 % First operand:
 %     Destination register.
@@ -604,7 +604,7 @@ c.MOVU = MOVU;
 %     Immediate value is unsigned, range is <0, 255>, it addresses a memory cell
 %     inside of single memory segment (one memory segment has 256 cells).
 %     Physical address of the memory cell is automatically computed
-%     by adding the offset register to the immediate value (see OFST instruction).
+%     by adding the segment register to the immediate value (see SGMT instruction).
 %
 % First operand:
 %     Destination register.
@@ -710,30 +710,30 @@ c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                   Offset
+%                   Segment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OOO|SSS IIIIIIII
 %
 % Description:
-%     The OFST instruction sets the memory offset register which
-%     is used for computation of physical (data memory) address. The offset
+%     The SGMT instruction sets the memory segment register which
+%     is used for computation of physical (data memory) address. The segment
 %     register is, in fact, used as upper byte (MSB) of a 16-bit address.
 %     This gives us posibility to utilize (theoretically) whole 16-bit range
 %     of data memory. The physical address is then used by instructions
-%     STLI, STUI, LDLI and LDUI. The offset value is interpreted as
+%     STLI, STUI, LDLI and LDUI. The segment value is interpreted as
 %     unsigned in range <0, 255>.
 % 
 % First operand: 
 %     Not used.
 %
 % Second operand:
-%     Data memory offset address.
+%     Data memory segment address.
 %
 % Type of operands:        Example:
-%     OFST  IMM              OFST  msb(c.RAM_START + 0)
+%     SGMT  IMM              SGMT  msb(c.RAM_START + 0)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-OFST = bin2dec('01 100 000');
-c.OFST = OFST;
+SGMT = bin2dec('01 100 000');
+c.SGMT = SGMT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -772,7 +772,7 @@ c.SHIFTI = SHIFTI;
 %     is unsigned, range is <0, 255>, it addresses a memory cell
 %     inside of single memory segment (one memory segment has 256 cells).
 %     Physical address of the memory cell is automatically computed
-%     by adding the offset register to the immediate value (see OFST instruction).
+%     by adding the segment register to the immediate value (see SGMT instruction).
 % 
 % First operand:
 %     Assembly code: Destination memory address.
@@ -806,7 +806,7 @@ c.STUI = STUI;
 %     is unsigned, range is <0, 255>, it addresses a memory cell
 %     inside of single memory segment (one memory segment has 256 cells).
 %     Physical address of the memory cell is automatically computed
-%     by adding the offset register to the immediate value (see OFST instruction).
+%     by adding the segment register to the immediate value (see SGMT instruction).
 % 
 % First operand:
 %     Assembly code: Destination memory address.

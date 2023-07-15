@@ -1,10 +1,9 @@
-function [...%compiledData,
-    compiledCode] = Preprocessor(...%data,
-    program, c)
+function [compiledSourceCode] = Preprocessor(sourceCode, c)
     global gDebug
 
-    % gDebug = true;  % Check also Run_System_Tests.m for "gDebug"
-    gDebug = false;
+    % Check also Run_System_Tests.m for "gDebug"
+    gDebug = true;
+    % gDebug = false;
 
     if (true == gDebug)
         fprintf('\n');
@@ -16,13 +15,13 @@ function [...%compiledData,
     end
 
     % Initialize whole instruction ROM memory with zeros. Zeros will be interpreted as JMP m(0x0000).
-    compiledCode(1 : c.ROM_SIZE + c.MPROM_SIZE) = uint16(0);
+    compiledSourceCode(1 : c.ROM_SIZE + c.MPROM_SIZE) = uint16(0);
 
     % [compiledData] = compile_const_data(data, c);
 
     % Check if there are any labels in the code (it means if variable c.LBL_CNT does exist).
     if (1 == isfield(c, 'LBL_CNT'))
-        [label_address_array] = find_all_destination_labels(program, c);
+        [label_address_array] = find_all_destination_labels(sourceCode, c);
     else
         label_address_array = 0;
     end
@@ -31,32 +30,32 @@ function [...%compiledData,
     i = 1;
     % The counter "j" counts number of words/instructions/lines in a compiled code (each instruction has two bytes).
     j = c.ROM_START + 1;
-    while (i <= size(program, 2))
+    while (i <= size(sourceCode, 2))
         % Read first value on particular line of a processed source code.
-        value = program(1, i);
+        value = sourceCode(1, i);
 
         % If the value is a destination label then skip it.
         if (c.LABEL_DEST_PREFIX == bitand(value, c.LABEL_PREFIX_MASK));
             i = i + 1;
 
             % Read next value on particular line of a processed source code.
-            value = program(1, i);
+            value = sourceCode(1, i);
         end
         i = i + 1;
 
         % Compile an instruction according to its format.
         switch (bitand(value, c.INSTR_FORMAT_MASK))
             case c.INSTR_FORMAT_0
-                [instr_msb, instr_lsb, i] = compile_instr_format_0(program, value, label_address_array, i, j, c);
+                [instr_msb, instr_lsb, i] = compile_instr_format_0(sourceCode, value, label_address_array, i, j, c);
 
             case c.INSTR_FORMAT_1
-                [instr_msb, instr_lsb, i] = compile_instr_format_1(program, value, label_address_array, i, j, c);
+                [instr_msb, instr_lsb, i] = compile_instr_format_1(sourceCode, value, label_address_array, i, j, c);
 
             case c.INSTR_FORMAT_2
-                [instr_msb, instr_lsb, i] = compile_instr_format_2(program, value, i, j);
+                [instr_msb, instr_lsb, i] = compile_instr_format_2(sourceCode, value, i, j);
 
             case c.INSTR_FORMAT_3
-                [instr_msb, instr_lsb, i] = compile_instr_format_3(program, value, i, c);
+                [instr_msb, instr_lsb, i] = compile_instr_format_3(sourceCode, value, i, c);
 
             otherwise
                 % Error
@@ -72,173 +71,176 @@ function [...%compiledData,
         temp = typecast(temp, 'uint8');
         uint8_instr_lsb = temp(1);
 
-        compiledCode(1, j) = bitor(bitshift(uint16(uint8_instr_msb), 8), uint16(uint8_instr_lsb));
+        compiledSourceCode(1, j) = bitor(bitshift(uint16(uint8_instr_msb), 8), uint16(uint8_instr_lsb));
         if (true == gDebug)
-            print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c);
+            print_source_code(compiledSourceCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c);
         end
 
         j = j + 1;
     end
 
     % Check that compiled code will fit into ROM memory.
-    if (size(compiledCode, 2) - c.MPROM_SIZE > c.ROM_SIZE)
-        error('###\nPREPROCESSOR ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d (words)\nActual image size:    %d (words)\n###', c.ROM_SIZE, size(compiledCode, 2))
+    if (size(compiledSourceCode, 2) - c.MPROM_SIZE > c.ROM_SIZE)
+        error('###\nPREPROCESSOR ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d (words)\nActual image size:    %d (words)\n###', c.ROM_SIZE, size(compiledSourceCode, 2))
     end
 
     if (true == gDebug)
         fprintf('+---------+-------------+------+------+------------------------------+\n');
     end
 
-    % compiledCode = convert_uint16_to_struct(compiledCode);
+    % TODO: Fix or delete.
+    % compiledSourceCode = convert_uint16_to_struct(compiledSourceCode);
     % compiledData = convert_uint16_to_struct(compiledData);
 end
 
 
-function [compiledData] = compile_const_data(data, c)
+% TODO: Fix or delete.
+% function [compiledData] = compile_const_data(data, c)
 
-    % Initialize whole constant data ROM memory with zeros.
-    compiledData(1:c.CONST_DATA_SIZE) = uint16(0);
+%     % Initialize whole constant data ROM memory with zeros.
+%     compiledData(1:c.CONST_DATA_SIZE) = uint16(0);
 
-    % The counter "i" counts number of values in source code (datatype keywords, constant keywords and values itself ... all together). 
-    i = 1;
+%     % The counter "i" counts number of values in source code (datatype keywords, constant keywords and values itself ... all together). 
+%     i = 1;
 
-    % The counter "j" counts number of bytes in a compiled code (each instruction has two bytes).
-    j = 1;
+%     % The counter "j" counts number of bytes in a compiled code (each instruction has two bytes).
+%     j = 1;
 
-    % Copy data to the constant data ROM memory.
-    while (i <= size(data, 2))
+%     % Copy data to the constant data ROM memory.
+%     while (i <= size(data, 2))
 
-        % Read first value, it must be a datatype.
-        datatype = data{i};
+%         % Read first value, it must be a datatype.
+%         datatype = data{i};
 
-        % Move index to next value (data identifier which holds address of constant data).
-        i = i + 1;
+%         % Move index to next value (data identifier which holds address of constant data).
+%         i = i + 1;
 
-        % Move to data MSB byte.
-        i = i + 1;
+%         % Move to data MSB byte.
+%         i = i + 1;
 
-        switch (datatype)
-            case c.U16
-                if (c.CONST_DATA_SIZE < j)
-                    error('### PREPROCESSOR ERROR: Not enough memory for constant data!! ###')
-                end
+%         switch (datatype)
+%             case c.U16
+%                 if (c.CONST_DATA_SIZE < j)
+%                     error('### PREPROCESSOR ERROR: Not enough memory for constant data!! ###')
+%                 end
 
-                if ((0 <= data{i}) && (65535 >= data{i}))
-                    compiledData(j) = data{i};
-                else
-                    error('### PREPROCESSOR ERROR: A constant does not fit into the range of the U16 type!! Range of U16 type is <0, +65535>. ###')
-                end
+%                 if ((0 <= data{i}) && (65535 >= data{i}))
+%                     compiledData(j) = data{i};
+%                 else
+%                     error('### PREPROCESSOR ERROR: A constant does not fit into the range of the U16 type!! Range of U16 type is <0, +65535>. ###')
+%                 end
 
-                % Skip already read data and move index to next constant.
-                i = i + 1;
-                j = j + 1;
-
-
-            case c.S16
-                if (c.CONST_DATA_SIZE < j)
-                    error('### PREPROCESSOR ERROR: Not enough memory for constant data!! ###')
-                end
-
-                % <-32768 .. -1>
-                if ((-32768 <= data{i}) && (-1 >= data{i}))
-                    temp = int16(data{i});
-                    compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
-
-                % <0 .. +32767>
-                elseif ((0 <= data{i}) && (32767 >= data{i}))
-                    compiledData(j) = uint16(data{i});
-
-                % <+32768 .. +65535>, values in this range will be interpreted as negative.
-                elseif ((32768 <= data{i}) && (65535 >= data{i}))
-                    temp = int16(data{i} - 65536);
-                    compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
-
-                else
-                    error('### PREPROCESSOR ERROR: A constant does not fit into the range of the S16 type!! Range of S16 type is <-32768, +32767>. ###')
-                end
-
-                % Skip already read data and move index to next constant.
-                i = i + 1;
-                j = j + 1;
+%                 % Skip already read data and move index to next constant.
+%                 i = i + 1;
+%                 j = j + 1;
 
 
-    %       case c.U8
-    %           if ((0 <= data(i)) && (255 >= data(i)))
-                %   compiledData(j) = uint16(data(i));
-                % else
-                %   error('### PREPROCESSOR ERROR: A constant does not fit into the range of the U8 type!! Range of U8 type is <0, +255>. ###')
-                % end
+%             case c.S16
+%                 if (c.CONST_DATA_SIZE < j)
+%                     error('### PREPROCESSOR ERROR: Not enough memory for constant data!! ###')
+%                 end
 
-    %           % Skip already read data and move index to next constant.
-    %           i = i + 1;
-    %           j = j + 1;
+%                 % <-32768 .. -1>
+%                 if ((-32768 <= data{i}) && (-1 >= data{i}))
+%                     temp = int16(data{i});
+%                     compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
 
+%                 % <0 .. +32767>
+%                 elseif ((0 <= data{i}) && (32767 >= data{i}))
+%                     compiledData(j) = uint16(data{i});
 
-    %       case c.S8
-                % if ((0 <= data(i)) && (127 >= data(i)))      % If value is in range <0, +127> then store it directly.
-                %   compiledData(j) = data(i);
+%                 % <+32768 .. +65535>, values in this range will be interpreted as negative.
+%                 elseif ((32768 <= data{i}) && (65535 >= data{i}))
+%                     temp = int16(data{i} - 65536);
+%                     compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
 
-                % elseif (-128 <= data(i)) && (0 > data(i))    % If value is in range <-128, -1> then store two`s complement of the value.
-                %   temp = int16(data(i));
-                %   compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
+%                 else
+%                     error('### PREPROCESSOR ERROR: A constant does not fit into the range of the S16 type!! Range of S16 type is <-32768, +32767>. ###')
+%                 end
 
-                % elseif (128 <= data(i)) && (255 >= data(i))  % If value is in range <+128, +255> then store two`s complement of the value.
-                %   temp = int16(-data(i));
-                %   temp = int16(intmax('uint8')) - int16(bitcmp(temp));
-                %   temp = -temp;
-                %   compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
+%                 % Skip already read data and move index to next constant.
+%                 i = i + 1;
+%                 j = j + 1;
 
-                % else
-                %   error('### PREPROCESSOR ERROR: A constant does not fit into the range of the S8 type!! Range of S8 type is <-128, +127>. ###')
+%             % TODO: Fix or delete.
+%     %       case c.U8
+%     %           if ((0 <= data(i)) && (255 >= data(i)))
+%                 %   compiledData(j) = uint16(data(i));
+%                 % else
+%                 %   error('### PREPROCESSOR ERROR: A constant does not fit into the range of the U8 type!! Range of U8 type is <0, +255>. ###')
+%                 % end
 
-                % end
+%     %           % Skip already read data and move index to next constant.
+%     %           i = i + 1;
+%     %           j = j + 1;
 
-                % Skip already read data and move index to next constant.
-                % i = i + 1;
-                % j = j + 1;
+%             % TODO: Fix or delete.
+%     %       case c.S8
+%                 % if ((0 <= data(i)) && (127 >= data(i)))      % If value is in range <0, +127> then store it directly.
+%                 %   compiledData(j) = data(i);
 
+%                 % elseif (-128 <= data(i)) && (0 > data(i))    % If value is in range <-128, -1> then store two`s complement of the value.
+%                 %   temp = int16(data(i));
+%                 %   compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
 
-            case c.CHR
-                str = uint16(data{i});
+%                 % elseif (128 <= data(i)) && (255 >= data(i))  % If value is in range <+128, +255> then store two`s complement of the value.
+%                 %   temp = int16(-data(i));
+%                 %   temp = int16(intmax('uint8')) - int16(bitcmp(temp));
+%                 %   temp = -temp;
+%                 %   compiledData(j) = uint16(intmax('uint16')) - uint16(bitcmp(temp));
 
-                if (1 == mod(size(str, 2), 2))
-                    % If length of a string is odd then add zero at the end to terminate it properly and also to make it even.
-                    str(size(str, 2) + 1) = 0;
-                else
-                    % If length of a string is already even then add two zeros at the end to terminate it properly.
-                    str(size(str, 2) + 2) = 0;
-                end
+%                 % else
+%                 %   error('### PREPROCESSOR ERROR: A constant does not fit into the range of the S8 type!! Range of S8 type is <-128, +127>. ###')
 
-                idx = 1;
-                while (size(str, 2) >= idx)
-                    if (c.CONST_DATA_SIZE < j)
-                        error('### PREPROCESSOR ERROR: Not enough memory for constant data!! ###')
-                    end
+%                 % end
 
-                    temp1 = str(idx);
-                    idx = idx + 1;
-
-                    temp2 = str(idx);
-                    idx = idx + 1;
-
-                    temp1 = uint16(bitshift(temp1, 8));
-                    compiledData(j) = uint16(bitor(temp1, temp2));
-
-                    j = j + 1;
-
-                    % dec2hex(compiledData, 4)
-     %                size(str, 2)
-                end
-
-                i = i + 1;
+%                 % Skip already read data and move index to next constant.
+%                 % i = i + 1;
+%                 % j = j + 1;
 
 
-            otherwise
-                error('### PREPROCESSOR ERROR: Incorrect datatype!! ###')
-        end
-    end
+%             case c.CHR
+%                 str = uint16(data{i});
 
-end
+%                 if (1 == mod(size(str, 2), 2))
+%                     % If length of a string is odd then add zero at the end to terminate it properly and also to make it even.
+%                     str(size(str, 2) + 1) = 0;
+%                 else
+%                     % If length of a string is already even then add two zeros at the end to terminate it properly.
+%                     str(size(str, 2) + 2) = 0;
+%                 end
+
+%                 idx = 1;
+%                 while (size(str, 2) >= idx)
+%                     if (c.CONST_DATA_SIZE < j)
+%                         error('### PREPROCESSOR ERROR: Not enough memory for constant data!! ###')
+%                     end
+
+%                     temp1 = str(idx);
+%                     idx = idx + 1;
+
+%                     temp2 = str(idx);
+%                     idx = idx + 1;
+
+%                     temp1 = uint16(bitshift(temp1, 8));
+%                     compiledData(j) = uint16(bitor(temp1, temp2));
+
+%                     j = j + 1;
+
+%                     % TODO: Fix or delete.
+%                     % dec2hex(compiledData, 4)
+%      %                size(str, 2)
+%                 end
+
+%                 i = i + 1;
+
+
+%             otherwise
+%                 error('### PREPROCESSOR ERROR: Incorrect datatype!! ###')
+%         end
+%     end
+
+% end
 
 
 function [label_address_array] = find_all_destination_labels(src_code, c)
@@ -287,7 +289,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
 
             case c.INSTR_FORMAT_3
                 % Add here all instructions with single operand.
-                if ((c.PUSH == value) || (c.POP == value) || (c.NOT == value) || (c.OFST == value))
+                if ((c.PUSH == value) || (c.POP == value) || (c.NOT == value) || (c.SGMT == value))
                     i = i + 1;
 
                 % Add here all instructions with no operands.
@@ -383,7 +385,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_1(src_code, opcode, la
         instr_msb = bitor(opcode, op2);
         instr_lsb = op1;
 
-    elseif (c.OFST == opcode)
+    elseif (c.SGMT == opcode)
         % Read only second operand.
         op2 = src_code(1, i);
         i = i + 1;
@@ -434,6 +436,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_2(src_code, opcode, i,
     instr_lsb = op2;
     i = i + 1;
 
+    % TODO: Update and uncomment.
     % Check that second operand is in appropriate range.
     % if ((op2 < -128) || (op2 > 255))
     %   error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is <-128, +127> for signed data and <0, 255> for unsigned data. Actual value is %d!! (Address = %03d) ###\n', op2, j - 1)
@@ -482,8 +485,8 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_3(src_code, opcode, i,
 end
 
 
-function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c)
-    fprintf('|   %03d:  |    0x%04X   | 0x%02X | 0x%02X |', j - 1, compiledCode(1, j), uint8_instr_msb, uint8_instr_lsb)
+function print_source_code(compiledSourceCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c)
+    fprintf('|   %03d:  |    0x%04X   | 0x%02X | 0x%02X |', j - 1, compiledSourceCode(1, j), uint8_instr_msb, uint8_instr_lsb)
 
     switch (bitand(instr_msb, c.INSTR_FORMAT_MASK))
         case c.INSTR_FORMAT_0
@@ -501,7 +504,7 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
                 case c.STLI,   fprintf('   STLI    m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
                 case c.STUI,   fprintf('   STUI    m(%03d)  r%d         |', instr_lsb, bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK))
                 case c.SHIFTI, fprintf('   SHIFTI  r%d      %-4d       |', bitand(instr_msb, c.FORMAT_1_OPERAND_1_MASK), instr_lsb)
-                case c.OFST,   fprintf('   OFST    %03d                |', instr_lsb)
+                case c.SGMT,   fprintf('   SGMT    %03d                |', instr_lsb)
             end
 
         case c.INSTR_FORMAT_2
@@ -543,30 +546,31 @@ function print_source_code(compiledCode, instr_msb, instr_lsb, uint8_instr_msb, 
 end
 
 
+% TODO: Fix or delete.
 % Convert ROM code represented by uint16 numbers to the structure type which can be consumed
 % by simulink data bus.
-function [RomCode_struct] = convert_uint16_to_struct(RomCode_uint16)
-    for (i = 1 : size(RomCode_uint16, 2))
-        temp = uint16(RomCode_uint16(i));
+% function [RomCode_struct] = convert_uint16_to_struct(RomCode_uint16)
+%     for (i = 1 : size(RomCode_uint16, 2))
+%         temp = uint16(RomCode_uint16(i));
 
-        % signal1 is MSB, signal16 is LSB
-        temp_struct.signal1  = bitshift(bitand(temp, bin2dec('1000 0000  0000 0000')), -15);
-        temp_struct.signal2  = bitshift(bitand(temp, bin2dec('0100 0000  0000 0000')), -14);
-        temp_struct.signal3  = bitshift(bitand(temp, bin2dec('0010 0000  0000 0000')), -13);
-        temp_struct.signal4  = bitshift(bitand(temp, bin2dec('0001 0000  0000 0000')), -12);
-        temp_struct.signal5  = bitshift(bitand(temp, bin2dec('0000 1000  0000 0000')), -11);
-        temp_struct.signal6  = bitshift(bitand(temp, bin2dec('0000 0100  0000 0000')), -10);
-        temp_struct.signal7  = bitshift(bitand(temp, bin2dec('0000 0010  0000 0000')), -9);
-        temp_struct.signal8  = bitshift(bitand(temp, bin2dec('0000 0001  0000 0000')), -8);
-        temp_struct.signal9  = bitshift(bitand(temp, bin2dec('0000 0000  1000 0000')), -7);
-        temp_struct.signal10 = bitshift(bitand(temp, bin2dec('0000 0000  0100 0000')), -6);
-        temp_struct.signal11 = bitshift(bitand(temp, bin2dec('0000 0000  0010 0000')), -5);
-        temp_struct.signal12 = bitshift(bitand(temp, bin2dec('0000 0000  0001 0000')), -4);
-        temp_struct.signal13 = bitshift(bitand(temp, bin2dec('0000 0000  0000 1000')), -3);
-        temp_struct.signal14 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0100')), -2);
-        temp_struct.signal15 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0010')), -1);
-        temp_struct.signal16 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0001')),  0);
+%         % signal1 is MSB, signal16 is LSB
+%         temp_struct.signal1  = bitshift(bitand(temp, bin2dec('1000 0000  0000 0000')), -15);
+%         temp_struct.signal2  = bitshift(bitand(temp, bin2dec('0100 0000  0000 0000')), -14);
+%         temp_struct.signal3  = bitshift(bitand(temp, bin2dec('0010 0000  0000 0000')), -13);
+%         temp_struct.signal4  = bitshift(bitand(temp, bin2dec('0001 0000  0000 0000')), -12);
+%         temp_struct.signal5  = bitshift(bitand(temp, bin2dec('0000 1000  0000 0000')), -11);
+%         temp_struct.signal6  = bitshift(bitand(temp, bin2dec('0000 0100  0000 0000')), -10);
+%         temp_struct.signal7  = bitshift(bitand(temp, bin2dec('0000 0010  0000 0000')), -9);
+%         temp_struct.signal8  = bitshift(bitand(temp, bin2dec('0000 0001  0000 0000')), -8);
+%         temp_struct.signal9  = bitshift(bitand(temp, bin2dec('0000 0000  1000 0000')), -7);
+%         temp_struct.signal10 = bitshift(bitand(temp, bin2dec('0000 0000  0100 0000')), -6);
+%         temp_struct.signal11 = bitshift(bitand(temp, bin2dec('0000 0000  0010 0000')), -5);
+%         temp_struct.signal12 = bitshift(bitand(temp, bin2dec('0000 0000  0001 0000')), -4);
+%         temp_struct.signal13 = bitshift(bitand(temp, bin2dec('0000 0000  0000 1000')), -3);
+%         temp_struct.signal14 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0100')), -2);
+%         temp_struct.signal15 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0010')), -1);
+%         temp_struct.signal16 = bitshift(bitand(temp, bin2dec('0000 0000  0000 0001')),  0);
 
-        RomCode_struct(i) = temp_struct;
-    end
-end
+%         RomCode_struct(i) = temp_struct;
+%     end
+% end

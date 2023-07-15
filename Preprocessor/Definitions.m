@@ -85,18 +85,12 @@ Simulink.Bus.cellToObject(cellInfo);
 
 % Instruction ROM LookUpTable breakpoints.
 c.RomCodeBreakpoints = 0 : 511;
+c.DataRomBreakpoints = 0 : 255;
 
-% Available datatypes for constant data.
-c.U16 = bin2dec('10000000 00000000');
-c.S16 = bin2dec('10010000 00000000');
-c.U8 =  bin2dec('10100000 00000000');
-c.S8 =  bin2dec('10110000 00000000');
-c.CHR = bin2dec('11000000 00000000');
-U16 = c.U16;
-S16 = c.S16;
-U8 =  c.U8;
-S8 =  c.S8;
-CHR = c.CHR;
+% Available datatypes.
+TEXT = 0;  c.TEXT = TEXT;
+BYTE = 1;  c.BYTE = BYTE;
+WORD = 2;  c.WORD = WORD;
 
 % Destination label (for example "LOOP_") represents absolute memory address.
 c.LABEL_DEST_PREFIX = bin2dec('11100000 00000000');
@@ -143,7 +137,7 @@ c.ROM_SIZE         = 256;
 %%%%%%%%%%%%%%%%%%
 % Start address of constant data ROM memory on data address bus and it`s size in words.
 c.CONST_DATA_START = 0;
-c.CONST_DATA_SIZE  = 32;
+c.CONST_DATA_SIZE  = 256;
 
 % Start address of RAM memory on data address bus and it`s size in words.
 c.RAM_START        = 256;
@@ -171,6 +165,6 @@ c.RAND_NUM_GEN     = 255;
 m = @(n) n;
 
 % Functions returning most significant and least significat byte from 16-bit word.
-msb = @(n) bitshift(n, -8);
-lsb = @(n) bitand(n, 255);
+msb = @(n) bitshift(n, -8);  c.msb = msb;
+lsb = @(n) bitand(n, 255);   c.lsb = lsb;
 
