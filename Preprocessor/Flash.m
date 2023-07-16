@@ -10,7 +10,7 @@ function Flash(file)
     % evalin('base', 'Instructions')
     Definitions
     % evalin('base', 'Definitions')
-    CharTable;
+    CharTable_7x7
 
     % Load a program to be executed (load variables SourceCode and ConstData from source file).
     run(file);
