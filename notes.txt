@@ -40,9 +40,11 @@
 
 
 - Hardware:
-    - Dokoncit obrazovku/terminal.
     - Rozsirit klavesnicu na 128 znakov ASCII (aby sa dala kreslit textova grafika).
     - Pridat na klavesnicu tlacitko SHIFT.
+    - Dokoncit obrazovku/terminal.
+
+    - Pridat instrukciu JGT (jump if greater than) kvoli instrukcii CMPI (nie je mozne pouzit instrukciu JLT vo vsetkych pripadoch - operandy sa nedaju prehodit).
 
     - Pridat timer.
 
@@ -52,8 +54,6 @@
 
     - Zjednodusit architekturu:
         - Nahradit vsetky typy enkoderov pomocou jedneho 16_to_4.
-            - Mensi pocet subsystemov (menej roboty s PCB navrhom).
-            - Mensi pocet suciastok (kaskada enkoderov BY MALA MAT menej spinacich prvkov nez jeden velky enkoder).
         - Zistit ci by pomohlo keby som nahradil vsetky multiplexory iba pomocou jedneho typu.
 
 
@@ -75,6 +75,7 @@
     - memcpy()
     - Tetris
     - Snake
+    - Hodiny
     - Kalkulacka
     - Textovy editor
 

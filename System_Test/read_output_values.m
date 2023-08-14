@@ -6,8 +6,6 @@
 function read_output_values(output)
     program_counter = output.get('program_counter');     assignin('base', 'program_counter', program_counter);
     instruction =     output.get('instruction');         assignin('base', 'instruction',     instruction);
-    stack_pointer =   output.get('stack_pointer');       assignin('base', 'stack_pointer',   stack_pointer);
-    return_address =  output.get('return_address');      assignin('base', 'return_address',  return_address);
     status_register = output.get('status_register');     assignin('base', 'status_register', status_register);
 
     % Extract less then (unsigned) bit from status register.

@@ -249,8 +249,7 @@ c.RET = RET;
 %
 % Description:
 %     This instruction restores register with its
-%     original value taken from stack. Stack pointer 
-%     is automatically decreased.
+%     original value taken from stack.
 % 
 % First operand:
 %     Destination register to be poped from stack. 
@@ -272,7 +271,7 @@ c.POP = POP;
 %
 % Description:
 %     This instruction saves value stored in register
-%     to stack. Stack pointer is automatically increased.
+%     to stack.
 % 
 % First operand:
 %     Not used.
@@ -920,7 +919,6 @@ c.JPE = JPE;
 % Description:
 %     This instruction calls a subroutine by performing
 %     the following actions:
-%       - Increments SP register.  
 %       - Stores actual value of PC register on stack.
 %       - Sets the PC register to new value specified
 %         by the immediate (new address).
