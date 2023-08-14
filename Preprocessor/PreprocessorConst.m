@@ -68,4 +68,4 @@ for (row = 1 : numOfRows)
     end
 end
 
-assignin('base', 'DataRom', compiledConstData);
+assignin('base', 'c.DataRom', compiledConstData);

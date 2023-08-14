@@ -17,7 +17,7 @@ end
 
 if (0 == evalin('base', '1 == exist(''hFFFF'',''var'')'))
     fprintf('Loading... ')
-    Hex_Consts
+    Hex_Consts;
 end
 
 
@@ -86,6 +86,7 @@ Simulink.Bus.cellToObject(cellInfo);
 % Instruction ROM LookUpTable breakpoints.
 c.RomCodeBreakpoints = 0 : 511;
 c.DataRomBreakpoints = 0 : 255;
+c.DataRom = zeros(1, 256);
 
 % Available datatypes.
 TEXT = 0;  c.TEXT = TEXT;

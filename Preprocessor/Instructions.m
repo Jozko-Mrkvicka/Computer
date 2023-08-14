@@ -448,8 +448,8 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOV      =  bin2dec('11 00000 0');
-c.MOV      = MOV;
+MOV   =  bin2dec('11 00000 0');
+c.MOV = MOV;
 
 
 
@@ -920,9 +920,8 @@ c.JPE = JPE;
 % Description:
 %     This instruction calls a subroutine by performing
 %     the following actions:
-%       - Stores old value of RA register on stack.
 %       - Increments SP register.  
-%       - Stores actual value of PC register to RA register.
+%       - Stores actual value of PC register on stack.
 %       - Sets the PC register to new value specified
 %         by the immediate (new address).
 % 
