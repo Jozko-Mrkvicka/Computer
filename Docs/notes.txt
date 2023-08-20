@@ -21,6 +21,8 @@
 ░▒▓│┤╡╢╖╕╣║╗╝╜╛┐└┴┬├─┼╞╟╚╔╩╦╠═╬╧╨╤╥╙╘╒╓╫╪┘┌█▄▌▐▀ 
 
 
+OOOOOO|DD D|SSS|IIII IIIIIIII IIII
+
 #############################################
 #              Mrkvicka 9000
 #############################################
@@ -41,12 +43,13 @@
 
 - Hardware:
     - Rozsirit klavesnicu na 128 znakov ASCII (aby sa dala kreslit textova grafika).
+    - Pridat klavesnicovy buffer.
     - Pridat na klavesnicu tlacitko SHIFT.
     - Dokoncit obrazovku/terminal.
 
     - Pridat instrukciu JGT (jump if greater than) kvoli instrukcii CMPI (nie je mozne pouzit instrukciu JLT vo vsetkych pripadoch - operandy sa nedaju prehodit).
 
-    - Pridat timer.
+    - Pridat timer + prerusenie.
 
     - Ochrana pamati / error detection:
         - Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
@@ -93,13 +96,21 @@
 #              Mrkvicka 9001
 #############################################
 - Hardware:
+    - von Neumannova architektura
+        - Budem moct vytvarat a spustat programy rovno na pocitaci.
+        - Programy sa budu dat ukladat/nahravat do/z magnetickej pasky.
+
     - Pouzit iba jeden register (accumulator).
         - Usetrim bity v instrukcii.
         - Moznost zvacsit adresovy priestor alebo pridat viac immediate instrukcii.
         - Mensi pocet suciastok.
 
-    - Rozsirit ALU (nasobicka, delicka).
+    - Rozsirit ALU
+        - Nasobicka, delicka (zaberie niekolko hodinovych cyklov).
+        - Prerobit instrukciu SHIFT pomocou posuvnych registrov (zaberie niekolko hodinovych cyklov).
     - Pridat dva specialne 32-bitove registre na aritmeticke operacie.
     - Pridat FPU.
+
+    - UART/USART
 
 - Naprogramovat Assembler.
