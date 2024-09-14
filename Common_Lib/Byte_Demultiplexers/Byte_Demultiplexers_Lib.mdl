@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, 0.0, 1874.0, 1096.0]
+      Location		      [54.0, 0.0, 881.0, 1087.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -43,9 +43,9 @@ Library {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"156"
-	Extents			[1824.0, 929.0]
+	Extents			[831.0, 920.0]
 	ZoomFactor		[1.25]
-	Offset			[66.399999999999977, 230.43773463522791]
+	Offset			[62.399999999999977, 423.75909574242223]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 07 16:20:00 2021"
-  RTWModifiedTimeStamp	  560794797
-  ModelVersionFormat	  "1.%<AutoIncrement:27>"
+  LastModifiedDate	  "Fri Dec 08 13:50:57 2023"
+  RTWModifiedTimeStamp	  623944253
+  ModelVersionFormat	  "1.%<AutoIncrement:29>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -885,7 +885,7 @@ Library {
       Variant		      off
       System {
 	Name			"Byte_Demultiplexers_Lib"
-	Location		[54, 0, 1928, 1096]
+	Location		[54, 0, 935, 1087]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -910,7 +910,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Byte_Demultiplexer_1_to_16"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, 0, 935, 1087]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -922,13 +922,14 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr3(1b)"
 	      SID		      "246"
 	      Position		      [1410, 6793, 1440, 6807]
 	      ZOrder		      340
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -937,6 +938,7 @@ Library {
 	      SID		      "353"
 	      Position		      [1410, 6828, 1440, 6842]
 	      ZOrder		      634
+	      ForegroundColor	      "blue"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -946,6 +948,7 @@ Library {
 	      SID		      "354"
 	      Position		      [1410, 6863, 1440, 6877]
 	      ZOrder		      635
+	      ForegroundColor	      "blue"
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
@@ -955,6 +958,7 @@ Library {
 	      SID		      "355"
 	      Position		      [1410, 6898, 1440, 6912]
 	      ZOrder		      636
+	      ForegroundColor	      "blue"
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
@@ -3008,7 +3012,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "NOT_USED_Byte_Demultiplexer_1_to_2"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, 0, 935, 1087]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3020,13 +3024,14 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "127"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr(1b)"
 	      SID		      "164"
 	      Position		      [4260, 6743, 4290, 6757]
 	      ZOrder		      604
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -3546,7 +3551,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "NOT_USED_Byte_Demultiplexer_1_to_4"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, 0, 935, 1087]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3565,6 +3570,7 @@ Library {
 	      SID		      "182"
 	      Position		      [3735, 6743, 3765, 6757]
 	      ZOrder		      340
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -3573,6 +3579,7 @@ Library {
 	      SID		      "183"
 	      Position		      [3735, 6793, 3765, 6807]
 	      ZOrder		      604
+	      ForegroundColor	      "blue"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -4396,7 +4403,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "NOT_USED_Byte_Demultiplexer_1_to_8"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, 0, 935, 1087]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -4408,13 +4415,14 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "150"
+	    ZoomFactor		    "175"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr_2(1b)"
 	      SID		      "207"
 	      Position		      [2910, 6703, 2940, 6717]
 	      ZOrder		      611
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -4423,6 +4431,7 @@ Library {
 	      SID		      "208"
 	      Position		      [2910, 6753, 2940, 6767]
 	      ZOrder		      610
+	      ForegroundColor	      "blue"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -4432,6 +4441,7 @@ Library {
 	      SID		      "209"
 	      Position		      [2910, 6803, 2940, 6817]
 	      ZOrder		      340
+	      ForegroundColor	      "blue"
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
@@ -5599,7 +5609,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "__1_to_256_Byte_Demultiplexer__"
-	    Location		    [299, 0, 1920, 1080]
+	    Location		    [54, 0, 935, 1087]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -5611,13 +5621,14 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "50"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(8b)"
+	      Name		      "Addr(1B)"
 	      SID		      "287"
 	      Position		      [20, 183, 50, 197]
 	      ZOrder		      267
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -5806,7 +5817,7 @@ Library {
 	      Ports		      [1, 1]
 	      Position		      [615, 208, 695, 252]
 	      ZOrder		      566
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Bit to Integer\nConverter"
 	      SourceType	      "Bit to Integer Converter"
 	      nbits		      "4"
@@ -5856,7 +5867,7 @@ Library {
 	      Position		      [135, 168, 215, 212]
 	      ZOrder		      565
 	      ShowName		      off
-	      LibraryVersion	      "1.271"
+	      LibraryVersion	      "1.278"
 	      SourceBlock	      "commutil2/Integer to Bit\nConverter"
 	      SourceType	      "Integer to Bit Converter"
 	      nbits		      "8"
@@ -5903,7 +5914,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      2
-	      SrcBlock		      "Address(8b)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Integer to Bit\nConverter7"
 	      DstPort		      1

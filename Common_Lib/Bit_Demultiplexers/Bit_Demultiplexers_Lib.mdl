@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, 0.0, 1874.0, 1096.0]
+      Location		      [54.0, -8.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -45,7 +45,7 @@ Library {
 	LoadSaveID		"100"
 	Extents			[1824.0, 929.0]
 	ZoomFactor		[1.25]
-	Offset			[-137.1139514567119, 167.2636929621774]
+	Offset			[124.48604854328812, 169.66369296217749]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Dec 07 15:43:18 2021"
-  RTWModifiedTimeStamp	  560792597
-  ModelVersionFormat	  "1.%<AutoIncrement:26>"
+  LastModifiedDate	  "Fri Dec 08 13:55:08 2023"
+  RTWModifiedTimeStamp	  623944502
+  ModelVersionFormat	  "1.%<AutoIncrement:27>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -870,7 +870,7 @@ Library {
       Variant		      off
       System {
 	Name			"Bit_Demultiplexers_Lib"
-	Location		[54, 0, 1928, 1096]
+	Location		[54, -8, 1928, 1088]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -894,7 +894,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Bit_Demultiplexer_1_to_16"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -913,6 +913,7 @@ Library {
 	      SID		      "151"
 	      Position		      [775, 308, 805, 322]
 	      ZOrder		      47
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -921,6 +922,7 @@ Library {
 	      SID		      "152"
 	      Position		      [775, 343, 805, 357]
 	      ZOrder		      48
+	      ForegroundColor	      "blue"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -930,6 +932,7 @@ Library {
 	      SID		      "153"
 	      Position		      [775, 378, 805, 392]
 	      ZOrder		      49
+	      ForegroundColor	      "blue"
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }
@@ -939,6 +942,7 @@ Library {
 	      SID		      "154"
 	      Position		      [775, 413, 805, 427]
 	      ZOrder		      50
+	      ForegroundColor	      "blue"
 	      Port		      "4"
 	      IconDisplay	      "Port number"
 	    }
@@ -2263,13 +2267,14 @@ Library {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "60"
+	    ZoomFactor		    "125"
 	    Block {
 	      BlockType		      Inport
-	      Name		      "Address(8b)"
+	      Name		      "Addr(1B)"
 	      SID		      "178"
 	      Position		      [20, 193, 50, 207]
 	      ZOrder		      267
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -2288,7 +2293,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 396, 1575, 479]
 	      ZOrder		      306
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2300,7 +2305,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 551, 1575, 634]
 	      ZOrder		      334
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2312,7 +2317,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 1991, 1575, 2074]
 	      ZOrder		      343
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2324,7 +2329,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 2151, 1575, 2234]
 	      ZOrder		      344
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2336,7 +2341,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 2311, 1575, 2394]
 	      ZOrder		      345
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2348,7 +2353,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 2471, 1575, 2554]
 	      ZOrder		      346
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2360,7 +2365,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 2631, 1575, 2714]
 	      ZOrder		      347
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2372,7 +2377,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 2776, 1575, 2859]
 	      ZOrder		      348
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2382,9 +2387,9 @@ Library {
 	      Name		      "1_to_16_Bit_Demultiplexer16"
 	      SID		      "188"
 	      Ports		      [5, 16]
-	      Position		      [435, 471, 590, 574]
+	      Position		      [435, 331, 580, 574]
 	      ZOrder		      351
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2396,7 +2401,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 711, 1575, 794]
 	      ZOrder		      335
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2408,7 +2413,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 871, 1575, 954]
 	      ZOrder		      336
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2420,7 +2425,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 1031, 1575, 1114]
 	      ZOrder		      337
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2432,7 +2437,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 1191, 1575, 1274]
 	      ZOrder		      338
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2444,7 +2449,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 1351, 1575, 1434]
 	      ZOrder		      339
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2456,7 +2461,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 1511, 1575, 1594]
 	      ZOrder		      340
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2468,7 +2473,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 1671, 1575, 1754]
 	      ZOrder		      341
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2480,7 +2485,7 @@ Library {
 	      Ports		      [5, 16]
 	      Position		      [1410, 1831, 1575, 1914]
 	      ZOrder		      342
-	      LibraryVersion	      "1.21"
+	      LibraryVersion	      "1.26"
 	      SourceBlock	      "Bit_Demultiplexers_Lib/Bit_Demultiplexers_Lib/Bit_Demultiplexer_1_to_16"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -2538,7 +2543,7 @@ Library {
 	      ZOrder		      208
 	      SrcBlock		      "Demux17"
 	      SrcPort		      4
-	      Points		      [96, 0; 0, 350]
+	      Points		      [96, 0; 0, 315]
 	      DstBlock		      "1_to_16_Bit_Demultiplexer16"
 	      DstPort		      4
 	    }
@@ -2546,7 +2551,7 @@ Library {
 	      ZOrder		      206
 	      SrcBlock		      "Demux17"
 	      SrcPort		      3
-	      Points		      [115, 0; 0, 350]
+	      Points		      [115, 0; 0, 285]
 	      DstBlock		      "1_to_16_Bit_Demultiplexer16"
 	      DstPort		      3
 	    }
@@ -2554,7 +2559,7 @@ Library {
 	      ZOrder		      203
 	      SrcBlock		      "Demux17"
 	      SrcPort		      2
-	      Points		      [132, 0; 0, 350]
+	      Points		      [132, 0; 0, 255]
 	      DstBlock		      "1_to_16_Bit_Demultiplexer16"
 	      DstPort		      2
 	    }
@@ -2562,7 +2567,7 @@ Library {
 	      ZOrder		      200
 	      SrcBlock		      "Demux17"
 	      SrcPort		      1
-	      Points		      [148, 0; 0, 350]
+	      Points		      [148, 0; 0, 225]
 	      DstBlock		      "1_to_16_Bit_Demultiplexer16"
 	      DstPort		      1
 	    }
@@ -2698,7 +2703,7 @@ Library {
 	      ZOrder		      23
 	      SrcBlock		      "1_to_16_Bit_Demultiplexer16"
 	      SrcPort		      1
-	      Points		      [0, 35]
+	      Points		      [5, 0; 0, 180]
 	      DstBlock		      "Demux1"
 	      DstPort		      1
 	    }
@@ -2706,6 +2711,7 @@ Library {
 	      ZOrder		      24
 	      SrcBlock		      "Data_In(1b)"
 	      SrcPort		      1
+	      Points		      [188, 0; 0, -5]
 	      DstBlock		      "1_to_16_Bit_Demultiplexer16"
 	      DstPort		      5
 	    }
@@ -2982,7 +2988,7 @@ Library {
 	    }
 	    Line {
 	      ZOrder		      197
-	      SrcBlock		      "Address(8b)"
+	      SrcBlock		      "Addr(1B)"
 	      SrcPort		      1
 	      DstBlock		      "Demux17"
 	      DstPort		      1
@@ -3430,7 +3436,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "NOT_USED_Bit_Demultiplexer_1_to_2"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3449,6 +3455,7 @@ Library {
 	      SID		      "108"
 	      Position		      [785, 243, 815, 257]
 	      ZOrder		      50
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -3586,7 +3593,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "NOT_USED_Bit_Demultiplexer_1_to_4"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3605,6 +3612,7 @@ Library {
 	      SID		      "115"
 	      Position		      [645, 18, 675, 32]
 	      ZOrder		      49
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -3613,6 +3621,7 @@ Library {
 	      SID		      "116"
 	      Position		      [645, 83, 675, 97]
 	      ZOrder		      50
+	      ForegroundColor	      "blue"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -3905,7 +3914,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "NOT_USED_Bit_Demultiplexer_1_to_8"
-	    Location		    [54, 0, 1928, 1096]
+	    Location		    [54, -8, 1928, 1088]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -3924,6 +3933,7 @@ Library {
 	      SID		      "128"
 	      Position		      [715, 133, 745, 147]
 	      ZOrder		      48
+	      ForegroundColor	      "blue"
 	      IconDisplay	      "Port number"
 	    }
 	    Block {
@@ -3932,6 +3942,7 @@ Library {
 	      SID		      "129"
 	      Position		      [715, 168, 745, 182]
 	      ZOrder		      49
+	      ForegroundColor	      "blue"
 	      Port		      "2"
 	      IconDisplay	      "Port number"
 	    }
@@ -3941,6 +3952,7 @@ Library {
 	      SID		      "130"
 	      Position		      [715, 203, 745, 217]
 	      ZOrder		      50
+	      ForegroundColor	      "blue"
 	      Port		      "3"
 	      IconDisplay	      "Port number"
 	    }

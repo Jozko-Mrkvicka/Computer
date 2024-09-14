@@ -19,7 +19,7 @@ Library {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [54.0, -8.0, 1874.0, 1096.0]
+      Location		      [54.0, 0.0, 1874.0, 1096.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -42,10 +42,10 @@ Library {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"240"
+	LoadSaveID		"323"
 	Extents			[1824.0, 929.0]
-	ZoomFactor		[1.0]
-	Offset			[-599.0296942666215, 80.190249090845555]
+	ZoomFactor		[2.194884287454324]
+	Offset			[3651.7383462819089, 4063.6215316315206]
       }
     }
   }
@@ -55,9 +55,9 @@ Library {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Jozko Mrkvicka"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Apr 22 09:17:42 2024"
-  RTWModifiedTimeStamp	  635678234
-  ModelVersionFormat	  "1.%<AutoIncrement:71>"
+  LastModifiedDate	  "Sat Jul 27 19:15:18 2024"
+  RTWModifiedTimeStamp	  644008517
+  ModelVersionFormat	  "1.%<AutoIncrement:77>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -873,8 +873,8 @@ Library {
       Variant		      off
       System {
 	Name			"Nibble_Multiplexers_Lib"
-	Location		[54, -8, 1928, 1088]
-	Open			on
+	Location		[54, 0, 1928, 1096]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -16444,8 +16444,8 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Nibble_Multiplexer_2_to_1"
-	    Location		    [54, -8, 1928, 1088]
-	    Open		    off
+	    Location		    [54, 0, 1928, 1096]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -16456,7 +16456,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "207"
+	    ZoomFactor		    "219"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr(1b)"
@@ -16479,7 +16479,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_0(4b)"
 	      SID		      "326"
-	      Position		      [3710, 4453, 3740, 4467]
+	      Position		      [3710, 4438, 3740, 4452]
 	      ZOrder		      593
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -16491,7 +16491,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [4115, 4295, 4250, 4345]
 	      ZOrder		      618
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.52"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -16503,7 +16503,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [4115, 4220, 4250, 4270]
 	      ZOrder		      619
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.52"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -16515,7 +16515,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [4115, 4145, 4250, 4195]
 	      ZOrder		      620
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.52"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -16527,7 +16527,7 @@ Library {
 	      Ports		      [3, 1]
 	      Position		      [4115, 4070, 4250, 4120]
 	      ZOrder		      621
-	      LibraryVersion	      "1.51"
+	      LibraryVersion	      "1.52"
 	      SourceBlock	      "Bit_Multiplexers_Lib/Bit_Multiplexers_Lib/Bit_Multiplexer_2_to_1"
 	      SourceType	      "SubSystem"
 	      ContentPreviewEnabled   off
@@ -16549,7 +16549,7 @@ Library {
 	      Name		      "Bus\nSelector"
 	      SID		      "502"
 	      Ports		      [1, 4]
-	      Position		      [3775, 4422, 3785, 4498]
+	      Position		      [3775, 4414, 3785, 4471]
 	      ZOrder		      622
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -16583,7 +16583,7 @@ Library {
 	      Name		      "Bus\nSelector1"
 	      SID		      "503"
 	      Ports		      [1, 4]
-	      Position		      [3775, 4337, 3785, 4413]
+	      Position		      [3775, 4344, 3785, 4401]
 	      ZOrder		      623
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -16713,7 +16713,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
-	      Points		      [290, 0; 0, -155]
+	      Points		      [290, 0; 0, -130]
 	      DstBlock		      "Bit_Multiplexer_2_to_1(Bit_0)"
 	      DstPort		      3
 	    }
@@ -16723,7 +16723,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      4
-	      Points		      [270, 0; 0, -85]
+	      Points		      [270, 0; 0, -75]
 	      DstBlock		      "Bit_Multiplexer_2_to_1(Bit_0)"
 	      DstPort		      2
 	    }
@@ -16733,7 +16733,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      3
-	      Points		      [195, 0; 0, -140]
+	      Points		      [195, 0; 0, -135]
 	      DstBlock		      "Bit_Multiplexer_2_to_1(Bit_1)"
 	      DstPort		      2
 	    }
@@ -16743,7 +16743,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
-	      Points		      [215, 0; 0, -210]
+	      Points		      [215, 0; 0, -190]
 	      DstBlock		      "Bit_Multiplexer_2_to_1(Bit_1)"
 	      DstPort		      3
 	    }
@@ -16763,7 +16763,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
-	      Points		      [140, 0; 0, -265]
+	      Points		      [140, 0; 0, -250]
 	      DstBlock		      "Bit_Multiplexer_2_to_1(Bit_2)"
 	      DstPort		      3
 	    }
@@ -16773,17 +16773,16 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      1
-	      Points		      [65, 0; 0, -320]
+	      Points		      [65, 0; 0, -310]
 	      DstBlock		      "Bit_Multiplexer_2_to_1(Bit_3)"
 	      DstPort		      3
 	    }
 	    Line {
 	      Name		      "<signal1>"
 	      ZOrder		      42
-	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      1
-	      Points		      [45, 0; 0, -250]
+	      Points		      [45, 0; 0, -255]
 	      DstBlock		      "Bit_Multiplexer_2_to_1(Bit_3)"
 	      DstPort		      2
 	    }
@@ -16801,7 +16800,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Nibble_Multiplexer_4_to_1"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -16813,7 +16812,7 @@ Library {
 	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "125"
+	    ZoomFactor		    "132"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "Addr_1(1b)"
@@ -16837,7 +16836,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_3(4b)"
 	      SID		      "361"
-	      Position		      [3430, 4393, 3460, 4407]
+	      Position		      [3425, 4388, 3455, 4402]
 	      ZOrder		      587
 	      Port		      "3"
 	      IconDisplay	      "Port number"
@@ -16846,7 +16845,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_2(4b)"
 	      SID		      "362"
-	      Position		      [3425, 4478, 3455, 4492]
+	      Position		      [3425, 4448, 3455, 4462]
 	      ZOrder		      589
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -16855,7 +16854,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_1(4b)"
 	      SID		      "363"
-	      Position		      [3425, 4563, 3455, 4577]
+	      Position		      [3425, 4508, 3455, 4522]
 	      ZOrder		      591
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -16864,7 +16863,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_0(4b)"
 	      SID		      "364"
-	      Position		      [3425, 4648, 3455, 4662]
+	      Position		      [3425, 4568, 3455, 4582]
 	      ZOrder		      593
 	      Port		      "6"
 	      IconDisplay	      "Port number"
@@ -16934,7 +16933,7 @@ Library {
 	      Name		      "Bus\nSelector"
 	      SID		      "505"
 	      Ports		      [1, 4]
-	      Position		      [3495, 4363, 3505, 4437]
+	      Position		      [3495, 4365, 3505, 4420]
 	      ZOrder		      2174
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -16968,7 +16967,7 @@ Library {
 	      Name		      "Bus\nSelector1"
 	      SID		      "506"
 	      Ports		      [1, 4]
-	      Position		      [3495, 4448, 3505, 4522]
+	      Position		      [3495, 4425, 3505, 4480]
 	      ZOrder		      2175
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17002,7 +17001,7 @@ Library {
 	      Name		      "Bus\nSelector2"
 	      SID		      "507"
 	      Ports		      [1, 4]
-	      Position		      [3495, 4533, 3505, 4607]
+	      Position		      [3495, 4485, 3505, 4540]
 	      ZOrder		      2176
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17036,7 +17035,7 @@ Library {
 	      Name		      "Bus\nSelector3"
 	      SID		      "508"
 	      Ports		      [1, 4]
-	      Position		      [3495, 4618, 3505, 4692]
+	      Position		      [3495, 4545, 3505, 4600]
 	      ZOrder		      2177
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17215,7 +17214,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
-	      Points		      [480, 0; 0, -45]
+	      Points		      [480, 0; 0, -30]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
 	      DstPort		      3
 	    }
@@ -17225,7 +17224,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      4
-	      Points		      [500, 0; 0, -115]
+	      Points		      [500, 0; 0, -75]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
 	      DstPort		      4
 	    }
@@ -17235,7 +17234,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      4
-	      Points		      [520, 0; 0, -185]
+	      Points		      [520, 0; 0, -120]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
 	      DstPort		      5
 	    }
@@ -17245,7 +17244,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      4
-	      Points		      [540, 0; 0, -255]
+	      Points		      [540, 0; 0, -165]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_0)"
 	      DstPort		      6
 	    }
@@ -17255,7 +17254,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
-	      Points		      [350, 0; 0, -145]
+	      Points		      [350, 0; 0, -135]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
 	      DstPort		      3
 	    }
@@ -17265,7 +17264,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      3
-	      Points		      [370, 0; 0, -215]
+	      Points		      [370, 0; 0, -180]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
 	      DstPort		      4
 	    }
@@ -17275,7 +17274,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      3
-	      Points		      [390, 0; 0, -285]
+	      Points		      [390, 0; 0, -225]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
 	      DstPort		      5
 	    }
@@ -17285,7 +17284,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      3
-	      Points		      [410, 0; 0, -355]
+	      Points		      [410, 0; 0, -270]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_1)"
 	      DstPort		      6
 	    }
@@ -17295,7 +17294,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
-	      Points		      [220, 0; 0, -245]
+	      Points		      [220, 0; 0, -240]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
 	      DstPort		      3
 	    }
@@ -17305,7 +17304,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      2
-	      Points		      [240, 0; 0, -315]
+	      Points		      [240, 0; 0, -285]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
 	      DstPort		      4
 	    }
@@ -17315,7 +17314,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      2
-	      Points		      [260, 0; 0, -385]
+	      Points		      [260, 0; 0, -330]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
 	      DstPort		      5
 	    }
@@ -17325,7 +17324,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      2
-	      Points		      [280, 0; 0, -455]
+	      Points		      [280, 0; 0, -375]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_2)"
 	      DstPort		      6
 	    }
@@ -17345,7 +17344,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      1
-	      Points		      [110, 0; 0, -415]
+	      Points		      [110, 0; 0, -390]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
 	      DstPort		      4
 	    }
@@ -17355,7 +17354,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      1
-	      Points		      [130, 0; 0, -485]
+	      Points		      [130, 0; 0, -435]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
 	      DstPort		      5
 	    }
@@ -17365,7 +17364,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      1
-	      Points		      [150, 0; 0, -555]
+	      Points		      [150, 0; 0, -480]
 	      DstBlock		      "Bit_Multiplexer_4_to_1(Bit_3)"
 	      DstPort		      6
 	    }
@@ -17382,7 +17381,7 @@ Library {
 	  Variant		  off
 	  System {
 	    Name		    "Nibble_Multiplexer_8_to_1"
-	    Location		    [54, -8, 1928, 1088]
+	    Location		    [54, 0, 1928, 1096]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -17428,7 +17427,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_7(4b)"
 	      SID		      "404"
-	      Position		      [2550, 4373, 2580, 4387]
+	      Position		      [2550, 4368, 2580, 4382]
 	      ZOrder		      579
 	      Port		      "4"
 	      IconDisplay	      "Port number"
@@ -17437,7 +17436,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_6(4b)"
 	      SID		      "405"
-	      Position		      [2550, 4458, 2580, 4472]
+	      Position		      [2550, 4428, 2580, 4442]
 	      ZOrder		      581
 	      Port		      "5"
 	      IconDisplay	      "Port number"
@@ -17446,7 +17445,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_5(4b)"
 	      SID		      "406"
-	      Position		      [2550, 4543, 2580, 4557]
+	      Position		      [2550, 4488, 2580, 4502]
 	      ZOrder		      583
 	      Port		      "6"
 	      IconDisplay	      "Port number"
@@ -17455,7 +17454,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_4(4b)"
 	      SID		      "407"
-	      Position		      [2550, 4628, 2580, 4642]
+	      Position		      [2550, 4548, 2580, 4562]
 	      ZOrder		      585
 	      Port		      "7"
 	      IconDisplay	      "Port number"
@@ -17464,7 +17463,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_3(4b)"
 	      SID		      "408"
-	      Position		      [2555, 4713, 2585, 4727]
+	      Position		      [2555, 4608, 2585, 4622]
 	      ZOrder		      587
 	      Port		      "8"
 	      IconDisplay	      "Port number"
@@ -17473,7 +17472,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_2(4b)"
 	      SID		      "409"
-	      Position		      [2550, 4798, 2580, 4812]
+	      Position		      [2550, 4668, 2580, 4682]
 	      ZOrder		      589
 	      Port		      "9"
 	      IconDisplay	      "Port number"
@@ -17482,7 +17481,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_1(4b)"
 	      SID		      "410"
-	      Position		      [2550, 4883, 2580, 4897]
+	      Position		      [2550, 4728, 2580, 4742]
 	      ZOrder		      591
 	      Port		      "10"
 	      IconDisplay	      "Port number"
@@ -17491,7 +17490,7 @@ Library {
 	      BlockType		      Inport
 	      Name		      "Data_0(4b)"
 	      SID		      "411"
-	      Position		      [2550, 4968, 2580, 4982]
+	      Position		      [2550, 4788, 2580, 4802]
 	      ZOrder		      593
 	      Port		      "11"
 	      IconDisplay	      "Port number"
@@ -17561,7 +17560,7 @@ Library {
 	      Name		      "Bus\nSelector"
 	      SID		      "1224"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4343, 2630, 4417]
+	      Position		      [2620, 4345, 2630, 4400]
 	      ZOrder		      2176
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17595,7 +17594,7 @@ Library {
 	      Name		      "Bus\nSelector1"
 	      SID		      "1225"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4428, 2630, 4502]
+	      Position		      [2620, 4405, 2630, 4460]
 	      ZOrder		      2177
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17629,7 +17628,7 @@ Library {
 	      Name		      "Bus\nSelector2"
 	      SID		      "1226"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4513, 2630, 4587]
+	      Position		      [2620, 4465, 2630, 4520]
 	      ZOrder		      2178
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17663,7 +17662,7 @@ Library {
 	      Name		      "Bus\nSelector3"
 	      SID		      "1227"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4598, 2630, 4672]
+	      Position		      [2620, 4525, 2630, 4580]
 	      ZOrder		      2179
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17697,7 +17696,7 @@ Library {
 	      Name		      "Bus\nSelector4"
 	      SID		      "1228"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4683, 2630, 4757]
+	      Position		      [2620, 4585, 2630, 4640]
 	      ZOrder		      2180
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17731,7 +17730,7 @@ Library {
 	      Name		      "Bus\nSelector5"
 	      SID		      "1229"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4768, 2630, 4842]
+	      Position		      [2620, 4645, 2630, 4700]
 	      ZOrder		      2181
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17765,7 +17764,7 @@ Library {
 	      Name		      "Bus\nSelector6"
 	      SID		      "1230"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4853, 2630, 4927]
+	      Position		      [2620, 4705, 2630, 4760]
 	      ZOrder		      2182
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -17799,7 +17798,7 @@ Library {
 	      Name		      "Bus\nSelector7"
 	      SID		      "1231"
 	      Ports		      [1, 4]
-	      Position		      [2620, 4938, 2630, 5012]
+	      Position		      [2620, 4765, 2630, 4820]
 	      ZOrder		      2183
 	      ShowName		      off
 	      OutputSignals	      "signal1,signal2,signal3,signal4"
@@ -18051,7 +18050,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      1
-	      Points		      [90, 0; 0, -705]
+	      Points		      [90, 0; 0, -680]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_3)"
 	      DstPort		      5
 	    }
@@ -18061,7 +18060,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      1
-	      Points		      [110, 0; 0, -775]
+	      Points		      [110, 0; 0, -725]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_3)"
 	      DstPort		      6
 	    }
@@ -18071,7 +18070,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      1
-	      Points		      [130, 0; 0, -845]
+	      Points		      [130, 0; 0, -770]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_3)"
 	      DstPort		      7
 	    }
@@ -18081,7 +18080,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector4"
 	      SrcPort		      1
-	      Points		      [150, 0; 0, -915]
+	      Points		      [150, 0; 0, -815]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_3)"
 	      DstPort		      8
 	    }
@@ -18091,7 +18090,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector5"
 	      SrcPort		      1
-	      Points		      [170, 0; 0, -985]
+	      Points		      [170, 0; 0, -860]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_3)"
 	      DstPort		      9
 	    }
@@ -18101,7 +18100,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector6"
 	      SrcPort		      1
-	      Points		      [190, 0; 0, -1055]
+	      Points		      [190, 0; 0, -905]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_3)"
 	      DstPort		      10
 	    }
@@ -18111,7 +18110,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector7"
 	      SrcPort		      1
-	      Points		      [210, 0; 0, -1125]
+	      Points		      [210, 0; 0, -950]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_3)"
 	      DstPort		      11
 	    }
@@ -18121,7 +18120,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      2
-	      Points		      [295, 0; 0, -460]
+	      Points		      [295, 0; 0, -455]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      4
 	    }
@@ -18131,7 +18130,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      2
-	      Points		      [315, 0; 0, -530]
+	      Points		      [315, 0; 0, -500]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      5
 	    }
@@ -18141,7 +18140,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      2
-	      Points		      [335, 0; 0, -600]
+	      Points		      [335, 0; 0, -545]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      6
 	    }
@@ -18151,7 +18150,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      2
-	      Points		      [355, 0; 0, -670]
+	      Points		      [355, 0; 0, -590]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      7
 	    }
@@ -18161,7 +18160,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector4"
 	      SrcPort		      2
-	      Points		      [375, 0; 0, -740]
+	      Points		      [375, 0; 0, -635]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      8
 	    }
@@ -18171,7 +18170,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector5"
 	      SrcPort		      2
-	      Points		      [395, 0; 0, -810]
+	      Points		      [395, 0; 0, -680]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      9
 	    }
@@ -18181,7 +18180,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector6"
 	      SrcPort		      2
-	      Points		      [415, 0; 0, -880]
+	      Points		      [415, 0; 0, -725]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      10
 	    }
@@ -18191,7 +18190,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector7"
 	      SrcPort		      2
-	      Points		      [435, 0; 0, -950]
+	      Points		      [435, 0; 0, -770]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_2)"
 	      DstPort		      11
 	    }
@@ -18201,7 +18200,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      3
-	      Points		      [525, 0; 0, -285]
+	      Points		      [525, 0; 0, -275]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      4
 	    }
@@ -18211,7 +18210,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      3
-	      Points		      [545, 0; 0, -355]
+	      Points		      [545, 0; 0, -320]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      5
 	    }
@@ -18221,7 +18220,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      3
-	      Points		      [565, 0; 0, -425]
+	      Points		      [565, 0; 0, -365]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      6
 	    }
@@ -18231,7 +18230,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      3
-	      Points		      [585, 0; 0, -495]
+	      Points		      [585, 0; 0, -410]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      7
 	    }
@@ -18241,7 +18240,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector4"
 	      SrcPort		      3
-	      Points		      [605, 0; 0, -565]
+	      Points		      [605, 0; 0, -455]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      8
 	    }
@@ -18251,7 +18250,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector5"
 	      SrcPort		      3
-	      Points		      [625, 0; 0, -635]
+	      Points		      [625, 0; 0, -500]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      9
 	    }
@@ -18261,7 +18260,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector6"
 	      SrcPort		      3
-	      Points		      [645, 0; 0, -705]
+	      Points		      [645, 0; 0, -545]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      10
 	    }
@@ -18271,7 +18270,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector7"
 	      SrcPort		      3
-	      Points		      [665, 0; 0, -775]
+	      Points		      [665, 0; 0, -590]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_1)"
 	      DstPort		      11
 	    }
@@ -18281,7 +18280,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector"
 	      SrcPort		      4
-	      Points		      [755, 0; 0, -110]
+	      Points		      [755, 0; 0, -95]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      4
 	    }
@@ -18291,7 +18290,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector1"
 	      SrcPort		      4
-	      Points		      [775, 0; 0, -180]
+	      Points		      [775, 0; 0, -140]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      5
 	    }
@@ -18301,7 +18300,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector2"
 	      SrcPort		      4
-	      Points		      [795, 0; 0, -250]
+	      Points		      [795, 0; 0, -185]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      6
 	    }
@@ -18311,7 +18310,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector3"
 	      SrcPort		      4
-	      Points		      [815, 0; 0, -320]
+	      Points		      [815, 0; 0, -230]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      7
 	    }
@@ -18321,7 +18320,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector4"
 	      SrcPort		      4
-	      Points		      [835, 0; 0, -390]
+	      Points		      [835, 0; 0, -275]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      8
 	    }
@@ -18331,7 +18330,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector5"
 	      SrcPort		      4
-	      Points		      [855, 0; 0, -460]
+	      Points		      [855, 0; 0, -320]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      9
 	    }
@@ -18341,7 +18340,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector6"
 	      SrcPort		      4
-	      Points		      [875, 0; 0, -530]
+	      Points		      [875, 0; 0, -365]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      10
 	    }
@@ -18351,7 +18350,7 @@ Library {
 	      Labels		      [0, 0]
 	      SrcBlock		      "Bus\nSelector7"
 	      SrcPort		      4
-	      Points		      [895, 0; 0, -600]
+	      Points		      [895, 0; 0, -410]
 	      DstBlock		      "Bit_Multiplexer_8_to_1(Bit_0)"
 	      DstPort		      11
 	    }
