@@ -1,4 +1,5 @@
 *.autosave
+*.mexw64
 slprj/
 Pokus/
 Statistics/
