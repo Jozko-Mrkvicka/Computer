@@ -23,22 +23,13 @@
 
 OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 
+
 #############################################
 #              Mrkvicka 9000
 #############################################
-- Dokumentacia
-    - Dokoncit README.
-    - Vylestit instrukcie.
-
-    - Mrkvicka 9000 Programmer`s Manual
-        - PDF
-        - Readme
-        - Instructions
-        - Demo examples
-
-    - Mrkvicka 9000 Hardware Manual
-        - PDF
-        - Simulink model
+- Ostatne
+    - Presunut common library do samostatneho repozitara.
+    - Skontrolovat v celom projekte ci sa niekde nenachadza string "TODO".
 
 
 - Hardware:
@@ -57,7 +48,15 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 
     - Zjednodusit architekturu:
         - Nahradit vsetky typy enkoderov pomocou jedneho 16_to_4.
-        - Zistit ci by pomohlo keby som nahradil vsetky multiplexory iba pomocou jedneho typu.
+        - Nahradit vsetky typy muxov pomocou jedneho 4_to_1.
+
+    - postavit celociselnu nasobicku/delicku (ako kombinacny obvod)
+    - Pridat dva specialne 32-bitove registre na aritmeticke operacie.
+    - prerobit RAM pamate tak aby sa dali poskladat do stvorca a tym by sa zredukovala velkost dekoderov
+
+    - skusit zjednodusit latche/RAM pamate tak ze namiesto samostatneho write commandu sa bude iba ANDovat clock signal
+
+    - Prerobit instrukciu SHIFT pomocou posuvnych registrov (zaberie niekolko hodinovych cyklov) / alebo nech shift vykona posuv iba o jeden bit (ale to sa zas bude dat spravit pomocou celociselneho nasobenia/delenia).
 
 
 - GUI
@@ -65,13 +64,12 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Pridat tlacitka RESET, RUN, STOP, STEP.
     - Pridat Instruction Memory Panel.
     - Pridat Terminal (obrazovka, klavesnica).
+    - HALUSKA 9000 (Heuristically programmed ALgorithmic Universal SKAtula 9000) 
 
 
 - Preprocessor:
+    - Prerobit hexa hodnoty v zdrojakoch. Novy matlab ich konecne podporuje!!
     - Zarovnat pravy okraj vygenerovaneho kodu.
-
-
-- Testy
 
 
 - Firmware:
@@ -87,9 +85,22 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
     - Funkciu ktora dostane argumenty adresa pola a dlzka pola, a vrati sucet prvkov v poli (vytvorit demonstracnu funkciu ktora by dostala parametre z hlavneho programu a vratila by hodnotu. Ide tu o to ze este stale uplne nechapem pracu s funkciami/parametrami). Pridat .data segment/.text segment -> Chyba mi mechanizmus na ukladanie datovych poli do zdrojoveho kodu. Ako nahardcodovat pole cisel do ROM, aby sa neinterpretovali ako instrukcie?? Myslim ze sa na to pouziva sekcia ".data". 
 
 
-- Ostatne
-    - Presunut common library do samostatneho repozitara a pridat .gitsubmodule(s).
-    - Skontrolovat v celom projekte ci sa niekde nenachadza string "TODO".
+- Dokumentacia
+    - Dokoncit README.
+    - Vylestit instrukcie.
+
+    - Mrkvicka 9000 Programmer`s Manual
+        - PDF
+        - Readme
+        - Instructions
+        - Demo examples
+
+    - Mrkvicka 9000 Hardware Manual
+        - PDF
+        - Simulink model
+
+
+- Testy
 
 
 #############################################
@@ -106,11 +117,14 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Mensi pocet suciastok.
 
     - Rozsirit ALU
-        - Nasobicka, delicka (zaberie niekolko hodinovych cyklov).
-        - Prerobit instrukciu SHIFT pomocou posuvnych registrov (zaberie niekolko hodinovych cyklov).
-    - Pridat dva specialne 32-bitove registre na aritmeticke operacie.
     - Pridat FPU.
 
     - UART/USART
 
-- Naprogramovat Assembler.
+    - Prerobit architekturu na 1-bit. Usetrim hradla v multiplexeroch.
+
+
+- Compilator:
+    - Naprogramovat Assembler.
+    - Naprogramovat BASIC alebo pseudoC
+
