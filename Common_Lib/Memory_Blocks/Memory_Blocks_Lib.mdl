@@ -44,8 +44,8 @@ __MWOPC_PART_BEGIN__ /metadata/coreProperties.xml
   <dcterms:created xsi:type="dcterms:W3CDTF">2019-03-08T21:00:14Z</dcterms:created>
   <dc:creator>uzivatel</dc:creator>
   <cp:lastModifiedBy>Jozko Mrkvicka</cp:lastModifiedBy>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2024-10-22T18:44:14Z</dcterms:modified>
-  <cp:revision>15.13</cp:revision>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2024-10-23T22:51:40Z</dcterms:modified>
+  <cp:revision>15.23</cp:revision>
   <cp:version>R2023a</cp:version>
 </cp:coreProperties>
 
@@ -115,7 +115,7 @@ __MWOPC_PART_BEGIN__ /simulink/blockdiagram.xml
     <ConfigManagerSettings>
       <P Name="ModifiedByFormat">%&lt;Auto&gt;</P>
       <P Name="ModifiedDateFormat">%&lt;Auto&gt;</P>
-      <P Name="ModelVersionFormat">%&lt;AutoIncrement:15.13&gt;</P>
+      <P Name="ModelVersionFormat">%&lt;AutoIncrement:15.23&gt;</P>
     </ConfigManagerSettings>
     <EditorSettings>
       <P Name="LibraryLinkDisplay">user</P>
@@ -885,8 +885,8 @@ __MWOPC_PART_BEGIN__ /simulink/configSetInfo.xml
 __MWOPC_PART_BEGIN__ /simulink/modelDictionary.xml
 <?xml version="1.0" encoding="UTF-8"?>
 <MF0 version="1.1" defaultPackage="slid" packageUris="http://schema.mathworks.com/mf0/slid/R2023a_20220628">
-  <System type="System" uuid="1bd169a4-233a-4869-bfe5-ce95867d0bf5">
-    <Interface type="Interface" uuid="7d50f165-64d9-4a1d-a99f-818726bb7b1f"/>
+  <System type="System" uuid="5afb3f3b-c144-4636-be54-f3b1f8c49218">
+    <Interface type="Interface" uuid="8f0b44ff-68f6-4ac4-916d-c08cd33fc935"/>
   </System>
 </MF0>
 __MWOPC_PART_BEGIN__ /simulink/plugins/SimscapeModelParametersPlugin.xml
@@ -933,7 +933,7 @@ __MWOPC_PART_BEGIN__ /simulink/stateflow/chart_12.xml
       <P Name="decomposition">CLUSTER_STATE</P>
       <eml>
         <P Name="isEML">1</P>
-        <P Name="script">function [Video, DataOut] = RAM(Addr, Write, DataIn, CLK)
+        <P Name="script">function [Debug, DataOut] = RAM(Addr, Write, DataIn, CLK)
     persistent ram_memory;
 
     if (isempty(ram_memory))
@@ -942,30 +942,30 @@ __MWOPC_PART_BEGIN__ /simulink/stateflow/chart_12.xml
 
     %Convert the DataIn parameter to uint8.
     temp =                       ...
-        128 * DataIn.signal9  +  ...
-        64  * DataIn.signal10 +  ...
-        32  * DataIn.signal11 +  ...
-        16  * DataIn.signal12 +  ...
-        8   * DataIn.signal13 +  ...
-        4   * DataIn.signal14 +  ...
-        2   * DataIn.signal15 +  ...
-        1   * DataIn.signal16;
+        128 * DataIn.b07 +  ...
+        64  * DataIn.b06 +  ...
+        32  * DataIn.b05 +  ...
+        16  * DataIn.b04 +  ...
+        8   * DataIn.b03 +  ...
+        4   * DataIn.b02 +  ...
+        2   * DataIn.b01 +  ...
+        1   * DataIn.b00;
     data = uint8(temp);
 
     %Convert the Addr parameter to uint16.
     temp =                      ...
-        2048 * Addr.signal5  +  ...
-        1024 * Addr.signal6  +  ...
-        512  * Addr.signal7  +  ...
-        256  * Addr.signal8  +  ...
-        128  * Addr.signal9  +  ...
-        64   * Addr.signal10 +  ...
-        32   * Addr.signal11 +  ...
-        16   * Addr.signal12 +  ...
-        8    * Addr.signal13 +  ...
-        4    * Addr.signal14 +  ...
-        2    * Addr.signal15 +  ...
-        1    * Addr.signal16;
+        2048 * Addr.b11  +  ...
+        1024 * Addr.b10  +  ...
+        512  * Addr.b09  +  ...
+        256  * Addr.b08  +  ...
+        128  * Addr.b07 +  ...
+        64   * Addr.b06 +  ...
+        32   * Addr.b05 +  ...
+        16   * Addr.b04 +  ...
+        8    * Addr.b03 +  ...
+        4    * Addr.b02 +  ...
+        2    * Addr.b01 +  ...
+        1    * Addr.b00;
     address = uint16(temp);
 
     if ((true == Write) &amp;&amp; (1 == CLK))
@@ -975,24 +975,24 @@ __MWOPC_PART_BEGIN__ /simulink/stateflow/chart_12.xml
     %Convert the DataOut parameter to BUS_UINT16_T.
     temp = ram_memory(1, address + 1);
     temp = dec2bin(temp, 8);
-    DataOut.signal1 = false;
-    DataOut.signal2 = false;
-    DataOut.signal3 = false;
-    DataOut.signal4 = false;
-    DataOut.signal5 = false;
-    DataOut.signal6 = false;
-    DataOut.signal7 = false;
-    DataOut.signal8 = false;
-    if (1 == (temp(1) - 48)) DataOut.signal9  = true; else DataOut.signal9  = false; end
-    if (1 == (temp(2) - 48)) DataOut.signal10 = true; else DataOut.signal10 = false; end
-    if (1 == (temp(3) - 48)) DataOut.signal11 = true; else DataOut.signal11 = false; end
-    if (1 == (temp(4) - 48)) DataOut.signal12 = true; else DataOut.signal12 = false; end
-    if (1 == (temp(5) - 48)) DataOut.signal13 = true; else DataOut.signal13 = false; end
-    if (1 == (temp(6) - 48)) DataOut.signal14 = true; else DataOut.signal14 = false; end
-    if (1 == (temp(7) - 48)) DataOut.signal15 = true; else DataOut.signal15 = false; end
-    if (1 == (temp(8) - 48)) DataOut.signal16 = true; else DataOut.signal16 = false; end
+    DataOut.b15 = false;
+    DataOut.b14 = false;
+    DataOut.b13 = false;
+    DataOut.b12 = false;
+    DataOut.b11 = false;
+    DataOut.b10 = false;
+    DataOut.b09 = false;
+    DataOut.b08 = false;
+    if (1 == (temp(1) - 48)) DataOut.b07 = true; else DataOut.b07 = false; end
+    if (1 == (temp(2) - 48)) DataOut.b06 = true; else DataOut.b06 = false; end
+    if (1 == (temp(3) - 48)) DataOut.b05 = true; else DataOut.b05 = false; end
+    if (1 == (temp(4) - 48)) DataOut.b04 = true; else DataOut.b04 = false; end
+    if (1 == (temp(5) - 48)) DataOut.b03 = true; else DataOut.b03 = false; end
+    if (1 == (temp(6) - 48)) DataOut.b02 = true; else DataOut.b02 = false; end
+    if (1 == (temp(7) - 48)) DataOut.b01 = true; else DataOut.b01 = false; end
+    if (1 == (temp(8) - 48)) DataOut.b00 = true; else DataOut.b00 = false; end
 
-    Video = ram_memory;    
+    Debug = ram_memory;    
 end
 </P>
         <P Name="vectorOutputs1D">1</P>
@@ -1039,7 +1039,7 @@ end
       </props>
       <P Name="dataType">Inherit: Same as Simulink</P>
     </data>
-    <data SSID="5" name="Video">
+    <data SSID="5" name="Debug">
       <P Name="scope">OUTPUT_DATA</P>
       <props>
         <array>
@@ -1423,58 +1423,61 @@ __MWOPC_PART_BEGIN__ /simulink/stateflow/chart_34.xml
     persistent ram_memory;
 
     if (isempty(ram_memory))
-        ram_memory = zeros(1, 1024, &apos;uint8&apos;);
+        % ram_memory = zeros(1, 1024, &apos;uint8&apos;);
+        ram_memory = zeros(1024, 1, &apos;uint8&apos;);
     end
 
     %Convert the DataIn parameter to uint8.
     temp =                       ...
-        128 * DataIn.signal9  +  ...
-        64  * DataIn.signal10 +  ...
-        32  * DataIn.signal11 +  ...
-        16  * DataIn.signal12 +  ...
-        8   * DataIn.signal13 +  ...
-        4   * DataIn.signal14 +  ...
-        2   * DataIn.signal15 +  ...
-        1   * DataIn.signal16;
+        128 * DataIn.b07 +  ...
+        64  * DataIn.b06 +  ...
+        32  * DataIn.b05 +  ...
+        16  * DataIn.b04 +  ...
+        8   * DataIn.b03 +  ...
+        4   * DataIn.b02 +  ...
+        2   * DataIn.b01 +  ...
+        1   * DataIn.b00;
     data = uint8(temp);
 
     %Convert the Addr parameter to uint16.
     temp =                      ...
-        512  * Addr.signal7  +  ...
-        256  * Addr.signal8  +  ...
-        128  * Addr.signal9  +  ...
-        64   * Addr.signal10 +  ...
-        32   * Addr.signal11 +  ...
-        16   * Addr.signal12 +  ...
-        8    * Addr.signal13 +  ...
-        4    * Addr.signal14 +  ...
-        2    * Addr.signal15 +  ...
-        1    * Addr.signal16;
+        512  * Addr.b09 +  ...
+        256  * Addr.b08 +  ...
+        128  * Addr.b07 +  ...
+        64   * Addr.b06 +  ...
+        32   * Addr.b05 +  ...
+        16   * Addr.b04 +  ...
+        8    * Addr.b03 +  ...
+        4    * Addr.b02 +  ...
+        2    * Addr.b01 +  ...
+        1    * Addr.b00;
     address = uint16(temp);
 
     if ((true == Write) &amp;&amp; (1 == CLK))
-        ram_memory(1, address + 1) = data;
+        % ram_memory(1, address + 1) = data;
+        ram_memory(address + 1, 1) = data;
     end
 
     %Convert the DataOut parameter to BUS_UINT16_T.
-    temp = ram_memory(1, address + 1);
+    % temp = ram_memory(1, address + 1);
+    temp = ram_memory(address + 1, 1);
     temp = dec2bin(temp, 8);
-    DataOut.signal1 = false;
-    DataOut.signal2 = false;
-    DataOut.signal3 = false;
-    DataOut.signal4 = false;
-    DataOut.signal5 = false;
-    DataOut.signal6 = false;
-    DataOut.signal7 = false;
-    DataOut.signal8 = false;
-    if (1 == (temp(1) - 48)) DataOut.signal9  = true; else DataOut.signal9  = false; end
-    if (1 == (temp(2) - 48)) DataOut.signal10 = true; else DataOut.signal10 = false; end
-    if (1 == (temp(3) - 48)) DataOut.signal11 = true; else DataOut.signal11 = false; end
-    if (1 == (temp(4) - 48)) DataOut.signal12 = true; else DataOut.signal12 = false; end
-    if (1 == (temp(5) - 48)) DataOut.signal13 = true; else DataOut.signal13 = false; end
-    if (1 == (temp(6) - 48)) DataOut.signal14 = true; else DataOut.signal14 = false; end
-    if (1 == (temp(7) - 48)) DataOut.signal15 = true; else DataOut.signal15 = false; end
-    if (1 == (temp(8) - 48)) DataOut.signal16 = true; else DataOut.signal16 = false; end
+    DataOut.b15 = false;
+    DataOut.b14 = false;
+    DataOut.b13 = false;
+    DataOut.b12 = false;
+    DataOut.b11 = false;
+    DataOut.b10 = false;
+    DataOut.b09 = false;
+    DataOut.b08 = false;
+    if (1 == (temp(1) - 48)) DataOut.b07 = true; else DataOut.b07 = false; end
+    if (1 == (temp(2) - 48)) DataOut.b06 = true; else DataOut.b06 = false; end
+    if (1 == (temp(3) - 48)) DataOut.b05 = true; else DataOut.b05 = false; end
+    if (1 == (temp(4) - 48)) DataOut.b04 = true; else DataOut.b04 = false; end
+    if (1 == (temp(5) - 48)) DataOut.b03 = true; else DataOut.b03 = false; end
+    if (1 == (temp(6) - 48)) DataOut.b02 = true; else DataOut.b02 = false; end
+    if (1 == (temp(7) - 48)) DataOut.b01 = true; else DataOut.b01 = false; end
+    if (1 == (temp(8) - 48)) DataOut.b00 = true; else DataOut.b00 = false; end
 
     Video = ram_memory;    
 end
@@ -1692,8 +1695,8 @@ __MWOPC_PART_BEGIN__ /simulink/systems/_rels/system_root.xml.rels
 __MWOPC_PART_BEGIN__ /simulink/systems/system_1.xml
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[29, -1, 1011, 751]</P>
-  <P Name="ZoomFactor">125</P>
+  <P Name="Location">[61, -8, 1921, 1081]</P>
+  <P Name="Open">on</P>
   <Block BlockType="SubSystem" Name="1024x1B_RAM_Simulated" SID="2316">
     <PortCounts in="4" out="2"/>
     <P Name="Position">[655, 702, 815, 763]</P>
@@ -1781,6 +1784,11 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1.xml
     <P Name="PermitHierarchicalResolution">ExplicitOnly</P>
     <P Name="TreatAsAtomicUnit">on</P>
     <P Name="SFBlockType">MATLAB Function</P>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="PropagatedSignals">Debug</P>
+      </Port>
+    </PortProperties>
     <System Ref="system_2315"/>
   </Block>
   <Block BlockType="SubSystem" Name="Bit" SID="76">
@@ -1824,10 +1832,11 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1.xml
 __MWOPC_PART_BEGIN__ /simulink/systems/system_1167.xml
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[54, 0, 1233, 1087]</P>
+  <P Name="Location">[61, -8, 1921, 1081]</P>
   <P Name="PaperType">A4</P>
   <P Name="PaperUnits">centimeters</P>
   <P Name="TiledPaperMargins">[1.270000, 1.270000, 1.270000, 1.270000]</P>
+  <P Name="ZoomFactor">200</P>
   <Block BlockType="Inport" Name="Write(1b)" SID="1168">
     <P Name="Position">[700, -472, 730, -458]</P>
     <P Name="ZOrder">140</P>
@@ -1943,6 +1952,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b5</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop11" SID="1175">
     <PortCounts in="3" out="2"/>
@@ -1962,6 +1976,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b4</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop12" SID="1176">
     <PortCounts in="3" out="2"/>
@@ -1981,6 +2000,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b3</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop13" SID="1177">
     <PortCounts in="3" out="2"/>
@@ -2000,6 +2024,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b2</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop14" SID="1178">
     <PortCounts in="3" out="2"/>
@@ -2019,6 +2048,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b1</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop15" SID="1179">
     <PortCounts in="3" out="2"/>
@@ -2038,6 +2072,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b0</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop8" SID="1180">
     <PortCounts in="3" out="2"/>
@@ -2057,6 +2096,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b7</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop9" SID="1181">
     <PortCounts in="3" out="2"/>
@@ -2076,6 +2120,11 @@ Flip-Flop</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b6</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Logic" Name="Logical&#xA;Operator" SID="1182">
     <PortCounts in="2" out="1"/>
@@ -2392,6 +2441,8 @@ Flip-Flop</P>
     <P Name="Dst">1185#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b7</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">7</P>
     <P Name="Src">1180#out:1</P>
     <P Name="Points">[51, 0]</P>
@@ -2402,6 +2453,7 @@ Flip-Flop</P>
     </Branch>
     <Branch>
       <P Name="ZOrder">117</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:1</P>
     </Branch>
   </Line>
@@ -2426,6 +2478,8 @@ Flip-Flop</P>
     <P Name="Dst">1188#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b6</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">12</P>
     <P Name="Src">1181#out:1</P>
     <P Name="Points">[62, 0]</P>
@@ -2436,6 +2490,7 @@ Flip-Flop</P>
     </Branch>
     <Branch>
       <P Name="ZOrder">119</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:2</P>
     </Branch>
   </Line>
@@ -2538,6 +2593,8 @@ Flip-Flop</P>
     </Branch>
   </Line>
   <Line>
+    <P Name="Name">b5</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">35</P>
     <P Name="Src">1174#out:1</P>
     <P Name="Points">[72, 0]</P>
@@ -2548,6 +2605,7 @@ Flip-Flop</P>
     </Branch>
     <Branch>
       <P Name="ZOrder">121</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:3</P>
     </Branch>
   </Line>
@@ -2588,6 +2646,8 @@ Flip-Flop</P>
     <P Name="Dst">1194#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b4</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">43</P>
     <P Name="Src">1175#out:1</P>
     <P Name="Points">[82, 0]</P>
@@ -2598,6 +2658,7 @@ Flip-Flop</P>
     </Branch>
     <Branch>
       <P Name="ZOrder">123</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:4</P>
     </Branch>
   </Line>
@@ -2638,6 +2699,8 @@ Flip-Flop</P>
     <P Name="Dst">1197#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b3</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">51</P>
     <P Name="Src">1176#out:1</P>
     <P Name="Points">[91, 0]</P>
@@ -2648,6 +2711,7 @@ Flip-Flop</P>
     </Branch>
     <Branch>
       <P Name="ZOrder">125</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:5</P>
     </Branch>
   </Line>
@@ -2688,6 +2752,8 @@ Flip-Flop</P>
     <P Name="Dst">1200#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b2</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">59</P>
     <P Name="Src">1177#out:1</P>
     <P Name="Points">[101, 0]</P>
@@ -2698,6 +2764,7 @@ Flip-Flop</P>
     </Branch>
     <Branch>
       <P Name="ZOrder">127</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:6</P>
     </Branch>
   </Line>
@@ -2871,6 +2938,8 @@ Flip-Flop</P>
     </Branch>
   </Line>
   <Line>
+    <P Name="Name">b1</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">98</P>
     <P Name="Src">1178#out:1</P>
     <P Name="Points">[110, 0]</P>
@@ -2881,6 +2950,7 @@ Flip-Flop</P>
     </Branch>
     <Branch>
       <P Name="ZOrder">129</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:7</P>
     </Branch>
   </Line>
@@ -2973,11 +3043,14 @@ Flip-Flop</P>
     <P Name="Dst">1226#in:1</P>
   </Line>
   <Line>
+    <P Name="Name">b0</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">106</P>
     <P Name="Src">1179#out:1</P>
     <P Name="Points">[119, 0]</P>
     <Branch>
       <P Name="ZOrder">135</P>
+      <P Name="Labels">[-1, 0]</P>
       <P Name="Dst">1172#in:8</P>
     </Branch>
     <Branch>
@@ -2998,7 +3071,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">281</P>
+    <P Name="ZOrder">289</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3014,7 +3087,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">282</P>
+    <P Name="ZOrder">290</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3030,7 +3103,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">283</P>
+    <P Name="ZOrder">291</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3046,7 +3119,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">284</P>
+    <P Name="ZOrder">292</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3062,7 +3135,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">285</P>
+    <P Name="ZOrder">293</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3078,7 +3151,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">286</P>
+    <P Name="ZOrder">294</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3094,7 +3167,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">287</P>
+    <P Name="ZOrder">295</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3110,7 +3183,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">288</P>
+    <P Name="ZOrder">296</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -3136,11 +3209,11 @@ together with a merge block because the merge block does not allow a signal to b
 __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[54, 0, 1233, 1087]</P>
+  <P Name="Location">[61, -8, 1921, 1081]</P>
   <P Name="PaperType">A4</P>
   <P Name="PaperUnits">centimeters</P>
   <P Name="TiledPaperMargins">[1.270000, 1.270000, 1.270000, 1.270000]</P>
-  <P Name="ZoomFactor">125</P>
+  <P Name="ZoomFactor">80</P>
   <Block BlockType="Inport" Name="Addr(2B)" SID="1229">
     <P Name="Position">[390, 223, 420, 237]</P>
     <P Name="ZOrder">4510</P>
@@ -3198,11 +3271,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 1406, 1210, 1454]</P>
     <P Name="ZOrder">10436</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_01" SID="1272">
@@ -3210,11 +3295,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 1319, 1210, 1371]</P>
     <P Name="ZOrder">10437</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_02" SID="1273">
@@ -3222,11 +3319,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 1234, 1210, 1286]</P>
     <P Name="ZOrder">10438</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_03" SID="1274">
@@ -3234,11 +3343,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 1149, 1210, 1201]</P>
     <P Name="ZOrder">10439</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_04" SID="1275">
@@ -3246,11 +3367,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 1064, 1210, 1116]</P>
     <P Name="ZOrder">10440</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_05" SID="1276">
@@ -3258,11 +3391,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 979, 1210, 1031]</P>
     <P Name="ZOrder">10441</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_06" SID="1277">
@@ -3270,11 +3415,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 894, 1210, 946]</P>
     <P Name="ZOrder">10442</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_07" SID="1278">
@@ -3282,11 +3439,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 809, 1210, 861]</P>
     <P Name="ZOrder">10443</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_08" SID="1279">
@@ -3294,11 +3463,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 724, 1210, 776]</P>
     <P Name="ZOrder">10444</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_09" SID="1280">
@@ -3306,11 +3487,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 639, 1210, 691]</P>
     <P Name="ZOrder">10445</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_10" SID="1281">
@@ -3318,11 +3511,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 554, 1210, 606]</P>
     <P Name="ZOrder">10446</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_11" SID="1282">
@@ -3330,11 +3535,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 469, 1210, 521]</P>
     <P Name="ZOrder">10447</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_12" SID="1283">
@@ -3342,11 +3559,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 384, 1210, 436]</P>
     <P Name="ZOrder">10448</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_13" SID="1284">
@@ -3354,11 +3583,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 299, 1210, 351]</P>
     <P Name="ZOrder">10449</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_14" SID="1285">
@@ -3366,11 +3607,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 214, 1210, 266]</P>
     <P Name="ZOrder">10450</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Reference" Name="Byte_15" SID="1286">
@@ -3378,11 +3631,23 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_1228.xml
     <P Name="Position">[1050, 129, 1210, 181]</P>
     <P Name="ZOrder">10451</P>
     <P Name="BackgroundColor">cyan</P>
-    <P Name="LibraryVersion">1.234</P>
+    <P Name="LibraryVersion">15.14</P>
     <P Name="SourceBlock">$bdroot/Memory_Blocks_Lib/Byte</P>
     <P Name="SourceType">SubSystem</P>
     <InstanceData>
+      <P Name="ShowPortLabels">FromPortIcon</P>
+      <P Name="SystemSampleTime">-1</P>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
+      <P Name="VariantActivationTime">update diagram</P>
+      <P Name="AllowZeroVariantControls">off</P>
+      <P Name="PropagateVariantConditions">off</P>
       <P Name="ContentPreviewEnabled">off</P>
+      <P Name="Latency">0</P>
+      <P Name="AutoFrameSizeCalculation">off</P>
     </InstanceData>
   </Block>
   <Block BlockType="Merge" Name="Merge" SID="1251">
@@ -27395,7 +27660,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_2315.xml
     <P Name="SFcnIsStateOwnerBlock">off</P>
     <PortProperties>
       <Port Type="out" Index="2">
-        <P Name="Name">Video</P>
+        <P Name="Name">Debug</P>
       </Port>
       <Port Type="out" Index="3">
         <P Name="Name">DataOut</P>
@@ -27406,7 +27671,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_2315.xml
     <P Name="Position">[460, 241, 480, 259]</P>
     <P Name="ZOrder">20</P>
   </Block>
-  <Block BlockType="Outport" Name="Video" SID="2315::5">
+  <Block BlockType="Outport" Name="Debug" SID="2315::5">
     <P Name="Position">[460, 101, 480, 119]</P>
     <P Name="ZOrder">-5</P>
   </Block>
@@ -27440,7 +27705,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_2315.xml
     <P Name="Dst">2315::47#in:4</P>
   </Line>
   <Line>
-    <P Name="Name">Video</P>
+    <P Name="Name">Debug</P>
     <P Name="ZOrder">13</P>
     <P Name="Labels">[0, 0]</P>
     <P Name="Src">2315::47#out:2</P>
@@ -27586,11 +27851,11 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_2316.xml
 __MWOPC_PART_BEGIN__ /simulink/systems/system_244.xml
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[54, 0, 1233, 1087]</P>
+  <P Name="Location">[61, -8, 1921, 1081]</P>
   <P Name="PaperType">A4</P>
   <P Name="PaperUnits">centimeters</P>
   <P Name="TiledPaperMargins">[1.270000, 1.270000, 1.270000, 1.270000]</P>
-  <P Name="ZoomFactor">60</P>
+  <P Name="ZoomFactor">80</P>
   <Block BlockType="Inport" Name="Select(1b)" SID="892">
     <P Name="Position">[875, -642, 905, -628]</P>
     <P Name="ZOrder">2073</P>
@@ -27623,60 +27888,61 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_244.xml
     <P Name="DisplayOption">bar</P>
     <P Name="InheritFromInputs">on</P>
   </Block>
-  <Block BlockType="BusSelector" Name="Bus&#xA;Selector15" SID="996">
+  <Block BlockType="BusSelector" Name="Bus&#xA;Selector3" SID="2317">
     <PortCounts in="1" out="16"/>
     <P Name="Position">[960, -594, 975, 589]</P>
-    <P Name="ZOrder">2159</P>
+    <P Name="ZOrder">33506</P>
     <P Name="ShowName">off</P>
-    <P Name="OutputSignals">signal1,signal2,signal3,signal4,signal5,signal6,signal7,signal8,signal9,signal10,signal11,signal12,signal13,signal14,signal15,signal16</P>
+    <P Name="FontSize">6</P>
+    <P Name="OutputSignals">b15,b14,b13,b12,b11,b10,b09,b08,b07,b06,b05,b04,b03,b02,b01,b00</P>
     <PortProperties>
       <Port Type="out" Index="1">
-        <P Name="Name">&lt;signal1&gt;</P>
+        <P Name="Name">&lt;b15&gt;</P>
       </Port>
       <Port Type="out" Index="2">
-        <P Name="Name">&lt;signal2&gt;</P>
+        <P Name="Name">&lt;b14&gt;</P>
       </Port>
       <Port Type="out" Index="3">
-        <P Name="Name">&lt;signal3&gt;</P>
+        <P Name="Name">&lt;b13&gt;</P>
       </Port>
       <Port Type="out" Index="4">
-        <P Name="Name">&lt;signal4&gt;</P>
+        <P Name="Name">&lt;b12&gt;</P>
       </Port>
       <Port Type="out" Index="5">
-        <P Name="Name">&lt;signal5&gt;</P>
+        <P Name="Name">&lt;b11&gt;</P>
       </Port>
       <Port Type="out" Index="6">
-        <P Name="Name">&lt;signal6&gt;</P>
+        <P Name="Name">&lt;b10&gt;</P>
       </Port>
       <Port Type="out" Index="7">
-        <P Name="Name">&lt;signal7&gt;</P>
+        <P Name="Name">&lt;b09&gt;</P>
       </Port>
       <Port Type="out" Index="8">
-        <P Name="Name">&lt;signal8&gt;</P>
+        <P Name="Name">&lt;b08&gt;</P>
       </Port>
       <Port Type="out" Index="9">
-        <P Name="Name">&lt;signal9&gt;</P>
+        <P Name="Name">&lt;b07&gt;</P>
       </Port>
       <Port Type="out" Index="10">
-        <P Name="Name">&lt;signal10&gt;</P>
+        <P Name="Name">&lt;b06&gt;</P>
       </Port>
       <Port Type="out" Index="11">
-        <P Name="Name">&lt;signal11&gt;</P>
+        <P Name="Name">&lt;b05&gt;</P>
       </Port>
       <Port Type="out" Index="12">
-        <P Name="Name">&lt;signal12&gt;</P>
+        <P Name="Name">&lt;b04&gt;</P>
       </Port>
       <Port Type="out" Index="13">
-        <P Name="Name">&lt;signal13&gt;</P>
+        <P Name="Name">&lt;b03&gt;</P>
       </Port>
       <Port Type="out" Index="14">
-        <P Name="Name">&lt;signal14&gt;</P>
+        <P Name="Name">&lt;b02&gt;</P>
       </Port>
       <Port Type="out" Index="15">
-        <P Name="Name">&lt;signal15&gt;</P>
+        <P Name="Name">&lt;b01&gt;</P>
       </Port>
       <Port Type="out" Index="16">
-        <P Name="Name">&lt;signal16&gt;</P>
+        <P Name="Name">&lt;b00&gt;</P>
       </Port>
     </PortProperties>
   </Block>
@@ -27685,224 +27951,384 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_244.xml
     <P Name="Position">[1155, 169, 1195, 221]</P>
     <P Name="ZOrder">2130</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b05</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop16" SID="898">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -431, 1195, -379]</P>
     <P Name="ZOrder">2087</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b13</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop17" SID="899">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -356, 1195, -304]</P>
     <P Name="ZOrder">2092</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b12</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop18" SID="900">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -281, 1195, -229]</P>
     <P Name="ZOrder">2097</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b11</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop19" SID="901">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -206, 1195, -154]</P>
     <P Name="ZOrder">2102</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b10</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop2" SID="949">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, 244, 1195, 296]</P>
     <P Name="ZOrder">2135</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b04</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop20" SID="902">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -131, 1195, -79]</P>
     <P Name="ZOrder">2107</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b09</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop21" SID="903">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -56, 1195, -4]</P>
     <P Name="ZOrder">2112</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b08</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop22" SID="904">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -581, 1195, -529]</P>
     <P Name="ZOrder">2077</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b15</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop23" SID="905">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, -506, 1195, -454]</P>
     <P Name="ZOrder">2082</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b14</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop3" SID="950">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, 319, 1195, 371]</P>
     <P Name="ZOrder">2140</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b03</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop4" SID="951">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, 394, 1195, 446]</P>
     <P Name="ZOrder">2145</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b02</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop5" SID="952">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, 469, 1195, 521]</P>
     <P Name="ZOrder">2150</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b01</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop6" SID="953">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, 544, 1195, 596]</P>
     <P Name="ZOrder">2155</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b00</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop7" SID="954">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, 19, 1195, 71]</P>
     <P Name="ZOrder">2120</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b07</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Reference" Name="J-K&#xA;Flip-Flop8" SID="955">
     <PortCounts in="3" out="2"/>
     <P Name="Position">[1155, 94, 1195, 146]</P>
     <P Name="ZOrder">2125</P>
     <P Name="ShowName">off</P>
-    <P Name="LibraryVersion">1.58</P>
+    <P Name="LibraryVersion">11.0</P>
     <P Name="SourceBlock">simulink_extras/Flip Flops/J-K
 Flip-Flop</P>
     <P Name="SourceType">JKFlipFlop</P>
     <InstanceData>
+      <P Name="RTWMemSecFuncInitTerm">Inherit from model</P>
+      <P Name="RTWMemSecFuncExecute">Inherit from model</P>
+      <P Name="RTWMemSecDataConstants">Inherit from model</P>
+      <P Name="RTWMemSecDataInternal">Inherit from model</P>
+      <P Name="RTWMemSecDataParameters">Inherit from model</P>
       <P Name="ContentPreviewEnabled">off</P>
       <P Name="initial_condition">0</P>
     </InstanceData>
+    <PortProperties>
+      <Port Type="out" Index="1">
+        <P Name="Name">b06</P>
+      </Port>
+    </PortProperties>
   </Block>
   <Block BlockType="Logic" Name="Logical&#xA;Operator1" SID="956">
     <PortCounts in="1" out="1"/>
@@ -28458,9 +28884,9 @@ Flip-Flop</P>
     <P Name="Dst">906#in:1</P>
   </Line>
   <Line>
-    <P Name="ZOrder">709</P>
+    <P Name="ZOrder">974</P>
     <P Name="Src">894#out:1</P>
-    <P Name="Dst">996#in:1</P>
+    <P Name="Dst">2317#in:1</P>
   </Line>
   <Line>
     <P Name="ZOrder">464</P>
@@ -28478,7 +28904,10 @@ Flip-Flop</P>
     <P Name="Dst">909#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b15</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">467</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">904#out:1</P>
     <P Name="Dst">896#in:1</P>
   </Line>
@@ -28503,7 +28932,10 @@ Flip-Flop</P>
     <P Name="Dst">912#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b14</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">472</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">905#out:1</P>
     <P Name="Dst">896#in:2</P>
   </Line>
@@ -28513,10 +28945,11 @@ Flip-Flop</P>
     <P Name="Dst">938#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal2&gt;</P>
-    <P Name="ZOrder">693</P>
+    <P Name="Name">&lt;b14&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">963</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:2</P>
+    <P Name="Src">2317#out:2</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">475</P>
@@ -28544,7 +28977,10 @@ Flip-Flop</P>
     <P Name="Dst">915#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b13</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">495</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">898#out:1</P>
     <P Name="Dst">896#in:3</P>
   </Line>
@@ -28554,10 +28990,11 @@ Flip-Flop</P>
     <P Name="Dst">931#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal3&gt;</P>
-    <P Name="ZOrder">692</P>
+    <P Name="Name">&lt;b13&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">964</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:3</P>
+    <P Name="Src">2317#out:3</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">498</P>
@@ -28585,7 +29022,10 @@ Flip-Flop</P>
     <P Name="Dst">918#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b12</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">503</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">899#out:1</P>
     <P Name="Dst">896#in:4</P>
   </Line>
@@ -28595,10 +29035,11 @@ Flip-Flop</P>
     <P Name="Dst">932#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal4&gt;</P>
-    <P Name="ZOrder">694</P>
+    <P Name="Name">&lt;b12&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">965</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:4</P>
+    <P Name="Src">2317#out:4</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">506</P>
@@ -28626,7 +29067,10 @@ Flip-Flop</P>
     <P Name="Dst">921#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b11</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">511</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">900#out:1</P>
     <P Name="Dst">896#in:5</P>
   </Line>
@@ -28636,10 +29080,11 @@ Flip-Flop</P>
     <P Name="Dst">933#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal5&gt;</P>
-    <P Name="ZOrder">690</P>
+    <P Name="Name">&lt;b11&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">969</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:5</P>
+    <P Name="Src">2317#out:5</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">514</P>
@@ -28667,7 +29112,10 @@ Flip-Flop</P>
     <P Name="Dst">924#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b10</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">519</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">901#out:1</P>
     <P Name="Dst">896#in:6</P>
   </Line>
@@ -28677,10 +29125,11 @@ Flip-Flop</P>
     <P Name="Dst">934#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal6&gt;</P>
-    <P Name="ZOrder">687</P>
+    <P Name="Name">&lt;b10&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">967</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:6</P>
+    <P Name="Src">2317#out:6</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">522</P>
@@ -28708,7 +29157,10 @@ Flip-Flop</P>
     <P Name="Dst">927#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b09</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">558</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">902#out:1</P>
     <P Name="Dst">896#in:7</P>
   </Line>
@@ -28718,10 +29170,11 @@ Flip-Flop</P>
     <P Name="Dst">935#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal7&gt;</P>
-    <P Name="ZOrder">688</P>
+    <P Name="Name">&lt;b09&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">972</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:7</P>
+    <P Name="Src">2317#out:7</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">561</P>
@@ -28749,7 +29202,10 @@ Flip-Flop</P>
     <P Name="Dst">930#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b08</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">566</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">903#out:1</P>
     <P Name="Dst">896#in:8</P>
   </Line>
@@ -28759,10 +29215,11 @@ Flip-Flop</P>
     <P Name="Dst">936#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal8&gt;</P>
-    <P Name="ZOrder">689</P>
+    <P Name="Name">&lt;b08&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">968</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:8</P>
+    <P Name="Src">2317#out:8</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">569</P>
@@ -28775,10 +29232,11 @@ Flip-Flop</P>
     </Branch>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal1&gt;</P>
-    <P Name="ZOrder">691</P>
+    <P Name="Name">&lt;b15&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">962</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:1</P>
+    <P Name="Src">2317#out:1</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">573</P>
@@ -28806,7 +29264,10 @@ Flip-Flop</P>
     <P Name="Dst">958#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b07</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">665</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">954#out:1</P>
     <P Name="Dst">896#in:9</P>
   </Line>
@@ -28831,7 +29292,10 @@ Flip-Flop</P>
     <P Name="Dst">961#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b06</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">663</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">955#out:1</P>
     <P Name="Dst">896#in:10</P>
   </Line>
@@ -28841,10 +29305,11 @@ Flip-Flop</P>
     <P Name="Dst">987#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal10&gt;</P>
-    <P Name="ZOrder">787</P>
+    <P Name="Name">&lt;b06&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">971</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:10</P>
+    <P Name="Src">2317#out:10</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">810</P>
@@ -28998,7 +29463,10 @@ Flip-Flop</P>
     </Branch>
   </Line>
   <Line>
+    <P Name="Name">b05</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">664</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">948#out:1</P>
     <P Name="Dst">896#in:11</P>
   </Line>
@@ -29008,10 +29476,11 @@ Flip-Flop</P>
     <P Name="Dst">980#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal11&gt;</P>
-    <P Name="ZOrder">783</P>
+    <P Name="Name">&lt;b05&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">966</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:11</P>
+    <P Name="Src">2317#out:11</P>
     <P Name="Points">[85, 0]</P>
     <Branch>
       <P Name="ZOrder">808</P>
@@ -29039,7 +29508,10 @@ Flip-Flop</P>
     <P Name="Dst">967#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b04</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">668</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">949#out:1</P>
     <P Name="Dst">896#in:12</P>
   </Line>
@@ -29049,10 +29521,11 @@ Flip-Flop</P>
     <P Name="Dst">981#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal12&gt;</P>
-    <P Name="ZOrder">769</P>
+    <P Name="Name">&lt;b04&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">973</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:12</P>
+    <P Name="Src">2317#out:12</P>
     <P Name="Points">[85, 0]</P>
     <Branch>
       <P Name="ZOrder">806</P>
@@ -29080,7 +29553,10 @@ Flip-Flop</P>
     <P Name="Dst">970#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b03</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">666</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">950#out:1</P>
     <P Name="Dst">896#in:13</P>
   </Line>
@@ -29090,10 +29566,11 @@ Flip-Flop</P>
     <P Name="Dst">982#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal13&gt;</P>
-    <P Name="ZOrder">762</P>
+    <P Name="Name">&lt;b03&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">958</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:13</P>
+    <P Name="Src">2317#out:13</P>
     <P Name="Points">[85, 0]</P>
     <Branch>
       <P Name="ZOrder">764</P>
@@ -29121,7 +29598,10 @@ Flip-Flop</P>
     <P Name="Dst">973#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b02</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">667</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">951#out:1</P>
     <P Name="Dst">896#in:14</P>
   </Line>
@@ -29131,10 +29611,11 @@ Flip-Flop</P>
     <P Name="Dst">983#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal14&gt;</P>
-    <P Name="ZOrder">759</P>
+    <P Name="Name">&lt;b02&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">959</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:14</P>
+    <P Name="Src">2317#out:14</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">761</P>
@@ -29431,7 +29912,10 @@ Flip-Flop</P>
     </Branch>
   </Line>
   <Line>
+    <P Name="Name">b01</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">669</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">952#out:1</P>
     <P Name="Dst">896#in:15</P>
   </Line>
@@ -29441,10 +29925,11 @@ Flip-Flop</P>
     <P Name="Dst">984#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal15&gt;</P>
-    <P Name="ZOrder">754</P>
+    <P Name="Name">&lt;b01&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">960</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:15</P>
+    <P Name="Src">2317#out:15</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">800</P>
@@ -29472,7 +29957,10 @@ Flip-Flop</P>
     <P Name="Dst">979#in:2</P>
   </Line>
   <Line>
+    <P Name="Name">b00</P>
+    <P Name="FontSize">6</P>
     <P Name="ZOrder">670</P>
+    <P Name="Labels">[-1, 0]</P>
     <P Name="Src">953#out:1</P>
     <P Name="Dst">896#in:16</P>
   </Line>
@@ -29482,10 +29970,11 @@ Flip-Flop</P>
     <P Name="Dst">985#in:1</P>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal16&gt;</P>
-    <P Name="ZOrder">735</P>
+    <P Name="Name">&lt;b00&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">961</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:16</P>
+    <P Name="Src">2317#out:16</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">804</P>
@@ -29498,10 +29987,11 @@ Flip-Flop</P>
     </Branch>
   </Line>
   <Line>
-    <P Name="Name">&lt;signal9&gt;</P>
-    <P Name="ZOrder">738</P>
+    <P Name="Name">&lt;b07&gt;</P>
+    <P Name="FontSize">6</P>
+    <P Name="ZOrder">970</P>
     <P Name="Labels">[0, 0]</P>
-    <P Name="Src">996#out:9</P>
+    <P Name="Src">2317#out:9</P>
     <P Name="Points">[84, 0]</P>
     <Branch>
       <P Name="ZOrder">747</P>
@@ -29530,7 +30020,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">833</P>
+    <P Name="ZOrder">945</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29546,7 +30036,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">834</P>
+    <P Name="ZOrder">946</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29562,7 +30052,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">835</P>
+    <P Name="ZOrder">947</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29578,7 +30068,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">836</P>
+    <P Name="ZOrder">948</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29594,7 +30084,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">837</P>
+    <P Name="ZOrder">949</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29610,7 +30100,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">838</P>
+    <P Name="ZOrder">950</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29626,7 +30116,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">839</P>
+    <P Name="ZOrder">951</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29642,7 +30132,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">840</P>
+    <P Name="ZOrder">952</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29658,7 +30148,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">841</P>
+    <P Name="ZOrder">953</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29674,7 +30164,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">842</P>
+    <P Name="ZOrder">954</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29690,7 +30180,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">843</P>
+    <P Name="ZOrder">955</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29706,7 +30196,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">844</P>
+    <P Name="ZOrder">956</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29722,7 +30212,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">845</P>
+    <P Name="ZOrder">957</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29738,7 +30228,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">846</P>
+    <P Name="ZOrder">958</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29754,7 +30244,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">847</P>
+    <P Name="ZOrder">959</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -29770,7 +30260,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">848</P>
+    <P Name="ZOrder">960</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -37951,7 +38441,7 @@ Flip-Flop</P>
 __MWOPC_PART_BEGIN__ /simulink/systems/system_86.xml
 <?xml version="1.0" encoding="utf-8"?>
 <System>
-  <P Name="Location">[54, 0, 1233, 1087]</P>
+  <P Name="Location">[61, -8, 1921, 1081]</P>
   <P Name="ZoomFactor">125</P>
   <Block BlockType="Inport" Name="Select(1b)" SID="87">
     <P Name="Position">[700, -507, 730, -493]</P>
@@ -39003,7 +39493,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1083</P>
+    <P Name="ZOrder">1091</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -39019,7 +39509,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1084</P>
+    <P Name="ZOrder">1092</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -39035,7 +39525,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1085</P>
+    <P Name="ZOrder">1093</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -39051,7 +39541,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1086</P>
+    <P Name="ZOrder">1094</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -39067,7 +39557,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1087</P>
+    <P Name="ZOrder">1095</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -39083,7 +39573,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1088</P>
+    <P Name="ZOrder">1096</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -39099,7 +39589,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1089</P>
+    <P Name="ZOrder">1097</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -39115,7 +39605,7 @@ Flip-Flop</P>
     <P Name="BackgroundColor">[0.901961, 0.901961, 1.000000]</P>
     <P Name="DropShadow">on</P>
     <P Name="AnnotationType">area_annotation</P>
-    <P Name="ZOrder">1090</P>
+    <P Name="ZOrder">1098</P>
     <P Name="FontName">Arial</P>
     <P Name="FontSize">12</P>
   </Annotation>
@@ -41451,7 +41941,7 @@ __MWOPC_PART_BEGIN__ /simulink/systems/system_root.xml
 <System>
   <P Name="Location">[54, 0, 1233, 1087]</P>
   <P Name="ReportName">simulink-default.rpt</P>
-  <P Name="SIDHighWatermark">2316</P>
+  <P Name="SIDHighWatermark">2317</P>
   <Block BlockType="SubSystem" Name="Memory_Blocks_Lib" SID="1">
     <PortCounts/>
     <P Name="Position">[310, 89, 410, 131]</P>
@@ -41478,8 +41968,18 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
       <Object PropName="ExplorerBarInfo" ObjectID="4" ClassName="Simulink.ExplorerBarInfo">
         <P Name="Visible" Class="logical">1</P>
       </Object>
-      <Array PropName="EditorsInfo" Type="Simulink.EditorInfo" Dimension="1*9">
+      <Array PropName="EditorsInfo" Type="Simulink.EditorInfo" Dimension="1*11">
         <Object ObjectID="5">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">1</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1</P>
+          <P Name="Extents" Class="double">[1820.0, 853.0]</P>
+          <P Name="ZoomFactor" Class="double">1.0</P>
+          <P Name="Offset" Class="double">[114.64890083354658, 107.65312320034525]</P>
+          <P Name="SceneRectInView" Class="double">[114.64890083354658, 107.65312320034525, 1820.0, 853.0]</P>
+        </Object>
+        <Object ObjectID="6">
           <P Name="IsActive" Class="logical">1</P>
           <P Name="IsTabbed" Class="logical">1</P>
           <P Name="ViewObjType" Class="char">StudioAdapterBlock</P>
@@ -41489,7 +41989,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="Offset" Class="double">[0.0, 0.0]</P>
           <P Name="SceneRectInView" Class="double">[0.0, 0.0, 0.0, 0.0]</P>
         </Object>
-        <Object ObjectID="6">
+        <Object ObjectID="7">
           <P Name="IsActive" Class="logical">0</P>
           <P Name="IsTabbed" Class="logical">0</P>
           <P Name="ViewObjType" Class="char">StudioAdapterBlock</P>
@@ -41498,16 +41998,6 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="ZoomFactor" Class="double">1.0</P>
           <P Name="Offset" Class="double">[0.0, 0.0]</P>
           <P Name="SceneRectInView" Class="double">[0.0, 0.0, 0.0, 0.0]</P>
-        </Object>
-        <Object ObjectID="7">
-          <P Name="IsActive" Class="logical">0</P>
-          <P Name="IsTabbed" Class="logical">0</P>
-          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
-          <P Name="LoadSaveID" Class="char">1</P>
-          <P Name="Extents" Class="double">[942.0, 516.0]</P>
-          <P Name="ZoomFactor" Class="double">1.25</P>
-          <P Name="Offset" Class="double">[261.84881889428829, 520.28587793466477]</P>
-          <P Name="SceneRectInView" Class="double">[261.84881889428829, 520.28587793466477, 753.6, 412.8]</P>
         </Object>
         <Object ObjectID="8">
           <P Name="IsActive" Class="logical">0</P>
@@ -41523,13 +42013,53 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="IsActive" Class="logical">0</P>
           <P Name="IsTabbed" Class="logical">0</P>
           <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">244</P>
+          <P Name="Extents" Class="double">[1820.0, 853.0]</P>
+          <P Name="ZoomFactor" Class="double">0.8</P>
+          <P Name="Offset" Class="double">[61.712917257577146, -311.13135059012262]</P>
+          <P Name="SceneRectInView" Class="double">[61.712917257577146, -311.13135059012262, 2275.0, 1066.25]</P>
+        </Object>
+        <Object ObjectID="10">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1228</P>
+          <P Name="Extents" Class="double">[1820.0, 853.0]</P>
+          <P Name="ZoomFactor" Class="double">0.8</P>
+          <P Name="Offset" Class="double">[422.41836459564729, -119.92618221303169]</P>
+          <P Name="SceneRectInView" Class="double">[422.41836459564729, -119.92618221303169, 2275.0, 1066.25]</P>
+        </Object>
+        <Object ObjectID="11">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">1167</P>
+          <P Name="Extents" Class="double">[1820.0, 853.0]</P>
+          <P Name="ZoomFactor" Class="double">2.0</P>
+          <P Name="Offset" Class="double">[729.58195814691351, -247.92615322527635]</P>
+          <P Name="SceneRectInView" Class="double">[729.58195814691351, -247.92615322527635, 910.0, 426.5]</P>
+        </Object>
+        <Object ObjectID="12">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
+          <P Name="LoadSaveID" Class="char">86</P>
+          <P Name="Extents" Class="double">[1820.0, 853.0]</P>
+          <P Name="ZoomFactor" Class="double">1.2529377203290248</P>
+          <P Name="Offset" Class="double">[275.88236736428632, -556.91857248686745]</P>
+          <P Name="SceneRectInView" Class="double">[275.88236736428632, -556.91857248686745, 1452.5861664712777, 680.8]</P>
+        </Object>
+        <Object ObjectID="13">
+          <P Name="IsActive" Class="logical">0</P>
+          <P Name="IsTabbed" Class="logical">0</P>
+          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
           <P Name="LoadSaveID" Class="char">1362</P>
           <P Name="Extents" Class="double">[1820.0, 853.0]</P>
           <P Name="ZoomFactor" Class="double">0.8</P>
           <P Name="Offset" Class="double">[-191.59234540410034, -21752.90843356603]</P>
           <P Name="SceneRectInView" Class="double">[-191.59234540410034, -21752.90843356603, 2275.0, 1066.25]</P>
         </Object>
-        <Object ObjectID="10">
+        <Object ObjectID="14">
           <P Name="IsActive" Class="logical">0</P>
           <P Name="IsTabbed" Class="logical">0</P>
           <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
@@ -41539,27 +42069,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="Offset" Class="double">[-301.25000000000591, -255.75000000000603]</P>
           <P Name="SceneRectInView" Class="double">[-301.25000000000591, -255.75000000000603, 3033.3333333333335, 1421.6666666666667]</P>
         </Object>
-        <Object ObjectID="11">
-          <P Name="IsActive" Class="logical">0</P>
-          <P Name="IsTabbed" Class="logical">0</P>
-          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
-          <P Name="LoadSaveID" Class="char">86</P>
-          <P Name="Extents" Class="double">[1139.0, 851.0]</P>
-          <P Name="ZoomFactor" Class="double">1.25</P>
-          <P Name="Offset" Class="double">[483.24578959923645, -597.76183206106828]</P>
-          <P Name="SceneRectInView" Class="double">[483.24578959923645, -597.76183206106828, 911.2, 680.8]</P>
-        </Object>
-        <Object ObjectID="12">
-          <P Name="IsActive" Class="logical">0</P>
-          <P Name="IsTabbed" Class="logical">0</P>
-          <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
-          <P Name="LoadSaveID" Class="char">1167</P>
-          <P Name="Extents" Class="double">[1139.0, 851.0]</P>
-          <P Name="ZoomFactor" Class="double">1.0</P>
-          <P Name="Offset" Class="double">[440.5088031328122, -705.38655462184829]</P>
-          <P Name="SceneRectInView" Class="double">[440.5088031328122, -705.38655462184829, 1139.0, 851.0]</P>
-        </Object>
-        <Object ObjectID="13">
+        <Object ObjectID="15">
           <P Name="IsActive" Class="logical">0</P>
           <P Name="IsTabbed" Class="logical">0</P>
           <P Name="ViewObjType" Class="char">SimulinkSubsys</P>
@@ -41571,7 +42081,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
         </Object>
       </Array>
       <Array PropName="DockComponentsInfo" Type="Simulink.DockComponentInfo" Dimension="1*2">
-        <Object ObjectID="14">
+        <Object ObjectID="16">
           <P Name="Type" Class="char">GLUE2:PropertyInspector</P>
           <P Name="ID" Class="char">Property Inspector</P>
           <P Name="Visible" Class="logical">0</P>
@@ -41583,7 +42093,7 @@ __MWOPC_PART_BEGIN__ /simulink/windowsInfo.xml
           <P Name="Height" Class="int32">480</P>
           <P Name="Minimized" Class="char">Unset</P>
         </Object>
-        <Object ObjectID="15">
+        <Object ObjectID="17">
           <P Name="Type" Class="char">Simulink:Editor:ReferencedFiles</P>
           <P Name="ID" Class="char">Referenced Files</P>
           <P Name="Visible" Class="logical">0</P>

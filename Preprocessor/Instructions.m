@@ -33,20 +33,21 @@
 %   R - Reserved
 %
 %
-%
-% Immediate                 Register                    Register                    Memory
-%               MOVU  ->                <-  MOV  ->                  <- LDUI
-%               MOVL  ->                <-  NOT  ->                  <- LDLI
-%               ADDI  ->                <-  XOR  ->                  <- LDU
-%              SHIFTI ->                <-  OR   ->                  <- LDL
-%               CMPI  ->                <-  AND  ->                     STUI ->
-%                                       <-  CMP  ->                     STLI ->
-%                                       <- SHIFT ->                     STU ->
-%                                       <-  ADD  ->                     STL ->
-% 
-%                                                                   <-   POP        Stack
-%                                                                       PUSH  ->
-%
+%          
+% Immediate                ┏━━━━━━━━┓                  ┏━━━━━━━━┓                   ┏━━━━━━┓
+% Immediate     MOVU  ---> ┃Register┃ <---  MOV  --->  ┃Register┃  <--- LDUI --->   ┃Memory┃
+% Immediate     MOVL  ---> ┃Register┃ <---  NOT  --->  ┃Register┃  <--- LDLI --->   ┃Memory┃
+% Immediate     ADDI  ---> ┃Register┃ <---  XOR  --->  ┃Register┃  <--- LDU  --->   ┃Memory┃
+% Immediate    SHIFTI ---> ┃Register┃ <---  OR   --->  ┃Register┃  <--- LDL  --->   ┃Memory┃
+% Immediate     CMPI  ---> ┃Register┃ <---  AND  --->  ┃Register┃  <--- STUI --->   ┃Memory┃
+% Immediate                ┃Register┃ <---  CMP  --->  ┃Register┃  <--- STLI --->   ┃Memory┃
+% Immediate                ┃Register┃ <--- SHIFT --->  ┃Register┃  <--- STU  --->   ┃Memory┃
+% Immediate                ┃Register┃ <---  ADD  --->  ┃Register┃  <--- STL  --->   ┃Memory┃
+%                          ┗━━━━━━━━┛                  ┗━━━━━━━━┛                   ┗━━━━━━┛
+%                                                                                   ┏━━━━━┓
+%                                                                  <---  POP --->   ┃Stack┃
+%                                                                  <--- PUSH --->   ┃Stack┃
+%                                                                                   ┗━━━━━┛  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -575,9 +576,9 @@ c.ADDI = ADDI;
 % Note:
 %     The lower byte of a register must be set before
 %     instruction MOVU is executed. Otherwise whole
-%     upper byte will be overwritten by most significant
-%     bit of lower byte when the instruction MOVL
-%     is executed.
+%     upper byte of the register will be overwritten 
+%     by most significant bit of immediate value
+%     when the instruction MOVL is executed.
 % 
 % First operand:
 %     Destination register.
@@ -630,8 +631,8 @@ c.LDLI = LDLI;
 %     The sign bit is copied to upper byte of the register.
 %
 % Note:
-%     If higher value than 127 needs to be stored
-%     to lower byte of a register (in range <128, 255>)
+%     If higher value than 127 (in range <128, 255>)
+%     needs to be stored to lower byte of a register
 %     then the upper byte of the register must be overwritten
 %     with zero using instruction MOVU.
 % 

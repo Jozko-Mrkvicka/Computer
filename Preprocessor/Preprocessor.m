@@ -15,7 +15,7 @@ function [compiledSourceCode] = Preprocessor(sourceCode, c)
     end
 
     % Initialize whole instruction ROM memory with zeros. Zeros will be interpreted as JMP m(0x0000).
-    compiledSourceCode(1 : c.ROM_SIZE + c.MPROM_SIZE) = uint16(0);
+    compiledSourceCode(1 : c.ROM_SIZE) = uint16(0);
 
     % [compiledData] = compile_const_data(data, c);
 
@@ -80,7 +80,7 @@ function [compiledSourceCode] = Preprocessor(sourceCode, c)
     end
 
     % Check that compiled code will fit into ROM memory.
-    if (size(compiledSourceCode, 2) - c.MPROM_SIZE > c.ROM_SIZE)
+    if (size(compiledSourceCode, 2) > c.ROM_SIZE)
         error('###\nPREPROCESSOR ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d (words)\nActual image size:    %d (words)\n###', c.ROM_SIZE, size(compiledSourceCode, 2))
     end
 
