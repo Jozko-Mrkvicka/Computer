@@ -1,7 +1,15 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file defines character bitmaps. Order of 
+% the characters is based on the IBM437 code page.
+% Please note that not all characters are implemented.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 c.CHAR_SIZE = 256;
 
+
 % Initialize whole array to a blank character.
-for (i = 1 : 256)
+for (i = 1 : c.CHAR_SIZE)
     c.char_7x7(:, :, i) = ...
     [
         0 0 0 0 0 0 0 0
@@ -15,38 +23,39 @@ for (i = 1 : 256)
     ];
 end
 
-% c.0                  = NOT_IMPLEMENTED;
-% c.1                  = NOT_IMPLEMENTED;
-% c.2                  = NOT_IMPLEMENTED;
-% c.3                  = NOT_IMPLEMENTED;
-% c.4                  = NOT_IMPLEMENTED;
-% c.5                  = NOT_IMPLEMENTED;
-% c.6                  = NOT_IMPLEMENTED;
-% c.7                  = NOT_IMPLEMENTED;
-% c.8                  = NOT_IMPLEMENTED;
-% c.9                  = NOT_IMPLEMENTED;
-% c.10                 = NOT_IMPLEMENTED;
-% c.11                 = NOT_IMPLEMENTED;
-% c.12                 = NOT_IMPLEMENTED;
-% c.13                 = NOT_IMPLEMENTED;
-% c.14                 = NOT_IMPLEMENTED;
-% c.15                 = NOT_IMPLEMENTED;
-% c.16                 = NOT_IMPLEMENTED;
-% c.17                 = NOT_IMPLEMENTED;
-% c.18                 = NOT_IMPLEMENTED;
-% c.19                 = NOT_IMPLEMENTED;
-% c.20                 = NOT_IMPLEMENTED;
-% c.21                 = NOT_IMPLEMENTED;
-% c.22                 = NOT_IMPLEMENTED;
-% c.23                 = NOT_IMPLEMENTED;
-% c.24                 = NOT_IMPLEMENTED;
-% c.25                 = NOT_IMPLEMENTED;
-% c.26                 = NOT_IMPLEMENTED;
-% c.27                 = NOT_IMPLEMENTED;
-% c.28                 = NOT_IMPLEMENTED;
-% c.29                 = NOT_IMPLEMENTED;
-% c.30                 = NOT_IMPLEMENTED;
-% c.31                 = NOT_IMPLEMENTED;
+
+%c.CHAR_0              = NOT_IMPLEMENTED;
+%c.CHAR_1              = NOT_IMPLEMENTED;
+%c.CHAR_2              = NOT_IMPLEMENTED;
+%c.CHAR_3              = NOT_IMPLEMENTED;
+%c.CHAR_4              = NOT_IMPLEMENTED;
+%c.CHAR_5              = NOT_IMPLEMENTED;
+%c.CHAR_6              = NOT_IMPLEMENTED;
+%c.CHAR_7              = NOT_IMPLEMENTED;
+%c.CHAR_8              = NOT_IMPLEMENTED;
+%c.CHAR_9              = NOT_IMPLEMENTED;
+%c.CHAR_10             = NOT_IMPLEMENTED;
+%c.CHAR_11             = NOT_IMPLEMENTED;
+%c.CHAR_12             = NOT_IMPLEMENTED;
+%c.CHAR_13             = NOT_IMPLEMENTED;
+%c.CHAR_14             = NOT_IMPLEMENTED;
+%c.CHAR_15             = NOT_IMPLEMENTED;
+%c.CHAR_16             = NOT_IMPLEMENTED;
+%c.CHAR_17             = NOT_IMPLEMENTED;
+%c.CHAR_18             = NOT_IMPLEMENTED;
+%c.CHAR_19             = NOT_IMPLEMENTED;
+%c.CHAR_20             = NOT_IMPLEMENTED;
+%c.CHAR_21             = NOT_IMPLEMENTED;
+%c.CHAR_22             = NOT_IMPLEMENTED;
+%c.CHAR_23             = NOT_IMPLEMENTED;
+%c.CHAR_24             = NOT_IMPLEMENTED;
+%c.CHAR_25             = NOT_IMPLEMENTED;
+%c.CHAR_26             = NOT_IMPLEMENTED;
+%c.CHAR_27             = NOT_IMPLEMENTED;
+%c.CHAR_28             = NOT_IMPLEMENTED;
+%c.CHAR_29             = NOT_IMPLEMENTED;
+%c.CHAR_30             = NOT_IMPLEMENTED;
+%c.CHAR_31             = NOT_IMPLEMENTED;
 c.SPACE                = 32;
 c.EXCLAMATION_MARK     = 33;
 c.DOUBLE_QUOTES        = 34;
@@ -142,8 +151,55 @@ c.CURLY_BRACKET_LEFT   = 123;
 c.VERTICAL_BAR         = 124;
 c.CURLY_BRACKET_RIGHT  = 125;
 c.TILDE                = 126;
-% c.127                = NOT_IMPLEMENTED;
-
+%c.CHAR_127            = NOT_IMPLEMENTED;
+%c.CHAR_128            = NOT_IMPLEMENTED;
+%c.CHAR_129            = NOT_IMPLEMENTED;
+%c.CHAR_130            = NOT_IMPLEMENTED;
+%c.CHAR_131            = NOT_IMPLEMENTED;
+%c.CHAR_132            = NOT_IMPLEMENTED;
+%c.CHAR_133            = NOT_IMPLEMENTED;
+%c.CHAR_134            = NOT_IMPLEMENTED;
+%c.CHAR_135            = NOT_IMPLEMENTED;
+%c.CHAR_136            = NOT_IMPLEMENTED;
+%c.CHAR_137            = NOT_IMPLEMENTED;
+%c.CHAR_138            = NOT_IMPLEMENTED;
+%c.CHAR_139            = NOT_IMPLEMENTED;
+%c.CHAR_140            = NOT_IMPLEMENTED;
+%c.CHAR_141            = NOT_IMPLEMENTED;
+%c.CHAR_142            = NOT_IMPLEMENTED;
+%c.CHAR_143            = NOT_IMPLEMENTED;
+%c.CHAR_144            = NOT_IMPLEMENTED;
+%c.CHAR_145            = NOT_IMPLEMENTED;
+%c.CHAR_146            = NOT_IMPLEMENTED;
+%c.CHAR_147            = NOT_IMPLEMENTED;
+%c.CHAR_148            = NOT_IMPLEMENTED;
+%c.CHAR_149            = NOT_IMPLEMENTED;
+%c.CHAR_150            = NOT_IMPLEMENTED;
+%c.CHAR_151            = NOT_IMPLEMENTED;
+%c.CHAR_152            = NOT_IMPLEMENTED;
+%c.CHAR_153            = NOT_IMPLEMENTED;
+%c.CHAR_154            = NOT_IMPLEMENTED;
+%c.CHAR_155            = NOT_IMPLEMENTED;
+%c.CHAR_156            = NOT_IMPLEMENTED;
+%c.CHAR_157            = NOT_IMPLEMENTED;
+%c.CHAR_158            = NOT_IMPLEMENTED;
+%c.CHAR_159            = NOT_IMPLEMENTED;
+%c.CHAR_160            = NOT_IMPLEMENTED;
+%c.CHAR_161            = NOT_IMPLEMENTED;
+%c.CHAR_162            = NOT_IMPLEMENTED;
+%c.CHAR_163            = NOT_IMPLEMENTED;
+%c.CHAR_164            = NOT_IMPLEMENTED;
+%c.CHAR_165            = NOT_IMPLEMENTED;
+%c.CHAR_166            = NOT_IMPLEMENTED;
+%c.CHAR_167            = NOT_IMPLEMENTED;
+%c.CHAR_168            = NOT_IMPLEMENTED;
+%c.CHAR_169            = NOT_IMPLEMENTED;
+%c.CHAR_170            = NOT_IMPLEMENTED;
+%c.CHAR_171            = NOT_IMPLEMENTED;
+%c.CHAR_172            = NOT_IMPLEMENTED;
+%c.CHAR_173            = NOT_IMPLEMENTED;
+%c.CHAR_174            = NOT_IMPLEMENTED;
+%c.CHAR_175            = NOT_IMPLEMENTED;
 c.CHAR_176             = 176;
 c.CHAR_177             = 177;
 c.CHAR_178             = 178;
@@ -192,17 +248,112 @@ c.CHAR_220             = 220;
 c.CHAR_221             = 221;
 c.CHAR_222             = 222;
 c.CHAR_223             = 223;
-
-% c.CROSS               = 39;
-% c.ARROW_UP            = 48;
-% c.ARROW_DOWN          = 49;
-% c.ARROW_LEFT          = 50;
-% c.ARROW_RIGHT         = 51;
-% c.CURSOR              = 63;
+%c.CHAR_224            = NOT_IMPLEMENTED;
+%c.CHAR_225            = NOT_IMPLEMENTED;
+%c.CHAR_226            = NOT_IMPLEMENTED;
+%c.CHAR_227            = NOT_IMPLEMENTED;
+%c.CHAR_228            = NOT_IMPLEMENTED;
+%c.CHAR_229            = NOT_IMPLEMENTED;
+%c.CHAR_230            = NOT_IMPLEMENTED;
+%c.CHAR_231            = NOT_IMPLEMENTED;
+%c.CHAR_232            = NOT_IMPLEMENTED;
+%c.CHAR_233            = NOT_IMPLEMENTED;
+%c.CHAR_234            = NOT_IMPLEMENTED;
+%c.CHAR_235            = NOT_IMPLEMENTED;
+%c.CHAR_236            = NOT_IMPLEMENTED;
+%c.CHAR_237            = NOT_IMPLEMENTED;
+%c.CHAR_238            = NOT_IMPLEMENTED;
+%c.CHAR_239            = NOT_IMPLEMENTED;
+%c.CHAR_240            = NOT_IMPLEMENTED;
+%c.CHAR_241            = NOT_IMPLEMENTED;
+%c.CHAR_242            = NOT_IMPLEMENTED;
+%c.CHAR_243            = NOT_IMPLEMENTED;
+%c.CHAR_244            = NOT_IMPLEMENTED;
+%c.CHAR_245            = NOT_IMPLEMENTED;
+%c.CHAR_246            = NOT_IMPLEMENTED;
+%c.CHAR_247            = NOT_IMPLEMENTED;
+%c.CHAR_248            = NOT_IMPLEMENTED;
+%c.CHAR_249            = NOT_IMPLEMENTED;
+%c.CHAR_250            = NOT_IMPLEMENTED;
+%c.CHAR_251            = NOT_IMPLEMENTED;
+%c.CHAR_252            = NOT_IMPLEMENTED;
+%c.CHAR_253            = NOT_IMPLEMENTED;
+%c.CHAR_254            = NOT_IMPLEMENTED;
+%c.CHAR_255            = NOT_IMPLEMENTED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Various Non-Alphanumerical Symbols
+%        Code Page IBM437 <0..31>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Not implemented
+
+% c.char_7x7(:, :, c.ARROW_UP) = ...
+% [
+%     0 0 0 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 1 1 1 0 0 0 0
+%     1 0 1 0 1 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+% ];
+
+
+% c.char_7x7(:, :, c.ARROW_DOWN) = ...
+% [
+%     0 0 0 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     1 0 1 0 1 0 0 0
+%     0 1 1 1 0 0 0 0
+%     0 0 1 0 0 0 0 0
+% ];
+
+
+% c.char_7x7(:, :, c.ARROW_LEFT) = ...
+% [
+%     0 0 0 0 0 0 0 0
+%     0 0 0 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 1 0 0 0 0 0 0
+%     1 1 1 1 1 0 0 0
+%     0 1 0 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 0 0 0 0 0 0
+% ];
+
+
+% c.char_7x7(:, :, c.ARROW_RIGHT) = ...
+% [
+%     0 0 0 0 0 0 0 0
+%     0 0 0 0 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 0 1 0 0 0 0
+%     1 1 1 1 1 0 0 0
+%     0 0 0 1 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 0 0 0 0 0 0 0
+% ];
+
+
+% c.char_7x7(:, :, c.CROSS) = ...
+% [
+%     0 0 0 0 0 0 0 0
+%     0 0 0 0 0 0 0 0
+%     1 0 0 0 1 0 0 0
+%     0 1 0 1 0 0 0 0
+%     0 0 1 0 0 0 0 0
+%     0 1 0 1 0 0 0 0
+%     1 0 0 0 1 0 0 0
+%     0 0 0 0 0 0 0 0
+% ];
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        Code Page IBM437 <32..127>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.SPACE) = ...
 [
@@ -412,9 +563,6 @@ c.char_7x7(:, :, c.SLASH) = ...
 ];
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                   Digits
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.d0) = ...
 [
     0 1 1 1 1 0 0 0
@@ -545,9 +693,6 @@ c.char_7x7(:, :, c.d9) = ...
 ];
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Various Non-Alphanumerical Symbols
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.COLON) = ...
 [
     0 0 0 0 0 0 0 0
@@ -639,9 +784,6 @@ c.char_7x7(:, :, c.AT) = ...
 ];
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%             Upper Case Letters
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.A) = ...
 [
     0 1 1 1 1 1 0 0
@@ -980,9 +1122,6 @@ c.char_7x7(:, :, c.Z) = ...
 ];
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Various Non-Alphanumerical Symbols
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.SQUARE_BRACKET_LEFT) = ...
 [
     0 0 1 1 1 1 0 0
@@ -1061,9 +1200,6 @@ c.char_7x7(:, :, c.BACKTICK) = ...
 ];
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%             Lower Case Letters
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.a) = ...
 [
     0 0 0 0 0 0 0 0
@@ -1402,9 +1538,6 @@ c.char_7x7(:, :, c.z) = ...
 ];
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%      Various Non-Alphanumerical Symbols
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.CURLY_BRACKET_LEFT) = ...
 [
     0 0 0 1 1 1 0 0
@@ -1471,88 +1604,13 @@ c.char_7x7(:, :, c.TILDE) = ...
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%            Non-ASCII Char_7x7acters
+%        Code Page IBM437 <128..175>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% c.char_7x7(:, :, c.ARROW_UP) = ...
-% [
-%     0 0 0 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 1 1 1 0 0 0 0
-%     1 0 1 0 1 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-% ];
-
-
-% c.char_7x7(:, :, c.ARROW_DOWN) = ...
-% [
-%     0 0 0 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     1 0 1 0 1 0 0 0
-%     0 1 1 1 0 0 0 0
-%     0 0 1 0 0 0 0 0
-% ];
-
-
-% c.char_7x7(:, :, c.ARROW_LEFT) = ...
-% [
-%     0 0 0 0 0 0 0 0
-%     0 0 0 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 1 0 0 0 0 0 0
-%     1 1 1 1 1 0 0 0
-%     0 1 0 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 0 0 0 0 0 0
-% ];
-
-
-% c.char_7x7(:, :, c.ARROW_RIGHT) = ...
-% [
-%     0 0 0 0 0 0 0 0
-%     0 0 0 0 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 0 1 0 0 0 0
-%     1 1 1 1 1 0 0 0
-%     0 0 0 1 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 0 0 0 0 0 0 0
-% ];
-
-
-% c.char_7x7(:, :, c.CROSS) = ...
-% [
-%     0 0 0 0 0 0 0 0
-%     0 0 0 0 0 0 0 0
-%     1 0 0 0 1 0 0 0
-%     0 1 0 1 0 0 0 0
-%     0 0 1 0 0 0 0 0
-%     0 1 0 1 0 0 0 0
-%     1 0 0 0 1 0 0 0
-%     0 0 0 0 0 0 0 0
-% ];
-
-
-% c.char_7x7(:, :, c.CURSOR) = ...
-% [
-%     0 0 0 0 0 0 0 0
-%     1 1 1 1 1 0 0 0
-%     1 1 1 1 1 0 0 0
-%     1 1 1 1 1 0 0 0
-%     1 1 1 1 1 0 0 0
-%     1 1 1 1 1 0 0 0
-%     1 1 1 1 1 0 0 0
-%     1 1 1 1 1 0 0 0
-% ];
+% Not implemented
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%        Upper-ASCII characters (IBM437)
+%        Code Page IBM437 <176..223>
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.char_7x7(:, :, c.CHAR_176) = ...
 [
@@ -2176,4 +2234,10 @@ c.char_7x7(:, :, c.CHAR_223) = ...
     0 0 0 0 0 0 0 0
     0 0 0 0 0 0 0 0
 ];
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        Code Page IBM437 <224..255>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Not implemented
 
