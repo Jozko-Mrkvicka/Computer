@@ -48,6 +48,9 @@
 %                                                                  <---  POP --->   ┃Stack┃
 %                                                                  <--- PUSH --->   ┃Stack┃
 %                                                                                   ┗━━━━━┛  
+%                                                                       CALL???
+%                                                                       RET???
+%                                                                       SGMT???
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -75,7 +78,7 @@
 % Type of operands:        Example:
 %     NOT  REG               NOT  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT = bin2dec('11 10001 0');
+NOT = 0b11100010u16;
 c.NOT = NOT;
 
 
@@ -98,7 +101,7 @@ c.NOT = NOT;
 % Type of operands:        Example:
 %     XOR  REG  REG          XOR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-XOR = bin2dec('11 10000 0');
+XOR = 0b11100000u16;
 c.XOR = XOR;
 
 
@@ -121,7 +124,7 @@ c.XOR = XOR;
 % Type of operands:        Example:
 %     OR  REG  REG           OR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-OR = bin2dec('11 01111 0');
+OR = 0b11011110u16;
 c.OR = OR;
 
 
@@ -144,7 +147,7 @@ c.OR = OR;
 % Type of operands:        Example:
 %     AND  REG  REG           AND  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-AND = bin2dec('11 01110 0');
+AND = 0b11011100u16;
 c.AND = AND;
 
 
@@ -167,7 +170,7 @@ c.AND = AND;
 % Type of operands:        Example:
 %     LDL  REG  REG        LDL  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDL = bin2dec('11 01101 0');
+LDL = 0b11011010u16;
 c.LDL = LDL;
 
 
@@ -190,7 +193,7 @@ c.LDL = LDL;
 % Type of operands:        Example:
 %     LDU  REG  REG        LDU  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDU = bin2dec('11 01100 0');
+LDU = 0b11011000u16;
 c.LDU = LDU;
 
 
@@ -217,7 +220,7 @@ c.LDU = LDU;
 % Type of operands:        Example:
 %     CMP  REG  REG          CMP  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CMP = bin2dec('11 01011 0');
+CMP = 0b11010110u16;
 c.CMP = CMP;
 
 
@@ -239,7 +242,7 @@ c.CMP = CMP;
 % Type of operands:        Example:
 %     N/A                    RET
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-RET = bin2dec('11 01010 0');
+RET = 0b11010100u16;
 c.RET = RET;
 
 
@@ -261,7 +264,7 @@ c.RET = RET;
 % Type of operands:        Example:
 %     POP  REG               POP  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-POP = bin2dec('11 01001 0');
+POP = 0b11010010u16;
 c.POP = POP;
 
 
@@ -283,7 +286,7 @@ c.POP = POP;
 % Type of operands:        Example:
 %     PUSH  REG              PUSH  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-PUSH = bin2dec('11 01000 0');
+PUSH = 0b11010000u16;
 c.PUSH = PUSH;
 
 
@@ -308,7 +311,7 @@ c.PUSH = PUSH;
 % Type of operands:        Example:
 %     SHIFT  REG  REG        SHIFT r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SHIFT = bin2dec('11 00111 0');
+SHIFT = 0b11001110u16;
 c.SHIFT = SHIFT;
 
 
@@ -327,7 +330,7 @@ c.SHIFT = SHIFT;
 % Type of operands:        Example:
 %     ADD  REG  REG          ADD  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADD = bin2dec('11 00110 0');
+ADD = 0b11001100u16;
 c.ADD = ADD;
 
 
@@ -345,7 +348,7 @@ c.ADD = ADD;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('11 00101 0');
+NOT_USED = 0b11001010u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -367,7 +370,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     STL  REG  REG       STL  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STL = bin2dec('11 00100 0');
+STL = 0b11001000u16;
 c.STL = STL;
 
 
@@ -389,7 +392,7 @@ c.STL = STL;
 % Type of operands:        Example:
 %     STU  REG  REG       STU  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STU = bin2dec('11 00011 0');
+STU = 0b11000110u16;
 c.STU = STU;
 
 
@@ -407,7 +410,7 @@ c.STU = STU;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED =  bin2dec('11 00010 0');
+NOT_USED = 0b11000100u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -425,7 +428,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED =  bin2dec('11 00001 0');
+NOT_USED = 0b11000010u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -448,7 +451,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOV   =  bin2dec('11 00000 0');
+MOV = 0b11000000u16;
 c.MOV = MOV;
 
 
@@ -472,7 +475,7 @@ c.MOV = MOV;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('10 111 000');
+NOT_USED = 0b10111000u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -490,7 +493,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('10 110 000');
+NOT_USED = 0b10110000u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -508,7 +511,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('10 101 000');
+NOT_USED = 0b10101000u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -534,7 +537,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     LDUI  REG  IMM         LDUI  r2  m(10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDUI = bin2dec('10 100 000');
+LDUI = 0b10100000u16;
 c.LDUI = LDUI;
 
 
@@ -559,7 +562,7 @@ c.LDUI = LDUI;
 % Type of operands:        Example:
 %     ADDI  REG  IMM          ADDI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADDI = bin2dec('10 011 000');
+ADDI = 0b10011000u16;
 c.ADDI = ADDI;
 
 
@@ -589,7 +592,7 @@ c.ADDI = ADDI;
 % Type of operands:        Example:
 %     MOVU  REG  IMM         MOVU  r0  255
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVU =  bin2dec('10 010 000');
+MOVU = 0b10010000u16;
 c.MOVU = MOVU;
 
 
@@ -615,7 +618,7 @@ c.MOVU = MOVU;
 % Type of operands:        Example:
 %     LDLI  REG  IMM         LDLI  r2  m(10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDLI = bin2dec('10 001 000');
+LDLI = 0b10001000u16;
 c.LDLI = LDLI;
 
 
@@ -645,7 +648,7 @@ c.LDLI = LDLI;
 % Type of operands:        Example:
 %     MOVL  REG  IMM         MOVL  r0  10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVL =  bin2dec('10 000 000');
+MOVL = 0b10000000u16;
 c.MOVL = MOVL;
 
 
@@ -669,7 +672,7 @@ c.MOVL = MOVL;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('01 111 000');
+NOT_USED = 0b01111000u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -687,7 +690,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('01 110 000');
+NOT_USED = 0b01110000u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -705,7 +708,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = bin2dec('01 101 000');
+NOT_USED = 0b01101000u16;
 c.NOT_USED = NOT_USED;
 
 
@@ -729,10 +732,10 @@ c.NOT_USED = NOT_USED;
 % Second operand:
 %     Data memory segment address.
 %
-% Type of operands:        Example:
+% Type of operands:        Exampleu16:
 %     SGMT  IMM              SGMT  msb(c.RAM_START + 0)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SGMT = bin2dec('01 100 000');
+SGMT = 0b01100000u16;
 c.SGMT = SGMT;
 
 
@@ -757,7 +760,7 @@ c.SGMT = SGMT;
 % Type of operands:        Example:
 %     SHIFTI  REG  IMM       SHIFTI  r0  -3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SHIFTI = bin2dec('01 011 000');
+SHIFTI = 0b01011000u16;
 c.SHIFTI = SHIFTI;
 
 
@@ -791,7 +794,7 @@ c.SHIFTI = SHIFTI;
 % Type of operands:                 Example:
 %     (assembly) STUI  IMM  REG      STUI  m(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STUI = bin2dec('01 010 000');
+STUI = 0b01010000u16;
 c.STUI = STUI;
 
 
@@ -825,7 +828,7 @@ c.STUI = STUI;
 % Type of operands:                 Example:
 %     (assembly) STLI  IMM  REG      STLI  m(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STLI = bin2dec('01 001 000');
+STLI = 0b01001000u16;
 c.STLI = STLI;
 
 
@@ -854,7 +857,7 @@ c.STLI = STLI;
 % Type of operands:        Example:
 %     CMPI  REG  IMM         CMPI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CMPI = bin2dec('01 000 000');
+CMPI = 0b01000000u16;
 c.CMPI = CMPI;
 
 
@@ -884,7 +887,7 @@ c.CMPI = CMPI;
 % Type of operands:        Example:
 %     JLT  IMM               JLT  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JLT = bin2dec('00 11 0000');
+JLT = 0b00110000u16;
 c.JLT = JLT;
 
 
@@ -908,7 +911,7 @@ c.JLT = JLT;
 % Type of operands:        Example:
 %     JPE  IMM               JPE  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JPE = bin2dec('00 10 0000');
+JPE = 0b00100000u16;
 c.JPE = JPE;
 
 
@@ -934,7 +937,7 @@ c.JPE = JPE;
 % Type of operands:        Example:
 %     CALL  IMM              CALL  LABEL  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CALL = bin2dec('00 01 0000');
+CALL = 0b00010000u16;
 c.CALL = CALL;
 
 
@@ -957,6 +960,6 @@ c.CALL = CALL;
 % Type of operands:        Example:
 %     JMP  IMM               JMP  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JMP = bin2dec('00 00 0000');
+JMP = 0b00000000u16;
 c.JMP = JMP;
 

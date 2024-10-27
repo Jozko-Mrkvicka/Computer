@@ -2,8 +2,8 @@ function [compiledSourceCode] = Preprocessor(sourceCode, c)
     global gDebug
 
     % Check also Run_System_Tests.m for "gDebug"
-    gDebug = true;
-    % gDebug = false;
+    % gDebug = true;
+    gDebug = false;
 
     if (true == gDebug)
         fprintf('\n');
@@ -246,7 +246,7 @@ end
 function [label_address_array] = find_all_destination_labels(src_code, c)
     % Init all labels to 0xFFFFFFFFFFFFFFFF
     for (i = 1:c.LBL_CNT)
-        label_address_array(i) = hex2dec('FFFFFFFFFFFFFFFF');
+        label_address_array(i) = 0xFFFFFFFFFFFFFFFF;
     end
 
     % The counter "i" counts number of values in a source code (labels, instructions, operands ... all together).
@@ -257,7 +257,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
     while (i <= size(src_code, 2))
         value = src_code(1, i);
 
-        % Check that on a label position is destionation label, not source label.
+        % Check that there is a destination label on the label position, not a source label.
         if (c.LABEL_SRC_PREFIX == bitand(value, c.LABEL_PREFIX_MASK))
             error('### PREPROCESSOR ERROR: A label with a source prefix is placed on position of a destination prefix (Address = %03d)!! ###\n', j)
         end
@@ -267,7 +267,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
         if (c.LABEL_DEST_PREFIX == bitand(value, c.LABEL_PREFIX_MASK))
             idx = bitand(value, c.LABEL_VALUE_MASK);
 
-            if (label_address_array(idx) ~= hex2dec('FFFFFFFFFFFFFFFF'))
+            if (label_address_array(idx) ~= 0xFFFFFFFFFFFFFFFF)
                 error('### PREPROCESSOR ERROR: Multiple destination labels with the same address!! ###')
             end
 
@@ -324,20 +324,20 @@ end
 function [instr_msb, instr_lsb, i] = compile_instr_format_0(src_code, opcode, label_address_array, i, j, c)
     operand = src_code(1, i);
 
-    % Check that on the operand position is source label, not destionation label.
-    if (c.LABEL_DEST_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK, 'int64'))
+    % Check that there is a source label on the operand position, not a destionation label.
+    if (c.LABEL_DEST_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK))
         error('### PREPROCESSOR ERROR: A label with a destination prefix is placed on position of a source prefix (Address = %03d)!! ###\n', j - 1)
     end
 
     % If operand is correct (source) label then replace the label with actual address the label is pointing to.
-    if (c.LABEL_SRC_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK, 'int64'))
+    if (c.LABEL_SRC_PREFIX == bitand(operand, c.LABEL_PREFIX_MASK))
         idx = bitand(operand, c.LABEL_VALUE_MASK);
-        operand = label_address_array(idx);
+        operand = uint16(label_address_array(idx));
 
     % The operand is neither destination nor source label. It means it is immediate value (direct address).
     else
         % Check that the operand (direct address) is in appropriate range.
-        if ((operand < 0) || (operand > bin2dec('00001111 11111111')))
+        if ((operand < 0) || (operand > 0b0000111111111111u16))
             error('### PREPROCESSOR ERROR: Value of immediate operand is out of range. Supported range is 0 .. 4095, actual value is %d (Address = %03d)!! ###\n', operand, j - 1)
         end
     end
