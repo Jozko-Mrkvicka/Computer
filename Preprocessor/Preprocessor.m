@@ -342,8 +342,8 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_0(src_code, opcode, la
         end
     end
 
-    instr_msb = bitor(opcode, bitshift(operand, -8));
-    instr_lsb = bitand(operand, c.BYTE_MASK);
+    instr_msb = bitor(int8(opcode), int8((bitshift(operand, -8))));
+    instr_lsb = bitand(int8(operand), int8(c.BYTE_MASK));
 
     i = i + 1;
 end
@@ -488,10 +488,10 @@ end
 function print_source_code(compiledSourceCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j, c)
     fprintf('|   %03d:  |    0x%04X   | 0x%02X | 0x%02X |', j - 1, compiledSourceCode(1, j), uint8_instr_msb, uint8_instr_lsb)
 
-    switch (bitand(instr_msb, c.INSTR_FORMAT_MASK))
+    switch (bitand(uint8(instr_msb), uint8(c.INSTR_FORMAT_MASK)))
         case c.INSTR_FORMAT_0
-            string1 = bitor(bitshift(bitand(c.FORMAT_0_OPERAND_1_MASK, instr_msb), 8), instr_lsb);
-            switch (bitor(bitand(instr_msb, c.FORMAT_0_OPCODE_MASK), c.INSTR_FORMAT_0))
+            string1 = bitor(bitshift(bitand(int8(c.FORMAT_0_OPERAND_1_MASK), int8(instr_msb)), 8), instr_lsb);
+            switch (bitor(int8(bitand(int8(instr_msb), int8(c.FORMAT_0_OPCODE_MASK))), int8(c.INSTR_FORMAT_0)))
                 case c.CALL,  fprintf('   CALL    m(%04d)            |', string1)
                 case c.JMP,   fprintf('   JMP     m(%04d)            |', string1)
                 case c.JPE,   fprintf('   JPE     m(%04d)            |', string1)

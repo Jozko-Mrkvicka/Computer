@@ -12,7 +12,7 @@ fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
-if (hex2dec('AA00') == gp_reg_01)
+if (0xAA00u16 == gp_reg_01)
    result = true;
 end
 

@@ -1,29 +1,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General purpose register definitions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-r0  = 0x0u16;
-r1  = 0x1u16;
-r2  = 0x2u16;
-r3  = 0x3u16;
-r4  = 0x4u16;
-r5  = 0x5u16;
-r6  = 0x6u16;
-r7  = 0x7u16;
+r0  = 0x0s16;
+r1  = 0x1s16;
+r2  = 0x2s16;
+r3  = 0x3s16;
+r4  = 0x4s16;
+r5  = 0x5s16;
+r6  = 0x6s16;
+r7  = 0x7s16;
 
 
 %%%%%%%%%%%%%%%%%%%
 % Button definition
 %%%%%%%%%%%%%%%%%%%
-BTN_0 = 0x0u16;
-BTN_1 = 0x1u16;
-BTN_2 = 0x2u16;
-BTN_3 = 0x3u16;
-BTN_4 = 0x4u16;
-BTN_5 = 0x5u16;
-BTN_6 = 0x6u16;
-BTN_7 = 0x7u16;
-BTN_8 = 0x8u16;
-BTN_9 = 0x9u16;
+BTN_0 = 0x0s16;
+BTN_1 = 0x1s16;
+BTN_2 = 0x2s16;
+BTN_3 = 0x3s16;
+BTN_4 = 0x4s16;
+BTN_5 = 0x5s16;
+BTN_6 = 0x6s16;
+BTN_7 = 0x7s16;
+BTN_8 = 0x8s16;
+BTN_9 = 0x9s16;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -66,31 +66,31 @@ BYTE = 1;  c.BYTE = BYTE;
 WORD = 2;  c.WORD = WORD;
 
 % Destination label (for example "LOOP_") represents absolute memory address.
-c.LABEL_DEST_PREFIX = 0b1110000000000000u16;
-c.LABEL_SRC_PREFIX  = 0b1101000000000000u16;
-c.LABEL_PREFIX_MASK = 0b1111000000000000u16;
-c.LABEL_VALUE_MASK  = 0b0000111111111111u16;
+c.LABEL_DEST_PREFIX = 0b1110000000000000s16;
+c.LABEL_SRC_PREFIX  = 0b1101000000000000s16;
+c.LABEL_PREFIX_MASK = 0b1111000000000000s16;
+c.LABEL_VALUE_MASK  = 0b0000111111111111s16;
 
 % Constant definition
-c.FORMAT_0_OPERAND_1_MASK = 0b00001111u16;
-c.FORMAT_1_OPERAND_1_MASK = 0b00000111u16;
-c.FORMAT_2_OPERAND_1_MASK = 0b00000111u16;
-c.FORMAT_3_OPERAND_1_MASK = 0b01110000u16;
-c.FORMAT_3_OPERAND_2_MASK = 0b00000111u16;
+c.FORMAT_0_OPERAND_1_MASK = 0b00001111s16;
+c.FORMAT_1_OPERAND_1_MASK = 0b00000111s16;
+c.FORMAT_2_OPERAND_1_MASK = 0b00000111s16;
+c.FORMAT_3_OPERAND_1_MASK = 0b01110000s16;
+c.FORMAT_3_OPERAND_2_MASK = 0b00000111s16;
 
-c.FORMAT_0_OPCODE_MASK = 0b00110000u16;
-c.FORMAT_1_OPCODE_MASK = 0b00111000u16;
-c.FORMAT_2_OPCODE_MASK = 0b00111000u16;
-c.FORMAT_3_OPCODE_MASK = 0b00111110u16;
+c.FORMAT_0_OPCODE_MASK = 0b00110000s16;
+c.FORMAT_1_OPCODE_MASK = 0b00111000s16;
+c.FORMAT_2_OPCODE_MASK = 0b00111000s16;
+c.FORMAT_3_OPCODE_MASK = 0b00111110s16;
 
-c.INSTR_FORMAT_MASK = 0b11000000u16;
+c.INSTR_FORMAT_MASK = 0b11000000s16;
 
-c.INSTR_FORMAT_0 = 0b00000000u16;
-c.INSTR_FORMAT_1 = 0b01000000u16;
-c.INSTR_FORMAT_2 = 0b10000000u16;
-c.INSTR_FORMAT_3 = 0b11000000u16;
+c.INSTR_FORMAT_0 = 0b00000000s16;
+c.INSTR_FORMAT_1 = 0b01000000s16;
+c.INSTR_FORMAT_2 = 0b10000000s16;
+c.INSTR_FORMAT_3 = 0b11000000s16;
 
-c.BYTE_MASK = 0b11111111u16;
+c.BYTE_MASK = 0b11111111s16;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -105,33 +105,33 @@ c.ROM_SIZE         = 0x1000;
 % Data address bus
 %%%%%%%%%%%%%%%%%%
 % Start address of constant data ROM memory on data address bus and it`s size in words.
-c.CONST_DATA_START = 0;
-c.CONST_DATA_SIZE  = 256;
+c.CONST_DATA_START = 0x0000;
+c.CONST_DATA_SIZE  = 0x1000;
 
 % Start address of RAM memory on data address bus and it`s size in words.
-c.RAM_START        = 256;
-c.RAM_SIZE         = 512;
+c.RAM_START        = 0x1000;
+c.RAM_SIZE         = 0x1000;
+
+% Start address of video RAM memory on data address bus and it`s size in words.
+c.VRAM_START       = 0x2000;
+c.VRAM_SIZE        = 0x400;
+
+% Address of keyboard on data address bus.
+c.KEYBOARD         = 0xFFFE;
+
+% Address of random number generator on data address bus.
+c.RAND_NUM_GEN     = 0xFFFF;
+
+% ROM LookUpTable breakpoints.
+c.RomCodeBreakpoints = 0 : c.ROM_SIZE - 1;
+c.DataRomBreakpoints = 0 : c.CONST_DATA_SIZE - 1;
+c.DataRom = zeros(1, c.CONST_DATA_SIZE);
+
 
 % Start address of the stack on dedicated (stack) address bus and it`s size in words.
 % The stack grows towards lower addresses (it decreases).
 c.STACK_START      = 15;
 c.STACK_SIZE       = 16;
-
-% Start address of video RAM memory on data address bus and it`s size in words.
-c.VRAM_START       = 768;
-c.VRAM_SIZE        = 1000;
-
-% Address of keyboard on data address bus.
-c.KEYBOARD         = 239;
-
-% Address of random number generator on data address bus.
-c.RAND_NUM_GEN     = 255;
-
-
-% ROM LookUpTable breakpoints.
-c.RomCodeBreakpoints = 0 : c.ROM_SIZE - 1;
-c.DataRomBreakpoints = 0 : 255;
-c.DataRom = zeros(1, 256);
 
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".

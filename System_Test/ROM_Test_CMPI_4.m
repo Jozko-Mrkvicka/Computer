@@ -12,7 +12,6 @@ end
 c.LBL_CNT = idx;
 
 
-
 SourceCode = ...
 [
                 MOVL        r0          0           ... 

@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This function reads values (signals) from output object returned from the simulink model Computer.slx.
-% The signals are copied to standalone variables and they are assigned to the base workspace,
-% so they are visible to other functions.
+% Signals are copied to standalone variables and they are assigned to the base workspace, so they
+% are visible to other functions.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function read_output_values(output)
     program_counter = output.get('program_counter');     assignin('base', 'program_counter', program_counter);
@@ -9,17 +9,17 @@ function read_output_values(output)
     status_register = output.get('status_register');     assignin('base', 'status_register', status_register);
 
     % Extract less then (unsigned) bit from status register.
-    status_register_masked = bitand(status_register, bin2dec('1000 0000 0000 0000'));
+    status_register_masked = bitand(status_register, 0b1000000000000000u16);
     status_register_lessthanunsigned = bitshift(status_register_masked, -15);
     assignin('base', 'status_register_lessthanunsigned', status_register_lessthanunsigned);
 
     % Extract less then (signed) bit from status register.
-    status_register_masked = bitand(status_register, bin2dec('0100 0000 0000 0000'));
+    status_register_masked = bitand(status_register, 0b0100000000000000u16);
     status_register_lessthansigned = bitshift(status_register_masked, -14);
     assignin('base', 'status_register_lessthansigned', status_register_lessthansigned);
 
     % Extract equality bit from status register.
-    status_register_masked = bitand(status_register, bin2dec('0010 0000 0000 0000'));
+    status_register_masked = bitand(status_register, 0b0010000000000000u16);
     status_register_equal = bitshift(status_register_masked, -13);
     assignin('base', 'status_register_equal', status_register_equal);
 
@@ -32,8 +32,9 @@ function read_output_values(output)
     gp_reg_06 = output.get('gp_reg_06');                 assignin('base', 'gp_reg_06', gp_reg_06);
     gp_reg_07 = output.get('gp_reg_07');                 assignin('base', 'gp_reg_07', gp_reg_07);
 
-    DataBus_256_511 = output.get('DataBus_256_511');     assignin('base', 'DataBus_256_511', DataBus_256_511);
-    DataBus_512_767 = output.get('DataBus_512_767');     assignin('base', 'DataBus_512_767', DataBus_512_767);
+    % data_bus_const = output.get('data_bus_const');       assignin('base', 'data_bus_const', data_bus_const);
+    data_bus_ram   = output.get('data_bus_ram');         assignin('base', 'data_bus_ram',   data_bus_ram);
+    data_bus_vram  = output.get('data_bus_vram');        assignin('base', 'data_bus_vram',  data_bus_vram);
 
     % const_00 = output.get('const_00');                   assignin('base', 'const_00', const_00);
     % const_01 = output.get('const_01');                   assignin('base', 'const_01', const_01);

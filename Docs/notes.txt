@@ -29,34 +29,55 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 #############################################
 - Ostatne
     - Presunut common library do samostatneho repozitara.
+        - Updatovat countre.
+        - Updatovat Misc.
+        - Memory blocks.
     - Skontrolovat v celom projekte ci sa niekde nenachadza string "TODO".
+    - Vsetky subsystemy vlozit do dvoch vrstiev
+        - Gate layer
+        - System layer.
+    - ??Zlucit vsetky riadiace signaly do jednej control unit??
 
 
 - Hardware:
-    - Rozsirit klavesnicu na 128 znakov ASCII (aby sa dala kreslit textova grafika).
-    - Pridat klavesnicovy buffer.
-    - Pridat na klavesnicu tlacitko SHIFT.
-    - Dokoncit obrazovku/terminal.
-
     - Pridat instrukciu JGT (jump if greater than) kvoli instrukcii CMPI (nie je mozne pouzit instrukciu JLT vo vsetkych pripadoch - operandy sa nedaju prehodit).
+
+    - Zjednodusit architekturu:
+        - Skontrolovat decodery. Idealne prerobit na jeden alebo dva typy.
+        - RAM pamate a registre ktore pouzivaju vystupny multiplexor sa daju prerobit pomocou "action" subsystemov. Potom sa namiesto vysupneho muxu pouzije blok "Merge". Predtym vsak treba zistit ako bude vyzerat fyzicka realizacia tranzistorovych pamati (zistit ci je tam nejaky rozdiel oproti ferritovym/diodovym pamatiam).
+        - Prerobit GP registers:
+            - Pridat jeden accumulator register. Bude sluzit ako destination register.
+            - Tym mozem odstranit jeden Mux_8.
+            - Zvysne registre sa budu pouzivat ako source registre. Na vystupe budu zmergovane, preto budem moct odstranit druhy Mux_8.
+            - Takisto usetrim 3 bity v instrukcnych formatoch ktore pouzivaju destination register.
+            - Tiez sa asi zbavim jedneho dekodera ktory vybera destination registre.
 
     - Pridat timer + prerusenie.
 
     - Ochrana pamati / error detection:
         - Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
-        - Detekovat stack overflow/underflow.
+        - Stack overflow/underflow.
+        - Unknown instruction/operand.
 
-    - Zjednodusit architekturu:
-        - Nahradit vsetky typy enkoderov pomocou jedneho 16_to_4.
-        - Nahradit vsetky typy muxov pomocou jedneho 4_to_1.
+    - Postavit celociselnu nasobicku/delicku (ako kombinacny obvod):
+        - Nahradit instrukciu SHIFT pomocou celociselneho nasobenia/delenia.
+        - Pridat dva specialne 32-bitove registre na aritmeticke operacie.
 
-    - postavit celociselnu nasobicku/delicku (ako kombinacny obvod)
-    - Pridat dva specialne 32-bitove registre na aritmeticke operacie.
-    - prerobit RAM pamate tak aby sa dali poskladat do stvorca a tym by sa zredukovala velkost dekoderov
+    - Prerusenia
+        - Klavesnica
+        - Timer
+        - UART
 
-    - skusit zjednodusit latche/RAM pamate tak ze namiesto samostatneho write commandu sa bude iba ANDovat clock signal
+    - Pridat Video subsystem
+        - Presunut charTable.
+        - Prerobit charTable na diodovu ROM.
+        - Nasimulovat countre ktore budu citat z VRAM a posielat data do analogovej casti videa.
 
-    - Prerobit instrukciu SHIFT pomocou posuvnych registrov (zaberie niekolko hodinovych cyklov) / alebo nech shift vykona posuv iba o jeden bit (ale to sa zas bude dat spravit pomocou celociselneho nasobenia/delenia).
+    - Ferritova RAM
+        - Pridat logiku ktora precitany byte do nej hned nanovo zapise.
+
+    - Pridat UART/USART
+        - Prepojit ho s Windows terminalom.
 
 
 - GUI
@@ -68,7 +89,6 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 
 
 - Preprocessor:
-    - Prerobit hexa hodnoty v zdrojakoch. Novy matlab ich konecne podporuje!!
     - Zarovnat pravy okraj vygenerovaneho kodu.
 
 
@@ -103,6 +123,12 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 - Testy
 
 
+- Commit Message:
+    - Fixed bugs in instructions STUI, LDLI and LDUI.
+    - Fixed bug in DataRAM addressing.
+    - Fixed bug in Preprocessor.
+
+
 #############################################
 #              Mrkvicka 9001
 #############################################
@@ -116,10 +142,7 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Moznost zvacsit adresovy priestor alebo pridat viac immediate instrukcii.
         - Mensi pocet suciastok.
 
-    - Rozsirit ALU
     - Pridat FPU.
-
-    - UART/USART
 
     - Prerobit architekturu na 1-bit. Usetrim hradla v multiplexeroch.
 

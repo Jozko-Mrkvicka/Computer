@@ -78,7 +78,7 @@
 % Type of operands:        Example:
 %     NOT  REG               NOT  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT = 0b11100010u16;
+NOT = 0b11100010s16;
 c.NOT = NOT;
 
 
@@ -101,7 +101,7 @@ c.NOT = NOT;
 % Type of operands:        Example:
 %     XOR  REG  REG          XOR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-XOR = 0b11100000u16;
+XOR = 0b11100000s16;
 c.XOR = XOR;
 
 
@@ -124,7 +124,7 @@ c.XOR = XOR;
 % Type of operands:        Example:
 %     OR  REG  REG           OR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-OR = 0b11011110u16;
+OR = 0b11011110s16;
 c.OR = OR;
 
 
@@ -147,7 +147,7 @@ c.OR = OR;
 % Type of operands:        Example:
 %     AND  REG  REG           AND  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-AND = 0b11011100u16;
+AND = 0b11011100s16;
 c.AND = AND;
 
 
@@ -170,7 +170,7 @@ c.AND = AND;
 % Type of operands:        Example:
 %     LDL  REG  REG        LDL  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDL = 0b11011010u16;
+LDL = 0b11011010s16;
 c.LDL = LDL;
 
 
@@ -193,7 +193,7 @@ c.LDL = LDL;
 % Type of operands:        Example:
 %     LDU  REG  REG        LDU  r0  m(r1)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDU = 0b11011000u16;
+LDU = 0b11011000s16;
 c.LDU = LDU;
 
 
@@ -220,7 +220,7 @@ c.LDU = LDU;
 % Type of operands:        Example:
 %     CMP  REG  REG          CMP  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CMP = 0b11010110u16;
+CMP = 0b11010110s16;
 c.CMP = CMP;
 
 
@@ -242,7 +242,7 @@ c.CMP = CMP;
 % Type of operands:        Example:
 %     N/A                    RET
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-RET = 0b11010100u16;
+RET = 0b11010100s16;
 c.RET = RET;
 
 
@@ -256,7 +256,7 @@ c.RET = RET;
 %     original value taken from stack.
 % 
 % First operand:
-%     Destination register to be poped from stack. 
+%     Destination register to be popped from stack. 
 %
 % Second operand:
 %     Not used.
@@ -264,7 +264,7 @@ c.RET = RET;
 % Type of operands:        Example:
 %     POP  REG               POP  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-POP = 0b11010010u16;
+POP = 0b11010010s16;
 c.POP = POP;
 
 
@@ -286,7 +286,7 @@ c.POP = POP;
 % Type of operands:        Example:
 %     PUSH  REG              PUSH  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-PUSH = 0b11010000u16;
+PUSH = 0b11010000s16;
 c.PUSH = PUSH;
 
 
@@ -311,7 +311,7 @@ c.PUSH = PUSH;
 % Type of operands:        Example:
 %     SHIFT  REG  REG        SHIFT r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SHIFT = 0b11001110u16;
+SHIFT = 0b11001110s16;
 c.SHIFT = SHIFT;
 
 
@@ -330,7 +330,7 @@ c.SHIFT = SHIFT;
 % Type of operands:        Example:
 %     ADD  REG  REG          ADD  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADD = 0b11001100u16;
+ADD = 0b11001100s16;
 c.ADD = ADD;
 
 
@@ -348,7 +348,7 @@ c.ADD = ADD;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b11001010u16;
+NOT_USED = 0b11001010s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -370,7 +370,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     STL  REG  REG       STL  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STL = 0b11001000u16;
+STL = 0b11001000s16;
 c.STL = STL;
 
 
@@ -392,7 +392,7 @@ c.STL = STL;
 % Type of operands:        Example:
 %     STU  REG  REG       STU  m(r0)  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STU = 0b11000110u16;
+STU = 0b11000110s16;
 c.STU = STU;
 
 
@@ -410,7 +410,7 @@ c.STU = STU;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b11000100u16;
+NOT_USED = 0b11000100s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -428,7 +428,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b11000010u16;
+NOT_USED = 0b11000010s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -451,7 +451,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     MOV    REG  REG        MOV    r1     r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOV = 0b11000000u16;
+MOV = 0b11000000s16;
 c.MOV = MOV;
 
 
@@ -475,7 +475,7 @@ c.MOV = MOV;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b10111000u16;
+NOT_USED = 0b10111000s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -493,7 +493,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b10110000u16;
+NOT_USED = 0b10110000s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -511,7 +511,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b10101000u16;
+NOT_USED = 0b10101000s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -537,7 +537,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     LDUI  REG  IMM         LDUI  r2  m(10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDUI = 0b10100000u16;
+LDUI = 0b10100000s16;
 c.LDUI = LDUI;
 
 
@@ -562,7 +562,7 @@ c.LDUI = LDUI;
 % Type of operands:        Example:
 %     ADDI  REG  IMM          ADDI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-ADDI = 0b10011000u16;
+ADDI = 0b10011000s16;
 c.ADDI = ADDI;
 
 
@@ -592,7 +592,7 @@ c.ADDI = ADDI;
 % Type of operands:        Example:
 %     MOVU  REG  IMM         MOVU  r0  255
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVU = 0b10010000u16;
+MOVU = 0b10010000s16;
 c.MOVU = MOVU;
 
 
@@ -618,7 +618,7 @@ c.MOVU = MOVU;
 % Type of operands:        Example:
 %     LDLI  REG  IMM         LDLI  r2  m(10)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-LDLI = 0b10001000u16;
+LDLI = 0b10001000s16;
 c.LDLI = LDLI;
 
 
@@ -648,7 +648,7 @@ c.LDLI = LDLI;
 % Type of operands:        Example:
 %     MOVL  REG  IMM         MOVL  r0  10
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-MOVL = 0b10000000u16;
+MOVL = 0b10000000s16;
 c.MOVL = MOVL;
 
 
@@ -672,7 +672,7 @@ c.MOVL = MOVL;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b01111000u16;
+NOT_USED = 0b01111000s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -690,7 +690,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b01110000u16;
+NOT_USED = 0b01110000s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -708,7 +708,7 @@ c.NOT_USED = NOT_USED;
 % Type of operands:        Example:
 %     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b01101000u16;
+NOT_USED = 0b01101000s16;
 c.NOT_USED = NOT_USED;
 
 
@@ -721,7 +721,7 @@ c.NOT_USED = NOT_USED;
 %     The SGMT instruction sets the memory segment register which
 %     is used for computation of physical (data memory) address. The segment
 %     register is, in fact, used as upper byte (MSB) of a 16-bit address.
-%     This gives us posibility to utilize (theoretically) whole 16-bit range
+%     This gives us possibility to utilize (theoretically) whole 16-bit range
 %     of data memory. The physical address is then used by instructions
 %     STLI, STUI, LDLI and LDUI. The segment value is interpreted as
 %     unsigned in range <0, 255>.
@@ -732,10 +732,10 @@ c.NOT_USED = NOT_USED;
 % Second operand:
 %     Data memory segment address.
 %
-% Type of operands:        Exampleu16:
+% Type of operands:        Example:
 %     SGMT  IMM              SGMT  msb(c.RAM_START + 0)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SGMT = 0b01100000u16;
+SGMT = 0b01100000s16;
 c.SGMT = SGMT;
 
 
@@ -760,7 +760,7 @@ c.SGMT = SGMT;
 % Type of operands:        Example:
 %     SHIFTI  REG  IMM       SHIFTI  r0  -3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-SHIFTI = 0b01011000u16;
+SHIFTI = 0b01011000s16;
 c.SHIFTI = SHIFTI;
 
 
@@ -794,7 +794,7 @@ c.SHIFTI = SHIFTI;
 % Type of operands:                 Example:
 %     (assembly) STUI  IMM  REG      STUI  m(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STUI = 0b01010000u16;
+STUI = 0b01010000s16;
 c.STUI = STUI;
 
 
@@ -828,7 +828,7 @@ c.STUI = STUI;
 % Type of operands:                 Example:
 %     (assembly) STLI  IMM  REG      STLI  m(11)  r3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-STLI = 0b01001000u16;
+STLI = 0b01001000s16;
 c.STLI = STLI;
 
 
@@ -857,7 +857,7 @@ c.STLI = STLI;
 % Type of operands:        Example:
 %     CMPI  REG  IMM         CMPI  r0  25
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CMPI = 0b01000000u16;
+CMPI = 0b01000000s16;
 c.CMPI = CMPI;
 
 
@@ -887,7 +887,7 @@ c.CMPI = CMPI;
 % Type of operands:        Example:
 %     JLT  IMM               JLT  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JLT = 0b00110000u16;
+JLT = 0b00110000s16;
 c.JLT = JLT;
 
 
@@ -911,7 +911,7 @@ c.JLT = JLT;
 % Type of operands:        Example:
 %     JPE  IMM               JPE  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JPE = 0b00100000u16;
+JPE = 0b00100000s16;
 c.JPE = JPE;
 
 
@@ -937,7 +937,7 @@ c.JPE = JPE;
 % Type of operands:        Example:
 %     CALL  IMM              CALL  LABEL  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-CALL = 0b00010000u16;
+CALL = 0b00010000s16;
 c.CALL = CALL;
 
 
@@ -960,6 +960,6 @@ c.CALL = CALL;
 % Type of operands:        Example:
 %     JMP  IMM               JMP  LABEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-JMP = 0b00000000u16;
+JMP = 0b00000000s16;
 c.JMP = JMP;
 

@@ -12,7 +12,7 @@ fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
-if (hex2dec('BB') == DataBus_256_511(5 + 1))
+if (0xBB == data_bus_ram(5 + 1))
    result = true;
 end
 
