@@ -832,26 +832,25 @@ STLI = 0b01001000s16;
 c.STLI = STLI;
 
 
-% TODO: Description seems to be contradicting.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %             Compare Immediate
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 1: FF|OOO|SSS IIIIIIII
 %
 % Description:
-%     This instruction compares two 16-bit numbers.
-%     Numbers can be either signed or unsigned,
-%     the CMP instruction does not distinguish between them.
+%     This instruction compares two numbers. Numbers can be
+%     either signed or unsigned, the CMPI instruction
+%     does not distinguish between them.
 %     The instruction computes result for both possibilities.
 %     It is up to programmer to use proper result.
-%     Result of the comparison can be "greater than",
-%     "less than" or "equal". It is stored in status register.
+%     Result of the comparison can be "A > B", "A < B" or "A == B".
+%     Result is stored in status register.
 % 
 % First operand:
-%     Data to compare.
+%     Number A to compare.
 %
 % Second operand:
-%     Data to compare. Immediate value is interpreted
+%     Number B to compare. Immediate value is interpreted
 %     as signed. Range is <-128, +127>.
 %
 % Type of operands:        Example:
@@ -874,8 +873,8 @@ c.CMPI = CMPI;
 %
 % Description:
 %     This instruction performs conditional jump.
-%     The jump is performed only if the LessThen bit
-%     of Status Register is set to one.
+%     The jump is performed only if the LessThenSigned
+%     bit of Status Register is set to one.
 % 
 % First operand:
 %     Not used.
