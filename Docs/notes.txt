@@ -30,59 +30,40 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 - Ostatne
     - Presunut common library do samostatneho repozitara.
         - Updatovat countre.
-        - Updatovat Misc.
-        - Memory blocks.
-    - Skontrolovat v celom projekte ci sa niekde nenachadza string "TODO".
-    - Vsetky subsystemy vlozit do dvoch vrstiev
-        - Gate layer
-        - System layer.
-    - ??Zlucit vsetky riadiace signaly do jednej control unit??
-
 
 - Hardware:
-    - Pridat instrukciu JGT (jump if greater than) kvoli instrukcii CMPI (nie je mozne pouzit instrukciu JLT vo vsetkych pripadoch - operandy sa nedaju prehodit).
-
-    - Zjednodusit architekturu:
-        - Skontrolovat decodery. Idealne prerobit na jeden alebo dva typy.
-        - RAM pamate a registre ktore pouzivaju vystupny multiplexor sa daju prerobit pomocou "action" subsystemov. Potom sa namiesto vysupneho muxu pouzije blok "Merge". Predtym vsak treba zistit ako bude vyzerat fyzicka realizacia tranzistorovych pamati (zistit ci je tam nejaky rozdiel oproti ferritovym/diodovym pamatiam).
-        - Prerobit GP registers:
-            - Pridat jeden accumulator register. Bude sluzit ako destination register.
-            - Tym mozem odstranit jeden Mux_8.
-            - Zvysne registre sa budu pouzivat ako source registre. Na vystupe budu zmergovane, preto budem moct odstranit druhy Mux_8.
-            - Takisto usetrim 3 bity v instrukcnych formatoch ktore pouzivaju destination register.
-            - Tiez sa asi zbavim jedneho dekodera ktory vybera destination registre.
-
-    - Pridat timer + prerusenie.
-
-    - Ochrana pamati / error detection:
-        - Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
-        - Stack overflow/underflow.
-        - Unknown instruction/operand.
-
-    - Postavit celociselnu nasobicku/delicku (ako kombinacny obvod):
-        - Nahradit instrukciu SHIFT pomocou celociselneho nasobenia/delenia.
-        - Pridat dva specialne 32-bitove registre na aritmeticke operacie.
+    - Zjednodusit instrukciu Shift
 
     - Prerusenia
         - Klavesnica
-        - Timer
-        - UART
+
+    - Ferritova RAM
+        - Preprogramovat RAM tak aby hned po precitani zmazala precitane data. Tym sa bude simulovat ferritova pamat.
+        - Pridat logiku ktora precitany byte do nej hned nanovo zapise.
 
     - Pridat Video subsystem
         - Presunut charTable.
         - Prerobit charTable na diodovu ROM.
         - Nasimulovat countre ktore budu citat z VRAM a posielat data do analogovej casti videa.
-
-    - Ferritova RAM
-        - Pridat logiku ktora precitany byte do nej hned nanovo zapise.
-
-    - Pridat UART/USART
-        - Prepojit ho s Windows terminalom.
+        - Spojit Matlab s Windows terminalom a pouzit ho ako obrazovku.
 
 
+- Testy
+    - Pridat test citania/zapisu z/do pamati, IROM, DROM, DRAM, VRAM - otestovat okraje (prerobit uz existujuce testy).
+    - Prerobit vnutro pamati na obycajne enkodery + enkoder presunut do common library.
+
+    
 - GUI
     - FrontPanel
         - Pridat tlacitka RESET, RUN, STOP, STEP.
+        - Error detection:
+            - Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
+            - Indikovat chybu ak je viacero vystupnych signalov z dekodera aktivnych. Vystup poslat na FrontPanel.
+            - Stack overflow/underflow detection.
+            - Unknown instruction/operand.
+            - Kazdy kombinacny (Mux, Enc, Dec) aj sequencny obvod (registre, countre) by mohol mat na front panely vyvedenu svoju vystupnu hodnotu.
+            - Built In Test - ku vsetkym subsystemom (s detekciou chyby) priviest false-positive test signal na overenie detekcie chyb.
+
     - Pridat Instruction Memory Panel.
     - Pridat Terminal (obrazovka, klavesnica).
     - HALUSKA 9000 (Heuristically programmed ALgorithmic Universal SKAtula 9000) 
@@ -90,6 +71,7 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 
 - Preprocessor:
     - Zarovnat pravy okraj vygenerovaneho kodu.
+    - Fixnut TODOs.
 
 
 - Firmware:
@@ -106,6 +88,11 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 
 
 - Dokumentacia
+    - ??Zlucit vsetky riadiace signaly do jednej control unit??
+    - Vsetky subsystemy vlozit do dvoch vrstiev
+        - Gate layer
+        - System layer.
+
     - Dokoncit README.
     - Vylestit instrukcie.
 
@@ -120,13 +107,7 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Simulink model
 
 
-- Testy
-
-
 - Commit Message:
-    - Fixed bugs in instructions STUI, LDLI and LDUI.
-    - Fixed bug in DataRAM addressing.
-    - Fixed bug in Preprocessor.
 
 
 #############################################
@@ -137,14 +118,36 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Budem moct vytvarat a spustat programy rovno na pocitaci.
         - Programy sa budu dat ukladat/nahravat do/z magnetickej pasky.
 
-    - Pouzit iba jeden register (accumulator).
-        - Usetrim bity v instrukcii.
-        - Moznost zvacsit adresovy priestor alebo pridat viac immediate instrukcii.
-        - Mensi pocet suciastok.
+    - Prerobit registre:
+        - Pridat jeden accumulator register. Bude sluzit ako destination register.
+        - Usetrim 3 bity v instrukcnych formatoch ktore pouzivaju destination register.
+        - Asi sa zbavim jedneho dekodera ktory vybera destination registre.
+        - Budem musiet pridat jednu instrukciu na citanie alebo zapis do/z accumulatora.
 
     - Pridat FPU.
 
     - Prerobit architekturu na 1-bit. Usetrim hradla v multiplexeroch.
+
+    - Postavit celociselnu nasobicku/delicku
+        - Ako samostatne zariadenie pripojene na datovu zbernicu.
+        - Ako sequencny obvod.
+        - Pracovat s CPU bude asynchronne, komunikacia pomocou prerusena.
+
+    - Pridat 16-bit timer:
+        - Set threshold.
+        - Set start count.
+        - Free run
+        - One shot
+        - Start
+        - ??Stop??
+
+    - Pridat UART/USART
+        - Prepojit ho s Windows terminalom.
+
+    - Prerusenia
+        - Timer
+        - UART
+        - Nasobicka
 
 
 - Compilator:
