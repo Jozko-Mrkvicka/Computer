@@ -12,8 +12,8 @@ fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
-if ((hex2dec('BB00') == gp_reg_00) && ...
-    (hex2dec('BBFF') == gp_reg_01))
+if ((0xBB00 == gp_reg_00) && ...
+    (0xBBFF == gp_reg_01))
     result = true;
 end
 
