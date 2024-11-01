@@ -1,12 +1,13 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Instruction CMPI system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
 
 fprintf('Test_CMPI_1 ')
-
 result = false;
-Flash ROM_Test_CMPI_1
+
+Compile ROM_Test_CMPI_1
+Flash(ROM_Test_CMPI_1, 0x0000)
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');

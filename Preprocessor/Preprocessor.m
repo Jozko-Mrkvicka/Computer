@@ -1,4 +1,4 @@
-function [compiledSourceCode] = Preprocessor(sourceCode, c)
+function [compiledSourceCode] = Preprocessor(sourceCode, start_addr, c)
     global gDebug
 
     % Check also Run_System_Tests.m for "gDebug"
@@ -21,7 +21,7 @@ function [compiledSourceCode] = Preprocessor(sourceCode, c)
 
     % Check if there are any labels in the code (it means if variable c.LBL_CNT does exist).
     if (1 == isfield(c, 'LBL_CNT'))
-        [label_address_array] = find_all_destination_labels(sourceCode, c);
+        [label_address_array] = find_all_destination_labels(sourceCode, start_addr, c);
     else
         label_address_array = 0;
     end
@@ -29,7 +29,7 @@ function [compiledSourceCode] = Preprocessor(sourceCode, c)
     % The counter "i" counts number of values in a source code (labels, instructions, operands ... all together).
     i = 1;
     % The counter "j" counts number of words/instructions/lines in a compiled code (each instruction has two bytes).
-    j = c.ROM_START + 1;
+    j = start_addr + 1;
     while (i <= size(sourceCode, 2))
         % Read first value on particular line of a processed source code.
         value = sourceCode(1, i);
@@ -243,7 +243,7 @@ end
 % end
 
 
-function [label_address_array] = find_all_destination_labels(src_code, c)
+function [label_address_array] = find_all_destination_labels(src_code, start_addr, c)
     % Init all labels to 0xFFFFFFFFFFFFFFFF
     for (i = 1:c.LBL_CNT)
         label_address_array(i) = 0xFFFFFFFFFFFFFFFF;
@@ -252,7 +252,7 @@ function [label_address_array] = find_all_destination_labels(src_code, c)
     % The counter "i" counts number of values in a source code (labels, instructions, operands ... all together).
     i = 1;
     % The counter "j" counts number of bytes in a compiled code (each instruction has two bytes).
-    j = c.ROM_START;
+    j = start_addr;
     % Go through the program and save all addresses of destination labels.
     while (i <= size(src_code, 2))
         value = src_code(1, i);
@@ -343,7 +343,7 @@ function [instr_msb, instr_lsb, i] = compile_instr_format_0(src_code, opcode, la
     end
 
     instr_msb = bitor(int8(opcode), int8((bitshift(operand, -8))));
-    instr_lsb = bitand(int8(operand), int8(c.BYTE_MASK));
+    instr_lsb = bitand(uint8(operand), uint8(c.BYTE_MASK));
 
     i = i + 1;
 end
@@ -490,7 +490,7 @@ function print_source_code(compiledSourceCode, instr_msb, instr_lsb, uint8_instr
 
     switch (bitand(uint8(instr_msb), uint8(c.INSTR_FORMAT_MASK)))
         case c.INSTR_FORMAT_0
-            string1 = bitor(bitshift(bitand(int8(c.FORMAT_0_OPERAND_1_MASK), int8(instr_msb)), 8), instr_lsb);
+            string1 = bitor(bitshift(bitand(uint8(c.FORMAT_0_OPERAND_1_MASK), uint8(instr_msb)), 8), instr_lsb);
             switch (bitor(int8(bitand(int8(instr_msb), int8(c.FORMAT_0_OPCODE_MASK))), int8(c.INSTR_FORMAT_0)))
                 case c.CALL,  fprintf('   CALL    m(%04d)            |', string1)
                 case c.JMP,   fprintf('   JMP     m(%04d)            |', string1)

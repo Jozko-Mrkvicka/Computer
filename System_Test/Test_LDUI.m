@@ -4,9 +4,10 @@
 global gDebug
 
 fprintf('Test_LDUI ')
-
 result = false;
-Flash ROM_Test_LDUI
+
+Compile ROM_Test_LDUI
+Flash(ROM_Test_LDUI, 0x0000)
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');

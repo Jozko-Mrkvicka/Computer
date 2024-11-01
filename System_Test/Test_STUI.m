@@ -6,7 +6,9 @@ global gDebug
 fprintf('Test_STUI ')
 
 result = false;
-Flash ROM_Test_STUI
+
+Compile ROM_Test_STUI
+Flash(ROM_Test_STUI, 0x0000)
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');

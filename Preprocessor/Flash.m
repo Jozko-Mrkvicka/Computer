@@ -1,26 +1,20 @@
-function Flash(file)
-    % clear ConstData
-    clear DataRom
-    clear SourceCode
-    clear RomCode
-    clear BUS_UINT16_T
-
-    % Load constants and definitions (instructions, registers, ...).
-    Instructions
-    % evalin('base', 'Instructions')
+function Flash(compiled_code, addr)
     Definitions
-    % evalin('base', 'Definitions')
-    CharTable_7x7
 
-    % Load a program to be executed (load variables SourceCode and ConstData from source file).
-    run(file);
-    % evalin('base', file)
+    % Check if RomCode already exists in the base workspace. If not then create local one.
+    if evalin('base', 'exist("RomCode");')
+        RomCode = evalin("base", "RomCode");
+    else
+        RomCode(1 : c.ROM_SIZE) = uint16(0);
+    end
+    
+    % We want to address memory from 0x0000 but Matlab array index starts from 1.
+    addr = addr + 1;
 
-    % Compile source code (assembly language) to binary code and "flash" it to ROM.
-    % "Flashing" means to assign the RomCode array to particular constants
-    % in the Simulink model (ROM memory).
-    [RomCode] = Preprocessor(SourceCode, c);
-    % assignin('base', 'RomConstData', RomConstData);
+    % "Flash" binary image to ROM.
+    len = size(compiled_code, 2);
+    RomCode(addr : (addr + len - 1)) = compiled_code(1 : len);
+
+    % Copy RomCode to base workspace.
     assignin('base', 'RomCode', RomCode);
-    assignin('base', 'c', c);
 end

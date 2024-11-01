@@ -4,9 +4,10 @@
 global gDebug
 
 fprintf('Test_JPE ')
-
 result = false;
-Flash ROM_Test_JPE
+
+Compile ROM_Test_JPE
+Flash(ROM_Test_JPE, 0x0000)
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');

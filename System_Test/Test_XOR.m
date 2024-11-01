@@ -6,7 +6,8 @@ global gDebug
 fprintf('Test_XOR ')
 
 result = false;
-Flash ROM_Test_XOR
+Compile ROM_Test_XOR
+Flash(ROM_Test_XOR, 0x0000)
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');

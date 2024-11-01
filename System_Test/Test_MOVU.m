@@ -4,9 +4,10 @@
 global gDebug
 
 fprintf('Test_MOVU ')
-
 result = false;
-Flash ROM_Test_MOVU
+
+Compile ROM_Test_MOVU
+Flash(ROM_Test_MOVU, 0x0000)
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');

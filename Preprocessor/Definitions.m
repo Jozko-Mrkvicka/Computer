@@ -1,6 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% General purpose register definitions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     General purpose register definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 r0  = 0x0s16;
 r1  = 0x1s16;
 r2  = 0x2s16;
@@ -11,9 +11,9 @@ r6  = 0x6s16;
 r7  = 0x7s16;
 
 
-%%%%%%%%%%%%%%%%%%%
-% Button definition
-%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              Button definition
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 BTN_0 = 0x0s16;
 BTN_1 = 0x1s16;
 BTN_2 = 0x2s16;
@@ -26,9 +26,9 @@ BTN_8 = 0x8s16;
 BTN_9 = 0x9s16;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
-%  Create uint16 bus type
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Create uint16 bus type
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 cellInfo =                                                                                                                                 ...
 {                                                                                                                                          ... 
   {                                                                                                                                        ... 
@@ -93,17 +93,17 @@ c.INSTR_FORMAT_3 = 0b11000000s16;
 c.BYTE_MASK = 0b11111111s16;
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%% 
-% Instruction address bus
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%          Instruction address bus
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Start address of ROM memory on instruction address bus and it`s size in words.
 c.ROM_START        = 0x0000;  %% This value is used for Program Counter initialization.
 c.ROM_SIZE         = 0x1000;
 
 
-%%%%%%%%%%%%%%%%%%
-% Data address bus
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              Data address bus
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Start address of constant data ROM memory on data address bus and it`s size in words.
 c.CONST_DATA_START = 0x0000;
 c.CONST_DATA_SIZE  = 0x1000;
@@ -132,6 +132,12 @@ c.DataRom = zeros(1, c.CONST_DATA_SIZE);
 % The stack grows towards lower addresses (it decreases).
 c.STACK_START      = 15;
 c.STACK_SIZE       = 16;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Interrupt Vector Table
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% c.IRQ_KEYBOARD = 
 
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".

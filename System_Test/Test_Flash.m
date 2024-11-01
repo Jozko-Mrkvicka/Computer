@@ -1,22 +1,23 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Instruction CMP system test.
+% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
 
-fprintf('Test_CMP_3 ')
+fprintf('Test_Flash ')
 result = false;
 
-Compile ROM_Test_CMP_3
-Flash(ROM_Test_CMP_3, 0x0000)
+Compile ROM_Test_Flash_Main
+Compile ROM_Test_Flash_Function
+Burn(ROM_Test_Flash_Main,     0x0000)
+Burn(ROM_Test_Flash_Function, 0x00FF)
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');
 read_output_values(output);
 
-if ((1 == status_register_equal) && ...
-    (0 == status_register_lessthansigned) && ...
-    (0 == status_register_lessthanunsigned))
-    result = true;
+if (0xABBA == gp_reg_00) && ...
+   (0xBEEF == gp_reg_01)
+   result = true;
 end
 
 if ((true == gDebug) || (false == result))
