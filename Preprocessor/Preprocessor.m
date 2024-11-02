@@ -2,8 +2,8 @@ function [compiledSourceCode] = Preprocessor(sourceCode, start_addr, c)
     global gDebug
 
     % Check also Run_System_Tests.m for "gDebug"
-    % gDebug = true;
-    gDebug = false;
+    gDebug = true;
+    % gDebug = false;
 
     if (true == gDebug)
         fprintf('\n');
@@ -15,7 +15,7 @@ function [compiledSourceCode] = Preprocessor(sourceCode, start_addr, c)
     end
 
     % Initialize whole instruction ROM memory with zeros. Zeros will be interpreted as JMP m(0x0000).
-    compiledSourceCode(1 : c.ROM_SIZE) = uint16(0);
+    % compiledSourceCode(1 : c.ROM_SIZE) = uint16(0);
 
     % [compiledData] = compile_const_data(data, c);
 

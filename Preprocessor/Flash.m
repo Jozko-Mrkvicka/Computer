@@ -15,6 +15,11 @@ function Flash(compiled_code, addr)
     len = size(compiled_code, 2);
     RomCode(addr : (addr + len - 1)) = compiled_code(1 : len);
 
+    % Check if ROM code fits to the ROM memory.
+    if (size(RomCode, 2) > c.ROM_SIZE) 
+        error('###\nFLASH ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d (words)\nActual image size:    %d (words)\n###', c.ROM_SIZE, size(RomCode, 2))
+    end
+
     % Copy RomCode to base workspace.
     assignin('base', 'RomCode', RomCode);
 end

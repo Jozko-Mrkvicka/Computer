@@ -122,22 +122,28 @@ c.KEYBOARD         = 0xFFFE;
 % Address of random number generator on data address bus.
 c.RAND_NUM_GEN     = 0xFFFF;
 
+% Start address of the stack on dedicated (stack) address bus and it`s size in words.
+% The stack grows towards lower addresses (it decreases).
+c.STACK_START      = 15;
+c.STACK_SIZE       = 16;
+
 % ROM LookUpTable breakpoints.
 c.RomCodeBreakpoints = 0 : c.ROM_SIZE - 1;
 c.DataRomBreakpoints = 0 : c.CONST_DATA_SIZE - 1;
 c.DataRom = zeros(1, c.CONST_DATA_SIZE);
 
 
-% Start address of the stack on dedicated (stack) address bus and it`s size in words.
-% The stack grows towards lower addresses (it decreases).
-c.STACK_START      = 15;
-c.STACK_SIZE       = 16;
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           Interrupt Vector Table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% c.IRQ_KEYBOARD = 
+c.IRQ_ADDR_KEYBOARD = 0x00FF;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                Test Points
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Button "Oo" test input. By default button is not pressed.
+c.IRQ_Keyboard_Test = 0;
 
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".

@@ -24,6 +24,18 @@
 OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 
 
+%     % Store full path of the input file.
+%     path_and_name = which(filename);
+
+%     % Convert it to string.
+%     path_and_name = string(path_and_name);
+
+%     % Replace extension ".m" to ".mat".
+%     path_and_name = strrep(path_and_name, ".m", ".mat");
+
+%     save(path_and_name, "CompiledCode");
+
+
 #############################################
 #              Mrkvicka 9000
 #############################################
@@ -32,10 +44,19 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Updatovat countre.
 
 - Hardware:
-    - Zjednodusit instrukciu Shift
-
     - Prerusenia
         - Klavesnica
+        - Ku PC pridat interrupt vector table (ako samostatnu ROM).
+        - Aktivne prerusenie sa bude spravat podobne ako instrukcia CALL:
+            - Prerusenie sa zalatchuje do interrupt registra.
+            - Prerusenie zablokuje vsetky instrukcie (CPU on halt).
+            - Aktualna adresa sa ulozi na stack.
+            - Do PC sa privedie adresa IRQ handlera z vector table.
+            - PC skoci do IRQ handlera.
+                - To ze sa PC nachadza v IRQ handleri bude zapisane v JK latchi.
+                - Ked je JK latch nastaveny v jednotke, tak disabluje vsetky interrupty (IRQ handler je neprerusitelny).
+                - Pri opusteni IRQ handlera (ked sa z neho zavola instrukcia RET) sa JK latch vynuluje.
+                - Instrukcia RET sa vrati do hlavneho programu a interrupty su opat aktivne.
 
     - Ferritova RAM
         - Preprogramovat RAM tak aby hned po precitani zmazala precitane data. Tym sa bude simulovat ferritova pamat.
@@ -46,6 +67,11 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Prerobit charTable na diodovu ROM.
         - Nasimulovat countre ktore budu citat z VRAM a posielat data do analogovej casti videa.
         - Spojit Matlab s Windows terminalom a pouzit ho ako obrazovku.
+        - Screen_Column_Counter <0..39>
+        - Screen_Row_Counter <0..24>
+        - Character_Column_Counter <0..7>
+        - Character_Row_Counter <0..7>
+        - Najprv vyberiem z VRAM ord_num znaku. Ord_num pouzijem ako adresu do char_table. Zo znaku (bitmap 8x8) precitaneho z char_table precitam cely riadok na ktory bude ukazovat Character_Row_Counter. Vybrany riadok poslem cez shift register do analogovej casti videosystemu.
 
 
 - Testy
@@ -67,11 +93,13 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
     - Pridat Instruction Memory Panel.
     - Pridat Terminal (obrazovka, klavesnica).
     - HALUSKA 9000 (Heuristically programmed ALgorithmic Universal SKAtula 9000) 
+        - Powered by Jozko Mrkvicka
 
 
 - Preprocessor:
     - Zarovnat pravy okraj vygenerovaneho kodu.
     - Fixnut TODOs.
+    - Naprogramovat linker, aby som mohol buildit kod z viacerych suborov dokopy (aby som mohol na koniec ROMky ulozit kniznicu standartnych funkcii).
 
 
 - Firmware:
@@ -124,6 +152,8 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Asi sa zbavim jedneho dekodera ktory vybera destination registre.
         - Budem musiet pridat jednu instrukciu na citanie alebo zapis do/z accumulatora.
 
+    - Prerobit Muxy tak aby namiesto hradiel NAND pouzivali iba po jednom tranzistore zapojenom ako switch.
+
     - Pridat FPU.
 
     - Prerobit architekturu na 1-bit. Usetrim hradla v multiplexeroch.
@@ -132,6 +162,7 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Ako samostatne zariadenie pripojene na datovu zbernicu.
         - Ako sequencny obvod.
         - Pracovat s CPU bude asynchronne, komunikacia pomocou prerusena.
+        - Bud postavit samostatnu nasobicku a potom nepotrebujem instrukciu SHIFT, alebo nasobit softwarovo (bitshift + scitanie) a potom mi staci SHIFT iba o jeden bit.
 
     - Pridat 16-bit timer:
         - Set threshold.
