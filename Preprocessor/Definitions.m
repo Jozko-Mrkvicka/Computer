@@ -116,6 +116,9 @@ c.RAM_SIZE         = 0x1000;
 c.VRAM_START       = 0x2000;
 c.VRAM_SIZE        = 0x400;
 
+% General Purpose Timer
+c.TIMER_BASE_ADDR  = 0xFFF8;
+
 % Address of keyboard on data address bus.
 c.KEYBOARD         = 0xFFFE;
 
@@ -137,6 +140,68 @@ c.DataRom = zeros(1, c.CONST_DATA_SIZE);
 %           Interrupt Vector Table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 c.IRQ_ADDR_KEYBOARD = 0x00FF;
+c.IRQ_ADDR_TIMER    = 0x01FF;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General Purpose Timer
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The GP Timer is a memory mapped device. It consists of 5 registers used for its
+% configuration and control. Each register address represents one command.
+% Data sent to this address represents the command parameter.
+% 
+% - Execute the CMD_TIMER_RUN command with parameter TIMER_RUN to continue/keep counting.
+%   Please note that if timer is starting for first time after power cycle or timer was previously
+%   halted in TIMER_ONE_SHOT state then it will take one extra clock cycle for timer to start counting.
+%   Otherwise timer starts counting immediately.
+% 
+% - Execute the CMD_TIMER_RUN command with parameter TIMER_HALT to temporarily stop counting.
+% 
+% - Execute the CMD_TIMER_MODE command with parameter TIMER_FREE_RUN to keep counter running
+%   without stopping. Counter will count until the stop value, then it will overflow
+%   to the start value and it will start counting again.
+% 
+% - Execute the CMD_TIMER_MODE command with parameter TIMER_ONE_SHOT to stop counting after overflow.
+%   Counter will count until the stop value, then it will overflow to the start value
+%   and it will stay there until new CMD_TIMER_RUN command.
+% 
+% - To start counting again, once it was stopped in TIMER_ONE_SHOT mode, execute the CMD_TIMER_RUN
+%   command with parameter TIMER_HALT two times in row and then execute the CMD_TIMER_RUN
+%   command with parameter TIMER_RUN.
+% 
+% - Execute the CMD_TIMER_RESET command with parameter 0x00 (in fact, parameter is not needed):
+%    - to configure new start value,
+%    - to reset counter to its preconfigured start value.
+% 
+% Example:
+%   % Store Timer base address.
+%   SGMT  msb(c.TIMER_BASE_ADDR)
+% 
+%   % Configure start value.
+%   MOVL  r0                                0x00
+%   STLI  lsb(c.CMD_TIMER_SET_START_VALUE)  r0
+% 
+%   % Configure stop value.
+%   MOVL  r0                                0xFF
+%   STLI  lsb(c.CMD_TIMER_SET_STOP_VALUE)   r0 
+% 
+%   % Configure free run mode.
+%   MOVL  r0                                c.TIMER_FREE_RUN
+%   STLI  lsb(c.CMD_TIMER_SET_MODE)         r0
+% 
+%   % Start timer.
+%   MOVL  r0                                c.TIMER_RUN
+%   STLI  lsb(c.CMD_TIMER_RUN)              r0
+% 
+c.CMD_TIMER_SET_STOP_VALUE  = c.TIMER_BASE_ADDR + 0x0000;
+c.CMD_TIMER_SET_START_VALUE = c.TIMER_BASE_ADDR + 0x0001;
+c.CMD_TIMER_RESET           = c.TIMER_BASE_ADDR + 0x0002;
+c.CMD_TIMER_MODE            = c.TIMER_BASE_ADDR + 0x0003;
+c.CMD_TIMER_RUN             = c.TIMER_BASE_ADDR + 0x0004;
+c.TIMER_ONE_SHOT            = 0x00;
+c.TIMER_FREE_RUN            = 0x01;
+c.TIMER_HALT                = 0x00;
+c.TIMER_RUN                 = 0x01;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -7,6 +7,8 @@ global gDebug
 % gDebug = true;  % Check also Preprocessor.m for "gDebug"
 gDebug = false;
 
+Test_Timer
+
 Test_NOT
 Test_XOR
 Test_OR
