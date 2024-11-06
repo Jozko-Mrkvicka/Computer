@@ -14,8 +14,7 @@ c.LBL_CNT = idx;
 
 SourceCode = ...
 [
-                MOVL        r0          0xBA        ... r1 = ABBA
-                MOVU        r0          0xAB        ...
-                RET                                 ... Return to main program.
+                ADDI        r0          1        ... r0 counts how many times was the IRQ handler called.
+                RET                              ... Return to main program.
 ];
 

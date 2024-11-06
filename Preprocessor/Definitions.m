@@ -139,8 +139,17 @@ c.DataRom = zeros(1, c.CONST_DATA_SIZE);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           Interrupt Vector Table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-c.IRQ_KEYBOARD     = 0x00FF;
-c.IRQ_TIMER        = 0x01FF;
+% Delay between two keyboard IRQs. It ensures that a pressed key will not block entire CPU.
+% Every time when the keyboard IRQ is handled, all others keyboard IRQs are disabled
+% and the keyboard IRQ counter starts to count. Once the IRQ_KEYBOARD_DELAY value is reached
+% the keyboard IRQs are enabled again.
+c.IRQ_KEYBOARD_DELAY = 0xFF;
+
+% Address of the keyboard interrupt handler.
+c.IRQ_KEYBOARD       = 0x00FF;
+
+% Address of the GP timer interrupt handler.
+c.IRQ_TIMER          = 0x01FF;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -212,11 +221,11 @@ c.IRQ_Keyboard_Test = 0;
 
 
 % Definition of function "m" which has one parameter "n" and returns a return value "n".
-% This function is used just to visually emphasise that an immediate value
+% This function is used just to visually emphasis that an immediate value
 % is a pointer/memory address.
 m = @(n) n;
 
-% Functions returning most significant and least significat byte from 16-bit word.
+% Functions returning most significant and least significant byte from 16-bit word.
 msb = @(n) bitshift(n, -8);  c.msb = msb;
 lsb = @(n) bitand(n, 255);   c.lsb = lsb;
 

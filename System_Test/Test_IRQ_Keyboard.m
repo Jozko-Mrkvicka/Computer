@@ -15,43 +15,19 @@ fprintf('Executing... ')
 result = false;
 pause('on');
 
-% Release button, start simulation and keep it running for couple of
-% cycles. We will end up at the end of the program (address 0x0002) in the infinite
-% loop waiting for a keypress.
-c.IRQ_Keyboard_Test = 0;
-set_param('Computer', 'SimulationCommand', 'start');
-set_param('Computer', 'SimulationCommand', 'pause');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-
-% Press button for few cycles until program jumps to the keyboard interrupt
-% handler.
+% Press some button.
 c.IRQ_Keyboard_Test = 1;
-set_param('Computer', 'SimulationCommand', 'update');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
 
-% Once we are in the handler, release button and wait for program to return
-% back to main function.
-c.IRQ_Keyboard_Test = 0;
-set_param('Computer', 'SimulationCommand', 'update');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
-set_param('Computer', 'SimulationCommand', 'step');
+output = sim('Computer.slx', 'StopTime', '50');
 
-% Stop simulation
-set_param('Computer', 'SimulationCommand', 'stop');
+% Release the button.
 c.IRQ_Keyboard_Test = 0;
 
-if ((0xABBA == gp_reg_00) && (0x0002 == program_counter))
+read_output_values(output);
+
+if (0x0001 == gp_reg_00) &&    ...
+   (0xFFFF == gp_reg_01) &&    ...
+   (0x0002 == program_counter)
     result = true;
 end
 
