@@ -139,8 +139,8 @@ c.DataRom = zeros(1, c.CONST_DATA_SIZE);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           Interrupt Vector Table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-c.IRQ_ADDR_KEYBOARD = 0x00FF;
-c.IRQ_ADDR_TIMER    = 0x01FF;
+c.IRQ_KEYBOARD     = 0x00FF;
+c.IRQ_TIMER        = 0x01FF;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

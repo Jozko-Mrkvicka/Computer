@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
+%  Keyboard interrupt system test
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 label = ...
 {
@@ -12,11 +12,10 @@ end
 c.LBL_CNT = idx;
 
 
-
 SourceCode = ...
 [
-                MOVL        r1          0xEF        ... r0 = BEEF
-                MOVU        r1          0xBE        ...
-                JMP         0x0006                  ... Return to main program.
+                MOVL        r0          0xBA        ... r1 = ABBA
+                MOVU        r0          0xAB        ...
+                RET                                 ... Return to main program.
 ];
 
