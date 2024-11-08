@@ -60,7 +60,7 @@ cellInfo =                                                                      
 }; 
 Simulink.Bus.cellToObject(cellInfo);
 
-% Available datatypes.
+% Available data types.
 TEXT = 0;  c.TEXT = TEXT;
 BYTE = 1;  c.BYTE = BYTE;
 WORD = 2;  c.WORD = WORD;
@@ -119,6 +119,9 @@ c.VRAM_SIZE        = 0x400;
 % General Purpose Timer
 c.TIMER_BASE_ADDR  = 0xFFF8;
 
+% Address of the Interrupt Enable Register.
+c.IRQ_ENBL_REG     = 0xFFF7;
+
 % Address of keyboard on data address bus.
 c.KEYBOARD         = 0xFFFE;
 
@@ -139,21 +142,20 @@ c.DataRom = zeros(1, c.CONST_DATA_SIZE);
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           Interrupt Vector Table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+c.IRQ_ADDR_KEYBOARD = 0x00FF;
+c.IRQ_ADDR_TIMER    = 0x01FF;
+c.IRQ_ADDR_UART     = 0x02FF;
+c.IRQ_ADDR_FPU      = 0x03FF;
+
 % Delay between two keyboard IRQs. It ensures that a pressed key will not block entire CPU.
-% Every time when the keyboard IRQ is handled, all others keyboard IRQs are disabled
+% Every time when the keyboard IRQ is handled, all following keyboard IRQs are disabled
 % and the keyboard IRQ counter starts to count. Once the IRQ_KEYBOARD_DELAY value is reached
 % the keyboard IRQs are enabled again.
 c.IRQ_KEYBOARD_DELAY = 0xFF;
 
-% Address of the keyboard interrupt handler.
-c.IRQ_KEYBOARD       = 0x00FF;
-
-% Address of the GP timer interrupt handler.
-c.IRQ_TIMER          = 0x01FF;
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% General Purpose Timer
+%            General Purpose Timer
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The GP Timer is a memory mapped device. It consists of 5 registers used for its
 % configuration and control. Each register address represents one command.

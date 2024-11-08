@@ -8,6 +8,9 @@ global gDebug
 gDebug = false;
 
 Test_Timer
+Test_IRQ_Timer
+Test_IRQ_Keyboard
+Test_IRQs
 
 Test_NOT
 Test_XOR

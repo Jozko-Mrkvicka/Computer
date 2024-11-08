@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  Keyboard interrupt system test
+%  Timer interrupt system test
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 SourceCode = ...
 [
-                ADDI        r6          1        ... r6 counts how many times was the IRQ handler called.
+                ADDI        r5          1        ... r5 counts how many times was the IRQ handler called.
                 RET                              ... Return to main program.
 ];
 
