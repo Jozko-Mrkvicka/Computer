@@ -60,72 +60,21 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                    NOT
+%                   NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
-% Description:
-%     This instruction performs bitwise negation
-%     of all bits in register.
-% 
-% First operand: 
-%     In: Value to be negated.
-%     Out: Destination of result.
+% First operand:
+%     NOT_USED
 %
 % Second operand:
-%     Not used.
+%     NOT_USED
 %
 % Type of operands:        Example:
-%     NOT  REG               NOT  r0
+%     NOT_USED               NOT_USED
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT = 0b11100010s16;
-c.NOT = NOT;
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                     XOR
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R R|DDD|R|SSS
-%
-% Description:
-%     This instruction performs exclusive OR
-%     operation of all bits in registers.
-% 
-% First operand: 
-%     In: Value to be XORed.
-%     Out: Destination of result.
-%
-% Second operand:
-%     Value to be XORed.
-%
-% Type of operands:        Example:
-%     XOR  REG  REG          XOR  r0  r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-XOR = 0b11100000s16;
-c.XOR = XOR;
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                      OR
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Format 3: FF|OOOOO|R R|DDD|R|SSS
-%
-% Description:
-%     This instruction performs bitwise OR operation
-%     of all bits in registers.
-% 
-% First operand: 
-%     In: Value to be ORed.
-%     Out: Destination of result.
-%
-% Second operand:
-%     Value to be ORed.
-%
-% Type of operands:        Example:
-%     OR  REG  REG           OR  r0  r1
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-OR = 0b11011110s16;
-c.OR = OR;
+NOT_USED = 0b11011110s16;
+c.NOT_USED = NOT_USED;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -335,21 +284,26 @@ c.ADD = ADD;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                   NOT_USED
+%                      OR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
-% First operand:
-%     NOT_USED
+% Description:
+%     This instruction performs bitwise OR operation
+%     of all bits in registers.
+% 
+% First operand: 
+%     In: Value to be ORed.
+%     Out: Destination of result.
 %
 % Second operand:
-%     NOT_USED
+%     Value to be ORed.
 %
 % Type of operands:        Example:
-%     NOT_USED               NOT_USED
+%     OR  REG  REG           OR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b11001010s16;
-c.NOT_USED = NOT_USED;
+OR = 0b11001010s16;
+c.OR = OR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -397,39 +351,49 @@ c.STU = STU;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                   NOT_USED
+%                     XOR
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
-% First operand:
-%     NOT_USED
+% Description:
+%     This instruction performs exclusive OR
+%     operation of all bits in registers.
+% 
+% First operand: 
+%     In: Value to be XORed.
+%     Out: Destination of result.
 %
 % Second operand:
-%     NOT_USED
+%     Value to be XORed.
 %
 % Type of operands:        Example:
-%     NOT_USED               NOT_USED
+%     XOR  REG  REG          XOR  r0  r1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b11000100s16;
-c.NOT_USED = NOT_USED;
+XOR = 0b11000100s16;
+c.XOR = XOR;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                   NOT_USED
+%                    NOT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Format 3: FF|OOOOO|R R|DDD|R|SSS
 %
-% First operand:
-%     NOT_USED
+% Description:
+%     This instruction performs bitwise negation
+%     of all bits in register.
+% 
+% First operand: 
+%     In: Value to be negated.
+%     Out: Destination of result.
 %
 % Second operand:
-%     NOT_USED
+%     Not used.
 %
 % Type of operands:        Example:
-%     NOT_USED               NOT_USED
+%     NOT  REG               NOT  r0
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-NOT_USED = 0b11000010s16;
-c.NOT_USED = NOT_USED;
+NOT = 0b11000010s16;
+c.NOT = NOT;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
