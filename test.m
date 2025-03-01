@@ -1,14 +1,16 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% This function tests a simulink model. It passes an input
-% vector to the model, then takes output vector from the model
-% and finally compare these two vectors. If vectors are
-% same then the test passed else failed. 
+% This function tests a Simulink model. It passes an input
+% vector to the model, then it takes output vector from the model
+% and finally it compares these two vectors. If vectors are
+% same then the test passes else it fails. 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function result = test(Test_Name, Input_Vect, Expected_Vect)
     fprintf('### %s: ', Test_Name)
     show_results = 0;
     
     load_system(Test_Name);
+
+    % The "len" variable is used in Simulink test to define stop time.
     len = length(Input_Vect(1,:)) - 1;
     set_param(Test_Name, 'StopTime', 'len')
 
