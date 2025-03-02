@@ -116,11 +116,17 @@ c.RAM_SIZE         = 0x1000;
 c.VRAM_START       = 0x2000;
 c.VRAM_SIZE        = 0x400;
 
-% General Purpose Timer
-c.TIMER_BASE_ADDR  = 0xFFF8;
+% Universal Asynchronous Receiver
+c.UART_RX          = 0xFFF5;
+
+% Universal Asynchronous Transmitter
+c.UART_TX          = 0xFFF6;
 
 % Address of the Interrupt Enable Register.
 c.IRQ_ENBL_REG     = 0xFFF7;
+
+% General Purpose Timer
+c.TIMER_BASE_ADDR  = 0xFFF8;
 
 % Address of keyboard on data address bus.
 c.KEYBOARD         = 0xFFFE;
@@ -213,6 +219,15 @@ c.TIMER_ONE_SHOT            = 0x00;
 c.TIMER_FREE_RUN            = 0x01;
 c.TIMER_HALT                = 0x00;
 c.TIMER_RUN                 = 0x01;
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Universal Asynchronous Receiver/Transmitter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+c.UART_COM_PORT   = "COM5";
+c.UART_BAUD_RATE  = 9600;
+UartDataRx        = 0x00u8;
+UartDataRx_Active = false;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

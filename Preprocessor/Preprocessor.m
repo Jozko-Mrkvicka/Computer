@@ -35,7 +35,7 @@ function [compiledSourceCode] = Preprocessor(sourceCode, start_addr, c)
         value = sourceCode(1, i);
 
         % If the value is a destination label then skip it.
-        if (c.LABEL_DEST_PREFIX == bitand(value, c.LABEL_PREFIX_MASK));
+        if (c.LABEL_DEST_PREFIX == bitand(value, c.LABEL_PREFIX_MASK))
             i = i + 1;
 
             % Read next value on particular line of a processed source code.

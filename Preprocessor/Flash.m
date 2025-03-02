@@ -1,4 +1,9 @@
 function Flash(compiled_code, addr)
+    % Input params are expected in a string form, therefore we must convert
+    % them to appropriate datatypes.
+    addr = hex2dec(addr);
+    compiled_code = evalin('base', compiled_code);
+
     Definitions
 
     % Check if RomCode already exists in the base workspace. If not then create local one.
