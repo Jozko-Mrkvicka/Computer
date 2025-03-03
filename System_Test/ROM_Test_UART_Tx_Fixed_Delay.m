@@ -1,27 +1,46 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% UART Transmitter system test.
+% UART Transmitter system test (with fixed delay between bytes).
 % This is a manual test. Before running it, please establish virtual serial connection
 % between any Windows terminal (e.g. Putty connected to COM6) and COM5. Haluska9000`s UART
 % will be automatically connected (using Matlab callback functions) to COM5.
-% Test will send a text string to the terminal.
+% Test will keep sending a text string to the terminal. After every send command, there
+% is hardcoded delay to allow Transmitter to finish the transmission.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-label = ...
+switch section
+case 'LABEL'
+Label = ...
 {
-    'LABEL'
+    'LOOP',
+    'WAIT'
 };
-for (idx = 1:size(label))
-    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
-end
-c.LBL_CNT = idx;
 
 
+case 'CONST'
+ConstData = ...
+{
+    BYTE    'CHR0'      uint8('N');
+    BYTE    'CHR1'      uint8('A');
+    BYTE    'CHR2'      uint8('Z');
+    BYTE    'CHR3'      uint8('D');
+    BYTE    'CHR4'      uint8('A');
+    BYTE    'CHR5'      uint8('R');
+    BYTE    'CHR6'      uint8('!');
+    BYTE    'CHR7'      uint8(10);
+    BYTE    'CHR8'      uint8(13);
+};
+
+
+case 'CODE'
+NUM_OF_CHARS = size(ConstData, 1);
 SourceCode = ...
-[
-                MOVL        r0                      0x41                    ... % Assign data (0x41 == 'A') to transmit.
-                                                                            ...
+[                                                                           ...
                 SGMT        msb(c.UART_TX)                                  ... % Assign memory address.
-                STLI        lsb(c.UART_TX)          r0                      ...
+                                                                            ...
+                MOVL        r1                      lsb(CHR0)               ... % Assign address of first character.
+                MOVL        r1                      msb(CHR0)               ...
+                                                                            ...
+    LOOP_       LDL         r0                      m(r1)                   ... % Load character from data ROM to register.
+                STLI        lsb(c.UART_TX)          r0                      ... % Store character to UART Tx input buffer. It will be automatically transmitted.
                                                                             ...
                 ADDI        r0                      0                       ... % Wait for UART to transmit data.
                 ADDI        r0                      0                       ...
@@ -44,6 +63,8 @@ SourceCode = ...
                 ADDI        r0                      0                       ...
                 ADDI        r0                      0                       ...
                                                                             ...
-    LABEL_      JMP         LABEL                                           ...
+                ADDI        r1                      1                       ... % Move pointer to next character.
+                CMPI        r1                      NUM_OF_CHARS            ... % Check if whole string was already sent...
+                JLT         LOOP                                            ... % ...If not then send another character.
 ];
-
+end

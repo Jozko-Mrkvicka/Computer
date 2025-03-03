@@ -1,44 +1,59 @@
-data = Data;
-POSITION_TYPE = 1;
-POSITION_SIZE = 2;
-POSITION_NAME = 3;
+function compiledData = PreprocessData(data)
+    Definitions
 
-[numOfRows, numOfCols] = size(data);
-if (3 ~= numOfCols)
-    error('### PREPROCESSOR ERROR: Number of columns in the variable data array must be equal to 3 (type, size, name)!! ###');
-end
+    POSITION_TYPE = 1;
+    POSITION_NAME = 2;
+    POSITION_VAL  = 3;
 
-addr = c.RAM_START;
-for (row = 1 : numOfRows)
-    dtype = data{row, POSITION_TYPE};
-    dsize = data{row, POSITION_SIZE};
-    name  = data{row, POSITION_NAME};
+    [numOfRows, numOfCols] = size(data);
+    if (3 ~= numOfCols)
+        error('### PREPROCESSOR ERROR: Number of columns in the variable data array must be equal to 3 (type, size, name)!! ###');
+    end
 
-    % Create new matlab variable and assign its address.
-    eval([name,' = addr;']);
+    addr = c.ROM_DATA_START;
 
-    switch (dtype)
-        case c.BYTE
-            if ((c.RAM_START > (addr)) || ((c.RAM_START + c.RAM_SIZE) < (addr + dsize)))
-                error('### PREPROCESSOR ERROR: Address of a variable points outside of the RAM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
-            end
-            addr = addr + 1*dsize;
+    % We want to address memory from 0x0000 but the Matlab array index starts from 1.
+    addr = addr + 1;
 
-        case c.WORD
-            if ((c.RAM_START > (addr)) || ((c.RAM_START + c.RAM_SIZE) < (addr + 2*dsize)))
-                error('### PREPROCESSOR ERROR: Address of a variable points outside of the RAM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
-            end
-            addr = addr + 2*dsize;
+    for (row = 1 : numOfRows)
+        type = data{row, POSITION_TYPE};
+        name = data{row, POSITION_NAME};
+        val  = data{row, POSITION_VAL};
 
-        case c.TEXT
-            % Datatype TEXT stores 0 at the end of a string.
-            if ((c.RAM_START > (addr)) || ((c.RAM_START + c.RAM_SIZE) < (addr + dsize + 1)))
-                error('### PREPROCESSOR ERROR: Address of a variable points outside of the RAM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
-            end
-            addr = addr + 1*dsize + 1;
+        % Create new matlab variable and assign its address.
+        eval([name,' = addr;']);
 
-        otherwise
-            error('### PREPROCESSOR ERROR: A constant has incorrect datatype!! ###');
+        switch (type)
+            case c.BYTE
+                % Check address.
+                if (c.ROM_DATA_START > addr) || ((c.ROM_DATA_START + c.ROM_DATA_SIZE) < addr)
+                    error('### PREPROCESSOR ERROR: Address of a variable points outside of the RAM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
+                end
+
+                % Check value.
+                if (0 <= val) && (255 >= val)
+                  compiledData(addr) = uint8(val);
+                else
+                  error('### PREPROCESSOR ERROR: A constant does not fit into the range of the U8 type!! Range of U8 type is <0, +255>. ###')
+                end
+
+                addr = addr + 1;
+
+            % case c.WORD
+            %     if ((c.RAM_START > (addr)) || ((c.RAM_START + c.RAM_SIZE) < (addr + 2*dSize)))
+            %         error('### PREPROCESSOR ERROR: Address of a variable points outside of the RAM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
+            %     end
+            %     addr = addr + 2*dSize;
+
+            % case c.TEXT
+            %     % Datatype TEXT stores 0 at the end of a string.
+            %     if ((c.RAM_START > (addr)) || ((c.RAM_START + c.RAM_SIZE) < (addr + dSize + 1)))
+            %         error('### PREPROCESSOR ERROR: Address of a variable points outside of the RAM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
+            %     end
+            %     addr = addr + 1*dSize + 1;
+
+            otherwise
+                error('### PREPROCESSOR ERROR: A constant has incorrect datatype!! ###');
+        end
     end
 end
-

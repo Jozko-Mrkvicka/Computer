@@ -1,20 +1,33 @@
-function Compile(filename)
+function Compile(Filename)
+    clear Label
+    clear ConstData
     clear SourceCode
 
     % Load constants and definitions (instructions, registers, ...).
     Instructions
     Definitions
 
-    % Load a program to be compiled.
-    % Script expects program to be stored in an array named "SourceCode"!!
-    run(filename);
+    % Read the 'Label' array from 'Filename' and process it.
+    section = 'LABEL';
+    run(Filename);
+    LabelCount = PreprocessorLabel(Label);
 
-    % Compile source code (assembly language) to binary code.
-    CompiledCode = Preprocessor(SourceCode, 0x0000, c);
+    % Read the 'ConstData' array from 'Filename' and process it.
+    section = 'CONST';
+    run(Filename);
+    CompiledConstData = PreprocessorConst(ConstData);
 
-    % Remove extension ".m" from the filename.
-    filename = strrep(filename, ".m", "");
+    % Read the 'SourceCode' array from 'Filename' and process it.
+    section = 'CODE';
+    run(Filename);
+    [CompiledCode] = PreprocessorCode(SourceCode, LabelCount);
 
-    assignin('base', filename, CompiledCode);
+    % From Filename.m create Filename.code and Filename.const.
+    Filename = strrep(Filename, ".m", "");
+    Filename_CompiledCode      = strcat(Filename, '_Code');
+    Filename_CompiledConstData = strcat(Filename, '_Const');
+
+    assignin('base', Filename_CompiledCode,      CompiledCode);
+    assignin('base', Filename_CompiledConstData, CompiledConstData);
     assignin('base', 'c', c);
 end

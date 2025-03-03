@@ -11,17 +11,20 @@ its capabilities there is Snake game hardcoded in ROM.
 How to run 
 ----------
 - Switch Matlab path to the Computer folder.
+
 - From Matlab command line run the following commands:
-    - "Run_Unit_Tests"         - to check all libraries.
-    - "Run_System_Tests"       - to check high level functionalities.
-    - "Compile ROM_Empty"      - to build binary image.
-    - "Flash ROM_Empty 0x0000" - to program instruction memory from address 0 with the compiled image.
-    - "Computer"               - to open computer model.
-- In the Computer Simulink window click on "play" button to run (or step) simulation.
+    - "Run_Unit_Tests"                            - to check all libraries.
+    - "Run_System_Tests"                          - to check high level functionalities.
+    - "Compile ROM_Test_UART_Tx"                  - to build binary image of an application.
+    - "Flash CODE ROM_Test_UART_Tx_Code 0x0000"   - to program instruction memory from address 0 with the compiled image.
+    - "Flash CONST ROM_Test_UART_Tx_Const 0x0000" - to program constant data memory from address 0 with the compiled image.
+    - "Computer"                                  - to open computer model.
+
+- In Simulink window click on "play" button to run (or step) simulation.
+
 - From Matlab command line run the following commands:
     - "FrontPanel" - to open front panel debugging/control window.
     - "DataMemory" - to open data memory debugging/control window.
-
 
     In file ROM.m there is placed assembly ROM code (firmware) which will be executed after "power on"
 (after pressing Run button in Simulink window). This assembly code must be "compiled" to binary
@@ -39,5 +42,4 @@ message:
     Undefined function 'RomCode' for input arguments of type 'double'.
 
 After successful "compilation" open the file Computer.slx and press the Run button. Simulation will start.
-
 

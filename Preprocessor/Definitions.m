@@ -105,8 +105,8 @@ c.ROM_SIZE         = 0x1000;
 %              Data address bus
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Start address of constant data ROM memory on data address bus and it`s size in words.
-c.CONST_DATA_START = 0x0000;
-c.CONST_DATA_SIZE  = 0x1000;
+c.ROM_DATA_START = 0x0000;
+c.ROM_DATA_SIZE  = 0x1000;
 
 % Start address of RAM memory on data address bus and it`s size in words.
 c.RAM_START        = 0x1000;
@@ -138,11 +138,6 @@ c.RAND_NUM_GEN     = 0xFFFF;
 % The stack grows towards lower addresses (it decreases).
 c.STACK_START      = 15;
 c.STACK_SIZE       = 16;
-
-% ROM LookUpTable breakpoints.
-c.RomCodeBreakpoints = 0 : c.ROM_SIZE - 1;
-c.DataRomBreakpoints = 0 : c.CONST_DATA_SIZE - 1;
-c.DataRom = zeros(1, c.CONST_DATA_SIZE);
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
