@@ -1,18 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % System test for instructions PUSH and POP.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-label = ...
+switch section
+case 'LABEL'
+Label = ...
 {
     'LABEL'
 };
-for (idx = 1:size(label))
-    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
-end
-c.LBL_CNT = idx;
 
 
-% This test checks instructions PUSH and POP.
+case 'CODE'
 SourceCode = ...
 [
                 MOVL        r0          0xAA        ... % Init registers r0 .. r3 to test values.
@@ -55,4 +52,4 @@ SourceCode = ...
                                                     ...
     LABEL_      JMP         LABEL                   ... % Expected results: r0 == 0xAAAA, r1 == 0xBBBB, r2 == 0xCCCC, r3 == 0xDDDD
 ];
-
+end

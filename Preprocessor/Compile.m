@@ -10,24 +10,38 @@ function Compile(Filename)
     % Read the 'Label' array from 'Filename' and process it.
     section = 'LABEL';
     run(Filename);
-    LabelCount = PreprocessorLabel(Label);
+    if exist('Label')
+        LabelCount = PreprocessorLabel(Label);
+    else
+        LabelCount = 0;
+    end
 
     % Read the 'ConstData' array from 'Filename' and process it.
     section = 'CONST';
     run(Filename);
-    CompiledConstData = PreprocessorConst(ConstData);
+    if exist('ConstData')
+        CompiledConstData = PreprocessorConst(ConstData);
+    end
 
     % Read the 'SourceCode' array from 'Filename' and process it.
     section = 'CODE';
     run(Filename);
-    [CompiledCode] = PreprocessorCode(SourceCode, LabelCount);
+    if exist('SourceCode')
+        [CompiledCode] = PreprocessorCode(SourceCode, LabelCount);
+    end
 
     % From Filename.m create Filename.code and Filename.const.
     Filename = strrep(Filename, ".m", "");
     Filename_CompiledCode      = strcat(Filename, '_Code');
     Filename_CompiledConstData = strcat(Filename, '_Const');
 
-    assignin('base', Filename_CompiledCode,      CompiledCode);
-    assignin('base', Filename_CompiledConstData, CompiledConstData);
+    if exist('SourceCode')
+        assignin('base', Filename_CompiledCode,      CompiledCode);
+    end
+
+    if exist('ConstData')
+        assignin('base', Filename_CompiledConstData, CompiledConstData);
+    end
+
     assignin('base', 'c', c);
 end

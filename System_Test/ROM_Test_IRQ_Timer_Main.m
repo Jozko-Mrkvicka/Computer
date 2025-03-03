@@ -1,17 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Keyboard interrupt system test
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-label = ...
+switch section
+case 'LABEL'
+Label = ...
 {
     'LABEL'
 };
-for (idx = 1:size(label))
-    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
-end
-c.LBL_CNT = idx;
 
 
+case 'CODE'
 SourceCode = ...
 [
                 MOVL        r7                                      0b00000100              ... Enable timer interrupt.
@@ -33,3 +31,4 @@ SourceCode = ...
                                                                                             ...
     LABEL_      JMP         LABEL                                                           ... Expected value: r5 = 5 (r5 should be set by the timer IRQ handler placed on address IRQ_ADDR_TIMER).
 ];
+end

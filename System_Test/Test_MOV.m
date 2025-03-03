@@ -2,15 +2,16 @@
 % Instruction MOV system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_MOV ')
 result = false;
 
 Compile ROM_Test_MOV
-Flash(ROM_Test_MOV, 0x0000)
+Flash CODE ROM_Test_MOV_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if (0xBBAA == gp_reg_01)

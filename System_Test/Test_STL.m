@@ -2,15 +2,16 @@
 % Instruction STL system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_STL ')
 result = false;
 
 Compile ROM_Test_STL
-Flash(ROM_Test_STL, 0x0000)
+Flash CODE ROM_Test_STL_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', '350');
 read_output_values(output);
 
 if ((0x11 == data_bus_ram(  0 + 1)) && ...

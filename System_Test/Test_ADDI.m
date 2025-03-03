@@ -2,15 +2,16 @@
 % Instruction ADDI system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_ADDI ')
 result = false;
 
 Compile ROM_Test_ADDI
-Flash(ROM_Test_ADDI, 0x0000)
+Flash CODE ROM_Test_ADDI_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if ((0xFFFF == gp_reg_00) && ...

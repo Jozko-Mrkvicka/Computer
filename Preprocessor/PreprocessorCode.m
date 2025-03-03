@@ -4,8 +4,8 @@ function [compiledSourceCode] = PreprocessorCode(sourceCode, labelCount)
     Instructions
 
     % Check also Run_System_Tests.m for "gDebug"
-    gDebug = true;
-    % gDebug = false;
+    % gDebug = true;
+    gDebug = false;
 
     start_addr = 0x0000;
 

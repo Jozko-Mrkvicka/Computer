@@ -2,15 +2,16 @@
 % Instruction LDUI system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_LDUI ')
 result = false;
 
 Compile ROM_Test_LDUI
-Flash(ROM_Test_LDUI, 0x0000)
+Flash CODE ROM_Test_LDUI_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if (0xAA00u16 == gp_reg_01)

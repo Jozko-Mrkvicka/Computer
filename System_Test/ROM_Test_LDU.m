@@ -1,17 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Instruction LDU system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-label = ...
+switch section
+case 'LABEL'
+Label = ...
 {
     'LABEL'
 };
-for (idx = 1:size(label))
-    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
-end
-c.LBL_CNT = idx;
 
 
+case 'CODE'
 SourceCode = ...
 [
                 MOVL        r1          0xAA                    ... % Assign data to store/load.
@@ -36,4 +34,4 @@ SourceCode = ...
                                                                 ...
     LABEL_      JMP         LABEL                               ...
 ];
-
+end

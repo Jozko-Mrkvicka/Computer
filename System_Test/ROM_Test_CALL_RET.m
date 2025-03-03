@@ -1,7 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % System test for instructions CALL and RET.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-label = ...
+switch section
+case 'LABEL'
+Label = ...
 {
     'LABEL'
     'FUNCTION_1'
@@ -9,14 +11,9 @@ label = ...
     'FUNCTION_3'
     'FUNCTION_4'
 };
-for (idx = 1:size(label))
-    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
-end
-c.LBL_CNT = idx;
 
 
-% This test checks instructions CALL and RET.
+case 'CODE'
 SourceCode = ...
 [
                 CALL        FUNCTION_1              ... % If instruction CALL is not working then registers will stay set to 0x0000.
@@ -82,4 +79,4 @@ FUNCTION_3_     MOVL        r0          0x33        ... % Set registers to 0x333
                                                     ...
     LABEL_      JMP         LABEL                   ... % Expected results: r0 == 0x4444, r1 == 0x4444, r2 == 0x4444, r3 == 0x4444
 ];
-
+end

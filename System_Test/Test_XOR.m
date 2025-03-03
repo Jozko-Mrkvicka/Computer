@@ -2,15 +2,16 @@
 % Instruction XOR system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_XOR ')
 
 result = false;
 Compile ROM_Test_XOR
-Flash(ROM_Test_XOR, 0x0000)
+Flash CODE ROM_Test_XOR_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if ((0x0000 == gp_reg_00) && ...

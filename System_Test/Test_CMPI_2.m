@@ -2,15 +2,16 @@
 % Instruction CMPI system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_CMPI_2 ')
 result = false;
 
 Compile ROM_Test_CMPI_2
-Flash(ROM_Test_CMPI_2, 0x0000)
+Flash CODE ROM_Test_CMPI_2_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if ((1 == status_register_equal) && ...

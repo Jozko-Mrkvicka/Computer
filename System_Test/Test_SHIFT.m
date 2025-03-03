@@ -2,15 +2,16 @@
 % Instruction SHIFT system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_SHIFT ')
 result = false;
 
 Compile ROM_Test_SHIFT
-Flash(ROM_Test_SHIFT, 0x0000)
+Flash CODE ROM_Test_SHIFT_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if ((0xC00E == gp_reg_00) && ...

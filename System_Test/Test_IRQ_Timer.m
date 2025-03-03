@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Timer interrupt system test
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+global gStepCount
 global gDebug
 debug = true;
 
@@ -8,8 +9,8 @@ fprintf('Test_IRQ_Timer ')
 Compile ROM_Test_IRQ_Timer_Main
 Compile ROM_Test_IRQ_Timer_Handler
 clear RomCode
-Flash(ROM_Test_IRQ_Timer_Main,    c.ROM_START)
-Flash(ROM_Test_IRQ_Timer_Handler, c.IRQ_ADDR_TIMER)
+Flash CODE ROM_Test_IRQ_Timer_Main_Code    0x0000  % Address = c.ROM_START = 0x0000;
+Flash CODE ROM_Test_IRQ_Timer_Handler_Code 0x01FF  % Address = c.IRQ_ADDR_TIMER = 0x01FF;
 
 fprintf('Executing... ')
 result = false;

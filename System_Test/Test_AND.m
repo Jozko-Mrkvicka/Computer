@@ -2,15 +2,16 @@
 % Instruction AND system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_AND ')
 result = false;
 
 Compile ROM_Test_AND
-Flash(ROM_Test_AND, 0x0000)
+Flash CODE ROM_Test_AND_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if ((0x0000 == gp_reg_00) && ...

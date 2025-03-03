@@ -7,7 +7,7 @@ fprintf('Test_CMPI_6 ')
 result = false;
 
 Compile ROM_Test_CMPI_6
-Flash(ROM_Test_CMPI_6, 0x0000)
+Flash CODE ROM_Test_CMPI_6_Code 0x0000
 
 fprintf('Executing... ')
 output = sim('Computer.slx', 'StopTime', '50');

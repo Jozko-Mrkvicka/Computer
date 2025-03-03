@@ -9,6 +9,12 @@ function Flash(MemType, File, Addr)
     % We want to address memory from 0x0000 but the Matlab array index starts from 1.
     Addr = Addr + 1;
 
+    % Check if RomData already exists in the base workspace. If not then create local one.
+    if evalin('base', 'exist("RomData");')
+        RomData = evalin("base", "RomData");
+    else
+        RomData(1 : c.ROM_DATA_SIZE) = uint8(0);
+    end
 
     % Flash instruction ROM.
     if strcmpi('CODE', MemType)
@@ -18,11 +24,6 @@ function Flash(MemType, File, Addr)
             RomCode = evalin("base", "RomCode");
         else
             RomCode(1 : c.ROM_SIZE) = uint16(0);
-        end
-
-        % Create RomCodeBreakpoints in the base workspace if they don`t exist already.
-        if (false == evalin('base', 'exist("RomCodeBreakpoints");'))
-            evalin("base", "RomCodeBreakpoints = 0 : c.ROM_SIZE - 1;");
         end
 
         % "Flash" binary image to ROM.
@@ -37,22 +38,8 @@ function Flash(MemType, File, Addr)
         % Copy RomCode to base workspace.
         assignin('base', 'RomCode',            RomCode);
 
-
     % Flash data ROM.
     elseif strcmpi('CONST', MemType)
-
-        % Check if RomData already exists in the base workspace. If not then create local one.
-        if evalin('base', 'exist("RomData");')
-            RomData = evalin("base", "RomData");
-        else
-            RomData(1 : c.ROM_DATA_SIZE) = uint8(0);
-            
-        end
-
-        % Create RomDataBreakpoints in the base workspace if they don`t exist already.
-        if (false == evalin('base', 'exist("RomDataBreakpoints");'))
-            evalin("base", "RomDataBreakpoints = 0 : c.ROM_DATA_SIZE - 1;");
-        end
 
         % "Flash" binary image to ROM.
         len = size(File, 2);
@@ -63,11 +50,22 @@ function Flash(MemType, File, Addr)
             error('###\nFLASH ERROR: Binary image is bigger than available size of ROM memory!!\nAvailable ROM memory: %d (words)\nActual image size:    %d (words)\n###', c.CONST_DATA_SIZE, size(RomData, 2))
         end
 
-        % Copy RomData to base workspace.
-        assignin('base', 'RomData',            RomData);
-
 
     else
         error('###\nFLASH ERROR: Unknown first input parameter (MemType)!!\nAvailable memory types: CODE, CONST.');
+    end
+
+
+    % Copy RomData to base workspace.
+    assignin('base', 'RomData',            RomData);
+
+    % Create RomCodeBreakpoints in the base workspace if they don`t exist already.
+    if (false == evalin('base', 'exist("RomCodeBreakpoints");'))
+        evalin("base", "RomCodeBreakpoints = 0 : c.ROM_SIZE - 1;");
+    end
+
+    % Create RomDataBreakpoints in the base workspace if they don`t exist already.
+    if (false == evalin('base', 'exist("RomDataBreakpoints");'))
+        evalin("base", "RomDataBreakpoints = 0 : c.ROM_DATA_SIZE - 1;");
     end
 end

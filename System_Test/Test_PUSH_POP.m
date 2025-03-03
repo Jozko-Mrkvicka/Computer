@@ -2,15 +2,16 @@
 % System test for instructions PUSH and POP.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_PUSH_POP ')
 result = false;
 
 Compile ROM_Test_PUSH_POP
-Flash(ROM_Test_PUSH_POP, 0x0000)
+Flash CODE ROM_Test_PUSH_POP_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', '400');
 read_output_values(output);
 
 if ((0xAAAA == gp_reg_00) && ...

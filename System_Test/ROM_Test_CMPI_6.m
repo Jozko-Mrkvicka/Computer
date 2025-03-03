@@ -1,18 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Instruction CMPI system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-label = ...
+switch section
+case 'LABEL'
+Label = ...
 {
     'LABEL'
 };
-for (idx = 1:size(label))
-    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
-end
-c.LBL_CNT = idx;
 
 
-
+case 'CODE'
 SourceCode = ...
 [
                 MOVL        r0          0xFF        ... % r0 = -1
@@ -21,4 +18,4 @@ SourceCode = ...
                                                     ... % Expected result for unsigned data: r0 > -128
     LABEL_      JMP         LABEL                   ...
 ];
-
+end

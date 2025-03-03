@@ -2,15 +2,16 @@
 % Instruction CMP system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_CMP_1 ')
 result = false;
 
 Compile ROM_Test_CMP_1
-Flash(ROM_Test_CMP_1, 0x0000)
+Flash CODE ROM_Test_CMP_1_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 if ((1 == status_register_equal) && ...

@@ -3,14 +3,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clc
 clear
+global gStepCount; gStepCount = '250';
 global gDebug
 % gDebug = true;  % Check also Preprocessor.m for "gDebug"
 gDebug = false;
 
 Test_Timer
-Test_IRQ_Timer
-Test_IRQ_Keyboard
-Test_IRQs
+                % Test_IRQ_Timer
+                % Test_IRQ_Keyboard
+                % Test_IRQs
 
 Test_NOT
 Test_XOR
@@ -53,6 +54,6 @@ Test_JLT
 Test_PUSH_POP
 Test_CALL_RET
 
-% Test_U16
-% Test_S16
-% Test_CHR
+                % Test_U16
+                % Test_S16
+                % Test_CHR

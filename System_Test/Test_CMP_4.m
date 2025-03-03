@@ -2,15 +2,16 @@
 % Instruction CMP system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
+global gStepCount
 
 fprintf('Test_CMP_4 ')
 result = false;
 
 Compile ROM_Test_CMP_4
-Flash(ROM_Test_CMP_4, 0x0000)
+Flash CODE ROM_Test_CMP_4_Code 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '50');
+output = sim('Computer.slx', 'StopTime', gStepCount);
 read_output_values(output);
 
 % Expected result for signed data:   r0 > r1

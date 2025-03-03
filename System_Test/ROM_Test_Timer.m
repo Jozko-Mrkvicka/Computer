@@ -1,17 +1,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % GP Timer system test.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-label = ...
+switch section
+case 'LABEL'
+Label = ...
 {
     'LABEL'
 };
-for (idx = 1:size(label))
-    eval([char(label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-    eval([char(label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
-end
-c.LBL_CNT = idx;
 
 
+case 'CODE'
 SourceCode = ...
 [
                 SGMT        msb(c.TIMER_BASE_ADDR)                                          ... % Store Timer base address.
@@ -43,3 +41,4 @@ SourceCode = ...
                                                                                             ...
     LABEL_      JMP         LABEL                                                           ...
 ];
+end
