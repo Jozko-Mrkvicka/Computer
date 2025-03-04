@@ -54,6 +54,7 @@ Test_JLT
 Test_PUSH_POP
 Test_CALL_RET
 
+Test_DataType_Byte
                 % Test_U16
                 % Test_S16
                 % Test_CHR

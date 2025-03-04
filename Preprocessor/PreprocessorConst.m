@@ -20,7 +20,12 @@ function compiledConstData = PreprocessorConst(data)
         name  = data{row, POSITION_NAME};
         value = data{row, POSITION_VALUE};
 
-        % Create new matlab variable and assign its address.
+        availableVariables = evalin('caller', 'whos');
+        if ismember(name, {availableVariables(:).name})
+            error('### PREPROCESSOR ERROR: A symbol with the same name defined multiple times (the constant "%s" already exists)!! ###', name);
+        end
+
+        % Create new Matlab variable and assign its address.
         assignin('caller', 'addr',  addr);
         evalin('caller', [char(name),' = addr - 1;']);
 
@@ -34,6 +39,9 @@ function compiledConstData = PreprocessorConst(data)
                     error('### PREPROCESSOR ERROR: A constant does not fit into the range of the BYTE datatype!! Allowable range is <-128, +255>. ###');
                 end
 
+                % Convert value to unsigned and store it to binary image.
+                value = dec2bin(value);
+                value = bin2dec(value);
                 compiledConstData(addr) = value;
                 addr = addr + 1;
 

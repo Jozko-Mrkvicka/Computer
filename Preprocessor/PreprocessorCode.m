@@ -486,6 +486,9 @@ end
 
 
 function print_source_code(compiledSourceCode, instr_msb, instr_lsb, uint8_instr_msb, uint8_instr_lsb, j)
+    Definitions
+    Instructions
+    
     fprintf('|   %03d:  |    0x%04X   | 0x%02X | 0x%02X |', j - 1, compiledSourceCode(1, j), uint8_instr_msb, uint8_instr_lsb)
 
     switch (bitand(uint8(instr_msb), uint8(INSTR_FORMAT_MASK)))
