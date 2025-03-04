@@ -27,21 +27,19 @@ function Compile(Filename)
     section = 'CODE';
     run(Filename);
     if exist('SourceCode')
-        [CompiledCode] = PreprocessorCode(SourceCode, LabelCount);
+        CompiledCode = PreprocessorCode(SourceCode, LabelCount);
     end
 
-    % From Filename.m create Filename.code and Filename.const.
+    % From string "Filename.m" create strings "Filename_Code" and "Filename_Const".
     Filename = strrep(Filename, ".m", "");
     Filename_CompiledCode      = strcat(Filename, '_Code');
     Filename_CompiledConstData = strcat(Filename, '_Const');
 
     if exist('SourceCode')
-        assignin('base', Filename_CompiledCode,      CompiledCode);
+        assignin('base', Filename_CompiledCode, CompiledCode);
     end
 
     if exist('ConstData')
         assignin('base', Filename_CompiledConstData, CompiledConstData);
     end
-
-    assignin('base', 'c', c);
 end

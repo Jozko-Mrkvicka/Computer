@@ -61,98 +61,98 @@ cellInfo =                                                                      
 Simulink.Bus.cellToObject(cellInfo);
 
 % Available data types.
-TEXT = 0;  c.TEXT = TEXT;
-BYTE = 1;  c.BYTE = BYTE;
-WORD = 2;  c.WORD = WORD;
+TEXT = 0;
+BYTE = 1;
+WORD = 2;
 
 % Destination label (for example "LOOP_") represents absolute memory address.
-c.LABEL_DEST_PREFIX = 0b1110000000000000s16;
-c.LABEL_SRC_PREFIX  = 0b1101000000000000s16;
-c.LABEL_PREFIX_MASK = 0b1111000000000000s16;
-c.LABEL_VALUE_MASK  = 0b0000111111111111s16;
+LABEL_DEST_PREFIX = 0b1110000000000000s16;
+LABEL_SRC_PREFIX  = 0b1101000000000000s16;
+LABEL_PREFIX_MASK = 0b1111000000000000s16;
+LABEL_VALUE_MASK  = 0b0000111111111111s16;
 
 % Constant definition
-c.FORMAT_0_OPERAND_1_MASK = 0b00001111s16;
-c.FORMAT_1_OPERAND_1_MASK = 0b00000111s16;
-c.FORMAT_2_OPERAND_1_MASK = 0b00000111s16;
-c.FORMAT_3_OPERAND_1_MASK = 0b01110000s16;
-c.FORMAT_3_OPERAND_2_MASK = 0b00000111s16;
+FORMAT_0_OPERAND_1_MASK = 0b00001111s16;
+FORMAT_1_OPERAND_1_MASK = 0b00000111s16;
+FORMAT_2_OPERAND_1_MASK = 0b00000111s16;
+FORMAT_3_OPERAND_1_MASK = 0b01110000s16;
+FORMAT_3_OPERAND_2_MASK = 0b00000111s16;
 
-c.FORMAT_0_OPCODE_MASK = 0b00110000s16;
-c.FORMAT_1_OPCODE_MASK = 0b00111000s16;
-c.FORMAT_2_OPCODE_MASK = 0b00111000s16;
-c.FORMAT_3_OPCODE_MASK = 0b00111110s16;
+FORMAT_0_OPCODE_MASK = 0b00110000s16;
+FORMAT_1_OPCODE_MASK = 0b00111000s16;
+FORMAT_2_OPCODE_MASK = 0b00111000s16;
+FORMAT_3_OPCODE_MASK = 0b00111110s16;
 
-c.INSTR_FORMAT_MASK = 0b11000000s16;
+INSTR_FORMAT_MASK = 0b11000000s16;
 
-c.INSTR_FORMAT_0 = 0b00000000s16;
-c.INSTR_FORMAT_1 = 0b01000000s16;
-c.INSTR_FORMAT_2 = 0b10000000s16;
-c.INSTR_FORMAT_3 = 0b11000000s16;
+INSTR_FORMAT_0 = 0b00000000s16;
+INSTR_FORMAT_1 = 0b01000000s16;
+INSTR_FORMAT_2 = 0b10000000s16;
+INSTR_FORMAT_3 = 0b11000000s16;
 
-c.BYTE_MASK = 0b11111111s16;
+BYTE_MASK = 0b11111111s16;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %          Instruction address bus
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Start address of ROM memory on instruction address bus and it`s size in words.
-c.ROM_START        = 0x0000;  %% This value is used for Program Counter initialization.
-c.ROM_SIZE         = 0x1000;
+ROM_START        = 0x0000;  %% This value is used for Program Counter initialization.
+ROM_SIZE         = 0x1000;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %              Data address bus
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Start address of constant data ROM memory on data address bus and it`s size in words.
-c.ROM_DATA_START = 0x0000;
-c.ROM_DATA_SIZE  = 0x1000;
+ROM_DATA_START   = 0x0000;
+ROM_DATA_SIZE    = 0x1000;
 
 % Start address of RAM memory on data address bus and it`s size in words.
-c.RAM_START        = 0x1000;
-c.RAM_SIZE         = 0x1000;
+RAM_START        = 0x1000;
+RAM_SIZE         = 0x1000;
 
 % Start address of video RAM memory on data address bus and it`s size in words.
-c.VRAM_START       = 0x2000;
-c.VRAM_SIZE        = 0x400;
+VRAM_START       = 0x2000;
+VRAM_SIZE        = 0x400;
 
 % Universal Asynchronous Receiver
-c.UART_RX          = 0xFFF5;
+UART_RX          = 0xFFF5;
 
 % Universal Asynchronous Transmitter
-c.UART_TX          = 0xFFF6;
+UART_TX          = 0xFFF6;
 
 % Address of the Interrupt Enable Register.
-c.IRQ_ENBL_REG     = 0xFFF7;
+IRQ_ENBL_REG     = 0xFFF7;
 
 % General Purpose Timer
-c.TIMER_BASE_ADDR  = 0xFFF8;
+TIMER_BASE_ADDR  = 0xFFF8;
 
 % Address of keyboard on data address bus.
-c.KEYBOARD         = 0xFFFE;
+KEYBOARD         = 0xFFFE;
 
 % Address of random number generator on data address bus.
-c.RAND_NUM_GEN     = 0xFFFF;
+RAND_NUM_GEN     = 0xFFFF;
 
 % Start address of the stack on dedicated (stack) address bus and it`s size in words.
 % The stack grows towards lower addresses (it decreases).
-c.STACK_START      = 15;
-c.STACK_SIZE       = 16;
+STACK_START      = 15;
+STACK_SIZE       = 16;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %           Interrupt Vector Table
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-c.IRQ_ADDR_KEYBOARD = 0x00FF;
-c.IRQ_ADDR_TIMER    = 0x01FF;
-c.IRQ_ADDR_UART     = 0x02FF;
-c.IRQ_ADDR_FPU      = 0x03FF;
+IRQ_ADDR_KEYBOARD = 0x00FF;  in.IRQ_ADDR_KEYBOARD = IRQ_ADDR_KEYBOARD;  
+IRQ_ADDR_TIMER    = 0x01FF;  in.IRQ_ADDR_TIMER    = IRQ_ADDR_TIMER;
+IRQ_ADDR_UART     = 0x02FF;  in.IRQ_ADDR_UART     = IRQ_ADDR_UART;
+IRQ_ADDR_FPU      = 0x03FF;  in.IRQ_ADDR_FPU      = IRQ_ADDR_FPU;
 
 % Delay between two keyboard IRQs. It ensures that a pressed key will not block entire CPU.
 % Every time when the keyboard IRQ is handled, all following keyboard IRQs are disabled
 % and the keyboard IRQ counter starts to count. Once the IRQ_KEYBOARD_DELAY value is reached
 % the keyboard IRQs are enabled again.
-c.IRQ_KEYBOARD_DELAY = 0xFF;
+IRQ_KEYBOARD_DELAY = 0xFF;  in.IRQ_KEYBOARD_DELAY = IRQ_KEYBOARD_DELAY;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -205,39 +205,45 @@ c.IRQ_KEYBOARD_DELAY = 0xFF;
 %   MOVL  r0                                c.TIMER_RUN
 %   STLI  lsb(c.CMD_TIMER_RUN)              r0
 % 
-c.CMD_TIMER_SET_STOP_VALUE  = c.TIMER_BASE_ADDR + 0x0000;
-c.CMD_TIMER_SET_START_VALUE = c.TIMER_BASE_ADDR + 0x0001;
-c.CMD_TIMER_RESET           = c.TIMER_BASE_ADDR + 0x0002;
-c.CMD_TIMER_MODE            = c.TIMER_BASE_ADDR + 0x0003;
-c.CMD_TIMER_RUN             = c.TIMER_BASE_ADDR + 0x0004;
-c.TIMER_ONE_SHOT            = 0x00;
-c.TIMER_FREE_RUN            = 0x01;
-c.TIMER_HALT                = 0x00;
-c.TIMER_RUN                 = 0x01;
+CMD_TIMER_SET_STOP_VALUE  = TIMER_BASE_ADDR + 0x0000;
+CMD_TIMER_SET_START_VALUE = TIMER_BASE_ADDR + 0x0001;
+CMD_TIMER_RESET           = TIMER_BASE_ADDR + 0x0002;
+CMD_TIMER_MODE            = TIMER_BASE_ADDR + 0x0003;
+CMD_TIMER_RUN             = TIMER_BASE_ADDR + 0x0004;
+TIMER_ONE_SHOT            = 0x00;
+TIMER_FREE_RUN            = 0x01;
+TIMER_HALT                = 0x00;
+TIMER_RUN                 = 0x01;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Universal Asynchronous Receiver/Transmitter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-c.UART_COM_PORT   = "COM5";
-c.UART_BAUD_RATE  = 9600;
+UART_COM_PORT     = "COM5";  in.UART_COM_PORT  = UART_COM_PORT;
+UART_BAUD_RATE    = 9600;    in.UART_BAUD_RATE = UART_BAUD_RATE;
 UartDataRx        = 0x00u8;
 UartDataRx_Active = false;
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%                Test Points
+%                 Test Points
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Button "Oo" test input. By default button is not pressed.
-c.IRQ_Keyboard_Test = 0;
+in.IRQ_Keyboard_Test = 0;
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                Miscellaneous
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definition of function "m" which has one parameter "n" and returns a return value "n".
 % This function is used just to visually emphasis that an immediate value
 % is a pointer/memory address.
 m = @(n) n;
 
 % Functions returning most significant and least significant byte from 16-bit word.
-msb = @(n) bitshift(n, -8);  c.msb = msb;
-lsb = @(n) bitand(n, 255);   c.lsb = lsb;
+msb = @(n) bitshift(n, -8);
+lsb = @(n) bitand(n, 255);
 
+
+% Place all model inputs to the base workspace.
+assignin('base', 'in', in);

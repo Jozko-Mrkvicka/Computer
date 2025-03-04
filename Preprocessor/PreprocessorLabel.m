@@ -29,8 +29,8 @@ function LabelCount = PreprocessorLabel(Label)
 
     for (idx = 1 : size(Label))
         assignin('caller', 'idx',  idx);
-        evalin('caller', [char(Label(idx)),'  = bitor(c.LABEL_SRC_PREFIX,  idx);']);
-        evalin('caller', [char(Label(idx)),'_ = bitor(c.LABEL_DEST_PREFIX, idx);']);
+        evalin('caller', [char(Label(idx)),'  = bitor(LABEL_SRC_PREFIX,  idx);']);
+        evalin('caller', [char(Label(idx)),'_ = bitor(LABEL_DEST_PREFIX, idx);']);
     end
 
     LabelCount = idx;

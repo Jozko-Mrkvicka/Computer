@@ -6,13 +6,15 @@ function compiledConstData = PreprocessorConst(data)
     POSITION_VALUE = 3;
 
     [numOfRows, numOfCols] = size(data);
-    compiledConstData(1 : c.ROM_DATA_SIZE) = uint8(0);
+
+    % Initialize whole constant data ROM memory with zeros.
+    compiledConstData(1 : ROM_DATA_SIZE) = uint8(0);
 
     if (3 ~= numOfCols)
         error('### PREPROCESSOR ERROR: Number of columns in the constant data array must be equal to 3 (type, name, value)!! ###');
     end
 
-    addr = c.ROM_DATA_START + 1;
+    addr = ROM_DATA_START + 1;
     for (row = 1 : numOfRows)
         dType = data{row, POSITION_TYPE};
         name  = data{row, POSITION_NAME};
@@ -23,8 +25,8 @@ function compiledConstData = PreprocessorConst(data)
         evalin('caller', [char(name),' = addr - 1;']);
 
         switch (dType)
-            case c.BYTE
-                if ((c.ROM_DATA_START > (addr - 1)) || ((c.ROM_DATA_START + c.ROM_DATA_SIZE - 1) < (addr - 1)))
+            case BYTE
+                if ((ROM_DATA_START > (addr - 1)) || ((ROM_DATA_START + ROM_DATA_SIZE - 1) < (addr - 1)))
                     error('### PREPROCESSOR ERROR: Address of a constant points outside of the data ROM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
                 end
 
@@ -35,23 +37,23 @@ function compiledConstData = PreprocessorConst(data)
                 compiledConstData(addr) = value;
                 addr = addr + 1;
 
-            % case c.WORD
-            %     if ((c.ROM_DATA_START > (addr - 1)) || ((c.ROM_DATA_START + c.ROM_DATA_SIZE - 1) < (addr - 0)))
+            % case WORD
+            %     if ((ROM_DATA_START > (addr - 1)) || ((ROM_DATA_START + ROM_DATA_SIZE - 1) < (addr - 0)))
             %         error('### PREPROCESSOR ERROR: Address of a constant points outside of the data ROM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
             %     end
 
             %     if ((-32768 > value) || (65535 < value))
             %         error('### PREPROCESSOR ERROR: A constant does not fit into the range of the WORD datatype!! Allowable range is <-32768, +65535>. ###');
             %     end
-            %     compiledConstData(addr) = c.lsb(value);
+            %     compiledConstData(addr) = lsb(value);
             %     addr = addr + 1;
-            %     compiledConstData(addr) = c.msb(value);
+            %     compiledConstData(addr) = msb(value);
             %     addr = addr + 1;
 
-            % case c.TEXT
+            % case TEXT
             %     [temp stringSize] = size(data{row, POSITION_VALUE});
 
-            %     if ((c.ROM_DATA_START > (addr - 1)) || ((c.ROM_DATA_START + c.ROM_DATA_SIZE - 1) < (addr - 1 + stringSize)))
+            %     if ((ROM_DATA_START > (addr - 1)) || ((ROM_DATA_START + ROM_DATA_SIZE - 1) < (addr - 1 + stringSize)))
             %         error('### PREPROCESSOR ERROR: Address of a constant points outside of the data ROM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
             %     end
 
