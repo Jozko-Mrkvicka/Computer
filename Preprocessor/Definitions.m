@@ -244,6 +244,8 @@ m = @(n) n;
 msb = @(n) bitshift(n, -8);
 lsb = @(n) bitand(n, 255);
 
+% The string terminator.
+NULL = 0;
 
 % Place all model inputs to the base workspace.
 assignin('base', 'in', in);

@@ -1,18 +1,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Data ROM system test
+% The BYTE datatype system test
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 global gDebug
 global gStepCount
 
-fprintf('Test_Data_ROM ')
+fprintf('Test_DataType_Byte ')
 result = false;
 
-Compile ROM_Test_Data_ROM
-Flash CODE  ROM_Test_Data_ROM_Code  0x0000
-Flash CONST ROM_Test_Data_ROM_Const 0x0000
+Compile ROM_Test_DataType_Byte
+Flash CODE  ROM_Test_DataType_Byte_Code  0x0000
+Flash CONST ROM_Test_DataType_Byte_Const 0x0000
 
 fprintf('Executing... ')
-output = sim('Computer.slx', 'StopTime', '600');
+output = sim('Computer.slx', 'StopTime', '700');
 read_output_values(output);
 
 if ( 128 == data_bus_ram(1)) && ...
