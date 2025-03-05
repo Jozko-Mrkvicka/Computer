@@ -30,6 +30,7 @@ function compiledConstData = PreprocessorConst(data)
         assignin('caller', 'addr',  addr);
         evalin('caller', [char(name),' = addr - 1;']);
 
+
         % Place data to binary image. This image will be "flashed" directly to ROM memory.
         switch (dType)
             case BYTE
@@ -37,7 +38,7 @@ function compiledConstData = PreprocessorConst(data)
                 arrayLen = size(array, 2);
 
                 if ((ROM_DATA_START > (addr - 1)) || ((ROM_DATA_START + ROM_DATA_SIZE - 1) < (addr - 1 + bytesPerVal*arrayLen)))
-                    error('### PREPROCESSOR ERROR: A constant does not fit to the data ROM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
+                    error('### PREPROCESSOR ERROR: A constant exceeds the data ROM size!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
                 end
 
                 for (i = 1 : arrayLen)
@@ -54,19 +55,31 @@ function compiledConstData = PreprocessorConst(data)
                     addr = addr + bytesPerVal;
                 end
 
+
             case WORD
                 bytesPerVal = 2;
-            %     if ((ROM_DATA_START > (addr - 1)) || ((ROM_DATA_START + ROM_DATA_SIZE - 1) < (addr - 0)))
-            %         error('### PREPROCESSOR ERROR: Address of a constant points outside of the data ROM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
-            %     end
+                arrayLen = size(array, 2);
 
-            %     if ((-32768 > value) || (65535 < value))
-            %         error('### PREPROCESSOR ERROR: A constant does not fit into the range of the WORD datatype!! Allowable range is <-32768, +65535>. ###');
-            %     end
-            %     compiledConstData(addr) = lsb(value);
-            %     addr = addr + 1;
-            %     compiledConstData(addr) = msb(value);
-            %     addr = addr + 1;
+                if ((ROM_DATA_START > (addr - 1)) || ((ROM_DATA_START + ROM_DATA_SIZE - 1) < (addr - 1 + bytesPerVal*arrayLen)))
+                    error('### PREPROCESSOR ERROR: A constant exceeds the data ROM size!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
+                end
+
+                for (i = 1 : arrayLen)
+                    value = array{i};
+
+                    if ((-32768 > value) || (65535 < value))
+                        error('### PREPROCESSOR ERROR: A constant does not fit into the range of the WORD datatype!! Allowable range is <-32768, +65535>. ###');
+                    end
+
+                    % Convert value to unsigned and store it to binary image.
+                    value = dec2bin(value);
+                    value = bin2dec(value);
+                    compiledConstData(addr) = lsb(value);
+                    addr = addr + 1;
+                    compiledConstData(addr) = msb(value);
+                    addr = addr + 1;
+                end
+
 
             case TEXT
                 bytesPerVal = 1;
@@ -74,7 +87,7 @@ function compiledConstData = PreprocessorConst(data)
                 textString = array{1};
 
                 if ((ROM_DATA_START > (addr - 1)) || ((ROM_DATA_START + ROM_DATA_SIZE - 1) < (addr - 1 + bytesPerVal*arrayLen)))
-                    error('### PREPROCESSOR ERROR: A constant does not fit to the data ROM!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
+                    error('### PREPROCESSOR ERROR: A constant exceeds the data ROM size!! (Name = %s, Address = 0x%04X) ###\n', name, addr - 1);
                 end
 
                 for (i = 1 : arrayLen)
@@ -91,6 +104,7 @@ function compiledConstData = PreprocessorConst(data)
                 % Datatype TEXT stores 0 at the end of a string.
                 compiledConstData(addr) = 0;
                 addr = addr + 1;
+
 
             otherwise
                 error('### PREPROCESSOR ERROR: A constant has incorrect datatype!! ###');
