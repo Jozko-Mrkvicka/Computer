@@ -55,11 +55,26 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 %     save(path_and_name, "CompiledCode");
 
 
+- Pridat hodiny, napajane samostatne, budu sluzit ako seed do RNG.
+- mala pivnica:
+    V = 226cm
+    D = 210cm
+    S = 213cm
+
+
 #############################################
-#              HALUŠKA 9000
+#              Mrkvicka 9000
 #############################################
 - Hardware:
+    - Zhrnut HW bloky do jedneho CPU, vedla neho datove pamate, vedla nich periferie. 
+        - Skusit vymysliet ci by sa z riadiacich signalov nedala vytvorit samostatna control unit. 
+    - Pridat reset signal do kazdej pamatovej bunky + reset button. 
+    - IRQ_Controller je pripojeny na systemovu databus. Nepaci sa mi to. Myslim ze by mal byt nezavysly, riadeny pomocou specialenej instrukcie. (??)
+    - Prerobit MUXy v ALU tak, aby vsetky instrukcie ktore pouzivaju immediate operand, pouzivali ako druhy operand destination register. Teraz je to pomiesane a niektore instrukcie pouzivaju kombinaciu immediate + source_reg, co nedava zmysel (vid CMP vs. CMPI).
+    - Carry z ALU do status registra, z neho potom naspat do ALU - tym by sa mali dat scitat bytove polia/int32, int64, ...
     - Prerobit immediate value selection v instruction decoderi. Pozri poznamku v modeli.
+    - Vsetky debug outputy ukladat do nejakej struktury, aby sa mi nezobrazoval bordel v matlabovskom workspace.
+
     - FrontPanel
         - Vyviest vystupnu hodnotu z kazdeho kombinacneho (Mux, Enc, Dec) aj sequencneho obvodu (registre, countre) na front panel (do workspacu).
         - Pridat tlacitka RESET, RUN, STOP, STEP.
@@ -71,6 +86,7 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
             - Kazdy kombinacny (Mux, Enc, Dec) aj sequencny obvod (registre, countre) by mohol mat na front panely vyvedenu svoju vystupnu hodnotu.
             - Built In Test - ku vsetkym subsystemom (s detekciou chyby) priviest false-positive test signal na overenie detekcie chyb.
             - Vyviest error hodnotu z kazdeho MUXu na front panel.
+
     - Seriovy port:
         - Memory mapped register shift register (Serial_Port_Out).
         - Nahram do neho 1B (parallelne) a on ho automaticky odosle (seriovo, po bitoch).
@@ -92,15 +108,98 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Vymysliet latchovanie interruptu.
         - Vymysliet bufferovanie inputov. 
         - Napisat dokumentaciu.
-        - Zistit ako sa da riadit poloha kurzora na obrazovke terminalu. Ako sa to robilo "naozaj"? 
         - Zistit ako presne sa latchuju interrupty a dopisat ku nim poznamku ze "kazdy interrupt sa zalatchuje okamzite po tom ako vznikol" a nasledne sa sucasne zalatchovane interrupty postupne obsluzia v zavislosti na ich prioritach".
-        - Nastudovat ATmegu.
         - Pridat vystupny buffer (8 Bytov), ak su v buffri data (hocico ine okrem 0x00), tak aktivovat interrupt. 
         - Buffer bude namapovany na adresovu zbernicu (posledny byte), citat sa z neho bude stylom "ak interrupt tak citaj until 0". 
         - Ako funguje DMA? Nedalo by sa to pouzit spolu so seriovym portom?
 
     - Pridat Video subsystem
-        - each character to be underlined, brightened, blinking or inverse
+        - Video RAM ako sucast grafickeho subsystemu. 
+        - Pridat ako mem. mapped device 7-segment display + BCD dekoder namiesto obrazovky, len aby som mohol ukoncit projekt. 
+
+
+- Preprocessor:
+    - Zarovnat pravy okraj vygenerovaneho kodu.
+    - Naprogramovat linker, aby som mohol buildit kod z viacerych suborov dokopy (aby som mohol na koniec ROMky ulozit kniznicu standartnych funkcii).
+    - Pridat oznacenie instrukcie ktora sa prave vykonava (debug mode):
+        - Ulozit cely vypis z print_output_values to pola.
+        - Zvyraznit dany riadok.
+        - Pole pri kazdom kroku prekreslit.
+    - Fixnut TODOs.
+
+
+- GUI
+    - FrontPanel
+        - Pridat tlacitka RESET, RUN, STOP, STEP.
+        - Error detection:
+            - Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
+            - Indikovat chybu ak je viacero vystupnych signalov z dekodera aktivnych. Vystup poslat na FrontPanel.
+            - Stack overflow/underflow detection.
+            - Unknown instruction/operand.
+            - Kazdy kombinacny (Mux, Enc, Dec) aj sequencny obvod (registre, countre) by mohol mat na front panely vyvedenu svoju vystupnu hodnotu.
+            - Built In Test - ku vsetkym subsystemom (s detekciou chyby) priviest false-positive test signal na overenie detekcie chyb.
+    - Pridat Panel "Instruction Memory".
+
+
+- Firmware:
+    - memcpy()
+
+
+- Dokumentacia
+    - Update README.
+    - Vylestit instrukcie.
+    - Zjednotit font v poznamkach.
+    - Fixnut TODOs.
+    - Zjednotit velkosti vsetkych MUXov.
+    - Zjednotit velkosti vsetkych systemov.
+    - Kombinacne obvody nafarbit na dajaku peknu farbu.
+
+
+- Project Management:
+    - Zaloha na gitlab a bitbucket.
+    - Vytvorit branche: Mrkvicka9000, Haluska9000, Haluska9000_1bit.
+    - Cez submodule pridat common library, kazdy branch bude ukazovat na inu verziu kniznice (asi bude treba projekt otagovat). 
+
+
+- Commit Message:
+
+
+#############################################
+#              HALUŠKA 9000
+#############################################
+- Hardware:
+    - von Neumannova architektura
+        - Budem moct vytvarat a spustat programy rovno na pocitaci.
+        - Programy sa budu dat ukladat/nahravat do/z magnetickej pasky.
+
+    - Prerobit registre:
+        - Pridat jeden accumulator register. Bude sluzit ako destination register.
+        - Usetrim 3 bity v instrukcnych formatoch ktore pouzivaju destination register.
+        - Asi sa zbavim jedneho dekodera ktory vybera destination registre.
+        - Budem musiet pridat jednu instrukciu na citanie alebo zapis do/z accumulatora.
+
+    - "Blikaciu" schemu s registrami na hlavnom paneli? tak ako v elektrarni?
+    - Priamo nastavovat registre z hlavneho panelu (kvoli debuggingu).
+    - Hardwarove breakpointy(??) Nastavil by som adresu na ktorej sa ma prave vykonavany program zastavit.
+
+    - Operacny system:
+        - Ochrana pamate (??)
+        - Strankovanie / preklad stranok
+
+    - Prerobit architekturu na 1-bit / alebo aspon na 1 byte. Usetrim hradla v multiplexeroch.
+
+    - Prerobit Stack, revertnut zmeny (vratit Stack Pointer). Mal by byt menej hradiel ako ma teraz.
+
+    - Prerobit Muxy tak aby namiesto hradiel NAND pouzivali iba po jednom tranzistore zapojenom ako switch.
+
+    - Ferritova RAM (na prvy krat sa mi to nepodarilo :-()
+        - Preprogramovat RAM tak aby hned po precitani zmazala precitane data. Tym sa bude simulovat ferritova pamat.
+        - Pridat logiku ktora precitany byte do nej hned nanovo zapise.
+        - Pouzit defaultnu RAM zo simulinkovskej kniznice. Ma vyhodu oproti mojej implementacii, ze sa da v jednom clock cyclu precitat aj zapisat tou istou hodnotou (obsahuje delay). Moja implementacia sa sprava ako kombinacny obvod, musim tam mat extra delay ktory dalej sposobuje problemy.
+
+    - Pridat Video subsystem
+        - Autoscroll when the screen is full.
+        - Each character to be underlined, brightened, blinking or inverse.
         - pouzit jeden riadok bitmapy ako atribut array a nikdy ho nevykreslovat na obrazovku.
         - Presunut charTable.
         - Prerobit charTable na diodovu ROM.
@@ -124,35 +223,32 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Pracovat s CPU bude asynchronne, komunikacia pomocou prerusena.
         - Bud postavit samostatnu nasobicku a potom nepotrebujem instrukciu SHIFT, alebo nasobit softwarovo (bitshift + scitanie) a potom mi staci SHIFT iba o jeden bit.
 
-
-- Preprocessor:
-    - Zarovnat pravy okraj vygenerovaneho kodu.
-    - Naprogramovat linker, aby som mohol buildit kod z viacerych suborov dokopy (aby som mohol na koniec ROMky ulozit kniznicu standartnych funkcii).
-    - Pridat oznacenie instrukcie ktora sa prave vykonava (debug mode):
-        - Ulozit cely vypis z print_output_values to pola.
-        - Zvyraznit dany riadok.
-        - Pole pri kazdom kroku prekreslit.
-    - Fixnut TODOs.
+    - Periferie:
+        - Magneticka paska / harddisk ako externa pamat.
+            - Pouzit stary magnetofon.
+        - Citacka diernych stitkov (diernej pasky??).
+        - Dierovacka stitkov/pasky.
 
 
-- GUI
-    - FrontPanel
-        - Pridat tlacitka RESET, RUN, STOP, STEP.
-        - Error detection:
-            - Indikovat chybu ak je viacero kontrolnych signalov do MUXu aktivnych. Vystup poslat na FrontPanel.
-            - Indikovat chybu ak je viacero vystupnych signalov z dekodera aktivnych. Vystup poslat na FrontPanel.
-            - Stack overflow/underflow detection.
-            - Unknown instruction/operand.
-            - Kazdy kombinacny (Mux, Enc, Dec) aj sequencny obvod (registre, countre) by mohol mat na front panely vyvedenu svoju vystupnu hodnotu.
-            - Built In Test - ku vsetkym subsystemom (s detekciou chyby) priviest false-positive test signal na overenie detekcie chyb.
-    - Pridat Instruction Memory Panel.
-    - Pridat Terminal (obrazovka, klavesnica).
+- Compilator:
+    - Naprogramovat Assembler.
+    - Naprogramovat BASIC alebo pseudoC
+    - Pridat lokalne premenne:
+        - Hardwarovy stack bude treba prerobit na random access. 
+        - Assembler nahradi symbolicky nazov lokalnej premennej jej absolutnou adresou v pamati (zasobnik bude v RAM). Absolutna adresa sa vypocita ako zaciatok zasobniku (pre danu funkciu), ktory sa ulozi pri vstupe do funkcie, plus offset od zaciatku. Na nahradzovanie premennej vypoctom jej adresy asi bude treba pridat novu instrukciu - relativne adresovanie.
+        - Priklad:
+            char a = 4;
+             … sa pri preklade nahradi pomocou …
+             STR r0 [sb + 1]   /* Do registra SB sa ulozi hodnota SP pri vstupe do funkcie. */
+
+
+- GUI:
     - HALUŠKA 9000 (Heuristically programmed ALgorithmic Universal ŠKAtuľa model 9000) 
         - Powered by Jožko Mrkvička / jožko mrkvička inside
+    - Pridat Terminal (obrazovka, klavesnica).
 
 
 - Firmware:
-    - memcpy()
     - Tetris
     - Snake
     - Hodiny
@@ -166,17 +262,14 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
 
 
 - Dokumentacia
-    - Update README.
-    - Vylestit instrukcie.
-    - Zjednotit font v poznamkach.
-    - Fixnut TODOs.
-    - Zjednotit velkosti vsetkych MUXov.
-    - Zjednotit velkosti vsetkych systemov.
-    - Kombinacne obvody nafarbit na dajaku peknu farbu.
+    - Vsetky subsystemy vlozit do dvoch vrstiev
+        - Gate layer
+        - System layer.
+    - Update README.md.
 
     - Haluska 9000 User`s Manual
         - Introduction
-            - People`s Democratic Republic of East Slovakistan, Jozko Mrkvicka vs. Janko Haluska
+            - People`s Democratic Republic of East Slovakistan, Jozko Mrkvicka vs. Janko Haluska (Jackil/Hide)
             - "9000 Series makes no mistakes"
             - "A Fistful of Bits", "For a Few Bits More"
         - Hardware
@@ -195,55 +288,4 @@ OOOOOO|DD D|SSS|IIII IIIIIIII IIII
         - Credentials:
             - fotka celej miestnosti / zaber na obrazovku spoza chrbta / "Fatal Error" -> hlava na stole
             - "People often ask me why do I create such useless bullshits. If I can`t do something more useful? The truth is that I have nothing better to do in my life. I just haven`t figured out if it is good or bad..."
-
-
-- Commit Message:
-
-
-#############################################
-#              HALUŠKA 9001
-#############################################
-- Hardware:
-    - von Neumannova architektura
-        - Budem moct vytvarat a spustat programy rovno na pocitaci.
-        - Programy sa budu dat ukladat/nahravat do/z magnetickej pasky.
-
-    - Prerobit registre:
-        - Pridat jeden accumulator register. Bude sluzit ako destination register.
-        - Usetrim 3 bity v instrukcnych formatoch ktore pouzivaju destination register.
-        - Asi sa zbavim jedneho dekodera ktory vybera destination registre.
-        - Budem musiet pridat jednu instrukciu na citanie alebo zapis do/z accumulatora.
-
-    - "blikaciu" schemu s registrami na hlavnom paneli? tak ako v elektrarni?
-    - Priamo nastavovat registre z hlavneho panelu (kvoli debuggingu).
-    - Hardwarove breakpointy(??) Nastavil by som adresu na ktorej sa ma prave vykonavany program zastavit.
-    - Ochrana pamate (??)
-
-    - Prerobit architekturu na 1-bit / alebo aspon na 1 byte. Usetrim hradla v multiplexeroch.
-
-    - Prerobit Stack, revertnut zmeny (vratit Stack Pointer). Mal by byt menej hradiel ako ma teraz.
-
-    - Prerobit Muxy tak aby namiesto hradiel NAND pouzivali iba po jednom tranzistore zapojenom ako switch.
-
-    - Ferritova RAM (na prvy krat sa mi to nepodarilo :-()
-        - Preprogramovat RAM tak aby hned po precitani zmazala precitane data. Tym sa bude simulovat ferritova pamat.
-        - Pridat logiku ktora precitany byte do nej hned nanovo zapise.
-        - Pouzit defaultnu RAM zo simulinkovskej kniznice. Ma vyhodu oproti mojej implementacii, ze sa da v jednom clock cyclu precitat aj zapisat tou istou hodnotou (obsahuje delay). Moja implementacia sa sprava ako kombinacny obvod, musim tam mat extra delay ktory dalej sposobuje problemy.
-
-    - Periferie:
-        - Magneticka paska / harddisk ako externa pamat.
-        - Citacka diernych stitkov (diernej pasky??).
-        - Dierovacka stitkov/pasky.
-
-
-- Compilator:
-    - Naprogramovat Assembler.
-    - Naprogramovat BASIC alebo pseudoC
-
-  
-- Dokumentacia
-    - Vsetky subsystemy vlozit do dvoch vrstiev
-        - Gate layer
-        - System layer.
-    - Update README.
 
