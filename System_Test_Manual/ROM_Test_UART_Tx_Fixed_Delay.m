@@ -18,15 +18,15 @@ Label = ...
 case 'CONST'
 ConstData = ...
 {
-    BYTE    'CHR0'      uint8('N');
-    BYTE    'CHR1'      uint8('A');
-    BYTE    'CHR2'      uint8('Z');
-    BYTE    'CHR3'      uint8('D');
-    BYTE    'CHR4'      uint8('A');
-    BYTE    'CHR5'      uint8('R');
-    BYTE    'CHR6'      uint8('!');
-    BYTE    'CHR7'      uint8(10);
-    BYTE    'CHR8'      uint8(13);
+    BYTE    'CHR0'      {uint8('N')};
+    BYTE    'CHR1'      {uint8('A')};
+    BYTE    'CHR2'      {uint8('Z')};
+    BYTE    'CHR3'      {uint8('D')};
+    BYTE    'CHR4'      {uint8('A')};
+    BYTE    'CHR5'      {uint8('R')};
+    BYTE    'CHR6'      {uint8('!')};
+    BYTE    'CHR7'      {uint8(10)};
+    BYTE    'CHR8'      {uint8(13)};
 };
 
 
